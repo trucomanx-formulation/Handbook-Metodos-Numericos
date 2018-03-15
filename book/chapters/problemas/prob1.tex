@@ -1,0 +1,222 @@
+\chapterimage{chapter_head_2.pdf} % Chapter heading image
+
+\chapter{Derivadas de funções com variável vetorial}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Derivadas do escalar $f(\mathbf{x})$}
+\begin{definition}
+Se $\mathbf{x}$ é um vetor coluna de $N$ elementos e $f(\mathbf{x})$ é 
+uma função de $\mathbb{R}^{N}$ a $\mathbb{R}$, então definimos que:
+\begin{equation}
+\frac{\partial f(\mathbf{x}) }{\partial \mathbf{x}}= 
+\left[
+\begin{matrix}
+\frac{\partial f(\mathbf{x}) }{\partial x_{1}}&
+\frac{\partial f(\mathbf{x}) }{\partial x_{2}}&
+\frac{\partial f(\mathbf{x}) }{\partial x_{3}}&
+\hdots&
+\frac{\partial f(\mathbf{x}) }{\partial x_{N}}
+\end{matrix}
+\right]^{T}
+\end{equation}
+\end{definition}
+
+\begin{definition}
+Se $\mathbf{x}^{T}$ é um vetor linha de $N$ elementos e $f(\mathbf{x})$ é 
+uma função de $\mathbb{R}^{N}$ a $\mathbb{R}$, então definimos que:
+\begin{equation}
+\frac{\partial f(\mathbf{x}) }{\partial \mathbf{x}^{T}}= 
+\left[
+\begin{matrix}
+\frac{\partial f(\mathbf{x}) }{\partial x_{1}}&
+\frac{\partial f(\mathbf{x}) }{\partial x_{2}}&
+\frac{\partial f(\mathbf{x}) }{\partial x_{3}}&
+\hdots&
+\frac{\partial f(\mathbf{x}) }{\partial x_{N}}
+\end{matrix}
+\right]
+\end{equation}
+\end{definition}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Derivadas de $\mathbf{A}\mathbf{x}$}
+
+\begin{theorem}
+Se $\mathbf{x}$ é um vetor coluna de $N$ elementos e $\mathbf{A}$ uma matriz de $M\times N$, então se cumpre que:
+\begin{equation}
+\frac{\partial \mathbf{A}\mathbf{x}}{\partial x_n}=a_{:n}
+\end{equation}
+\end{theorem}
+
+\begin{corollaryT}[Corollary name]
+\begin{equation}
+\frac{\partial \mathbf{A}\mathbf{x}}{\partial \mathbf{x}^{T}}=
+\left[
+\begin{matrix}
+ a_{:1} &  a_{:2} &  \cdots &  a_{:N}
+\end{matrix}
+\right]=
+\mathbf{A}
+\end{equation}
+\end{corollaryT}
+
+\begin{corollaryT}[Corollary name]
+\begin{equation}
+\frac{\partial \mathbf{A}\mathbf{x}}{\partial \mathbf{x}}=
+\left[
+\begin{matrix}
+ a_{:1}\\
+ a_{:2}\\
+ \vdots\\
+ a_{:N}\\
+\end{matrix}
+\right]
+\end{equation}
+
+\end{corollaryT}
+\begin{corollaryT}[Corollary name]
+\begin{equation}
+\frac{\partial \mathbf{a}^{T}\mathbf{x}}{\partial \mathbf{x}^{T}}=\mathbf{a}^{T}
+\end{equation}
+\end{corollaryT}
+
+\begin{corollaryT}[Corollary name]
+\begin{equation}
+\frac{\partial \mathbf{a}^{T}\mathbf{x}}{\partial \mathbf{x}}=\mathbf{a}
+\end{equation}
+\end{corollaryT}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Derivadas de $||\mathbf{A}\mathbf{x}||^2$ 
+}
+
+\begin{theorem}
+Se $\mathbf{x}$ é um vetor coluna de $N$ elementos e $\mathbf{A}$ uma matriz de $M\times N$, então se cumpre que:
+\begin{equation}
+\begin{matrix}
+\frac{\partial ||\mathbf{A}\mathbf{x}||^2 }{\partial x_n}&=&
+\frac{\partial \left(\mathbf{A}\mathbf{x}\right)^{T}\left(\mathbf{A}\mathbf{x}\right)}{\partial x_n}&=&
+2\left(\mathbf{A}\mathbf{x}\right)^{T}a_{:n}\\
+~&~&~&=& 2\left(a_{:n}\right)^{T}\mathbf{A}\mathbf{x}
+\end{matrix}
+\end{equation}
+\end{theorem}
+
+\begin{corollaryT}[Corollary name]
+\begin{equation}
+\frac{\partial ||\mathbf{A}\mathbf{x}||^2 }{\partial \mathbf{x}^{T}}=
+\frac{\partial \left(\mathbf{A}\mathbf{x}\right)^{T}\left(\mathbf{A}\mathbf{x}\right)}{\partial \mathbf{x}^{T}}=
+2\left(\mathbf{A}^{T}\mathbf{A}\mathbf{x}\right)^{T}
+\end{equation}
+\end{corollaryT}
+
+\begin{corollaryT}[Corollary name]
+\begin{equation}
+\frac{\partial ||\mathbf{A}\mathbf{x}||^2 }{\partial \mathbf{x}}=
+\frac{\partial \left(\mathbf{A}\mathbf{x}\right)^{T}\left(\mathbf{A}\mathbf{x}\right)}{\partial \mathbf{x}}=
+2 \mathbf{A}^{T}\mathbf{A}\mathbf{x}
+\end{equation}
+\end{corollaryT}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Derivadas de $||\mathbf{A}\mathbf{x}-\mathbf{b}||^2$ 
+}
+
+\begin{theorem}
+Se $\mathbf{x}$ é um vetor coluna de $N$ elementos,
+$\mathbf{b}$ é um vetor coluna de $M$ elementos e 
+$\mathbf{A}$ uma matriz de $M\times N$, então se cumpre que:
+\begin{equation}
+\begin{matrix}
+\frac{\partial ||\mathbf{A}\mathbf{x}-\mathbf{b}||^2}{\partial x_n}&=&
+\frac{\partial \left(\mathbf{A}\mathbf{x}-\mathbf{b}\right)^{T}\left(\mathbf{A}\mathbf{x}-\mathbf{b}\right)}{\partial x_n}&=&
+2\left(\mathbf{A}\mathbf{x}\right)^{T}a_{:n}-2  \mathbf{b}^{T} a_{:n}\\
+~&~&~&=& 2\left(a_{:n}\right)^{T}\mathbf{A}\mathbf{x}-2 a_{:n}^{T}  \mathbf{b}
+\end{matrix}
+\end{equation}
+\end{theorem}
+
+
+\begin{corollaryT}[Corollary name]
+\begin{equation}
+\frac{\partial ||\mathbf{A}\mathbf{x}-\mathbf{b}||^2}{\partial \mathbf{x}^{T}}=
+2\left(\mathbf{x}^{T}\mathbf{A}^{T}- \mathbf{b}^{T} \right)\mathbf{A}
+\end{equation}
+\end{corollaryT}
+
+\begin{corollaryT}[Corollary name]
+\begin{equation}
+\frac{\partial ||\mathbf{A}\mathbf{x}-\mathbf{b}||^2}{\partial \mathbf{x} }=
+2 \mathbf{A}^{T}\left(\mathbf{A}\mathbf{x}-\mathbf{b}\right)
+\end{equation}
+\end{corollaryT}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Derivadas de $||\mathbf{A}\mathbf{x}-\mathbf{b}||_{\mathbf{C}}^2$ 
+}
+
+
+\begin{theorem}
+Se $\mathbf{x}$ é um vetor coluna de $N$ elementos,
+$\mathbf{b}$ é um vetor coluna de $M$ elementos, 
+$\mathbf{A}$ uma matriz de $M\times N$ e
+$\mathbf{C}$ uma matriz diagonal de $M \times M$, então se cumpre que:
+\begin{equation}
+\frac{\partial ||\mathbf{A}\mathbf{x}-\mathbf{b}||_{\mathbf{C}}^2}{\partial \mathbf{x}^{T}}=
+2\left(\mathbf{x}^{T}\mathbf{A}^{T}- \mathbf{b}^{T} \right)\mathbf{C}\mathbf{A}
+\end{equation}
+\begin{equation}
+\frac{\partial ||\mathbf{A}\mathbf{x}-\mathbf{b}||_{\mathbf{C}}^2}{\partial \mathbf{x} }=
+2 \mathbf{A}^{T}\mathbf{C}\left(\mathbf{A}\mathbf{x}-\mathbf{b}\right)
+\end{equation}
+\end{theorem}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Derivadas de $||\mathbf{f}(\mathbf{x})-\mathbf{b}||_{\mathbf{C}}^2$  
+(Aproximação)
+}
+
+\begin{theorem}
+Se $\mathbf{x}$ é um vetor com $N$ elementos, $\mathbf{f}(\mathbf{x})$ e 
+$\mathbf{b}$ são vetores coluna de $M$ elementos sendo $\mathbf{b}$ uma constante e
+$\mathbf{C}$ uma matriz diagonal de $M \times M$, 
+então se cumpre que:
+\begin{equation}
+\frac{\partial ||\mathbf{f}(\mathbf{x})-\mathbf{b}||_{\mathbf{C}}^2}{\partial \mathbf{x}} \approx
+\frac{\partial ||\mathbf{f}(\mathbf{p})+\mathbf{J}(\mathbf{p})\left(\mathbf{x}-\mathbf{p}\right)-\mathbf{b}||_{\mathbf{C}}^2}{\partial \mathbf{x}}
+\end{equation}
+Onde é considerada a aproximação
+$\mathbf{f}(\mathbf{x})\approx \mathbf{f}(\mathbf{p})+\mathbf{J}(\mathbf{p})\left(\mathbf{x}-\mathbf{p}\right)$,
+usando a serie de Taylor. Sendo $\mathbf{p}$ um ponto fixo em $\mathbf{x}$,  ao redor do qual é feita  aproximação
+da função $\mathbf{f}(\mathbf{x})$,
+e $\mathbf{J}(\mathbf{p})$ é o jacobiano de $\mathbf{f}(\mathbf{x})$ avaliado no ponto $\mathbf{p}$.
+Assim nos temos que:
+\begin{equation}
+\frac{\partial ||\mathbf{f}(\mathbf{p})+\mathbf{J}(\mathbf{p})\left(\mathbf{x}-\mathbf{p}\right)-\mathbf{b}||_{\mathbf{C}}^2}{\partial \mathbf{x}}=
+2 \mathbf{J}(\mathbf{p})^{T}\mathbf{C}\left(\mathbf{J}(\mathbf{p})\mathbf{x} - \mathbf{J}(\mathbf{p})\mathbf{p}-\mathbf{b}+\mathbf{f}(\mathbf{p})\right)
+\end{equation}
+\end{theorem}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Derivadas de $||\mathbf{f}(\mathbf{x})-\mathbf{b}||_{\mathbf{C}}^2+\alpha||\mathbf{x}-\mathbf{q}||_{\mathbf{D}}^2$  
+(Aproximação)
+}
+
+\begin{theorem}
+Se $\mathbf{x}$ e $\mathbf{q}$  são vetores com $N$ elementos sendo $\mathbf{q}$ uma constante,  e
+$\mathbf{D}$ uma matriz diagonal de $N \times N$, ademais $\mathbf{f}(\mathbf{x})$ e 
+$\mathbf{b}$ são vetores coluna de $M$ elementos sendo $\mathbf{b}$ uma constante, e
+$\mathbf{C}$ uma matriz diagonal de $M \times M$, 
+então se cumpre que:
+\begin{equation}
+\frac{\partial \left(||\mathbf{f}(\mathbf{x})-\mathbf{b}||_{\mathbf{C}}^2+\alpha||\mathbf{x}-\mathbf{q}||_{\mathbf{D}}^2\right)}{\partial \mathbf{x}} \approx
+2 \mathbf{J}(\mathbf{p})^{T}\mathbf{C}\left(\mathbf{J}(\mathbf{p})\mathbf{x} - \mathbf{J}(\mathbf{p})\mathbf{p}-\mathbf{b}+\mathbf{f}(\mathbf{p})\right)
++2\alpha\mathbf{D}\left(\mathbf{x}-\mathbf{q}\right)
+\end{equation}
+Onde é considerada a aproximação
+$\mathbf{f}(\mathbf{x})\approx \mathbf{f}(\mathbf{p})+\mathbf{J}(\mathbf{p})\left(\mathbf{x}-\mathbf{p}\right)$,
+usando a serie de Taylor. Sendo $\mathbf{p}$ um ponto fixo em $\mathbf{x}$,  ao redor do qual é feita  aproximação
+da função $\mathbf{f}(\mathbf{x})$,
+e $\mathbf{J}(\mathbf{p})$ é o jacobiano de $\mathbf{f}(\mathbf{x})$ avaliado no ponto $\mathbf{p}$.
+\end{theorem}

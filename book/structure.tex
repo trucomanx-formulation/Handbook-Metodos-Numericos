@@ -178,7 +178,7 @@
 \newcommand{\intoo}[2]{\mathopen{]}#1\,;#2\mathclose{[}}
 \newcommand{\ud}{\mathop{\mathrm{{}d}}\mathopen{}}
 \newcommand{\intff}[2]{\mathopen{[}#1\,;#2\mathclose{]}}
-\newtheorem{notation}{Notation}[chapter]
+\newtheorem{notation}{Notação}[chapter]
 
 % Boxed/framed environments
 \newtheoremstyle{ocrenumbox}% % Theorem style name
@@ -233,8 +233,8 @@
 \newcounter{dummy} 
 \numberwithin{dummy}{section}
 \theoremstyle{ocrenumbox}
-\newtheorem{theoremeT}[dummy]{Theorem}
-\newtheorem{problem}{Problem}[chapter]
+\newtheorem{theoremeT}[dummy]{Teorema}
+\newtheorem{problemT}{Problema}[chapter]
 \newtheorem{exerciseT}{Exercise}[chapter]
 \theoremstyle{blacknumex}
 \newtheorem{exampleT}{Example}[chapter]
@@ -280,6 +280,24 @@ leftmargin=0cm,
 rightmargin=0cm,
 linewidth=4pt]{eBox}	
 
+
+% Problem box	  
+\newmdenv[skipabove=7pt,
+skipbelow=7pt,
+rightline=false,
+leftline=true,
+topline=false,
+bottomline=false,
+backgroundcolor=ocre!10,
+linecolor=ocre,
+innerleftmargin=5pt,
+innerrightmargin=5pt,
+innertopmargin=5pt,
+innerbottommargin=5pt,
+leftmargin=0cm,
+rightmargin=0cm,
+linewidth=4pt]{pBox}	
+
 % Definition box
 \newmdenv[skipabove=7pt,
 skipbelow=7pt,
@@ -315,7 +333,8 @@ innerbottommargin=5pt]{cBox}
 
 % Creates an environment for each type of theorem and assigns it a theorem text style from the "Theorem Styles" section above and a colored box from above
 \newenvironment{theorem}{\begin{tBox}\begin{theoremeT}}{\end{theoremeT}\end{tBox}}
-\newenvironment{exercise}{\begin{eBox}\begin{exerciseT}}{\hfill{\color{ocre}\tiny\ensuremath{\blacksquare}}\end{exerciseT}\end{eBox}}				  
+\newenvironment{exercise}{\begin{eBox}\begin{exerciseT}}{\hfill{\color{ocre}\tiny\ensuremath{\blacksquare}}\end{exerciseT}\end{eBox}}			
+\newenvironment{problem}{\begin{pBox}\begin{problemT}}{\hfill{\color{ocre}\tiny\ensuremath{\blacksquare}}\end{problemT}\end{pBox}}				  
 \newenvironment{definition}{\begin{dBox}\begin{definitionT}}{\end{definitionT}\end{dBox}}	
 \newenvironment{example}{\begin{exampleT}}{\hfill{\tiny\ensuremath{\blacksquare}}\end{exampleT}}		
 \newenvironment{corollary}{\begin{cBox}\begin{corollaryT}}{\end{corollaryT}\end{cBox}}	

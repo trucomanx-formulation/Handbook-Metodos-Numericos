@@ -44,6 +44,7 @@
 \documentclass[11pt,fleqn]{book} % Default font size and left-justified equations
 
 %----------------------------------------------------------------------------------------
+\usepackage{bbold}%% $\mathbb{abc}$
 
 \input{structure} % Insert the commands.tex file which contains the majority of the structure behind the template
 
@@ -52,6 +53,8 @@
 %% Modificado por Fernando Pujaico Rivera
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[bottom]{footmisc}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Para \singlespacing 
@@ -178,9 +181,12 @@
 \node at (current page.north west)
 {\begin{tikzpicture}[remember picture,overlay]
 \node[anchor=north west,inner sep=0pt] at (0,0) {\includegraphics[width=\paperwidth]{background}}; % Background image
-\draw[anchor=north] (midpoint) node [fill=ocre!30!white,fill opacity=0.6,text opacity=1,inner sep=1cm]{\Huge\centering\bfseries\sffamily\parbox[c][][t]{\paperwidth}{\centering The Search for a Title\\[15pt] % Book title
-{\Large A Profound Subtitle}\\[20pt] % Subtitle
-{\huge Dr. John Smith}}}; % Author name
+\draw[anchor=north] (midpoint) node 
+[fill=ocre!30!white,fill opacity=0.6,text opacity=1,inner sep=1cm]
+{\Huge\centering\bfseries\sffamily\parbox[c][][t]{\paperwidth}
+{\centering Métodos numéricos\\[15pt] % Book title
+{\Large Handbook}\\[20pt] % Subtitle
+{\huge Fernando Pujaico Rivera}}}; % Author name
 \end{tikzpicture}};
 \end{tikzpicture}
 \vfill
@@ -194,15 +200,33 @@
 ~\vfill
 \thispagestyle{empty}
 
-\noindent Copyright \copyright\ 2013 John Smith\\ % Copyright notice
+\noindent Copyright \copyright\ 2019 Fernando Pujaico Rivera\\ % Copyright notice
 
-\noindent \textsc{Published by Publisher}\\ % Publisher
+\noindent \textsc{Published by Virtual Books}\\ % Publisher
 
 \noindent \textsc{book-website.com}\\ % URL
 
-\noindent Licensed under the Creative Commons Attribution-NonCommercial 3.0 Unported License (the ``License''). You may not use this file except in compliance with the License. You may obtain a copy of the License at \url{http://creativecommons.org/licenses/by-nc/3.0}. Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \textsc{``as is'' basis, without warranties or conditions of any kind}, either express or implied. See the License for the specific language governing permissions and limitations under the License.\\ % License information
+\noindent Licensed under the Creative Commons Attribution-NonCommercial 3.0 
+Unported License (the ``License''). You may not use this file except in 
+compliance with the License. You may obtain a copy of the License at 
+\url{http://creativecommons.org/licenses/by-nc/3.0}.\\ % License information
 
-\noindent \textit{First printing, March 2013} % Printing/edition date
+\noindent \textit{First printing, March 2019} % Printing/edition date
+
+
+%----------------------------------------------------------------------------------------
+%	DEDICATORIA
+%----------------------------------------------------------------------------------------
+
+\include{dedicatoria} 
+
+
+%----------------------------------------------------------------------------------------
+%	Acknowledgements
+%----------------------------------------------------------------------------------------
+
+\include{acknowledgements} 
+
 
 %----------------------------------------------------------------------------------------
 %	TABLE OF CONTENTS
@@ -214,6 +238,36 @@
 
 \tableofcontents % Print the table of contents itself
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Lista de figuras (gerada automaticamente)
+\cleardoublepage
+%\addcontentsline{toc}{chapter}{Lista de Figuras}
+\listoffigures
+
+%% Lista de tabelas (gerada automaticamente)
+\cleardoublepage
+%\addcontentsline{toc}{chapter}{Lista de Tablas}
+\listoftables
+
+%% Glossário (gerado automaticamente)
+\cleardoublepage
+%\renewcommand{\nomname}{Glossary}
+%\addcontentsline{toc}{chapter}{\nomname}
+%\markboth{GLOSSARY}{GLOSSARY}
+\printnomenclature
+
+%%% Lista de Simbolos (gerada manualmente)
+\cleardoublepage
+%%\addcontentsline{toc}{chapter}{LIST OF SIMBOLS}
+%%\markboth{LIST OF SYMBOLS}{LIST OF SYMBOLS}
+\include{simbolos}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 \cleardoublepage % Forces the first chapter to start on an odd page so it's on the right
 
 \pagestyle{fancy} % Print headers again
@@ -223,11 +277,25 @@
 %----------------------------------------------------------------------------------------
 
 \part{Part One}
+%\include{chapters/notacao/notacao}
 
 %----------------------------------------------------------------------------------------
 %	CHAPTER 1
 %----------------------------------------------------------------------------------------
-\include{chapters/cap1/cap1}
+\include{chapters/problemas/prob1}
+%----------------------------------------------------------------------------------------
+%	CHAPTER 2
+%----------------------------------------------------------------------------------------
+\include{chapters/problemas/prob2}
+
+%----------------------------------------------------------------------------------------
+%	PART
+%----------------------------------------------------------------------------------------
+\part{Part Two}
+
+\include{chapters/caps/cap2}
+\include{chapters/caps/cap3}
+\include{chapters/caps/cap4}
 
 %----------------------------------------------------------------------------------------
 %	BIBLIOGRAPHY

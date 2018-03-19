@@ -3,6 +3,21 @@
 \singlespacing
 
 %\noindent
+\section*{Conjuntos numéricos}
+\begin{tabular}{r | p{.55\linewidth}}
+\hline	
+Símbolo & Descrição \\ \hline
+$\mathbb{Z}$& Conjunto dos números inteiros.  \\
+$\mathbb{Z}^N$& Espaço em $N$ dimensões dos números inteiros.  \\
+$\mathbb{N}$& Conjunto dos números naturais.  \\
+$\mathbb{N}^N$& Espaço em $N$ dimensões dos números naturais.  \\
+$\mathbb{R}$& Conjunto dos números reais.  \\
+$\mathbb{R}^N$& Espaço em $N$ dimensões dos números reais.  \\
+$\mathbb{C}$& Conjunto dos números complexos.  \\
+%$\mathbb{C}^N$& Espaço em $N$ dimensões  dos números complexos.  \\
+$\mathbb{H}$& Conjunto dos quaterniones.  \\
+\end{tabular}
+
 \section*{Tipos de Dados}
 \begin{tabular}{r | p{.45\linewidth} | l}
 \hline	
@@ -11,7 +26,7 @@ $\mathbf{A}$, $\mathbf{B}$, ..., $\mathbf{X}$, $\mathbf{Y}$, $\mathbf{Z}$& Matri
 $\mathbf{a}$, $\mathbf{b}$, ..., $\mathbf{x}$, $\mathbf{y}$, $\mathbf{z}$ & Vetor (Por falta é asumido que é um vetor coluna) ou conjunto. & Minúsculo e negrito \\
 %$A$, $B$, ..., $X$, $Y$, $Z$ & ------- & Maiúsculo \\
 $a$, $b$, ..., $x$, $y$, $z$ & Escalar variável. & Minúsculo \\
-$A$, $B$, ..., $X$, $Y$, $Z$ & Escalar constante. & Minúsculo \\
+$A$, $B$, ..., $X$, $Y$, $Z$ & Escalar constante. & Maiúsculo \\
 $\alpha$, $\beta$, ..., $\chi$, $\psi$, $\omega$ & Escalar variável ou constante. & Letras gregas e minúsculo  \\ \hline
 \end{tabular}
 
@@ -52,17 +67,30 @@ $dim(\mathbf{A},N)$ & Dimensão $N$ da matriz $\mathbf{A}$, se não tiver retorn
 $inv(\mathbf{A})$ & Inversa da matriz $\mathbf{A}$, é equivalente a escrever $\mathbf{A}^{-1}$. \\
 $\mathbf{A}^{-1}$ & Inversa da matriz $\mathbf{A}$, é equivalente a escrever $inv(\mathbf{A})$. \\
 \hline
-$trans(\mathbf{a})$ & Transposta do vetor $\mathbf{a}$, é equivalente a escrever $\mathbf{a}^{T}$. \\
-$\mathbf{a}^{T}$ & Transposta do vetor $\mathbf{a}$, é equivalente a escrever $trans(\mathbf{a})$. \\
-$trans(\mathbf{A})$ & Transposta da matriz $\mathbf{A}$, é equivalente a escrever $\mathbf{A}^{T}$. \\
-$\mathbf{A}^{T}$ & Transposta da matriz $\mathbf{A}$, é equivalente a escrever $trans(\mathbf{A})$. \\
+$\functrans(\mathbf{a})$ & Transposta do vetor $\mathbf{a}$, é equivalente a escrever $\mathbf{a}^{\transpose}$. \\
+$\mathbf{a}^{\transpose}$ & Transposta do vetor $\mathbf{a}$, é equivalente a escrever $\functrans(\mathbf{a})$. \\
+$\functrans(\mathbf{A})$ & Transposta da matriz $\mathbf{A}$, é equivalente a escrever $\mathbf{A}^{\transpose}$. \\
+$\mathbf{A}^{\transpose}$ & Transposta da matriz $\mathbf{A}$, é equivalente a escrever $\functrans(\mathbf{A})$. \\
 \hline
 $||\mathbf{a}||$ & Módulo do vetor $\mathbf{a}$, é equivalente a escrever $\sqrt{\sum_i a_i^2}$. \\
 $||\mathbf{a}||^2$ & Módulo ao quadrado do vetor $\mathbf{a}$, 
-é equivalente a escrever $\sum_i a_i^2$ ou $\mathbf{a}^{T}\mathbf{a}$ se $\mathbf{a}$ é um vetor coluna. \\
+é equivalente a escrever $\sum_i a_i^2$ ou $\mathbf{a}^{\transpose}\mathbf{a}$ se $\mathbf{a}$ é um vetor coluna. \\
 $||\mathbf{a}||_{\mathbf{B}}^2$ & Módulo ao quadrado ponderado do vetor $\mathbf{a}$, 
-é equivalente a escrever $\sum_i b_{ii} a_i^2$ ou $(\sqrt{\mathbf{B}}~\mathbf{a})^{T}\sqrt{\mathbf{B}}~\mathbf{a} \equiv \mathbf{a}^{T}\mathbf{B}\mathbf{a}$ 
+é equivalente a escrever $\sum_i b_{ii} a_i^2$ ou $(\sqrt{\mathbf{B}}~\mathbf{a})^{\transpose}\sqrt{\mathbf{B}}~\mathbf{a} \equiv \mathbf{a}^{\transpose}\mathbf{B}\mathbf{a}$ 
 se $\mathbf{a}$ é um vetor coluna. Sendo que $\mathbf{B}$ é uma matriz diagonal.\\
+\hline
+$\funcvec(\mathbf{A})$ & Vectorização de uma matriz, de modo que esta sofre uma transformação linear 
+que converte à matriz num vetor coluna igual a
+$[ a_{1,1},\ldots ,a_{m,1},a_{1,2},\ldots ,a_{m,2},\ldots ,a_{1,n},\ldots ,a_{m,n}]^{\transpose} $.\\
+\hline
+$\funcdiag(a_1,...,a_M)$ & Matriz diagonal com elementos $a_m$, de modo que $m\in \mathbb{N}$, $1 \leq m \leq M$.\\
+\hline
+$\funcblockdiag(\mathbf{A}_1,...,\mathbf{A}_K)$& Matriz formada colocando diagonalmente,   blocos de matrizes $\mathbf{A}_k \in \mathbb{R}^{M_k \times N_k}$, com $k\in \mathbb{N}$, $1 \leq k \leq K$.\\
+${\bigcup \limits_{k=1}^{\searrow}}^{K}{\mathbf{A}_k}$ & $\funcblockdiag(\mathbf{A}_1,...,\mathbf{A}_K)$ \\
+$\funcblockhor(\mathbf{A}_1,...,\mathbf{A}_K)$ & Matriz formada colocando horizontalmente, blocos de matrizes $\mathbf{A}_k \in \mathbb{R}^{M   \times N_k}$, com $k\in \mathbb{N}$, $1 \leq k \leq K$.\\
+${\bigcup \limits_{k=1}^{\rightarrow}}^{K}{\mathbf{A}_k}$ & $\funcblockhor(\mathbf{A}_1,...,\mathbf{A}_K)$ \\
+$\funcblockver(\mathbf{A}_1,...,\mathbf{A}_K)$ & Matriz formada colocando verticalmente,   blocos de matrizes $\mathbf{A}_k \in \mathbb{R}^{M_k \times N  }$, com $k\in \mathbb{N}$, $1 \leq k \leq K$.\\
+${\bigcup \limits_{k=1}^{\downarrow}}^{K}{\mathbf{A}_k}$ & $\funcblockver(\mathbf{A}_1,...,\mathbf{A}_K)$ \\
 \end{tabular}
 
 \onehalfspacing

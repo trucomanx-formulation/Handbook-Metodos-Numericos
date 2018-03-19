@@ -1,0 +1,75 @@
+\section{Provas dos teoremas}
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{myproofT}[Prova do Teorema \ref{theo:minAxbCAxb}]\label{proof:theo:minAxbCAxb}
+Dados,
+um vetor coluna $\mathbf{x}\in \mathbb{R}^N$, 
+um vetor coluna $\mathbf{b}\in \mathbb{R}^M$,  
+uma matriz $\mathbf{A} \in \mathbb{R}^{M\times N}$, 
+uma matriz diagonal $\mathbf{C} \in \mathbb{R}^{M\times M}$, e 
+definida a Eq. (\ref{eq:proof:minAxbCAxb0}),
+\begin{equation}\label{eq:proof:minAxbCAxb0}
+e(\mathbf{x})=||\mathbf{A}\mathbf{x}-\mathbf{b}||_{\mathbf{C}}^2.
+\end{equation}
+Para achar o valor  $\mathbf{\hat{x}}$ que gere o menor valor de $e(\mathbf{\hat{x}})$, é aplicado
+o critério que um mínimo ou máximo pode ser achado quando 
+$\frac{\partial e(\mathbf{\hat{x}})}{\partial \mathbf{x} }=[0~ 0~ \hdots~ 0 ]^{\transpose}$.
+Assim, usando o Corolário \ref{coro:derAxbAxb2} podemos 
+rescrever esta igualdade como a Eq. (\ref{eq:proof:minAxbCAxb1}),
+\begin{equation}\label{eq:proof:minAxbCAxb1}
+2 \mathbf{A}^{\transpose}\mathbf{C}\left(\mathbf{A}\mathbf{\hat{x}}-\mathbf{b}\right)=[0~ 0~ \hdots~ 0 ]^{\transpose},
+\end{equation}
+de modo que pode ser obtido:
+\begin{equation}\label{eq:proof:minAxbCAxb2}
+\mathbf{\hat{x}}=\left( \mathbf{A}^{\transpose}\mathbf{C}\mathbf{A} \right)^{-1} \mathbf{A}^{\transpose}\mathbf{C} \mathbf{b}.
+\end{equation}
+Dado que a solução é única e a função $e(\mathbf{x})$ é sempre positiva, então
+o valor de $\mathbf{\hat{x}}$ é um mínimo.
+\end{myproofT}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{myproofT}[Prova do Teorema \ref{theo:minfxbCfxb}]\label{proof:theo:minfxbCfxb}
+Dados,
+um vetor coluna $\mathbf{x}\in \mathbb{R}^N$, 
+um vetor coluna $\mathbf{b}\in \mathbb{R}^M$,  
+uma função $\mathbf{f}:\mathbb{R}^{N} \rightarrow \mathbb{R}^{M}$, 
+uma matriz diagonal $\mathbf{C} \in \mathbb{R}^{M\times M}$, e 
+definida a Eq. (\ref{eq:proof:minfxbCfxb0}),
+\begin{equation}\label{eq:proof:minfxbCfxb0}
+e(\mathbf{x})=||\mathbf{f}(\mathbf{x})-\mathbf{b}||_{\mathbf{C}}^2.
+\end{equation}
+Para achar o valor  $\mathbf{\hat{x}}$ que gere o menor valor de $e(\mathbf{\hat{x}})$, é aplicado
+o critério que um mínimo ou máximo pode ser achado quando 
+$\frac{\partial e(\mathbf{\hat{x}})}{\partial \mathbf{x} }=[0~ 0~ \hdots~ 0 ]^{\transpose}$.
+Assim, usando o Teorema \ref{theo:derfxbCfxb} podemos 
+rescrever esta igualdade como a Eq. (\ref{eq:proof:minfxbCfxb1}),
+\begin{equation}\label{eq:proof:minfxbCfxb1}
+2 \mathbf{J}(\mathbf{p})^{\transpose}\mathbf{C}\left[\mathbf{J}(\mathbf{p})\left(\mathbf{\hat{x}} - \mathbf{p}\right)-\left(\mathbf{b}-\mathbf{f}(\mathbf{p})\right)\right] \approx
+\frac{\partial e(\mathbf{\hat{x}})}{\partial \mathbf{x} }=[0~ 0~ \hdots~ 0 ]^{\transpose},
+\end{equation}
+de modo que pode ser aproximado $\mathbf{\hat{x}}$ como:
+\begin{equation}\label{eq:proof:minfxbCfxb2}
+\mathbf{\hat{x}} \approx \mathbf{p} +
+\left[ \mathbf{J}(\mathbf{p})^{\transpose}\mathbf{C} \mathbf{J}(\mathbf{p}) \right]^{-1}
+\mathbf{J}(\mathbf{p})^{\transpose}\mathbf{C} \left(\mathbf{b}-\mathbf{f}(\mathbf{p})\right).
+\end{equation}
+Assim, quanto mais próximo seja a $\mathbf{\hat{x}}$ o valor escolhido $\mathbf{p}$, 
+a Eq. (\ref{eq:proof:minfxbCfxb2}) fica mais próximo a uma igualdade. Por outro lado,
+a equação nos indica que dado um ponto  $\mathbf{p}$ qualquer,
+$\left[ \mathbf{J}(\mathbf{p})^{\transpose}\mathbf{C} \mathbf{J}(\mathbf{p}) \right]^{-1}$ 
+$\mathbf{J}(\mathbf{p})^{\transpose}\mathbf{C}$ $\left(\mathbf{b}-\mathbf{f}(\mathbf{p})\right)$
+é um ponto próximo de $\mathbf{p}$  na direção de um mínimo ou máximo de $ e(\mathbf{x})$.
+Assim, um bom critério para procurar um mínimo ou máximo é seguir a seguinte 
+equação iterativa,
+\begin{equation}\label{eq:proof:minfxbCfxb3}
+\mathbf{p}_{k+1} \leftarrow \mathbf{p}_{k} +
+\left[ \mathbf{J}(\mathbf{p}_{k})^{\transpose}\mathbf{C} \mathbf{J}(\mathbf{p}_{k}) \right]^{-1}
+\mathbf{J}(\mathbf{p}_{k})^{\transpose}\mathbf{C} \left(\mathbf{b}-\mathbf{f}(\mathbf{p}_{k})\right),
+\end{equation}
+iniciando desde um $\mathbf{p}_{0}$ qualquer, ate que $\mathbf{p}_{k}$ seja muito próximo a $\mathbf{p}_{k+1}$.
+
+Dado que a solução é única e a função $e(\mathbf{x})$ é sempre positiva, então
+o valor de $\mathbf{\hat{x}}$ é um mínimo.
+\end{myproofT}

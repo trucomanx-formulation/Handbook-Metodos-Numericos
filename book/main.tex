@@ -202,16 +202,17 @@
 
 \noindent Copyright \copyright\ 2019 Fernando Pujaico Rivera\\ % Copyright notice
 
-\noindent \textsc{Published by Virtual Books}\\ % Publisher
+\noindent \textsc{Publicado por Virtual Books}\\ % Publisher
 
 \noindent \textsc{book-website.com}\\ % URL
 
-\noindent Licensed under the Creative Commons Attribution-NonCommercial 3.0 
-Unported License (the ``License''). You may not use this file except in 
-compliance with the License. You may obtain a copy of the License at 
-\url{http://creativecommons.org/licenses/by-nc/3.0}.\\ % License information
+\noindent Esta obra está licenciada com uma Licença Creative Commons 
+Atribuição-NãoComercial-CompartilhaIgual 4.0 Internacional. 
+Não é possível usar este arquivo excepto em conformidade com a Licença. 
+Pode obter uma copia de la Licença em
+\url{http://creativecommons.org/licenses/by-nc-sa/4.0/}.\\ % License information
 
-\noindent \textit{First printing, March 2019} % Printing/edition date
+\noindent \textit{Primeira impressão , Março 2019} % Printing/edition date
 
 
 %----------------------------------------------------------------------------------------
@@ -229,6 +230,12 @@ compliance with the License. You may obtain a copy of the License at
 
 
 %----------------------------------------------------------------------------------------
+%	My macros
+%----------------------------------------------------------------------------------------
+\input{mymacros}
+
+
+%----------------------------------------------------------------------------------------
 %	TABLE OF CONTENTS
 %----------------------------------------------------------------------------------------
 
@@ -236,6 +243,7 @@ compliance with the License. You may obtain a copy of the License at
 
 \pagestyle{empty} % No headers
 
+\renewcommand*\contentsname{Conteúdo}
 \tableofcontents % Print the table of contents itself
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -243,12 +251,14 @@ compliance with the License. You may obtain a copy of the License at
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Lista de figuras (gerada automaticamente)
 \cleardoublepage
+\renewcommand*\listfigurename{Lista de figuras}
 %\addcontentsline{toc}{chapter}{Lista de Figuras}
 \listoffigures
 
 %% Lista de tabelas (gerada automaticamente)
 \cleardoublepage
 %\addcontentsline{toc}{chapter}{Lista de Tablas}
+\renewcommand*\listtablename{Lista de tabelas}
 \listoftables
 
 %% Glossário (gerado automaticamente)
@@ -260,10 +270,9 @@ compliance with the License. You may obtain a copy of the License at
 
 %%% Lista de Simbolos (gerada manualmente)
 \cleardoublepage
-%%\addcontentsline{toc}{chapter}{LIST OF SIMBOLS}
+\addcontentsline{toc}{chapter}{Lista de símbolos}
 %%\markboth{LIST OF SYMBOLS}{LIST OF SYMBOLS}
 \include{simbolos}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -276,22 +285,24 @@ compliance with the License. You may obtain a copy of the License at
 %	PART
 %----------------------------------------------------------------------------------------
 
-\part{Part One}
+\part{Parte 1}
 %\include{chapters/notacao/notacao}
 
 %----------------------------------------------------------------------------------------
 %	CHAPTER 1
 %----------------------------------------------------------------------------------------
 \include{chapters/problemas/prob1}
+\input{chapters/problemas/prob1-proofs}
 %----------------------------------------------------------------------------------------
 %	CHAPTER 2
 %----------------------------------------------------------------------------------------
 \include{chapters/problemas/prob2}
+\input{chapters/problemas/prob2-proofs}
 
 %----------------------------------------------------------------------------------------
 %	PART
 %----------------------------------------------------------------------------------------
-\part{Part Two}
+\part{Parte 2}
 
 \include{chapters/caps/cap2}
 \include{chapters/caps/cap3}

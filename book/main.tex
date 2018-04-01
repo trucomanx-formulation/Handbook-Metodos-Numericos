@@ -46,6 +46,18 @@
 %----------------------------------------------------------------------------------------
 \usepackage{bbold}%% $\mathbb{abc}$
 
+\usepackage{comment}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \usepackage{draftwatermark}
+% \SetWatermarkText{Preview}
+% \SetWatermarkColor[gray]{0.95}
+% \SetWatermarkScale{1}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 \input{structure} % Insert the commands.tex file which contains the majority of the structure behind the template
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -285,40 +297,63 @@ Pode obter uma copia de la Licença em
 %	PART
 %----------------------------------------------------------------------------------------
 
-\part{Parte 1}
+\part{Derivadas de funções e operadores}
 %\include{chapters/notacao/notacao}
+%----------------------------------------------------------------------------------------
+%	CHAPTER  
+%----------------------------------------------------------------------------------------
+\include{chapters/funcoes/funcoes}
 
 %----------------------------------------------------------------------------------------
-%	CHAPTER 1
+%	CHAPTER  
 %----------------------------------------------------------------------------------------
-\include{chapters/problemas/prob1}
-\input{chapters/problemas/prob1-proofs}
-%----------------------------------------------------------------------------------------
-%	CHAPTER 2
-%----------------------------------------------------------------------------------------
-\include{chapters/problemas/prob2}
-\input{chapters/problemas/prob2-proofs}
+\include{chapters/derivada/der_square_error}
+\input{chapters/derivada/der_square_error-proofs}
+
 
 %----------------------------------------------------------------------------------------
 %	PART
 %----------------------------------------------------------------------------------------
-\part{Parte 2}
+\part{Problemas de minimização de erro em funções}
 
-\include{chapters/caps/cap2}
-\include{chapters/caps/cap3}
-\include{chapters/caps/cap4}
+%----------------------------------------------------------------------------------------
+%	CHAPTER  
+%----------------------------------------------------------------------------------------
+\include{chapters/minimization/min_square_error}
+\input{chapters/minimization/min_square_error-proofs}
+
+
+%----------------------------------------------------------------------------------------
+%	CHAPTER  
+%----------------------------------------------------------------------------------------
+\include{chapters/minimization/min_square_error_hx}
+
+
+%----------------------------------------------------------------------------------------
+%	PART
+%----------------------------------------------------------------------------------------
+\part{Problemas de achar raízes de funções}
+%----------------------------------------------------------------------------------------
+%	CHAPTER  
+%----------------------------------------------------------------------------------------
+\include{chapters/roots/raiz_hx}
+
+
 
 %----------------------------------------------------------------------------------------
 %	BIBLIOGRAPHY
 %----------------------------------------------------------------------------------------
 
-\chapter*{Bibliography}
+\chapter*{Bibliografia}
 \addcontentsline{toc}{chapter}{\textcolor{ocre}{Bibliography}}
-\section*{Books}
-\addcontentsline{toc}{section}{Books}
+\section*{Miscelânea}
+\addcontentsline{toc}{section}{Miscelânea}
+\printbibliography[heading=bibempty,type=misc]
+\section*{Livros}
+\addcontentsline{toc}{section}{Livros}
 \printbibliography[heading=bibempty,type=book]
-\section*{Articles}
-\addcontentsline{toc}{section}{Articles}
+\section*{Artigos}
+\addcontentsline{toc}{section}{Artigos}
 \printbibliography[heading=bibempty,type=article]
 
 %----------------------------------------------------------------------------------------

@@ -7,8 +7,8 @@
 \begin{tabular}{r | p{.4\linewidth} | l}
 \hline	
 Tipo & Descrição & Formatação \\ \hline
-$\mathbf{A}$, $\mathbf{B}$, ..., $\mathbf{X}$, $\mathbf{Y}$, $\mathbf{Z}$& Matriz. & Maiúsculo e negrito \\
-$\mathbf{a}$, $\mathbf{b}$, ..., $\mathbf{x}$, $\mathbf{y}$, $\mathbf{z}$ & Vetor ou conjunto. & Minúsculo e negrito \\
+$\MATRIX{A}$, $\MATRIX{B}$, ..., $\MATRIX{X}$, $\MATRIX{Y}$, $\MATRIX{Z}$& Matriz. & Maiúsculo e negrito \\
+$\VECTOR{a}$, $\VECTOR{b}$, ..., $\VECTOR{x}$, $\VECTOR{y}$, $\VECTOR{z}$ & Vetor ou conjunto. & Minúsculo e negrito \\
 %$A$, $B$, ..., $X$, $Y$, $Z$ & ------- & Maiúsculo \\
 $a$, $b$, ..., $x$, $y$, $z$ & Escalar variável. & Minúsculo \\
 $A$, $B$, ..., $X$, $Y$, $Z$ & Escalar constante. & Minúsculo \\
@@ -20,13 +20,13 @@ $\alpha$, $\beta$, ..., $\chi$, $\psi$, $\omega$ & Escalar variável ou constant
 \begin{tabular}{r | p{.6\linewidth} | l}
 \hline	
 Tipo & Descrição & Formatação \\ \hline
-$a_{ij}$ & Escalar formado pelo elemento da linha $i$, coluna $j$ da matriz $\mathbf{A}$. & Minúsculo \\ \hline
-%$\mathbf{A}_{(i,j)}$& Elemento na linha $i$, coluna $j$ da matriz $\mathbf{A}$ & Maiúsculo e negrito \\ \hline
-%$\mathbf{a}_{i}$ & Linha ou coluna $i$-essima da matriz $\mathbf{A}$ (ambíguo) & Minúsculo e negrito \\
-$a_{i:}$ & Vetor linha formado pela linha $i$-essima da matriz $\mathbf{A}$.  & Minúsculo \\
-%$\mathbf{A}_{(i,:)}$& Vetor formado pela linha $i$-essima da matriz $\mathbf{A}$ & Maiúsculo e negrito \\
-$a_{:i}$ & Vetor coluna formado pela coluna $i$-essima da matriz $\mathbf{A}$.  & Minúsculo \\
-%$\mathbf{A}_{(:,i)}$& Vetor formado pela coluna $i$-essima da matriz $\mathbf{A}$ & Maiúsculo e negrito \\ \hline
+$a_{ij}$ & Escalar formado pelo elemento da linha $i$, coluna $j$ da matriz $\MATRIX{A}$. & Minúsculo \\ \hline
+%$\MATRIX{A}_{(i,j)}$& Elemento na linha $i$, coluna $j$ da matriz $\MATRIX{A}$ & Maiúsculo e negrito \\ \hline
+%$\VECTOR{a}_{i}$ & Linha ou coluna $i$-essima da matriz $\MATRIX{A}$ (ambíguo) & Minúsculo e negrito \\
+$a_{i:}$ & Vetor linha formado pela linha $i$-essima da matriz $\MATRIX{A}$.  & Minúsculo \\
+%$\MATRIX{A}_{(i,:)}$& Vetor formado pela linha $i$-essima da matriz $\MATRIX{A}$ & Maiúsculo e negrito \\
+$a_{:i}$ & Vetor coluna formado pela coluna $i$-essima da matriz $\MATRIX{A}$.  & Minúsculo \\
+%$\MATRIX{A}_{(:,i)}$& Vetor formado pela coluna $i$-essima da matriz $\MATRIX{A}$ & Maiúsculo e negrito \\ \hline
 \end{tabular}
 \end{notation}
 
@@ -34,8 +34,8 @@ $a_{:i}$ & Vetor coluna formado pela coluna $i$-essima da matriz $\mathbf{A}$.  
 \begin{tabular}{r | p{.6\linewidth} | l}
 \hline	
 Tipo & Descrição & Formatação \\ \hline
-$a_{i}$ & Elemento $i$-essimo do vetor ou conjunto  $\mathbf{a}$.& Minúsculo \\
-%$\mathbf{a}_{(i)}$ & Elemento $i$-essimo do vetor $\mathbf{a}$ & Minúsculo e negrito \\ \hline
+$a_{i}$ & Elemento $i$-essimo do vetor ou conjunto  $\VECTOR{a}$.& Minúsculo \\
+%$\VECTOR{a}_{(i)}$ & Elemento $i$-essimo do vetor $\VECTOR{a}$ & Minúsculo e negrito \\ \hline
 \end{tabular}
 \end{notation}
 
@@ -44,22 +44,22 @@ $a_{i}$ & Elemento $i$-essimo do vetor ou conjunto  $\mathbf{a}$.& Minúsculo \\
 \begin{tabular}{r | l }
 \hline	
 Função & Descrição \\ \hline
-$card(\mathbf{a})$ & Número de elementos, cardinalidade, do vetor ou conjunto $\mathbf{a}$. \\
-$card(\mathbf{A})$ & Número de elementos, cardinalidade, da matriz $\mathbf{A}$. \\
+$card(\VECTOR{a})$ & Número de elementos, cardinalidade, do vetor ou conjunto $\VECTOR{a}$. \\
+$card(\MATRIX{A})$ & Número de elementos, cardinalidade, da matriz $\MATRIX{A}$. \\
 \hline
-$dim(\mathbf{a},1)$ & Primeira dimensão do vetor $\mathbf{a}$, número de linhas. \\
-$dim(\mathbf{a},2)$ & Segunda dimensão do vetor $\mathbf{a}$, número de colunas. \\
-$dim(\mathbf{A},1)$ & Primeira dimensão da matriz $\mathbf{A}$, número de linhas. \\
-$dim(\mathbf{A},2)$ & Segunda dimensão da matriz $\mathbf{A}$, número de colunas. \\
-$dim(\mathbf{A},N)$ & Dimensão $N$ da matriz $\mathbf{A}$, se não tiver retorna $0$. \\
+$dim(\VECTOR{a},1)$ & Primeira dimensão do vetor $\VECTOR{a}$, número de linhas. \\
+$dim(\VECTOR{a},2)$ & Segunda dimensão do vetor $\VECTOR{a}$, número de colunas. \\
+$dim(\MATRIX{A},1)$ & Primeira dimensão da matriz $\MATRIX{A}$, número de linhas. \\
+$dim(\MATRIX{A},2)$ & Segunda dimensão da matriz $\MATRIX{A}$, número de colunas. \\
+$dim(\MATRIX{A},N)$ & Dimensão $N$ da matriz $\MATRIX{A}$, se não tiver retorna $0$. \\
 \hline
-$inv(\mathbf{A})$ & Inversa da matriz $\mathbf{A}$, é equivalente a escrever $\mathbf{A}^{-1}$. \\
-$\mathbf{A}^{-1}$ & Inversa da matriz $\mathbf{A}$, é equivalente a escrever $inv(\mathbf{A})$. \\
+$inv(\MATRIX{A})$ & Inversa da matriz $\MATRIX{A}$, é equivalente a escrever $\MATRIX{A}^{-1}$. \\
+$\MATRIX{A}^{-1}$ & Inversa da matriz $\MATRIX{A}$, é equivalente a escrever $inv(\MATRIX{A})$. \\
 \hline
-$trans(\mathbf{a})$ & Transposta do vetor $\mathbf{a}$, é equivalente a escrever $\mathbf{a}^{T}$. \\
-$\mathbf{a}^{T}$ & Transposta do vetor $\mathbf{a}$, é equivalente a escrever $trans(\mathbf{a})$. \\
-$trans(\mathbf{A})$ & Transposta da matriz $\mathbf{A}$, é equivalente a escrever $\mathbf{A}^{T}$. \\
-$\mathbf{A}^{T}$ & Transposta da matriz $\mathbf{A}$, é equivalente a escrever $trans(\mathbf{A})$. \\
+$trans(\VECTOR{a})$ & Transposta do vetor $\VECTOR{a}$, é equivalente a escrever $\VECTOR{a}^{T}$. \\
+$\VECTOR{a}^{T}$ & Transposta do vetor $\VECTOR{a}$, é equivalente a escrever $trans(\VECTOR{a})$. \\
+$trans(\MATRIX{A})$ & Transposta da matriz $\MATRIX{A}$, é equivalente a escrever $\MATRIX{A}^{T}$. \\
+$\MATRIX{A}^{T}$ & Transposta da matriz $\MATRIX{A}$, é equivalente a escrever $trans(\MATRIX{A})$. \\
 \end{tabular}
 \end{notation}
 

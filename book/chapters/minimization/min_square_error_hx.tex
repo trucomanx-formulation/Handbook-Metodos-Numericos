@@ -1,0 +1,93 @@
+\chapterimage{chapter_head_2.pdf} % Chapter heading image
+
+\chapter{Minimização do erro em funções: $\mathbb{R}$ $\rightarrow$ $\mathbb{R}$}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{\textcolor{blue}{Minimização de $||h(x)-a||^2$}} 
+
+\begin{theorem}[Solução iterativa]\label{theo:minhxhx}
+Dados,
+um escalar $x \in \mathbb{R}$, 
+um escalar $a \in \mathbb{R}$,  
+uma função $h:\mathbb{R} \rightarrow \mathbb{R}$, e 
+definida a Eq. (\ref{eq:minhxhx1}),
+\begin{equation}\label{eq:minhxhx1}
+e(x)=||h(x)-a||^2.
+\end{equation}
+Se desejamos ter o valor $\hat{x}$ que minimiza o escalar $e(\hat{x})$,
+este valor pode ser achado usando iterativamente a Eq. (\ref{eq:minhxhx2}),
+\begin{equation}\label{eq:minhxhx2}
+x_{k+1} \leftarrow x_k+
+\frac{ a-h(x_k)}{h'(x_k)}
+\end{equation}
+Onde  $h'(x)=\frac{\partial h(x)}{\partial x}$. A busca iterativa é considerada 
+falida quando se atinge $h'(x_k) = 0$.
+Assim, $\hat{x}$ pode ser achado iniciando a Eq. (\ref{eq:minhxhx2}) desde um $x_{0}$ qualquer, ate que $x_{k}$ seja muito próximo a $x_{k+1}$,
+onde se declara que $\hat{x} \approx x_{k+1}$; porem deve ser corroborado
+que esse ponto tratasse de um máximo ou mínimo usando algum método, por exemplo estudando o comportamento 
+de $e(x)$ ou analisando  $\frac{\partial^2 e(x)}{\partial x^2}$ avaliada em $\hat{x}$.
+
+\textcolor{red}{Esta forma de iterar tambem e conhecida como metodo de Newton.}
+
+\FALTAPROVA
+A demostração pode ser vista na Prova \ref{proof:theo:minhxhx}.
+\end{theorem}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{\textcolor{blue}{Minimização de $||h(x)-a||^2+\alpha ||x-b||^2$}}
+
+\begin{theorem}[Solução iterativa]\label{theo:minhxhxxbxb}
+Dados,
+um escalar $\alpha \in \mathbb{R} | \alpha > 0$, 
+um escalar $x \in \mathbb{R}$, 
+um escalar $a \in \mathbb{R}$,  
+uma função $h:\mathbb{R} \rightarrow \mathbb{R}$, e 
+definida a Eq. (\ref{eq:minhxhxxbxb1}),
+\begin{equation}\label{eq:minhxhxxbxb1}
+e(x)=||h(x)-a||^2+\alpha ||x-b||^2.
+\end{equation}
+Se desejamos ter o valor $\hat{x}$ que minimiza o escalar $e(\hat{x})$,
+este valor pode ser achado usando iterativamente a Eq. (\ref{eq:minhxhxxbxb2}),
+\begin{equation}\label{eq:minhxhxxbxb2}
+x_{k+1} \leftarrow x_k+
+\frac{ h'(x_k) \left[a-h(x_k)\right]-\alpha\left[ x_k-b\right]}{\left[h'(x_k)\right]^2+\alpha}
+\end{equation}
+Onde  $h'(x)=\frac{\partial h(x)}{\partial x}$.
+Assim, $\hat{x}$ pode ser achado iniciando a Eq. (\ref{eq:minhxhxxbxb2}) desde um $x_{0}$ qualquer, ate que $x_{k}$ seja muito próximo a $x_{k+1}$,
+onde se declara que $\hat{x} \approx x_{k+1}$; porem deve ser corroborado
+que esse ponto tratasse de um máximo ou mínimo usando algum método, por exemplo estudando o comportamento 
+de $e(x)$ ou analisando  $\frac{\partial^2 e(x)}{\partial x^2}$ avaliada em $\hat{x}$.
+
+\FALTAPROVA
+A demostração pode ser vista na Prova \ref{proof:theo:minhxhxxbxb}.
+\end{theorem}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{\textcolor{blue}{Minimização de $||h(x)-a||^2+\alpha ||x-x_{old}||^2$}}
+
+\begin{theorem}[Solução iterativa]\label{theo:minhxhxxoxo}
+Dados,
+um escalar $\alpha \in \mathbb{R} | \alpha > 0$, 
+um escalar $x \in \mathbb{R}$, 
+um escalar $a \in \mathbb{R}$,  
+uma função $h:\mathbb{R} \rightarrow \mathbb{R}$, e 
+definida a Eq. (\ref{eq:minhxhxxoxo1}),
+\begin{equation}\label{eq:minhxhxxoxo1}
+e(x)=||h(x)-a||^2+\alpha ||x-x_{old}||^2.
+\end{equation}
+Se desejamos ter o valor $\hat{x}$ que minimiza o escalar $e(\hat{x})$,
+este valor pode ser achado usando iterativamente a Eq. (\ref{eq:minhxhxxoxo2}),
+\begin{equation}\label{eq:minhxhxxoxo2}
+x_{k+1} \leftarrow x_k+
+\frac{ h'(x_k) \left[a-h(x_k)\right] }{\left[h'(x_k)\right]^2+\alpha}
+\end{equation}
+Onde  $h'(x)=\frac{\partial h(x)}{\partial x}$.
+Assim, $\hat{x}$ pode ser achado iniciando a Eq. (\ref{eq:minhxhxxoxo2}) desde um $x_{0}$ qualquer, ate que $x_{k}$ seja muito próximo a $x_{k+1}$,
+onde se declara que $\hat{x} \approx x_{k+1}$; porem deve ser corroborado
+que esse ponto tratasse de um máximo ou mínimo usando algum método, por exemplo estudando o comportamento 
+de $e(x)$ ou analisando  $\frac{\partial^2 e(x)}{\partial x^2}$ avaliada em $\hat{x}$.
+
+\FALTAPROVA
+A demostração pode ser vista na Prova \ref{proof:theo:minhxhxxoxo}.
+\end{theorem}
+

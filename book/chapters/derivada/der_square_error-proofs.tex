@@ -1,0 +1,213 @@
+\section{Provas dos teoremas}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{myproofT}[Prova do Teorema \ref{theo:derAx}]\label{proof:theo:derAx}
+Dados,
+uma matriz $\MATRIX{A}=\left[a_{:1}~ a_{:2}~ \hdots~ a_{:n}~ \hdots~ a_{:N}\right]$ e 
+um vetor coluna $\VECTOR{x}=\left[x_{1}~ x_{2}~ \hdots~ x_{n}~ \hdots~ x_{N}\right]^{\transpose}$, 
+podemos expressar que:
+\begin{equation}
+\frac{\partial \MATRIX{A}\VECTOR{x}}{\partial x_n}=
+\frac{\partial \MATRIX{A}}{\partial x_n}\VECTOR{x}+\MATRIX{A}\frac{\partial \VECTOR{x}}{\partial x_n}=
+\MATRIX{A}\frac{\partial \VECTOR{x}}{\partial x_n}
+\end{equation}
+Sabendo que $\frac{\partial \VECTOR{x}}{\partial x_n}$ é igual a um vetor 
+com um $1$ na posição $n$ e $0$ em qualquer outra posição, obtemos que
+\begin{equation}
+\frac{\partial \MATRIX{A}\VECTOR{x}}{\partial x_n}=
+\left[a_{:1}~ a_{:2}~ \hdots~ a_{:n}~ \hdots~ a_{:N}\right]\left[
+\begin{matrix}
+ 0\\
+ 0\\
+ \vdots\\
+ 1\\
+ \vdots\\
+ 0
+\end{matrix}
+\right]=a_{:n}
+\end{equation}
+\end{myproofT}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{myproofT}[Prova do Teorema \ref{theo:derxAtAx}]\label{proof:theo:derxAtAx}
+Dados,
+uma matriz $\MATRIX{A}=\left[a_{:1}~ a_{:2}~ \hdots~ a_{:n}~ \hdots~ a_{:N}\right]$ e 
+um vetor coluna $\VECTOR{x}=\left[x_{1}~ x_{2}~ \hdots~ x_{n}~ \hdots~ x_{N}\right]^{\transpose}$, 
+podemos expressar que:
+\begin{equation}\label{eq:proof:derxAtAx1}
+\frac{\partial ||\MATRIX{A}\VECTOR{x}||^{2}}{\partial x_n}=
+\frac{\partial \left(\MATRIX{A}\VECTOR{x}\right)^{\transpose}\left(\MATRIX{A}\VECTOR{x}\right)}{\partial x_n}=
+\left(\frac{\partial \MATRIX{A}\VECTOR{x}}{\partial x_n}\right)^{\transpose}\left(\MATRIX{A}\VECTOR{x}\right)+
+\left(\MATRIX{A}\VECTOR{x}\right)^{\transpose} \frac{\partial \MATRIX{A}\VECTOR{x}}{\partial x_n}
+\end{equation}
+Pelo visto no Teorema \ref{theo:derAx} podemos substituir valores na Eq. (\ref{eq:proof:derxAtAx1})
+e obter:
+\begin{equation}\label{eq:proof:derxAtAx2}
+\frac{\partial ||\MATRIX{A}\VECTOR{x}||^{2}}{\partial x_n}=
+\left(a_{:n}\right)^{\transpose} \MATRIX{A}\VECTOR{x} +
+\left(\MATRIX{A}\VECTOR{x}\right)^{\transpose} a_{:n}
+\end{equation}
+Como cada um dos somandos da equação anterior é um escalar, podemos aplicar o operador
+transposta ($\transpose$) sobre qualquer somando sem alterar o resultado; de modo que temos duas possíveis
+forma de expressar a solução:
+\begin{equation}
+\begin{matrix}
+\frac{\partial ||\MATRIX{A}\VECTOR{x}||^2 }{\partial x_n}&=&
+2\left(\MATRIX{A}\VECTOR{x}\right)^{\transpose}a_{:n}\\
+~&=& 2\left(a_{:n}\right)^{\transpose}\MATRIX{A}\VECTOR{x}
+\end{matrix}
+\end{equation}
+\end{myproofT}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{myproofT}[Prova do Teorema \ref{theo:derAxbAxb}]\label{proof:theo:derAxbAxb}
+Dados,
+uma matriz $\MATRIX{A}=\left[a_{:1}~ a_{:2}~ \hdots~ a_{:n}~ \hdots~ a_{:N}\right]$, 
+uma matriz diagonal $\MATRIX{C}\in \mathbb{R}^{M\times M}$, 
+um vetor coluna $\VECTOR{x}=\left[x_{1}~ x_{2}~ \hdots~ x_{n}~ \hdots~ x_{N}\right]^{\transpose}$, e 
+um vetor coluna $\VECTOR{b}\in \mathbb{R}^{M}$, 
+podemos expressar que:
+\begin{equation}\label{eq:proof:derAxbAxb1}
+\frac{\partial ||\MATRIX{A}\VECTOR{x}-\VECTOR{b}||_{\MATRIX{C}}^2}{\partial x_n} =
+\frac{\partial \left(\MATRIX{A}\VECTOR{x}-\VECTOR{b}\right)^{\transpose}\MATRIX{C}\left(\MATRIX{A}\VECTOR{x}-\VECTOR{b}\right)}{\partial x_n}=
+ \left(\frac{\partial\MATRIX{A}\VECTOR{x}}{\partial x_n}\right)^{\transpose}\MATRIX{C}\left(\MATRIX{A}\VECTOR{x}-\VECTOR{b}\right)+
+ \left(\MATRIX{A}\VECTOR{x}-\VECTOR{b}\right)^{\transpose}\MATRIX{C}\left(\frac{\partial\MATRIX{A}\VECTOR{x}}{\partial x_n}\right)
+\end{equation}
+Pelo visto no Teorema \ref{theo:derAx}, podemos substituir valores na Eq. (\ref{eq:proof:derAxbAxb1})
+e obter:
+\begin{equation}\label{eq:proof:derAxbAxb2}
+\frac{\partial ||\MATRIX{A}\VECTOR{x}-\VECTOR{b}||_{\MATRIX{C}}^{2}}{\partial x_n}=
+\left(a_{:n}\right)^{\transpose}\MATRIX{C}\left( \MATRIX{A}\VECTOR{x}-\VECTOR{b}\right) +
+\left(\MATRIX{A}\VECTOR{x}-\VECTOR{b}\right)^{\transpose}\MATRIX{C} a_{:n}
+\end{equation}
+Como cada um dos somandos da equação anterior é um escalar, podemos aplicar o operador
+transposta ($\transpose$) sobre qualquer somando sem alterar o resultado; de modo que temos duas possíveis
+forma de expressar a solução:
+\begin{equation}
+\begin{matrix}
+\frac{\partial ||\MATRIX{A}\VECTOR{x}-\VECTOR{b}||_{\MATRIX{C}}^2 }{\partial x_n}&=&
+2\left(\MATRIX{A}\VECTOR{x}-\VECTOR{b}\right)^{\transpose}\MATRIX{C}a_{:n}\\
+~&=& 2\left(a_{:n}\right)^{\transpose}\MATRIX{C}\left(\MATRIX{A}\VECTOR{x}-\VECTOR{b}\right)
+\end{matrix}
+\end{equation}
+\end{myproofT}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{myproofT}[Prova do Teorema \ref{theo:derfxbCfxb0}]\label{proof:theo:derfxbCfxb0}
+Dados,
+uma função $\VECTOR{f}:\mathbb{R}^{N} \rightarrow \mathbb{R}^{M}$, 
+uma matriz diagonal $\MATRIX{C}\in \mathbb{R}^{M\times M}$, 
+um vetor coluna $\VECTOR{x}=\left[x_{1}~ x_{2}~ \hdots~ x_{n}~ \hdots~ x_{N}\right]^{\transpose}$, e
+um vetor coluna $\VECTOR{b}\in \mathbb{R}^{M}$;
+podemos expressar que:
+\begin{equation}\label{eq:proof:derfxbCfxb01}
+\begin{matrix}
+\frac{\partial ||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2}{\partial x_{n}} & = &
+\frac{\partial \left( \VECTOR{f}(\VECTOR{x})-\VECTOR{b}\right)^{\transpose} \MATRIX{C} \left( \VECTOR{f}(\VECTOR{x})-\VECTOR{b}\right) }{\partial x_{n}} \\
+~ &= &
+ \left(  \frac{\partial\VECTOR{f}(\VECTOR{x})  }{\partial x_{n}} \right)^{\transpose} \MATRIX{C} \left( \VECTOR{f}(\VECTOR{x})-\VECTOR{b}\right) +
+ \left( \VECTOR{f}(\VECTOR{x})-\VECTOR{b}\right)^{\transpose} \MATRIX{C}  \left(  \frac{\partial\VECTOR{f}(\VECTOR{x})  }{\partial x_{n}} \right)\\
+~ &= &
+ 2 \left(  \frac{\partial\VECTOR{f}(\VECTOR{x})  }{\partial x_{n}} \right)^{\transpose} \MATRIX{C} \left( \VECTOR{f}(\VECTOR{x})-\VECTOR{b}\right)
+\end{matrix}.
+\end{equation}
+Assim, usando a Definição \ref{def:deltaver} junto com a Eq. (\ref{eq:proof:derfxbCfxb01})
+nos obtemos:
+\begin{equation}\label{eq:proof:derfxbCfxb02}
+\frac{\partial ||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2}{\partial \VECTOR{x}}  = 
+2 \MATRIX{J}(\VECTOR{x})^{\transpose} \MATRIX{C} \left( \VECTOR{f}(\VECTOR{x})-\VECTOR{b}\right)
+\end{equation}
+\end{myproofT}
+
+
+\begin{myproofT}[Prova do Teorema \ref{theo:derfxbCfxb}]\label{proof:theo:derfxbCfxb}
+Dados,
+uma função $\VECTOR{f}:\mathbb{R}^{N} \rightarrow \mathbb{R}^{M}$, 
+uma matriz diagonal $\MATRIX{C}\in \mathbb{R}^{M\times M}$, 
+um vetor coluna $\VECTOR{x}\in \mathbb{R}^{N}$, 
+um vetor coluna $\VECTOR{b}\in \mathbb{R}^{M}$, 
+e considerando a aproximação
+$\VECTOR{f}(\VECTOR{x})\approx \VECTOR{f}(\VECTOR{p})+\MATRIX{J}(\VECTOR{p})\left(\VECTOR{x}-\VECTOR{p}\right)$,
+usando a serie de \hyperref[def:taylor]{Taylor} para funções multivariáveis;
+podemos expressar que:
+\begin{equation}\label{eq:proof:derfxbCfxb1}
+\frac{\partial ||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2}{\partial \VECTOR{x}} \approx
+\frac{\partial ||\MATRIX{J}(\VECTOR{p})\VECTOR{x}-\left[\MATRIX{J}(\VECTOR{p})\VECTOR{p}+\VECTOR{b}-\VECTOR{f}(\VECTOR{p})\right]||_{\MATRIX{C}}^2}{\partial \VECTOR{x}}
+\end{equation}
+Pelo visto no Corolário \ref{coro:derAxbAxb2}, podemos substituir os valores,
+$\MATRIX{J}(\VECTOR{p})$ e 
+$\left[\MATRIX{J}(\VECTOR{p})\VECTOR{p}+\VECTOR{b}-\VECTOR{f}(\VECTOR{p})\right]$,
+da Eq. (\ref{eq:proof:derfxbCfxb1}), nas variáveis $\MATRIX{A}$ e $\VECTOR{b}$ 
+do Corolário \ref{coro:derAxbAxb2}, respectivamente. Assim obtemos:
+\begin{equation}\label{eq:proof:derfxbCfxb2}
+\frac{\partial ||\MATRIX{J}(\VECTOR{p})\VECTOR{x}-\left[\MATRIX{J}(\VECTOR{p})\VECTOR{p}+\VECTOR{b}-\VECTOR{f}(\VECTOR{p})\right]||_{\MATRIX{C}}^2}{\partial \VECTOR{x}}  = 
+2 \MATRIX{J}(\VECTOR{p})^{\transpose}\MATRIX{C}\left( \MATRIX{J}(\VECTOR{p})\VECTOR{x}-\MATRIX{J}(\VECTOR{p})\VECTOR{p}-\VECTOR{b}+\VECTOR{f}(\VECTOR{p})\right) 
+\end{equation}
+\end{myproofT}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{myproofT}[Prova do Teorema \ref{theo:der2fxbCfxb0}]\label{proof:theo:der2fxbCfxb0}
+Dados,
+uma função $\VECTOR{f}:\mathbb{R}^{N} \rightarrow \mathbb{R}^{M}$, 
+uma matriz diagonal $\MATRIX{C}\in \mathbb{R}^{M\times M}$, 
+um vetor coluna $\VECTOR{x}=\left[x_{1}~ x_{2}~ \hdots~ x_{n}~ \hdots~ x_{N}\right]^{\transpose}$, e
+um vetor coluna $\VECTOR{b}\in \mathbb{R}^{M}$;
+podemos expressar que:
+\begin{equation}\label{eq:proof:der2fxbCfxb01}
+\begin{matrix}
+\frac{\partial }{\partial x_{n}}\left( \frac{\partial ||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2}{\partial \VECTOR{x}} \right) & = &
+\frac{\partial 2 \MATRIX{J}(\VECTOR{x})^{\transpose} \MATRIX{C} \left( \VECTOR{f}(\VECTOR{x})-\VECTOR{b}\right)}{\partial x_{n}} \\
+~ & = & 2 \frac{\partial \MATRIX{J}(\VECTOR{x})^{\transpose} }{\partial x_{n}} \MATRIX{C} \left( \VECTOR{f}(\VECTOR{x})-\VECTOR{b}\right)+
+2  \MATRIX{J}(\VECTOR{x})^{\transpose}  \MATRIX{C} \frac{\partial \left( \VECTOR{f}(\VECTOR{x})-\VECTOR{b}\right) }{\partial x_{n}}\\
+~ & = & 2 \frac{\partial \MATRIX{J}(\VECTOR{x})^{\transpose} }{\partial x_{n}} \MATRIX{C} \left( \VECTOR{f}(\VECTOR{x})-\VECTOR{b}\right)+
+2  \MATRIX{J}(\VECTOR{x})^{\transpose}  \MATRIX{C} \frac{\partial \VECTOR{f}(\VECTOR{x}) }{\partial x_{n}}\\
+\end{matrix}.
+\end{equation}
+Assim, usando a Definição \ref{def:deltahor} junto com a Eq. (\ref{eq:proof:der2fxbCfxb01})
+nos obtemos:
+\begin{equation}\label{eq:proof:der2fxbCfxb02}
+\frac{\partial }{\partial \VECTOR{x}^{\transpose}}\left( \frac{\partial ||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2}{\partial \VECTOR{x}} \right) =
+2 {\bigcup\limits_{n=1}^{ \rightarrow }}^{N}\left\{ \frac{\partial \MATRIX{J}(\VECTOR{x})^{\transpose} }{\partial x_{n}} \MATRIX{C} \left( \VECTOR{f}(\VECTOR{x})-\VECTOR{b}\right) \right\} +
+2  \MATRIX{J}(\VECTOR{x})^{\transpose}  \MATRIX{C} \frac{\partial \VECTOR{f}(\VECTOR{x}) }{\partial \VECTOR{x}^{\transpose}}
+\end{equation}
+\end{myproofT}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{myproofT}[Prova do Teorema \ref{theo:derfxbCfxbxqDxq}]\label{proof:theo:derfxbCfxbxqDxq}
+Dados,
+uma função $\VECTOR{f}:\mathbb{R}^{N} \rightarrow \mathbb{R}^{M}$, 
+uma matriz diagonal $\MATRIX{C}\in \mathbb{R}^{M\times M}$, 
+uma matriz diagonal $\MATRIX{D}\in \mathbb{R}^{N\times N}$, 
+um vetor coluna $\VECTOR{x}\in \mathbb{R}^{N}$, 
+um vetor coluna $\VECTOR{b}\in \mathbb{R}^{M}$,e 
+um vetor coluna $\VECTOR{q}\in \mathbb{R}^{N}$, 
+podemos expressar que:
+\begin{equation}\label{eq:proof:derfxbCfxbxqDxq1}
+\frac{\partial ||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2 +\alpha||\VECTOR{x}-\VECTOR{q}||_{\MATRIX{D}}^2}{\partial \VECTOR{x}} =
+\frac{\partial ||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2}{\partial \VECTOR{x}}+
+\alpha \frac{\partial ||\VECTOR{x}-\VECTOR{q}||_{\MATRIX{D}}^2}{\partial \VECTOR{x}}.
+\end{equation}
+Usando o Corolário \ref{coro:derAxbAxb2} na Eq. (\ref{eq:proof:derfxbCfxbxqDxq1})
+obtemos:
+\begin{equation}\label{eq:proof:derfxbCfxbxqDxq2}
+\frac{\partial ||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2 +\alpha||\VECTOR{x}-\VECTOR{q}||_{\MATRIX{D}}^2}{\partial \VECTOR{x}} =
+\frac{\partial ||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2}{\partial \VECTOR{x}}+
+\alpha 2 \MATRIX{D}\left(\VECTOR{x}-\VECTOR{q}\right).
+\end{equation}
+Usando o Teorema \ref{theo:derfxbCfxb} na Eq. (\ref{eq:proof:derfxbCfxbxqDxq2})
+obtemos:
+\begin{equation}\label{eq:proof:derfxbCfxbxqDxq3}
+\frac{\partial ||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2 +\alpha||\VECTOR{x}-\VECTOR{q}||_{\MATRIX{D}}^2}{\partial \VECTOR{x}} \approx
+2 \MATRIX{J}(\VECTOR{p})^{\transpose}\MATRIX{C}\left[\MATRIX{J}(\VECTOR{p})\left(\VECTOR{x} - \VECTOR{p}\right)-\left(\VECTOR{b}-\VECTOR{f}(\VECTOR{p})\right)\right]+
+2 \alpha \MATRIX{D}\left(\VECTOR{x}-\VECTOR{q}\right).
+\end{equation}
+\end{myproofT}
+%

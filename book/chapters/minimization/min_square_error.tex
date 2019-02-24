@@ -9,6 +9,9 @@ regularização de Tikhonov,
 problema inverso, 
 minimização do erro quadrático. 
 \end{remark}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Minimização de $||\MATRIX{A}\VECTOR{x}-\VECTOR{b}||_{\MATRIX{C}}^2$
 }
@@ -20,9 +23,10 @@ um vetor coluna $\VECTOR{b}\in \mathbb{R}^M$,
 uma matriz $\MATRIX{A} \in \mathbb{R}^{M\times N}$, 
 uma matriz diagonal $\MATRIX{C} \in \mathbb{R}^{M\times M}$, e 
 definida a Eq. (\ref{eq:minAxbCAxb1}),
-\begin{equation}\label{eq:minAxbCAxb1}
-e(\VECTOR{x})=||\MATRIX{A}\VECTOR{x}-\VECTOR{b}||_{\MATRIX{C}}^2.
-\end{equation}
+\begin{align}\label{eq:minAxbCAxb1}
+e(\VECTOR{x}) & = ||\MATRIX{A}\VECTOR{x}-\VECTOR{b}||_{\MATRIX{C}}^2 \\
+              & = (\MATRIX{A}\VECTOR{x}-\VECTOR{b})^{\transpose}\MATRIX{C}(\MATRIX{A}\VECTOR{x}-\VECTOR{b}).
+\end{align}
 Se desejamos ter o valor $\VECTOR{\hat{x}}$ que minimiza o escalar $e(\VECTOR{\hat{x}})$,
 devemos usar a Eq. (\ref{eq:minAxbCAxb2}),
 \begin{equation}\label{eq:minAxbCAxb2}
@@ -40,7 +44,9 @@ A demostração pode ser vista na Prova \ref{proof:theo:minAxbCAxb}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Minimização de $||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{\textcolor{blue}{Minimização de $||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2$}
 }
 
 \begin{theorem}[Solução iterativa]\label{theo:minfxbCfxb}
@@ -50,9 +56,10 @@ um vetor coluna $\VECTOR{b}\in \mathbb{R}^M$,
 uma função $\VECTOR{f}:\mathbb{R}^{N} \rightarrow \mathbb{R}^{M}$, 
 uma matriz diagonal $\MATRIX{C} \in \mathbb{R}^{M\times M}$, e 
 definida a Eq. (\ref{eq:minfxbCfxb1}),
-\begin{equation}\label{eq:minfxbCfxb1}
-e(\VECTOR{x})=||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2.
-\end{equation}
+\begin{align}\label{eq:minfxbCfxb1}
+e(\VECTOR{x}) & = ||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2 \\
+              & = (\VECTOR{f}(\VECTOR{x})-\VECTOR{b})^{\transpose}\MATRIX{C}(\VECTOR{f}(\VECTOR{x})-\VECTOR{b}).
+\end{align}
 Se desejamos ter o valor $\VECTOR{\hat{x}}$ que minimiza o escalar $e(\VECTOR{\hat{x}})$,
 este valor pode ser achado usando iterativamente a Eq. (\ref{eq:minfxbCfxb2}),
 \begin{equation}\label{eq:minfxbCfxb2}
@@ -73,13 +80,15 @@ de $e(\VECTOR{x})$ ou analisando a matriz hessiana de $e(\VECTOR{x})$ avaliada e
 A demostração pode ser vista na Prova \ref{proof:theo:minfxbCfxb}.
 \end{theorem}
 
-\index{Regularização! Regularização de Tikhonov}
+\index{Minimização, métodos!Regularização de Tikhonov}
 \index{Problema inverso!Não linear}
 \index{Minimização do erro quadrático!Não linear}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Minimização de $||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2+\alpha||\VECTOR{x}-\VECTOR{q}||_{\MATRIX{D}}^2$  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{\textcolor{blue}{Minimização de $||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2+\alpha||\VECTOR{x}-\VECTOR{q}||_{\MATRIX{D}}^2$}
 }
 
 \begin{theorem}[Solução iterativa]\label{theo:minfxbCfxbaxqaxq}
@@ -88,14 +97,15 @@ $\VECTOR{b}$ são vetores coluna de $M$ elementos, sendo $\VECTOR{b}$ uma consta
 $\MATRIX{C}$ uma matriz diagonal de $M \times M$ e 
 $\MATRIX{D}$ uma matriz diagonal de $N \times N$.
 Sim se deseja achar o valor $\VECTOR{\hat{x}}$ que minimiza o valor de $e(\VECTOR{x})$, visto na Eq. (\ref{eq:minfxbCfxbaxqaxq1}),
-\begin{equation}\label{eq:minfxbCfxbaxqaxq1}
-e(\VECTOR{x})=||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2+\alpha||\VECTOR{x}-\VECTOR{q}||_{\MATRIX{D}}^2,
-\end{equation}
+\begin{align}\label{eq:minfxbCfxbaxqaxq1}
+e(\VECTOR{x}) &=||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2+\alpha||\VECTOR{x}-\VECTOR{q}||_{\MATRIX{D}}^2\\
+              & = (\VECTOR{f}(\VECTOR{x})-\VECTOR{b})^{\transpose}\MATRIX{C}(\VECTOR{f}(\VECTOR{x})-\VECTOR{b})+\alpha(\VECTOR{x}-\VECTOR{q})^{\transpose}\MATRIX{D}(\VECTOR{x}-\VECTOR{q}),
+\end{align}
 devemos usar a seguinte equação iterativa,
 \begin{equation}\label{eq:minfxbCfxbaxqaxq2}
 \VECTOR{x}_{k+1}\leftarrow \VECTOR{x}_k+
 \left[ \MATRIX{J}(\VECTOR{x}_k)^{\transpose}\MATRIX{C} \MATRIX{J}(\VECTOR{x}_k) +\alpha\MATRIX{D} \right]^{-1}
- \left[\MATRIX{J}(\VECTOR{x}_k)^{\transpose}\MATRIX{C}\left[\VECTOR{b}-\VECTOR{f}(\VECTOR{x}_k)\right]-\alpha\MATRIX{D}\left[\VECTOR{x}_k-\VECTOR{q}\right]\right]
+ \left(\MATRIX{J}(\VECTOR{x}_k)^{\transpose}\MATRIX{C}\left[\VECTOR{b}-\VECTOR{f}(\VECTOR{x}_k)\right]-\alpha\MATRIX{D}\left[\VECTOR{x}_k-\VECTOR{q}\right]\right)
 \end{equation}
 Onde  $\MATRIX{J}(\VECTOR{x})$ é a matriz \hyperref[def:jacobian]{Jacobiana} \cite{Jacobian} de $\VECTOR{f}(\VECTOR{x})$.
 A busca iterativa é considerada falida quando 
@@ -111,13 +121,15 @@ de $e(\VECTOR{x})$ ou analisando a matriz hessiana de $e(\VECTOR{x})$ avaliada e
 A demostração pode ser vista na Prova \ref{proof:theo:minfxbCfxbaxqd}.
 \end{theorem} 
 
-\index{Regularização! Regularização de Tikhonov}
+\index{Minimização, métodos!Regularização de Tikhonov}
 \index{Problema inverso!Não linear}
-\index{Minimização do erro quadrático}
+\index{Minimização do erro quadrático!Não linear}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Minimização de $||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2+\alpha||\VECTOR{x}||_{\MATRIX{D}}^2$  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{\textcolor{blue}{Minimização de $||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2+\alpha||\VECTOR{x}||_{\MATRIX{D}}^2$}
 }
 
 \begin{theorem}[Solução iterativa]\label{theo:minfxbCfxbaxax}
@@ -126,14 +138,15 @@ $\VECTOR{b}$ são vetores coluna de $M$ elementos, sendo $\VECTOR{b}$ uma consta
 $\MATRIX{C}$ uma matriz diagonal de $M \times M$ e 
 $\MATRIX{D}$ uma matriz diagonal de $N \times N$.
 Sim se deseja achar o valor $\VECTOR{\hat{x}}$ que minimiza o valor de $e(\VECTOR{x})$, visto na Eq. (\ref{eq:minfxbCfxbaxax1}),
-\begin{equation}\label{eq:minfxbCfxbaxax1}
-e(\VECTOR{x})=||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2+\alpha||\VECTOR{x}||_{\MATRIX{D}}^2,
-\end{equation}
+\begin{align}\label{eq:minfxbCfxbaxax1}
+e(\VECTOR{x}) & =||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2+\alpha||\VECTOR{x}||_{\MATRIX{D}}^2\\
+              & = (\VECTOR{f}(\VECTOR{x})-\VECTOR{b})^{\transpose}\MATRIX{C}(\VECTOR{f}(\VECTOR{x})-\VECTOR{b})+\alpha\VECTOR{x}^{\transpose}\MATRIX{D}\VECTOR{x},
+\end{align}
 devemos usar a seguinte equação iterativa,
 \begin{equation}\label{eq:minfxbCfxbaxax2}
 \VECTOR{x}_{k+1}\leftarrow \VECTOR{x}_k+
 \left[ \MATRIX{J}(\VECTOR{x}_k)^{\transpose}\MATRIX{C} \MATRIX{J}(\VECTOR{x}_k) +\alpha\MATRIX{D} \right]^{-1}
- \left[\MATRIX{J}(\VECTOR{x}_k)^{\transpose}\MATRIX{C}\left(\VECTOR{b}-\VECTOR{f}(\VECTOR{x}_k)\right)-\alpha\MATRIX{D}\VECTOR{x}_k\right]
+ \left[\MATRIX{J}(\VECTOR{x}_k)^{\transpose}\MATRIX{C}\left\{\VECTOR{b}-\VECTOR{f}(\VECTOR{x}_k)\right\}-\alpha\MATRIX{D}\VECTOR{x}_k\right]
 \end{equation}
 Onde  $\MATRIX{J}(\VECTOR{x})$ é a matriz \hyperref[def:jacobian]{Jacobiana} \cite{Jacobian} de $\VECTOR{f}(\VECTOR{x})$.
 A busca iterativa é considerada falida quando 
@@ -149,13 +162,14 @@ de $e(\VECTOR{x})$ ou analisando a matriz hessiana de $e(\VECTOR{x})$ avaliada e
 A demostração pode ser vista na Prova \ref{proof:theo:minfxbCfxbaxd}.
 \end{theorem} 
 
-\index{Regularização! Regularização de Tikhonov}
+\index{Minimização, métodos!Regularização de Tikhonov}
 \index{Problema inverso!Não linear}
-\index{Minimização do erro quadrático}
-
+\index{Minimização do erro quadrático!Não linear}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Minimização de $||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2+\alpha||\VECTOR{x}-\VECTOR{x}_{last}||_{\MATRIX{D}}^2$  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{\textcolor{blue}{Minimização de $||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2+\alpha||\VECTOR{x}-\VECTOR{x}_{last}||_{\MATRIX{D}}^2$}
 }
 
 \begin{theorem}[Solução iterativa]\label{theo:minfxbCfxbaxoaxo}
@@ -172,7 +186,7 @@ devemos usar a seguinte equação iterativa,
 \begin{equation}\label{eq:minfxbCfxbaxoaxo2}
 \VECTOR{x}_{k+1}\leftarrow \VECTOR{x}_k+
 \left[ \MATRIX{J}(\VECTOR{x}_k)^{\transpose}\MATRIX{C} \MATRIX{J}(\VECTOR{x}_k) +\alpha\MATRIX{D} \right]^{-1}
- \left[\MATRIX{J}(\VECTOR{x}_k)^{\transpose}\MATRIX{C}\left\{\VECTOR{b}-\VECTOR{f}(\VECTOR{x}_k)\right] \right\}
+ \left[\MATRIX{J}(\VECTOR{x}_k)^{\transpose}\MATRIX{C}\left\{\VECTOR{b}-\VECTOR{f}(\VECTOR{x}_k)\right\}\right] 
 \end{equation}
 Onde  $\MATRIX{J}(\VECTOR{x})$ é a matriz \hyperref[def:jacobian]{Jacobiana} \cite{Jacobian} de $\VECTOR{f}(\VECTOR{x})$.
 A busca iterativa é considerada falida quando 
@@ -187,9 +201,9 @@ de $e(\VECTOR{x})$ ou analisando a matriz hessiana de $e(\VECTOR{x})$ avaliada e
 A demostração pode ser vista na Prova \ref{proof:theo:minfxbCfxbaxod}.
 \end{theorem} 
 
-\index{Regularização! Regularização de Tikhonov}
+\index{Minimização, métodos!Regularização de Tikhonov}
 \index{Problema inverso!Não linear}
-\index{Minimização do erro quadrático}
+\index{Minimização do erro quadrático!Não linear}
 
 
 \begin{comment}

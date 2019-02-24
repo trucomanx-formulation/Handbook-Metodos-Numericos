@@ -237,7 +237,7 @@
 \newtheorem{problemT}{Problema}[chapter]
 \newtheorem{exerciseT}{Exercise}[chapter]
 \theoremstyle{blacknumex}
-\newtheorem{exampleT}{Example}[chapter]
+\newtheorem{exampleT}{Exemplo}[chapter]
 \theoremstyle{blacknumbox}
 \newtheorem{vocabulary}{Vocabulary}[chapter]
 \newtheorem{definitionT}{Definição}[section]
@@ -245,6 +245,8 @@
 \newtheorem{myproofT}{Prova} [chapter]
 \theoremstyle{ocrenum}
 \newtheorem{propositionT}[dummy]{Proposição}
+\theoremstyle{ocrenum}
+\newtheorem{observationT}{Observação}[section]
 
 %----------------------------------------------------------------------------------------
 %	DEFINITION OF COLORED BOXES
@@ -344,6 +346,22 @@ rightmargin=0cm,
 linewidth=4pt,
 innerbottommargin=5pt]{cBox}
 
+% Definition box
+\newmdenv[skipabove=7pt,
+skipbelow=7pt,
+rightline=false,
+leftline=true,
+topline=false,
+bottomline=false,
+linecolor=ocre,
+innerleftmargin=5pt,
+innerrightmargin=5pt,
+innertopmargin=0pt,
+leftmargin=0cm,
+rightmargin=0cm,
+linewidth=4pt,
+innerbottommargin=0pt]{oBox}	
+
 % Creates an environment for each type of theorem and assigns it a theorem text style from the "Theorem Styles" section above and a colored box from above
 \newenvironment{theorem}{\begin{tBox}\begin{theoremeT}}{\end{theoremeT}\end{tBox}}
 \newenvironment{proposition}{\begin{ppBox}\begin{propositionT}}{\end{propositionT}\end{ppBox}}
@@ -352,6 +370,16 @@ innerbottommargin=5pt]{cBox}
 \newenvironment{definition}{\begin{dBox}\begin{definitionT}}{\end{definitionT}\end{dBox}}	
 \newenvironment{example}{\begin{exampleT}}{\hfill{\tiny\ensuremath{\blacksquare}}\end{exampleT}}		
 \newenvironment{corollary}{\begin{cBox}\begin{corollaryT}}{\end{corollaryT}\end{cBox}}	
+\newenvironment{observation}{\begin{oBox}\begin{observationT}}{\end{observationT}\end{oBox}}	
+
+%%% \usepackage{boiboites}
+%%% \definecolor{excolor}{RGB}{80,8,8} % Define the orange color used for highlighting throughout the book
+%%% \newboxedtheorem[boxcolor=excolor, 
+%%%                  background=excolor!15, 
+%%%                  titlebackground=excolor!5,
+%%%                  titleboxcolor = black]
+%%%                  {bexample}{Exemplo}{thm}
+
 
 %----------------------------------------------------------------------------------------
 %	REMARK ENVIRONMENT

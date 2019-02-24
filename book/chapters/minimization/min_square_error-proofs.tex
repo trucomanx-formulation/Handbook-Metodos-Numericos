@@ -13,7 +13,7 @@ definida a Eq. (\ref{eq:proof:minAxbCAxb0}),
 e(\VECTOR{x})=||\MATRIX{A}\VECTOR{x}-\VECTOR{b}||_{\MATRIX{C}}^2.
 \end{equation}
 Para achar o valor  $\VECTOR{\hat{x}}$ que gere o menor valor de $e(\VECTOR{\hat{x}})$, é aplicado
-o critério que um mínimo ou máximo pode ser achado quando 
+o critério que um ponto de inflexão pode ser achado quando 
 $\frac{\partial e(\VECTOR{\hat{x}})}{\partial \VECTOR{x} }=[0~ 0~ \hdots~ 0 ]^{\transpose}$.
 Assim, usando o Corolário \ref{coro:derAxbAxb2} podemos 
 rescrever esta igualdade como a Eq. (\ref{eq:proof:minAxbCAxb1}),
@@ -41,7 +41,7 @@ definida a Eq. (\ref{eq:proof:minfxbCfxb0}),
 e(\VECTOR{x})=||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2.
 \end{equation}
 Para achar o valor  $\VECTOR{\hat{x}}$ que gere o menor valor de $e(\VECTOR{\hat{x}})$, é aplicado
-o critério que um mínimo ou máximo pode ser achado quando 
+o critério que um ponto de inflexão pode ser achado quando 
 $\frac{\partial e(\VECTOR{\hat{x}})}{\partial \VECTOR{x} }=[0~ 0~ \hdots~ 0 ]^{\transpose}$.
 Assim, usando o Teorema \ref{theo:derfxbCfxb} podemos 
 rescrever esta igualdade como a Eq. (\ref{eq:proof:minfxbCfxb1}),
@@ -55,21 +55,22 @@ de modo que pode ser aproximado $\VECTOR{\hat{x}}$ como:
 \left[ \MATRIX{J}(\VECTOR{p})^{\transpose}\MATRIX{C} \MATRIX{J}(\VECTOR{p}) \right]^{-1}
 \MATRIX{J}(\VECTOR{p})^{\transpose}\MATRIX{C} \left(\VECTOR{b}-\VECTOR{f}(\VECTOR{p})\right).
 \end{equation}
-Assim, quanto mais próximo seja a $\VECTOR{\hat{x}}$ o valor escolhido $\VECTOR{p}$, 
-a Eq. (\ref{eq:proof:minfxbCfxb2}) fica mais próximo a uma igualdade. Por outro lado,
-a equação nos indica que dado um ponto  $\VECTOR{p}$ qualquer,
-$\left[ \MATRIX{J}(\VECTOR{p})^{\transpose}\MATRIX{C} \MATRIX{J}(\VECTOR{p}) \right]^{-1}$ 
-$\MATRIX{J}(\VECTOR{p})^{\transpose}\MATRIX{C}$ $\left(\VECTOR{b}-\VECTOR{f}(\VECTOR{p})\right)$
-é um ponto próximo de $\VECTOR{p}$  na direção de um mínimo ou máximo de $ e(\VECTOR{x})$.
+Assim, quanto mais próximo seja $\VECTOR{\hat{x}}$ ao valor escolhido $\VECTOR{p}$;
+a Eq. (\ref{eq:proof:minfxbCfxb2}) fica mais próximo a uma igualdade e
+$\left[ \MATRIX{J}(\VECTOR{p})^{\transpose}\MATRIX{C} \MATRIX{J}(\VECTOR{p}) \right]^{-1} \MATRIX{J}(\VECTOR{p})^{\transpose}\MATRIX{C} \left(\VECTOR{b}-\VECTOR{f}(\VECTOR{p})\right) \approx 0$. 
+Isto implica duas possibilidades, a primeira é que $\VECTOR{b} \approx \VECTOR{f}(\VECTOR{p})$,
+que é um mínimo absoluto de $e(\VECTOR{x})$,
+e a segunda que $\MATRIX{J}(\VECTOR{p}) \approx 0$
+
 Assim, um bom critério para procurar um mínimo ou máximo é seguir a seguinte 
 equação iterativa,
 \begin{equation}\label{eq:proof:minfxbCfxb3}
-\VECTOR{p}_{k+1} \leftarrow \VECTOR{p}_{k} +
-\left[ \MATRIX{J}(\VECTOR{p}_{k})^{\transpose}\MATRIX{C} \MATRIX{J}(\VECTOR{p}_{k}) \right]^{-1}
-\MATRIX{J}(\VECTOR{p}_{k})^{\transpose}\MATRIX{C} \left(\VECTOR{b}-\VECTOR{f}(\VECTOR{p}_{k})\right),
+\VECTOR{p}_{k} \leftarrow \VECTOR{p}_{k-1} +
+\left[ \MATRIX{J}(\VECTOR{p}_{k-1})^{\transpose}\MATRIX{C} \MATRIX{J}(\VECTOR{p}_{k-1}) \right]^{-1}
+\MATRIX{J}(\VECTOR{p}_{k-1})^{\transpose}\MATRIX{C} \left(\VECTOR{b}-\VECTOR{f}(\VECTOR{p}_{k-1})\right),
 \end{equation}
-iniciando desde um $\VECTOR{p}_{0}$ qualquer, ate que $\VECTOR{p}_{k}$ seja muito próximo a $\VECTOR{p}_{k+1}$,
-onde se declara que $\VECTOR{\hat{x}} \approx \VECTOR{p}_{k+1}$; porem deve ser corroborado
+iniciando desde um $\VECTOR{p}_{0}$ qualquer, ate que $\VECTOR{p}_{k}$ seja muito próximo a $\VECTOR{p}_{k-1}$,
+onde se declara que $\VECTOR{\hat{x}} \approx \VECTOR{p}_{k}$; porem deve ser corroborado
 que esse ponto tratasse de um máximo ou mínimo usando algum método, por exemplo estudando o comportamento 
 de $e(\VECTOR{x})$ ou analisando a matriz hessiana de $e(\VECTOR{x})$ avaliada em $\VECTOR{\hat{x}}$.
 \end{myproofT}
@@ -109,17 +110,19 @@ de modo que pode ser aproximado $\VECTOR{\hat{x}}$ como:
 Assim, quanto mais próximo seja a $\VECTOR{\hat{x}}$ o valor escolhido $\VECTOR{p}$, 
 a Eq. (\ref{eq:proof:minfxbCfxbaxqd2}) fica mais próximo a uma igualdade. Por outro lado,
 a equação nos indica que dado um ponto  $\VECTOR{p}$ qualquer,
-$\VECTOR{\hat{x}}$
+$\VECTOR{p} +
+\left[ \MATRIX{J}(\VECTOR{p})^{\transpose}\MATRIX{C} \MATRIX{J}(\VECTOR{p})+\alpha \MATRIX{D} \right]^{-1}
+\left\{ \MATRIX{J}(\VECTOR{p})^{\transpose}\MATRIX{C} \left[\VECTOR{b}-\VECTOR{f}(\VECTOR{p})\right]-\alpha\MATRIX{D}[\VECTOR{p}-\VECTOR{q}]\right\}$
 é um ponto próximo de $\VECTOR{p}$  na direção de um mínimo ou máximo de $ e(\VECTOR{x})$.
 Assim, um bom critério para procurar um mínimo ou máximo é seguir a seguinte 
 equação iterativa,
 \begin{equation}\label{eq:proof:minfxbCfxbaxqd3}
- \VECTOR{p}_{k+1} \leftarrow \VECTOR{p}_{k} +
-\left[ \MATRIX{J}(\VECTOR{p}_{k})^{\transpose}\MATRIX{C} \MATRIX{J}(\VECTOR{p}_{k})+\alpha \MATRIX{D} \right]^{-1}
-\left\{ \MATRIX{J}(\VECTOR{p}_{k})^{\transpose}\MATRIX{C} \left[\VECTOR{b}-\VECTOR{f}(\VECTOR{p}_{k})\right]-\alpha\MATRIX{D}[\VECTOR{p}_{k}-\VECTOR{q}]\right\},
+ \VECTOR{p}_{k} \leftarrow \VECTOR{p}_{k-1} +
+\left[ \MATRIX{J}(\VECTOR{p}_{k-1})^{\transpose}\MATRIX{C} \MATRIX{J}(\VECTOR{p}_{k-1})+\alpha \MATRIX{D} \right]^{-1}
+\left\{ \MATRIX{J}(\VECTOR{p}_{k-1})^{\transpose}\MATRIX{C} \left[\VECTOR{b}-\VECTOR{f}(\VECTOR{p}_{k-1})\right]-\alpha\MATRIX{D}[\VECTOR{p}_{k-1}-\VECTOR{q}]\right\},
 \end{equation}
-iniciando desde um $\VECTOR{p}_{0}$ qualquer, ate que $\VECTOR{p}_{k}$ seja muito próximo a $\VECTOR{p}_{k+1}$,
-onde se declara que $\VECTOR{\hat{x}} \approx \VECTOR{p}_{k+1}$; porem deve ser corroborado
+iniciando desde um $\VECTOR{p}_{0}$ qualquer, ate que $\VECTOR{p}_{k}$ seja muito próximo a $\VECTOR{p}_{k-1}$,
+onde se declara que $\VECTOR{\hat{x}} \approx \VECTOR{p}_{k}$; porem deve ser corroborado
 que esse ponto tratasse de um máximo ou mínimo usando algum método, por exemplo estudando o comportamento 
 de $e(\VECTOR{x})$ ou analisando a matriz hessiana de $e(\VECTOR{x})$ avaliada em $\VECTOR{\hat{x}}$.
 \end{myproofT}
@@ -145,12 +148,12 @@ Assim, usando a Prova \ref{proof:theo:minfxbCfxbaxqd} para o caso de $\VECTOR{q}
 um bom critério para procurar um mínimo ou máximo é seguir a seguinte 
 equação iterativa,
 \begin{equation}\label{eq:proof:minfxbCfxbaxd3}
- \VECTOR{p}_{k+1} \leftarrow \VECTOR{p}_{k} +
-\left[ \MATRIX{J}(\VECTOR{p}_{k})^{\transpose}\MATRIX{C} \MATRIX{J}(\VECTOR{p}_{k})+\alpha \MATRIX{D} \right]^{-1}
-\left\{ \MATRIX{J}(\VECTOR{p}_{k})^{\transpose}\MATRIX{C} \left[\VECTOR{b}-\VECTOR{f}(\VECTOR{p}_{k})\right]-\alpha\MATRIX{D}\VECTOR{p}_{k}\right\},
+ \VECTOR{p}_{k} \leftarrow \VECTOR{p}_{k-1} +
+\left[ \MATRIX{J}(\VECTOR{p}_{k-1})^{\transpose}\MATRIX{C} \MATRIX{J}(\VECTOR{p}_{k-1})+\alpha \MATRIX{D} \right]^{-1}
+\left\{ \MATRIX{J}(\VECTOR{p}_{k-1})^{\transpose}\MATRIX{C} \left[\VECTOR{b}-\VECTOR{f}(\VECTOR{p}_{k-1})\right]-\alpha\MATRIX{D}\VECTOR{p}_{k-1}\right\},
 \end{equation}
-iniciando desde um $\VECTOR{p}_{0}$ qualquer, ate que $\VECTOR{p}_{k}$ seja muito próximo a $\VECTOR{p}_{k+1}$,
-onde se declara que $\VECTOR{\hat{x}} \approx \VECTOR{p}_{k+1}$; porem deve ser corroborado
+iniciando desde um $\VECTOR{p}_{0}$ qualquer, ate que $\VECTOR{p}_{k}$ seja muito próximo a $\VECTOR{p}_{k-1}$,
+onde se declara que $\VECTOR{\hat{x}} \approx \VECTOR{p}_{k}$; porem deve ser corroborado
 que esse ponto tratasse de um máximo ou mínimo usando algum método, por exemplo estudando o comportamento 
 de $e(\VECTOR{x})$ ou analisando a matriz hessiana de $e(\VECTOR{x})$ avaliada em $\VECTOR{\hat{x}}$.
 \end{myproofT}
@@ -190,17 +193,19 @@ de modo que pode ser aproximado $\VECTOR{\hat{x}}$ como:
 Assim, quanto mais próximo seja a $\VECTOR{\hat{x}}$ o valor escolhido $\VECTOR{p}$, 
 a Eq. (\ref{eq:proof:minfxbCfxbaxod2}) fica mais próximo a uma igualdade. Por outro lado,
 a equação nos indica que dado um ponto  $\VECTOR{p}$ qualquer,
-$\VECTOR{\hat{x}}$
+$\VECTOR{p} +
+\left[ \MATRIX{J}(\VECTOR{p})^{\transpose}\MATRIX{C} \MATRIX{J}(\VECTOR{p})+\alpha \MATRIX{D} \right]^{-1}
+\left\{ \MATRIX{J}(\VECTOR{p})^{\transpose}\MATRIX{C} \left[\VECTOR{b}-\VECTOR{f}(\VECTOR{p})\right]-\alpha\MATRIX{D}[\VECTOR{p}-\VECTOR{x}_{last}]\right\}$
 é um ponto próximo de $\VECTOR{p}$  na direção de um mínimo ou máximo de $ e(\VECTOR{x})$.
 Assim, igualando $\VECTOR{p}_{k}=\VECTOR{x}_{last}$,  um bom critério para procurar um mínimo ou máximo é seguir a seguinte 
 equação iterativa,
 \begin{equation}\label{eq:proof:minfxbCfxbaxod3}
- \VECTOR{p}_{k+1} \leftarrow \VECTOR{p}_{k} +
-\left[ \MATRIX{J}(\VECTOR{p}_{k})^{\transpose}\MATRIX{C} \MATRIX{J}(\VECTOR{p}_{k})+\alpha \MATRIX{D} \right]^{-1}
-\left\{ \MATRIX{J}(\VECTOR{p}_{k})^{\transpose}\MATRIX{C} \left[\VECTOR{b}-\VECTOR{f}(\VECTOR{p}_{k})\right] \right\},
+ \VECTOR{p}_{k} \leftarrow \VECTOR{p}_{k-1} +
+\left[ \MATRIX{J}(\VECTOR{p}_{k-1})^{\transpose}\MATRIX{C} \MATRIX{J}(\VECTOR{p}_{k-1})+\alpha \MATRIX{D} \right]^{-1}
+\left\{ \MATRIX{J}(\VECTOR{p}_{k-1})^{\transpose}\MATRIX{C} \left[\VECTOR{b}-\VECTOR{f}(\VECTOR{p}_{k-1})\right] \right\},
 \end{equation}
-iniciando desde um $\VECTOR{p}_{0}$ qualquer, ate que $\VECTOR{p}_{k}$ seja muito próximo a $\VECTOR{p}_{k+1}$,
-onde se declara que $\VECTOR{\hat{x}} \approx \VECTOR{p}_{k+1}$; porem deve ser corroborado
+iniciando desde um $\VECTOR{p}_{0}$ qualquer, ate que $\VECTOR{p}_{k}$ seja muito próximo a $\VECTOR{p}_{k-1}$,
+onde se declara que $\VECTOR{\hat{x}} \approx \VECTOR{p}_{k}$; porem deve ser corroborado
 que esse ponto tratasse de um máximo ou mínimo usando algum método, por exemplo estudando o comportamento 
 de $e(\VECTOR{x})$ ou analisando a matriz hessiana de $e(\VECTOR{x})$ avaliada em $\VECTOR{\hat{x}}$.
 \end{myproofT}

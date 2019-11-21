@@ -1,0 +1,221 @@
+\chapterimage{chapter_head_2.pdf} % Chapter heading image
+
+\chapter{Minimização do erro em funções: $\mathbb{R}^{N}$ $\rightarrow$ $\mathbb{R}^{M}$}
+
+\begin{remark}
+Palavras chave: 
+Pseudo-inversa de Moore-Penrose,
+regularização de Tikhonov,
+problema inverso, 
+minimização do erro quadrático. 
+\end{remark}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Minimização de $||\MATRIX{A}\VECTOR{x}-\VECTOR{b}||_{\MATRIX{C}}^2$
+}
+
+\begin{theorem}\label{theo:minAxbCAxb}
+Dados,
+um vetor coluna $\VECTOR{x}\in \mathbb{R}^N$, 
+um vetor coluna $\VECTOR{b}\in \mathbb{R}^M$,  
+uma matriz $\MATRIX{A} \in \mathbb{R}^{M\times N}$, 
+uma matriz diagonal $\MATRIX{C} \in \mathbb{R}^{M\times M}$, e 
+definida a Eq. (\ref{eq:minAxbCAxb1}),
+\begin{align}\label{eq:minAxbCAxb1}
+e(\VECTOR{x}) & = ||\MATRIX{A}\VECTOR{x}-\VECTOR{b}||_{\MATRIX{C}}^2 \\
+              & = (\MATRIX{A}\VECTOR{x}-\VECTOR{b})^{\transpose}\MATRIX{C}(\MATRIX{A}\VECTOR{x}-\VECTOR{b}).
+\end{align}
+Se desejamos ter o valor $\VECTOR{\hat{x}}$ que minimiza o escalar $e(\VECTOR{\hat{x}})$,
+devemos usar\footnote{A demostração pode ser vista na Prova \ref{proof:theo:minAxbCAxb}.} a Eq. (\ref{eq:minAxbCAxb2}),
+\begin{equation}\label{eq:minAxbCAxb2}
+\VECTOR{\hat{x}} =
+\left[ \MATRIX{A}^{\transpose}\MATRIX{C} \MATRIX{A} \right]^{-1}\MATRIX{A}^{\transpose}\MATRIX{C}\VECTOR{b}.
+\end{equation}
+Assim, o mínimo existe só sim $\MATRIX{A}^{\transpose}\MATRIX{C} \MATRIX{A}$ tem inversa.
+\end{theorem}
+
+\index{Pseudo-inversa de Moore-Penrose}
+\index{Problema inverso!Linear}
+\index{Minimização do erro quadrático!Linear}
+
+\newpage
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{\textcolor{blue}{Minimização de $||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2$}
+}
+
+\begin{theorem}[Solução iterativa]\label{theo:minfxbCfxb}
+Dados,
+um vetor coluna $\VECTOR{x}\in \mathbb{R}^N$, 
+um vetor coluna $\VECTOR{b}\in \mathbb{R}^M$,  
+uma função $\VECTOR{f}:\mathbb{R}^{N} \rightarrow \mathbb{R}^{M}$, 
+uma matriz diagonal $\MATRIX{C} \in \mathbb{R}^{M\times M}$, e 
+definida a Eq. (\ref{eq:minfxbCfxb1}),
+\begin{align}\label{eq:minfxbCfxb1}
+e(\VECTOR{x}) & = ||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2 \\
+              & = (\VECTOR{f}(\VECTOR{x})-\VECTOR{b})^{\transpose}\MATRIX{C}(\VECTOR{f}(\VECTOR{x})-\VECTOR{b}).
+\end{align}
+Se desejamos ter o valor $\VECTOR{\hat{x}}$ que minimiza o escalar $e(\VECTOR{\hat{x}})$,
+este valor pode ser achado usando iterativamente a Eq. (\ref{eq:minfxbCfxb2}),
+\begin{equation}\label{eq:minfxbCfxb2}
+\VECTOR{x}_{k+1} \leftarrow \VECTOR{x}_k+
+\left[ \MATRIX{J}(\VECTOR{x}_k)^{\transpose}\MATRIX{C} \MATRIX{J}(\VECTOR{x}_k) \right]^{-1}
+ \MATRIX{J}(\VECTOR{x}_k)^{\transpose}\MATRIX{C}\left[\VECTOR{b}-\VECTOR{f}(\VECTOR{x}_k)\right]
+\end{equation}
+Onde  $\MATRIX{J}(\VECTOR{x})$ é a matriz \hyperref[def:jacobian]{Jacobiana} \cite{Jacobian} de $\VECTOR{f}(\VECTOR{x})$.
+A busca iterativa é considerada falida quando 
+$\MATRIX{J}(\VECTOR{x}_k)^{\transpose}$ $\MATRIX{C}$ $\MATRIX{J}(\VECTOR{x}_k)$
+não tem inversa.
+
+Assim, $\VECTOR{\hat{x}}$ pode ser achado iniciando a Eq. (\ref{eq:minfxbCfxb2}) desde um $\VECTOR{x}_{0}$ qualquer, ate que $\VECTOR{x}_{k}$ seja muito próximo a $\VECTOR{x}_{k+1}$,
+onde se declara que $\VECTOR{\hat{x}} \approx \VECTOR{x}_{k+1}$; porem deve ser corroborado
+que esse ponto tratasse de um máximo ou mínimo usando algum método, por exemplo estudando o comportamento 
+de $e(\VECTOR{x})$ ou analisando a matriz hessiana de $e(\VECTOR{x})$ avaliada em $\VECTOR{\hat{x}}$.
+
+A demostração pode ser vista na Prova \ref{proof:theo:minfxbCfxb}.
+\end{theorem}
+
+\index{Minimização, métodos!Regularização de Tikhonov}
+\index{Problema inverso!Não linear}
+\index{Minimização do erro quadrático!Não linear}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{\textcolor{blue}{Minimização de $||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2+\alpha||\VECTOR{x}-\VECTOR{q}||_{\MATRIX{D}}^2$}
+}
+
+\begin{theorem}[Solução iterativa]\label{theo:minfxbCfxbaxqaxq}
+Sabendo que, $\VECTOR{x}$ e $\VECTOR{q}$ são vetores coluna com $N$ elementos, sendo $\VECTOR{q}$ uma constante, $\VECTOR{f}(\VECTOR{x})$ e 
+$\VECTOR{b}$ são vetores coluna de $M$ elementos, sendo $\VECTOR{b}$ uma constante,
+$\MATRIX{C}$ uma matriz diagonal de $M \times M$ e 
+$\MATRIX{D}$ uma matriz diagonal de $N \times N$.
+Sim se deseja achar o valor $\VECTOR{\hat{x}}$ que minimiza o valor de $e(\VECTOR{x})$, visto na Eq. (\ref{eq:minfxbCfxbaxqaxq1}),
+\begin{align}\label{eq:minfxbCfxbaxqaxq1}
+e(\VECTOR{x}) &=||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2+\alpha||\VECTOR{x}-\VECTOR{q}||_{\MATRIX{D}}^2\\
+              & = (\VECTOR{f}(\VECTOR{x})-\VECTOR{b})^{\transpose}\MATRIX{C}(\VECTOR{f}(\VECTOR{x})-\VECTOR{b})+\alpha(\VECTOR{x}-\VECTOR{q})^{\transpose}\MATRIX{D}(\VECTOR{x}-\VECTOR{q}),
+\end{align}
+devemos usar a seguinte equação iterativa,
+\begin{equation}\label{eq:minfxbCfxbaxqaxq2}
+\VECTOR{x}_{k+1}\leftarrow \VECTOR{x}_k+
+\left[ \MATRIX{J}(\VECTOR{x}_k)^{\transpose}\MATRIX{C} \MATRIX{J}(\VECTOR{x}_k) +\alpha\MATRIX{D} \right]^{-1}
+ \left(\MATRIX{J}(\VECTOR{x}_k)^{\transpose}\MATRIX{C}\left[\VECTOR{b}-\VECTOR{f}(\VECTOR{x}_k)\right]-\alpha\MATRIX{D}\left[\VECTOR{x}_k-\VECTOR{q}\right]\right)
+\end{equation}
+Onde  $\MATRIX{J}(\VECTOR{x})$ é a matriz \hyperref[def:jacobian]{Jacobiana} \cite{Jacobian} de $\VECTOR{f}(\VECTOR{x})$.
+A busca iterativa é considerada falida quando 
+$\MATRIX{J}(\VECTOR{x}_k)^{\transpose}\MATRIX{C} \MATRIX{J}(\VECTOR{x}_k) +\alpha\MATRIX{D}$
+não tem inversa.
+
+
+Assim, $\VECTOR{\hat{x}}$ pode ser achado iniciando a Eq. (\ref{eq:minfxbCfxbaxqaxq2}) desde um $\VECTOR{x}_{0}$ qualquer, ate que $\VECTOR{x}_{k}$ seja muito próximo a $\VECTOR{x}_{k+1}$,
+onde se declara que $\VECTOR{\hat{x}} \approx \VECTOR{x}_{k+1}$; porem deve ser corroborado
+que esse ponto tratasse de um máximo ou mínimo usando algum método, por exemplo estudando o comportamento 
+de $e(\VECTOR{x})$ ou analisando a matriz hessiana de $e(\VECTOR{x})$ avaliada em $\VECTOR{\hat{x}}$.
+
+A demostração pode ser vista na Prova \ref{proof:theo:minfxbCfxbaxqd}.
+\end{theorem} 
+
+\index{Minimização, métodos!Regularização de Tikhonov}
+\index{Problema inverso!Não linear}
+\index{Minimização do erro quadrático!Não linear}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{\textcolor{blue}{Minimização de $||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2+\alpha||\VECTOR{x}||_{\MATRIX{D}}^2$}
+}
+
+\begin{theorem}[Solução iterativa]\label{theo:minfxbCfxbaxax}
+Sabendo que, $\VECTOR{x}$ é um vetor com $N$ elementos, $\VECTOR{f}(\VECTOR{x})$ e 
+$\VECTOR{b}$ são vetores coluna de $M$ elementos, sendo $\VECTOR{b}$ uma constante,
+$\MATRIX{C}$ uma matriz diagonal de $M \times M$ e 
+$\MATRIX{D}$ uma matriz diagonal de $N \times N$.
+Sim se deseja achar o valor $\VECTOR{\hat{x}}$ que minimiza o valor de $e(\VECTOR{x})$, visto na Eq. (\ref{eq:minfxbCfxbaxax1}),
+\begin{align}\label{eq:minfxbCfxbaxax1}
+e(\VECTOR{x}) & =||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2+\alpha||\VECTOR{x}||_{\MATRIX{D}}^2\\
+              & = (\VECTOR{f}(\VECTOR{x})-\VECTOR{b})^{\transpose}\MATRIX{C}(\VECTOR{f}(\VECTOR{x})-\VECTOR{b})+\alpha\VECTOR{x}^{\transpose}\MATRIX{D}\VECTOR{x},
+\end{align}
+devemos usar a seguinte equação iterativa,
+\begin{equation}\label{eq:minfxbCfxbaxax2}
+\VECTOR{x}_{k+1}\leftarrow \VECTOR{x}_k+
+\left[ \MATRIX{J}(\VECTOR{x}_k)^{\transpose}\MATRIX{C} \MATRIX{J}(\VECTOR{x}_k) +\alpha\MATRIX{D} \right]^{-1}
+ \left[\MATRIX{J}(\VECTOR{x}_k)^{\transpose}\MATRIX{C}\left\{\VECTOR{b}-\VECTOR{f}(\VECTOR{x}_k)\right\}-\alpha\MATRIX{D}\VECTOR{x}_k\right]
+\end{equation}
+Onde  $\MATRIX{J}(\VECTOR{x})$ é a matriz \hyperref[def:jacobian]{Jacobiana} \cite{Jacobian} de $\VECTOR{f}(\VECTOR{x})$.
+A busca iterativa é considerada falida quando 
+$\MATRIX{J}(\VECTOR{x}_k)^{\transpose}\MATRIX{C} \MATRIX{J}(\VECTOR{x}_k) +\alpha\MATRIX{D}$
+não tem inversa.
+
+
+Assim, $\VECTOR{\hat{x}}$ pode ser achado iniciando a Eq. (\ref{eq:minfxbCfxbaxax2}) desde um $\VECTOR{x}_{0}$ qualquer, ate que $\VECTOR{x}_{k}$ seja muito próximo a $\VECTOR{x}_{k+1}$,
+onde se declara que $\VECTOR{\hat{x}} \approx \VECTOR{x}_{k+1}$; porem deve ser corroborado
+que esse ponto tratasse de um máximo ou mínimo usando algum método, por exemplo estudando o comportamento 
+de $e(\VECTOR{x})$ ou analisando a matriz hessiana de $e(\VECTOR{x})$ avaliada em $\VECTOR{\hat{x}}$.
+
+A demostração pode ser vista na Prova \ref{proof:theo:minfxbCfxbaxd}.
+\end{theorem} 
+
+\index{Minimização, métodos!Regularização de Tikhonov}
+\index{Problema inverso!Não linear}
+\index{Minimização do erro quadrático!Não linear}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{\textcolor{blue}{Minimização de $||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2+\alpha||\VECTOR{x}-\VECTOR{x}_{last}||_{\MATRIX{D}}^2$}
+}
+
+\begin{theorem}[Solução iterativa]\label{theo:minfxbCfxbaxoaxo}
+Sabendo que, $\VECTOR{x}$ e $\VECTOR{x}_{last}$ são vetores coluna com $N$ elementos, 
+sendo $\VECTOR{x}_{last}$ uma constante que representa o ultimo valor de $\VECTOR{x}$ obtido iterativamente, $\VECTOR{f}(\VECTOR{x})$ e 
+$\VECTOR{b}$ são vetores coluna de $M$ elementos, sendo $\VECTOR{b}$ uma constante,
+$\MATRIX{C}$ uma matriz diagonal de $M \times M$ e 
+$\MATRIX{D}$ uma matriz diagonal de $N \times N$.
+Sim se deseja achar o valor $\VECTOR{\hat{x}}$ que minimiza o valor de $e(\VECTOR{x})$, visto na Eq. (\ref{eq:minfxbCfxbaxoaxo1}),
+\begin{equation}\label{eq:minfxbCfxbaxoaxo1}
+e(\VECTOR{x})=||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2+\alpha||\VECTOR{x}-\VECTOR{x}_{last}||_{\MATRIX{D}}^2,
+\end{equation}
+devemos usar a seguinte equação iterativa,
+\begin{equation}\label{eq:minfxbCfxbaxoaxo2}
+\VECTOR{x}_{k+1}\leftarrow \VECTOR{x}_k+
+\left[ \MATRIX{J}(\VECTOR{x}_k)^{\transpose}\MATRIX{C} \MATRIX{J}(\VECTOR{x}_k) +\alpha\MATRIX{D} \right]^{-1}
+ \left[\MATRIX{J}(\VECTOR{x}_k)^{\transpose}\MATRIX{C}\left\{\VECTOR{b}-\VECTOR{f}(\VECTOR{x}_k)\right\}\right] 
+\end{equation}
+Onde  $\MATRIX{J}(\VECTOR{x})$ é a matriz \hyperref[def:jacobian]{Jacobiana} \cite{Jacobian} de $\VECTOR{f}(\VECTOR{x})$.
+A busca iterativa é considerada falida quando 
+$\MATRIX{J}(\VECTOR{x}_k)^{\transpose}\MATRIX{C} \MATRIX{J}(\VECTOR{x}_k) +\alpha\MATRIX{D}$
+não tem inversa.
+
+Assim, $\VECTOR{\hat{x}}$ pode ser achado iniciando a Eq. (\ref{eq:minfxbCfxbaxoaxo2}) desde um $\VECTOR{x}_{0}$ qualquer, ate que $\VECTOR{x}_{k}$ seja muito próximo a $\VECTOR{x}_{k+1}$,
+onde se declara que $\VECTOR{\hat{x}} \approx \VECTOR{x}_{k+1}$; porem deve ser corroborado
+que esse ponto tratasse de um máximo ou mínimo usando algum método, por exemplo estudando o comportamento 
+de $e(\VECTOR{x})$ ou analisando a matriz hessiana de $e(\VECTOR{x})$ avaliada em $\VECTOR{\hat{x}}$.
+
+A demostração pode ser vista na Prova \ref{proof:theo:minfxbCfxbaxod}.
+\end{theorem} 
+
+\index{Minimização, métodos!Regularização de Tikhonov}
+\index{Problema inverso!Não linear}
+\index{Minimização do erro quadrático!Não linear}
+
+
+\begin{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Minimização de $\frac{||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||^2}{||\VECTOR{b}||^2}$
+$+\alpha\frac{||\VECTOR{x}-\VECTOR{q}||^2}{||\VECTOR{q}||^2}$  
+}
+\textcolor{red}{Inventado por mi ..., creo.}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Minimização de $||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{B}^{-2}}^2$
+$+\alpha||\VECTOR{x}-\VECTOR{q}||_{\MATRIX{Q}^{-2}}^2$  
+}
+\textcolor{red}{Inventado por mi ..., creo Nenhun valor de $\VECTOR{b}$ ou $\VECTOR{q}$ pode ser zero.}
+\end{comment}
+

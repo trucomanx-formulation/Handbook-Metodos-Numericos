@@ -1,14 +1,19 @@
 #!/bin/bash
-
-pdflatex main
-makeindex main.idx -s StyleInd.ist
-biber main
-pdflatex main
-pdflatex main x 2
+#pdflatex -interaction=nonstopmode cover.tex
+#pdflatex -interaction=nonstopmode cover.tex
+#pdflatex -interaction=nonstopmode cover.tex
 
 
-mv -f main.pdf metodos.pdf
+#for VARIABLE in 1 # 2 ##habilitar para corregir paginas glosario
+#do
+	pdflatex -shell-escape main
+	makeindex main.idx -s StyleInd.ist
+	biber main
+	pdflatex -shell-escape main
+	makeindex main.idx -s StyleInd.ist
+	pdflatex -shell-escape main x 2
+#done
+
+mv -f main.pdf samba-gafiera.pdf
 
 ./clean.sh
-
-

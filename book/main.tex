@@ -41,142 +41,93 @@
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
-\documentclass[12pt,fleqn]{book} % Default font size and left-justified equations
+\documentclass[12pt]{extbook} % Default font size and left-justified equations
 
-\usepackage{subcaption}
+\usepackage{float}% para ter [H]
+\usepackage{fancyvrb}
+
 %----------------------------------------------------------------------------------------
-\usepackage{bbold}%% \$\mathbb{abc}\$
+%	DATOS DEL LIBRO
+%----------------------------------------------------------------------------------------
+\newcommand{\mytitle}[0]{ M\'etodos num\'ericos }
+\newcommand{\mysubtitle}[0]{ Estudo de problemas inversos}
+\newcommand{\myauthor}[0]{ Fernando Pujaico Rivera}
+%----------------------------------------------------------------------------------------
+\newcommand{\imprimirlocal}[0]{Brasil}
+\newcommand{\imprimiryear}[0]{XXXXXXXXXXX}
+\newcommand{\imprimirdata}[0]{9 de abril do \imprimiryear}
+\newcommand{\imprimirtipotrabalho}[0]{Bibliografia}
+\newcommand{\imprimirsize}[0]{16x30cm}
+\newcommand{\imprimirisbn}[0]{XXXXXXXXXXX}
+\newcommand{\imprimireditora}[0]{Editora XXXXXXXXXXX}
+%----------------------------------------------------------------------------------------
+\newcommand{\ImprimirLinkHomePageLivro}[0]{\url{http://XXXXXXXXXXX.com}}
+\newcommand{\ImprimirLinkCompraLivroImpresso}[0]{\url{http://XXXXXXXXXXX.com/comprarfisico/}}
+\newcommand{\ImprimirLinkCompraLivroDigital}[0]{\url{http://XXXXXXXXXXX.com/comprardigital/}}
+%----------------------------------------------------------------------------------------
+\newcommand{\ImprimirEmail}[0]{ \href{mailto:fernando.pujaico.rivera@gmail.com}{fernando.pujaico.rivera@gmail.com}}
+%----------------------------------------------------------------------------------------
 
-\usepackage{comment}
+\newcommand{\AnoLivro}[0]{2019}%% Ano da primeira edição, usado para ser remplazado po ATUALMENTE
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \usepackage{draftwatermark}
-% \SetWatermarkText{Preview}
-% \SetWatermarkColor[gray]{0.95}
-% \SetWatermarkScale{1}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%----------------------------------------------------------------------------------------
 
+\newcommand{\footwork}[0]{jogo de p\'{e}s}
+\newcommand{\Footwork}[0]{Jogo de p\'{e}s}
+\newcommand{\Variante}[0]{Variante}
+\newcommand{\workboxsize}[0]{1.0\textwidth}
+\newcommand{\bodycontrol}[0]{control corporal}
+\newcommand{\Bodycontrol}[0]{Control corporal}
+\newcommand{\bodyisolation}[0]{dissocia\c{c}\~{a}o corporal}
+\newcommand{\Bodyisolation}[0]{Dissocia\c{c}\~{a}o corporal}
+\newcommand{\bodyboxsize}[0]{0.75\textwidth}
 
-\input{structure} % Insert the commands.tex file which contains the majority of the structure behind the template
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Modificado por Fernando Pujaico Rivera
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\usepackage[bottom]{footmisc}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Para \singlespacing 
-\usepackage{setspace}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Par diferentes modelos de caption.
-\usepackage{caption}
-\usepackage{subcaption}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% glossario
-\usepackage{nomencl}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Link a referencia
-\usepackage{hyperref}
-\hypersetup{
-   bookmarks=true,          % show bookmarks bar?
-   pdftoolbar=true,         % show Acrobat’s toolbar?
-   pdfmenubar=true,         % show Acrobat’s menu?
-   pdffitwindow=false,      % window fit to page when opened
-   pdfstartview={FitH},     % fits the width of the page to the window
-   colorlinks=true,         % false: boxed links; true: colored links
-   linkcolor=black,         % color of internal links (change box color with linkbordercolor)
-   %citecolor=green,        % color of links to bibliography
-   %filecolor=magenta,      % color of file links
-   %urlcolor=cyan           % color of external links
-}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Defino algunos colores.
-\usepackage{color}
+%----------------------------------------------------------------------------------------
+%	XCOLOR
+%----------------------------------------------------------------------------------------
+\usepackage[dvipsnames*,svgnames]{xcolor}
+\definecolor{colorlowgray}{RGB}{240,240,240}
+\definecolor{colorsystemdefault}{RGB}{16,81,15} % Define the color used for highlighting throughout the book
+\definecolor{colorsystemdefaultdkred}{RGB}{98,32,6} % Define the color used for highlighting throughout the book
+\definecolor{colormylink}{RGB}{16,120,15} % Define the 
 \definecolor{dkred}{rgb}{0.6,0,0}
-\definecolor{dkgreen}{rgb}{0,0.6,0}
-\definecolor{dkblue}{rgb}{0,0,0.6}
-\definecolor{mygray}{rgb}{0.5,0.5,0.5}
-\definecolor{mylowgray}{rgb}{0.9,0.9,0.9}
-\definecolor{myverylowgray}{rgb}{0.95,0.95,0.95}
-\definecolor{mymauve}{rgb}{0.58,0,0.82}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Para \lstset e insertar codigo
-\usepackage{listings}
-\lstset{%% configuro listings
-  frame=tb,
-  language=Octave,%linguagem por defeito
-  captionpos=b,
-  %
-  aboveskip=3mm,
-  belowskip=3mm,
-  %backgroundcolor=\color{myverylowgray},
-  showstringspaces=false,
-  columns=flexible,
-  basicstyle={\small\ttfamily},
-  %
-  numbers=none,
-  numberstyle=\tiny\color{mygray},
-  %
-  breaklines=true,
-  breakatwhitespace=true,
-  tabsize=4
-}
 
-\lstdefinelanguage{OctaveMatlab}{%
-  language=Octave,% Linguagem de base
-  %
-  classoffset=0,
-  otherkeywords={..,;,=,<,>,<=,=>,==},
-  keywordstyle=\color{blue},
-  %  
-  classoffset=1,
-    morekeywords={datapack,datacut,datapack_to_gif,
-		  thsp,thsp_line,thsp_random,thsp_gaussian,
-		  coom,
-		  pmfad,pmfrd,
-		  inertiamoment,
-		  avd,avd_from_data,
-		  rvd,
-		  fujii,gendiff,stdcont,
-		  graphim,graphavd,graphrvd,graphptd,graphkurt,graphskew,
-		  hbpmf,threshold2d,stscorr},
-    keywordstyle=\color{dkred},
-  classoffset=0,
-  %
-  commentstyle=\color{dkgreen},
-  morecomment = [l][\itshape\color{purple!40!black}]{\%},
-  %
-  stringstyle=\color{mymauve},
-}
+%\definecolor{fboxbackcolor}{RGB}{249,238,241}
+%\definecolor{fboxfrontcolor}{RGB}{36,21,47}
+\colorlet{fboxbackcolor}{colorsystemdefault!40!dkred}
+\colorlet{fboxfrontcolor}{colorsystemdefault!40!dkred}
 
-\lstdefinestyle{definefunc}{%
-  backgroundcolor=\color{mylowgray},
-}
+%----------------------------------------------------------------------------------------
+%	COLOR
+%----------------------------------------------------------------------------------------
+\usepackage{color}
+\definecolor{colorlowred}{rgb}{0.98,0.88,0.82}
+%\definecolor{colordarkgray}{rgb}{0.5,0.5,0.5}
+%\definecolor{colormauve}{rgb}{0.58,0,0.82}
 
-\lstdefinestyle{definecode}{%
-  backgroundcolor=\color{myverylowgray},
-}
-%%%% \lstset{language=OctaveMatlab,style=definecode}%orden importa
-%%%% \begin{lstlisting}
-%%%%  cd directory
-%%%%  ls
-%%%% \end{lstlisting}
+%----------------------------------------------------------------------------------------
+%----------------------------------------------------------------------------------------
+%----------------------------------------------------------------------------------------
+\input{formato-head} % paquetes usados con macros para la escrita
+\input{structure} % el estilo visual do livro
+\input{formato-macros} % las macros compuestas usadas para la escrita
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Para a criação do Glossário
+
+%-----------------------------------------------------------------------------------------
+
+\hyphenation{sam-ba}
+\hyphenation{Har-wood}
+\hyphenation{mo-vi-men-tar}
+\hyphenation{mo-vi-men-tar-nos}
+
+%----------------------------------------------------------------------------------------
+% Para a criação do Glossário
+%----------------------------------------------------------------------------------------
 \makenomenclature
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand*{\bibfont}{\footnotesize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -186,112 +137,40 @@
 %----------------------------------------------------------------------------------------
 %	TITLE PAGE
 %----------------------------------------------------------------------------------------
-
-\begingroup
-\thispagestyle{empty}
-\begin{tikzpicture}[remember picture,overlay]
-\coordinate [below=12cm] (midpoint) at (current page.north);
-\node at (current page.north west)
-{\begin{tikzpicture}[remember picture,overlay]
-\node[anchor=north west,inner sep=0pt] at (0,0) {\includegraphics[width=\paperwidth]{background}}; % Background image
-\draw[anchor=north] (midpoint) node 
-[fill=ocre!30!white,fill opacity=0.6,text opacity=1,inner sep=1cm]
-{\Huge\centering\bfseries\sffamily\parbox[c][][t]{\paperwidth}
-{\centering Métodos numéricos\\[15pt] % Book title
-{\Large Handbook}\\[20pt] % Subtitle
-{\huge Fernando Pujaico Rivera}}}; % Author name
-\end{tikzpicture}};
-\end{tikzpicture}
-\vfill
-\endgroup
+\input{preliminares/titlepage}
 
 %----------------------------------------------------------------------------------------
 %	COPYRIGHT PAGE
 %----------------------------------------------------------------------------------------
-
-\newpage
-~\vfill
-\thispagestyle{empty}
-
-\noindent Copyright \copyright\ 2019 Fernando Pujaico Rivera\\ % Copyright notice
-
-\noindent \textsc{Publicado por Virtual Books}\\ % Publisher
-
-\noindent \textsc{book-website.com}\\ % URL
-
-\noindent Esta obra está licenciada com uma Licença Creative Commons 
-Atribuição-NãoComercial-CompartilhaIgual 4.0 Internacional. 
-Não é possível usar este arquivo excepto em conformidade com a Licença. 
-Pode obter uma copia de la Licença em
-\url{http://creativecommons.org/licenses/by-nc-sa/4.0/}.\\ % License information
-
-\noindent \textit{Primeira impressão , Março 2019} % Printing/edition date
-
+\input{preliminares/copyright}
 
 %----------------------------------------------------------------------------------------
 %	DEDICATORIA
 %----------------------------------------------------------------------------------------
-
-\include{dedicatoria} 
-
+\include{preliminares/dedicatoria} 
 
 %----------------------------------------------------------------------------------------
 %	Acknowledgements
 %----------------------------------------------------------------------------------------
+\include{preliminares/acknowledgements} 
 
-\include{acknowledgements} 
-
+%----------------------------------------------------------------------------------------
+%	PATROCINIO PAGE
+%----------------------------------------------------------------------------------------
+\input{preliminares/patrocinio}
 
 %----------------------------------------------------------------------------------------
 %	My macros
 %----------------------------------------------------------------------------------------
 \input{mymacros}
 
-
 %----------------------------------------------------------------------------------------
 %	TABLE OF CONTENTS
 %----------------------------------------------------------------------------------------
-
 \chapterimage{chapter_head_1.pdf} % Table of contents heading image
-
 \pagestyle{empty} % No headers
-
-\renewcommand*\contentsname{Conteúdo}
 \tableofcontents % Print the table of contents itself
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Lista de figuras (gerada automaticamente)
-\cleardoublepage
-\renewcommand*\listfigurename{Lista de figuras}
-%\addcontentsline{toc}{chapter}{Lista de Figuras}
-\listoffigures
-
-%% Lista de tabelas (gerada automaticamente)
-\cleardoublepage
-%\addcontentsline{toc}{chapter}{Lista de Tablas}
-\renewcommand*\listtablename{Lista de tabelas}
-\listoftables
-
-%% Glossário (gerado automaticamente)
-\cleardoublepage
-%\renewcommand{\nomname}{Glossary}
-%\addcontentsline{toc}{chapter}{\nomname}
-%\markboth{GLOSSARY}{GLOSSARY}
-\printnomenclature
-
-%%% Lista de Simbolos (gerada manualmente)
-\cleardoublepage
-\addcontentsline{toc}{chapter}{Lista de símbolos}
-%%\markboth{LIST OF SYMBOLS}{LIST OF SYMBOLS}
-\include{simbolos}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
 \cleardoublepage % Forces the first chapter to start on an odd page so it's on the right
-
 \pagestyle{fancy} % Print headers again
 
 %----------------------------------------------------------------------------------------
@@ -334,20 +213,29 @@ Pode obter uma copia de la Licença em
 \include{chapters/inverso-mapeamento/mapeamento}
 
 %----------------------------------------------------------------------------------------
+%----------------------------------------------------------------------------------------
+%----------------------------------------------------------------------------------------
+%	Apendice
+%----------------------------------------------------------------------------------------
+%\part{Apendice}
+
+
+%----------------------------------------------------------------------------------------
 %	BIBLIOGRAPHY
 %----------------------------------------------------------------------------------------
+%----------------------------------------------------------------------------------------
+%----------------------------------------------------------------------------------------
+%----------------------------------------------------------------------------------------
+%	PART
+%----------------------------------------------------------------------------------------
+\part{Referencias}
 
 \chapter*{Bibliografia}
-\addcontentsline{toc}{chapter}{\textcolor{ocre}{Bibliography}}
-\section*{Miscelânea}
-\addcontentsline{toc}{section}{Miscelânea}
-\printbibliography[heading=bibempty,type=misc]
-\section*{Livros}
-\addcontentsline{toc}{section}{Livros}
-\printbibliography[heading=bibempty,type=book]
-\section*{Artigos}
-\addcontentsline{toc}{section}{Artigos}
-\printbibliography[heading=bibempty,type=article]
+\addcontentsline{toc}{chapter}{\textcolor{colorsystemdefault}{Bibliography}}
+\printbibliography[heading=bibempty]
+
+
+
 
 %----------------------------------------------------------------------------------------
 %	INDEX
@@ -356,7 +244,7 @@ Pode obter uma copia de la Licença em
 \cleardoublepage
 \phantomsection
 \setlength{\columnsep}{0.75cm}
-\addcontentsline{toc}{chapter}{\textcolor{ocre}{Index}}
+\addcontentsline{toc}{chapter}{\textcolor{colorsystemdefault}{Index}}
 \printindex
 
 %----------------------------------------------------------------------------------------

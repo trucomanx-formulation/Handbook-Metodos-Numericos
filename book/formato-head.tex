@@ -1,0 +1,138 @@
+
+
+%----------------------------------------------------------------------------------------
+%	VARIOUS REQUIRED PACKAGES AND CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\usepackage[top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm,headsep=10pt,a4paper]{geometry} % Page margins
+
+\usepackage{graphicx} % Required for including pictures
+\graphicspath{{pictures/}} % Specifies the directory where pictures are stored
+
+\usepackage{lipsum} % Inserts dummy text
+
+\usepackage[brazil]{babel}
+%\usepackage[english]{babel} % English language/hyphenation
+
+%----------------------------------------------------------------------------------------
+%	Footnote
+%----------------------------------------------------------------------------------------
+\usepackage{scrextend} %multiple reference
+
+%----------------------------------------------------------------------------------------
+% Page counter
+%----------------------------------------------------------------------------------------
+\usepackage{lastpage}
+
+%----------------------------------------------------------------------------------------
+% GLOSSARIO
+%----------------------------------------------------------------------------------------
+\usepackage{nomencl}
+
+
+%----------------------------------------------------------------------------------------
+% Par diferentes modelos de caption.
+%----------------------------------------------------------------------------------------
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{wrapfig}
+
+%----------------------------------------------------------------------------------------
+% Para \singlespacing 
+%----------------------------------------------------------------------------------------
+\usepackage{setspace}
+
+%----------------------------------------------------------------------------------------
+% Para 
+% \begin{inparaenum}
+% \item
+% \end{inparaenum}
+% parecido a timeze pero horizontal 
+%----------------------------------------------------------------------------------------
+
+\usepackage{paralist}
+
+%----------------------------------------------------------------------------------------
+% ROTATION FIGURE
+%----------------------------------------------------------------------------------------
+% For rotating figures, tables, etc.
+%  including their captions
+% \begin{sidewaysfigure}[ht]
+% \end{sidewaysfigure}
+\usepackage[figuresleft]{rotating}
+
+%----------------------------------------------------------------------------------------
+% MUSICAL NOTATION
+%----------------------------------------------------------------------------------------
+\usepackage[generate,ps2eps]{abc}%%sudo apt-get install abcm2ps
+\usepackage[nointegrals]{wasysym}
+\usepackage{harmony}
+
+
+%----------------------------------------------------------------------------------------
+% SIMILAR A ITEMIZE OU ENUMERATE
+%----------------------------------------------------------------------------------------
+\usepackage{tasks}
+
+\settasks{
+style=itemize, 
+column-sep=5mm,
+%label-format={\color{green!70!black}\large\bfseries},  
+label-align=left, 
+%label-offset={1mm}, 
+%label-width={3mm}, 
+%item-indent={1mm},
+%item-format={\scshape\small}, 
+%after-item-skip=1mm, 
+%after-skip={10mm}
+}
+
+
+%----------------------------------------------------------------------------------------
+% TABLE BREAKING
+%----------------------------------------------------------------------------------------
+\usepackage{longtable}
+
+%----------------------------------------------------------------------------------------
+% TABLE MULTIROW
+%----------------------------------------------------------------------------------------
+
+ \usepackage{multirow}
+
+%----------------------------------------------------------------------------------------
+% QR CODE
+%----------------------------------------------------------------------------------------
+%\usepackage{qrcode}
+
+%----------------------------------------------------------------------------------------
+% Grafico circulo satelites
+%----------------------------------------------------------------------------------------
+\usepackage{smartdiagram}
+\usepackage{metalogo}
+%\usepackage{dtklogos}
+
+
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY AND INDEX
+%----------------------------------------------------------------------------------------
+ 
+\usepackage[ style=alphabetic,
+             citestyle=alphabetic,
+             sorting=none,
+             sortcites=true,
+             autopunct=true,
+             babel=hyphen,
+             hyperref=true,
+             abbreviate=false,
+             backref=true,
+             backend=biber]{biblatex}
+\addbibresource{bibliography/bibliography.bib} % BibTeX bibliography file
+\defbibheading{bibempty}{}
+
+
+\usepackage{calc} % For simpler calculation - used for spacing the index letter headings correctly
+\usepackage{makeidx} % Required to make an index
+\makeindex % Tells LaTeX to create the files required for indexing
+
+

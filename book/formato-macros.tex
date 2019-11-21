@@ -1,0 +1,315 @@
+
+%----------------------------------------------------------------------------------------
+%  footnote font size
+%----------------------------------------------------------------------------------------
+\renewcommand{\footnotesize}{\small}
+
+%----------------------------------------------------------------------------------------
+%	Horizontal separator line
+%   \HRule{2pt}
+%----------------------------------------------------------------------------------------
+\newcommand{\HRule}[1]{\rule{\linewidth}{#1}} % creo el comando  \HRule regla horizontal
+
+
+
+%----------------------------------------------------------------------------------------
+%	Horizontal separator line
+%   \PRLsep{Text}
+%----------------------------------------------------------------------------------------
+\newlength{\PRLlen}
+\newcommand*\PRLsep[1]{\settowidth{\PRLlen}{#1}\advance\PRLlen by -\textwidth\divide\PRLlen by -2\noindent\makebox[\the\PRLlen]{\resizebox{\the\PRLlen}{1pt}{$\blacktriangleleft$}}\raisebox{-.5ex}{\textbf{#1}}\makebox[\the\PRLlen]{\resizebox{\the\PRLlen}{1pt}{$\blacktriangleright$}}\bigskip}
+
+
+%----------------------------------------------------------------------------------------
+%----------------------------------------------------------------------------------------
+%----------------------------------------------------------------------------------------
+%----------------------------------------------------------------------------------------
+% BOX - TCOLORBOX
+%----------------------------------------------------------------------------------------
+\usepackage[most,many]{tcolorbox}
+\usetikzlibrary{decorations.pathmorphing}
+\tcbuselibrary{skins}
+%----------------------------------------------------------------------------------------
+% ATTENTION MESSAGE BOX
+%----------------------------------------------------------------------------------------
+% \begin{tcbattention}
+%   text
+% \end{tcbattention}
+%%\newtcolorbox{tcbattention}
+%%{
+%%  breakable,
+%%  enhanced,
+%%  arc      =1mm,
+%%  colback  =colorsystemdefaultdkred!5,
+%%  colframe =colorsystemdefaultdkred,
+%%  leftrule =14mm,%
+%%  drop fuzzy shadow=black,
+%%  overlay  ={\node[anchor=north west,outer sep=4pt] at (frame.north west) {\includegraphics[width=8mm]{attention1.eps}}; }
+%%}
+
+\newtcolorbox{tcbattention}[1][]{enhanced,
+  before skip=2mm,after skip=3mm,
+  boxrule=0.4pt,left=5mm,right=2mm,top=1mm,bottom=1mm,
+  colback=yellow!50,
+  colframe=yellow!20!black,
+  sharp corners,rounded corners=southeast,arc is angular,arc=3mm,
+  underlay={%
+    \path[fill=colorsystemdefault!20!black] ([yshift=3mm]interior.south east)--++(-0.4,-0.1)--++(0.1,-0.2);
+    \path[draw=colorsystemdefault,shorten <=-0.05mm,shorten >=-0.05mm] ([yshift=3mm]interior.south east)--++(-0.4,-0.1)--++(0.1,-0.2);
+    \path[fill=yellow!50!black,draw=none] (interior.south west) rectangle node[white]{\Huge\bfseries !} ([xshift=4mm]interior.north west);
+    },
+  drop fuzzy shadow,#1}
+%----------------------------------------------------------------------------------------
+% INFORMATION MESSAGE BOX
+%----------------------------------------------------------------------------------------
+\newtcolorbox{tcbinformation}%[1]
+{
+  %title=#1,
+  %fonttitle=\bfseries,
+  breakable,
+  enhanced,
+  arc      =1mm,
+  colback  =colorsystemdefault!5,
+  colframe =colorsystemdefault,
+  leftrule =14mm,%
+  drop fuzzy shadow=black,
+  overlay  ={\node[anchor=north west,outer sep=4pt] at (frame.north west) {\includegraphics[width=8mm]{information1.eps}}; }
+}
+
+
+
+%----------------------------------------------------------------------------------------
+% ELABORACION MESSAGE BOX
+%----------------------------------------------------------------------------------------
+% \begin{elaboracion}[title=título, width= 0.80\linewidth]
+%   texto
+% \end{elaboracion}
+\newtcolorbox{elaboracion}[1][]{
+    tile,
+    colback=fboxbackcolor!5,
+    coltitle=white,
+    colbacktitle=fboxfrontcolor,%fboxfrontcolor!10,
+    center title,
+    toprule=1.25mm,
+    bottomrule=1.25mm,
+    extras unbroken and first={borderline north={0.5mm}{0.5mm}{fboxfrontcolor,decoration={zigzag,amplitude=0.5mm},decorate}},
+    extras unbroken and last={borderline south={0.5mm}{0.5mm}{fboxfrontcolor,decoration={zigzag,amplitude=0.5mm},decorate}},
+    #1
+}
+
+%----------------------------------------------------------------------------------------
+% CITANDO MESSAGE BOX
+%----------------------------------------------------------------------------------------
+% \begin{citando}
+%   texto
+% \end{citando}
+\newtcolorbox{citando}
+{
+  breakable,
+  enhanced,
+  colback  = colorlowgray,
+  colframe = colorlowgray,
+  arc      = 3mm,
+  left skip= 0.10 \linewidth,
+  width    = 0.90 \linewidth
+}
+
+
+%----------------------------------------------------------------------------------------
+% CARACTERISTICAS MESSAGE BOX
+%----------------------------------------------------------------------------------------
+\usepackage{pifont}
+\newcommand{\CheckedItem}{\rlap{$\square$}{\large\hspace{0pt}\ding{51}}}
+\newcommand{\NoCheckedItem}{\rlap{$\square$}{\large\hspace{13pt}}}
+
+%----------------------------------------------------------------------------------------
+% \caracterpasso{\CheckedItem}{\CheckedItem}{\NoCheckedItem}{\CheckedItem}{4}
+
+\colorlet{fboxbackcolorpasso}{colorsystemdefault!66!blue}
+\colorlet{fboxfrontcolorpasso}{colorsystemdefault!66!blue}
+
+\newtcolorbox{tcbcaracteristicapasso}[1][]{
+    tile,
+    colback=fboxbackcolorpasso!5,
+    coltitle=white,
+    colbacktitle=fboxfrontcolorpasso,%fboxfrontcolor!10,
+    center title,
+    toprule=1.25mm,
+    bottomrule=1.25mm,
+    extras unbroken and first={borderline north={0.5mm}{0.5mm}{fboxfrontcolorpasso,decoration={zigzag,amplitude=0.5mm},decorate}},
+    extras unbroken and last={borderline south={0.5mm}{0.5mm}{fboxfrontcolorpasso,decoration={zigzag,amplitude=0.5mm},decorate}},
+    #1
+}
+
+
+
+\newcommand{\caracterpasso}[5]{
+\begin{wrapfigure}{l}{0.5\textwidth} 
+\begin{tcbcaracteristicapasso}[title=Caraterísticas, width= \linewidth]
+ \begin{itemize}
+\item[#1] \hyperref[def:PassoCiclico]{\textbf{Passo cíclico}}.
+\item[#2] \hyperref[def:PassoSimetrico]{\textbf{Passo simétrico}}.
+\item[#3] \hyperref[def:PassoAContratempo]{\textbf{Passo a contratempo}}.
+\item[#4] \hyperref[def:PassoDeDeslocamento]{\textbf{Passo de deslocamento}}.
+\item     \hyperref[def:DuracaoDoPasso]{\textbf{Duração}}: #5 tempos.
+\end{itemize}
+\end{tcbcaracteristicapasso}
+\end{wrapfigure}
+}
+
+
+%----------------------------------------------------------------------------------------
+% \caracterpostura{\CheckedItem}{{\NoCheckedItem}
+
+\colorlet{fboxbackcolorpostura}{colorsystemdefault!66!red}
+\colorlet{fboxfrontcolorpostura}{colorsystemdefault!66!red}
+
+\newtcolorbox{tcbcaracteristicapostura}[1][]{
+    tile,
+    colback=fboxbackcolorpostura!5,
+    coltitle=white,
+    colbacktitle=fboxfrontcolorpostura,%fboxfrontcolor!10,
+    center title,
+    toprule=1.25mm,
+    bottomrule=1.25mm,
+    extras unbroken and first={borderline north={0.5mm}{0.5mm}{fboxfrontcolorpostura,decoration={zigzag,amplitude=0.5mm},decorate}},
+    extras unbroken and last={borderline south={0.5mm}{0.5mm}{fboxfrontcolorpostura,decoration={zigzag,amplitude=0.5mm},decorate}},
+    #1
+}
+
+
+\newcommand{\caracterpostura}[2]{
+\begin{wrapfigure}{l}{0.5\textwidth} 
+\begin{tcbcaracteristicapostura}[title=Caraterísticas, width= \linewidth]
+ \begin{itemize}
+\item[#1] \hyperref[def:PosturaFinaliza]{\textbf{Postura de finalização}}.
+\item[#2] \hyperref[def:PosturaTransicao]{\textbf{Postura de transição}}.
+\end{itemize}
+\end{tcbcaracteristicapostura}
+\end{wrapfigure}
+}
+
+
+
+
+
+%----------------------------------------------------------------------------------------
+% TABULARTCB
+%----------------------------------------------------------------------------------------
+% \caracterelement{Algum texto 1}{Algum texto 2}
+
+\colorlet{fboxbackcolorelement}{colorsystemdefault}
+\colorlet{fboxfrontcolorelement}{colorsystemdefault}
+
+\newtcolorbox{tcbcaracterelement}[1][]{
+    tile,
+    colback=fboxbackcolorelement!5,
+    coltitle=white,
+    colbacktitle=fboxfrontcolorelement,%fboxfrontcolor!10,
+    center title,
+    toprule=1.25mm,
+    bottomrule=1.25mm,
+    extras unbroken and first={borderline north={0.5mm}{0.5mm}{fboxfrontcolorelement,decoration={zigzag,amplitude=0.5mm},decorate}},
+    extras unbroken and last={borderline south={0.5mm}{0.5mm}{fboxfrontcolorelement,decoration={zigzag,amplitude=0.5mm},decorate}},
+    #1
+}
+
+
+
+\newcommand{\caracterelement}[2]{
+\begin{wrapfigure}{l}{0.6\textwidth} 
+\begin{tcbcaracterelement}[title=Caraterísticas, width= \linewidth]
+\begin{tabular}{rp{0.6\textwidth}}
+\textbf{Consciência:} & #1 \\
+\textbf{Pergunta:}    & #2
+\end{tabular} 
+\end{tcbcaracterelement}
+\end{wrapfigure}
+}
+
+
+
+
+%----------------------------------------------------------------------------------------
+% FRASES E DITADOS
+%----------------------------------------------------------------------------------------
+% \begin{FraseFernandoPR}{Frase}
+% meu texto
+% \end{FraseFernandoPR}
+
+
+\newtcolorbox[auto counter]{FraseFernandoPR}{
+freelance,
+colback=white,
+frame code={},
+interior titled code={
+  \fill[rounded corners=8pt,colorsystemdefault!30]
+    (title.south west) --
+    (title.south) -- 
+    ([yshift=15pt]title.south) --
+    ([yshift=15pt,xshift=4cm]title.south) --
+    ([xshift=4cm]title.south) --
+    (title.south east) {[sharp corners] --
+    ([yshift=-6pt]title.south east) -- 
+    ([yshift=-6pt]title.south west) } -- cycle;
+  \draw[rounded corners=8pt,colorsystemdefault,line width=1pt]
+    (title.west|-frame.south west) --
+    (title.south west) --
+    (title.south) -- 
+    ([yshift=15pt]title.south) --
+    ([yshift=15pt,xshift=4cm]title.south) --
+    ([xshift=4cm]title.south) --
+    (title.south east) --
+    (title.east|-frame.south east) --
+    cycle;
+  \node at ([xshift=2cm,yshift=4pt,anchor=south]title.south) 
+    { \bfseries  Frase~\thetcbcounter};  
+  },
+title={\mbox{}},
+top=12pt,
+%fontupper=\sffamily\Large,
+oversize=0.0cm,
+after upper={\\{  \mbox{} \hfill Fernando P.R.}\index{Frases e Ditados}},
+before={\vskip 24pt\par\noindent},
+after={\par\vskip 12pt}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% UN SOLO USO
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%----------------------------------------------------------------------------------------
+% CATALOGRAFICA MESSAGE BOX
+%----------------------------------------------------------------------------------------
+% \begin{catalografica}
+%   texto
+% \end{catalografica}
+\newtcolorbox{catalografica}
+{
+  breakable,
+  enhanced,
+  colback  = colorlowgray,
+  colframe = colorlowgray
+}
+
+
+%----------------------------------------------------------------------------------------
+% PATROCINIO MESSAGE BOX
+%----------------------------------------------------------------------------------------
+% \begin{patrocinio}
+%   texto
+% \end{patrocinio}
+\newtcolorbox{patrocinio}
+{
+  breakable,
+  enhanced,
+  colback  = colorlowred,
+  colframe = colorlowred
+}
+
+

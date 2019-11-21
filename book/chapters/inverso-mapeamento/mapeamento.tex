@@ -24,7 +24,7 @@ problema inverso
 \begin{comment}
 Se 
 $x$, $y$, $u$ e $v$ são escalares $\in \mathbb{R}$, que formam os pontos
-$\VECTOR{p}=[x~~y]^T$ e $\VECTOR{q}=[u~~v]^T$ em dois sistemas coordenados diferentes, e 
+$\VECTOR{p}=[x~~y]^{\transpose}$ e $\VECTOR{q}=[u~~v]^{\transpose}$ em dois sistemas coordenados diferentes, e 
 a função $\VECTOR{h}(x,y): \mathbb{R}^2 \rightarrow \mathbb{R}^2$, 
 é um vetor coluna definido como a função de transformação de coordenadas,
 $\VECTOR{q}=\VECTOR{h}(\VECTOR{p})$, então podemos definir que:
@@ -54,8 +54,8 @@ Assim,
 \includegraphics[width=0.8\linewidth]{chapters/inverso-mapeamento/mapeamento.eps} 
 \end{minipage}
 \begin{minipage}{0.6\textwidth}
-\quad Se temos, $N$ pontos (amostras) $\VECTOR{p}_n=[x_n~~y_n]^T\equiv (x_n,y_n)$ no plano $XY \in \mathbb{R}^2$, e
-seus correspondentes $\VECTOR{q}_n=[u_n~~v_n]^T\equiv (u_n,y_n)$
+\quad Se temos, $N$ pontos (amostras) $\VECTOR{p}_n=[x_n~~y_n]^{\transpose}\equiv (x_n,y_n)$ no plano $XY \in \mathbb{R}^2$, e
+seus correspondentes $\VECTOR{q}_n=[u_n~~v_n]^{\transpose}\equiv (u_n,y_n)$
 no plano $UV \in \mathbb{R}^2$ ,
 $\forall n\in \{0, 1, 2, ..., N-1\}$, 
 vinculados mediante a função $\VECTOR{h}(x,y): \mathbb{R}^2 \rightarrow \mathbb{R}^2$, 
@@ -65,7 +65,7 @@ para um ponto $\VECTOR{p} \in XY$ qualquer e seu correspondente $\VECTOR{q} \in 
 \end{minipage}
 
 Então, podemos modelar  
-$[u~~v]^T = \VECTOR{h}(\VECTOR{p})\equiv \VECTOR{h}(x,y)\equiv [h_1(x,y)~~h_2(x,y) ]^T$, 
+$[u~~v]^{\transpose} = \VECTOR{h}(\VECTOR{p})\equiv \VECTOR{h}(x,y)\equiv [h_1(x,y)~~h_2(x,y) ]^{\transpose}$, 
 onde as funções $h_1(x,y)$ e $h_2(x,y)$ $: \mathbb{R}^2 \rightarrow \mathbb{R}$,
 são polinômios\footnote{Os polinômios $h_1(x,y)$ e $h_2(x,y)$ são semelhantes, só a notação na escrita foi diferente.} de grau $M$,
 \begin{equation}\label{eq:mapeamento:2}
@@ -89,8 +89,8 @@ h_2(x,y) & = & \sum \limits_{m=0}^{M} \sum \limits_{l=0}^{m}d_{\left\{ \frac{m(m
 
 Assim, o problema de conhecer $\VECTOR{h}(x,y)$ é equivalente ao 
 problema de achar os vetores 
-$\VECTOR{c}=[c_0~c_1~c_2~...~c_{\left\{ \frac{M(M+3)}{2}\right\}} ]^T$ e
-$\VECTOR{d}=[d_0~d_1~d_2~...~d_{\left\{ \frac{M(M+3)}{2}\right\}} ]^T$;
+$\VECTOR{c}=[c_0~c_1~c_2~...~c_{\left\{ \frac{M(M+3)}{2}\right\}} ]^{\transpose}$ e
+$\VECTOR{d}=[d_0~d_1~d_2~...~d_{\left\{ \frac{M(M+3)}{2}\right\}} ]^{\transpose}$;
 com este fim são usadas as $N$ amostras $\VECTOR{p}_n$ e $\VECTOR{q}_n$,
 para  procurar quais são os valores de $\VECTOR{c}$ e $\VECTOR{d}$
 que provocam o mínimo erro nos escalares, 

@@ -28,19 +28,19 @@ e(\VECTOR{x}) & = ||\MATRIX{A}\VECTOR{x}-\VECTOR{b}||_{\MATRIX{C}}^2 \\
               & = (\MATRIX{A}\VECTOR{x}-\VECTOR{b})^{\transpose}\MATRIX{C}(\MATRIX{A}\VECTOR{x}-\VECTOR{b}).
 \end{align}
 Se desejamos ter o valor $\VECTOR{\hat{x}}$ que minimiza o escalar $e(\VECTOR{\hat{x}})$,
-devemos usar a Eq. (\ref{eq:minAxbCAxb2}),
+devemos usar\footnote{A demostração pode ser vista na Prova \ref{proof:theo:minAxbCAxb}.} a Eq. (\ref{eq:minAxbCAxb2}),
 \begin{equation}\label{eq:minAxbCAxb2}
 \VECTOR{\hat{x}} =
 \left[ \MATRIX{A}^{\transpose}\MATRIX{C} \MATRIX{A} \right]^{-1}\MATRIX{A}^{\transpose}\MATRIX{C}\VECTOR{b}.
 \end{equation}
 Assim, o mínimo existe só sim $\MATRIX{A}^{\transpose}\MATRIX{C} \MATRIX{A}$ tem inversa.
-
-A demostração pode ser vista na Prova \ref{proof:theo:minAxbCAxb}.
 \end{theorem}
 
 \index{Pseudo-inversa de Moore-Penrose}
 \index{Problema inverso!Linear}
 \index{Minimização do erro quadrático!Linear}
+
+\newpage
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

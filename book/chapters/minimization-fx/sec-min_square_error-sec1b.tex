@@ -1,0 +1,29 @@
+\section{Minimização de $||\MATRIX{A}\VECTOR{x}-\VECTOR{b}||_{\MATRIX{C}}^2+\alpha ||\VECTOR{x}-\VECTOR{q}||_{\MATRIX{D}}^2$
+}
+
+\begin{theorem}\label{theo:minAxbCAxbplusalphaxqD}
+Dados,
+o escalar $\alpha \in \mathbb{R}$, 
+os vetores coluna $\VECTOR{x}\in \mathbb{R}^N$, 
+$\VECTOR{b}\in \mathbb{R}^M$ e
+$\VECTOR{q}\in \mathbb{R}^N$,  
+uma matriz $\MATRIX{A} \in \mathbb{R}^{M\times N}$, 
+as matrizes diagonais $\MATRIX{C} \in \mathbb{R}^{M\times M}$ e
+$\MATRIX{D} \in \mathbb{R}^{N\times N}$, e 
+definida a Eq. (\ref{eq:minAxbCAxb1alphaxqD}),
+\begin{equation}\label{eq:minAxbCAxb1alphaxqD}
+e(\VECTOR{x})  = ||\MATRIX{A}\VECTOR{x}-\VECTOR{b}||_{\MATRIX{C}}^2 +\alpha ||\VECTOR{x}-\VECTOR{q}||_{\MATRIX{D}}^2.
+\end{equation}
+Se desejamos ter o valor $\VECTOR{\hat{x}}$ que minimiza o escalar $e(\VECTOR{\hat{x}})$,
+devemos usar\footnote{A demostração pode ser vista na Prova \ref{proof:theo:minAxbCAxbalphaxqD}.} a Eq. (\ref{eq:minAxbCAxb2alphaxqD}),
+\begin{equation}\label{eq:minAxbCAxb2alphaxqD}
+\VECTOR{\hat{x}}=\left[ \MATRIX{A}^{\transpose}\MATRIX{C}\MATRIX{A} +\alpha\MATRIX{D}\right]^{-1} 
+\left[ \MATRIX{A}^{\transpose}\MATRIX{C} \VECTOR{b}+\alpha\MATRIX{D}\VECTOR{q}\right].
+\end{equation}
+Assim, o mínimo existe só sim $\MATRIX{A}^{\transpose}\MATRIX{C}\MATRIX{A} +\alpha\MATRIX{D}$ tem inversa.
+\end{theorem}
+
+\index{Pseudo-inversa de Moore-Penrose}
+\index{Problema inverso!Linear}
+\index{Minimização do erro quadrático!Linear}
+

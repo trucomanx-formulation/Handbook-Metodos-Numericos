@@ -1,0 +1,54 @@
+\section{Minimização de $||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2+\alpha||\VECTOR{x}-\VECTOR{x}_{last}||_{\MATRIX{D}}^2$}
+
+
+\index{Minimização, métodos!Regularização de Tikhonov}
+\index{Problema inverso!Não linear}
+\index{Minimização do erro quadrático!Não linear}
+
+\begin{theorem}[Solução iterativa]\label{theo:minfxbCfxbaxoaxo}
+Dados,
+os vetores coluna $\VECTOR{x}\in \mathbb{R}^N$, $\VECTOR{b}\in \mathbb{R}^M$ e $\VECTOR{x}_{last}\in \mathbb{R}^N$,  
+uma função $\VECTOR{f}:\mathbb{R}^{N} \rightarrow \mathbb{R}^{M}$, 
+as matrizes diagonais $\MATRIX{C} \in \mathbb{R}^{M\times M}$ e $\MATRIX{D} \in \mathbb{R}^{N\times N}$, e 
+definida a Eq. (\ref{eq:minfxbCfxbaxoaxo1}),
+\begin{equation}\label{eq:minfxbCfxbaxoaxo1}
+e(\VECTOR{x})=||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2+\alpha||\VECTOR{x}-\VECTOR{x}_{last}||_{\MATRIX{D}}^2,
+\end{equation}
+tendo en consideração que $\VECTOR{x}_{last}$ é uma constante equivalente a $\VECTOR{x}_{k-1}$
+numa busca iterativa; é dizer, o segundo somando na Eq. (\ref{eq:minfxbCfxbaxoaxo1}) 
+procura minimizar $||\VECTOR{x}_{k}-\VECTOR{x}_{k-1}||_{\MATRIX{D}}^2$.
+
+
+Se desejamos ter o ponto $\VECTOR{\hat{x}}$ que minimiza o escalar $e(\VECTOR{\hat{x}})$,
+podemos achar este ponto usando iterativamente a Eq. (\ref{eq:minfxbCfxbaxoaxo2}),
+onde  $\MATRIX{J}(\VECTOR{x})$ é a \hyperref[def:jacobian]{\textbf{matriz Jacobiana}}  de $\VECTOR{f}(\VECTOR{x})$.
+\begin{equation}\label{eq:minfxbCfxbaxoaxo2}
+\VECTOR{x}_{k}\leftarrow \VECTOR{x}_{k-1}+
+\left[ \MATRIX{J}(\VECTOR{x}_{k-1})^{\transpose}\MATRIX{C} \MATRIX{J}(\VECTOR{x}_{k-1}) +\alpha\MATRIX{D} \right]^{-1}
+ \left[\MATRIX{J}(\VECTOR{x}_{k-1})^{\transpose}\MATRIX{C}\left\{\VECTOR{b}-\VECTOR{f}(\VECTOR{x}_{k-1})\right\}\right] 
+\end{equation}
+Assim, $\VECTOR{\hat{x}}$ pode ser achado 
+iniciando a Eq. (\ref{eq:minfxbCfxbaxoaxo2}) desde um $\VECTOR{x}_{0}$ qualquer, 
+ate que $\VECTOR{x}_{k}$ seja muito próximo a $\VECTOR{x}_{k-1}$,
+onde se declara que $\VECTOR{\hat{x}} \approx \VECTOR{x}_{k}$,
+que corresponde a um mínimo\footnote{\label{ref:minfx}A
+demostração pode ser vista na Prova \ref{proof:theo:minfxbCfxbaxod}.} de $e(\VECTOR{x})$,
+sem aclarar se é local ou global.
+
+
+\textbf{Considerções:}
+
+\begin{itemize}
+\item É interessante verificar sempre na Eq. (\ref{eq:minfxbCfxbaxoaxo2}) 
+se  $\MATRIX{J}(\VECTOR{x}_{k-1}) = \MATRIX{0}$,
+pois indica que existe\footref{ref:minfx} um ponto de inflexão 
+(máximo, mínimo ou ponto de sela) em $e(\VECTOR{x}_{k-1})$;
+consequentemente poderiamos ter achado um mínimo.
+\item A busca iterativa da Eq. (\ref{eq:minfxbCfxbaxoaxo2}) é considerada falida quando 
+$\MATRIX{J}(\VECTOR{x}_{k-1})^{\transpose}\MATRIX{C} \MATRIX{J}(\VECTOR{x}_{k-1}) -\alpha\MATRIX{D}$
+não tem inversa.
+\end{itemize}
+
+
+\end{theorem} 
+

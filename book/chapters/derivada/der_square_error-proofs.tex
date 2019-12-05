@@ -132,7 +132,7 @@ um vetor coluna $\VECTOR{x}\in \mathbb{R}^{N}$,
 um vetor coluna $\VECTOR{b}\in \mathbb{R}^{M}$, 
 e considerando a aproximação
 $\VECTOR{f}(\VECTOR{x})\approx \VECTOR{f}(\VECTOR{p})+\MATRIX{J}(\VECTOR{p})\left(\VECTOR{x}-\VECTOR{p}\right)$,
-usando a serie de \hyperref[def:taylor]{Taylor} para funções multivariáveis;
+usando a \hyperref[def:taylor]{\textbf{serie de Taylor}} para funções multivariáveis;
 podemos expressar que:
 \begin{equation}\label{eq:proof:derfxbCfxb1}
 \frac{\partial ||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2}{\partial \VECTOR{x}} \approx
@@ -178,6 +178,32 @@ nos obtemos:
 \end{equation}
 \end{myproofT}
 
+\begin{myproofT}[Prova do Teorema \ref{theo:der2fxbCfxb0aprox}]\label{proof:theo:der2fxbCfxb0aprox}
+Dados,
+uma função $\VECTOR{f}:\mathbb{R}^{N} \rightarrow \mathbb{R}^{M}$, 
+uma matriz diagonal $\MATRIX{C}\in \mathbb{R}^{M\times M}$, 
+os vetores coluna $\VECTOR{x}\in \mathbb{R}^{N}$ e 
+$\VECTOR{b}\in \mathbb{R}^{M}$, e
+considerando o Toerema \ref{theo:derfxbCfxb} que usa a aproximação
+$\VECTOR{f}(\VECTOR{x})\approx \VECTOR{f}(\VECTOR{p}) + \MATRIX{J}(\VECTOR{p})$ $\left(\VECTOR{x}-\VECTOR{p}\right)$,
+podemos expressar que:
+\begin{equation}\label{eq:proof:der2fxbCfxb01aprox}
+\begin{matrix}
+\frac{\partial }{\partial \VECTOR{x}^{\transpose}}\left( \frac{\partial ||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2}{\partial \VECTOR{x}} \right) & \approx & 
+\frac{\partial 2 \MATRIX{J}(\VECTOR{p})^{\transpose}\MATRIX{C}\left[\MATRIX{J}(\VECTOR{p})\left(\VECTOR{x} - \VECTOR{p}\right)-\left(\VECTOR{b}-\VECTOR{f}(\VECTOR{p})\right)\right]}{\partial \VECTOR{x}^{\transpose}} \\
+~ & \approx & \frac{\partial 2 \MATRIX{J}(\VECTOR{p})^{\transpose}\MATRIX{C} \MATRIX{J}(\VECTOR{p})\VECTOR{x}  }{\partial \VECTOR{x}^{\transpose}}
+\end{matrix},
+\end{equation}
+onde $\VECTOR{p}$ é um ponto fixo no domínio de $\VECTOR{f}(\VECTOR{x})$,  ao redor do qual é feita  aproximação
+da função $\VECTOR{f}(\VECTOR{x})$,
+e $\MATRIX{J}(\VECTOR{p})$ é a \hyperref[def:jacobian]{\textbf{matriz Jacobiana}} de $\VECTOR{f}(\VECTOR{x})$ avaliado no ponto $\VECTOR{p}$.
+Assim, usando o Teorema \ref{theo:derAx} na Eq. (\ref{eq:proof:der2fxbCfxb01aprox})
+obtemos,
+\begin{equation}\label{eq:proof:der2fxbCfxb01aprox2}
+\frac{\partial }{\partial \VECTOR{x}^{\transpose}}\left( \frac{\partial ||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2}{\partial \VECTOR{x}} \right) \approx 
+2 \MATRIX{J}(\VECTOR{p})^{\transpose}\MATRIX{C} \MATRIX{J}(\VECTOR{p}) 
+\end{equation}
+\end{myproofT}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

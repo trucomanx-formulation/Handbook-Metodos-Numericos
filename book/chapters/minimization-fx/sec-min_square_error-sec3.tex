@@ -1,0 +1,52 @@
+\section{Minimização de $||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2+\alpha||\VECTOR{x}-\VECTOR{q}||_{\MATRIX{D}}^2$}
+
+
+\index{Minimização, métodos!Regularização de Tikhonov}
+\index{Problema inverso!Não linear}
+\index{Minimização do erro quadrático!Não linear}
+
+\begin{theorem}[Solução iterativa]\label{theo:minfxbCfxbaxqaxq}
+Dados,
+os vetores coluna $\VECTOR{x}\in \mathbb{R}^N$, $\VECTOR{b}\in \mathbb{R}^M$ e $\VECTOR{q}\in \mathbb{R}^N$,  
+uma função $\VECTOR{f}:\mathbb{R}^{N} \rightarrow \mathbb{R}^{M}$, 
+as matrizes diagonais $\MATRIX{C} \in \mathbb{R}^{M\times M}$ e $\MATRIX{D} \in \mathbb{R}^{N\times N}$, e 
+definida a Eq. (\ref{eq:minfxbCfxbaxqaxq1}),
+\begin{align}\label{eq:minfxbCfxbaxqaxq1}
+e(\VECTOR{x}) &=||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2+\alpha||\VECTOR{x}-\VECTOR{q}||_{\MATRIX{D}}^2\\
+              & = (\VECTOR{f}(\VECTOR{x})-\VECTOR{b})^{\transpose}\MATRIX{C}(\VECTOR{f}(\VECTOR{x})-\VECTOR{b})+\alpha(\VECTOR{x}-\VECTOR{q})^{\transpose}\MATRIX{D}(\VECTOR{x}-\VECTOR{q}).
+\end{align}
+Se desejamos ter o ponto $\VECTOR{\hat{x}}$ que minimiza o escalar $e(\VECTOR{\hat{x}})$,
+podemos achar este ponto usando iterativamente a Eq. (\ref{eq:minfxbCfxbaxqaxq2}),
+onde  $\MATRIX{J}(\VECTOR{x})$ é a \hyperref[def:jacobian]{\textbf{matriz Jacobiana}}  de $\VECTOR{f}(\VECTOR{x})$.
+\begin{equation}\label{eq:minfxbCfxbaxqaxq2}
+\VECTOR{x}_{k}\leftarrow \VECTOR{x}_{k-1}+
+\left[ \MATRIX{J}(\VECTOR{x}_{k-1})^{\transpose}\MATRIX{C} \MATRIX{J}(\VECTOR{x}_{k-1}) -\alpha\MATRIX{D} \right]^{-1}
+ \left\{\MATRIX{J}(\VECTOR{x}_{k-1})^{\transpose}\MATRIX{C}\left[\VECTOR{f}(\VECTOR{x}_{k-1})-\VECTOR{b}\right]+\alpha\MATRIX{D}\left[\VECTOR{x}_{k-1}-\VECTOR{q}\right]\right\}
+\end{equation}
+
+Assim, $\VECTOR{\hat{x}}$ pode ser achado 
+iniciando a Eq. (\ref{eq:minfxbCfxbaxqaxq2}) desde um $\VECTOR{x}_{0}$ qualquer, 
+ate que $\VECTOR{x}_{k}$ seja muito próximo a $\VECTOR{x}_{k-1}$,
+onde se declara que $\VECTOR{\hat{x}} \approx \VECTOR{x}_{k}$,
+que corresponde a um mínimo\footnote{\label{ref:minfx}A
+demostração pode ser vista na Prova \ref{proof:theo:minfxbCfxbaxqd}.} de $e(\VECTOR{x})$,
+sem aclarar se é local ou global.
+
+
+\textbf{Considerções:}
+
+\begin{itemize}
+\item É interessante verificar na Eq. (\ref{eq:minfxbCfxbaxqaxq2}) 
+se  $\MATRIX{J}(\VECTOR{x}_{k-1}=\VECTOR{q}) = \MATRIX{0}$,
+pois indica que existe\footref{ref:minfx} um ponto de inflexão 
+(máximo, mínimo ou ponto de sela) em $e(\VECTOR{x}_{k-1}=\VECTOR{q})$;
+consequentemente poderiamos ter achado um mínimo\footnote{\label{foot:labq}É 
+interesante verificar o ponto $\VECTOR{q}$, uma vez só, 
+antes de iniciar a busca iterativa.}.
+\item A busca iterativa da Eq. (\ref{eq:minfxbCfxbaxqaxq2}) é considerada falida quando 
+$\MATRIX{J}(\VECTOR{x}_{k-1})^{\transpose}\MATRIX{C} \MATRIX{J}(\VECTOR{x}_{k-1}) -\alpha\MATRIX{D}$
+não tem inversa.
+\end{itemize}
+
+\end{theorem} 
+

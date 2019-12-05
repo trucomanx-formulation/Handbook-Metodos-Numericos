@@ -130,7 +130,10 @@ $\VECTOR{x}\in \mathbb{R}^N$ é um vetor coluna com elementos $x_n\in \mathbb{R}
 $n\in \mathbb{N}$, $1 \leq n \leq N$, 
 a função $e(\VECTOR{x}): \mathbb{R}^N \rightarrow \mathbb{R}$ é um escalar,
 e tendo em consideração as Definições \ref{def:deltahor} e \ref {def:deltaver} e o 
-``Teorema da igualdade das derivadas cruzadas'' \FALTAREFERENCIA; então é fácil deduzir que:
+teorema da igualdade das derivadas cruzadas, 
+tambem conhecido como ``teorema de Clairaut'' \cite[pp. 885]{stewart2008calculus}
+ou ``teorema de Clairaut-Schwarz'' \cite[pp. 311]{telles2015matematica}; 
+então é fácil deduzir que:
 \begin{equation}
  \frac{\partial }{\partial \VECTOR{x}} \left( \frac{\partial e(\VECTOR{x} )}{\partial \VECTOR{x}^{\transpose}} \right) \equiv \frac{\partial }{\partial \VECTOR{x}^{\transpose}} \left( \frac{\partial e(\VECTOR{x} )}{\partial \VECTOR{x}} \right)
 \end{equation}
@@ -145,9 +148,10 @@ e tendo em consideração as Definições \ref{def:deltahor} e \ref {def:deltave
  Dada uma função $e:\mathbb{R}^{N}\rightarrow \mathbb{R}$ com variável $\VECTOR{x} \in \mathbb{R}^{N}$
  como vetor coluna com elementos $x_n\in \mathbb{R}$ de modo que $n\in \mathbb{N}$, $1 \leq n \leq N$,
  diferenciável em $\VECTOR{x}$. 
- $\triangledown e(\VECTOR{x})$ é chamado gradiente \cite{Gradient} \FALTAREFERENCIA   de $e(\VECTOR{x})$, de modo que: 
+ $\triangledown e(\VECTOR{x})$ é chamado gradiente 
+\cite[pp. 913]{stewart2008calculus} \cite[pp. 80]{telles2015matematica} \cite{Gradient}  de $e(\VECTOR{x})$, de modo que: 
  \begin{equation}
-  \triangledown e(\VECTOR{x})\equiv \frac{\partial e(\VECTOR{x})}{\partial \VECTOR{x}^{\transpose} }=
+  \triangledown e(\VECTOR{x})\equiv \frac{\partial e(\VECTOR{x})}{\partial \VECTOR{x} }=
 \left[
 \begin{matrix}
 \frac{\partial e(\VECTOR{x}) }{\partial x_{1}}&
@@ -157,7 +161,7 @@ e tendo em consideração as Definições \ref{def:deltahor} e \ref {def:deltave
 \hdots&
 \frac{\partial e(\VECTOR{x}) }{\partial x_{N}}
 \end{matrix}
-\right]
+\right]^{\transpose}
  \end{equation}
 \end{proposition}
 \index{Gradiente}
@@ -167,7 +171,8 @@ e tendo em consideração as Definições \ref{def:deltahor} e \ref {def:deltave
  Dada uma função $e:\mathbb{R}^{N}\rightarrow \mathbb{R}$ com variável $\VECTOR{x} \in \mathbb{R}^{N}$
  como vetor coluna  com elementos $x_n\in \mathbb{R}$ de modo que $n\in \mathbb{N}$, $1 \leq n \leq N$,
  diferenciável em $\VECTOR{x}$. 
- $\MATRIX{H}(\VECTOR{x})$ é chamada matriz Hessiana \cite{Hessian} \FALTAREFERENCIA   de $e(\VECTOR{x})$, de modo que: 
+ $\MATRIX{H}(\VECTOR{x})$ é chamada matriz Hessiana \cite[pp. 150]{zhang2017matrix} \cite{Hessian} 
+ de $e(\VECTOR{x})$, de modo que: 
  \begin{equation}
   \MATRIX{H}(\VECTOR{x})\equiv \frac{\partial }{\partial \VECTOR{x}} \left( \frac{\partial e(\VECTOR{x})}{ \partial \VECTOR{x}^{\transpose} }\right)=
 \left[
@@ -218,7 +223,7 @@ e tendo em consideração as Definições \ref{def:deltahor} e \ref {def:deltave
  Dado um vetor coluna, como função $\VECTOR{f}:\mathbb{R}^{N}\rightarrow \mathbb{R}^{M}$ com variável $\VECTOR{x} \in \mathbb{R}^{N}$
  como vetor coluna com elementos $x_n\in \mathbb{R}$ de modo que $n\in \mathbb{N}$, $1 \leq n \leq N$,
  diferenciável em $\VECTOR{x}$. 
- $\MATRIX{J}(\VECTOR{x})$ é chamada matriz Jacobiana \cite{Jacobian} \FALTAREFERENCIA   de 
+ $\MATRIX{J}(\VECTOR{x})$ é chamada matriz Jacobiana \cite[pp. 130]{zhang2017matrix} \cite{Jacobian}  de 
  $\VECTOR{f}(\VECTOR{x})=[f_1(\VECTOR{x})~f_2(\VECTOR{x})~\dots~f_m(\VECTOR{x})~\dots f_M(\VECTOR{x})]^{\transpose}$, de modo que: 
  \begin{equation}
   \MATRIX{J}(\VECTOR{x})\equiv \frac{\partial \VECTOR{f}(\VECTOR{x})}{\partial \VECTOR{x}^{\transpose} }=
@@ -284,12 +289,15 @@ e tendo em consideração as Definições \ref{def:deltahor} e \ref {def:deltave
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Serie de Taylor de $d(x)$, $e(\VECTOR{x})$ e $\VECTOR{f}(\VECTOR{x})$}
 \label{def:taylor}
-\index{Serie de Taylor}
 
+
+\index{Serie de Taylor}
 \begin{proposition}[Serie de Taylor de $d(x)$]\label{prop:taylord}
 Dada uma função $d:\mathbb{R}\rightarrow \mathbb{R}$ com variável $x \in \mathbb{R}$;
 infinitamente diferenciável em $a \in \mathbb{R}$;
-esta pode ser expressada mediante uma somatória, em serie de Taylor \cite{Taylor} \FALTAREFERENCIA ao redor de $a$, como
+esta pode ser expressada mediante uma somatória, em serie de Taylor 
+\cite[pp. 764]{stewart2008calculus} \cite[pp. 281]{telles2015matematica} \cite{Taylor} 
+ao redor de $a$, como
 mostra a Eq. (\ref{eq:taylord1}),
 \begin{equation}\label{eq:taylord1}
   d(x)=d(a)
@@ -315,11 +323,12 @@ truncada ate a derivada de ordem $4$, $8$ e $10$, na Fig. \ref{fig:taylore}.
     \label{fig:taylore}
 \end{figure}
  
- 
+ \index{Serie de Taylor}
 \begin{proposition}[Serie de Taylor de $e(\VECTOR{x})$]\label{prop:taylore}
 Dada uma função $e:\mathbb{R}^{N}\rightarrow \mathbb{R}$ com variável $\VECTOR{x} \in \mathbb{R}^{N}$, vetor coluna;
 infinitamente diferenciável em $\VECTOR{a} \in \mathbb{R}^{N}$;
-esta pode ser expressada mediante uma somatória, em serie de Taylor \cite{Taylor} \FALTAREFERENCIA ao redor de $\VECTOR{a}$, como
+esta pode ser expressada mediante uma somatória, em serie de Taylor 
+\cite[pp. 187, 207]{zhang2017matrix} \cite{Taylor}  ao redor de $\VECTOR{a}$, como
 mostra a Eq. (\ref{eq:taylore1}),
 \begin{equation}\label{eq:taylore1}
 e(\VECTOR{x}) =\sum _{k_{1}=0}^{\infty }\cdots \sum _{k_{N}=0}^{\infty }\left.\left({\frac {\partial ^{k_{1}+\cdots +k_{N}}e(\VECTOR{x})}{\partial x_{1}^{k_{1}}\cdots \partial x_{N}^{k_{N}}}}\right)\right|_{\VECTOR{x}=\VECTOR{a}} {\frac {(x_{1}-a_{1})^{k_{1}}\cdots (x_{N}-a_{N})^{k_{N}}}{k_{1}!\cdots k_{N}!}}
@@ -329,23 +338,23 @@ Outra forma alternativa de expressar a função anterior é usando vetores e mat
 como na Eq. (\ref{eq:taylore2}).
 \begin{equation}\label{eq:taylore2}
   e(\VECTOR{x})=e(\VECTOR{a})
-      ~+ \triangledown e(\VECTOR{a}) (\VECTOR{x}-\VECTOR{a})
+      ~+ \triangledown e(\VECTOR{a})^{\transpose} (\VECTOR{x}-\VECTOR{a})
       ~+\frac{1}{2!}(\VECTOR{x}-\VECTOR{a})^{\transpose} \MATRIX{H(\VECTOR{a})}  (\VECTOR{x}-\VECTOR{a})
       ~+\cdots 
 \end{equation}
-Onde o vector $\triangledown e(\VECTOR{x})\equiv \frac{\partial e(\VECTOR{x})}{\partial \VECTOR{x}^{\transpose} }$ 
+Onde o vector $\triangledown e(\VECTOR{x})\equiv \frac{\partial e(\VECTOR{x})}{\partial \VECTOR{x} }$ 
 (também chamado \hyperref[def:gradient]{gradiente}),
 e a matriz $\MATRIX{H}(\VECTOR{x})\equiv \frac{\partial }{\partial \VECTOR{x}} \left( \frac{\partial e(\VECTOR{x})}{ \partial \VECTOR{x}^{\transpose} }\right)$
 (também chamada matriz \hyperref[def:hessian]{Hessiana}).
 \end{proposition}
-\index{Matriz Hessiana}
-\index{Gradiente}
 
+\index{Serie de Taylor}
 \begin{proposition}[Serie de Taylor de $\VECTOR{f}(\VECTOR{x})$]\label{prop:taylorf}
 Dada uma função de contra-domino vectorial $\VECTOR{f}:\mathbb{R}^{N}\rightarrow \mathbb{R}^{M}$, 
 sendo $\VECTOR{f}$ um vector coluna, com variável $\VECTOR{x} \in \mathbb{R}^{N}$, vetor coluna;
 infinitamente diferenciável em $\VECTOR{a} \in \mathbb{R}^{N}$;
-esta pode ser expressada mediante uma somatória, em serie de Taylor \cite{Taylor} \FALTAREFERENCIA ao redor de $\VECTOR{a}$, como
+esta pode ser expressada mediante uma somatória, em serie de Taylor 
+\cite[pp. 393]{levine1999control} \cite{Taylor} ao redor de $\VECTOR{a}$, como
 mostra a Eq. (\ref{eq:taylorf1}),
 \begin{equation}\label{eq:taylorf1}
 \VECTOR{f}(\VECTOR{x}) =\VECTOR{f}(\VECTOR{a})
@@ -356,4 +365,3 @@ mostra a Eq. (\ref{eq:taylorf1}),
 Onde a matriz $\MATRIX{J}(\VECTOR{x})\equiv \frac{\partial \VECTOR{f}(\VECTOR{x})}{\partial \VECTOR{x}^{\transpose} }$,
 também conhecido como matriz \hyperref[def:jacobian]{Jacobiana} de $\VECTOR{f}(\VECTOR{x})$.
 \end{proposition}
-\index{Matriz Jacobiana}

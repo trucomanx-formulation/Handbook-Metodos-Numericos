@@ -1,0 +1,36 @@
+\section{\textcolor{blue}{Minimização de $||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2+\alpha||\VECTOR{x}||_{\MATRIX{D}}^2$}
+}
+\index{Minimização, métodos!Regularização de Tikhonov}
+\index{Problema inverso!Não linear}
+\index{Minimização do erro quadrático!Não linear}
+\begin{theorem}[Solução iterativa]\label{theo:minfxbCfxbaxax}
+Sabendo que, $\VECTOR{x}$ é um vetor com $N$ elementos, $\VECTOR{f}(\VECTOR{x})$ e 
+$\VECTOR{b}$ são vetores coluna de $M$ elementos, sendo $\VECTOR{b}$ uma constante,
+$\MATRIX{C}$ uma matriz diagonal de $M \times M$ e 
+$\MATRIX{D}$ uma matriz diagonal de $N \times N$.
+Sim se deseja achar o valor $\VECTOR{\hat{x}}$ que minimiza o valor de $e(\VECTOR{x})$, visto na Eq. (\ref{eq:minfxbCfxbaxax1}),
+\begin{align}\label{eq:minfxbCfxbaxax1}
+e(\VECTOR{x}) & =||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2+\alpha||\VECTOR{x}||_{\MATRIX{D}}^2\\
+              & = (\VECTOR{f}(\VECTOR{x})-\VECTOR{b})^{\transpose}\MATRIX{C}(\VECTOR{f}(\VECTOR{x})-\VECTOR{b})+\alpha\VECTOR{x}^{\transpose}\MATRIX{D}\VECTOR{x},
+\end{align}
+devemos usar a seguinte equação iterativa,
+\begin{equation}\label{eq:minfxbCfxbaxax2}
+\VECTOR{x}_{k+1}\leftarrow \VECTOR{x}_k+
+\left[ \MATRIX{J}(\VECTOR{x}_k)^{\transpose}\MATRIX{C} \MATRIX{J}(\VECTOR{x}_k) +\alpha\MATRIX{D} \right]^{-1}
+ \left[\MATRIX{J}(\VECTOR{x}_k)^{\transpose}\MATRIX{C}\left\{\VECTOR{b}-\VECTOR{f}(\VECTOR{x}_k)\right\}-\alpha\MATRIX{D}\VECTOR{x}_k\right]
+\end{equation}
+Onde  $\MATRIX{J}(\VECTOR{x})$ é a \hyperref[def:jacobian]{\textbf{matriz Jacobiana}} de $\VECTOR{f}(\VECTOR{x})$.
+A busca iterativa é considerada falida quando 
+$\MATRIX{J}(\VECTOR{x}_k)^{\transpose}\MATRIX{C} \MATRIX{J}(\VECTOR{x}_k) +\alpha\MATRIX{D}$
+não tem inversa.
+
+
+Assim, $\VECTOR{\hat{x}}$ pode ser achado iniciando a Eq. (\ref{eq:minfxbCfxbaxax2}) desde um $\VECTOR{x}_{0}$ qualquer, ate que $\VECTOR{x}_{k}$ seja muito próximo a $\VECTOR{x}_{k+1}$,
+onde se declara que $\VECTOR{\hat{x}} \approx \VECTOR{x}_{k+1}$; porem deve ser corroborado
+que esse ponto tratasse de um máximo ou mínimo usando algum método, por exemplo estudando o comportamento 
+de $e(\VECTOR{x})$ ou analisando a matriz hessiana de $e(\VECTOR{x})$ avaliada em $\VECTOR{\hat{x}}$.
+
+A demostração pode ser vista na Prova \ref{proof:theo:minfxbCfxbaxd}.
+\end{theorem} 
+
+

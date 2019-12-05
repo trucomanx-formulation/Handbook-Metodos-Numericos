@@ -154,10 +154,10 @@ fácil deduzir que:
 \section{Derivada de $||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2$  
 }
 
-\begin{theorem}[Valor exato]\label{theo:derfxbCfxb0}
+\begin{theorem}[Valor exato:]\label{theo:derfxbCfxb0}
 Se 
-$\VECTOR{x}\in \mathbb{R}^N$ é um vetor coluna, 
-$\VECTOR{b}\in \mathbb{R}^M$ é um vetor coluna,  
+$\VECTOR{x}\in \mathbb{R}^N$ e, 
+$\VECTOR{b}\in \mathbb{R}^M$ são vetores coluna,  
 $\VECTOR{f}: \mathbb{R}^{N}\rightarrow \mathbb{R}^{M}$ é uma função de valor vectorial, e
 $\MATRIX{C} \in \mathbb{R}^{M\times M}$ é uma matriz diagonal, 
 então se cumpre que:
@@ -165,13 +165,12 @@ então se cumpre que:
 \frac{\partial ||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2}{\partial \VECTOR{x}} =
 2 \MATRIX{J}(\VECTOR{x})^{\transpose}\MATRIX{C}\left[\VECTOR{f}(\VECTOR{x})-\VECTOR{b}\right],
 \end{equation}
-onde $\MATRIX{J}(\VECTOR{x})$ é a matriz \hyperref[def:jacobian]{Jacobiana} \cite{Jacobian} de $\VECTOR{f}(\VECTOR{x})$.
+onde $\MATRIX{J}(\VECTOR{x})$ é a \hyperref[def:jacobian]{\textbf{matriz Jacobiana}} de $\VECTOR{f}(\VECTOR{x})$.
 
 A demostração pode ser vista na Prova \ref{proof:theo:derfxbCfxb0}.
 \end{theorem}
-\index{Matriz Jacobiana}
 
-\begin{theorem}[Valor aproximado]\label{theo:derfxbCfxb}
+\begin{theorem}[Valor aproximado:]\label{theo:derfxbCfxb}
 Se 
 $\VECTOR{x}\in \mathbb{R}^N$ é um vetor coluna, 
 $\VECTOR{b}\in \mathbb{R}^M$ é um vetor coluna,  
@@ -185,31 +184,32 @@ então se cumpre que:
 
 Onde é considerada a aproximação
 $\VECTOR{f}(\VECTOR{x})\approx \VECTOR{f}(\VECTOR{p})+\MATRIX{J}(\VECTOR{p})\left(\VECTOR{x}-\VECTOR{p}\right)$,
-usando a serie de \hyperref[def:taylor]{Taylor} \cite{Taylor} para funções multivariáveis. Sendo $\VECTOR{p}$ um ponto fixo no domínio de $\VECTOR{f}(\VECTOR{x})$,  ao redor do qual é feita  aproximação
+usando a \hyperref[def:taylor]{\textbf{serie de Taylor}} para funções multivariáveis. Sendo $\VECTOR{p}$ um ponto fixo no domínio de $\VECTOR{f}(\VECTOR{x})$,  ao redor do qual é feita  aproximação
 da função $\VECTOR{f}(\VECTOR{x})$,
-e $\MATRIX{J}(\VECTOR{p})$ é a matriz \hyperref[def:jacobian]{Jacobiana} \cite{Jacobian} de $\VECTOR{f}(\VECTOR{x})$ avaliado no ponto $\VECTOR{p}$.
+e $\MATRIX{J}(\VECTOR{p})$ é a \hyperref[def:jacobian]{\textbf{matriz Jacobiana}} de $\VECTOR{f}(\VECTOR{x})$ avaliado no ponto $\VECTOR{p}$.
 
 A demostração pode ser vista na Prova \ref{proof:theo:derfxbCfxb}.
 \end{theorem}
-\index{Matriz Jacobiana}
-\index{Serie de Taylor}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Derivada de segundo ordem de $||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2$ 
 }
 
-\begin{theorem}[Valor exato]\label{theo:der2fxbCfxb0}
-Se 
-$\VECTOR{x}\in \mathbb{R}^N$ é um vetor coluna, 
-$\VECTOR{b}\in \mathbb{R}^M$ é um vetor coluna,  
+
+
+\begin{theorem}[Valor exato:]\label{theo:der2fxbCfxb0}
+Se
+$\VECTOR{x}\in \mathbb{R}^N$ e 
+$\VECTOR{b}\in \mathbb{R}^M$ são vetores coluna,  
 $\VECTOR{f}: \mathbb{R}^{N}\rightarrow \mathbb{R}^{M}$ é uma função de valor vectorial,
 $\MATRIX{C} \in \mathbb{R}^{M\times M}$ é uma matriz diagonal, e
-definida a função $e(\VECTOR{x})$,
+definimos a função $e(\VECTOR{x})$ como
 \begin{equation}
 e(\VECTOR{x})= ||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2.
 \end{equation}
-Então a matriz \hyperref[def:hessian]{Hessiana} \cite{Hessian} $\MATRIX{H}(\VECTOR{x})$ de $e(\VECTOR{x})$ é igual a:
+Então a \hyperref[def:hessian]{\textbf{matriz Hessiana}} $\MATRIX{H}(\VECTOR{x})$ de $e(\VECTOR{x})$ é igual a:
 \begin{equation}
 \MATRIX{H}(\VECTOR{x}) = \frac{\partial}{\partial \VECTOR{x}^{\transpose}}\left(  
 \frac{\partial e(\VECTOR{x}) }{\partial \VECTOR{x}} \right) = 2 \MATRIX{B}(\VECTOR{x})
@@ -225,8 +225,31 @@ onde
 A demostração pode ser vista na Prova \ref{proof:theo:der2fxbCfxb0}.
 \end{theorem}
 
-\index{Matriz Hessiana}
-\index{Serie de Taylor}
+\begin{theorem}[Valor aproximado:]\label{theo:der2fxbCfxb0aprox}
+Se 
+$\VECTOR{x}\in \mathbb{R}^N$ é  
+$\VECTOR{b}\in \mathbb{R}^M$ são vetores coluna,  
+$\VECTOR{f}: \mathbb{R}^{N}\rightarrow \mathbb{R}^{M}$ é uma função de valor vectorial,
+$\MATRIX{C} \in \mathbb{R}^{M\times M}$ é uma matriz diagonal, e 
+definimos a função $e(\VECTOR{x})$ como
+\begin{equation}
+e(\VECTOR{x})= ||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2.
+\end{equation}
+Então, para achar uma forma aproximada da \hyperref[def:hessian]{\textbf{matriz Hessiana}} $\MATRIX{H}(\VECTOR{x})$ de $e(\VECTOR{x})$, 
+podemos usar a aproximação linear de $\VECTOR{f}(\VECTOR{x})$ por meio da \hyperref[def:taylor]{\textbf{serie de Taylor}} 
+para funções multivariáveis\footnote{ $\VECTOR{f}(\VECTOR{x})\approx \VECTOR{f}(\VECTOR{p}) + \MATRIX{J}(\VECTOR{p})$ $\left(\VECTOR{x}-\VECTOR{p}\right)$,
+onde $\VECTOR{p}$ é um ponto fixo no domínio de $\VECTOR{f}(\VECTOR{x})$ ao redor do qual é feita  aproximação
+da função $\VECTOR{f}(\VECTOR{x})$,
+e $\MATRIX{J}(\VECTOR{p})$ é a \hyperref[def:jacobian]{\textbf{matriz Jacobiana}} de $\VECTOR{f}(\VECTOR{x})$ avaliada no ponto $\VECTOR{p}$.}, obtendo o seguinte resultado,
+\begin{equation}
+\MATRIX{H}(\VECTOR{x}) = \frac{\partial}{\partial \VECTOR{x}^{\transpose}}\left(  
+\frac{\partial e(\VECTOR{x}) }{\partial \VECTOR{x}} \right) \approx 
+2 \MATRIX{J}(\VECTOR{p})^{\transpose}\MATRIX{C} \MATRIX{J}(\VECTOR{p}).
+\end{equation}
+
+A demostração pode ser vista na Prova \ref{proof:theo:der2fxbCfxb0aprox}.
+\end{theorem}
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -234,7 +257,7 @@ A demostração pode ser vista na Prova \ref{proof:theo:der2fxbCfxb0}.
 \section{Derivada de $||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2+\alpha||\VECTOR{x}-\VECTOR{q}||_{\MATRIX{D}}^2$ 
 }
 
-\begin{theorem}[Valor aproximado]\label{theo:derfxbCfxbxqDxq}
+\begin{theorem}[Valor aproximado:]\label{theo:derfxbCfxbxqDxq}
 Se 
 $\VECTOR{x}\in \mathbb{R}^N$ é um vetor coluna, 
 $\VECTOR{b}\in \mathbb{R}^M$ é um vetor coluna,
@@ -251,11 +274,11 @@ então se cumpre que:
 
 Onde é considerada a aproximação
 $\VECTOR{f}(\VECTOR{x})\approx \VECTOR{f}(\VECTOR{p})+\MATRIX{J}(\VECTOR{p})\left(\VECTOR{x}-\VECTOR{p}\right)$,
-usando a serie de \hyperref[def:taylor]{Taylor} \cite{Taylor} para funções multivariáveis. Sendo $\VECTOR{p}$ um ponto fixo no domínio de $\VECTOR{f}(\VECTOR{x})$,  ao redor do qual é feita  aproximação
+usando a \hyperref[def:taylor]{\textbf{serie de Taylor}} para funções multivariáveis. Sendo $\VECTOR{p}$ um ponto fixo no domínio de $\VECTOR{f}(\VECTOR{x})$,  ao redor do qual é feita  aproximação
 da função $\VECTOR{f}(\VECTOR{x})$,
 e $\MATRIX{J}(\VECTOR{p})$ é a matriz \hyperref[def:jacobian]{Jacobiana} \cite{Jacobian} de $\VECTOR{f}(\VECTOR{x})$ avaliado no ponto $\VECTOR{p}$.
 
 A demostração pode ser vista na Prova \ref{proof:theo:derfxbCfxbxqDxq}.
 \end{theorem}
 
-\index{Serie de Taylor}
+

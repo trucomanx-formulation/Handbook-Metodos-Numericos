@@ -1,0 +1,27 @@
+\section{Minimização de $||\MATRIX{A}\VECTOR{x}-\VECTOR{b}||_{\MATRIX{C}}^2$
+}
+
+\begin{theorem}\label{theo:minAxbCAxb}
+Dados,
+um vetor coluna $\VECTOR{x}\in \mathbb{R}^N$, 
+um vetor coluna $\VECTOR{b}\in \mathbb{R}^M$,  
+uma matriz $\MATRIX{A} \in \mathbb{R}^{M\times N}$, 
+uma matriz diagonal $\MATRIX{C} \in \mathbb{R}^{M\times M}$, e 
+definida a Eq. (\ref{eq:minAxbCAxb1}),
+\begin{align}\label{eq:minAxbCAxb1}
+e(\VECTOR{x}) & = ||\MATRIX{A}\VECTOR{x}-\VECTOR{b}||_{\MATRIX{C}}^2 \\
+              & = (\MATRIX{A}\VECTOR{x}-\VECTOR{b})^{\transpose}\MATRIX{C}(\MATRIX{A}\VECTOR{x}-\VECTOR{b}).
+\end{align}
+Se desejamos ter o valor $\VECTOR{\hat{x}}$ que minimiza o escalar $e(\VECTOR{\hat{x}})$,
+devemos usar\footnote{A demostração pode ser vista na Prova \ref{proof:theo:minAxbCAxb}.} a Eq. (\ref{eq:minAxbCAxb2}),
+\begin{equation}\label{eq:minAxbCAxb2}
+\VECTOR{\hat{x}} =
+\left[ \MATRIX{A}^{\transpose}\MATRIX{C} \MATRIX{A} \right]^{-1}\MATRIX{A}^{\transpose}\MATRIX{C}\VECTOR{b}.
+\end{equation}
+Assim, o mínimo existe só sim $\MATRIX{A}^{\transpose}\MATRIX{C} \MATRIX{A}$ tem inversa.
+\end{theorem}
+
+\index{Pseudo-inversa de Moore-Penrose}
+\index{Problema inverso!Linear}
+\index{Minimização do erro quadrático!Linear}
+

@@ -14,6 +14,6 @@
 	pdflatex -shell-escape main x 2
 #done
 
-mv -f main.pdf samba-gafiera.pdf
+mv -f main.pdf metodos-numericos.pdf
 
 ./clean.sh

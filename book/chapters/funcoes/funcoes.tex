@@ -1,22 +1,72 @@
-\chapterimage{chapter_head_2.pdf} % Chapter heading image
+\chapterimage{chapter_function.pdf} % Chapter heading image
 
 \chapter{Funções e operadores notáveis}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Mnemônico vetor nabla $\vec{\triangledown}$}
+
+\begin{notation}[Uso do Mnemônico vetor nabla 
+($\overrightarrow{\triangledown}$ ):]
+Dado um vetor coluna $\VECTOR{x}\in \mathbb{R}^N$, usaremos mnemônico\footnote{Falando de um modo riguroso, 
+ $\overrightarrow{\triangledown}$ não é um operador diferencial, 
+e sim um mnemônico que nos ajuda a lembrar e representar uma série de operadores diferenciais.} 
+vetorial nabla ($\overrightarrow{\triangledown}$), como:
+\begin{equation}
+\overrightarrow{\triangledown}  \equiv \frac{\partial }{\partial \VECTOR{x}} =
+\begin{bmatrix}
+\frac{\partial  }{\partial x_{1}}\\
+\frac{\partial  }{\partial x_{2}}\\
+\hdots\\
+\frac{\partial  }{\partial x_{n}}\\
+\hdots\\
+\frac{\partial  }{\partial x_{N}}
+\end{bmatrix}
+\end{equation}
+\end{notation}
+
+\begin{tcbattention}
+Não deve ser confundido o mnemônico $\overrightarrow{\triangledown}$, 
+com o operador $\triangledown$, cujo uso será explicado nas seguintes seções.
+\end{tcbattention}
+
+\begin{definition}[Derivada 
+$\overrightarrow{\triangledown}^{\transpose}\VECTOR{f}(\VECTOR{x})$:]
+\label{def:nabla:dot}
+Dado 
+um vetor coluna $\VECTOR{x}\in \mathbb{R}^N$ e 
+uma função vetor coluna $\VECTOR{f}(\VECTOR{x}): \mathbb{R}^N \rightarrow \mathbb{R}^M$, 
+definimos que:
+\begin{equation}
+\overrightarrow{\triangledown}.~\VECTOR{f}(\VECTOR{x}) \equiv
+\overrightarrow{\triangledown}^{\transpose}\VECTOR{f}(\VECTOR{x})= 
+\frac{\partial f_{1}(\VECTOR{x}) }{\partial x_{1}}+
+\frac{\partial f_{2}(\VECTOR{x}) }{\partial x_{2}}+
+\hdots+
+\frac{\partial f_{n}(\VECTOR{x}) }{\partial x_{n}}+
+\hdots+
+\frac{\partial f_{N}(\VECTOR{x}) }{\partial x_{N}}=
+\sum \limits_{n=1}^N \frac{\partial f_{n}(\VECTOR{x}) }{\partial x_{n}}
+\end{equation}
+
+\end{definition}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Operador derivada para $e(\VECTOR{x})$, $\VECTOR{f}(\VECTOR{x})$ e  $\MATRIX{G}(\VECTOR{x})$}
 
-\begin{definition}\label{def:deltahor}
-Se 
-$\VECTOR{x}\in \mathbb{R}^N$ é um vetor coluna com elementos $x_n\in \mathbb{R}$ de modo que
-$n\in \mathbb{N}$, $1 \leq n \leq N$, 
-a função $e(\VECTOR{x}): \mathbb{R}^N \rightarrow \mathbb{R}$ é um escalar, 
-a função $\VECTOR{f}(\VECTOR{x}): \mathbb{R}^N \rightarrow \mathbb{R}^M$ é um vetor coluna,  e
-a função $\MATRIX{G}(\VECTOR{x}): \mathbb{R}^N \rightarrow \mathbb{R}^{M\times L}$ é uma matriz, 
-então definimos que:
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Derivadas a respeito de $\VECTOR{x}^{\transpose}$}
+\begin{definition}[Derivada de 
+$e(\VECTOR{x})$ a respeito de $\VECTOR{x}^{\transpose}$:]\label{def:deltahor}
+Dado 
+um vetor coluna $\VECTOR{x}\in \mathbb{R}^N$ e 
+uma função $e(\VECTOR{x}): \mathbb{R}^N \rightarrow \mathbb{R}$,
+definimos que:
 \begin{equation}
+\left[\overrightarrow{\triangledown} e(\VECTOR{x})\right]^{\transpose} \equiv 
 \frac{\partial e(\VECTOR{x}) }{\partial \VECTOR{x}^{\transpose}}= 
 \left[
 \begin{matrix}
@@ -29,8 +79,16 @@ então definimos que:
 \end{matrix}
 \right]= {\bigcup\limits_{n=1}^{\rightarrow}}^{N}{\frac{\partial e(\VECTOR{x}) }{\partial x_{n}}} 
 \end{equation}
+\end{definition}
 
+\begin{definition}[Derivada de 
+$\VECTOR{f}(\VECTOR{x})$ a respeito de $\VECTOR{x}^{\transpose}$:]\label{def:deltahor2}
+Dado 
+um vetor coluna $\VECTOR{x}\in \mathbb{R}^N$ e 
+uma função vetor coluna $\VECTOR{f}(\VECTOR{x}): \mathbb{R}^N \rightarrow \mathbb{R}^M$, 
+definimos que:
 \begin{equation}
+\left[\overrightarrow{\triangledown} \VECTOR{f}^{\transpose}(\VECTOR{x})\right]^{\transpose} \equiv 
 \frac{\partial \VECTOR{f}(\VECTOR{x}) }{\partial \VECTOR{x}^{\transpose}}= 
 \left[
 \begin{matrix}
@@ -43,7 +101,14 @@ então definimos que:
 \end{matrix}
 \right]= {\bigcup\limits_{n=1}^{\rightarrow}}^{N}{\frac{\partial \VECTOR{f}(\VECTOR{x}) }{\partial x_{n}}} 
 \end{equation}
+\end{definition}
 
+\begin{definition}[Derivada de 
+$\MATRIX{G}(\VECTOR{x})$ a respeito de $\VECTOR{x}^{\transpose}$:]\label{def:deltahor3}
+Dado 
+um vetor coluna $\VECTOR{x}\in \mathbb{R}^N$ e 
+uma função $\MATRIX{G}(\VECTOR{x}): \mathbb{R}^N \rightarrow \mathbb{R}^{M\times L}$, 
+definimos que:
 \begin{equation}
 \frac{\partial \MATRIX{G}(\VECTOR{x}) }{\partial \VECTOR{x}^{\transpose}}= 
 \left[
@@ -57,22 +122,27 @@ então definimos que:
 \end{matrix}
 \right]= {\bigcup\limits_{n=1}^{\rightarrow}}^{N}{\frac{\partial \MATRIX{G}(\VECTOR{x}) }{\partial x_{n}}}.
 \end{equation}
-
-Assim, 
-$\frac{\partial e(\VECTOR{x}) }{\partial \VECTOR{x}^{\transpose}} \in \mathbb{R}^{1\times N}$,
-$\frac{\partial \VECTOR{f}(\VECTOR{x}) }{\partial \VECTOR{x}^{\transpose}} \in \mathbb{R}^{M \times N}$ e
-$\frac{\partial \VECTOR{g}(\VECTOR{x}) }{\partial \VECTOR{x}^{\transpose}} \in \mathbb{R}^{M \times (LN)}$.
 \end{definition}
 
-\begin{definition}\label{def:deltaver}
-Se 
-$\VECTOR{x}\in \mathbb{R}^N$ é um vetor coluna com elementos $x_n\in \mathbb{R}$ de modo que
-$n\in \mathbb{N}$, $1 \leq n \leq N$, 
-a função $e(\VECTOR{x}): \mathbb{R}^N \rightarrow \mathbb{R}$ é um escalar,
-a função $\VECTOR{f}(\VECTOR{x}): \mathbb{R}^N \rightarrow \mathbb{R}^M$ é um vetor coluna,  e
-a função $\MATRIX{G}(\VECTOR{x}): \mathbb{R}^N \rightarrow \mathbb{R}^{M\times L}$ é uma matriz, 
-então definimos que:
+\begin{comment}
+Assim, obtemos o vetor linha
+$\frac{\partial e(\VECTOR{x}) }{\partial \VECTOR{x}^{\transpose}} \in \mathbb{R}^{1\times N}$,
+as matrizes
+$\frac{\partial \VECTOR{f}(\VECTOR{x}) }{\partial \VECTOR{x}^{\transpose}} \in \mathbb{R}^{M \times N}$ e
+$\frac{\partial \VECTOR{g}(\VECTOR{x}) }{\partial \VECTOR{x}^{\transpose}} \in \mathbb{R}^{M \times (LN)}$.
+\end{comment}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Derivadas a respeito de $\VECTOR{x}$}
+
+\begin{definition}[Derivada de 
+$e(\VECTOR{x})$ a respeito de $\VECTOR{x}$:]\label{def:deltaver}
+Dado 
+um vetor coluna $\VECTOR{x}\in \mathbb{R}^N$ e 
+uma função $e(\VECTOR{x}): \mathbb{R}^N \rightarrow \mathbb{R}$,
+definimos que:
 \begin{equation}
+\overrightarrow{\triangledown} e(\VECTOR{x}) \equiv 
 \frac{\partial e(\VECTOR{x}) }{\partial \VECTOR{x}}= 
 \left[
 \begin{matrix}
@@ -83,11 +153,17 @@ então definimos que:
 \vdots \\
 \frac{\partial e(\VECTOR{x}) }{\partial x_{N}} 
 \end{matrix}
-\right] = \functrans \left( \frac{\partial e(\VECTOR{x}) }{\partial \VECTOR{x}^{\transpose}} \right) =
-\funcvec \left( \frac{\partial e(\VECTOR{x}) }{\partial \VECTOR{x}^{\transpose}} \right) =
+\right] = 
 {\bigcup\limits_{n=1}^{\downarrow}}^{N}{\frac{\partial e(\VECTOR{x}) }{\partial x_{n}}} 
 \end{equation}
+\end{definition}
 
+\begin{definition}[Derivada de 
+$\VECTOR{f}(\VECTOR{x})$ a respeito de $\VECTOR{x}$:]\label{def:deltaver2}
+Dado 
+um vetor coluna $\VECTOR{x}\in \mathbb{R}^N$ e 
+uma função vetor coluna $\VECTOR{f}(\VECTOR{x}): \mathbb{R}^N \rightarrow \mathbb{R}^M$, 
+definimos que:
 \begin{equation}
 \frac{\partial \VECTOR{f}(\VECTOR{x}) }{\partial \VECTOR{x}}= 
 \left[
@@ -99,10 +175,17 @@ então definimos que:
 \vdots \\
 \frac{\partial \VECTOR{f}(\VECTOR{x}) }{\partial x_{N}}
 \end{matrix}
-\right] =  \funcvec \left( \frac{\partial \VECTOR{f}(\VECTOR{x}) }{\partial \VECTOR{x}^{\transpose}} \right) =
+\right] =  
 {\bigcup\limits_{n=1}^{\downarrow}}^{N}{\frac{\partial \VECTOR{f}(\VECTOR{x}) }{\partial x_{n}}}
 \end{equation}
+\end{definition}
 
+\begin{definition}[Derivada de 
+$\MATRIX{G}(\VECTOR{x})$ a respeito de $\VECTOR{x}$:]\label{def:deltaver3}
+Dado 
+um vetor coluna $\VECTOR{x}\in \mathbb{R}^N$ e 
+uma função $\MATRIX{G}(\VECTOR{x}): \mathbb{R}^N \rightarrow \mathbb{R}^{M\times L}$, 
+definimos que:
 \begin{equation}
 \frac{\partial \MATRIX{G}(\VECTOR{x}) }{\partial \VECTOR{x}}= 
 \left[
@@ -116,12 +199,14 @@ então definimos que:
 \end{matrix}
 \right] = {\bigcup\limits_{n=1}^{\downarrow}}^{N}{\frac{\partial \MATRIX{G}(\VECTOR{x}) }{\partial x_{n}}}
 \end{equation}
+\end{definition}
 
+\begin{comment}
 Assim, 
 $\frac{\partial e(\VECTOR{x}) }{\partial \VECTOR{x}} \in \mathbb{R}^{N \times 1}$,
 $\frac{\partial \VECTOR{f}(\VECTOR{x}) }{\partial \VECTOR{x}} \in \mathbb{R}^{(MN) \times 1}$ e
 $\frac{\partial \VECTOR{g}(\VECTOR{x}) }{\partial \VECTOR{x}} \in \mathbb{R}^{(MN) \times L}$.
-\end{definition}
+\end{comment}
 
 
 \begin{corollary}[Igualdade das derivadas cruzadas]\label{cor:derder}
@@ -144,14 +229,14 @@ então é fácil deduzir que:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Derivadas notáveis: Gradiente, Matriz Hessiana, Matriz Jacobiana}
 
-\begin{proposition}[Gradiente de $e(\VECTOR{x})$]\label{def:gradient}
+\begin{proposition}[$\triangledown e(\VECTOR{x})$ - Gradiente de $e(\VECTOR{x})$:]\label{def:gradient}
  Dada uma função $e:\mathbb{R}^{N}\rightarrow \mathbb{R}$ com variável $\VECTOR{x} \in \mathbb{R}^{N}$
  como vetor coluna com elementos $x_n\in \mathbb{R}$ de modo que $n\in \mathbb{N}$, $1 \leq n \leq N$,
  diferenciável em $\VECTOR{x}$. 
  $\triangledown e(\VECTOR{x})$ é chamado gradiente 
 \cite[pp. 913]{stewart2008calculus} \cite[pp. 80]{telles2015matematica} \cite{Gradient}  de $e(\VECTOR{x})$, de modo que: 
- \begin{equation}
-  \triangledown e(\VECTOR{x})\equiv \frac{\partial e(\VECTOR{x})}{\partial \VECTOR{x} }=
+\begin{equation}
+\frac{\partial e(\VECTOR{x})}{\partial \VECTOR{x} }=
 \left[
 \begin{matrix}
 \frac{\partial e(\VECTOR{x}) }{\partial x_{1}}&
@@ -163,70 +248,24 @@ então é fácil deduzir que:
 \end{matrix}
 \right]^{\transpose}
  \end{equation}
+\begin{equation}
+\overrightarrow{\triangledown} e(\VECTOR{x})\equiv  
+\triangledown e(\VECTOR{x}) \equiv 
+\frac{\partial e(\VECTOR{x})}{\partial \VECTOR{x} }
+\end{equation}
 \end{proposition}
 \index{Gradiente}
 
 
-\begin{proposition}[Matriz Hessiana de $e(\VECTOR{x})$]\label{def:hessian}
- Dada uma função $e:\mathbb{R}^{N}\rightarrow \mathbb{R}$ com variável $\VECTOR{x} \in \mathbb{R}^{N}$
- como vetor coluna  com elementos $x_n\in \mathbb{R}$ de modo que $n\in \mathbb{N}$, $1 \leq n \leq N$,
- diferenciável em $\VECTOR{x}$. 
- $\MATRIX{H}(\VECTOR{x})$ é chamada matriz Hessiana \cite[pp. 150]{zhang2017matrix} \cite{Hessian} 
- de $e(\VECTOR{x})$, de modo que: 
- \begin{equation}
-  \MATRIX{H}(\VECTOR{x})\equiv \frac{\partial }{\partial \VECTOR{x}} \left( \frac{\partial e(\VECTOR{x})}{ \partial \VECTOR{x}^{\transpose} }\right)=
-\left[
-\begin{matrix}
-\frac{\partial^2 e(\VECTOR{x}) }{\partial x_{1}\partial x_{1}}&
-\frac{\partial^2 e(\VECTOR{x}) }{\partial x_{1}\partial x_{2}}&
-\hdots&
-\frac{\partial^2 e(\VECTOR{x}) }{\partial x_{1}\partial x_{n}}&
-\hdots&
-\frac{\partial^2 e(\VECTOR{x}) }{\partial x_{1}\partial x_{N}}\\
-\frac{\partial^2 e(\VECTOR{x}) }{\partial x_{2}\partial x_{1}}&
-\frac{\partial^2 e(\VECTOR{x}) }{\partial x_{2}\partial x_{2}}&
-\hdots&
-\frac{\partial^2 e(\VECTOR{x}) }{\partial x_{2}\partial x_{n}}&
-\hdots&
-\frac{\partial^2 e(\VECTOR{x}) }{\partial x_{2}\partial x_{N}}\\
-\vdots&
-\vdots&
-\vdots&
-\vdots&
-\vdots&
-\vdots\\
-\frac{\partial^2 e(\VECTOR{x}) }{\partial x_{m}\partial x_{1}}&
-\frac{\partial^2 e(\VECTOR{x}) }{\partial x_{m}\partial x_{2}}&
-\hdots&
-\frac{\partial^2 e(\VECTOR{x}) }{\partial x_{m}\partial x_{n}}&
-\hdots&
-\frac{\partial^2 e(\VECTOR{x}) }{\partial x_{m}\partial x_{N}}\\
-\vdots&
-\vdots&
-\vdots&
-\vdots&
-\vdots&
-\vdots\\
-\frac{\partial^2 e(\VECTOR{x}) }{\partial x_{M}\partial x_{1}}&
-\frac{\partial^2 e(\VECTOR{x}) }{\partial x_{M}\partial x_{2}}&
-\hdots&
-\frac{\partial^2 e(\VECTOR{x}) }{\partial x_{M}\partial x_{n}}&
-\hdots&
-\frac{\partial^2 e(\VECTOR{x}) }{\partial x_{M}\partial x_{N}}\\
-\end{matrix}
-\right]
- \end{equation}
-\end{proposition}
-\index{Matriz Hessiana}
 
-\begin{proposition}[Matriz Jacobiana de $\VECTOR{f}(\VECTOR{x})$]\label{def:jacobian}
+\begin{proposition}[Matriz Jacobiana de $\VECTOR{f}(\VECTOR{x})$:]\label{def:jacobian}
  Dado um vetor coluna, como função $\VECTOR{f}:\mathbb{R}^{N}\rightarrow \mathbb{R}^{M}$ com variável $\VECTOR{x} \in \mathbb{R}^{N}$
  como vetor coluna com elementos $x_n\in \mathbb{R}$ de modo que $n\in \mathbb{N}$, $1 \leq n \leq N$,
  diferenciável em $\VECTOR{x}$. 
  $\MATRIX{J}(\VECTOR{x})$ é chamada matriz Jacobiana \cite[pp. 130]{zhang2017matrix} \cite{Jacobian}  de 
  $\VECTOR{f}(\VECTOR{x})=[f_1(\VECTOR{x})~f_2(\VECTOR{x})~\dots~f_m(\VECTOR{x})~\dots f_M(\VECTOR{x})]^{\transpose}$, de modo que: 
  \begin{equation}
-  \MATRIX{J}(\VECTOR{x})\equiv \frac{\partial \VECTOR{f}(\VECTOR{x})}{\partial \VECTOR{x}^{\transpose} }=
+   \frac{\partial \VECTOR{f}(\VECTOR{x})}{\partial \VECTOR{x}^{\transpose} }=
 \left[
 \begin{matrix}
 \frac{\partial \VECTOR{f}(\VECTOR{x}) }{\partial x_{1}}&
@@ -238,6 +277,13 @@ então é fácil deduzir que:
 \end{matrix}
 \right]
  \end{equation}
+
+\begin{equation}
+\MATRIX{J}(\VECTOR{x})\equiv
+\left[\overrightarrow{\triangledown} \VECTOR{f}^{\transpose}(\VECTOR{x})\right]^{\transpose} \equiv 
+\frac{\partial \VECTOR{f}(\VECTOR{x})}{\partial \VECTOR{x}^{\transpose} }
+\end{equation}
+
   \begin{equation}
   \MATRIX{J}(\VECTOR{x})\equiv 
 \left[
@@ -284,6 +330,63 @@ então é fácil deduzir que:
 \end{proposition}
 \index{Matriz Jacobiana}
 
+
+\begin{proposition}[$\triangledown^2 e(\VECTOR{x})$ - Matriz Hessiana de $e(\VECTOR{x})$:]\label{def:hessian}
+ Dada uma função $e:\mathbb{R}^{N}\rightarrow \mathbb{R}$ com variável $\VECTOR{x} \in \mathbb{R}^{N}$
+ como vetor coluna  com elementos $x_n\in \mathbb{R}$ de modo que $n\in \mathbb{N}$, $1 \leq n \leq N$,
+ diferenciável em $\VECTOR{x}$. 
+ $\MATRIX{H}(\VECTOR{x})$ é chamada matriz Hessiana \cite[pp. 150]{zhang2017matrix} \cite{Hessian} 
+ de $e(\VECTOR{x})$, de modo que: 
+\begin{equation}
+  \MATRIX{H}(\VECTOR{x}) \equiv  \overrightarrow{\triangledown} \overrightarrow{\triangledown}^{\transpose}e(\VECTOR{x}) \equiv  
+\triangledown^2 e(\VECTOR{x}) \equiv \frac{\partial }{\partial \VECTOR{x}} \left( \frac{\partial e(\VECTOR{x})}{ \partial \VECTOR{x}^{\transpose} }\right) 
+\end{equation}
+ \begin{equation}
+  \MATRIX{H}(\VECTOR{x}) =
+\left[
+\begin{matrix}
+\frac{\partial^2 e(\VECTOR{x}) }{\partial x_{1}\partial x_{1}}&
+\frac{\partial^2 e(\VECTOR{x}) }{\partial x_{1}\partial x_{2}}&
+\hdots&
+\frac{\partial^2 e(\VECTOR{x}) }{\partial x_{1}\partial x_{n}}&
+\hdots&
+\frac{\partial^2 e(\VECTOR{x}) }{\partial x_{1}\partial x_{N}}\\
+\frac{\partial^2 e(\VECTOR{x}) }{\partial x_{2}\partial x_{1}}&
+\frac{\partial^2 e(\VECTOR{x}) }{\partial x_{2}\partial x_{2}}&
+\hdots&
+\frac{\partial^2 e(\VECTOR{x}) }{\partial x_{2}\partial x_{n}}&
+\hdots&
+\frac{\partial^2 e(\VECTOR{x}) }{\partial x_{2}\partial x_{N}}\\
+\vdots&
+\vdots&
+\vdots&
+\vdots&
+\vdots&
+\vdots\\
+\frac{\partial^2 e(\VECTOR{x}) }{\partial x_{m}\partial x_{1}}&
+\frac{\partial^2 e(\VECTOR{x}) }{\partial x_{m}\partial x_{2}}&
+\hdots&
+\frac{\partial^2 e(\VECTOR{x}) }{\partial x_{m}\partial x_{n}}&
+\hdots&
+\frac{\partial^2 e(\VECTOR{x}) }{\partial x_{m}\partial x_{N}}\\
+\vdots&
+\vdots&
+\vdots&
+\vdots&
+\vdots&
+\vdots\\
+\frac{\partial^2 e(\VECTOR{x}) }{\partial x_{M}\partial x_{1}}&
+\frac{\partial^2 e(\VECTOR{x}) }{\partial x_{M}\partial x_{2}}&
+\hdots&
+\frac{\partial^2 e(\VECTOR{x}) }{\partial x_{M}\partial x_{n}}&
+\hdots&
+\frac{\partial^2 e(\VECTOR{x}) }{\partial x_{M}\partial x_{N}}\\
+\end{matrix}
+\right]
+ \end{equation}
+\end{proposition}
+\index{Matriz Hessiana}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -298,27 +401,34 @@ infinitamente diferenciável em $a \in \mathbb{R}$;
 esta pode ser expressada mediante uma somatória, em serie de Taylor 
 \cite[pp. 764]{stewart2008calculus} \cite[pp. 281]{telles2015matematica} \cite{Taylor} 
 ao redor de $a$, como
-mostra a Eq. (\ref{eq:taylord1}),
+mostra a Eq. (\ref{eq:taylord1}),% onde $\left.\frac{\partial^k d(x)}{\partial x^k}\right|_{x=a}\equiv d^{(k)}(a) $.
+\begin{equation}\label{eq:taylord0a}
+\left.\frac{\partial^k d(x)}{\partial x^k}\right|_{x=a}\equiv d^{(k)}(a) 
+\end{equation}
 \begin{equation}\label{eq:taylord1}
   d(x)=d(a)
-      ~+\left.\frac{\partial   d(x)}{\partial x  }\right|_{x=a}(x-a)
-      ~+\frac{1}{2}\left.\frac{\partial^2 d(x)}{\partial x^2}\right|_{x=a}(x-a)^{2}
+      ~+\frac{d'(a)}{1!} (x-a)
+      ~+\frac{d''(a)}{2!} (x-a)^{2}
       ~+\cdots 
-      ~+\frac{1}{k!}\left.\frac{\partial^k d(x)}{\partial x^k}\right|_{x=a}(x-a)^{k}
+      ~+\frac{d^{(k)}(a)}{k!} (x-a)^{k}
       ~+\cdots 
 \end{equation}
 A equação pode ser escrita de forma mais compacta mediante uma somatória  como mostra a Eq. (\ref{eq:taylord2}),
 \begin{equation}\label{eq:taylord2}
-  d(x)=\sum\limits_{k=0}^{+\infty} \left.\frac{\partial^k d(x)}{\partial x^k}\right|_{x=a}\frac{(x-a)^{k}}{k!}.
+  d(x)=\sum\limits_{k=0}^{+\infty} \frac{d^{(k)}(a)}{k!} (x-a)^{k}.
 \end{equation}
 \end{proposition}
 
-É possível ver um exemplo de aproximação da função $cos(x)$, 
-mediante o uso da serie de Taylor da Proposição \ref{prop:taylord}, 
+~
+
+\begin{example}[Serie de Taylor do $cos(x)$:]
+Podem ser vistas aproximações da função $cos(x)$, 
+mediante o uso da serie de Taylor da Proposição \ref{prop:taylord}, ao redor de $a=0$ e
 truncada ate a derivada de ordem $4$, $8$ e $10$, na Fig. \ref{fig:taylore}.
+\end{example}
 \begin{figure}[!h]
   \centering
-    \includegraphics[width=0.8\textwidth]{chapters/funcoes/mcode/taylore.eps}
+    \includegraphics[width=0.99\textwidth]{chapters/funcoes/mcode/taylore.eps}
   \caption{Aproximação da função $cos(x)$ usando a serie de Taylor truncada.}
     \label{fig:taylore}
 \end{figure}

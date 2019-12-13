@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-FILENAME=( "minimoex1" "minimoex2" "minimo-linear1" "fluxo1" "fluxo2")
+FILENAME=( "minimoex1" "minimoex2" "minimo-linear1" "fluxo1" "fluxo2" "fluxo3")
 
 for i in ${FILENAME[@]}; 
 do  

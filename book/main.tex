@@ -90,6 +90,7 @@
 \definecolor{colorsystemdefault}{RGB}{16,81,15} % Define the color used for highlighting throughout the book
 \definecolor{colorsystemdefaultdkred}{RGB}{98,32,6} % Define the color used for highlighting throughout the book
 \definecolor{colormylink}{RGB}{16,120,15} % Define the 
+\definecolor{colorpartpagebackground}{RGB}{120,120,120} % Define the
 \definecolor{dkred}{rgb}{0.6,0,0}
 
 
@@ -167,7 +168,7 @@
 %----------------------------------------------------------------------------------------
 %	TABLE OF CONTENTS
 %----------------------------------------------------------------------------------------
-\chapterimage{chapter_head_1.pdf} % Table of contents heading image
+\chapterimage{chapter_head_1_HSV.pdf} % Table of contents heading image
 \pagestyle{empty} % No headers
 \tableofcontents % Print the table of contents itself
 \cleardoublepage % Forces the first chapter to start on an odd page so it's on the right
@@ -176,8 +177,8 @@
 %----------------------------------------------------------------------------------------
 %	PART
 %----------------------------------------------------------------------------------------
-\part{Derivadas de funções e operadores}
-%\include{chapters/notacao/notacao}
+\part{Funções, derivadas e operadores}
+\include{chapters/notacao/notacao}
 % CHAPTER  
 \include{chapters/funcoes/funcoes}
 
@@ -201,14 +202,14 @@
 %----------------------------------------------------------------------------------------
 %	PART
 %----------------------------------------------------------------------------------------
-\part{Problemas: Achar raízes de funções}
+\part{Aplicações: Achar raízes de funções}
 % CHAPTER  
 \include{chapters/roots/raiz_hx}
 
 %----------------------------------------------------------------------------------------
 %	PART
 %----------------------------------------------------------------------------------------
-\part{Problemas: Varios}
+\part{Aplicações: Vários}
 % CHAPTER  
 \include{chapters/inverso-mapeamento/mapeamento}
 
@@ -230,11 +231,24 @@
 %----------------------------------------------------------------------------------------
 \part{Referencias}
 
-\chapter*{Bibliografia}
+%\chapter*{Bibliografia}
+%\addcontentsline{toc}{chapter}{\textcolor{colorsystemdefault}{Bibliography}}
+%\printbibliography[heading=bibempty]
+
+\chapter*{Bibliography}
 \addcontentsline{toc}{chapter}{\textcolor{colorsystemdefault}{Bibliography}}
-\printbibliography[heading=bibempty]
 
+\section*{Livros}
+\addcontentsline{toc}{section}{Books}
+\printbibliography[heading=bibempty,type=book]
 
+%\section*{Artigos}
+%\addcontentsline{toc}{section}{Articles}
+\printbibliography[heading=bibempty,type=article]
+
+\section*{Outras fontes}
+\addcontentsline{toc}{section}{Articles}
+\printbibliography[heading=bibempty, nottype=article, nottype=book]
 
 
 %----------------------------------------------------------------------------------------

@@ -11,6 +11,12 @@ tx = ty = linspace (0, AMP, 50)';
 err=fune(xx,yy,B);
 figure(1)
 surfc(xx,yy,err)
+hz=zlabel('e(x)');
+set(hz,'fontsize',FONTSIZE);
+hx=xlabel('x_1');
+set(hx,'fontsize',FONTSIZE);
+hy=ylabel('x_2');
+set(hy,'fontsize',FONTSIZE);
 colormap(jet)
 view([-10, 20])
 print(gcf,'surfcfx3.eps','-depsc',['-F:' num2str(FONTSIZE)])
@@ -28,11 +34,11 @@ P=[11.0999/5;11.0999/5]; %minimo relativo
 %P=[9/5;9/5]; %% No existe inversa
 %P=[7/5;7/5]; %% No existe inversa
 %P=[7.032993/5;7.032993/5];
-PEND=funj(P)'*(funf(P)-B)
+PEND=2*funj(P)'*(funf(P)-B)
 JJ=funj(P)
 
-ERR=sqrt(fune(P(1,end),P(2,end),B));
-while ((ERR(end)>0.001)&&(length(ERR)<8))
+ERR=fune(P(1,end),P(2,end),B);
+while ((ERR(end)>0.001^2)&&(length(ERR)<8))
 	JJ=funj(P(:,end));
 	[INVERSA RCOND]=inv(JJ'*JJ);
 	if(RCOND==0)
@@ -40,15 +46,17 @@ while ((ERR(end)>0.001)&&(length(ERR)<8))
 	endif
 	P(:,end+1)=P(:,end)+INVERSA*JJ'*(B-funf(P(:,end)));
 	
-	ERR=[ERR sqrt(fune(P(1,end),P(2,end),B))];
+	ERR=[ERR fune(P(1,end),P(2,end),B)];
 endwhile
 
-PENDEND=funj(P(:,end))'*(funf(P(:,end))-B)
+P
+ERR
+PENDEND=2*funj(P(:,end))'*(funf(P(:,end))-B)
 JJ=funj(P(:,end))
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 D=[linspace(0,AMP,601);linspace(0,AMP,601)];
-E=sqrt(fune(D(1,:),D(2,:),B));
+E=fune(D(1,:),D(2,:),B);
 DT=sqrt(D(1,:).^2 + D(2,:).^2);
 
 PT=sqrt(P(1,:).^2 + P(2,:).^2);
@@ -60,6 +68,11 @@ plot(PT,ERR,"-o","markersize", MARKERSIZE,'linewidth',LINEWIDTH)
 %hl=legend("X_k");
 %set(hl,"fontsize", FONTSIZE);
 set(gca, "fontsize", FONTSIZE);
+hx=xlabel('r=||x||');
+set(hx,'fontsize',FONTSIZE);
+hy=ylabel('e(r)');
+set(hy,'fontsize',FONTSIZE);
 xlim([0 AMP*sqrt(2)]);
+ylim([0 1.25*max(ERR)]);
 hold off
 print(gcf,'plotfx3.eps','-depsc',['-F:' num2str(FONTSIZE)])

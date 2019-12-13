@@ -1,4 +1,4 @@
-function hf=func_minimizando_hx_a(X1,a,M,b)
+function hf=func_minimizando_hx_a(X1,a,M,b,DAT)
     X=zeros(1,M);
     H=zeros(1,M);
     E=zeros(1,M);
@@ -13,20 +13,21 @@ function hf=func_minimizando_hx_a(X1,a,M,b)
     end
     X
     E
-    FONTSIZE=18;
 
     hf=figure(1);
     x=linspace(-2,2,32);
-    plot(x,(b*x.^3-a),'b-.',X,E,'g-o',x,(b*x.^3-a).^2,'r--');
+    plot(   x,(b*x.^3-a),'b-.',"markersize", DAT.MARKERSIZE,'linewidth',DAT.LINEWIDTH, ... 
+            X,E,'k-o',"markersize", DAT.MARKERSIZE,'linewidth',DAT.LINEWIDTH, ...
+            x,(b*x.^3-a).^2,'r--',"markersize", DAT.MARKERSIZE,'linewidth',DAT.LINEWIDTH);
     %set (gca, "ygrid", "on");
     ylim([-2 16])
     %ylim([min(x.^2-a) 1.5*max(x.^2-a)])
     xlim([min(x) max(x)]);
     hx=xlabel('x');
-    set (hx, "fontsize", FONTSIZE);
+    set (hx, "fontsize", DAT.FONTSIZE);
     hl=legend(' h(x)-a',' e(x_k)',' e(x)={(h(x)-a)}^2');
-    set (hl, "fontsize", FONTSIZE);
-    set (gca, "fontsize", FONTSIZE);
+    set (hl, "fontsize", DAT.FONTSIZE);
+    set (gca, "fontsize", DAT.FONTSIZE);
 
     hold on
     plot(x,0*x,'k')
@@ -35,7 +36,8 @@ function hf=func_minimizando_hx_a(X1,a,M,b)
         if(DELTAE>100000)
             DELTAE=100000;
         end
-        quiver (X(II), E(II), X(II+1)-X(II), DELTAE,'color','g','maxheadsize', 0.1);
+        quiver (X(II), E(II), X(II+1)-X(II), DELTAE,'color','k','linewidth',DAT.LINEWIDTH,'maxheadsize', 0.03);
     end
     hold off
+    set(gca, "fontsize", DAT.FONTSIZE);
 end

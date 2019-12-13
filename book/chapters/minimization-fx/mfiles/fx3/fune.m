@@ -7,6 +7,7 @@ function err=fune(x,y,b)
 	err=zeros(size(x));
 
 	for LL=1:L
-		err(LL)=norm(b-funf([x(LL) y(LL)]));
+		X=[x(LL);y(LL)];
+		err(LL)=norm(funf(X)-b)^2;
 	endfor
 endfunction

@@ -18,7 +18,7 @@ hx=xlabel('x');
 set(hx,'fontsize',FONTSIZE);
 hy=ylabel('f(x)');
 set(hy,'fontsize',FONTSIZE);
-hl=legend('cos(x)','Taylor 4','Taylor 8','Taylor 10');
+hl=legend('cos(x)','d_{4}(x)','d_{8}(x)','d_{10}(x)');
 set(hl,'location', 'eastoutside');
 set(hl,'fontsize',FONTSIZE);
 ylim([-1.5 1.5])

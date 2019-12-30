@@ -1,0 +1,310 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Operador derivada para $e(\VECTOR{x})$, $\VECTOR{f}(\VECTOR{x})$ e  $\MATRIX{G}(\VECTOR{x})$}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Derivadas a respeito de $\VECTOR{x}^{\transpose}$}
+
+\begin{definition}[Derivada de 
+$e(\VECTOR{x})$ a respeito de $\VECTOR{x}^{\transpose}$:]\label{def:deltahor}
+Dado 
+um vetor coluna $\VECTOR{x}\in \mathbb{R}^N$ e 
+uma função $e(\VECTOR{x}): \mathbb{R}^N \rightarrow \mathbb{R}$,
+definimos que:
+\begin{equation}
+\left[\overrightarrow{\triangledown} e(\VECTOR{x})\right]^{\transpose} \equiv 
+\frac{\partial e(\VECTOR{x}) }{\partial \VECTOR{x}^{\transpose}}= 
+\left[
+\begin{matrix}
+\frac{\partial e(\VECTOR{x}) }{\partial x_{1}}&
+\frac{\partial e(\VECTOR{x}) }{\partial x_{2}}&
+\hdots&
+\frac{\partial e(\VECTOR{x}) }{\partial x_{n}}&
+\hdots&
+\frac{\partial e(\VECTOR{x}) }{\partial x_{N}}
+\end{matrix}
+\right]= {\bigcup\limits_{n=1}^{\rightarrow}}^{N}{\frac{\partial e(\VECTOR{x}) }{\partial x_{n}}} 
+\end{equation}
+\end{definition}
+
+\begin{definition}[Derivada de 
+$\VECTOR{f}(\VECTOR{x})$ a respeito de $\VECTOR{x}^{\transpose}$:]\label{def:deltahor2}
+Dado 
+um vetor coluna $\VECTOR{x}\in \mathbb{R}^N$ e 
+uma função vetor coluna $\VECTOR{f}(\VECTOR{x}): \mathbb{R}^N \rightarrow \mathbb{R}^M$, 
+definimos que:
+\begin{equation}
+\left[\overrightarrow{\triangledown} \VECTOR{f}^{\transpose}(\VECTOR{x})\right]^{\transpose} \equiv 
+\frac{\partial \VECTOR{f}(\VECTOR{x}) }{\partial \VECTOR{x}^{\transpose}}= 
+\left[
+\begin{matrix}
+\frac{\partial \VECTOR{f}(\VECTOR{x}) }{\partial x_{1}}&
+\frac{\partial \VECTOR{f}(\VECTOR{x}) }{\partial x_{2}}&
+\hdots&
+\frac{\partial \VECTOR{f}(\VECTOR{x}) }{\partial x_{n}}&
+\hdots&
+\frac{\partial \VECTOR{f}(\VECTOR{x}) }{\partial x_{N}}
+\end{matrix}
+\right]= {\bigcup\limits_{n=1}^{\rightarrow}}^{N}{\frac{\partial \VECTOR{f}(\VECTOR{x}) }{\partial x_{n}}} 
+\end{equation}
+\end{definition}
+
+\begin{definition}[Derivada de 
+$\MATRIX{G}(\VECTOR{x})$ a respeito de $\VECTOR{x}^{\transpose}$:]\label{def:deltahor3}
+Dado 
+um vetor coluna $\VECTOR{x}\in \mathbb{R}^N$ e 
+uma função $\MATRIX{G}(\VECTOR{x}): \mathbb{R}^N \rightarrow \mathbb{R}^{M\times L}$, 
+definimos que:
+\begin{equation}
+\frac{\partial \MATRIX{G}(\VECTOR{x}) }{\partial \VECTOR{x}^{\transpose}}= 
+\left[
+\begin{matrix}
+\frac{\partial \MATRIX{G}(\VECTOR{x}) }{\partial x_{1}}&
+\frac{\partial \MATRIX{G}(\VECTOR{x}) }{\partial x_{2}}&
+\hdots&
+\frac{\partial \MATRIX{G}(\VECTOR{x}) }{\partial x_{n}}&
+\hdots&
+\frac{\partial \MATRIX{G}(\VECTOR{x}) }{\partial x_{N}}
+\end{matrix}
+\right]= {\bigcup\limits_{n=1}^{\rightarrow}}^{N}{\frac{\partial \MATRIX{G}(\VECTOR{x}) }{\partial x_{n}}}.
+\end{equation}
+\end{definition}
+
+\begin{comment}
+Assim, obtemos o vetor linha
+$\frac{\partial e(\VECTOR{x}) }{\partial \VECTOR{x}^{\transpose}} \in \mathbb{R}^{1\times N}$,
+as matrizes
+$\frac{\partial \VECTOR{f}(\VECTOR{x}) }{\partial \VECTOR{x}^{\transpose}} \in \mathbb{R}^{M \times N}$ e
+$\frac{\partial \VECTOR{g}(\VECTOR{x}) }{\partial \VECTOR{x}^{\transpose}} \in \mathbb{R}^{M \times (LN)}$.
+\end{comment}
+
+\begin{example}[Uso da Definição \ref{def:deltahor}:]
+Conhecida a função $e(\VECTOR{x}): \mathbb{R}^2 \rightarrow \mathbb{R}$, podemos calcular,
+\begin{equation}
+e(\VECTOR{x})=x_1^2+x_1 x_2+x_2^2
+\qquad \rightarrow \qquad
+\frac{\partial e(\VECTOR{x}) }{\partial \VECTOR{x}^{\transpose}}=
+\left[ 2 x_1+x_2 \quad x_1 + 2 x_2\right]
+\end{equation}
+\end{example}
+
+
+\begin{example}[Uso da Definição \ref{def:deltahor2}:]
+Conhecida a função $\VECTOR{f}(\VECTOR{x}): \mathbb{R}^2 \rightarrow \mathbb{R}^4$, podemos calcular,
+\begin{equation}
+\VECTOR{f}(\VECTOR{x})=
+\begin{bmatrix}
+x_1^2+x_2\\
+x_1+x_2^2\\
+x_1 x_2 \\
+x_1^2+x_2^2
+\end{bmatrix}
+\qquad \rightarrow \qquad
+\frac{\partial \VECTOR{f}(\VECTOR{x}) }{\partial \VECTOR{x}^{\transpose}}= 
+\begin{bmatrix}
+2 x_1 & 1\\
+1     & 2 x_2\\
+x_2   & x_1\\
+2 x_1 & 2 x_2
+\end{bmatrix}
+\end{equation}
+\end{example}
+
+\begin{example}[Uso da Definição \ref{def:deltahor3}:]
+Conhecida a função $\MATRIX{G}(\VECTOR{x}): \mathbb{R}^2 \rightarrow \mathbb{R}^{3 \times 2}$, podemos calcular,
+\begin{equation}
+\MATRIX{G}(\VECTOR{x})=
+\begin{bmatrix}
+x_1^2       & x_1 x_2\\
+x_1 x_2     & x_2^2\\
+x_1^2 + x_2 & x_1 + x_2^2\\
+x_1 + x_2   & x_1 + x_2
+\end{bmatrix}
+\qquad \rightarrow \qquad
+\frac{\partial \MATRIX{G}(\VECTOR{x}) }{\partial \VECTOR{x}^{\transpose}}= 
+\begin{bmatrix}
+2 x_1 & x_2 & 0   &   x_1\\
+  x_2 & 0   & x_1 & 2 x_2\\
+2 x_1 & 1   & 1   & 2 x_2\\
+    1 & 1   & 1   & 1
+\end{bmatrix}
+\end{equation}
+\end{example}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Derivadas a respeito de $\VECTOR{x}$}
+
+\begin{definition}[Derivada de 
+$e(\VECTOR{x})$ a respeito de $\VECTOR{x}$:]\label{def:deltaver}
+Dado 
+um vetor coluna $\VECTOR{x}\in \mathbb{R}^N$ e 
+uma função $e(\VECTOR{x}): \mathbb{R}^N \rightarrow \mathbb{R}$,
+definimos que:
+\begin{equation}
+\overrightarrow{\triangledown} e(\VECTOR{x}) \equiv 
+\frac{\partial e(\VECTOR{x}) }{\partial \VECTOR{x}}= 
+\left[
+\begin{matrix}
+\frac{\partial e(\VECTOR{x}) }{\partial x_{1}} \\
+\frac{\partial e(\VECTOR{x}) }{\partial x_{2}} \\
+\vdots \\
+\frac{\partial e(\VECTOR{x}) }{\partial x_{n}} \\
+\vdots \\
+\frac{\partial e(\VECTOR{x}) }{\partial x_{N-1}} \\
+\frac{\partial e(\VECTOR{x}) }{\partial x_{N}} 
+\end{matrix}
+\right] = 
+{\bigcup\limits_{n=1}^{\downarrow}}^{N}{\frac{\partial e(\VECTOR{x}) }{\partial x_{n}}} 
+\end{equation}
+\end{definition}
+
+\begin{definition}[Derivada de 
+$\VECTOR{f}(\VECTOR{x})$ a respeito de $\VECTOR{x}$:]\label{def:deltaver2}
+Dado 
+um vetor coluna $\VECTOR{x}\in \mathbb{R}^N$ e 
+uma função vetor coluna $\VECTOR{f}(\VECTOR{x}): \mathbb{R}^N \rightarrow \mathbb{R}^M$, 
+definimos que:
+\begin{equation}
+\frac{\partial \VECTOR{f}(\VECTOR{x}) }{\partial \VECTOR{x}}= 
+\left[
+\begin{matrix}
+\frac{\partial \VECTOR{f}(\VECTOR{x}) }{\partial x_{1}} \\
+\frac{\partial \VECTOR{f}(\VECTOR{x}) }{\partial x_{2}} \\
+\vdots \\
+\frac{\partial \VECTOR{f}(\VECTOR{x}) }{\partial x_{n}} \\
+\vdots \\
+\frac{\partial \VECTOR{f}(\VECTOR{x}) }{\partial x_{N-1}} \\
+\frac{\partial \VECTOR{f}(\VECTOR{x}) }{\partial x_{N}}
+\end{matrix}
+\right] =  
+{\bigcup\limits_{n=1}^{\downarrow}}^{N}{\frac{\partial \VECTOR{f}(\VECTOR{x}) }{\partial x_{n}}}
+\end{equation}
+\end{definition}
+
+\begin{definition}[Derivada de 
+$\MATRIX{G}(\VECTOR{x})$ a respeito de $\VECTOR{x}$:]\label{def:deltaver3}
+Dado 
+um vetor coluna $\VECTOR{x}\in \mathbb{R}^N$ e 
+uma função $\MATRIX{G}(\VECTOR{x}): \mathbb{R}^N \rightarrow \mathbb{R}^{M\times L}$, 
+definimos que:
+\begin{equation}
+\frac{\partial \MATRIX{G}(\VECTOR{x}) }{\partial \VECTOR{x}}= 
+\left[
+\begin{matrix}
+\frac{\partial \MATRIX{G}(\VECTOR{x}) }{\partial x_{1}} \\
+\frac{\partial \MATRIX{G}(\VECTOR{x}) }{\partial x_{2}} \\
+\vdots \\
+\frac{\partial \MATRIX{G}(\VECTOR{x}) }{\partial x_{n}} \\
+\vdots \\
+\frac{\partial \MATRIX{G}(\VECTOR{x}) }{\partial x_{N-1}} \\
+\frac{\partial \MATRIX{G}(\VECTOR{x}) }{\partial x_{N}}
+\end{matrix}
+\right] = {\bigcup\limits_{n=1}^{\downarrow}}^{N}{\frac{\partial \MATRIX{G}(\VECTOR{x}) }{\partial x_{n}}}
+\end{equation}
+\end{definition}
+
+\begin{comment}
+Assim, 
+$\frac{\partial e(\VECTOR{x}) }{\partial \VECTOR{x}} \in \mathbb{R}^{N \times 1}$,
+$\frac{\partial \VECTOR{f}(\VECTOR{x}) }{\partial \VECTOR{x}} \in \mathbb{R}^{(MN) \times 1}$ e
+$\frac{\partial \VECTOR{g}(\VECTOR{x}) }{\partial \VECTOR{x}} \in \mathbb{R}^{(MN) \times L}$.
+\end{comment}
+
+
+\begin{corollary}[Igualdade das derivadas cruzadas]\label{cor:derder}
+Dado,
+o vetor coluna $\VECTOR{x}\in \mathbb{R}^N$, 
+a função $e(\VECTOR{x}): \mathbb{R}^N \rightarrow \mathbb{R}$; e
+considerando as Definições \ref{def:deltahor}, \ref {def:deltaver}, e o 
+teorema da igualdade das derivadas cruzadas, 
+tambem conhecido como ``teorema de Clairaut'' \cite[pp. 885]{stewart2008calculus}
+ou ``teorema de Clairaut-Schwarz'' \cite[pp. 311]{telles2015matematica}; 
+podemos deduzir que:
+\begin{equation}
+ \frac{\partial }{\partial \VECTOR{x}} \left( \frac{\partial e(\VECTOR{x} )}{\partial \VECTOR{x}^{\transpose}} \right) = 
+\frac{\partial }{\partial \VECTOR{x}^{\transpose}} \left( \frac{\partial e(\VECTOR{x} )}{\partial \VECTOR{x}} \right)
+\end{equation}
+\end{corollary}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{example}[Uso da Definição \ref{def:deltaver}:]
+Conhecida a função $e(\VECTOR{x}): \mathbb{R}^2 \rightarrow \mathbb{R}$, podemos calcular,
+\begin{equation}
+e(\VECTOR{x})=x_1^2+x_1 x_2+x_2^2
+\qquad \rightarrow \qquad
+\frac{\partial e(\VECTOR{x}) }{\partial \VECTOR{x}}=
+\begin{bmatrix}
+ 2 x_1 + x_2 \\
+ x_1 + 2 x_2
+\end{bmatrix}
+\end{equation}
+\end{example}
+
+
+\begin{example}[Uso da Definição \ref{def:deltaver2}:]
+Conhecida a função $\VECTOR{f}(\VECTOR{x}): \mathbb{R}^2 \rightarrow \mathbb{R}^4$, podemos calcular,
+\begin{equation}
+\VECTOR{f}(\VECTOR{x})=
+\begin{bmatrix}
+x_1^2+x_2\\
+x_1+x_2^2\\
+x_1 x_2 \\
+x_1^2+x_2^2
+\end{bmatrix}
+\qquad \rightarrow \qquad
+\frac{\partial \VECTOR{f}(\VECTOR{x}) }{\partial \VECTOR{x}}= 
+\begin{bmatrix}
+2 x_1 \\
+1     \\
+x_2   \\
+2 x_1 \\
+1     \\
+2 x_2 \\
+x_1   \\
+2 x_2
+\end{bmatrix}
+\end{equation}
+\end{example}
+
+
+\begin{example}[Uso da Definição \ref{def:deltaver3}:]
+Conhecida a função $\MATRIX{G}(\VECTOR{x}): \mathbb{R}^2 \rightarrow \mathbb{R}^{3 \times 2}$, podemos calcular,
+\begin{equation}
+\MATRIX{G}(\VECTOR{x})=
+\begin{bmatrix}
+x_1^2       & x_1 x_2\\
+x_1 x_2     & x_2^2\\
+x_1^2 + x_2 & x_1 + x_2^2\\
+x_1 + x_2   & x_1 + x_2
+\end{bmatrix}
+\qquad \rightarrow \qquad
+\frac{\partial \MATRIX{G}(\VECTOR{x}) }{\partial \VECTOR{x}}= 
+\begin{bmatrix}
+2 x_1 & x_2\\ 
+  x_2 & 0  \\ 
+2 x_1 & 1  \\ 
+    1 & 1  \\ 
+0   &   x_1\\
+x_1 & 2 x_2\\
+1   & 2 x_2\\
+1   & 1
+\end{bmatrix}
+\end{equation}
+\end{example}
+
+\begin{example}[Uso do Corolário \ref{cor:derder}:]
+Conhecida a função $e(\VECTOR{x}): \mathbb{R}^2 \rightarrow \mathbb{R}$, podemos calcular,
+\begin{equation}
+e(\VECTOR{x})=x_1^2+x_1 x_2+x_2^2
+\qquad \rightarrow \qquad
+\frac{\partial^2 e(\VECTOR{x}) }{\partial \VECTOR{x} \partial \VECTOR{x}^{\transpose}}=
+\frac{\partial^2 e(\VECTOR{x}) }{\partial \VECTOR{x}^{\transpose} \partial \VECTOR{x}}=
+\begin{bmatrix}
+ 2 & 1 \\
+ 1 & 2
+\end{bmatrix}
+\end{equation}
+\end{example}
+

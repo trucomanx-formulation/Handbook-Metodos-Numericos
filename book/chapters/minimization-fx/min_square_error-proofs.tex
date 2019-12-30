@@ -245,10 +245,12 @@ pelo que se deduz que a Eq. (\ref{eq:proof:minfxbCfxbaxqd2})
 pode ser usada para procurar aproximações de pontos mínimos $\VECTOR{\hat{x}}$ em $e(\VECTOR{x})$ desde a posição $\VECTOR{p}$,
 ou pelo menos aproximações de novas posições em caminhos numa direção descendente de $e(\VECTOR{x})$.
 
+\begin{comment}
 \item A Eq. (\ref{eq:proof:minfxbCfxbaxqd2}) é satisfeita 
 com $\VECTOR{x}^* \approx \VECTOR{p}$ se acharmos um  
 ponto $\VECTOR{p}$ onde  $\VECTOR{b} \approx \VECTOR{f}(\VECTOR{p}\approx \VECTOR{q})$; 
 é dizer um mínimo global de $e(\VECTOR{x})$ em $\VECTOR{p}$, como pode ser visto na Figura \ref{fig:ex0a}. 
+\end{comment}
 
 \item Se reescrevemos a Eq. (\ref{eq:proof:minfxbCfxbaxqd2}) usando o Teorema \ref{theo:derfxbCfxb0}
 e o Corolário \ref{coro:derAxbAxb2},
@@ -261,8 +263,9 @@ obtemos
 onde a Eq. (\ref{eq:proof:minfxbCfxb2ea1}) é satisfeita 
 com $\VECTOR{x}^* \approx \VECTOR{p}$
 se acharmos um  ponto $\VECTOR{p}$ onde  
-$\frac{\partial e(\VECTOR{p})}{\partial \VECTOR{x} }\approx \VECTOR{0}$; 
-é dizer $\VECTOR{p}$ é um ponto de inflexão de $e(\VECTOR{x})$, como pode ser visto na Figura \ref{fig:ex0b}.
+$\frac{\partial e(\VECTOR{p})}{\partial \VECTOR{x} }\approx \VECTOR{0}$,
+ como descrito na Eq. (\ref{eq:proof:minfxbCfxb1exact2}); 
+é dizer $\VECTOR{p}$ é um ponto de inflexão de $e(\VECTOR{x})$, ver Figura \ref{fig:ex0b}.
 Porem, dado que a equação avança desde $\VECTOR{p}$ na direção de um mínimo $\VECTOR{x}^*$, 
 mesmo que nos pontos de inflexão correspondentes a máximos ou pontos de sela,
 encontremos valores de $\VECTOR{p}$ próximos a $\VECTOR{x}^*$,
@@ -313,7 +316,7 @@ definida a Eq. (\ref{eq:proof:minfxbCfxbaxod0}),
 \begin{equation}\label{eq:proof:minfxbCfxbaxod0}
 e(\VECTOR{x})=||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2+\alpha||\VECTOR{x}-\VECTOR{x}_{last}||_{\MATRIX{D}}^2,
 \end{equation}
-tendo en consideração que $\VECTOR{x}_{last}$ é uma constante equivalente a $\VECTOR{x}_{k-1}$
+tendo em consideração que $\VECTOR{x}_{last}$ é uma constante equivalente a $\VECTOR{x}_{k-1}$
 numa busca iterativa ou equivalente a $\VECTOR{p}$, 
 se decidimos usar uma aproximação linear ao redor de $\VECTOR{p}$ em $\VECTOR{f}(\VECTOR{x})$; 
 é dizer, o segundo somando na Eq. (\ref{eq:proof:minfxbCfxbaxod0}) 
@@ -405,7 +408,7 @@ se usamos a seguinte equação iterativa,
 onde se inicia desde um $\VECTOR{p}_{0}$ 
 ate que exista uma tendencia prolongada onde se observe que $\VECTOR{p}_{k}$ é muito próximo a $\VECTOR{p}_{k-1}$,
 momento no qual declaramos que $\VECTOR{\hat{x}} \approx \VECTOR{p}_{k}$.
-Disto também se deduz que o erro a otimizar em cada iteração será diferente e influenciado pelo valor do ponto $\VECTOR{p}_{k-1}$,
+Disto também se deduz que o erro a minimizar em cada iteração será diferente e influenciado pelo valor do ponto $\VECTOR{p}_{k-1}$,
 \begin{equation}
 e_{k-1}(\VECTOR{x})  \equiv 
 ||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2+
@@ -414,7 +417,7 @@ e_{k-1}(\VECTOR{x})  \equiv
 \item Como foi visto na Figura  \ref{fig:ex0b},
 pode existir um mínimo global $\VECTOR{\hat{x}}$ de $e(\VECTOR{\hat{x}}) > 0$.
 Isto nos restringe a que no uso da Eq. (\ref{eq:proof:minfxbCfxb3a}),
-nosso critério principal para estabelecer o final do cáculo iterativo,
+nosso critério principal para estabelecer o final do cálculo iterativo,
 deve ser a tendencia na  proximidade entre $\VECTOR{p}_{k}$ e $\VECTOR{p}_{k-1}$ 
 e não o valor de $e(\VECTOR{x}_k)$.
 \end{itemize}~

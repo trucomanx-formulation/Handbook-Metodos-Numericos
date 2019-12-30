@@ -25,7 +25,7 @@ function hf=func_minimizando_hx_a(X1,a,M,b,DAT)
     xlim([min(x) max(x)]);
     hx=xlabel('x');
     set (hx, "fontsize", DAT.FONTSIZE);
-    hl=legend(' h(x)-a',' e(x_k)',' e(x)={(h(x)-a)}^2');
+    hl=legend(' h(x)-a',' e(x_k)',' e(x)');
     set (hl, "fontsize", DAT.FONTSIZE);
     set (gca, "fontsize", DAT.FONTSIZE);
 

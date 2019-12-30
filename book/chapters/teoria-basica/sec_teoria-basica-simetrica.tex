@@ -1,0 +1,81 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{ Matrizes simétricas}
+
+\index{Matriz!Simétrica}
+
+\begin{definition}[Matriz simétrica:]\label{def:symmetricmatrix0}
+Conhecida uma matriz quadrada $\MATRIX{A} \in \mathbb{R}^{N \times N}$. 
+\begin{itemize}
+\item Esta é uma matriz simétrica, sim se cumpre que \cite[pp. 18]{golub2013matrix} 
+\begin{equation}
+\MATRIX{A}^{\transpose} = \MATRIX{A}
+\end{equation}
+\end{itemize}
+\end{definition}
+
+\begin{theorem}[Forma quadratica e matrizes simétricas:]\label{theo:simetricmatrix0}
+Conhecida uma matriz quadrada $\MATRIX{A} \in \mathbb{R}^{N \times N}$.
+\begin{itemize}
+\item Se definimos a matriz simétrica $\MATRIX{S}=\frac{\MATRIX{A}+\MATRIX{A}^{\transpose}}{2}$ então\footnote{A
+demostração pode ser vista na Prova \ref{proof:theo:simetricmatrix0}.} 
+podemos afirmar que para qualquer vetor $\VECTOR{x} \in \mathbb{R}^{N}$ se cumpre que 
+\begin{equation}
+\VECTOR{x}^{\transpose}\MATRIX{S}\VECTOR{x} = 
+\VECTOR{x}^{\transpose}\MATRIX{A}\VECTOR{x} =
+\VECTOR{x}^{\transpose}\MATRIX{A}^{\transpose}\VECTOR{x}
+\end{equation}
+\end{itemize}
+\end{theorem}
+
+
+
+\begin{theorem}[As matrizes simétricas são diagonalizaveis:]\label{theo:simetricmatrix2}
+Conhecida uma matriz quadrada $\MATRIX{A} \in \mathbb{R}^{N \times N}$, 
+com  autovalores $\lambda_n$, $\forall n \in \{1, 2, ..., N\}$.
+%e autovetores $\VECTOR{e}_n$, $\forall n \in \{1, 2, ..., N\}$.
+\begin{itemize}
+\item Se $\MATRIX{A}$ é uma matriz simétrica então
+%\footnote{A demostração pode ser vista na Prova \ref{proof:theo:simetricmatrix2}.} 
+existe uma matriz $\MATRIX{Q}$ ortogonal que cumpre \cite[pp. 67,440]{golub2013matrix}
+\begin{equation}
+\begin{bmatrix}
+\lambda_1 & 0         & ...    & 0 \\
+0         & \lambda_2 & ...    & 0 \\
+\vdots    & \vdots    & \ddots & \vdots \\
+0         & 0         & ...    & \lambda_N
+\end{bmatrix}
+=\MATRIX{Q}^{-1}\MATRIX{A}\MATRIX{Q}.
+\end{equation}
+\end{itemize}
+\end{theorem}
+
+
+\begin{theorem}[Autovalor de maior valor em matrizes simétricas:]\label{theo:simetricmatrix3}
+Conhecida uma matriz quadrada $\MATRIX{A} \in \mathbb{R}^{N \times N}$, 
+com  autovalores $\lambda_n$, $\forall n \in \{1, 2, ..., N\}$.
+%e autovetores $\VECTOR{e}_n$, $\forall n \in \{1, 2, ..., N\}$.
+\begin{itemize}
+\item Se $\MATRIX{A}$ é uma matriz simétrica então, $\lambda_{max}(\MATRIX{A})$,
+o autovalor de maior valor da  matriz $\MATRIX{A}$ cumpre \cite[pp. 67]{golub2013matrix}
+\begin{equation}
+\lambda_{max}(\MATRIX{A}) = \max_{\VECTOR{x}\neq 0} \frac{\VECTOR{x}^{\transpose}\MATRIX{A}\VECTOR{x}}{\VECTOR{x}^{\transpose}\VECTOR{x}},
+\end{equation}
+\end{itemize}
+onde $\VECTOR{x} \in \mathbb{R}^N$.
+\end{theorem}
+
+\begin{theorem}[Autovalor de menor valor em matrizes simétricas:]\label{theo:simetricmatrix4}
+Conhecida uma matriz quadrada $\MATRIX{A} \in \mathbb{R}^{N \times N}$, 
+com  autovalores $\lambda_n$, $\forall n \in \{1, 2, ..., N\}$.
+%e autovetores $\VECTOR{e}_n$, $\forall n \in \{1, 2, ..., N\}$.
+\begin{itemize}
+\item Se $\MATRIX{A}$ é uma matriz simétrica então, $\lambda_{min}(\MATRIX{A})$,
+o autovalor de menor valor da  matriz $\MATRIX{A}$ cumpre \cite[pp. 67]{golub2013matrix}
+\begin{equation}
+\lambda_{min}(\MATRIX{A}) = \min_{\VECTOR{x}\neq 0} \frac{\VECTOR{x}^{\transpose}\MATRIX{A}\VECTOR{x}}{\VECTOR{x}^{\transpose}\VECTOR{x}},
+\end{equation}
+onde $\VECTOR{x} \in \mathbb{R}^N$.
+\end{itemize}
+\end{theorem}

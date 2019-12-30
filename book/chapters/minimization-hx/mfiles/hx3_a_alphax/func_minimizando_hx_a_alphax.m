@@ -12,6 +12,7 @@ function hf=func_minimizando_hx_a_alphax(X1,a,M,b,alpha,DAT)
         E(II)=(H(II)-a).^2+alpha*X(II)*X(II);
     end
     X
+    E
 
     hf=figure(1);
     x=linspace(-2,2,128);
@@ -24,7 +25,7 @@ function hf=func_minimizando_hx_a_alphax(X1,a,M,b,alpha,DAT)
     xlim([min(x) max(x)]);
     hx=xlabel('x');
     set (hx, "fontsize", DAT.FONTSIZE);
-    hl=legend(' h(x)-a',' e(x_k)',' e(x)={(h(x)-a)}^2+\alpha {x}^2');
+    hl=legend(' h(x)-a',' e(x_k)',' e(x)');
     set (hl, "fontsize", DAT.FONTSIZE);
     set (gca, "fontsize", DAT.FONTSIZE);
 

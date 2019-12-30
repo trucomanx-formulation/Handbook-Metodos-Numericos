@@ -1,0 +1,116 @@
+\section{Provas dos teoremas}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{myproofT}[Prova do Teorema \ref{theo:simetricmatrix0}:]\label{proof:theo:simetricmatrix0}
+Conhecida uma matriz quadrada $\MATRIX{A} \in \mathbb{R}^{N \times N}$,
+Se definimos a matriz simétrica $\MATRIX{S}=\frac{\MATRIX{A}+\MATRIX{A}^{\transpose}}{2}$ e
+o vetor $\VECTOR{x} \in \mathbb{R}^{N}$, então
+\begin{equation}
+\VECTOR{x}^{\transpose}\MATRIX{S}\VECTOR{x} = 
+\frac{\VECTOR{x}^{\transpose}\MATRIX{A}\VECTOR{x}}{2} +
+\frac{\VECTOR{x}^{\transpose}\MATRIX{A}^{\transpose}\VECTOR{x}}{2}
+\end{equation}
+dado que cada somando da equação anterior é um escalar podemos afirmar que 
+\begin{equation}
+\VECTOR{x}^{\transpose}\MATRIX{S}\VECTOR{x} = 
+\frac{\VECTOR{x}^{\transpose}\MATRIX{A}\VECTOR{x}}{2} +
+\left[\frac{\VECTOR{x}^{\transpose}\MATRIX{A}^{\transpose}\VECTOR{x}}{2}\right]^{\transpose}
+\end{equation}
+e consequentemente que
+\begin{equation}
+\VECTOR{x}^{\transpose}\MATRIX{S}\VECTOR{x} = 
+\VECTOR{x}^{\transpose}\MATRIX{A}\VECTOR{x} =
+\VECTOR{x}^{\transpose}\MATRIX{A}^{\transpose}\VECTOR{x}
+\end{equation} 
+\end{myproofT}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{myproofT}[Prova do Teorema \ref{theo:positivematrix1}:]\label{proof:theo:positivematrix1}
+Conhecida uma matriz quadrada $\MATRIX{A} \in \mathbb{R}^{N \times N}$ e definida positiva, com  autovalores $\lambda_n$,
+e autovetores $\VECTOR{e}_n$, $\forall n \in \{1, 2, ..., N\}$, de modo que,
+\begin{equation}\label{eq:proof:theo:positivematrix1:0}
+\MATRIX{A}\VECTOR{e}_n=\lambda_n \VECTOR{e}_n.
+\end{equation}
+\begin{equation}\label{eq:proof:theo:positivematrix1:1}
+\VECTOR{e}_n^{\transpose}\MATRIX{A}\VECTOR{e}_n=\lambda_n \VECTOR{e}_n^{\transpose}\VECTOR{e}_n.
+\end{equation}
+
+\begin{itemize}
+\item Assim, usando a Eq. (\ref{eq:proof:theo:positivematrix1:1}) e a Definição \ref{def:positivematrix0} podemos afirmar que
+\begin{equation}
+\VECTOR{e}_n^{\transpose}\MATRIX{A}\VECTOR{e}_n >0
+\end{equation} 
+o que implica que
+\begin{equation}
+\lambda_n \VECTOR{e}_n^{\transpose}\VECTOR{e}_n > 0
+\quad \rightarrow \quad
+\lambda_n  \geq 0
+\end{equation} 
+\end{itemize}
+\end{myproofT}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{myproofT}[Prova do Teorema \ref{theo:positivematrix1}:]\label{proof:theo:positivematrix2}
+Conhecida uma matriz quadrada $\MATRIX{A} \in \mathbb{R}^{N \times N}$ simetricas,
+com  autovalores $\lambda_n>0$, $\forall n \in \{1, 2, ..., N\}$;
+sabemos pelo Teorema \ref{theo:simetricmatrix2}, 
+que existe uma \hyperref[def:ortogonalmatrix0]{\textbf{matriz ortogonal}} $\MATRIX{Q}$,
+\begin{equation}
+\MATRIX{Q}^{\transpose}\MATRIX{A}\MATRIX{Q} = \MATRIX{\lambda}_{\MATRIX{A}}\equiv
+\begin{bmatrix}
+\lambda_1 & 0         & ...    & 0 \\
+0         & \lambda_2 & ...    & 0 \\
+\vdots    & \vdots    & \ddots & \vdots \\
+0         & 0         & ...    & \lambda_N
+\end{bmatrix}.
+\end{equation}
+Se multiplicamos esta igualdade por um vector $\VECTOR{x} \in \mathbb{R}^N$ (non-zero), obtemos,
+\begin{equation}
+\VECTOR{x}^{\transpose} \MATRIX{Q}^{\transpose}\MATRIX{A}\MATRIX{Q} \VECTOR{x} = 
+\VECTOR{x}^{\transpose} \MATRIX{\lambda}_{\MATRIX{A}} \VECTOR{x}
+\end{equation}
+\begin{equation}
+\VECTOR{x}^{\transpose} \MATRIX{Q}^{\transpose}\MATRIX{A}\MATRIX{Q} \VECTOR{x} 
+= \sum \limits_{n=1}^{N}\lambda_n x_n^2.
+\end{equation}
+Aplicando uma troca de variaveis de modo que $\VECTOR{y}=\MATRIX{Q} \VECTOR{x}$,
+\begin{equation}
+\VECTOR{y}^{\transpose} \MATRIX{A} \VECTOR{y} 
+= \sum \limits_{n=1}^{N}\lambda_n x_n^2.
+\end{equation}
+Dado que a soma de todos os $\lambda_n x_n^2$ é positiva, podemos afirmar que
+\begin{equation}
+\VECTOR{y}^{\transpose} \MATRIX{A} \VECTOR{y} > 0;
+\end{equation}
+é dizer $\MATRIX{A}$ é definida positiva.
+\end{myproofT}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{myproofT}[Prova do Teorema \ref{theo:similhante1}:]\label{proof:theo:similhante1}
+Conhecidas as matrizes semelhantes $\MATRIX{A} \in \mathbb{C}^{N \times N}$ e $\MATRIX{B} \in \mathbb{R}^{N \times N}$,
+de modo que se cumpre que 
+\begin{equation}
+\MATRIX{A} = \MATRIX{P}^{-1} \MATRIX{B} \MATRIX{P}.
+\end{equation}
+para um $\MATRIX{P}$ dado.
+
+Se calculamos o polinômio carateristico $p_{\MATRIX{A}}(\lambda)$ de $\MATRIX{A}$,
+\begin{equation}
+p_{\MATRIX{A}}(\lambda)=det\left(A-\lambda \MATRIX{I}\right),
+\end{equation}
+podemos rescrever esta equação
+\begin{equation}
+p_{\MATRIX{A}}(\lambda)=det\left(\MATRIX{P}^{-1} \MATRIX{B} \MATRIX{P}-\lambda \MATRIX{P}^{-1} \MATRIX{I} \MATRIX{P} \right),
+\end{equation}
+\begin{equation}
+p_{\MATRIX{A}}(\lambda)=det\left( \MATRIX{P}^{-1}\right)det\left( \MATRIX{B} -\lambda \MATRIX{I} \right)det\left( \MATRIX{P}\right),
+\end{equation}
+\begin{equation}
+p_{\MATRIX{A}}(\lambda)=det\left( \MATRIX{B} -\lambda \MATRIX{I} \right) = p_{\MATRIX{B}}(\lambda),
+\end{equation}
+\end{myproofT}

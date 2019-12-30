@@ -170,6 +170,7 @@
 %----------------------------------------------------------------------------------------
 \chapterimage{chapter_head_1_HSV.pdf} % Table of contents heading image
 \pagestyle{empty} % No headers
+%\pagestyle{fancy} % Print headers again
 \tableofcontents % Print the table of contents itself
 \cleardoublepage % Forces the first chapter to start on an odd page so it's on the right
 \pagestyle{fancy} % Print headers again
@@ -178,14 +179,17 @@
 %	PART
 %----------------------------------------------------------------------------------------
 \part{Funções, derivadas e operadores}
+% CHAPTER  
 \include{chapters/notacao/notacao}
-% CHAPTER  
 \include{chapters/funcoes/funcoes}
-
-% CHAPTER  
 \include{chapters/derivada/der_square_error}
-\input{chapters/derivada/der_square_error-proofs}
-
+\include{chapters/differential-eq/differential-eq}
+%----------------------------------------------------------------------------------------
+%	PART
+%----------------------------------------------------------------------------------------
+\part{Teoria geral}
+% CHAPTER  
+\include{chapters/teoria-basica/teoria-basica}
 
 %----------------------------------------------------------------------------------------
 %	PART
@@ -193,25 +197,17 @@
 \part{Minimização do erro em funções de custo}
 % CHAPTER  
 \input{chapters/minimization-fx/min_square_error}
-\input{chapters/minimization-fx/min_square_error-proofs}
-% CHAPTER  
 \input{chapters/minimization-hx/min_square_error_hx}
-\input{chapters/minimization-hx/min_square_error_hx-proofs}
 
-
-%----------------------------------------------------------------------------------------
-%	PART
-%----------------------------------------------------------------------------------------
-\part{Aplicações: Achar raízes de funções}
-% CHAPTER  
-\include{chapters/roots/raiz_hx}
 
 %----------------------------------------------------------------------------------------
 %	PART
 %----------------------------------------------------------------------------------------
 \part{Aplicações: Vários}
 % CHAPTER  
-\include{chapters/inverso-mapeamento/mapeamento}
+\input{chapters/roots/raiz_hx}
+\input{chapters/mapeamento/mapeamento}
+
 
 %----------------------------------------------------------------------------------------
 %----------------------------------------------------------------------------------------
@@ -234,6 +230,8 @@
 %\chapter*{Bibliografia}
 %\addcontentsline{toc}{chapter}{\textcolor{colorsystemdefault}{Bibliography}}
 %\printbibliography[heading=bibempty]
+
+\chapterimage{chapter_head_1.pdf}
 
 \chapter*{Bibliography}
 \addcontentsline{toc}{chapter}{\textcolor{colorsystemdefault}{Bibliography}}

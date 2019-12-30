@@ -2,7 +2,7 @@
 }
 
 
-\index{Pseudo-inversa de Moore-Penrose}
+
 \index{Problema inverso!Linear}
 \index{Minimização do erro quadrático!Linear}
 
@@ -27,12 +27,14 @@ onde o mínimo só existe sim $\MATRIX{A}^{\transpose}\MATRIX{C} \MATRIX{A}$ tem
 \end{theorem}
 
 
-\begin{corollaryT}[Vetor perpendicular ao plano 
+\begin{corollary}[Vetor perpendicular ao plano 
 $\MATRIX{A}\VECTOR{x}$ desde o ponto $\VECTOR{b}$:] 
 \label{coro:minAxbCAxb1} ~
 
 \noindent
 \begin{minipage}{0.49\textwidth}
+\centering
+\begin{minipage}{0.95\textwidth}
      \begin{figure}[H]
          \centering
          \includegraphics[width=0.9\textwidth]{chapters/minimization-fx/minimo-linear1.eps}
@@ -40,6 +42,7 @@ $\MATRIX{A}\VECTOR{x}$ desde o ponto $\VECTOR{b}$:]
 $\MATRIX{A}\VECTOR{x}$ traçado desde o ponto $\VECTOR{b}$. }
          \label{fig:coro:minAxbCAxb1:a}
      \end{figure}
+\end{minipage}
 \end{minipage}
 \begin{minipage}{0.49\textwidth}
 A partir do Teorema \ref{theo:minAxbCAxb}, 
@@ -52,9 +55,16 @@ partindo desde o ponto $\VECTOR{b}$, usando a seguinte equação,
 \end{matrix}
 \end{equation}
 onde $I$ é uma matriz identidade.
-Podemos ver um diagrama descrevendo o vetor $\VECTOR{d}_p$ na Figura \ref{fig:coro:minAxbCAxb1:a}.
+Podemos ver graficamente o vetor $\VECTOR{d}_p$ na Figura \ref{fig:coro:minAxbCAxb1:a}.
+%%
+\index{Moore-Penrose!Pseudo-inversa}
+\index{Pseudo-inversa!Moore-Penrose}
+\begin{tcbattention}
+A matriz $\left[ \MATRIX{A}^{\transpose}\MATRIX{A} \right]^{-1}\MATRIX{A}^{\transpose}$
+também é chamada de pseudo inversa de Moore-Penrose da matriz $\MATRIX{A}$ \cite[pp. 290]{golub2013matrix}.
+\end{tcbattention}
 \end{minipage}
-\end{corollaryT}
+\end{corollary}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Exemplos de minimização de $||\MATRIX{A}\VECTOR{x}-\VECTOR{b}||_{\MATRIX{C}}^2$}
@@ -96,12 +106,12 @@ Podemos ver a resposta a este exemplo na Solução \ref{ex:minAxbCAxb:sol1}.
 \begin{SolutionT}[Relativa ao Exemplo \ref{ex:minAxbCAxb1}:]
 \label{ex:minAxbCAxb:sol1}
 Com todos estes dados e usando a Eq. (\ref{eq:minAxbCAxb1}),
-obtemos a superficie $e(\VECTOR{x})$ como mostra a Figura \ref{fig:ex:minAxbCAxb:a}.
+obtemos a superfície $e(\VECTOR{x})$ como mostra a Figura \ref{fig:ex:minAxbCAxb:a}.
 Usando a Eq. (\ref{eq:minAxbCAxb2}) sabemos que o ponto $\VECTOR{\hat{x}}=[1\quad 1]^{\transpose}$
 minimiza a Eq. (\ref{eq:minAxbCAxb1}), com um $e(\VECTOR{\hat{x}})=0.12$.
 
 Usando o Corolário \ref{coro:minAxbCAxb1}, podemos calcular o vetor $\VECTOR{d}_p=[0.2 \quad 0.2 \quad -0.2]^{\transpose}$,
-como mostra o grafico da Figura \ref{fig:ex:minAxbCAxb:b}.
+como mostra o gráfico da Figura \ref{fig:ex:minAxbCAxb:b}.
 
 \begin{figure}[h!]
      \centering

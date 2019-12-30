@@ -1,0 +1,130 @@
+\section{Provas dos teoremas}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{myproofT}[Prova do Teorema \ref{theo:differential-eq:order1:0}:]\label{proof:theo:differential-eq:order1:0}
+Dados, o vetor coluna $\VECTOR{X} \in \mathbb{R}^N$, 
+a \hyperref[def:diagonalization0]{\textbf{matriz diagonalizável}} $\MATRIX{P} \in \mathbb{R}^{N\times N}$,
+com $N$ autovalores $\lambda_n$ e seus correspondentes autovetores $\VECTOR{v}_n$,
+$\forall n \in \{1, 2, ..., N\}$, 
+e definida a equação diferencial matricial,
+\begin{equation}\label{eq:firstorder1}
+\DTVECTOR{X}(t) + \MATRIX{P} \VECTOR{X}(t)=0.
+\end{equation}
+
+Esta pode ser resolvida se definimos uma resposta $\VECTOR{X}(t)$ da forma, 
+\begin{equation}\label{eq:firstorder:1}
+\VECTOR{X}(t)=\MATRIX{C}e^{\VECTOR{b}t},
+\end{equation}
+onde $\MATRIX{C} \in \mathbb{R}^{N\times N}$ é uma matriz quadrada e $\VECTOR{b} \in \mathbb{R}^{N}$ é um vetor coluna.
+De modo que se introduzimos a Eq. (\ref{eq:firstorder:1}) na Eq. (\ref{eq:firstorder1}),
+obtemos 
+\begin{equation}\label{eq:firstorder:2}
+\left(\MATRIX{C}\MATRIX{B}+\MATRIX{P}\MATRIX{C}\right)e^{\VECTOR{b}t} = 0 
+\qquad \leftrightarrow \qquad
+\MATRIX{B}=-\MATRIX{C}^{-1}\MATRIX{P}\MATRIX{C};
+\end{equation}
+onde $\MATRIX{B}=\funcdiag(\VECTOR{b})$. 
+Assim, dado que $\MATRIX{B}$ é uma matriz diagonal criada pela diagonalização da  
+matriz $-\MATRIX{P}$, nós sabemos que
+a diagonal da matriz $\MATRIX{B}$ corresponde com os autovalores da matriz $-\MATRIX{P}$,
+e seguindo o Teorema \ref{theo:diagonalization1}, a matriz $\MATRIX{C}$ é uma matriz cujas colunas estão formadas pelos 
+autovetores de $\MATRIX{P}$ \cite[pp. 67]{golub2013matrix}; de modo que
+\begin{equation}\label{eq:firstorder:4}
+\MATRIX{B}=-
+\begin{bmatrix}
+\lambda_1 & 0         & ...    & 0 \\
+0         & \lambda_2 & ...    & 0 \\
+\vdots    & \vdots    & \ddots & \vdots \\
+0         & 0         & ...    & \lambda_N
+\end{bmatrix}
+%\equiv -\MATRIX{C}^{-1}\MATRIX{P}\MATRIX{C}, 
+\qquad \wedge \qquad 
+\MATRIX{C}=\MATRIX{V}\MATRIX{D}, 
+\end{equation}
+onde $\MATRIX{V}=\left[ \VECTOR{v}_1~  \VECTOR{v}_2~  \dots~ \VECTOR{v}_N\right]$ 
+é uma matriz formada pela agrupação dos autovetores $\VECTOR{v}_n$ da matriz $\MATRIX{P}$,
+e $\MATRIX{D}=\funcdiag\left(\left[ d_1~  d_2~  \dots~ d_N\right]\right)$ 
+é uma matriz diagonal para formar outra matriz  
+$\MATRIX{V}\MATRIX{D}=\left[ d_1\VECTOR{v}_1~  d_2\VECTOR{v}_2~  \dots~ d_N\VECTOR{v}_N\right]$
+com autovetores nas colunas.
+Assim, a Eq. (\ref{eq:firstorder:4}) gera uma solução para a Eq. (\ref{eq:firstorder1}),
+onde é possível afirmar que
+\begin{equation}\label{eq:firstorder:5}
+\VECTOR{X}(t)=\MATRIX{V}\MATRIX{D} e^{-\VECTOR{a} t},
+\end{equation}
+onde $\VECTOR{a}=\left[ \lambda_1~ \lambda_2~ \dots~ \lambda_M\right]^{T}$.
+\end{myproofT}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{myproofT}[Prova do Teorema \ref{theo:differential-eq:0}:]\label{proof:theo:differential-eq:0}
+Dados, o vetor coluna $\VECTOR{X} \in \mathbb{R}^N$, 
+a \hyperref[def:positivematrix0]{\textbf{matriz definida positiva}} $\MATRIX{P} \in \mathbb{R}^{N\times N}$,
+com $N$ autovalores $\lambda_n$ ``diferentes'' e seus correspondentes autovetores $\VECTOR{v}_n$,
+$\forall n \in \{1, 2, ..., N\}$, 
+e definida a equação diferencial matricial,
+\begin{equation}\label{eq:segundoorder1}
+\DDTVECTOR{X}(t) + \MATRIX{P} \VECTOR{X}(t)=0.
+\end{equation}
+
+Esta pode ser resolvida se definimos uma resposta $\VECTOR{X}(t)$ da forma, 
+\begin{equation}\label{eq:segundoorder:1}
+\VECTOR{X}(t)=\MATRIX{C}e^{\VECTOR{b}t},
+\end{equation}
+onde $\MATRIX{C} \in \mathbb{C}^{N\times N}$ é uma matriz quadrada e $\VECTOR{b} \in \mathbb{C}^{N}$ é um vetor coluna.
+De modo que se introduzimos a Eq. (\ref{eq:segundoorder:1}) na Eq. (\ref{eq:segundoorder1}),
+obtemos 
+\begin{equation}\label{eq:segundoorder:2}
+\left(\MATRIX{C}\MATRIX{B}^2+\MATRIX{P}\MATRIX{C}\right)e^{\VECTOR{b}t} = 0 
+\qquad \leftrightarrow \qquad
+\MATRIX{B}^2=-\MATRIX{C}^{-1}\MATRIX{P}\MATRIX{C};
+\end{equation}
+
+onde $\MATRIX{B}=\funcdiag(\VECTOR{b})$. 
+Assim, dado que $\MATRIX{B}^2$ é uma matriz diagonal criada pela diagonalização da  
+matriz $-\MATRIX{P}$, nós sabemos que
+a diagonal da matriz $\MATRIX{B}^2$ corresponde com os autovalores da matriz $-\MATRIX{P}$,
+e seguindo o Teorema \ref{theo:diagonalization1}, a matriz $\MATRIX{C}$ é uma matriz cujas colunas estão formadas pelos 
+autovetores de $\MATRIX{P}$ \cite[pp. 67]{golub2013matrix}; de modo que
+\begin{equation}\label{eq:segundoorder:4}
+\MATRIX{B}^2=-
+\begin{bmatrix}
+\lambda_1 & 0         & ...    & 0 \\
+0         & \lambda_2 & ...    & 0 \\
+\vdots    & \vdots    & \ddots & \vdots \\
+0         & 0         & ...    & \lambda_N
+\end{bmatrix}
+%\equiv -\MATRIX{C}^{-1}\MATRIX{P}\MATRIX{C}, 
+\qquad \wedge \qquad \MATRIX{C}=\MATRIX{V}\MATRIX{A}, 
+\end{equation}
+onde $\MATRIX{V}=\left[ \VECTOR{v}_1~  \VECTOR{v}_2~  \dots~ \VECTOR{v}_N\right]$ 
+é uma matriz formada pela agrupação dos autovetores $\VECTOR{v}_n$ da matriz $\MATRIX{P}$,
+e $\MATRIX{A}=\funcdiag\left(\left[ a_1~  a_2~  \dots~ a_N\right]\right)$ 
+é uma matriz diagonal para formar outra matriz  
+$\MATRIX{V}\MATRIX{A}=\left[ a_1\VECTOR{v}_1~  a_2\VECTOR{v}_2~  \dots~ a_N\VECTOR{v}_N\right]$
+com autovetores nas colunas.
+Assim, a Eq. (\ref{eq:segundoorder:4}) gera um par de soluções para a Eq. (\ref{eq:segundoorder1}),
+onde é possível afirmar que
+\begin{equation}\label{eq:segundoorder:5}
+\VECTOR{X}(t)=\MATRIX{V}\MATRIX{A}_1 e^{\VECTOR{w} \mathbf{i} t}+ \MATRIX{V}\MATRIX{A}_2 e^{-\VECTOR{w} \mathbf{i} t},
+\end{equation}
+onde $\VECTOR{w}=\left[ \sqrt{\lambda_1}~ \sqrt{\lambda_2}~ \dots~ \sqrt{\lambda_M}\right]^{T}$, 
+e $\MATRIX{A}_1$ e $\MATRIX{A}_2$ são duas matrizes diagonais qualquer.
+Se reordenamo a Eq. (\ref{eq:segundoorder:5}) obtemos
+\begin{equation}\label{eq:segundoorder:6}
+\VECTOR{X}(t)=
+\MATRIX{V}\left(\MATRIX{A}_1+\MATRIX{A}_2\right) cos\left(\VECTOR{w}  t\right)+ 
+\MATRIX{V}\left(\MATRIX{A}_1-\MATRIX{A}_2\right) \mathbf{i} sin\left(\VECTOR{w}  t\right);
+\end{equation}
+dado que soubemos que a resposta $\VECTOR{X}(t)$ é real, 
+podemos afirmar que $\MATRIX{A}_1$ é uma matriz complexa conjugada da matriz $\MATRIX{A}_2$,
+de modo que podemos rescrever a Eq. (\ref{eq:segundoorder:6}) como
+\begin{equation}\label{eq:segundoorder:7}
+ \VECTOR{X}(t)= \MATRIX{V}\left[\MATRIX{D}_1 cos(\VECTOR{w}t) + \MATRIX{D}_2 sin(\VECTOR{w}t) \right],
+\end{equation}
+onde $\MATRIX{D}_1 \in \mathbb{R}^{N\times N}$ e $\MATRIX{D}_2 \in \mathbb{R}^{N\times N}$ 
+são matrizes diagonais reais. 
+\end{myproofT}

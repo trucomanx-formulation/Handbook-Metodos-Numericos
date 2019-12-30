@@ -14,7 +14,7 @@ definida a Eq. (\ref{eq:minfxbCfxbaxoaxo1}),
 \begin{equation}\label{eq:minfxbCfxbaxoaxo1}
 e(\VECTOR{x})=||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2+\alpha||\VECTOR{x}-\VECTOR{x}_{last}||_{\MATRIX{D}}^2,
 \end{equation}
-tendo en consideração que $\VECTOR{x}_{last}$ é uma constante equivalente a $\VECTOR{x}_{k-1}$
+tendo em consideração que $\VECTOR{x}_{last}$ é uma constante equivalente a $\VECTOR{x}_{k-1}$
 numa busca iterativa ou equivalente a $\VECTOR{p}$, 
 se decidimos usar uma aproximação linear ao redor de $\VECTOR{p}$ em $\VECTOR{f}(\VECTOR{x})$; 
 é dizer, o segundo somando na Eq. (\ref{eq:minfxbCfxbaxoaxo1}) 
@@ -51,7 +51,7 @@ sem aclarar se é local ou global.
 se  $\MATRIX{J}(\VECTOR{x}_{k-1}) = \MATRIX{0}$,
 pois indica que existe\footref{ref:minfxxp} um ponto de inflexão 
 (máximo, mínimo ou ponto de sela) em $e(\VECTOR{x}_{k-1})$;
-consequentemente poderiamos ter achado um mínimo.
+consequentemente poderíamos ter achado um mínimo.
 \item A busca iterativa da Eq. (\ref{eq:minfxbCfxbaxoaxo2}) é considerada falida quando 
 $\MATRIX{J}(\VECTOR{x}_{k-1})^{\transpose}\MATRIX{C} \MATRIX{J}(\VECTOR{x}_{k-1}) +\alpha\MATRIX{D}$
 não tem inversa.
@@ -65,7 +65,7 @@ não tem inversa.
 \begin{itemize}
 \item O Teorema \ref{theo:minfxbCfxbaxoaxo} pode ser usado para achar o vetor $\VECTOR{x}$
 que minimize $||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2$, procurando 
-em todo momento que na busca iterative se minimize $||\VECTOR{x}_{k}-\VECTOR{x}_{k-1}||_{\MATRIX{D}}^2$,
+em todo momento que na busca iterativa se minimize $||\VECTOR{x}_{k}-\VECTOR{x}_{k-1}||_{\MATRIX{D}}^2$,
 \end{itemize}
 \end{tcbattention}
 

@@ -1,0 +1,49 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Mnemônico vetor nabla $\vec{\triangledown}$}
+
+\begin{notation}[Uso do Mnemônico vetor nabla 
+($\overrightarrow{\triangledown}$ ):]
+Dado um vetor coluna $\VECTOR{x}\in \mathbb{R}^N$, usaremos mnemônico\footnote{Falando de um modo riguroso, 
+ $\overrightarrow{\triangledown}$ não é um operador diferencial, 
+e sim um mnemônico que nos ajuda a lembrar e representar uma série de operadores diferenciais.} 
+vetorial nabla ($\overrightarrow{\triangledown}$), como:
+\begin{equation}
+\overrightarrow{\triangledown}  \equiv \frac{\partial }{\partial \VECTOR{x}} =
+\begin{bmatrix}
+\frac{\partial  }{\partial x_{1}}\\
+\frac{\partial  }{\partial x_{2}}\\
+\hdots\\
+\frac{\partial  }{\partial x_{n}}\\
+\hdots\\
+\frac{\partial  }{\partial x_{N}}
+\end{bmatrix}
+\end{equation}
+\end{notation}
+
+\begin{tcbattention}
+Não deve ser confundido o mnemônico $\overrightarrow{\triangledown}$, 
+com o operador $\triangledown$, cujo uso será explicado nas seguintes seções.
+\end{tcbattention}
+
+\begin{definition}[Derivada 
+$\overrightarrow{\triangledown}^{\transpose}\VECTOR{f}(\VECTOR{x})$:]
+\label{def:nabla:dot}
+Dado 
+um vetor coluna $\VECTOR{x}\in \mathbb{R}^N$ e 
+uma função vetor coluna $\VECTOR{f}(\VECTOR{x}): \mathbb{R}^N \rightarrow \mathbb{R}^M$, 
+definimos que:
+\begin{equation}
+\overrightarrow{\triangledown}.~\VECTOR{f}(\VECTOR{x}) \equiv
+\overrightarrow{\triangledown}^{\transpose}\VECTOR{f}(\VECTOR{x})= 
+\frac{\partial f_{1}(\VECTOR{x}) }{\partial x_{1}}+
+\frac{\partial f_{2}(\VECTOR{x}) }{\partial x_{2}}+
+\hdots+
+\frac{\partial f_{n}(\VECTOR{x}) }{\partial x_{n}}+
+\hdots+
+\frac{\partial f_{N}(\VECTOR{x}) }{\partial x_{N}}=
+\sum \limits_{n=1}^N \frac{\partial f_{n}(\VECTOR{x}) }{\partial x_{n}}
+\end{equation}
+
+\end{definition}

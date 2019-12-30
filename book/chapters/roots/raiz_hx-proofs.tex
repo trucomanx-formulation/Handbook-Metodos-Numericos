@@ -1,0 +1,68 @@
+\section{Provas dos teoremas}
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{myproofT}[Prova do Teorema \ref{theo:rootshx}:]\label{proof:theo:rootshx}
+Dados,
+um escalar $\delta \in \mathbb{R}$, 
+um escalar $x \in \mathbb{R}$, 
+uma função $h:\mathbb{R} \rightarrow \mathbb{R}$, e 
+conhecida a validade da Eq. (\ref{eq:prrof:rootshx1}),
+\begin{equation}\label{eq:prrof:rootshx1}
+0=h(x);
+\end{equation}
+se desejamos ter o valor $x=\hat{x}$ que cumpra que $||h(\hat{x})||<\delta$, 
+é aplicado o critério mostrado no Teorema \ref{theo:minhxhx} onde se indica que uma forma de achar o 
+$x=\hat{x}$ que minimize $e(x)=||h(x)||^2$ é mediante a seguinte equação iterativa.  
+\begin{equation}\label{eq:prrof:rootshx1:2}
+x_{k}=x_{k-1}-\frac{h(x_{k-1})}{h'(x_{k-1})};
+\end{equation}
+
+\end{myproofT}
+
+\begin{myproofT}[Prova da continuidade de 
+$h(x)/h'(x)$:]\label{proof:theo:cont:rootshx}
+Conhecida uma função $h(x)$  diferenciável em $x=a$, ao menos ate a $n$-ésima derivada onde $h^(n)(a)\neq 0$.
+Se $h(a)=0$ e $h'(a)=0$ o fator
+\begin{equation}\label{eq:prrof:cont1}
+F(x)=\frac{h(x)}{h'(x)}
+\end{equation}
+causa uma indeterminação de zero dividido por zero para $x=a$.
+Para resolver este problema é aplicada a regra de l'Hôpital, de forma consecutiva,
+sobre a Eq. (\ref{eq:prrof:cont1}), onde podemos afirmar
+\begin{equation}\label{eq:prrof:cont2}
+F(a)=\lim_{x\rightarrow a}\frac{h(x)}{h'(x)}=\frac{h^{(n-1)}(a)}{h^{(n)}(a)}
+\end{equation}
+onde $n$ é escolhido como o primeiro valor avaliado em $a$, 
+onde se cumpra que $h^{(n)}(a)\neq 0$. 
+Assim, podemos definir que os lugares onde $h(a)=0$ e $h'(a)=0$,
+ tem um valor $F(a)\neq 0$,
+se $h(x)$ tem ao menos uma derivada $n$-ésima em $x=a$ onde $h^{(n)}(a)\neq 0$.
+
+Uma forma simples de expressar isto é indicar que $F(a)\neq 0$ sim é possível,
+expressar $h(x)$ em \hyperref[def:taylor]{\textbf{serie de Taylor}} ao redor de $x=a$. 
+\end{myproofT}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{myproofT}[Prova do Teorema \ref{theo:rootshxreg}:]\label{proof:theo:rootshxreg}
+Dados,
+um escalar $\delta \in \mathbb{R}$, 
+um escalar $x \in \mathbb{R}$, 
+uma função $h:\mathbb{R} \rightarrow \mathbb{R}$, e 
+conhecida a validade da Eq. (\ref{eq:prrof:rootshxreg1}),
+\begin{equation}\label{eq:prrof:rootshxreg1}
+0=h(x);
+\end{equation}
+se desejamos ter o valor $x=\hat{x}$ que cumpra que $||h(\hat{x})||<\delta$, 
+é aplicado o critério mostrado no Teorema \ref{theo:minhxhxxoxo} onde se indica que uma forma de achar o valor 
+$x=\hat{x}$ que minimiza $e(x)=||h(x)||^2+\alpha||x-x_{last}||^2$, é mediante a seguinte equação iterativa.  
+\begin{equation}\label{eq:prrof:rootshxreg1:2}
+x_{k}=x_{k-1}-\frac{h'(x_{k-1}) h(x_{k-1})}{h'(x_{k-1})^2+\alpha};
+\end{equation}
+onde $\alpha$ é um fator de regularização escolhido por nós.
+
+A Eq. (\ref{eq:prrof:rootshxreg1:2}) tenta minimizar simultaneamente  $||h(x)||^2$,
+para nos aproximar a Eq. (\ref{eq:prrof:rootshxreg1}), em conjunto com $||x-x_{last}||^2$,
+que procura que a busca iterativa tenha convergência com valores $x_{k}\approx x_{k-1}$. 
+\end{myproofT}

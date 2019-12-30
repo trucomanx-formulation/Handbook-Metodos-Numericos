@@ -21,9 +21,9 @@ e(x)=||h(x)-a||^2.
 
 Se desejamos ter o valor $\hat{x}$ que minimiza o escalar $e(\hat{x})$,
 este valor pode ser achado\footnote{A 
-demostração da Eq (\ref{eq:minhxhx2}) pode ser vista na Prova \ref{proof:theo:minhxhx}.} 
+demostração da Eq. (\ref{eq:minhxhx2}) pode ser vista na Prova \ref{proof:theo:minhxhx}.} 
 usando iterativamente a Eq. (\ref{eq:minhxhx2}),
-onde  $h'(x)\equiv \frac{\partial h(x)}{\partial x}$.
+onde  $h'(x)\equiv \frac{d h(x)}{d x}$.
 \begin{equation}\label{eq:minhxhx2}
 x_{k} \leftarrow x_{k-1}-
 \frac{ h(x_{k-1})-a}{h'(x_{k-1})},
@@ -37,11 +37,6 @@ onde pode ser declarado que $\hat{x} \approx x_{k}$.
 
 \textbf{Considerações:}
 \begin{itemize} 
-%\item Se sabemos que é possível a igualdade $h(x)=a$,
-%um critério de parada para a Eq.  (\ref{eq:minhxhx2}), seria verificar
-% $||h(x_{k-1})-a||^2<\varepsilon^2$,
-%sendo $\varepsilon$ é um valor pequeno escolhido por nós;
-
 \item Para que tenha sentido a Eq. (\ref{eq:minhxhx2}),
  e consequentemente esta possa ser usada, devemos verificar que  $h'(x_{k-1})\neq 0$,
 pois se $h'(x_{k-1})= 0$ indica que existe um ponto de inflexão 
@@ -56,7 +51,7 @@ para valores próximos a $\hat{x}$ a busca iterativa de $x_{k}$ avança eficazme
 
 \begin{tcbattention}
 \begin{itemize}
-\item Uma forma de iterar, como a vista na Eq (\ref{eq:minhxhx2}) é conhecida como método de Newton.
+\item Uma forma de iterar, como a vista na Eq. (\ref{eq:minhxhx2}) é conhecida como método de Newton.
 \end{itemize}
 \end{tcbattention}
 
@@ -66,7 +61,7 @@ para valores próximos a $\hat{x}$ a busca iterativa de $x_{k}$ avança eficazme
 
 
 \begin{example}\label{ex:minhxhx1}
-Conhecida uma função $h(x)=x^2$ é valor $a=1$ do contradominio de $h(x)$,
+Conhecida uma função $h(x)=x^2$ é valor $a=1$ do contradomínio de $h(x)$,
 achar o valor $\hat{x}$ que minimize $e(x)=(h(x)-a)^2$.
 \end{example}
 \begin{SolutionT}[Relativa ao Exemplo \ref{ex:minhxhx1}:]\label{sol:minhxhx1}
@@ -74,7 +69,7 @@ achar o valor $\hat{x}$ que minimize $e(x)=(h(x)-a)^2$.
 A busca inicia em $x_0=-1.5$, 
 todos os valores $x_{k}$ podem ser vistos na
 Tabela \ref{tab:hxacases1}. 
-Neste caso a Eq. (\ref{eq:minhxhx2}) converge sem problemas em $\hat{x}\approx x_4=-1$ com $e(\hat{x})\approx 0$.
+Neste caso a busca iterativa indicada pela Eq. (\ref{eq:minhxhx2}) converge sem problemas em $\hat{x}\approx x_4=-1$ com $e(\hat{x})\approx 0$.
 %No caminho não foi achado nenhum ponto $x_{k}$ com $h'(x_{k})\cong 0$.
 \end{SolutionT}
 
@@ -109,7 +104,7 @@ $e(x_k)$ & 1.5625 & 3.0141e-02 & 4.1223e-05 & 1.0486e-10 & 6.8718e-22 \\ \hline
 \end{table}
 
 \begin{example}\label{ex:minhxhx2}
-Conhecida uma função $h(x)=x^2$ é valor $a=-1$ do contradominio de $h(x)$,
+Conhecida uma função $h(x)=x^2$ é valor $a=-1$ do contradomínio de $h(x)$,
 achar o valor $\hat{x}$ que minimize $e(x)=(h(x)-a)^2$.
 \end{example}
 
@@ -118,7 +113,7 @@ achar o valor $\hat{x}$ que minimize $e(x)=(h(x)-a)^2$.
 A Fig. \ref{fig:hxacasesb} nos mostra o processo de busca de um mínimo de $e(x)$. 
 A busca inicia em $x_0=-1.5$,
  todos os valores $x_{k}$ podem ser vistos na Tabela \ref{tab:hxacases2}. 
-Neste caso a Eq. (\ref{eq:minhxhx2}) diverge 
+Neste caso a busca iterativa indicada pela Eq. (\ref{eq:minhxhx2}) diverge 
 em $x_3\approx 0$ com $e(x_3)=1.0001$ que é o mínimo;
 ao principio os valores de $x_{k}$ tendem a procurar o mínimo; porem,
 perto de este valor se cumpre que $h'(x_{k})\cong 0$, e o valor de $x_{k}$ diverge
@@ -140,7 +135,7 @@ $e(x_k)$ & 10.562 & 1.3774 & 3.9339 & 1.0001 & 1.2748e+07 \\ \hline
 \end{table}
 
 \begin{example}\label{ex:minhxhx3}
-Conhecida uma função $h(x)=x^3$ é valor $a=1$ do contradominio de $h(x)$,
+Conhecida uma função $h(x)=x^3$ é valor $a=1$ do contradomínio de $h(x)$,
 achar o valor $\hat{x}$ que minimize $e(x)=(h(x)-a)^2$.
 \end{example}
 \begin{SolutionT}[Relativa ao Exemplo \ref{ex:minhxhx3}:]\label{sol:minhxhx3}
@@ -152,7 +147,7 @@ valores de $x_{k}$ próximos a $0$, pois provocam valores  $h'(x_{k})\approx 0$.
 É fácil observar, como neste caso a busca ia na direção correta,
 porem quando $x_{k}$ se aproxima a um ponto de inflexão de $e(x)$.
 Com o tempo, mais iterações em outra direção e sorte, 
-pode que seja possível atingir o minimo de $e(x)$.
+pode que seja possível atingir o mínimo de $e(x)$.
 \end{SolutionT}
 
 \begin{figure}[!h]
@@ -188,7 +183,7 @@ $e(x_k)$ & 19.141 & 2.6184 & 1.0026 & 5.0500e+08 & 4.4331e+07 \\ \hline
 
 
 \begin{example}\label{ex:minhxhx4}
-Conhecida uma função $h(x)=x^3$ é valor $a=-1$ do contradominio de $h(x)$,
+Conhecida uma função $h(x)=x^3$ é valor $a=-1$ do contradomínio de $h(x)$,
 achar o valor $\hat{x}$ que minimize $e(x)=(h(x)-a)^2$.
 \end{example}
 \begin{SolutionT}[Relativa ao Exemplo \ref{ex:minhxhx4}:]\label{sol:minhxhx4}

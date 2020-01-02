@@ -1,10 +1,7 @@
-\section{Minimização de $||\MATRIX{A}\VECTOR{x}-\VECTOR{b}||_{\MATRIX{C}}^2$
-}
+\section{Minimização de $||\MATRIX{A}\VECTOR{x}-\VECTOR{b}||_{\MATRIX{C}}^2$}
 
-
-
-\index{Problema inverso!Linear}
-\index{Minimização do erro quadrático!Linear}
+%\index{Problema inverso!Linear}
+\index{Minimização do erro quadrático!Linear}%!Função $||\MATRIX{A}\VECTOR{x}-\VECTOR{b}||_{\MATRIX{C}}^2$}
 
 \begin{theorem}\label{theo:minAxbCAxb}
 Dados,
@@ -34,7 +31,7 @@ $\MATRIX{A}\VECTOR{x}$ desde o ponto $\VECTOR{b}$:]
 \noindent
 \begin{minipage}{0.49\textwidth}
 \centering
-\begin{minipage}{0.95\textwidth}
+\begin{minipage}{0.93\textwidth}
      \begin{figure}[H]
          \centering
          \includegraphics[width=0.9\textwidth]{chapters/minimization-fx/minimo-linear1.eps}
@@ -49,10 +46,7 @@ A partir do Teorema \ref{theo:minAxbCAxb},
 podemos achar um vetor $\VECTOR{d}_p$ perpendicular ao plano $\MATRIX{A}\VECTOR{x}$,
 partindo desde o ponto $\VECTOR{b}$, usando a seguinte equação,
 \begin{equation}
-\begin{matrix}
-\VECTOR{d}_p & = & \MATRIX{A}\left[ \MATRIX{A}^{\transpose}\MATRIX{A} \right]^{-1}\MATRIX{A}^{\transpose}\VECTOR{b}- \VECTOR{b}\\
-~            & = & \left\{\MATRIX{A}\left[ \MATRIX{A}^{\transpose}\MATRIX{A} \right]^{-1}\MATRIX{A}^{\transpose}- \MATRIX{I}\right\}\VECTOR{b},
-\end{matrix}
+\VECTOR{d}_p = \left\{\MATRIX{A}\left[ \MATRIX{A}^{\transpose}\MATRIX{A} \right]^{-1}\MATRIX{A}^{\transpose}- \MATRIX{I}\right\}\VECTOR{b},
 \end{equation}
 onde $I$ é uma matriz identidade.
 Podemos ver graficamente o vetor $\VECTOR{d}_p$ na Figura \ref{fig:coro:minAxbCAxb1:a}.

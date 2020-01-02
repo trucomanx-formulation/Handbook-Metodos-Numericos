@@ -27,6 +27,95 @@ e consequentemente que
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{myproofT}[Prova do Teorema \ref{theo:matrixgeneric3}:]\label{proof:theo:matrixgeneric3}
+Conhecida uma matriz quadrada $\MATRIX{A} \in \mathbb{R}^{N \times N}$, 
+os  autovalores $\lambda_n$, $\forall n \in \{1, 2, ..., N\}$ são calculados mediante 
+seu polinômio caraterístico,
+\begin{equation}
+p(\lambda)=det(\MATRIX{A}-\lambda \MATRIX{I})
+\end{equation}
+onde $\MATRIX{I}$ é uma matriz identidade.
+\begin{equation}
+p(\lambda)^{\transpose}=det(\MATRIX{A}-\lambda \MATRIX{I})^{\transpose}
+\end{equation}
+\begin{equation}
+p(\lambda)=det(\MATRIX{A}^{\transpose}-\lambda \MATRIX{I}^{\transpose})
+\end{equation}
+\begin{equation}
+p(\lambda)=det(\MATRIX{A}^{\transpose}-\lambda \MATRIX{I})
+\end{equation}
+\end{myproofT}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{myproofT}[Prova do Teorema \ref{theo:simetricmatrix4}:]\label{proof:theo:simetricmatrix4}
+Conhecida uma matriz quadrada $\MATRIX{A} \in \mathbb{R}^{N \times N}$ não singular, 
+\begin{equation}
+\MATRIX{I}=\MATRIX{A}\MATRIX{A}^{-1}
+\end{equation}
+\begin{equation}
+\MATRIX{I}^{\transpose}=\left\{\MATRIX{A}\MATRIX{A}^{-1}\right\}^{\transpose}
+\end{equation}
+\begin{equation}
+\MATRIX{I}=\left\{\MATRIX{A}^{-1}\right\}^{\transpose} \MATRIX{A}^{\transpose}
+\end{equation}
+\begin{equation}
+\MATRIX{I}=\left\{\MATRIX{A}^{-1}\right\}^{\transpose} \MATRIX{A}
+\end{equation}
+\begin{equation}
+\MATRIX{A}^{-1}=\left\{\MATRIX{A}^{-1}\right\}^{\transpose} 
+\end{equation}
+\end{myproofT}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{myproofT}[Prova do Teorema \ref{theo:semipositivematrix1}:]\label{proof:theo:semipositivematrix1}
+Conhecida uma matriz $\MATRIX{A} \in \mathbb{R}^{N \times M}$,
+e um vetor $\VECTOR{x} \in \mathbb{R}^{N}$ não nulo,
+\begin{equation}
+\VECTOR{x}^{\transpose}\MATRIX{A}\MATRIX{A}^{\transpose}\VECTOR{x}
+\end{equation}
+\begin{equation}
+\left\{\MATRIX{A}^{\transpose}\VECTOR{x}\right\}\left\{\MATRIX{A}^{\transpose}\VECTOR{x}\right\}
+\end{equation}
+se $\VECTOR{y}=\MATRIX{A}^{\transpose}\VECTOR{x}$, 
+podemos percebe que existe a posibilidade de que $\VECTOR{y}=\VECTOR{0}$ seja nulo,
+pelo que podemos afirmar que 
+\begin{equation}
+\VECTOR{y}^{\transpose}\VECTOR{y}\geq 0
+\end{equation}
+\begin{equation}
+\VECTOR{x}^{\transpose}\MATRIX{A}\MATRIX{A}^{\transpose}\VECTOR{x}
+\end{equation}
+\end{myproofT}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{myproofT}[Prova do Teorema \ref{theo:semipositivematrix1}:]\label{proof:theo:semipositivematrix2}
+Conhecida uma matriz $\MATRIX{A} \in \mathbb{R}^{N \times N}$, com  autovalores $\lambda_n$,
+e autovetores $\VECTOR{v}_n$, $\forall n \in \{1, 2, ..., N\}$.
+\begin{equation}
+\MATRIX{A}\VECTOR{v}_n = \lambda_n \VECTOR{v}_n, 
+\end{equation}
+\begin{equation}
+\VECTOR{v}_n^{\transpose}\MATRIX{A}\VECTOR{v}_n = \lambda_n \VECTOR{v}_n^{\transpose}\VECTOR{v}_n;
+\end{equation}
+sabendo que a matriz é semidefinida positiva,
+\begin{equation}
+0 \leq \VECTOR{v}^{\transpose}\MATRIX{A}\VECTOR{v} = \lambda_n \VECTOR{v}_n^{\transpose}\VECTOR{v}_n 
+\end{equation}
+\begin{equation}
+\lambda_n \VECTOR{v}_n^{\transpose}\VECTOR{v}_n \geq 0,
+\end{equation}
+dado que sempre $\VECTOR{v}_n^{\transpose}\VECTOR{v}_n> 0$, concluimos
+\begin{equation}
+\lambda_n  \geq 0,
+\end{equation} 
+\end{myproofT}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{myproofT}[Prova do Teorema \ref{theo:positivematrix1}:]\label{proof:theo:positivematrix1}
 Conhecida uma matriz quadrada $\MATRIX{A} \in \mathbb{R}^{N \times N}$ e definida positiva, com  autovalores $\lambda_n$,
 e autovetores $\VECTOR{e}_n$, $\forall n \in \{1, 2, ..., N\}$, de modo que,
@@ -55,7 +144,7 @@ o que implica que
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{myproofT}[Prova do Teorema \ref{theo:positivematrix1}:]\label{proof:theo:positivematrix2}
-Conhecida uma matriz quadrada $\MATRIX{A} \in \mathbb{R}^{N \times N}$ simetricas,
+Conhecida uma matriz quadrada $\MATRIX{A} \in \mathbb{R}^{N \times N}$ simetrica,
 com  autovalores $\lambda_n>0$, $\forall n \in \{1, 2, ..., N\}$;
 sabemos pelo Teorema \ref{theo:simetricmatrix2}, 
 que existe uma \hyperref[def:ortogonalmatrix0]{\textbf{matriz ortogonal}} $\MATRIX{Q}$,
@@ -87,6 +176,16 @@ Dado que a soma de todos os $\lambda_n x_n^2$ é positiva, podemos afirmar que
 \VECTOR{y}^{\transpose} \MATRIX{A} \VECTOR{y} > 0;
 \end{equation}
 é dizer $\MATRIX{A}$ é definida positiva.
+\end{myproofT}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{myproofT}[Prova do Teorema \ref{theo:positivematrix:2}:]\label{proof:theo:positivematrix:2}
+Conhecida uma matriz definida positiva e simétrica $\MATRIX{A} \in \mathbb{R}^{N \times N}$,
+com  autovalores $\lambda_n>0$, $\forall n \in \{1, 2, ..., N\}$;
+se $\MATRIX{A}$  é invertível então os autovalores de $\MATRIX{A}^{-1}$ são  $\frac{1}{\lambda_n}>0$.
+Dado que $\MATRIX{A}$ é simétrica, $\MATRIX{A}^{-1}$ é simétrica também;
+então se $\MATRIX{A}^{-1}$ é simétrica com autovalores positivos, esta é definida positiva.
 \end{myproofT}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

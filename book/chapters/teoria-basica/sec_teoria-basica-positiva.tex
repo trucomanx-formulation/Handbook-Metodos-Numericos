@@ -5,6 +5,7 @@
 
 \index{Matriz!Definida positiva}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{definition}[Matriz definida positiva:]\label{def:positivematrix0}
 Conhecida uma matriz quadrada $\MATRIX{A} \in \mathbb{R}^{N \times N}$. 
 \begin{itemize}
@@ -17,21 +18,9 @@ se cumpre que \cite[pp. 159]{golub2013matrix}
 \end{definition}
 
 
-\index{Matriz!Semidefinida positiva}
-
-\begin{definition}[Matriz semidefinida positiva:]\label{def:semipositivematrix0}
-Conhecida uma matriz quadrada $\MATRIX{A} \in \mathbb{R}^{N \times N}$. 
-\begin{itemize}
-\item Esta é semidefinida positiva, se para todo non-zero vetor $\VECTOR{x} \in \mathbb{R}^N$
-se cumpre que \cite[pp. 159]{golub2013matrix} 
-\begin{equation}
-\VECTOR{x}^{\transpose} \MATRIX{A} \VECTOR{x} \geq 0
-\end{equation}
-\end{itemize}
-\end{definition}
 
 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{theorem}[Autovalores positivos e matrizes definidas positivas:]\label{theo:positivematrix1}
 Conhecida uma matriz quadrada $\MATRIX{A} \in \mathbb{R}^{N \times N}$, com  autovalores $\lambda_n$,
 e autovetores $\VECTOR{e}_n$, $\forall n \in \{1, 2, ..., N\}$.
@@ -61,6 +50,7 @@ seja definida positiva. Para mais detalhes ver o Exemplo \ref{ex:positivematrix1
 \end{itemize}
 \end{tcbattention}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \noindent
 \begin{minipage}{0.5\textwidth}
 \begin{example}[Autovalores positivos não garantem matrizes definidas positivas:]
@@ -101,3 +91,15 @@ pode ser vista na Figura \ref{fig:ex:positivematrix1}.
          \label{fig:ex:positivematrix1}
      \end{figure}
 \end{minipage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{theorem}[Matriz inversa e matrizes definidas positivas:]\label{theo:positivematrix:2}
+Conhecida uma matriz  $\MATRIX{A} \in \mathbb{R}^{N \times N}$, com  autovalores $\lambda_n$,
+$\forall n \in \{1, 2, ..., N\}$.
+\begin{itemize}
+\item Se $\MATRIX{A}$ é uma matriz simétrica e definida positiva, então\footnote{A
+demostração pode ser vista na Prova \ref{proof:theo:positivematrix:2}.}  
+a matriz $\MATRIX{A}^{-1}$ é tambem definida positiva.
+\end{itemize}
+\end{theorem}
+

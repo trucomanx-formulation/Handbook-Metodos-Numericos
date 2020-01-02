@@ -234,7 +234,7 @@
 \newtheorem{propositionT}[dummy]{Proposição}
 \newtheorem{observationT}{Observação}[section]
 \newtheorem{notationT}{Notação}[chapter]
-
+\newtheorem{lemaT}[dummy]{Lema}
 
 %----------------------------------------------------------------------------------------
 %	DEFINITION OF COLORED THEOREM BOXES
@@ -316,7 +316,7 @@ innertopmargin=0pt,
 leftmargin=0cm,
 rightmargin=0cm,
 linewidth=4pt,
-innerbottommargin=0pt]{dBox}	
+innerbottommargin=3pt]{dBox}	
 
 % Notation box
 \newmdenv[skipabove=7pt,
@@ -333,7 +333,7 @@ innertopmargin=0pt,
 leftmargin=0cm,
 rightmargin=0cm,
 linewidth=4pt,
-innerbottommargin=0pt]{nBox}	
+innerbottommargin=3pt]{nBox}	
 
 % Corollary box
 \newmdenv[skipabove=7pt,
@@ -351,7 +351,26 @@ innertopmargin=0pt,% 5pt,
 leftmargin=0cm,
 rightmargin=0cm,
 linewidth=4pt,
-innerbottommargin=0pt]{cBox}
+innerbottommargin=3pt]{cBox}
+
+% Lema box
+\newmdenv[skipabove=7pt,
+skipbelow=7pt,
+rightline=false,
+leftline=true,
+topline=false,
+bottomline=false,
+linecolor=colorsystemdefault,% gray,
+backgroundcolor=colorsystemdefault!5,
+%nobreak=true,
+innerleftmargin=5pt,
+innerrightmargin=5pt,
+innertopmargin=0pt,% 5pt,
+leftmargin=0cm,
+rightmargin=0cm,
+linewidth=4pt,
+innerbottommargin=5pt]{lBox}
+
 
 % Definition box
 \newmdenv[skipabove=7pt,
@@ -378,6 +397,7 @@ innerbottommargin=0pt]{oBox}
 \newenvironment{notation}{\begin{nBox}\begin{notationT}}{\end{notationT}\end{nBox}}		
 \newenvironment{example}{\begin{eBox}\begin{exampleT}}{\hfill{\color{colorsystemdefault}\tiny\ensuremath{\blacksquare}}\end{exampleT}\end{eBox}}
 \newenvironment{corollary}{\begin{cBox}\begin{corollaryT}}{\end{corollaryT}\end{cBox}}	
+\newenvironment{lema}{\begin{lBox}\begin{lemaT}}{\end{lemaT}\end{lBox}}	
 \newenvironment{observation}{\begin{oBox}\begin{observationT}}{\end{observationT}\end{oBox}}	
 
 %----------------------------------------------------------------------------------------

@@ -1,0 +1,116 @@
+\section{Provas dos teoremas}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{myproofT}[Prova do Teorema \ref{teo:diferenças-finitas:1}:]\label{proof:teo:diferenças-finitas:1}
+Usando a \hyperref[def:taylor]{\textbf{serie de Taylor}} podemos aproximar 
+a primeira derivada de uma função $\VECTOR{f}(t)$, onde
+\begin{itemize}
+\item \textbf{Diferença regressiva ou atrasada:}
+\begin{equation}
+\VECTOR{f}(t_n-\ToS) = \VECTOR{f}(t_n)-\DTVECTOR{f}(t_n)\ToS +\frac{\ToS^2}{2}\DDTVECTOR{f}(z_{1}^{-}),
+\end{equation}
+\begin{equation}
+\DTVECTOR{f}(t_n)=\underbrace{\frac{\VECTOR{f}(t_n)-\VECTOR{f}(t_n-\ToS)}{\ToS}}_{\DTVECTOR{f}_{1^{-}}(t_n)}+
+\underbrace{\frac{\ToS}{2}\DDTVECTOR{f}(z_{1}^{-})}_{\VECTOR{R}_{1^{-}}(z_{1}^{-},\ToS)},
+\end{equation}
+onde podemos afirmar que $\DTVECTOR{f}(t_n)\approx \DTVECTOR{f}_{1^{-}}(t_n)$ com um erro $\VECTOR{R}_{1^{-}}(z_{1}^{-},\ToS)$,
+$z_{1}^{-} \in ]t_n-\ToS,t_n[$ quando $\ToS>0$, e $z_{1}^{+} \in ]t_n,t_n-\ToS[$ quando $\ToS<0$.
+
+\item \textbf{Diferença progressiva:}
+\begin{equation}
+\VECTOR{f}(t_n+\ToS) = \VECTOR{f}(t_n)+\DTVECTOR{f}(t_n)\ToS +\frac{\ToS^2}{2}\DDTVECTOR{f}(z_{1}^{+}),
+\end{equation}
+\begin{equation}
+\DTVECTOR{f}(t_n)=\underbrace{\frac{\VECTOR{f}(t_n+\ToS) - \VECTOR{f}(t_n)}{\ToS}}_{\DTVECTOR{f}_{1^{+}}(t_n)}-
+\underbrace{\frac{\ToS}{2}\DDTVECTOR{f}(z_{1}^{+})}_{\VECTOR{R}_{1^{+}}(z_{1}^{+},\ToS)},
+\end{equation}
+onde podemos afirmar que $\DTVECTOR{f}(t_n)\approx \DTVECTOR{f}_{1^{+}}(t_n)$ com um erro $\VECTOR{R}_{1^{+}}(z_{1}^{+},\ToS)$,
+$z_{1}^{+} \in ]t_n,t_n+\ToS[$ quando $\ToS>0$, e $z_{1}^{+} \in ]t_n+\ToS,t_n[$ quando $\ToS<0$.
+
+\item \textbf{Diferença central:} 
+\begin{equation}\label{eq:proof:teo:diferenças-finitas:1:a}
+\VECTOR{f}(t_n-\ToS) = \VECTOR{f}(t_n)-\DTVECTOR{f}(t_n)\ToS +\DDTVECTOR{f}(t_n) \frac{\ToS^2}{2}-\frac{\ToS^3}{3!}\DDDTVECTOR{f}(z_{2}^{-}),
+\end{equation}
+\begin{equation}\label{eq:proof:teo:diferenças-finitas:1:b}
+\VECTOR{f}(t_n+\ToS) = \VECTOR{f}(t_n)+\DTVECTOR{f}(t_n)\ToS +\DDTVECTOR{f}(t_n) \frac{\ToS^2}{2}+\frac{\ToS^3}{3!}\DDDTVECTOR{f}(z_{2}^{+}),
+\end{equation}
+restando as Eqs. (\ref{eq:proof:teo:diferenças-finitas:1:a}) e (\ref{eq:proof:teo:diferenças-finitas:1:b}) obtemos,
+\begin{equation}
+\VECTOR{f}(t_n+\ToS) - \VECTOR{f}(t_n-\ToS) = 2\DTVECTOR{f}(t_n)\ToS +\frac{\ToS^3}{3!}\DDDTVECTOR{f}(z_{2}^{+}) + \frac{\ToS^3}{3!}\DDTVECTOR{f}(z_{2}^{-}),
+\end{equation}
+\begin{equation}
+\DTVECTOR{f}(t_n) = \underbrace{\frac{\VECTOR{f}(t_n+\ToS) - \VECTOR{f}(t_n-\ToS)}{2\ToS}}_{\DTVECTOR{f}_{1^{0}}(t_n)} - 
+\underbrace{\frac{\ToS^2}{12} \left[\DDDTVECTOR{f}(z_{2}^{+}) + \DDDTVECTOR{f}(z_{2}^{-})\right]}_{\VECTOR{R}_{1^{0}}(z_{2}^{-},z_{2}^{+},\ToS)},
+\end{equation}
+onde podemos afirmar que $\DTVECTOR{f}(t_n)\approx \DTVECTOR{f}_{1^{0}}(t_n)$ 
+com um erro $\VECTOR{R}_{1^{0}}(z_{2}^{-},z_{2}^{+},\ToS)$.
+\end{itemize}
+\end{myproofT}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{myproofT}[Prova do Teorema \ref{teo:diferenças-finitas:2}:]\label{proof:teo:diferenças-finitas:2}
+Usando a \hyperref[def:taylor]{\textbf{serie de Taylor}} podemos aproximar 
+a segunda derivada de uma função $\VECTOR{f}(t)$.
+\begin{equation}\label{eq:proof:teo:diferenças-finitas:1:a}
+\VECTOR{f}(t_n-\ToS) = 
+\VECTOR{f}(t_n)-\DTVECTOR{f}(t_n)\ToS +\DDTVECTOR{f}(t_n) \frac{\ToS^2}{2}-\DDDTVECTOR{f}(t_n) \frac{\ToS^3}{3!} +\frac{\ToS^4}{4!}\DDDDTVECTOR{f}(z_{3}^{-}),
+\end{equation}
+\begin{equation}\label{eq:proof:teo:diferenças-finitas:1:b}
+\VECTOR{f}(t_n+\ToS) = 
+\VECTOR{f}(t_n)+\DTVECTOR{f}(t_n)\ToS +\DDTVECTOR{f}(t_n) \frac{\ToS^2}{2}+\DDDTVECTOR{f}(t_n) \frac{\ToS^3}{3!} +\frac{\ToS^4}{4!}\DDDDTVECTOR{f}(z_{3}^{+}),
+\end{equation}
+somando as Eqs. (\ref{eq:proof:teo:diferenças-finitas:1:a}) e (\ref{eq:proof:teo:diferenças-finitas:1:b}) obtemos,
+\begin{equation}
+\VECTOR{f}(t_n-\ToS) + \VECTOR{f}(t_n+\ToS) = 2 \VECTOR{f}(t_n)+2\DDTVECTOR{f}(t_n) \frac{\ToS^2}{2}+\frac{\ToS^4}{4!}\DDDDTVECTOR{f}(z_{3}^{-}) +\frac{\ToS^4}{4!}\DDDDTVECTOR{f}(z_{3}^{+}),
+\end{equation}
+\begin{equation}
+ \DDTVECTOR{f}(t_n) =
+\underbrace{\frac{\VECTOR{f}(t_n-\ToS) -2 \VECTOR{f}(t_n) + \VECTOR{f}(t_n+\ToS)}{\ToS^2}}_{\DTVECTOR{f}_{2^{0}}(t_n)}
+-\underbrace{\frac{\ToS^2}{4!}\left[\DDDDTVECTOR{f}(z_{3}^{-}) +\DDDDTVECTOR{f}(z_{3}^{+})\right]}_{\VECTOR{R}_{2^{0}}(z_{3}^{-},z_{3}^{+},\ToS)} ,
+\end{equation}
+\end{myproofT}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{myproofT}[Prova do Teorema \ref{theo:differential-eq-discreto:order1:0}:]\label{proof:theo:differential-eq-discreto:order1:0}
+Dados, o vetor coluna $\VECTOR{x} \in \mathbb{R}^N$, matriz $\MATRIX{P} \in \mathbb{R}^{N\times N}$, 
+e definida a equação diferencial matricial,
+\begin{equation}\label{eq:theo:firstorder:1}
+\DTVECTOR{x}(t) + \MATRIX{P} \VECTOR{x}(t)=0.
+\end{equation}
+podemos usar as diferenças regressivas
+\begin{equation}
+\frac{\VECTOR{x}[n]-\VECTOR{x}[n-1]}{\ToS} + \MATRIX{P} \VECTOR{x}[n]=0.
+\end{equation}
+\begin{equation}
+\left\{\MATRIX{I}  + \ToS \MATRIX{P}\right\} \VECTOR{x}[n]=\VECTOR{x}[n-1].
+\end{equation}
+\begin{equation}
+\VECTOR{x}[n]=\left\{\MATRIX{I}  + \ToS \MATRIX{P}\right\}^{-1}\VECTOR{x}[n-1].
+\end{equation}
+\end{myproofT}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{myproofT}[Prova do Teorema \ref{theo:differential-eq-discreto:order2:0}:]\label{proof:theo:differential-eq-discreto:order2:0}
+Dados, o vetor coluna $\VECTOR{x} \in \mathbb{R}^N$, matriz $\MATRIX{P} \in \mathbb{R}^{N\times N}$, 
+e definida a equação diferencial matricial,
+\begin{equation}\label{eq:theo:firstorder:1}
+\DDTVECTOR{x}(t) + \MATRIX{P} \VECTOR{x}(t)=0.
+\end{equation}
+podemos usar as diferenças finitas
+\begin{equation}
+\frac{\VECTOR{x}[n+1]-2\VECTOR{x}[n]+ \VECTOR{x}[n-1]}{\ToS^2} + \MATRIX{P} \VECTOR{x}[n]=0.
+\end{equation}
+\begin{equation}
+\VECTOR{x}[n+1]-2\VECTOR{x}[n]+ \VECTOR{x}[n-1]  + \ToS^2 \MATRIX{P} \VECTOR{x}[n]=0.
+\end{equation}
+\begin{equation}
+\VECTOR{x}[n+1]  =\left\{2\MATRIX{I}- \ToS^2 \MATRIX{P} \right\}\VECTOR{x}[n] - \VECTOR{x}[n-1].
+\end{equation}
+\end{myproofT}
+

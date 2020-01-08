@@ -1,4 +1,5 @@
 \section{Minimização de $||\MATRIX{A}\VECTOR{x}-\VECTOR{b}||_{\MATRIX{C}}^2$}
+\label{sec:minAxbCAxb}
 
 %\index{Problema inverso!Linear}
 \index{Minimização do erro quadrático!Linear}%!Função $||\MATRIX{A}\VECTOR{x}-\VECTOR{b}||_{\MATRIX{C}}^2$}
@@ -127,3 +128,31 @@ como mostra o gráfico da Figura \ref{fig:ex:minAxbCAxb:b}.
 \end{figure}
 
 \end{SolutionT}
+
+\begin{comment}
+\index{Tikhonov, Andrei Nikolaevich}
+\begin{elaboracion}[title=Andrei Nikolaevich Tikhonov (1906-1993), width= 0.99\linewidth]
+Matemático nascido em Rússia que trabalhou em distintas áreas como: 
+topologia e análise funcional, 
+equações diferenciais ordinárias e parciais, 
+e sua aplicação a problemas em física matemática e matemática computacional \cite[pp. 3684]{ben2009historical}.
+\end{elaboracion}
+\end{comment}
+
+\index{Tikhonov, Andrei Nikolaevich}
+\index{Minimização, métodos!Regularização de Tikhonov}
+\begin{tcbinformation} 
+\textbf{Regularização de Tikhonov de ordem zero:} Este método foi trabalhado de forma independente
+por Phillips em 1962 e por Andrei Nikolaevich Tikhonov em 1963 \cite[pp. 86]{kress2012numerical}, 
+obtendo eles uma solução ótima para $\VECTOR{x}$  que minimiza $e(\VECTOR{x})$, 
+\begin{equation}
+e(\VECTOR{x})=||\MATRIX{A}\VECTOR{x}-\VECTOR{b}||^2+\alpha ||\VECTOR{x}||^2.
+\end{equation}
+Se no Teorema \ref{theo:minAxbCAxbplusalphaxqD} da  Seção \ref{sec:minAxbCAxbplusalphaxqD},
+assumimos que o vetor $\VECTOR{q}=\VECTOR{0}$, a matriz $\MATRIX{C}=\MATRIX{I}$ e 
+a matriz $\MATRIX{D}=\MATRIX{I}$,
+então a solução representa a regularização de Tikhonov de ordem zero
+\cite[pp. 94]{aster2013parameter} \cite[pp. 86]{kress2012numerical} \cite[pp. 117]{engl2000regularization}.
+\end{tcbinformation} 
+
+%%% high order tikhonov regularization \cite[pp. 103]{aster2013parameter}

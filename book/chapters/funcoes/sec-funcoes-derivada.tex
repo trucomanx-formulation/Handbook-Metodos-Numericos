@@ -4,6 +4,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Derivadas notáveis: Gradiente, Matriz Hessiana, Matriz Jacobiana}
 
+\index{Gradiente}
 \begin{proposition}[$\triangledown e(\VECTOR{x})$ - Gradiente de $e(\VECTOR{x})$:]\label{def:gradient}
  Dada uma função $e:\mathbb{R}^{N}\rightarrow \mathbb{R}$ com variável $\VECTOR{x} \in \mathbb{R}^{N}$
  como vetor coluna com elementos $x_n\in \mathbb{R}$ de modo que $n\in \mathbb{N}$, $1 \leq n \leq N$,
@@ -29,7 +30,7 @@
 \frac{\partial e(\VECTOR{x})}{\partial \VECTOR{x} }
 \end{equation}
 \end{proposition}
-\index{Gradiente}
+
 
 \noindent
 \begin{minipage}{0.5\textwidth}
@@ -180,6 +181,7 @@ Um gráfico do uso da matriz jacobiana avaliada em $\MATRIX{J}([1~ 1]^{\transpos
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\index{Matriz Hessiana}
 \begin{proposition}[$\triangledown^2 e(\VECTOR{x})$ - Matriz Hessiana de $e(\VECTOR{x})$:]\label{def:hessian}
  Dada uma função $e:\mathbb{R}^{N}\rightarrow \mathbb{R}$ com variável $\VECTOR{x} \in \mathbb{R}^{N}$
  como vetor coluna  com elementos $x_n\in \mathbb{R}$ de modo que $n\in \mathbb{N}$, $1 \leq n \leq N$,
@@ -234,5 +236,11 @@ Um gráfico do uso da matriz jacobiana avaliada em $\MATRIX{J}([1~ 1]^{\transpos
 \right]
  \end{equation}
 \end{proposition}
-\index{Matriz Hessiana}
 
+
+
+\index{Hesse, Ludwig Otto}
+\begin{elaboracion}[title=Ludwig Otto Hesse (1811-1874), width= 0.99\linewidth]
+Ele foi um matemático alemão que trabalhou em muitos temas como a matriz de Hessiana, 
+o grupo Hessiano, os pares Hessianos, entre outras contribuições \cite[pp. 261]{agarwal2014creators}.
+\end{elaboracion}

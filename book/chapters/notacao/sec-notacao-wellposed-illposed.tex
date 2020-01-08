@@ -1,0 +1,106 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Problema \wellposed~ vs. \illposed }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Problema \wellposed}
+\index{Problema!\Wellposed}
+\index{Well-posed}
+\begin{definition}[Problema \wellposed:]
+\label{def:bem-posto:1}
+Conhecido um modelo matemático ou sistema que desejamos resolver para obter uma solução;
+indicamos que este é um problema \wellposed~ (do inglês ``well-posed'') se cumpre 3 condições \cite[pp. 16]{gockenbach2016linear},
+\begin{itemize}
+\item \textbf{Existência:} Existe uma solução que verifica o sistema.
+\item \textbf{Unicidade:} A solução é única.
+\item \textbf{Estabilidade:} A solução depende continuamente da saída;
+é dizer, pequenas variações na resposta provem de pequenas variações nos dados usados para calcular a resposta.
+\end{itemize}
+\end{definition}
+
+\begin{example}[Problema \wellposed:]
+Conhecido o problema de obter o vetor $\VECTOR{x} \in \mathbb{R}^{N}$,
+que cumpre o sistema,
+\begin{equation}
+\MATRIX{A}\VECTOR{x}=\VECTOR{y},
+\end{equation}
+ tendo como dados o vetor $\VECTOR{y} \in \mathbb{R}^{N}$ e 
+a matriz $\MATRIX{A}: \mathbb{R}^{N} \rightarrow \mathbb{R}^{N}$ que carateriza ao sistema.
+Falamos que o problema está \wellposed~ se a matriz $\MATRIX{A}$ tem inversa e esta é limitada \cite[pp. 18]{gockenbach2016linear}. 
+\end{example}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Problema \illposed}
+\index{Ill-posed}
+\index{Problema!\Illposed}
+\begin{definition}[Problema \illposed:]
+\label{def:mal-posto:1}
+Um problema é chamado \illposed~ (do inglês ``ill-posed'') se não cumpre um o mais das condições que definem a um problema 
+\wellposed~ \cite[pp. 18]{gockenbach2016linear}.
+
+Os problemas inversos geralmente são relacionados a um problema \illposed,
+pois pelo geral não cumprem uma ou mais das condições para ser catalogados como \wellposed. 
+\end{definition}
+
+\begin{example}[Problema \illposed~ sem solução:]
+Conhecido o problema de obter o vetor $\VECTOR{x}\in \mathbb{R}^N$,
+que cumpre o sistema,
+\begin{equation}
+\MATRIX{A}\VECTOR{x}=\VECTOR{y},
+\qquad
+\MATRIX{A}=
+\begin{bmatrix}
+1 & 1\\
+2 & 1\\
+0 & 1
+\end{bmatrix}
+\qquad
+\VECTOR{y}=
+\begin{bmatrix}
+2\\
+3\\
+2
+\end{bmatrix}.
+\end{equation}
+Catalogamos este problema como \illposed~ pois não existe um vetor $\VECTOR{x}$
+que verifique o sistema $\MATRIX{A}\VECTOR{x}=\VECTOR{y}$.
+\end{example}
+
+
+\begin{example}[Problema \illposed~ sem solução única:]
+Conhecido o problema de obter o vetor $\VECTOR{x}\in \mathbb{R}^N$,
+que cumpre o sistema,
+\begin{equation}
+\MATRIX{A}\VECTOR{x}=\VECTOR{y},
+\qquad
+\MATRIX{A}=
+\begin{bmatrix}
+1 & 1\\
+1 & 1
+\end{bmatrix}
+\qquad
+\VECTOR{y}=
+\begin{bmatrix}
+2\\
+2
+\end{bmatrix}.
+\end{equation}
+Catalogamos este problema como \illposed~  pois existem múltiplas soluções $\VECTOR{x}$
+que cumprem o sistema,
+\begin{equation}
+\VECTOR{x}=
+\begin{bmatrix}
+2\\
+0
+\end{bmatrix}
++\alpha
+\begin{bmatrix}
+-1\\
+1
+\end{bmatrix},
+\qquad
+\forall \alpha \in \mathbb{R}.
+\end{equation}
+
+\end{example}

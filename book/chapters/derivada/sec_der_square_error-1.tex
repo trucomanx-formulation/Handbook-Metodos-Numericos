@@ -14,6 +14,7 @@ então se cumpre\footnote{A demostração pode ser vista na Prova \ref{proof:the
 \frac{\partial \MATRIX{A}\VECTOR{x}}{\partial x_n}=a_{:n}
 \end{equation}
 \end{theorem}
+~
 
 \begin{corollary}[Derivada de $\MATRIX{A}\VECTOR{x}$ em relação ao vector $\VECTOR{x}^{\transpose}$]\label{coro:derAx1}
 Aplicando a Definição \ref{def:deltahor2} junto ao Teorema \ref{theo:derAx}, é
@@ -28,6 +29,7 @@ fácil deduzir que:
 \right]
 \end{equation}
 \end{corollary}
+~
 
 \begin{corollary}[Derivada de $\MATRIX{A}\VECTOR{x}$ em relação ao vector $\VECTOR{x}$]\label{coro:derAx2}
 Aplicando a Definição \ref{def:deltaver} junto ao Teorema \ref{theo:derAx}, é
@@ -36,7 +38,12 @@ fácil deduzir que:
 \frac{\partial \MATRIX{A}\VECTOR{x}}{\partial \VECTOR{x}}=\funcvec(\MATRIX{A})=
 \left[
 \begin{matrix}
- a_{:1} \\  a_{:2} \\  \vdots \\  a_{:N}
+ a_{:1} \\  
+a_{:2} \\  
+\vdots \\  
+a_{:n} \\  
+\vdots \\  
+a_{:N}
 \end{matrix}
 \right]
 \end{equation}

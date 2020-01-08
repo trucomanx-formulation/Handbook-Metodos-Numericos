@@ -1,0 +1,50 @@
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Regularização}
+
+
+
+
+A regularização é o processo pelo qual um problema \illposed~
+é aproximado por uma família vizinha de problemas \wellposed~
+\cite[pp. 49]{engl2000regularization},
+para realizar esta aproximação, informação adicional é considerada no problema.
+
+
+Assim, por exemplo, podemos aplicar a regularização agregando uma função objetivo para obter um problema de otimização.
+
+\textbf{Problema direto:} Considere um sistema representado pelo seguinte problema direto,
+\begin{equation}\label{eq:regularization:1}
+\MATRIX{A}\VECTOR{x}=\VECTOR{y},
+\end{equation}
+onde a resposta vector $\VECTOR{y}\in \mathbb{R}^M$ é obtida logo de introduzir o estimulo $\VECTOR{x}\in \mathbb{R}^N$,
+sendo $\MATRIX{A}:\mathbb{R}^N \rightarrow \mathbb{R}^M$ uma matriz operador lineal.
+
+\textbf{Problema inverso:} Assim, o problema inverso para o sistema da Eq. (\ref{eq:regularization:1}), é
+achar o vetor de entrada $\VECTOR{x}$, que cumpra  a Eq. (\ref{eq:regularization:2})
+onde $\VECTOR{y}_{\delta}$ é um vetor com amostras ruidosas de $\VECTOR{y}$,
+e $0\leq||\VECTOR{y}-\VECTOR{y}_{\delta}||^2\leq \delta^2$.
+\begin{equation}\label{eq:regularization:2}
+\MATRIX{A}\VECTOR{x}=\VECTOR{y}_{\delta}
+\end{equation}
+\begin{itemize}
+\item Se o sistema da Eq. (\ref{eq:regularization:2}) estiver \wellposed,
+então a solução é $\VECTOR{x}=\MATRIX{A}^{-1}\VECTOR{y}_{\delta}$ sem $M=N$,
+ou $\VECTOR{x}=\left\{\MATRIX{A}^{\transpose}\MATRIX{A}\right\}^{-1}\MATRIX{A}^{\transpose}\VECTOR{y}_{\delta}$ se $M\neq N$.
+\item Porem, se o problema da Eq. (\ref{eq:regularization:2}) estiver \illposed,
+então não é possível obter solução.
+\end{itemize}~\\
+Dado que num problema  \illposed~ não podemos achar uma solução, nova informação é agregada ao problema,
+pelo que no caso da Eq. (\ref{eq:regularization:2}) 
+a regularização consiste em aceitar a impossibilidade da igualdade, 
+e transformar esta numa função de custo usando o critério do mínimo erro quadrático,
+onde definimos  $e(\VECTOR{x})$,
+\begin{equation}\label{eq:regularization:3}
+e(\VECTOR{x})=||\MATRIX{A}\VECTOR{x}-\VECTOR{y}_{\delta}||^2,
+\end{equation}
+de modo que agregamos a restrição de que a solução vetor $\VECTOR{x}$ que procuramos,
+deve minimizar a função de custo $e(\VECTOR{x})$.
+Na Seção \ref{sec:minAxbCAxb} veremos mais a detalhe como resolver o problema da minimização.

@@ -1,0 +1,88 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Notação usada para matrizes, vetores e funções}
+\begin{notation}[Modo em que os valores escalares, vetoriais ou matriciais são definidos:]~\\
+\begin{tabular}{p{.2\textwidth} | p{.4\textwidth} | p{.3\textwidth} }
+\hline	
+Tipo & Descrição & Formatação \\ \hline
+$\MATRIX{A}$, $\MATRIX{B}$, ..., $\MATRIX{X}$, $\MATRIX{Y}$, $\MATRIX{Z}$& Matriz. & Maiúsculo e negrito \\
+$\VECTOR{a}$, $\VECTOR{b}$, ..., $\VECTOR{x}$, $\VECTOR{y}$, $\VECTOR{z}$ & Vetor ou conjunto. & Minúsculo e negrito \\
+%$A$, $B$, ..., $X$, $Y$, $Z$ & ------- & Maiúsculo \\
+$a$, $b$, ..., $x$, $y$, $z$ & Escalar variável. & Minúsculo \\
+$A$, $B$, ..., $X$, $Y$, $Z$ & Escalar constante. & Maiúsculo \\
+$\alpha$, $\beta$, ..., $\chi$, $\psi$, $\omega$ & Escalar variável ou constante. & Letras gregas e minúsculo  \\ \hline
+\end{tabular}
+\end{notation}
+
+
+\begin{notation}[Funções notáveis usadas neste livro:]~\\
+\begin{tabular}{p{.11\textwidth} |  p{.8\textwidth} }
+\hline	
+Função & Descrição \\ \hline
+%$card(\VECTOR{a})$ & Número de elementos, cardinalidade, do vetor ou conjunto $\VECTOR{a}$. \\
+$card(\MATRIX{A})$ & Número de elementos, cardinalidade, da matriz $\MATRIX{A}$. \\
+\hline
+%$dim(\VECTOR{a},1)$ & Primeira dimensão do vetor $\VECTOR{a}$, número de linhas. \\
+%$dim(\VECTOR{a},2)$ & Segunda dimensão do vetor $\VECTOR{a}$, número de colunas. \\
+$dim(\MATRIX{A},1)$ & Primeira dimensão da matriz $\MATRIX{A}$, número de linhas. \\
+$dim(\MATRIX{A},2)$ & Segunda dimensão da matriz $\MATRIX{A}$, número de colunas. \\
+$dim(\MATRIX{A},N)$ & Dimensão $N$ da matriz $\MATRIX{A}$, se não tiver retorna $0$. \\
+\hline
+$\funcinv(\MATRIX{A})$ & Inversa da matriz $\MATRIX{A}$, é equivalente a escrever $\MATRIX{A}^{-1}$. \\
+$\MATRIX{A}^{-1}$ & Inversa da matriz $\MATRIX{A}$, é equivalente a escrever $\funcinv(\MATRIX{A})$. \\
+\hline
+%$\functrans(\VECTOR{a})$ & Transposta do vetor $\VECTOR{a}$, é equivalente a escrever $\VECTOR{a}^{\transpose}$. \\
+%$\VECTOR{a}^{\transpose}$ & Transposta do vetor $\VECTOR{a}$, é equivalente a escrever $trans(\VECTOR{a})$. \\
+$\functrans(\MATRIX{A})$ & Transposta da matriz $\MATRIX{A}$, é equivalente a escrever $\MATRIX{A}^{\transpose}$. \\
+$\MATRIX{A}^{\transpose}$ & Transposta da matriz $\MATRIX{A}$, é equivalente a escrever $trans(\MATRIX{A})$. \\
+\hline
+$\funcdiag(\VECTOR{a})$ & Matriz diagonal construída a partir de colocar na diagonal os elementos do vetor $\VECTOR{a}$ . \\
+\hline
+$\lambda_{\MATRIX{A}}$ & Matriz diagonal onde os elementos da diagonal correspondem com os autovalores da matriz $\MATRIX{A}$. \\
+\hline
+$det(\MATRIX{A})$ & Determinante da matriz $\MATRIX{A}$. \\
+\hline
+\end{tabular}
+\end{notation}
+
+\newpage
+\begin{notation}[Modo em que os elementos dos vetores ou conjuntos são definidos:]~\\
+\begin{tabular}{p{.05\textwidth} | p{.6\textwidth} | p{.25\textwidth}}
+\hline	
+Tipo & Descrição & Formatação \\ \hline
+$a_{i}$ & Elemento $i$-essimo do vetor ou conjunto  $\VECTOR{a}$.& Minúsculo \\
+%$\VECTOR{a}_{(i)}$ & Elemento $i$-essimo do vetor $\VECTOR{a}$ & Minúsculo e negrito \\ \hline
+\hline
+\end{tabular}
+\end{notation}
+
+
+\begin{notation}[Modo em que os elementos das matrizes bidimensionais são definidos:]~\\
+\begin{tabular}{p{.05\textwidth} | p{.6\textwidth} | p{.25\textwidth}}
+\hline	
+Tipo & Descrição & Formatação \\ \hline
+$a_{ij}$ & Escalar formado pelo elemento na linha $i$, coluna $j$ da matriz $\MATRIX{A}$. & Minúsculo \\ \hline
+%$\MATRIX{A}_{(i,j)}$& Elemento na linha $i$, coluna $j$ da matriz $\MATRIX{A}$ & Maiúsculo e negrito \\ \hline
+%$\VECTOR{a}_{i}$ & Linha ou coluna $i$-ésima da matriz $\MATRIX{A}$ (ambíguo) & Minúsculo e negrito \\
+$a_{i:}$ & Vetor linha formado pela linha $i$-ésima da matriz $\MATRIX{A}$.  & Minúsculo \\
+%$\MATRIX{A}_{(i,:)}$& Vetor formado pela linha $i$-ésima da matriz $\MATRIX{A}$ & Maiúsculo e negrito \\
+$a_{:i}$ & Vetor coluna formado pela coluna $i$-ésima da matriz $\MATRIX{A}$.  & Minúsculo \\
+%$\MATRIX{A}_{(:,i)}$& Vetor formado pela coluna $i$-ésima da matriz $\MATRIX{A}$ & Maiúsculo e negrito \\ \hline
+\hline
+\end{tabular}
+\end{notation}
+
+
+\begin{notation}[Funções em tempo continuo e discreto:]~\\
+\begin{tabular}{p{.05\textwidth} | p{.85\textwidth} }
+\hline	
+Tipo            & Descrição \\ \hline
+$x(t)$          & Função escalar de domínio continuo, representado pela variável $t$. \\ \hline
+$x[n]$          & Função escalar de domínio discreto, onde a variável $n$ representa a $n$-ésima amostra. \\ \hline
+$\VECTOR{x}(t)$ & Função vetorial de domínio continuo, representado pela variável $t$.  \\ \hline
+$\VECTOR{x}[n]$ & Função vetorial de domínio discreto, onde a variável $n$ representa a $n$-ésima amostra. \\
+\hline
+\end{tabular}
+\end{notation}
+

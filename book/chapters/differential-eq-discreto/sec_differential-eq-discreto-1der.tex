@@ -8,12 +8,12 @@ $\DTVECTOR{x}(t) + \MATRIX{P} \VECTOR{x}(t)=0$ com diferenças regressivas:]
 \label{theo:differential-eq-discreto:order1:0}
 Dados, o vetor coluna $\VECTOR{x} \in \mathbb{R}^N$, matriz $\MATRIX{P} \in \mathbb{R}^{N\times N}$, 
 e definida a equação diferencial matricial,
-\begin{equation}\label{eq:theo:firstorder:1}
+\begin{equation}
 \DTVECTOR{x}(t) + \MATRIX{P} \VECTOR{x}(t)=0.
 \end{equation}
 A solução\footnote{A
 demostração pode ser vista na Prova \ref{proof:theo:differential-eq-discreto:order1:0}.} desta equação diferencial tem  a forma,
-\begin{equation}\label{eq:theo:firstorder:2}
+\begin{equation}
   \VECTOR{x}[n]=\left\{\MATRIX{I} + \ToS \MATRIX{P}\right\}^{-1}\VECTOR{x}[n-1],
 \end{equation}
 onde $\MATRIX{I}$ é uma matriz identidade.

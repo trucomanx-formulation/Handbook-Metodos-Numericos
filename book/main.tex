@@ -49,15 +49,15 @@
 %----------------------------------------------------------------------------------------
 %	DATOS DEL LIBRO
 %----------------------------------------------------------------------------------------
-\newcommand{\mytitle}[0]{ M\'etodos num\'ericos }
-\newcommand{\mysubtitle}[0]{ Estudo de problemas inversos}
+\newcommand{\mytitle}[0]{M\'etodos num\'ericos}
+\newcommand{\mysubtitle}[0]{Problemas n\~ao lineares e inversos}
 \newcommand{\myauthor}[0]{ Fernando Pujaico Rivera}
 %----------------------------------------------------------------------------------------
 \newcommand{\imprimirlocal}[0]{Brasil}
-\newcommand{\imprimiryear}[0]{XXXXXXXXXXX}
-\newcommand{\imprimirdata}[0]{9 de abril do \imprimiryear}
+\newcommand{\imprimiryear}[0]{2020}
+\newcommand{\imprimirdata}[0]{Abril do \imprimiryear}
 \newcommand{\imprimirtipotrabalho}[0]{Bibliografia}
-\newcommand{\imprimirsize}[0]{16x30cm}
+\newcommand{\imprimirsize}[0]{21x30cm}
 \newcommand{\imprimirisbn}[0]{XXXXXXXXXXX}
 \newcommand{\imprimireditora}[0]{Editora XXXXXXXXXXX}
 %----------------------------------------------------------------------------------------
@@ -67,8 +67,10 @@
 %----------------------------------------------------------------------------------------
 \newcommand{\ImprimirEmail}[0]{ \href{mailto:fernando.pujaico.rivera@gmail.com}{fernando.pujaico.rivera@gmail.com}}
 %----------------------------------------------------------------------------------------
+\newcommand{\ImprimirTamanhoPapel}[0]{XXXXXXXXXXX}
+%----------------------------------------------------------------------------------------
 
-\newcommand{\AnoLivro}[0]{2019}%% Ano da primeira edição, usado para ser remplazado po ATUALMENTE
+%\newcommand{\AnoLivro}[0]{2020}%% Ano da primeira edição, usado para ser trocado por: ATUALMENTE
 
 %----------------------------------------------------------------------------------------
 
@@ -76,8 +78,8 @@
 \newcommand{\Footwork}[0]{Jogo de p\'{e}s}
 \newcommand{\Variante}[0]{Variante}
 \newcommand{\workboxsize}[0]{1.0\textwidth}
-\newcommand{\bodycontrol}[0]{control corporal}
-\newcommand{\Bodycontrol}[0]{Control corporal}
+\newcommand{\bodycontrol}[0]{controle corporal}
+\newcommand{\Bodycontrol}[0]{Controle corporal}
 \newcommand{\bodyisolation}[0]{dissocia\c{c}\~{a}o corporal}
 \newcommand{\Bodyisolation}[0]{Dissocia\c{c}\~{a}o corporal}
 \newcommand{\bodyboxsize}[0]{0.75\textwidth}
@@ -211,7 +213,7 @@
 %----------------------------------------------------------------------------------------
 %	PART
 %----------------------------------------------------------------------------------------
-\part{Aplicações: Vários}
+\part{Aplicações: não lineares ou problemas inversos}
 % CHAPTER  
 \input{chapters/roots/raiz_hx}
 \input{chapters/mapeamento/mapeamento}
@@ -233,7 +235,7 @@
 %----------------------------------------------------------------------------------------
 %	PART
 %----------------------------------------------------------------------------------------
-\part{Referencias}
+\part{Referências}
 
 %\chapter*{Bibliografia}
 %\addcontentsline{toc}{chapter}{\textcolor{colorsystemdefault}{Bibliography}}
@@ -241,19 +243,19 @@
 
 \chapterimage{chapter_head_1.pdf}
 
-\chapter*{Bibliography}
-\addcontentsline{toc}{chapter}{\textcolor{colorsystemdefault}{Bibliography}}
+\chapter*{Bibliografia}
+\addcontentsline{toc}{chapter}{\textcolor{colorsystemdefault}{Bibliografia}} %% Sale en la pagina part
 
 \section*{Livros}
-\addcontentsline{toc}{section}{Books}
+\addcontentsline{toc}{section}{Livros} %% Sale en la pagina part
 \printbibliography[heading=bibempty,type=book]
 
-%\section*{Artigos}
-%\addcontentsline{toc}{section}{Articles}
+\section*{Artigos}
+\addcontentsline{toc}{section}{Artigos} %% Sale en la pagina part
 \printbibliography[heading=bibempty,type=article]
 
 \section*{Outras fontes}
-\addcontentsline{toc}{section}{Articles}
+\addcontentsline{toc}{section}{Outras fontes} %% Sale en la pagina part
 \printbibliography[heading=bibempty, nottype=article, nottype=book]
 
 
@@ -264,9 +266,14 @@
 \cleardoublepage
 \phantomsection
 \setlength{\columnsep}{0.75cm}
-\addcontentsline{toc}{chapter}{\textcolor{colorsystemdefault}{Index}}
+\addcontentsline{toc}{chapter}{\textcolor{colorsystemdefault}{Indice}} %% Sale en la pagina part
 \printindex
 
 %----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+%	COLOFÃO
+%----------------------------------------------------------------------------------------
+\input{preliminares/colofao}
 
 \end{document}

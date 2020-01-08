@@ -48,9 +48,9 @@ mostrado na Figura \ref{fig:fluxorhxreg3}.
 \begin{itemize}
 \item Uma vantagem do método da regularização em relação ao método de Newton,
 é que em lugares onde $h'(x_{k-1})\approx 0$, a regularização converge a um mínimo local 
-que facilmente podemos detetar. Em contrapartida,
-com o método de newton podemos ficar temporalmente atrapados num mínimo local, porem este estado 
-é mais difícil de detetar pois os valores de $x_k$ tendem a divergir para valores próximos ao mínimo.
+que facilmente podemos detectar. Em contrapartida,
+com o método de newton podemos ficar temporalmente atrapados num mínimo local, porém este estado 
+é mais difícil de detectar pois os valores de $x_k$ tendem a divergir para valores próximos ao mínimo.
 Esta caraterística pode ser comparada nas Soluções \ref{sol:rootshx1} e \ref{sol:rootshxreg1}
 \end{itemize}
 \end{tcbattention}
@@ -79,7 +79,7 @@ Tabela \ref{tab:rootsRcases1}.
 Neste caso a busca iterativa indicada pela Eq. (\ref{eq:rootshxreg2}) 
 converge em $x_7=0.57812$, que é um valor próximo a $x_m=\frac{\sqrt{3}}{3}\approx 0.57735$,
 que é um mínimo local de $h(x)$.
-Porem dado que $||h(x_7)||=0.61510 >\delta$, observamos que estamos atrapados num mínimo local,
+Porém dado que $||h(x_7)||=0.61510 >\delta$, observamos que estamos atrapados num mínimo local,
 pelo que devemos fazer um pulo aleatório a um novo valor $x_8$
 para tentar fugir deste mínimo local; por exemplo $x_8=-2.0$.
 \end{SolutionT}

@@ -1,20 +1,20 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{ Propiedade varias em matrizes }
+\section{Propriedades varias com matrizes}
 
 
 \begin{theorem}[Propiedades das matrices inversas:]\label{theo:matrixgeneric2}
 Conhecidas as matrizes quadradas $\MATRIX{A} \in \mathbb{R}^{N \times N}$ e $\MATRIX{B} \in \mathbb{R}^{N \times N}$,
 podemos afirmar \cite[pp. 65]{golub2013matrix},
 \begin{itemize}
-\item  A inversa da multiplicação de duas matrices,
+\item  A inversa da multiplicação de duas matrizes,
 \begin{equation}
-\MATRIX{A}^{-1} \MATRIX{B}^{-1} = \left\{\MATRIX{B}\MATRIX{A}\right\}^{-1},
+\MATRIX{A}^{-1} \MATRIX{B}^{-1} = \left\{\MATRIX{B}\MATRIX{A}\right\}^{-1}.
 \end{equation}
 \item A inversa da matriz transposta,
 \begin{equation}
-\left\{\MATRIX{A}^{-1}\right\}^{\transpose}  = \left\{\MATRIX{A}^{\transpose}\right\}^{-1},
+\left\{\MATRIX{A}^{-1}\right\}^{\transpose}  = \left\{\MATRIX{A}^{\transpose}\right\}^{-1}.
 \end{equation}
 \end{itemize}
 \end{theorem}
@@ -25,11 +25,11 @@ e o escalar $\alpha \in \mathbb{R}$, podemos afirmar \cite[pp. 66]{golub2013matr
 \begin{itemize}
 \item Determinante da matriz transposta,
 \begin{equation}
-det(\MATRIX{A})=det(\MATRIX{A}^{\transpose}),
+det(\MATRIX{A})=det(\MATRIX{A}^{\transpose}).
 \end{equation}
 \item Determinante da multiplicação de uma matriz e um escalar,
 \begin{equation}
-det(\alpha \MATRIX{A})=\alpha^N~det(\MATRIX{A}),
+det(\alpha \MATRIX{A})=\alpha^N~det(\MATRIX{A}).
 \end{equation}
 \item Determinante da multiplicação de duas matrizes,
 \begin{equation}
@@ -41,7 +41,7 @@ det(\MATRIX{A}\MATRIX{B})=det(\MATRIX{A})det(\MATRIX{B}).
 
 \begin{definition}[Autovalor e autovetores de uma matriz:]\label{def:matrixgeneric0}
 Seja a matriz $\MATRIX{A}$ um operador lineal $\MATRIX{A}: \mathbb{C}^{N} \rightarrow \mathbb{C}^{N}$,  
-e $\VECTOR{v} \in \mathbb{C}^{N} \neq\VECTOR{0}$. Se existe un escalar $\lambda \in \mathbb{C}$ onde, 
+e $\VECTOR{v} \in \mathbb{C}^{N} \neq\VECTOR{0}$. Se existe um escalar $\lambda \in \mathbb{C}$ onde, 
 %\begin{equation}
 $\MATRIX{A}\VECTOR{v}=\lambda\VECTOR{v}$,
 %\end{equation} 
@@ -58,7 +58,7 @@ com  autovalores $\lambda_n$, $\forall n \in \{1, 2, ..., N\}$.
 \footnote{A demostração pode ser vista na Prova \ref{proof:theo:matrixgeneric3}.} 
 os mesmos autovalores que $\MATRIX{A}$, é dizer tem o mesmo polinômio caraterístico $p(\lambda)$,
 \begin{equation}
-p(\lambda)=det(\MATRIX{A}-\lambda \MATRIX{I})=det(\MATRIX{A}^{\transpose}-\lambda \MATRIX{I})
+p(\lambda)=det(\MATRIX{A}-\lambda \MATRIX{I})=det(\MATRIX{A}^{\transpose}-\lambda \MATRIX{I}).
 \end{equation}
 \end{itemize}
 \end{theorem}

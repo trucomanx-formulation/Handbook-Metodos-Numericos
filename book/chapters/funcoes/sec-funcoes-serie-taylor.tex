@@ -2,12 +2,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Serie de Taylor de $f(x)$, $e(\VECTOR{x})$ e $\VECTOR{f}(\VECTOR{x})$}
+\section{Serie de Taylor de $f(x)$, $\VECTOR{f}(x)$, $e(\VECTOR{x})$ e $\VECTOR{f}(\VECTOR{x})$}
 \label{def:taylor}
 
 
 \index{Serie de Taylor!$f:\mathbb{R} \rightarrow \mathbb{R}$}
-\begin{proposition}[Serie de Taylor de $d(x)$:]\label{prop:taylord}
+\begin{proposition}[Serie de Taylor de $f(x)$:]\label{prop:taylord}
 Dada uma função $f:\mathbb{R}\rightarrow \mathbb{R}$ com variável $x \in \mathbb{R}$;
 infinitamente diferenciável em $a \in \mathbb{R}$;
 esta pode ser expressada mediante uma somatória, em serie de Taylor 
@@ -110,8 +110,149 @@ As aproximações podem ser vistas graficamente na Fig. \ref{fig:taylore}.
     \label{fig:taylore}
 \end{figure}
  
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\index{Serie de Taylor!$\VECTOR{f}:\mathbb{R} \rightarrow \mathbb{R}^{N}$}
+\begin{proposition}[Serie de Taylor de $\VECTOR{f}(t)$:]\label{prop:taylorvecf}
+Dada uma função $\VECTOR{f}:\mathbb{R}\rightarrow \mathbb{R}^{N}$ com variável $t \in \mathbb{R}$;
+infinitamente diferenciável em $a \in \mathbb{R}$;
+esta pode ser expressada mediante uma somatória, em serie de Taylor 
+\cite[pp. 264]{joag2016introduction}
+ao redor de $a$, como
+mostra a Eq. (\ref{eq:taylorvecf1}),
+\begin{equation}\label{eq:taylorvecf0a}
+\left.\frac{\partial^k \VECTOR{f}(t)}{\partial t^k}\right|_{t=a}\equiv \VECTOR{f}^{(k)}(a) 
+\end{equation}
+\begin{equation}\label{eq:taylorvecf1}
+  \VECTOR{f}(t)=\VECTOR{f}(a)
+      ~+\frac{\DTVECTOR{f}(a)}{1!} (t-a)
+      ~+\frac{\DDTVECTOR{f}(a)}{2!} (t-a)^{2}
+      ~+\cdots 
+      ~+\frac{\VECTOR{f}^{(k)}(a)}{k!} (t-a)^{k}
+      ~+\cdots 
+\end{equation}
+A equação pode ser escrita de forma mais compacta mediante uma somatória  como mostra a Eq. (\ref{eq:taylorvecf2}),
+\begin{equation}\label{eq:taylorvecf2}
+  \VECTOR{f}(t)=\sum\limits_{k=0}^{+\infty} \frac{\VECTOR{f}^{(k)}(a)}{k!} (t-a)^{k}.
+\end{equation}
+\end{proposition}
+
+\begin{example}[Polinômio de Taylor de ordem 4 de uma função vetorial:]\label{ex:prop:taylorvecf}
+Aproximar a função $\VECTOR{f}:\mathbb{R} \rightarrow \mathbb{R}^{2}$,
+\begin{equation}
+\VECTOR{f}(t)=
+\begin{bmatrix}
+cos(t)\\
+e^{-t}
+\end{bmatrix},
+\end{equation}
+usando o polinômio de Taylor ao redor do ponto $a=0$,
+numa versão truncada ate a derivada de ordem $4$,
+denominado aqui $\VECTOR{f}_4(x)$.
+\end{example}
+\begin{SolutionT}[Relativo ao Exemplo \ref{ex:prop:taylorvecf}:]
+Usando a Proposição \ref{prop:taylorvecf} são calculados os vetores $\VECTOR{f}^{(k)}(x)$, para $k\in\{1,~ 2,~ 3,~ 4\}$,
+de modo que obtemos
+\begin{equation}
+\DTVECTOR{f}(t)=
+\begin{bmatrix}
+-sin(t)\\
+-e^{-t}
+\end{bmatrix},~
+\DDTVECTOR{f}(t)=
+\begin{bmatrix}
+-cos(t)\\
+e^{-t}
+\end{bmatrix},~
+\DDDTVECTOR{f}(t)=
+\begin{bmatrix}
+sin(t)\\
+-e^{-t}
+\end{bmatrix},~
+\DDDDTVECTOR{f}(t)=
+\begin{bmatrix}
+cos(t)\\
+e^{-t}
+\end{bmatrix},
+\end{equation}
+\begin{equation}
+\VECTOR{f}(0)=
+\begin{bmatrix}
+1\\
+1
+\end{bmatrix},
+\quad
+\DTVECTOR{f}(0)=
+\begin{bmatrix}
+0\\
+-1
+\end{bmatrix},
+\quad
+\DDTVECTOR{f}(0)=
+\begin{bmatrix}
+-1\\
+1
+\end{bmatrix},
+\quad
+\DDDTVECTOR{f}(0)=
+\begin{bmatrix}
+0\\
+-1
+\end{bmatrix},
+\quad
+\DDDDTVECTOR{f}(0)=
+\begin{bmatrix}
+1\\
+1
+\end{bmatrix}.
+\end{equation}
+Podemos agrupar estas informações na Eq. (\ref{eq:taylorvecf1}) truncada, 
+para obter o polinômio $\VECTOR{f}_{4}(t)$,
+\begin{equation}
+\VECTOR{f}_{4}(t)=
+\begin{bmatrix}
+1\\
+1
+\end{bmatrix}
++
+\begin{bmatrix}
+0\\
+-1
+\end{bmatrix}
+t
++
+\begin{bmatrix}
+-1\\
+1
+\end{bmatrix}
+\frac{t^{2}}{2!}
++
+\begin{bmatrix}
+0\\
+-1
+\end{bmatrix}
+\frac{t^{3}}{3!}
++
+\begin{bmatrix}
+1\\
+1
+\end{bmatrix}
+\frac{t^{4}}{4!}.
+\end{equation}
+Uma representação gráfica do comportamento do polinômio $\VECTOR{f}_{4}(t)$ e a função $\VECTOR{f}(t)$
+pode ser visto na Figura \ref{fig:taylorvecf}.
+\end{SolutionT}
+
+\begin{figure}[!h]
+  \centering
+    \includegraphics[width=0.90\textwidth]{chapters/funcoes/mcode/taylorR1R2/taylore.eps}
+  \caption{Aproximação da função da função $\VECTOR{f}(t)$ mediante o polinômio $\VECTOR{f}_{4}(t)$.}
+    \label{fig:taylorvecf}
+\end{figure}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- \index{Serie de Taylor!$f:\mathbb{R}^{N}\rightarrow \mathbb{R}$}
+\index{Serie de Taylor!$f:\mathbb{R}^{N}\rightarrow \mathbb{R}$}
 \begin{proposition}[Serie de Taylor de $f(\VECTOR{x})$]\label{prop:taylore}
 Dada uma função $f:\mathbb{R}^{N}\rightarrow \mathbb{R}$ com variável $\VECTOR{x} \in \mathbb{R}^{N}$, vetor coluna;
 infinitamente diferenciável em $\VECTOR{a} \in \mathbb{R}^{N}$;
@@ -209,3 +350,14 @@ mostra a Eq. (\ref{eq:taylorf1}),
 Onde a matriz $\MATRIX{J}(\VECTOR{x})\equiv \frac{\partial \VECTOR{f}(\VECTOR{x})}{\partial \VECTOR{x}^{\transpose} }$,
 também conhecido como matriz \hyperref[def:jacobian]{Jacobiana} de $\VECTOR{f}(\VECTOR{x})$.
 \end{proposition}
+
+
+\index{Taylor, Brook}
+\begin{elaboracion}[title=Brook Taylor (1685-1731), width= 0.99\linewidth]
+Matemático inglês que foi um dos fundadores do cálculo das diferenças finitas,
+sendo ele o primeiro a reconhecer a existência de soluções singulares de equações diferenciais.
+A série Taylor, era conhecida por James Gregory quando Taylor tinha apenas alguns anos de idade. 
+Acredita-se que Taylor não conhecia o trabalho de Gregory quando publicou seu livro ``Methodus incrementorum directa et inversa'' (1715),
+que continha a série Taylor. 
+\cite[pp. 198]{agarwal2014creators}.
+\end{elaboracion}

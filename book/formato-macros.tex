@@ -50,13 +50,13 @@
 \newtcolorbox{tcbattention}[1][]{enhanced,
   before skip=2mm,after skip=3mm,
   boxrule=0.4pt,left=5mm,right=2mm,top=1mm,bottom=1mm,
-  colback=yellow!50,
-  colframe=yellow!20!black,
+  colback=colorAttention!50,
+  colframe=colorAttention!20!black,
   sharp corners,rounded corners=southeast,arc is angular,arc=3mm,
   underlay={%
     \path[fill=colorsystemdefault!20!black] ([yshift=3mm]interior.south east)--++(-0.4,-0.1)--++(0.1,-0.2);
     \path[draw=colorsystemdefault,shorten <=-0.05mm,shorten >=-0.05mm] ([yshift=3mm]interior.south east)--++(-0.4,-0.1)--++(0.1,-0.2);
-    \path[fill=yellow!50!black,draw=none] (interior.south west) rectangle node[white]{\Huge\bfseries !} ([xshift=4mm]interior.north west);
+    \path[fill=colorAttention!50!black,draw=none] (interior.south west) rectangle node[white]{\Huge\bfseries !} ([xshift=4mm]interior.north west);
     },
   drop fuzzy shadow,#1}
 %----------------------------------------------------------------------------------------
@@ -86,14 +86,14 @@
 % \end{elaboracion}
 \newtcolorbox{elaboracion}[1][]{
     tile,
-    colback=fboxbackcolor!5,
+    colback=colorsystemdefaultdkred!3,
     coltitle=white,
-    colbacktitle=fboxfrontcolor,%fboxfrontcolor!10,
+    colbacktitle=colorsystemdefaultdkred,
     center title,
     toprule=1.25mm,
     bottomrule=1.25mm,
-    extras unbroken and first={borderline north={0.5mm}{0.5mm}{fboxfrontcolor,decoration={zigzag,amplitude=0.5mm},decorate}},
-    extras unbroken and last={borderline south={0.5mm}{0.5mm}{fboxfrontcolor,decoration={zigzag,amplitude=0.5mm},decorate}},
+    extras unbroken and first={borderline north={0.5mm}{0.5mm}{colorsystemdefaultdkred,decoration={zigzag,amplitude=0.5mm},decorate}},
+    extras unbroken and last={borderline south={0.5mm}{0.5mm}{colorsystemdefaultdkred,decoration={zigzag,amplitude=0.5mm},decorate}},
     #1
 }
 
@@ -289,14 +289,31 @@ after={\par\vskip 12pt}
 % \begin{catalografica}
 %   texto
 % \end{catalografica}
+
 \newtcolorbox{catalografica}
 {
   breakable,
   enhanced,
-  colback  = colorlowgray,
-  colframe = colorlowgray
+  arc=0mm,
+  width=12.5cm,
+  colback  = white,
+  colframe = black
 }
 
+
+\begin{comment}
+\newenvironment{catalografica}
+{
+\begin{center}					% Minipage Centralizado
+\begin{minipage}[c][7.5cm]{12.5cm}%obrigratorio
+\hrule
+}
+{
+\hrule
+\end{minipage}
+\end{center}
+}
+\end{comment}
 
 %----------------------------------------------------------------------------------------
 % PATROCINIO MESSAGE BOX
@@ -308,8 +325,8 @@ after={\par\vskip 12pt}
 {
   breakable,
   enhanced,
-  colback  = colorlowred,
-  colframe = colorlowred
+  colback  = colorPatrocinio,
+  colframe = colorPatrocinio
 }
 
 

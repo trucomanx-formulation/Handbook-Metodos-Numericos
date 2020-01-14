@@ -29,4 +29,4 @@ daspect([2.45 1 1])
     set (hl, "fontsize", DAT.FONTSIZE, 'linewidth',DAT.LINEWIDTH);
     set (gca, "fontsize", DAT.FONTSIZE);
     set (gca, 'linewidth',DAT.LINEWIDTH);
-print(gcf,'segundoroder1','-deps','-tight',['-F:' num2str(DAT.FONTSIZE)])
+print(gcf,'segundoroder1.eps','-deps','-tight',['-F:' num2str(DAT.FONTSIZE)])

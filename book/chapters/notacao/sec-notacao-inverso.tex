@@ -4,11 +4,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Descripção geral do problema inverso}
 
-Seguindo Keller \cite{Keller76} dois problemas são considerados inversos 
+\index{Problema!Direto}
+\index{Problema!Inverso}
+Seguindo o matemático Joseph B. Keller \cite{Keller76}, dois problemas são considerados inversos 
 um do outro, se a formulação de cada um deles envolve a resposta do outro;
 de modo que por motivos históricos, um deles é bem conhecido e estudado,
-pelo que recebe o nome de ``problema direto'', 
-e o outro problema é novo e não pouco estudado pelo que é chamado ``problema inverso''.
+pelo que recebe o nome de \textbf{problema direto}, 
+e o outro problema é novo e pouco estudado pelo que é chamado \textbf{problema inverso}.
  
 \begin{example}[Raízes e polinômios:]~
 \begin{description}
@@ -43,11 +45,11 @@ os coeficientes do polinômio agrupados no vetor $\VECTOR{c}$ são os parâmetro
 \begin{example}[Avaliação vs. regressão:]~
 \begin{description}
 \item[Problema direto -] Achar os valores $y_1$, $y_2$, ..., $y_n$, ..., $y_N$, 
-conhecendo vários coeficientes para o polinômio $p_{\VECTOR{c}_n}(x)$ agrupados no vetores $\VECTOR{c}_n$ e
-um valor $x$ \cite{Keller76}.
+que são as respostas de avaliar um valor $x$ nos polinômios 
+$p_{\VECTOR{c}_n}(x)$ com coeficientes agrupados em vetores $\VECTOR{c}_n$ \cite{Keller76}.
 \item[Problema inverso -] Achar o valor $x$
-conhecendo vários coeficientes para o polinômio $p_{\VECTOR{c}_n}(x)$ agrupados no vetores $\VECTOR{c}_n$ e
-os valores $y_1$, $y_2$, ..., $y_n$, ..., $y_N$  \cite{Keller76}.
+conhecendo vários polinômios $p_{\VECTOR{c}_n}(x)$ com coeficientes agrupados em vetores $\VECTOR{c}_n$ e
+os resultados $y_1$, $y_2$, ..., $y_n$, ..., $y_N$  \cite{Keller76}.
 \end{description}
 Uma representação gráfica do problema direto pode ser visto na Figura \ref{fig:inverso-diretos:direto1}
 e do problema inverso na Figura \ref{fig:inverso-diretos:inverso2}.

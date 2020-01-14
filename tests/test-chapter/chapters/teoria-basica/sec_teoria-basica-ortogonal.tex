@@ -1,0 +1,35 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{ Matrizes ortogonais}
+
+\index{Matriz!Ortogonal}
+
+\begin{definition}[Matriz ortogonal:]\label{def:ortogonalmatrix0}
+Conhecida uma matriz quadrada $\MATRIX{A} \in \mathbb{R}^{N \times N}$. 
+\begin{itemize}
+\item Esta é uma matriz ortogonal, sim se cumpre que \cite[pp. 66]{golub2013matrix}
+\begin{equation}
+\MATRIX{A}^{\transpose} = \MATRIX{A}^{-1}.
+\end{equation}
+\end{itemize}
+\end{definition}
+
+\begin{theorem}[Colunas da matriz ortogonal:]\label{theo:ortogonalmatrix0}
+Conhecida uma matriz ortogonal $\MATRIX{Q} \in \mathbb{R}^{N \times N}$,
+\begin{itemize}
+\item Então a matriz $\MATRIX{Q}=\left[\VECTOR{q}_1\quad \VECTOR{q}_2\quad ... \quad \VECTOR{q}_N \right]$
+está formada pela agrupação em colunas de um conjunto $N$ de vetores $\VECTOR{q}_n \in \mathbb{R}^{N}$
+ortogonais \cite[pp. 66]{golub2013matrix}, onde 
+\begin{equation}
+\VECTOR{q}_i^{\transpose}\VECTOR{q}_j=
+\left\{ 
+\begin{matrix}
+1 & se & i = j\\
+0 & se & i \neq j
+\end{matrix}
+\right.
+\end{equation} 
+\end{itemize}
+\end{theorem}
+

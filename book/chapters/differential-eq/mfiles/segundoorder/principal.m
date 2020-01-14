@@ -30,4 +30,4 @@ daspect([2.45 1 1])
     set (hl,'position',[1.9*INFO(1) 1.3*INFO(2) 1.5*INFO(3) INFO(4)]);
     set (hl, "fontsize", DAT.FONTSIZE);
     set (gca, "fontsize", DAT.FONTSIZE);
-print(gcf,'segundoroder1','-depsc','-tight',['-F:' num2str(DAT.FONTSIZE)])
+print(gcf,'segundoroder1.eps','-depsc','-tight',['-F:' num2str(DAT.FONTSIZE)])

@@ -43,6 +43,18 @@
 
 \documentclass[12pt]{extbook} % Default font size and left-justified equations
 
+
+%----------------------------------------------------------------------------------------
+%	GRAYSCALE EM TODAS AS FIGURAS
+%----------------------------------------------------------------------------------------
+%\def\EnableGrayScale{1}
+
+%----------------------------------------------------------------------------------------
+%	GRAYSCALE EM TODAS AS FIGURAS
+%----------------------------------------------------------------------------------------
+\def \SourceRootPath{.}
+%----------------------------------------------------------------------------------------
+
 \usepackage{float}% para ter [H]
 \usepackage{fancyvrb}
 
@@ -51,72 +63,106 @@
 %----------------------------------------------------------------------------------------
 \newcommand{\mytitle}[0]{M\'etodos num\'ericos}
 \newcommand{\mysubtitle}[0]{Problemas n\~ao lineares e inversos}
-\newcommand{\myauthor}[0]{ Fernando Pujaico Rivera}
+\newcommand{\myauthor}[0]{Fernando Pujaico Rivera}
 %----------------------------------------------------------------------------------------
-\newcommand{\imprimirlocal}[0]{Brasil}
-\newcommand{\imprimiryear}[0]{2020}
-\newcommand{\imprimirdata}[0]{Abril do \imprimiryear}
-\newcommand{\imprimirtipotrabalho}[0]{Bibliografia}
-\newcommand{\imprimirsize}[0]{21x30cm}
-\newcommand{\imprimirisbn}[0]{XXXXXXXXXXX}
-\newcommand{\imprimireditora}[0]{Editora XXXXXXXXXXX}
+
+
 %----------------------------------------------------------------------------------------
-\newcommand{\ImprimirLinkHomePageLivro}[0]{\url{http://XXXXXXXXXXX.com}}
-\newcommand{\ImprimirLinkCompraLivroImpresso}[0]{\url{http://XXXXXXXXXXX.com/comprarfisico/}}
-\newcommand{\ImprimirLinkCompraLivroDigital}[0]{\url{http://XXXXXXXXXXX.com/comprardigital/}}
+%	DATOS PATROCINIO
 %----------------------------------------------------------------------------------------
-\newcommand{\ImprimirEmail}[0]{ \href{mailto:fernando.pujaico.rivera@gmail.com}{fernando.pujaico.rivera@gmail.com}}
+\newcommand{\ImprimirLinkHomePageLivro}[0]{\url{https://trucomanx.github.io/metodos.numericos}}
+\newcommand{\ImprimirLinkVerificarLivro}[0]{\url{https://trucomanx.github.io/metodos.numericos/verificar.html}}
+\newcommand{\ImprimirLinkCompraLivroImpresso}[0]{\url{https://trucomanx.github.io/metodos.numericos/comprar-impresso.html}}
+\newcommand{\ImprimirLinkCompraLivroDigital}[0]{\url{https://trucomanx.github.io/metodos.numericos/comprar-digital.html}}
+\newcommand{\ImprimirLinkMetodoPagoA}[0]{\url{https://apoia.se/metodosnumericos}}
 %----------------------------------------------------------------------------------------
-\newcommand{\ImprimirTamanhoPapel}[0]{XXXXXXXXXXX}
+\newcommand{\ImprimirEmail}[0]{\href{mailto:fernando.pujaico.rivera@gmail.com}{fernando.pujaico.rivera@gmail.com}}
+
+%----------------------------------------------------------------------------------------
+%   DADOS ficha catalográfica
+%----------------------------------------------------------------------------------------
+\def \myauthorname{Fernando}
+\def \myauthorlastname{Pujaico Rivera}
+\def \myauthorborn{1982}
+\def \imprimirlocal{Lavras}%cidade obrigatorio
+\def \imprimiryear{2020}
+\newcommand{\imprimirdata}[0]{\textcolor{red}{XXXXXXXXXXX} \imprimiryear}
+\def \imprimirtipotrabalho{Inclui Bibliografia}
+\def \imprimircuttersanborn{P979m} %% https://www.cuttersonline.com/app/generator/?q=Pujaico&ref=sanborn&add=
+\newcommand{\imprimirpapersize}[0]{\textcolor{red}{XXXxXXXcm}} %21x30cm}
+\def \imprimirCDD{515}   %% 515 Analysis https://www.oclc.org/content/dam/oclc/dewey/ddc23-summaries.pdf
+                         %% 515.6 – Outros métodos analíticos %% Analysis %% https://books.google.com.br/books?id=BxeQiS_M2d0C
+                         %% 515.6 – Outros métodos analíticos %% http://magisterandre.blogspot.com/2013/02/classificacao-decimal-de-dewey.html
+                         %% http://www.isbn.bn.br/website/tabela-de-assuntos
+\def \imprimirCDU{519.6} %% Matemática computacional %% https://www.ipleiria.pt/sdoc/wp-content/uploads/sites/10/2016/05/cdu-atualizada.pdf 
+\newcommand{\imprimirisbn}[0]{\textcolor{red}{XXXXXXXXXXX}}
+\def \imprimireditora{Edi\c{c}\~{a}o Independente}
+\def \palavraschavea{M\'etodos num\'ericos}
+\def \palavraschaveb{Problemas inversos}
+\def \palavraschavec{C\'aculo num\'erico}
+\def \palavraschavesInglesa{Numerical methods}
+\def \palavraschavesInglesb{Inverse problems}
+\def \palavraschavesInglesc{Numerical calculus}
 %----------------------------------------------------------------------------------------
 
 %\newcommand{\AnoLivro}[0]{2020}%% Ano da primeira edição, usado para ser trocado por: ATUALMENTE
 
-%----------------------------------------------------------------------------------------
 
-\newcommand{\footwork}[0]{jogo de p\'{e}s}
-\newcommand{\Footwork}[0]{Jogo de p\'{e}s}
-\newcommand{\Variante}[0]{Variante}
-\newcommand{\workboxsize}[0]{1.0\textwidth}
-\newcommand{\bodycontrol}[0]{controle corporal}
-\newcommand{\Bodycontrol}[0]{Controle corporal}
-\newcommand{\bodyisolation}[0]{dissocia\c{c}\~{a}o corporal}
-\newcommand{\Bodyisolation}[0]{Dissocia\c{c}\~{a}o corporal}
-\newcommand{\bodyboxsize}[0]{0.75\textwidth}
 
 %----------------------------------------------------------------------------------------
 %	XCOLOR
 %----------------------------------------------------------------------------------------
 \usepackage[dvipsnames*,svgnames]{xcolor}
+
 \definecolor{colorlowgray}{RGB}{240,240,240}
-\definecolor{colorsystemdefault}{RGB}{16,81,15} % Define the color used for highlighting throughout the book
-\definecolor{colorsystemdefaultdkred}{RGB}{98,32,6} % Define the color used for highlighting throughout the book
-\definecolor{colormylink}{RGB}{16,120,15} % Define the 
-\definecolor{colorpartpagebackground}{RGB}{120,120,120} % Define the
-\definecolor{dkred}{rgb}{0.6,0,0}
+\definecolor{colorpartpagebackground}{RGB}{120,120,120} % lowgrayscale
+
+\ifx\EnableGrayScale\undefined
+    \definecolor{colorsystemdefault}{RGB}{16,81,15} % Define the color used for highlighting throughout the book
+    \definecolor{colorsystemdefaultdkred}{RGB}{98,32,6} % Define the color used for highlighting throughout the book
+    \definecolor{colormylink}{RGB}{16,120,15} % Define the 
+    \definecolor{colorPatrocinio}{rgb}{0.98,0.88,0.82}
+    \definecolor{colorAttention}{RGB}{255,249,128}
+\else
+    \definecolor{colorsystemdefault}{RGB}{0,0,0} % Define the color used for highlighting throughout the book
+    \definecolor{colorsystemdefaultdkred}{RGB}{32,32,32} % Define the color used for highlighting throughout the book
+    \definecolor{colormylink}{RGB}{64,64,64} % Define the 
+    \definecolor{colorPatrocinio}{rgb}{0.98,0.98,0.98}
+    \definecolor{colorAttention}{RGB}{255,255,255}
+\fi
 
 
-%\definecolor{fboxbackcolor}{RGB}{249,238,241}
-%\definecolor{fboxfrontcolor}{RGB}{36,21,47}
-\colorlet{fboxbackcolor}{colorsystemdefault!40!dkred}
-\colorlet{fboxfrontcolor}{colorsystemdefault!40!dkred}
 
 %----------------------------------------------------------------------------------------
 %	COLOR
 %----------------------------------------------------------------------------------------
 \usepackage{color}
-\definecolor{colorlowred}{rgb}{0.98,0.88,0.82}
-%\definecolor{colordarkgray}{rgb}{0.5,0.5,0.5}
-%\definecolor{colormauve}{rgb}{0.58,0,0.82}
+
+
+%----------------------------------------------------------------------------------------
+% Habilita o modo impressão em tons de cinza, não todo logicmente
+% Mas a maioria das coisas, as figuras não, isto é para mandar à editora em GRAY SCALE
+%----------------------------------------------------------------------------------------
+%\ifx\EnableGrayScale\undefined
+%    ~
+%\else
+%    \selectcolormodel{gray}
+%\fi
+
+
+
 
 %----------------------------------------------------------------------------------------
 %----------------------------------------------------------------------------------------
 %----------------------------------------------------------------------------------------
-\input{formato-head} % paquetes usados con macros para la escrita
-\input{structure} % el estilo visual do livro
-\input{formato-macros} % las macros compuestas usadas para la escrita
+\input{\SourceRootPath/formato-head} % paquetes usados con macros para la escrita
+\input{\SourceRootPath/structure} % el estilo visual do livro
+\input{\SourceRootPath/formato-macros} % las macros compuestas usadas para la escrita
 
-
+%-----------------------------------------------------------------------------------------
+% evitar linhas órfãs e viúvas
+%\clubpenalty=100000 
+%\widowpenalty=100000 
 %-----------------------------------------------------------------------------------------
 
 \hyphenation{sam-ba}
@@ -135,37 +181,38 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
 \begin{document}
 
 %----------------------------------------------------------------------------------------
 %	TITLE PAGE
 %----------------------------------------------------------------------------------------
-\input{preliminares/titlepage}
+\input{\SourceRootPath/preliminares/titlepage}
 
 %----------------------------------------------------------------------------------------
 %	COPYRIGHT PAGE
 %----------------------------------------------------------------------------------------
-\input{preliminares/copyright}
+\input{\SourceRootPath/preliminares/copyright}
 
 %----------------------------------------------------------------------------------------
 %	DEDICATORIA
 %----------------------------------------------------------------------------------------
-\include{preliminares/dedicatoria} 
+\input{\SourceRootPath/preliminares/dedicatoria} 
 
 %----------------------------------------------------------------------------------------
 %	Acknowledgements
 %----------------------------------------------------------------------------------------
-\include{preliminares/acknowledgements} 
+\input{\SourceRootPath/preliminares/acknowledgements} 
 
 %----------------------------------------------------------------------------------------
 %	PATROCINIO PAGE
 %----------------------------------------------------------------------------------------
-\input{preliminares/patrocinio}
+\input{\SourceRootPath/preliminares/patrocinio}
 
 %----------------------------------------------------------------------------------------
 %	My macros
 %----------------------------------------------------------------------------------------
-\input{mymacros}
+\input{\SourceRootPath/mymacros}
 
 %----------------------------------------------------------------------------------------
 %	TABLE OF CONTENTS
@@ -182,16 +229,16 @@
 %----------------------------------------------------------------------------------------
 \part{Teoria geral}
 % CHAPTER  
-\include{chapters/notacao/notacao}
-\include{chapters/teoria-basica/teoria-basica}
+\input{\SourceRootPath/chapters/notacao/notacao}
+\input{\SourceRootPath/chapters/teoria-basica/teoria-basica}
 
 %----------------------------------------------------------------------------------------
 %	PART
 %----------------------------------------------------------------------------------------
 \part{Funções, derivadas e operadores}
 % CHAPTER  
-\include{chapters/funcoes/funcoes}
-\include{chapters/derivada/der_square_error}
+\include{\SourceRootPath/chapters/funcoes/funcoes}
+\include{\SourceRootPath/chapters/derivada/der_square_error}
 
 
 
@@ -199,15 +246,15 @@
 %	PART
 %----------------------------------------------------------------------------------------
 \part{Equações diferenciais}
-\include{chapters/differential-eq/differential-eq}
-\include{chapters/differential-eq-discreto/differential-eq-discreto}
+\include{\SourceRootPath/chapters/differential-eq/differential-eq}
+\include{\SourceRootPath/chapters/differential-eq-discreto/differential-eq-discreto}
 %----------------------------------------------------------------------------------------
 %	PART
 %----------------------------------------------------------------------------------------
 \part{Minimização do erro em funções de custo}
 % CHAPTER  
-\input{chapters/minimization-fx/min_square_error}
-\input{chapters/minimization-hx/min_square_error_hx}
+\input{\SourceRootPath/chapters/minimization-fx/min_square_error}
+\input{\SourceRootPath/chapters/minimization-hx/min_square_error_hx}
 
 
 %----------------------------------------------------------------------------------------
@@ -215,8 +262,8 @@
 %----------------------------------------------------------------------------------------
 \part{Aplicações: não lineares ou problemas inversos}
 % CHAPTER  
-\input{chapters/roots/raiz_hx}
-\input{chapters/mapeamento/mapeamento}
+\input{\SourceRootPath/chapters/roots/raiz_hx}
+\input{\SourceRootPath/chapters/mapeamento/mapeamento}
 %% Interpolação segmentada https://www.ufrgs.br/reamat/CalculoNumerico/livro-sci/main.html#adc-ajuste_de_uma_reta.html
 
 %----------------------------------------------------------------------------------------
@@ -274,6 +321,6 @@
 %----------------------------------------------------------------------------------------
 %	COLOFÃO
 %----------------------------------------------------------------------------------------
-\input{preliminares/colofao}
+\input{\SourceRootPath/preliminares/colofao}
 
 \end{document}

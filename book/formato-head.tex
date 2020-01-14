@@ -7,7 +7,7 @@
 \usepackage[top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm,headsep=10pt,a4paper]{geometry} % Page margins
 
 \usepackage{graphicx} % Required for including pictures
-\graphicspath{{pictures/}} % Specifies the directory where pictures are stored
+\graphicspath{{\SourceRootPath/pictures/}} % Specifies the directory where pictures are stored
 
 \usepackage{lipsum} % Inserts dummy text
 
@@ -127,7 +127,7 @@ label-align=left,
              abbreviate=false,
              backref=true,
              backend=biber]{biblatex}
-\addbibresource{bibliography/bibliography.bib} % BibTeX bibliography file
+\addbibresource{\SourceRootPath/bibliography/bibliography.bib} % BibTeX bibliography file
 \defbibheading{bibempty}{}
 
 

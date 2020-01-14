@@ -3,8 +3,9 @@
 # Procurar "beta tester" para a leitura do livro
 
 # Escritorio de registro de direitos autorais na biblioteca nacional
-   Registro de obra inteletual: https://www.bn.gov.br/servicos/direitos-autorais
-20 reais
+ -- Não é necessario só se vc é muito desconfiado
+ -- Registro de obra inteletual: https://www.bn.gov.br/servicos/direitos-autorais
+ -- 20 reais
 
 # Diagramação do livro
    Retorna numero de paginas
@@ -18,9 +19,7 @@ http://www.isbn.bn.br/website/informacoes-cadastro-pf
 http://cbl.org.br/imprensa/noticias/camara-brasileira-do-livro-e-nova-responsavel-pelo-isbn-no-brasil
 
 # Ficha catalográfica
-camara brasileira do livro
-http://cbl.org.br/servicos/ficha-catalografica
-127 reais
+Pode fazer vc mesmo, sabendo o formato
 
 # Graficas
 http://www.bok2.com.br

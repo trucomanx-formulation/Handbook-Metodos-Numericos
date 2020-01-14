@@ -67,9 +67,9 @@
 % Chapter text styling
 \titlecontents{chapter}[1.25cm] % Indentation
 {\addvspace{12pt}\large\sffamily\bfseries} % Spacing and font options for chapters
-{\color{colorsystemdefault!60}\contentslabel[\Large\thecontentslabel]{1.25cm}\color{colorsystemdefault}} % Chapter number
-{\color{colorsystemdefault}}  
-{\color{colorsystemdefault!60}\normalsize\;\titlerule*[.5pc]{.}\;\thecontentspage} % Page number
+{\color{colorsystemdefault!60}\contentslabel[\Large\thecontentslabel]{1.25cm}\color{colorsystemdefault}} % [Color left Chapter number -- NADA]
+{\color{colorsystemdefault}}  %Nada
+{\color{colorsystemdefault!60}\normalsize\;\titlerule*[.5pc]{.}\;\thecontentspage} % [Color right Page number]
 
 % Section text styling
 \titlecontents{section}[2.00cm] % Indentation
@@ -230,7 +230,6 @@
 \newtheorem{myproofT}{Prova} [chapter]
 \newtheorem{SolutionT}{Solução} [chapter]
 \theoremstyle{colorsystemdefaultnum}
-%\newtheorem{proposition}[dummy]{Proposition}
 \newtheorem{propositionT}[dummy]{Proposição}
 \newtheorem{observationT}{Observação}[section]
 \newtheorem{notationT}{Notação}[chapter]
@@ -245,7 +244,7 @@
 % Theorem box
 \newmdenv[skipabove=7pt,
 skipbelow=7pt,
-backgroundcolor=black!5,
+backgroundcolor=black!3,
 linecolor=colorsystemdefault,
 innerleftmargin=5pt,
 innerrightmargin=5pt,
@@ -257,8 +256,8 @@ innerbottommargin=5pt]{tBox}
 % Proposition box
 \newmdenv[skipabove=7pt,
 skipbelow=7pt,
-backgroundcolor=blue!5,
-linecolor=colorsystemdefault,
+backgroundcolor=colorsystemdefaultdkred!4,
+linecolor=colorsystemdefaultdkred,
 innerleftmargin=5pt,
 innerrightmargin=5pt,
 innertopmargin=5pt,
@@ -273,7 +272,7 @@ rightline=false,
 leftline=true,
 topline=false,
 bottomline=false,
-backgroundcolor=colorsystemdefault!10,
+backgroundcolor=colorsystemdefault!4,
 linecolor=colorsystemdefault,
 innerleftmargin=5pt,
 innerrightmargin=5pt,
@@ -283,6 +282,23 @@ leftmargin=0cm,
 rightmargin=0cm,
 linewidth=4pt]{eBox}	
 
+% Exercise box	  
+\newmdenv[skipabove=7pt,
+skipbelow=7pt,
+rightline=false,
+leftline=true,
+topline=false,
+bottomline=false,
+backgroundcolor=colorsystemdefault!4,
+linecolor=colorsystemdefault,
+innerleftmargin=5pt,
+innerrightmargin=5pt,
+innertopmargin=5pt,
+innerbottommargin=5pt,
+leftmargin=0cm,
+rightmargin=0cm,
+linewidth=4pt]{exampleBox}	
+
 
 % Problem box	  
 \newmdenv[skipabove=7pt,
@@ -291,7 +307,7 @@ rightline=false,
 leftline=true,
 topline=false,
 bottomline=false,
-backgroundcolor=colorsystemdefault!10,
+backgroundcolor=colorsystemdefault!4,
 linecolor=colorsystemdefault,
 innerleftmargin=5pt,
 innerrightmargin=5pt,
@@ -308,7 +324,7 @@ rightline=false,
 leftline=true,
 topline=false,
 bottomline=false,
-backgroundcolor=black!5,
+backgroundcolor=black!3,
 linecolor=colorsystemdefault,
 innerleftmargin=5pt,
 innerrightmargin=5pt,
@@ -325,7 +341,7 @@ rightline=false,
 leftline=true,
 topline=false,
 bottomline=false,
-backgroundcolor=black!5,
+backgroundcolor=black!3,
 linecolor=black,%colorsystemdefault,
 innerleftmargin=5pt,
 innerrightmargin=5pt,
@@ -343,7 +359,7 @@ leftline=true,
 topline=false,
 bottomline=false,
 linecolor=colorsystemdefault,% gray,
-backgroundcolor=colorsystemdefault!5,
+backgroundcolor=colorsystemdefault!4,
 %nobreak=true,
 innerleftmargin=5pt,
 innerrightmargin=5pt,
@@ -361,7 +377,7 @@ leftline=true,
 topline=false,
 bottomline=false,
 linecolor=colorsystemdefault,% gray,
-backgroundcolor=colorsystemdefault!5,
+backgroundcolor=colorsystemdefault!4,
 %nobreak=true,
 innerleftmargin=5pt,
 innerrightmargin=5pt,
@@ -395,7 +411,7 @@ innerbottommargin=0pt]{oBox}
 \newenvironment{definition}{\begin{dBox}\begin{definitionT}}{\end{definitionT}\end{dBox}}	
 %\newenvironment{example}{\begin{exampleT}}{\hfill{\tiny\ensuremath{\blacksquare}}\end{exampleT}}
 \newenvironment{notation}{\begin{nBox}\begin{notationT}}{\end{notationT}\end{nBox}}		
-\newenvironment{example}{\begin{eBox}\begin{exampleT}}{\hfill{\color{colorsystemdefault}\tiny\ensuremath{\blacksquare}}\end{exampleT}\end{eBox}}
+\newenvironment{example}{\begin{exampleBox}\begin{exampleT}}{\hfill{\color{colorsystemdefault}\tiny\ensuremath{\blacksquare}}\end{exampleT}\end{exampleBox}}
 \newenvironment{corollary}{\begin{cBox}\begin{corollaryT}}{\end{corollaryT}\end{cBox}}	
 \newenvironment{lema}{\begin{lBox}\begin{lemaT}}{\end{lemaT}\end{lBox}}	
 \newenvironment{observation}{\begin{oBox}\begin{observationT}}{\end{observationT}\end{oBox}}	
@@ -440,7 +456,10 @@ innerbottommargin=0pt]{oBox}
 % numbered part in the table of contents
 \newcommand{\@mypartnumtocformat}[2]{%
 \setlength\fboxsep{0pt}%
-\noindent\colorbox{colorsystemdefault!20}{\strut\parbox[c][.7cm]{\ecart}{\color{colorsystemdefault!70}\Large\sffamily\bfseries\centering#1}}\hskip\esp\colorbox{colorsystemdefault!40}{\strut\parbox[c][.7cm]{\linewidth-\ecart-\esp}{\Large\sffamily\centering#2}}}%
+%                  Background Roman number color                                Roman number color
+\noindent\colorbox{colorsystemdefault!10}{\strut\parbox[c][.7cm]{\ecart}{\color{colorsystemdefault!80}\Large\sffamily\bfseries\centering#1}}%
+%                  Background text title                               
+\hskip\esp\colorbox{colorsystemdefault!20}{\strut\parbox[c][.7cm]{\linewidth-\ecart-\esp}{\Large\sffamily\centering#2}}}%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % unnumbered part in the table of contents
 \newcommand{\@myparttocformat}[1]{%
@@ -503,6 +522,8 @@ innerbottommargin=0pt]{oBox}
 %----------------------------------------------------------------------------------------
 %	CHAPTER HEADINGS
 %----------------------------------------------------------------------------------------
+
+
 
 \newcommand{\thechapterimage}{}%
 \newcommand{\chapterimage}[1]{\renewcommand{\thechapterimage}{#1}}%
@@ -608,13 +629,13 @@ addtohook={%
     \parbox[t]{\secnumwd}{{\bfseries\thesection}}\hspace{1em}%
     \parbox[t]{\dimexpr\textwidth+0em-\secnumwd-1em\relax}{#1}%
   }
-  [\vskip-1.0ex\hskip-0em{\color{colorsystemdefault!60}\titlerule[4pt]}]
+  [\vskip-1.0ex\hskip-0em{\color{colorsystemdefault}\titlerule[4pt]}]
 
 \titleformat{name=\section,numberless}
   {\normalfont\Large\sffamily\color{colorsystemdefault}}
   {}
   {-0em}
   {#1}
-  [\vskip-1.0ex\hskip-0em{\color{colorsystemdefault!60}\titlerule[4pt]}]
+  [\vskip-1.0ex\hskip-0em{\color{colorsystemdefault}\titlerule[4pt]}]
 
 

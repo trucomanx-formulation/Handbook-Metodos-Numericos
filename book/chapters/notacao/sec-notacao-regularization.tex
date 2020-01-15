@@ -54,10 +54,10 @@ porém também aceitaremos uma solução $\VECTOR{x}$ que produz um mínimo $e(\
 %Na Seção \ref{sec:minAxbCAxb} veremos mais a detalhe como resolver o problema de minimização proposto na Eq. (\ref{eq:regularization:3}).
 \begin{SolutionT}[Relativa ao Exemplo \ref{ex:IllPosedNoSolutions}:]
 Como é descrito na Seção \ref{sec:minAxbCAxb}, para resolver um problema de minimização como o proposto na Eq. (\ref{eq:regularization:3}),
-podemos usar o Teorema \ref{theo:minAxbCAxb}, de modo que o vetor $\VECTOR{x}=\VECTOR{x}_{\circ}$ que minimiza $e(\VECTOR{x})$
+podemos usar o Teorema \ref{theo:minAxbCAxb}, de modo que o vetor $\VECTOR{x}=\VECTOR{\hat{x}}$ que minimiza $e(\VECTOR{x})$
 é igual a
 \begin{equation}\label{eq:regularization:3b}
-\VECTOR{x}_{\circ} =
+\VECTOR{\hat{x}} =
 \left[ \MATRIX{A}^{\transpose} \MATRIX{A} \right]^{-1}\MATRIX{A}^{\transpose}\VECTOR{y}_{\delta}
 =
 \begin{bmatrix}
@@ -80,11 +80,11 @@ podemos usar o Teorema \ref{theo:minAxbCAxb}, de modo que o vetor $\VECTOR{x}=\V
 \end{bmatrix},
 \end{equation}
 como é visto na Figura \ref{fig:ex:IllPosedNoSolutions:a}, 
-onde é desenhada a superfície $e(\VECTOR{x})$ em relação ao ponto mínimo $\VECTOR{x}_{\circ}$.
-Se analisamos $\VECTOR{x}_{\circ}$ em relação à Eq. (\ref{eq:regularization:2}),
-observaremos que este vetor de entrada produz uma resposta $\VECTOR{y}_{\circ}$ que é diferente de $\VECTOR{y}_{\delta}$,
+onde é desenhada a superfície $e(\VECTOR{x})$ em relação ao ponto mínimo $\VECTOR{\hat{x}}$.
+Se analisamos $\VECTOR{\hat{x}}$ em relação à Eq. (\ref{eq:regularization:2}),
+observaremos que este vetor de entrada produz uma resposta $\VECTOR{\hat{y}}$ que é diferente de $\VECTOR{y}_{\delta}$,
 \begin{equation}
-\MATRIX{A}\VECTOR{x}_{\circ}= \VECTOR{y}_{\circ} =
+\MATRIX{A}\VECTOR{\hat{x}}= \VECTOR{\hat{y}} =
 \begin{bmatrix}
 2.3333\\
 2.8333\\
@@ -93,11 +93,11 @@ observaremos que este vetor de entrada produz uma resposta $\VECTOR{y}_{\circ}$ 
 \neq \VECTOR{y}_{\delta}.
 \end{equation}
 Na Figura \ref{fig:ex:IllPosedNoSolutions:b} podemos ver graficamente a relação entre os pontos (vetores)
-$\VECTOR{y}_{\circ}$ e $\VECTOR{y}_{\delta}$,
-onde o ponto $\VECTOR{y}_{\circ}$ encontra-se dentro do plano $\MATRIX{A}\VECTOR{x}$,
+$\VECTOR{\hat{y}}$ e $\VECTOR{y}_{\delta}$,
+onde o ponto $\VECTOR{\hat{y}}$ encontra-se dentro do plano $\MATRIX{A}\VECTOR{x}$,
 porem o ponto $\VECTOR{y}_{\delta}$ não pertence a esse plano, 
 motivo pelo qual era impossível achar uma solução à Eq. (\ref{eq:regularization:2});
-nesse sentido, a regularização do problema nos habilitou a achar $\VECTOR{y}_{\circ}$,
+nesse sentido, a regularização do problema nos habilitou a achar $\VECTOR{\hat{y}}$,
 que é o ponto no plano  $\MATRIX{A}\VECTOR{x}$ mais próximo a $\VECTOR{y}_{\delta}$;
 e dizer, este é o ponto de interseção do plano e uma linha perpendicular que parte de $\VECTOR{y}_{\delta}$.
 \end{SolutionT}
@@ -107,14 +107,14 @@ e dizer, este é o ponto de interseção do plano e uma linha perpendicular que 
      \begin{subfigure}[b]{0.475\textwidth}
          \centering
          \includegraphics[width=0.98\textwidth]{chapters/notacao/mfiles/illpossed1/surfcex.eps}
-         \caption{Superfície $e(\VECTOR{x})$ e o ponto $\VECTOR{x}_{\circ}$. }
+         \caption{Superfície $e(\VECTOR{x})$ e o ponto $\VECTOR{\hat{x}}$. }
          \label{fig:ex:IllPosedNoSolutions:a}
      \end{subfigure}
      \hfill
      \begin{subfigure}[b]{0.475\textwidth}
          \centering
          \includegraphics[width=0.98\textwidth]{chapters/notacao/mfiles/illpossed1/surfcax.eps}
-         \caption{Plano $\MATRIX{A}\VECTOR{x}=\VECTOR{y}$ e os pontos $\VECTOR{y}_{\delta}$ e $\VECTOR{y}_{\circ}$.}
+         \caption{Plano $\MATRIX{A}\VECTOR{x}=\VECTOR{y}$ e os pontos $\VECTOR{y}_{\delta}$ e $\VECTOR{\hat{y}}$.}
          \label{fig:ex:IllPosedNoSolutions:b}
      \end{subfigure}
         \caption{Resposta gráfica do Exemplo \ref{ex:IllPosedNoSolutions}. }
@@ -127,9 +127,9 @@ Quando a Eq. (\ref{eq:regularization:2}) tem múltiplas soluções,
 não é possível regularizar o problema com uma função de custo da forma 
 $||\MATRIX{A}\VECTOR{x}-\VECTOR{y}_{\delta}||^2$,
 pois o problema nunca foi achar um ponto $\VECTOR{x}$ que cumpra a Eq. (\ref{eq:regularization:2}), 
-e sim ter um critério para escolher uma resposta $\VECTOR{x}=\VECTOR{x}_{\circ}$ entre os muitos valores que pode tomar este ponto;
+e sim ter um critério para escolher uma resposta $\VECTOR{x}=\VECTOR{\hat{x}}$ entre os muitos valores que pode tomar este ponto;
 assim, se abordamos o problema da Eq. (\ref{eq:regularization:2}) tentando minimizar $||\MATRIX{A}\VECTOR{x}-\VECTOR{y}_{\delta}||^2$,
-com uma resposta $\VECTOR{x}_{\circ} = \left[ \MATRIX{A}^{\transpose} \MATRIX{A} \right]^{-1}\MATRIX{A}^{\transpose}\VECTOR{y}_{\delta}$
+com uma resposta $\VECTOR{\hat{x}} = \left[ \MATRIX{A}^{\transpose} \MATRIX{A} \right]^{-1}\MATRIX{A}^{\transpose}\VECTOR{y}_{\delta}$
 como na Eq. (\ref{eq:regularization:3b}),
 perceberemos que a matriz $\MATRIX{A}^{\transpose}\MATRIX{A}$ não tem inversa,
 pelo que a resposta não pode ser calculada;
@@ -143,7 +143,7 @@ da função
 \begin{equation}\label{eq:regularization:4}
 e(\VECTOR{x})=||\MATRIX{A}\VECTOR{x}-\VECTOR{y}_{\delta}||^2+||\VECTOR{x}||^2,
 \end{equation}
-que nos ajuda a procurar uma solução que penaliza a resposta $\VECTOR{x}=\VECTOR{x}_{\circ}$ da função de custo $e(\VECTOR{x})$, 
+que nos ajuda a procurar uma solução que penaliza a resposta $\VECTOR{x}=\VECTOR{\hat{x}}$ da função de custo $e(\VECTOR{x})$, 
 quanto maior seja o valor $||\VECTOR{x}||^2$;
 é dizer, a resposta é de menor interesse quanto mais longe esteja do ponto $\VECTOR{0}$.
 
@@ -151,10 +151,10 @@ quanto maior seja o valor $||\VECTOR{x}||^2$;
 \begin{SolutionT}[Relativa ao Exemplo \ref{ex:IllPosedMultiplaSolutions}:]
 \label{sol:IllPosedMultiplaSolutions}
 Como é descrito na Seção \ref{sec:minAxbCAxbplusalphaxqD}, para resolver um problema de minimização como o proposto na Eq. (\ref{eq:regularization:3}),
-podemos usar o Teorema \ref{theo:minAxbCAxbplusalphaxqD}, de modo que o vetor $\VECTOR{x}=\VECTOR{x}_{\circ}$ que minimiza $e(\VECTOR{x})$
+podemos usar o Teorema \ref{theo:minAxbCAxbplusalphaxqD}, de modo que o vetor $\VECTOR{x}=\VECTOR{\hat{x}}$ que minimiza $e(\VECTOR{x})$
 é igual a
 \begin{equation}\label{eq:regularization:4b}
-\VECTOR{x}_{\circ} =
+\VECTOR{\hat{x}} =
 \left[ \MATRIX{A}^{\transpose}\MATRIX{A} +\MATRIX{I}\right]^{-1} \MATRIX{A}^{\transpose} \VECTOR{y}_{\delta}
 =
 \begin{bmatrix}
@@ -176,10 +176,10 @@ podemos usar o Teorema \ref{theo:minAxbCAxbplusalphaxqD}, de modo que o vetor $\
 2
 \end{bmatrix}.
 \end{equation}
-É importante lembrar que $\VECTOR{x}=\VECTOR{x}_{\circ}$ minimiza a função $e(\VECTOR{x})$ e não
+É importante lembrar que $\VECTOR{x}=\VECTOR{\hat{x}}$ minimiza a função $e(\VECTOR{x})$ e não
 a função $||\MATRIX{A}\VECTOR{x}-\VECTOR{y}_{\delta}||^2$,
 pelo que como podemos ver na Figura \ref{fig:ex:IllPosedMultiplaSolutions:a},
-o ponto $\VECTOR{x}_{\circ}$ não esta no vale da superfície $||\MATRIX{A}\VECTOR{x}-\VECTOR{y}_{\delta}||^2$;
+o ponto $\VECTOR{\hat{x}}$ não esta no vale da superfície $||\MATRIX{A}\VECTOR{x}-\VECTOR{y}_{\delta}||^2$;
 porem, sim está no ponto mais baixo da superfície $e(\VECTOR{x})$, como mostra a Figura \ref{fig:ex:IllPosedMultiplaSolutions:b}.
 \end{SolutionT}
 
@@ -188,14 +188,14 @@ porem, sim está no ponto mais baixo da superfície $e(\VECTOR{x})$, como mostra
      \begin{subfigure}[b]{0.475\textwidth}
          \centering
          \includegraphics[width=0.98\textwidth]{chapters/notacao/mfiles/illpossed2/surfcaxyd.eps}
-         \caption{Superfície $||\MATRIX{A}\VECTOR{x}-\VECTOR{y}_{\delta}||^2$ e o ponto $\VECTOR{x}_{\circ}$.}
+         \caption{Superfície $||\MATRIX{A}\VECTOR{x}-\VECTOR{y}_{\delta}||^2$ e o ponto $\VECTOR{\hat{x}}$.}
          \label{fig:ex:IllPosedMultiplaSolutions:a}
      \end{subfigure}
      \hfill
      \begin{subfigure}[b]{0.475\textwidth}
          \centering
          \includegraphics[width=0.98\textwidth]{chapters/notacao/mfiles/illpossed2/surfcex.eps}
-         \caption{Superfície $e(\VECTOR{x})$ e o ponto $\VECTOR{x}_{\circ}$. }
+         \caption{Superfície $e(\VECTOR{x})$ e o ponto $\VECTOR{\hat{x}}$. }
          \label{fig:ex:IllPosedMultiplaSolutions:b}
      \end{subfigure}
         \caption{Resposta gráfica do Exemplo \ref{ex:IllPosedMultiplaSolutions}. }

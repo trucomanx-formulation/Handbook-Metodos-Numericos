@@ -119,25 +119,25 @@ surf(xx1,xx2,err)
 hold on
 contour(xx1,xx2,err,'linewidth',LINEWIDTH)
 hold off
-hz=zlabel('||Ax-y_{\delta}||');
+hz=zlabel('$||Ax-y_{\delta}||^2$');
 set(hz,'fontsize',FONTSIZE);
-hx1=xlabel('x_1');
+hx1=xlabel('$x_1$');
 set(hx1,'fontsize',FONTSIZE);
-hx2=ylabel('x_2');
+hx2=ylabel('$x_2$');
 set(hx2,'fontsize',FONTSIZE);
 colormap(jet)
 view([48.672, 20.972])
 hold on
 scatter3(Xo(1),Xo(2),fune(Xo(1),Xo(2),B),240,'MarkerFaceColor',[1 0 0],'filled','linewidth',LINEWIDTH)
-TEXTO=['x_{o}'];%=[' num2str(round(Xo(1)*100)/100) ';' num2str(round(Xo(2)*100)/100)  ']'];
+TEXTO=['$\mathbf{\hat{x}}$'];%=[' num2str(round(Xo(1)*100)/100) ';' num2str(round(Xo(2)*100)/100)  ']'];
 ht2=text(   Xo(1),Xo(2), 5.0, TEXTO);
-set(ht2,'fontsize',FONTSIZE);
+set(ht2,'fontsize',1.5*FONTSIZE);
 set(ht2, 'Color', 'red');
 line([0;2],[2;0],[0;0],'linewidth',LINEWIDTH)
 hold off
 set(gca,'fontsize',FONTSIZE);
 %set(gca,'linewidth',LINEWIDTH)
-print(gcf,'surfcaxyd.eps','-depsc',['-F:' num2str(FONTSIZE)])
+print(gcf,'surfcaxyd.tex','-depslatexstandalone',['-F:' num2str(FONTSIZE)])
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -152,21 +152,21 @@ surf(xx1,xx2,err)
 hold on
 contour(xx1,xx2,err,'linewidth',LINEWIDTH)
 hold off
-hz=zlabel('e(x)');
+hz=zlabel('$e(\mathbf{x})$');
 set(hz,'fontsize',FONTSIZE);
-hx1=xlabel('x_1');
+hx1=xlabel('$x_1$');
 set(hx1,'fontsize',FONTSIZE);
-hx2=ylabel('x_2');
+hx2=ylabel('$x_2$');
 set(hx2,'fontsize',FONTSIZE);
 colormap(jet)
 view([48.672, 20.972])
 hold on
 scatter3(Xo(1),Xo(2),fune(Xo(1),Xo(2),B)+Xo(1)^2+Xo(2)^2,240,'MarkerFaceColor',[1 0 0],'filled','linewidth',LINEWIDTH)
-TEXTO=['x_{o}'];%=[' num2str(round(Xo(1)*100)/100) ';' num2str(round(Xo(2)*100)/100)  ']'];
-ht2=text(   Xo(1),Xo(2)-0.25, 10.0, TEXTO);
-set(ht2,'fontsize',FONTSIZE);
+TEXTO=['$\mathbf{\hat{x}}$'];%=[' num2str(round(Xo(1)*100)/100) ';' num2str(round(Xo(2)*100)/100)  ']'];
+ht2=text(   Xo(1),Xo(2)-0.25, 10.0,TEXTO);
+set(ht2,'fontsize', 1.5*FONTSIZE);
 set(ht2, 'Color', 'red');
 hold off
 set(gca,'fontsize',FONTSIZE);
 %set(gca,'linewidth',LINEWIDTH)
-print(gcf,'surfcex.eps','-depsc',['-F:' num2str(FONTSIZE)])
+print(gcf,'surfcex.tex','-depslatexstandalone',['-F:' num2str(FONTSIZE)])

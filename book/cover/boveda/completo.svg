@@ -662,8 +662,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.76566621"
-     inkscape:cx="990.63127"
-     inkscape:cy="250.19872"
+     inkscape:cx="668.06169"
+     inkscape:cy="364.79859"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -671,7 +671,7 @@
      inkscape:snap-page="true"
      inkscape:window-width="1853"
      inkscape:window-height="1025"
-     inkscape:window-x="1987"
+     inkscape:window-x="67"
      inkscape:window-y="27"
      inkscape:window-maximized="1"
      inkscape:object-nodes="false"
@@ -732,9 +732,9 @@
        y="7.0977785e-07"
        x="-217.19661"
        height="297"
-       width="210"
+       width="210.34557"
        id="rect4583-8"
-       style="opacity:0.98999999;fill:#c2b6aa;fill-opacity:0.99215686;fill-rule:nonzero;stroke:none;stroke-width:0;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:fill markers stroke" />
+       style="opacity:0.98999999;fill:#4e0818;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:fill markers stroke" />
     <image
        style="opacity:0.00791997;stroke-width:7.5999999;stroke-miterlimit:4;stroke-dasharray:none"
        width="155.575"
@@ -750,7 +750,7 @@
        id="rect4583-7-1"
        inkscape:connector-curvature="0" />
     <path
-       style="opacity:1;fill:#4e0818;fill-opacity:0.98431373;fill-rule:nonzero;stroke:#4e0818;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.98431373;paint-order:fill markers stroke"
+       style="opacity:1;fill:#4e0818;fill-opacity:1;fill-rule:nonzero;stroke:#4e0818;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.98431373;paint-order:fill markers stroke"
        d="m 17.991673,19.066521 v 105.298609 0.005 h 0.03705 l 87.498647,10.2875 87.50246,-10.28749 h 0.037 v -0.005 -105.298616 z"
        id="rect4583-7"
        inkscape:connector-curvature="0" />
@@ -801,7 +801,7 @@
        style="display:none;fill:none;stroke:#000000;stroke-width:0.60058683;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
        d="m 182.77474,233.26797 c 27.39303,0 0,32.91907 -27.39336,32.91907 -27.39329,0 0,-32.91907 27.39336,-32.91907" />
     <path
-       style="opacity:1;fill:#4e0818;fill-opacity:0.98431373;stroke:#4e0818;stroke-width:3.42596102;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.98431373;enable-background:new"
+       style="opacity:1;fill:#4e0818;fill-opacity:1;stroke:#4e0818;stroke-width:3.42596102;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.98431373;enable-background:new"
        d="m -215.48363,232.51998 v 62.76704 H -7.1672698 v -62.76704 z m 208.6798097,0 v 62.14812 h 6.41186363 v -62.14812 z m 6.7753105,0 v 62.76704 H 208.28785 v -62.76704 z"
        id="rect936-21"
        inkscape:connector-curvature="0" />
@@ -848,14 +848,6 @@
        width="78.626648"
        id="rect931"
        style="opacity:0.98999999;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:2;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
-    <rect
-       ry="0"
-       y="0.99994636"
-       x="-56.021923"
-       height="295.00012"
-       width="48.354534"
-       id="rect936"
-       style="opacity:1;fill:#4e0818;fill-opacity:0.98431373;stroke:#4e0818;stroke-width:1.99989247;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.98431373" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11.99444485px;line-height:125%;font-family:Comfortaa;-inkscape-font-specification:'Comfortaa, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"

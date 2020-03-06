@@ -29,9 +29,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.82020198"
-     inkscape:cx="1261.4341"
-     inkscape:cy="284.38198"
+     inkscape:zoom="4.639763"
+     inkscape:cx="828.60996"
+     inkscape:cy="450.99177"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -782,7 +782,7 @@
        d="M -9.064839e-5,4.4758358e-7 V 129.50475 A 224.75284,112.55667 0 0 0 104.57286,142.62603 224.75284,112.55667 0 0 0 210,129.49193 V 4.4758358e-7 Z"
        style="opacity:1;fill:#1f2312;fill-opacity:0.99215686;fill-rule:nonzero;stroke:#202413;stroke-width:0;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.99215686;paint-order:fill markers stroke;enable-background:new" />
     <rect
-       style="opacity:0.98999999;fill:#c5bba0;fill-opacity:0.99215686;fill-rule:nonzero;stroke:none;stroke-width:0;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:fill markers stroke"
+       style="opacity:0.98999999;fill:#202413;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:fill markers stroke"
        id="rect4583-8"
        width="210"
        height="297"
@@ -859,14 +859,6 @@
        x="-151.50993"
        y="243.02498"
        ry="6.9222808" />
-    <rect
-       style="opacity:1;fill:#202413;fill-opacity:0.99215686;stroke:#202413;stroke-width:1.99989247;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.99215686"
-       id="rect936"
-       width="48.354534"
-       height="295.00012"
-       x="-56.021923"
-       y="0.99994636"
-       ry="0" />
     <text
        id="text4602-4-74"
        y="279.44595"
@@ -883,12 +875,12 @@
        style="display:none;fill:none;stroke:#000000;stroke-width:0.60058683;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
        d="m -316.94812,218.24704 c 27.39303,0 0,32.91907 -27.39336,32.91907 -27.39329,0 0,-32.91907 27.39336,-32.91907" />
     <rect
-       style="opacity:1;fill:#202413;fill-opacity:0.99215686;stroke:#202413;stroke-width:0.73294586;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.99215686"
+       style="opacity:1;fill:#202413;fill-opacity:1;stroke:#202413;stroke-width:0.7672655;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="rect936-2"
-       width="6.4670544"
-       height="296.26709"
-       x="-6.8301334"
-       y="0.36647341"
+       width="7.0876851"
+       height="296.23276"
+       x="-6.9840493"
+       y="0.38363323"
        ry="0" />
     <text
        transform="matrix(0,0.94805781,-1.054788,0,0,0)"
@@ -2015,7 +2007,7 @@
          id="g5602"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#ffffff;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"><polygon
            id="polygon5550"
-           points="460.45,434.5 461.84,432.56 468.26,436.68 474.68,432.61 476.09,434.45 468.26,440.78 "
+           points="468.26,436.68 474.68,432.61 476.09,434.45 468.26,440.78 460.45,434.5 461.84,432.56 "
            style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-opacity:1" /><path
            id="path5552"
            d="m 473.46,426.48 -0.09,-0.08 -0.07,-0.07 -0.08,-0.08 -0.07,-0.08 -0.06,-0.08 -0.06,-0.08 -0.06,-0.08 -0.05,-0.08 -0.05,-0.08 -0.05,-0.08 -0.04,-0.09 -0.04,-0.08 -0.03,-0.08 -0.04,-0.08 -0.03,-0.08 -0.02,-0.08 -0.03,-0.07 -0.02,-0.08 -0.02,-0.08 -0.02,-0.07 -0.01,-0.07 -0.01,-0.07 -0.01,-0.07 -0.01,-0.07 -0.01,-0.06 -0.01,-0.06 v -0.06 l -0.01,-0.06 v -0.05 -0.05 -0.05 -0.05 c 0,-2.18 1.75,-3.14 3.09,-3.14 1.55,0 3.14,1.05 3.14,3.14 0,4.28 -5.78,4.58 -8.67,4.58 -8.92,0 -12.61,-5.72 -12.61,-11.5 0,-6.62 4.69,-11.36 12.36,-11.36 8.06,0 9.56,5.78 9.56,6.13 0,0.7 -0.7,0.7 -1.19,0.7 -0.9,0 -0.95,-0.11 -1.2,-0.75 -1.3,-3.14 -3.69,-4.09 -6.22,-4.09 -6.93,0 -6.93,7.32 -6.93,9.62 0,2.78 0,9.27 6.43,9.27 1.74,0 2.58,-0.16 3.24,-0.3 z"

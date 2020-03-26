@@ -1,24 +1,24 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{ Método mediante regularização para funções $h(x)$: $\mathbb{R}$ $\rightarrow$ $\mathbb{R}$ }
+\section{ Método mediante multiplicador de Lagrange para funções $h(x)$: $\mathbb{R}$ $\rightarrow$ $\mathbb{R}$ }
 
 \begin{theorem}[Solução iterativa]\label{theo:rootshxreg}
 ~\\
 \begin{minipage}{0.2\textwidth}
 \centering
-\includegraphics[width=0.95\linewidth]{chapters/roots/roots1.eps} 
+\includegraphics[width=0.90\linewidth]{chapters/roots/roots1.eps} 
 \end{minipage}
 \begin{minipage}{0.8\textwidth}
 Dados,
-um escalar $\delta \in \mathbb{R}$, 
-um escalar $\alpha \in \mathbb{R}| \alpha>0$, 
-um escalar $x \in \mathbb{R}$, 
+os escalares $\delta \in \mathbb{R}_+$, 
+$\alpha \in \mathbb{R}_+$, 
+$x \in \mathbb{R}$, 
 uma função $h:\mathbb{R} \rightarrow \mathbb{R}$, e 
 conhecida a validade da Eq. (\ref{eq:rootshxreg1}),
 \begin{equation}\label{eq:rootshxreg1}
 0=h(x);
 \end{equation}
-se desejamos ter o valor $x=\hat{x}$ que cumpra a Eq. (\ref{eq:rootshxreg1})
+se desejamos obter um valor $x=\hat{x}$ que cumpra a Eq. (\ref{eq:rootshxreg1})
 podemos usar iterativamente a Eq. (\ref{eq:rootshxreg2}),
 onde  $h'(x)\equiv \frac{d h(x)}{d x}$,
 \end{minipage}
@@ -46,12 +46,12 @@ mostrado na Figura \ref{fig:fluxorhxreg3}.
 
 \begin{tcbattention}
 \begin{itemize}
-\item Uma vantagem do método da regularização em relação ao método de Newton,
-é que em lugares onde $h'(x_{k-1})\approx 0$, a regularização converge a um mínimo local 
+\item Uma vantagem do método mediante multiplicador de Lagrange (MML) em relação ao método de Newton,
+é que em lugares onde $h'(x_{k-1})\approx 0$, MML converge a um mínimo local 
 que facilmente podemos detectar. Em contrapartida,
-com o método de newton podemos ficar temporalmente atrapados num mínimo local, porém este estado 
-é mais difícil de detectar pois os valores de $x_k$ tendem a divergir para valores próximos ao mínimo.
-Esta caraterística pode ser comparada nas Soluções \ref{sol:rootshx1} e \ref{sol:rootshxreg1}
+no método de Newton podemos ficar atrapados num ciclo de divergência e convergência num mínimo local, 
+sendo este estado mais difícil de detectar.
+Esta caraterística pode ser comparada nas Soluções \ref{sol:rootshx1} e \ref{sol:rootshxreg1}.
 \end{itemize}
 \end{tcbattention}
 
@@ -63,12 +63,12 @@ Esta caraterística pode ser comparada nas Soluções \ref{sol:rootshx1} e \ref{
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Exemplos de busca de raízes pelo método da regularização}
+\subsection{Exemplos de busca de raízes pelo método mediante multiplicador de Lagrange}
 
 
 \begin{example}\label{ex:rootshxreg1}
 Conhecida uma função $h(x)=x(x^2-1)+1$, e um escalar $\delta=10^{-3}$; usando o Teorema \ref{theo:rootshxreg},
-achar o valor $x=\hat{x}$ que cumpra $||h(x)||<\delta$ usando o Teorema \ref{theo:rootshxreg}.
+achar um valor $x=\hat{x}$ que cumpra $||h(x)||<\delta$.
 Podemos ver as respostas a este exemplo na Solução \ref{sol:rootshxreg1} e \ref{sol:rootshxreg2}.
 \end{example}
 \begin{SolutionT}[Relativa ao Exemplo \ref{ex:rootshxreg1} (Converge errado):]\label{sol:rootshxreg1}
@@ -95,7 +95,7 @@ para tentar fugir deste mínimo local; por exemplo $x_8=-2.0$.
       %(or a blank line to force the subfigure onto a new line)
     \begin{subfigure}[b]{0.49\textwidth}
         \includegraphics[width=\textwidth]{chapters/roots/mfiles/hx_a/minimizando_hx_a_2.eps}
-        \caption{As iterações convergem em $\hat{x}$, onde $h(\hat{x})\approx 0$ e $h'(x_m)\neq 0$}
+        \caption{As iterações convergem em $\hat{x}$, onde $h(\hat{x})\approx 0$ e $h'(x_m)\neq 0$.}
         \label{fig:rootsRcasesb}
     \end{subfigure}
     \caption{Comportamento da busca iterativa do Exemplo \ref{ex:rootshxreg1}}

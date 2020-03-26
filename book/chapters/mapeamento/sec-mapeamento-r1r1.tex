@@ -34,7 +34,7 @@ e(\VECTOR{c}) =  \sum_{n=1}^{N} w_n||h_{\VECTOR{c}}(x_n)-y_n||^2,
 \end{equation}
 proveniente de avaliar $N$ amostras $x_n$ e $y_n$ que não cumprem necessariamente a Eq. (\ref{eq:maphxr1r1:1}), 
 representadas pelos vetores $\VECTOR{x}=[x_1~ x_2~ ...~ x_n~ ...~ x_N]^{\transpose}$ e $\VECTOR{y}=[y_1~ y_2~ ...~ y_n~ ...~ y_N]^{\transpose}$,
-ponderadas com os pesos $w_n$, representados pela matriz diagonal $\MATRIX{W}=\funcdiag([w_1~ w_2~ ...~ w_n~ ...~ w_N]^{\transpose})$;
+ponderados com os pesos $w_n$, representados pela matriz diagonal $\MATRIX{W}=\funcdiag([w_1~ w_2~ ...~ w_n~ ...~ w_N]^{\transpose})$;
 pode ser achado\footnote{A demostração pode ser vista na Prova \ref{proof:theo:maphxr1r1}.} usando:
 \begin{equation}\label{eq:maphxr1r1:3}
 \VECTOR{c}=[\MATRIX{A}^{\transpose}\MATRIX{W}\MATRIX{A}]^{-1}\MATRIX{A}^{\transpose}\MATRIX{W}\VECTOR{y},
@@ -70,10 +70,10 @@ deve existir inversa para a matriz $\MATRIX{A}^{\transpose}\MATRIX{W}\MATRIX{A}$
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Exemplos de mapeamento com um polinômio
-$h(x):~\mathbb{R} \rightarrow \mathbb{R}$ de gau $M$ }
+$h_{\VECTOR{c}}(x):~\mathbb{R} \rightarrow \mathbb{R}$ de gau $M$ }
 
 \begin{example}\label{ex:theo:maphxr1r1}
-Conhecida as $N=18$ amostras $x_n$ e $y_n$, mostradas nas  Tabelas \ref{table:theo:maphxr1r1:xn} e \ref{table:theo:maphxr1r1:yn},
+Conhecida as $N=16$ amostras $x_n$ e $y_n$, mostradas nas  Tabelas \ref{table:theo:maphxr1r1:xn} e \ref{table:theo:maphxr1r1:yn},
 achar o polinômio $h_{\VECTOR{c}}(x)$ de grau $M=2$, 
 que gere o menor erro $e(\VECTOR{c}) =  \sum_{n=1}^{N} ||h_{\VECTOR{c}}(x_n)-y_n||^2$.
 \end{example}

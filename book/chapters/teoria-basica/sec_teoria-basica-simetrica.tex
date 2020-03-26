@@ -8,9 +8,9 @@
 \begin{definition}[Matriz simétrica:]\label{def:symmetricmatrix0}
 Conhecida uma matriz quadrada $\MATRIX{A} \in \mathbb{R}^{N \times N}$. 
 \begin{itemize}
-\item Esta é uma matriz simétrica, se se cumpre que \cite[pp. 18]{golub2013matrix} 
+\item Esta é uma matriz simétrica quando se cumpre que \cite[pp. 18]{golub2013matrix}, 
 \begin{equation}
-\MATRIX{A}^{\transpose} = \MATRIX{A}
+\MATRIX{A}^{\transpose} = \MATRIX{A}.
 \end{equation}
 \end{itemize}
 \end{definition}
@@ -19,13 +19,13 @@ Conhecida uma matriz quadrada $\MATRIX{A} \in \mathbb{R}^{N \times N}$.
 \begin{theorem}[Forma quadratica e matrizes simétricas:]\label{theo:simetricmatrix0}
 Conhecida uma matriz quadrada $\MATRIX{A} \in \mathbb{R}^{N \times N}$.
 \begin{itemize}
-\item Se definimos a matriz simétrica $\MATRIX{S}=\frac{\MATRIX{A}+\MATRIX{A}^{\transpose}}{2}$ então\footnote{A
+\item Se definimos uma matriz simétrica $\MATRIX{S}=\frac{\MATRIX{A}+\MATRIX{A}^{\transpose}}{2}$, então\footnote{A
 demostração pode ser vista na Prova \ref{proof:theo:simetricmatrix0}.} 
 podemos afirmar que para qualquer vetor $\VECTOR{x} \in \mathbb{R}^{N}$ se cumpre que 
 \begin{equation}
 \VECTOR{x}^{\transpose}\MATRIX{S}\VECTOR{x} = 
 \VECTOR{x}^{\transpose}\MATRIX{A}\VECTOR{x} =
-\VECTOR{x}^{\transpose}\MATRIX{A}^{\transpose}\VECTOR{x}
+\VECTOR{x}^{\transpose}\MATRIX{A}^{\transpose}\VECTOR{x}.
 \end{equation}
 \end{itemize}
 \end{theorem}
@@ -37,9 +37,9 @@ Conhecida uma matriz quadrada $\MATRIX{A} \in \mathbb{R}^{N \times N}$,
 com  autovalores $\lambda_n$, $\forall n \in \{1, 2, ..., N\}$.
 %e autovetores $\VECTOR{e}_n$, $\forall n \in \{1, 2, ..., N\}$.
 \begin{itemize}
-\item Se $\MATRIX{A}$ é uma matriz simétrica então
+\item Se $\MATRIX{A}$ é uma matriz simétrica, então
 %\footnote{A demostração pode ser vista na Prova \ref{proof:theo:simetricmatrix2}.} 
-existe uma matriz $\MATRIX{Q}$ ortogonal que cumpre \cite[pp. 67,440]{golub2013matrix}
+existe uma matriz $\MATRIX{Q}$ ortogonal que cumpre \cite[pp. 67,440]{golub2013matrix},
 \begin{equation}
 \begin{bmatrix}
 \lambda_1 & 0         & ...    & 0 \\
@@ -59,7 +59,7 @@ com  autovalores $\lambda_n$, $\forall n \in \{1, 2, ..., N\}$.
 %e autovetores $\VECTOR{e}_n$, $\forall n \in \{1, 2, ..., N\}$.
 \begin{itemize}
 \item Se $\MATRIX{A}$ é uma matriz simétrica então, $\lambda_{min}(\MATRIX{A})$ e $\lambda_{max}(\MATRIX{A})$,
-o autovalor de menor e maior valor da  matriz $\MATRIX{A}$, respetivamente, cumpre \cite[pp. 67]{golub2013matrix}
+o autovalor de menor e maior valor da  matriz $\MATRIX{A}$, respetivamente, cumprem \cite[pp. 67]{golub2013matrix}:
 \begin{equation}
 \lambda_{min}(\MATRIX{A}) = \min_{\VECTOR{x}\neq 0} \frac{\VECTOR{x}^{\transpose}\MATRIX{A}\VECTOR{x}}{\VECTOR{x}^{\transpose}\VECTOR{x}},
 \qquad
@@ -70,7 +70,7 @@ onde $\VECTOR{x} \in \mathbb{R}^N$.
 \end{theorem}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{theorem}[Autovalor de maior valor em matrizes simétricas:]\label{theo:simetricmatrix4}
+\begin{theorem}[Transposta de uma matriz simétrica:]\label{theo:simetricmatrix4}
 Conhecida uma matriz quadrada $\MATRIX{A} \in \mathbb{R}^{N \times N}$, 
 %com  autovalores $\lambda_n$, $\forall n \in \{1, 2, ..., N\}$.
 %e autovetores $\VECTOR{e}_n$, $\forall n \in \{1, 2, ..., N\}$.

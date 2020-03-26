@@ -2,14 +2,14 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{myproofT}[Prova do Teorema \ref{theo:simetricmatrix0}:]\label{proof:theo:simetricmatrix0}
+\begin{myproofT}[Relativa ao Teorema \ref{theo:simetricmatrix0}:]\label{proof:theo:simetricmatrix0}
 Conhecida uma matriz quadrada $\MATRIX{A} \in \mathbb{R}^{N \times N}$,
-Se definimos a matriz simétrica $\MATRIX{S}=\frac{\MATRIX{A}+\MATRIX{A}^{\transpose}}{2}$ e
+se definimos a matriz simétrica $\MATRIX{S}=\frac{\MATRIX{A}+\MATRIX{A}^{\transpose}}{2}$ e
 o vetor $\VECTOR{x} \in \mathbb{R}^{N}$, então
 \begin{equation}
 \VECTOR{x}^{\transpose}\MATRIX{S}\VECTOR{x} = 
 \frac{\VECTOR{x}^{\transpose}\MATRIX{A}\VECTOR{x}}{2} +
-\frac{\VECTOR{x}^{\transpose}\MATRIX{A}^{\transpose}\VECTOR{x}}{2}
+\frac{\VECTOR{x}^{\transpose}\MATRIX{A}^{\transpose}\VECTOR{x}}{2},
 \end{equation}
 dado que cada somando da equação anterior é um escalar podemos afirmar que 
 \begin{equation}
@@ -27,14 +27,14 @@ e consequentemente que
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{myproofT}[Prova do Teorema \ref{theo:matrixgeneric3}:]\label{proof:theo:matrixgeneric3}
+\begin{myproofT}[Relativa ao Teorema \ref{theo:matrixgeneric3}:]\label{proof:theo:matrixgeneric3}
 Conhecida uma matriz quadrada $\MATRIX{A} \in \mathbb{R}^{N \times N}$, 
-os  autovalores $\lambda_n$, $\forall n \in \{1, 2, ..., N\}$ são calculados mediante 
+então os  autovalores $\lambda_n$, $\forall n \in \{1, 2, ..., N\}$ são calculados mediante 
 seu polinômio caraterístico,
 \begin{equation}
 p(\lambda)=det(\MATRIX{A}-\lambda \MATRIX{I}),
 \end{equation}
-onde $\MATRIX{I}$ é uma matriz identidade.
+onde $\MATRIX{I}$ é uma matriz identidade,
 \begin{equation}
 p(\lambda)^{\transpose}=det(\MATRIX{A}-\lambda \MATRIX{I})^{\transpose},
 \end{equation}
@@ -48,53 +48,53 @@ p(\lambda)=det(\MATRIX{A}^{\transpose}-\lambda \MATRIX{I}).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{myproofT}[Prova do Teorema \ref{theo:simetricmatrix4}:]\label{proof:theo:simetricmatrix4}
-Conhecida uma matriz quadrada $\MATRIX{A} \in \mathbb{R}^{N \times N}$ não singular, 
+\begin{myproofT}[Relativa ao Teorema \ref{theo:simetricmatrix4}:]\label{proof:theo:simetricmatrix4}
+Conhecida uma matriz quadrada $\MATRIX{A} \in \mathbb{R}^{N \times N}$ simétrica e não singular, 
 \begin{equation}
-\MATRIX{I}=\MATRIX{A}\MATRIX{A}^{-1}
+\MATRIX{I}=\MATRIX{A}\MATRIX{A}^{-1},
 \end{equation}
 \begin{equation}
-\MATRIX{I}^{\transpose}=\left\{\MATRIX{A}\MATRIX{A}^{-1}\right\}^{\transpose}
+\MATRIX{I}^{\transpose}=\left\{\MATRIX{A}\MATRIX{A}^{-1}\right\}^{\transpose},
 \end{equation}
 \begin{equation}
-\MATRIX{I}=\left\{\MATRIX{A}^{-1}\right\}^{\transpose} \MATRIX{A}^{\transpose}
+\MATRIX{I}=\left\{\MATRIX{A}^{-1}\right\}^{\transpose} \MATRIX{A}^{\transpose},
 \end{equation}
 \begin{equation}
-\MATRIX{I}=\left\{\MATRIX{A}^{-1}\right\}^{\transpose} \MATRIX{A}
+\MATRIX{I}=\left\{\MATRIX{A}^{-1}\right\}^{\transpose} \MATRIX{A},
 \end{equation}
 \begin{equation}
-\MATRIX{A}^{-1}=\left\{\MATRIX{A}^{-1}\right\}^{\transpose} 
+\MATRIX{A}^{-1}=\left\{\MATRIX{A}^{-1}\right\}^{\transpose}.
 \end{equation}
 \end{myproofT}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{myproofT}[Prova do Teorema \ref{theo:semipositivematrix1}:]\label{proof:theo:semipositivematrix1}
+\begin{myproofT}[Relativa ao Teorema \ref{theo:semipositivematrix1}:]\label{proof:theo:semipositivematrix1}
 Conhecida uma matriz $\MATRIX{A} \in \mathbb{R}^{N \times M}$,
 e um vetor $\VECTOR{x} \in \mathbb{R}^{N}$ não nulo,
 \begin{equation}
-\VECTOR{x}^{\transpose}\MATRIX{A}\MATRIX{A}^{\transpose}\VECTOR{x}
+\VECTOR{x}^{\transpose}\MATRIX{A}\MATRIX{A}^{\transpose}\VECTOR{x},
 \end{equation}
 \begin{equation}
-\left\{\MATRIX{A}^{\transpose}\VECTOR{x}\right\}\left\{\MATRIX{A}^{\transpose}\VECTOR{x}\right\}
+\left\{\MATRIX{A}^{\transpose}\VECTOR{x}\right\}\left\{\MATRIX{A}^{\transpose}\VECTOR{x}\right\},
 \end{equation}
 se $\VECTOR{y}=\MATRIX{A}^{\transpose}\VECTOR{x}$, 
-podemos percebe que existe a possibilidade de que $\VECTOR{y}=\VECTOR{0}$ seja nulo,
+podemos perceber que existe a possibilidade de que $\VECTOR{y}=\VECTOR{0}$,
 pelo que podemos afirmar que 
 \begin{equation}
-\VECTOR{y}^{\transpose}\VECTOR{y}\geq 0
+\VECTOR{y}^{\transpose}\VECTOR{y}\geq 0,
 \end{equation}
 \begin{equation}
-\VECTOR{x}^{\transpose}\MATRIX{A}\MATRIX{A}^{\transpose}\VECTOR{x}
+\VECTOR{x}^{\transpose}\MATRIX{A}\MATRIX{A}^{\transpose}\VECTOR{x}\geq 0.
 \end{equation}
 \end{myproofT}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{myproofT}[Prova do Teorema \ref{theo:semipositivematrix1}:]\label{proof:theo:semipositivematrix2}
+\begin{myproofT}[Relativa ao Teorema \ref{theo:semipositivematrix1}:]\label{proof:theo:semipositivematrix2}
 Conhecida uma matriz $\MATRIX{A} \in \mathbb{R}^{N \times N}$, com  autovalores $\lambda_n$,
-e autovetores $\VECTOR{v}_n$, $\forall n \in \{1, 2, ..., N\}$.
+e autovetores $\VECTOR{v}_n$, $\forall n \in \{1, 2, ..., N\}$,
 \begin{equation}
 \MATRIX{A}\VECTOR{v}_n = \lambda_n \VECTOR{v}_n, 
 \end{equation}
@@ -103,20 +103,20 @@ e autovetores $\VECTOR{v}_n$, $\forall n \in \{1, 2, ..., N\}$.
 \end{equation}
 sabendo que a matriz é semidefinida positiva,
 \begin{equation}
-0 \leq \VECTOR{v}^{\transpose}\MATRIX{A}\VECTOR{v} = \lambda_n \VECTOR{v}_n^{\transpose}\VECTOR{v}_n 
+0 \leq \VECTOR{v}^{\transpose}\MATRIX{A}\VECTOR{v} = \lambda_n \VECTOR{v}_n^{\transpose}\VECTOR{v}_n,
 \end{equation}
 \begin{equation}
 \lambda_n \VECTOR{v}_n^{\transpose}\VECTOR{v}_n \geq 0,
 \end{equation}
 dado que sempre $\VECTOR{v}_n^{\transpose}\VECTOR{v}_n> 0$, concluímos
 \begin{equation}
-\lambda_n  \geq 0,
+\lambda_n  \geq 0.
 \end{equation} 
 \end{myproofT}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{myproofT}[Prova do Teorema \ref{theo:positivematrix1}:]\label{proof:theo:positivematrix1}
+\begin{myproofT}[Relativa ao Teorema \ref{theo:positivematrix1}:]\label{proof:theo:positivematrix1}
 Conhecida uma matriz quadrada $\MATRIX{A} \in \mathbb{R}^{N \times N}$ e definida positiva, com  autovalores $\lambda_n$,
 e autovetores $\VECTOR{e}_n$, $\forall n \in \{1, 2, ..., N\}$, de modo que,
 \begin{equation}\label{eq:proof:theo:positivematrix1:0}
@@ -127,7 +127,7 @@ e autovetores $\VECTOR{e}_n$, $\forall n \in \{1, 2, ..., N\}$, de modo que,
 \end{equation}
 
 \begin{itemize}
-\item Assim, usando a Eq. (\ref{eq:proof:theo:positivematrix1:1}) e a Definição \ref{def:positivematrix0} podemos afirmar que
+\item Usando a Eq. (\ref{eq:proof:theo:positivematrix1:1}) e a Definição \ref{def:positivematrix0} podemos afirmar que
 \begin{equation}
 \VECTOR{e}_n^{\transpose}\MATRIX{A}\VECTOR{e}_n >0
 \end{equation} 
@@ -143,8 +143,8 @@ o que implica que
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{myproofT}[Prova do Teorema \ref{theo:positivematrix1}:]\label{proof:theo:positivematrix2}
-Conhecida uma matriz quadrada $\MATRIX{A} \in \mathbb{R}^{N \times N}$ simetrica,
+\begin{myproofT}[Relativa ao Teorema \ref{theo:positivematrix1}:]\label{proof:theo:positivematrix2}
+Conhecida uma matriz quadrada $\MATRIX{A} \in \mathbb{R}^{N \times N}$ simétrica,
 com  autovalores $\lambda_n>0$, $\forall n \in \{1, 2, ..., N\}$;
 sabemos pelo Teorema \ref{theo:simetricmatrix2}, 
 que existe uma \hyperref[def:ortogonalmatrix0]{\textbf{matriz ortogonal}} $\MATRIX{Q}$,
@@ -160,7 +160,7 @@ que existe uma \hyperref[def:ortogonalmatrix0]{\textbf{matriz ortogonal}} $\MATR
 Se multiplicamos esta igualdade por um vector $\VECTOR{x} \in \mathbb{R}^N$ (não nulo), obtemos,
 \begin{equation}
 \VECTOR{x}^{\transpose} \MATRIX{Q}^{\transpose}\MATRIX{A}\MATRIX{Q} \VECTOR{x} = 
-\VECTOR{x}^{\transpose} \MATRIX{\lambda}_{\MATRIX{A}} \VECTOR{x}
+\VECTOR{x}^{\transpose} \MATRIX{\lambda}_{\MATRIX{A}} \VECTOR{x},
 \end{equation}
 \begin{equation}
 \VECTOR{x}^{\transpose} \MATRIX{Q}^{\transpose}\MATRIX{A}\MATRIX{Q} \VECTOR{x} 
@@ -180,21 +180,21 @@ Dado que a soma de todos os $\lambda_n x_n^2$ é positiva, podemos afirmar que
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{myproofT}[Prova do Teorema \ref{theo:positivematrix:2}:]\label{proof:theo:positivematrix:2}
+\begin{myproofT}[Relativa ao Teorema \ref{theo:positivematrix:2}:]\label{proof:theo:positivematrix:2}
 Conhecida uma matriz definida positiva e simétrica $\MATRIX{A} \in \mathbb{R}^{N \times N}$,
 com  autovalores $\lambda_n>0$, $\forall n \in \{1, 2, ..., N\}$;
 se $\MATRIX{A}$  é invertível então os autovalores de $\MATRIX{A}^{-1}$ são  $\frac{1}{\lambda_n}>0$.
-Dado que $\MATRIX{A}$ é simétrica, $\MATRIX{A}^{-1}$ é simétrica também;
-então se $\MATRIX{A}^{-1}$ é simétrica com autovalores positivos, esta é definida positiva.
+Assim, se $\MATRIX{A}$ é simétrica, $\MATRIX{A}^{-1}$ é simétrica também;
+então, se $\MATRIX{A}^{-1}$ é simétrica com autovalores positivos, esta é definida positiva.
 \end{myproofT}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{myproofT}[Prova do Teorema \ref{theo:similhante1}:]\label{proof:theo:similhante1}
+\begin{myproofT}[Relativa ao Teorema \ref{theo:similhante1}:]\label{proof:theo:similhante1}
 Conhecidas as matrizes semelhantes $\MATRIX{A} \in \mathbb{C}^{N \times N}$ e $\MATRIX{B} \in \mathbb{R}^{N \times N}$,
-de modo que se cumpre que 
+de modo que estas cumprem 
 \begin{equation}
-\MATRIX{A} = \MATRIX{P}^{-1} \MATRIX{B} \MATRIX{P}.
+\MATRIX{A} = \MATRIX{P}^{-1} \MATRIX{B} \MATRIX{P},
 \end{equation}
 para um $\MATRIX{P}$ dado.
 

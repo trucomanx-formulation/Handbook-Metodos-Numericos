@@ -38,12 +38,12 @@ então não é possível obter uma solução única.\\
 \end{description}
 
 Assim, para resolver o problema inverso \illposed~temos que aplicar uma regularização;
-é dizer; nova informação tem que ser agregada.
-Porém, na regularização da Eq. (\ref{eq:regularization:2}) podemos ter abordagens diferentes dependendo 
+é dizer; nova informação tem que ser agregada;
+porém, na regularização da Eq. (\ref{eq:regularization:2}) podemos ter abordagens diferentes dependendo 
 se não existe solução ou se existem múltiplas soluções. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Quando um problema \illposed~não tem solução}
-Se sabemos que na Eq. (\ref{eq:regularization:2}) não tem solução, como no Exemplo \ref{ex:IllPosedNoSolutions}, 
+Se sabemos que a Eq. (\ref{eq:regularization:2}) não tem solução, como no Exemplo \ref{ex:IllPosedNoSolutions}, 
 uma forma de regularizar este problema, consiste em aceitar a impossibilidade da igualdade na equação, 
 e transformar esta numa função de custo $e(\VECTOR{x})$, usando o critério de procurar o mínimo erro quadrático,
 \begin{equation}\label{eq:regularization:3}
@@ -80,7 +80,7 @@ podemos usar o Teorema \ref{theo:minAxbCAxb}, de modo que o vetor $\VECTOR{x}=\V
 \end{bmatrix},
 \end{equation}
 como é visto na Figura \ref{fig:ex:IllPosedNoSolutions:a}, 
-onde é desenhada a superfície $e(\VECTOR{x})$ em relação ao ponto mínimo $\VECTOR{\hat{x}}$.
+onde é desenhada a superfície $e(\VECTOR{x})$ e o ponto mínimo $\VECTOR{\hat{x}}$.
 Se analisamos $\VECTOR{\hat{x}}$ em relação à Eq. (\ref{eq:regularization:2}),
 observaremos que este vetor de entrada produz uma resposta $\VECTOR{\hat{y}}$ que é diferente de $\VECTOR{y}_{\delta}$,
 \begin{equation}
@@ -95,11 +95,11 @@ observaremos que este vetor de entrada produz uma resposta $\VECTOR{\hat{y}}$ qu
 Na Figura \ref{fig:ex:IllPosedNoSolutions:b} podemos ver graficamente a relação entre os pontos (vetores)
 $\VECTOR{\hat{y}}$ e $\VECTOR{y}_{\delta}$,
 onde o ponto $\VECTOR{\hat{y}}$ encontra-se dentro do plano $\MATRIX{A}\VECTOR{x}$,
-porem o ponto $\VECTOR{y}_{\delta}$ não pertence a esse plano, 
+porém o ponto $\VECTOR{y}_{\delta}$ não pertence a esse plano, 
 motivo pelo qual era impossível achar uma solução à Eq. (\ref{eq:regularization:2});
 nesse sentido, a regularização do problema nos habilitou a achar $\VECTOR{\hat{y}}$,
 que é o ponto no plano  $\MATRIX{A}\VECTOR{x}$ mais próximo a $\VECTOR{y}_{\delta}$;
-e dizer, este é o ponto de interseção do plano e uma linha perpendicular que parte de $\VECTOR{y}_{\delta}$.
+é dizer, este é o ponto de interseção do plano e uma linha perpendicular que parte de $\VECTOR{y}_{\delta}$.
 \end{SolutionT}
 
 \begin{figure}[h!]
@@ -150,8 +150,10 @@ quanto maior seja o valor $||\VECTOR{x}||^2$;
 %Na Seção \ref{sec:minAxbCAxbplusalphaxqD} veremos mais a detalhe como resolver o problema de minimização proposto na Eq. (\ref{eq:regularization:4}).
 \begin{SolutionT}[Relativa ao Exemplo \ref{ex:IllPosedMultiplaSolutions}:]
 \label{sol:IllPosedMultiplaSolutions}
-Como é descrito na Seção \ref{sec:minAxbCAxbplusalphaxqD}, para resolver um problema de minimização como o proposto na Eq. (\ref{eq:regularization:3}),
-podemos usar o Teorema \ref{theo:minAxbCAxbplusalphaxqD}, de modo que o vetor $\VECTOR{x}=\VECTOR{\hat{x}}$ que minimiza $e(\VECTOR{x})$
+Como é descrito na Seção \ref{sec:minAxbCAxbplusalphaxqD}, 
+para resolver um problema de minimização como o proposto na Eq. (\ref{eq:regularization:4}),
+podemos usar o Teorema \ref{theo:minAxbCAxbplusalphaxqD}, 
+de modo que o vetor $\VECTOR{x}=\VECTOR{\hat{x}}$ que minimiza $e(\VECTOR{x})$
 é igual a
 \begin{equation}\label{eq:regularization:4b}
 \VECTOR{\hat{x}} =
@@ -179,8 +181,8 @@ podemos usar o Teorema \ref{theo:minAxbCAxbplusalphaxqD}, de modo que o vetor $\
 É importante lembrar que $\VECTOR{x}=\VECTOR{\hat{x}}$ minimiza a função $e(\VECTOR{x})$ e não
 a função $||\MATRIX{A}\VECTOR{x}-\VECTOR{y}_{\delta}||^2$,
 pelo que como podemos ver na Figura \ref{fig:ex:IllPosedMultiplaSolutions:a},
-o ponto $\VECTOR{\hat{x}}$ não esta no vale da superfície $||\MATRIX{A}\VECTOR{x}-\VECTOR{y}_{\delta}||^2$;
-porem, sim está no ponto mais baixo da superfície $e(\VECTOR{x})$, como mostra a Figura \ref{fig:ex:IllPosedMultiplaSolutions:b}.
+o ponto $\VECTOR{\hat{x}}$ não está no vale da superfície $||\MATRIX{A}\VECTOR{x}-\VECTOR{y}_{\delta}||^2$;
+porém, sim está no ponto mais baixo da superfície $e(\VECTOR{x})$, como mostra a Figura \ref{fig:ex:IllPosedMultiplaSolutions:b}.
 \end{SolutionT}
 
 \begin{figure}[h!]

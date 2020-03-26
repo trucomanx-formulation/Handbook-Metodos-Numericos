@@ -72,7 +72,7 @@ hold on
 plot(PT,ERR,"-o","markersize", MARKERSIZE,'linewidth',LINEWIDTH)
 hx=xlabel('r=||x||');
 set(hx,'fontsize',FONTSIZE);
-hy=ylabel('e(r)');
+hy=ylabel('e(x)');
 set(hy,'fontsize',FONTSIZE);
 %hl=legend("X_k");
 %set(hl,"fontsize", FONTSIZE);

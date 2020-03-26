@@ -8,14 +8,13 @@ $\DDTVECTOR{x}(t) + \MATRIX{P} \VECTOR{x}(t)=0$ com matriz $\MATRIX{P}$ definida
 \label{theo:differential-eq:0}
 Dados, o vetor coluna $\VECTOR{x} \in \mathbb{R}^N$, 
 a \hyperref[def:positivematrix0]{\textbf{matriz definida positiva}} $\MATRIX{P} \in \mathbb{R}^{N\times N}$,
-com $N$ autovalores $\lambda_n$ ``diferentes'' e seus correspondentes autovetores $\VECTOR{v}_n$,
+com $N$ autovalores $\lambda_n$ ``diferentes'', seus correspondentes autovetores $\VECTOR{v}_n$,
 $\forall n \in \{1, 2, ..., N\}$, 
 e definida a equação diferencial matricial,
 \begin{equation}\label{eq:theo:segundoorder:1}
-\DDTVECTOR{x}(t) + \MATRIX{P} \VECTOR{x}(t)=0.
+\DDTVECTOR{x}(t) + \MATRIX{P} \VECTOR{x}(t)=0,
 \end{equation}
-
-A solução\footnote{A
+Podemos afirmar que a solução\footnote{A
 demostração pode ser vista na Prova \ref{proof:theo:differential-eq:0}.} desta equação diferencial tem  a forma,
 \begin{equation}\label{eq:theo:segundoorder:2}
  \VECTOR{x}(t)= \MATRIX{V}\left[\MATRIX{D}_1 cos(\VECTOR{w}t) + \MATRIX{D}_2 sin(\VECTOR{w}t) \right].
@@ -37,7 +36,7 @@ $\VECTOR{w}=
 \label{coro:differential-eq:0}
 Outra forma de escrever a Eq. (\ref{eq:theo:segundoorder:2}) é usando $\MATRIX{D}_1=\funcdiag(\VECTOR{d}_1)$ e $\MATRIX{D}_2=\funcdiag(\VECTOR{d}_2)$, de modo que
 \begin{equation}\label{eq:coro:segundoorder:1}
- \VECTOR{x}(t)= \MATRIX{V}\left[ \funcdiag(cos(\VECTOR{w}t))\VECTOR{d}_1 +  \funcdiag(sin(\VECTOR{w}t)) \VECTOR{d}_2 \right],
+ \VECTOR{x}(t)= \MATRIX{V}\left[ \funcdiag(cos(\VECTOR{w}t))\VECTOR{d}_1 +  \funcdiag(sin(\VECTOR{w}t)) \VECTOR{d}_2 \right].
 \end{equation}
 \end{corollary}
 
@@ -60,7 +59,7 @@ usando os dados $\VECTOR{x}(t_1)$ e $\VECTOR{x}(t_2)$, de modo que
 \begin{bmatrix}
 \VECTOR{x}(t_1)\\
 \VECTOR{x}(t_2)
-\end{bmatrix}
+\end{bmatrix}.
 \end{equation}
 \end{corollary}
 
@@ -84,7 +83,7 @@ usando os dados $\VECTOR{x}(t_1)$ e $\VECTOR{\dot{x}}(t_1))$, de modo que
 \begin{bmatrix}
 \VECTOR{x}(t_1)\\
 \VECTOR{\dot{x}}(t_1)
-\end{bmatrix}
+\end{bmatrix}.
 \end{equation}
 \end{corollary}
 
@@ -117,7 +116,7 @@ um vetor $\VECTOR{x} \in \mathbb{R}^{N}$, uma matriz $\MATRIX{P}$ e as amostras 
 0\\
 0\\
 0
-\end{bmatrix} 
+\end{bmatrix}.
 \end{equation}
 \end{example}
 
@@ -159,7 +158,7 @@ obtemos
    0\\
    0\\
    0
-\end{bmatrix}
+\end{bmatrix},
 \end{equation}
 de modo que 
 \begin{equation}
@@ -173,9 +172,9 @@ de modo que
    cos(0.48831 t)\\
    cos(1.27932 t)\\
    cos(2.26382 t)
-\end{bmatrix}
+\end{bmatrix},
 \end{equation}
-A Figura \ref{fig:ex:ddxPx:0} mostra um gráfico do vetor $\VECTOR{x}(t)$.
+a Figura \ref{fig:ex:ddxPx:0} mostra um gráfico do vetor $\VECTOR{x}(t)$.
 \end{SolutionT}
      \begin{figure}[!h]
          \centering

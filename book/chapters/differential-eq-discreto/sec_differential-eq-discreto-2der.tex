@@ -6,7 +6,7 @@
 \begin{theorem}[Equação 
 $\DDTVECTOR{x}(t) + \MATRIX{P} \VECTOR{x}(t)=0$ com diferenças finitas:]
 \label{theo:differential-eq-discreto:order2:0}
-Dados, o vetor coluna $\VECTOR{x} \in \mathbb{R}^N$, matriz $\MATRIX{P} \in \mathbb{R}^{N\times N}$, 
+Dados, o vetor coluna $\VECTOR{x} \in \mathbb{R}^N$, a matriz $\MATRIX{P} \in \mathbb{R}^{N\times N}$, 
 e definida a equação diferencial matricial,
 \begin{equation}\label{eq:theo:secondorder:1}
 \DDTVECTOR{x}(t) + \MATRIX{P} \VECTOR{x}(t)=0.
@@ -58,7 +58,7 @@ conhecida a equação diferencial, $\DDTVECTOR{x}(t) + \MATRIX{P} \VECTOR{x}(t)=
 0\\
 0\\
 1
-\end{bmatrix} 
+\end{bmatrix}.
 \end{equation}
 \end{example}
 
@@ -67,8 +67,8 @@ conhecida a equação diferencial, $\DDTVECTOR{x}(t) + \MATRIX{P} \VECTOR{x}(t)=
 \label{ex:iterativo:ddxPx:0:sol1}
 Escolhemos uma frequencia de amostragem $\ToS=0.1$, e
 tomamos amostras $\VECTOR{x}(t_n)$, para $n \in \{0,~ 1,~ 2,~ ...,~ 150\}$, 
-de modo que usando o Teorema \ref{theo:differential-eq-discreto:order2:0}, obtemos a Eq. (\ref{eq:iterativo:ddxPx:0:sol1}).
-Obtendo assim a função $\VECTOR{x}(t_n)$ mostrado na Figura \ref{fig:ex:iterativo:ddxPx:0}.
+de modo que usando o Teorema \ref{theo:differential-eq-discreto:order2:0} obtemos a Eq. (\ref{eq:iterativo:ddxPx:0:sol1})
+e podemos calcular a função $\VECTOR{x}(t_n)$ mostrada na Figura \ref{fig:ex:iterativo:ddxPx:0}.
 \begin{equation}\label{eq:iterativo:ddxPx:0:sol1}
 \MATRIX{A}=
 2\MATRIX{I} -\ToS^2 \MATRIX{P}=

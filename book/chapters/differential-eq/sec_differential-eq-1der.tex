@@ -36,7 +36,7 @@ $\VECTOR{a}=
 \label{coro:differential-eq:order1:0}
 Outra forma de escrever a Eq. (\ref{eq:theo:firstorder:2}) é usando $\MATRIX{D}=\funcdiag(\VECTOR{d})$, de modo que
 \begin{equation}\label{eq:coro:firstorder:1}
- \VECTOR{x}(t)= \MATRIX{V}~\funcdiag(e^{-\VECTOR{a}t})~\VECTOR{d},
+ \VECTOR{x}(t)= \MATRIX{V}~\funcdiag(e^{-\VECTOR{a}t})~\VECTOR{d}.
 \end{equation}
 \end{corollary}
 
@@ -49,7 +49,7 @@ usando os dados $\VECTOR{x}(t_1)$, de modo que
 \begin{equation}\label{eq:coro:differential-eq:order1:1:a}
 \VECTOR{d} =
 \left[ \MATRIX{V}~\funcdiag(e^{-\VECTOR{a}t})~ \right]^{-1}
-\VECTOR{x}(t_1)
+\VECTOR{x}(t_1).
 \end{equation}
 \end{corollary}
 
@@ -58,11 +58,11 @@ usando os dados $\VECTOR{x}(t_1)$, de modo que
 Conhecida a Eq. (\ref{eq:theo:firstorder:2}) e o Corolário \ref{coro:differential-eq:order1:0},
 podemos calcular
 $\MATRIX{D}=\funcdiag(\VECTOR{d})$ 
-usando os dados em $\VECTOR{x}(t_1)$, de modo que
+usando os dados em $\DTVECTOR{x}(t_1)$, de modo que
 \begin{equation}\label{eq:coro:differential-eq:order1:1:b}
 \VECTOR{d} =
 \left[ -\MATRIX{V}\MATRIX{A}~\funcdiag(e^{-\VECTOR{a}t})~ \right]^{-1}
-\DTVECTOR{x}(t_1)
+\DTVECTOR{x}(t_1).
 \end{equation}
 \end{corollary}
 
@@ -88,7 +88,7 @@ um vetor $\VECTOR{x} \in \mathbb{R}^{N}$, uma matriz $\MATRIX{P}$ e a amostras e
 0\\
 0\\
 1
-\end{bmatrix}
+\end{bmatrix}.
 \end{equation}
 \end{example}
 
@@ -106,7 +106,7 @@ respetivamente;
          0 & 1.63667 &       0\\
          0 &       0 & 5.12489
 \end{bmatrix}
-\qquad \wedge \qquad
+\quad \wedge \quad
 \MATRIX{V}=
 \begin{bmatrix}
   -0.40181 & 0.61887 &-0.67495\\
@@ -138,9 +138,9 @@ obtemos
    e^{-0.23844 t}\\
    e^{-1.63667 t}\\
    e^{-5.12489 t}
-\end{bmatrix}
+\end{bmatrix},
 \end{equation}
-A Figura \ref{fig:ex:dxPx:0} mostra um gráfico do vetor $\VECTOR{x}(t)$.
+a Figura \ref{fig:ex:dxPx:0} mostra um gráfico do vetor $\VECTOR{x}(t)$.
 \end{SolutionT}
      \begin{figure}[!h]
          \centering

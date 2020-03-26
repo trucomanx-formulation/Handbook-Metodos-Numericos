@@ -32,7 +32,7 @@ que minimiza o erro $e(\VECTOR{c})$,
 \begin{equation}\label{eq:maphcxrnr1:2}
 e(\VECTOR{c}) =  ||\VECTOR{h}(\VECTOR{c})-\VECTOR{z}||_{\MATRIX{W}}^2 + \alpha||\VECTOR{c}-\VECTOR{c}_{last}||_{\MATRIX{D}}^2,
 \end{equation}
-onde $\alpha \in \mathbb{R}$ é um multiplicador de Lagrange escolhido por nós,
+onde $\alpha \in \mathbb{R}_+$ é um multiplicador de Lagrange escolhido por nós,
 \begin{equation}
 \VECTOR{h}(\VECTOR{c})\equiv \VECTOR{h}_{\VECTOR{x}}(\VECTOR{c})=\begin{bmatrix}
 h(\VECTOR{c},\VECTOR{x}_1)\\ 
@@ -124,13 +124,13 @@ quando iterações consecutivas do vetor $\VECTOR{c}_i$ convergem a valores pró
 $h_{\VECTOR{c}}(\VECTOR{x}):~\mathbb{R}^N \rightarrow \mathbb{R}$}
 
 \begin{example}\label{ex:theo:maphcxrnr1}
-Conhecida as $N=18$ amostras $\VECTOR{x}_n$ e $z_n$, mostradas nas  Tabelas \ref{table:theo:maphcxrnr1:xn} e \ref{table:theo:maphcxrnr1:zn},
+Conhecida as $N=16$ amostras $\VECTOR{x}_n$ e $z_n$, mostradas nas  Tabelas \ref{table:theo:maphcxrnr1:xn} e \ref{table:theo:maphcxrnr1:zn},
 achar os parametros $c_m$ do vetor $\VECTOR{c}=[c_1\quad c_2\quad c_3]^{\transpose}$ da função $h(\VECTOR{c},x)$, 
 \begin{equation}
 h(\VECTOR{c},\VECTOR{x})=c_1 e^{-\left(\frac{x_1}{c_2}\right)^{-4}-\left(\frac{x_2}{c_2}\right)^{-4}}+c_3,
 \end{equation}
 que gere o menor erro 
-$e(\VECTOR{c})=0.1 ||\VECTOR{c}-\VECTOR{c}_{last}||^2 + \sum_{n=1}^{N} ||h(\VECTOR{c},\VECTOR{x}_n)-z_n||^2 $.
+$e(\VECTOR{c})=\sum_{n=1}^{N} ||h(\VECTOR{c},\VECTOR{x}_n)-z_n||^2 + 0.1 ||\VECTOR{c}-\VECTOR{c}_{last}||^2$.
 \end{example}
 
 
@@ -165,8 +165,8 @@ $y_n$ & 9.6170 & 2.1098 & 1.9972 & 1.8631 & 2.3673 & 2.2807 & 2.0231 & 8.0547 \\
 \end{table}
 
 \begin{SolutionT}[Relativa ao Exemplo \ref{ex:theo:maphcxrnr1}:]\label{sol:theo:maphcxrnr1}
-Para obter  o vetor $\VECTOR{c}=\VECTOR{\hat{c}}$, da função $h(\VECTOR{c},\VECTOR{x})$,
-com o menor erro $e(\VECTOR{c})$,
+Para obter  o vetor $\VECTOR{c}=\VECTOR{\hat{c}}$
+que provoque o menor erro $e(\VECTOR{c})$,
 podemos usar iterativamente a Eq. (\ref{eq:maphcxrnr1:3}), com 
 \begin{equation}
 \frac{\partial h(\VECTOR{c},\VECTOR{x})}{\partial c_1} 

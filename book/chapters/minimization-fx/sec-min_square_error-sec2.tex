@@ -1,7 +1,5 @@
 \section{Minimização de $||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2$}
 
-
-
 %\index{Minimização, métodos!Regularização de }
 %\index{Problema inverso!Não linear}
 \index{Minimização do erro quadrático!Não linear}%!Função $||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2$}
@@ -10,7 +8,7 @@
 Dados,
 os vetores coluna $\VECTOR{x}\in \mathbb{R}^N$ e $\VECTOR{b}\in \mathbb{R}^M$,  
 uma função $\VECTOR{f}:\mathbb{R}^{N} \rightarrow \mathbb{R}^{M}$, 
-uma matriz diagonal $\MATRIX{C} \in \mathbb{R}^{M\times M}$, e 
+uma matriz diagonal $\MATRIX{C} \in \mathbb{R}^{M\times M}_{+}$, e 
 definida a Eq. (\ref{eq:minfxbCfxb1}),
 \begin{equation}\label{eq:minfxbCfxb1}
 \begin{matrix}
@@ -18,7 +16,7 @@ e(\VECTOR{x}) & = & ||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2 \\
               & = & (\VECTOR{f}(\VECTOR{x})-\VECTOR{b})^{\transpose}\MATRIX{C}(\VECTOR{f}(\VECTOR{x})-\VECTOR{b}).
 \end{matrix}
 \end{equation}
-Se desejamos ter o ponto $\VECTOR{\hat{x}}$ que minimiza o escalar $e(\VECTOR{\hat{x}})$,
+Se desejamos ter o ponto $\VECTOR{x}=\VECTOR{\hat{x}}$ que minimiza o escalar $e(\VECTOR{x})$,
 podemos achar este ponto usando iterativamente a Eq. (\ref{eq:minfxbCfxb2}),
 onde  $\MATRIX{J}(\VECTOR{x})$ é a \hyperref[def:jacobian]{\textbf{matriz Jacobiana}}  de $\VECTOR{f}(\VECTOR{x})$.
 \begin{equation}\label{eq:minfxbCfxb2}
@@ -47,10 +45,10 @@ pois se $\MATRIX{J}(\VECTOR{x}_{k-1})= \MATRIX{0}$ indica que existe\footref{ref
 \item A busca iterativa da Eq. (\ref{eq:minfxbCfxb2}) é considerada falida quando 
 $\MATRIX{J}(\VECTOR{x}_{k-1})^{\transpose}$ $\MATRIX{C}$ $\MATRIX{J}(\VECTOR{x}_{k-1})$
 não tem inversa.
-\item A busca iterativa da Eq. (\ref{eq:minfxbCfxb2}) pode falhar quando coincide que o mínimo $\VECTOR{\hat{x}}$ procurado
-tem um $\MATRIX{J}(\VECTOR{\hat{x}})=\MATRIX{0}$.
-Este erro só acontece quando $\VECTOR{x}_{k-1}$ atinge de forma exata $\VECTOR{\hat{x}}$,
-para valores próximos a $\VECTOR{\hat{x}}$ a busca iterativa de $\VECTOR{x}_{k-1}$ avança eficazmente.
+\item A busca iterativa da Eq. (\ref{eq:minfxbCfxb2}) pode diverger quando coincide que o mínimo $\VECTOR{\hat{x}}$ procurado
+tem um $\MATRIX{J}(\VECTOR{\hat{x}})\approx \MATRIX{0}$.
+O erro só acontece quando $\VECTOR{x}_{k-1}$ atinge de forma ``exata'' um mínimo com $\VECTOR{f}(\VECTOR{x}_{k-1})\neq \VECTOR{b}$,
+para outros valores a busca iterativa de $\VECTOR{x}_{k-1}$ avança eficazmente.
 \end{itemize}
 
 \end{theorem}
@@ -102,7 +100,7 @@ Se escolhemos o ponto inicial $\VECTOR{x}_0=[0.1~0.1]^{\transpose}$ e
 usamos iterativamente a Eq. (\ref{eq:minfxbCfxb2}), obtemos os valores 
 de $\VECTOR{x}_k$ e $e(\VECTOR{x}_k)$, como mostra a Tabela \ref{table:ex:minfxbCfxb},
 onde se asume o final do processo iterativo quando $\VECTOR{x}_k \approx \VECTOR{x}_{k-1}$.
-Assim, a aproximação iterativa conclui na resposta $\VECTOR{\hat{x}}\approx \VECTOR{x}_{4} =[1~1]^{\transpose}$
+Assim, a aproximação iterativa conclui na resposta $\VECTOR{\hat{x}}\approx \VECTOR{x}_{4} =[1~1]^{\transpose}$,
 com um erro $e(\VECTOR{\hat{x}})=5.0032~10^{-24}\approx 0$ e uma pendente\footnote{\label{ref:pendenteex} O
 cálculo da pendente de $e(\VECTOR{\hat{x}})$ pode ser vista no Teorema \ref{theo:derfxbCfxb0}.}
 $\frac{\partial e(\VECTOR{\hat{x}})}{\partial \VECTOR{x} }=[7.7485~10^{-12}\quad 7.7485~10^{-12}]^{\transpose}$
@@ -187,7 +185,7 @@ usando os dados da Eq. (\ref{eq:lab:ex2fx}).
 Assim, se escolhemos o ponto inicial $\VECTOR{x}_0=[0.1~0.1]^{\transpose}$ 
 e usamos iterativamente a Eq. (\ref{eq:minfxbCfxb2}) obtemos os valores 
 de $\VECTOR{x}_k$ e $e(\VECTOR{x}_k)$, como mostra a Tabela \ref{table:ex:minfxbCfxb2}.
-A aproximação iterativa é feita ate chegar $\VECTOR{x}_k \approx \VECTOR{x}_{k-1}$,
+A aproximação iterativa é feita ate atingir $\VECTOR{x}_k \approx \VECTOR{x}_{k-1}$,
 onde concluimos que a resposta é $\VECTOR{\hat{x}}\approx \VECTOR{x}_5 =[0.90856\quad 0.90856]^{\transpose}$
 com um erro $e(\VECTOR{\hat{x}})=0.16148$; é dizer, não existe $\VECTOR{f}(\VECTOR{\hat{x}})$
 que seja igual a $\VECTOR{b}$, só podemos achar um vetor $\VECTOR{\hat{x}}$ 
@@ -287,9 +285,9 @@ usamos iterativamente a Eq. (\ref{eq:minfxbCfxb2}), obtemos os valores
 de $\VECTOR{x}_k$ e $e(\VECTOR{x}_k)$, como mostra a Tabela \ref{table:ex:minfxbCfxb3},
 onde se asume o final do processo iterativo quando $\VECTOR{x}_k \approx \VECTOR{x}_{k-1}$.
 Assim, a aproximação iterativa conclui na resposta $\VECTOR{\hat{x}}\approx \VECTOR{x}_{7} =[1.7076\quad 1.7076]^{\transpose}$
-com um erro $e(\VECTOR{\hat{x}})=2.1298$ e uma pendente
+com um erro $e(\VECTOR{\hat{x}})=2.1298$, uma pendente
 $\frac{\partial e(\VECTOR{\hat{x}})}{\partial \VECTOR{x} }=[0.20251\quad 0.20251]^{\transpose}$
-pequena e um
+e um
 \begin{equation}
 \MATRIX{J}(\VECTOR{\hat{x}})=
 \begin{bmatrix}
@@ -349,10 +347,10 @@ $\frac{\partial e(\VECTOR{x}_0)}{\partial \VECTOR{x} }=[7.6342~10^{-5}\quad 7.63
 usamos iterativamente a Eq. (\ref{eq:minfxbCfxb2}), obtemos os valores 
 de $\VECTOR{x}_k$ e $e(\VECTOR{x}_k)$, como mostra a Tabela \ref{table:ex:minfxbCfxb4},
 onde se asume o final do processo iterativo quando $\VECTOR{x}_k \approx \VECTOR{x}_{k-1}$.
-Assim, a aproximação iterativa conclui na resposta $\VECTOR{\hat{x}}\approx \VECTOR{x}_{7} =[0.99056\quad 0.99056]^{\transpose}$
-com um erro $e(\VECTOR{\hat{x}})=3.7152~10^{-4}$ e uma pendente
+Assim, a aproximação iterativa conclui na resposta $\VECTOR{\hat{x}}\approx \VECTOR{x}_{7} =[0.99056\quad 0.99056]^{\transpose}$,
+com um erro $e(\VECTOR{\hat{x}})=3.7152~10^{-4}$, uma pendente
 $\frac{\partial e(\VECTOR{\hat{x}})}{\partial \VECTOR{x} }=[-0.040955\quad -0.040955]^{\transpose}$
-pequena e um
+e um
 \begin{equation}
 \MATRIX{J}(\VECTOR{\hat{x}})=
 \begin{bmatrix}
@@ -364,7 +362,7 @@ pequena e um
 este processo pode ser visto de forma gráfica na Figura \ref{fig:ex:minfxbCfxb4:b}.
 
 De forma similar ao Exemplo \ref{ex:minfxbCfxb3:sol1}, observamos 
-que o ponto $\VECTOR{x}_0$ é muito próximo um máximo local de 
+que o ponto $\VECTOR{x}_0$ é muito próximo a um máximo local de 
 $e(\VECTOR{x})$, e o uso iterativo da Eq. (\ref{eq:minfxbCfxb2}) 
 provoca o afastamento deste ponto, mesmo que a princípio os passos sejam pequenos;
 por outro lado, a busca iterativa converge e finaliza em $\VECTOR{x}_7$ um mínimo global

@@ -4,13 +4,13 @@
 
 \begin{theorem}[Solução iterativa]\label{theo:rootshx}
 ~\\
-\begin{minipage}{0.2\textwidth}
+\begin{minipage}{0.20\textwidth}
 \centering
-\includegraphics[width=0.95\linewidth]{chapters/roots/roots1.eps} 
+\includegraphics[width=0.9\linewidth]{chapters/roots/roots1.eps} 
 \end{minipage}
 \begin{minipage}{0.8\textwidth}
 Dados,
-um escalar $\delta \in \mathbb{R}$, 
+um escalar $\delta \in \mathbb{R}_+$, 
 um escalar $x \in \mathbb{R}$, 
 uma função $h:\mathbb{R} \rightarrow \mathbb{R}$, e 
 conhecida a validade da Eq. (\ref{eq:rootshx1}),
@@ -34,13 +34,13 @@ onde se declara que $\hat{x}=x_k$.
 
 \textbf{Considerações:}
 \begin{itemize} 
-\item Se $h'(x_{k-1})\approx 0$ indica que estamos perto de um ponto de inflexão 
+\item Se $h'(x_{k-1})\approx 0$, então estamos perto de um ponto de inflexão 
 (máximo, mínimo ou ponto de sela) em $x_{k-1}$. Nestos pontos a Eq. (\ref{eq:rootshx2}): 
 \begin{itemize}
-\item Diverge se se cumpre que $h(x_{k-1})\neq 0$, ou
+\item Diverge quando se cumpre que $h(x_{k-1})\neq 0$, ou
 \item Converge\footnote{A demostração pode ser vista na Prova \ref{proof:theo:cont:rootshx}.} 
-se $h(x_{k-1}) = 0$ e se se verifica que $h(x)$ pode ser representado 
-mediante uma \hyperref[def:taylor]{\textbf{serie de Taylor}} ao redor de $x_{k-1}$, 
+se $h(x_{k-1}) = 0$ e se verifica que $h(x)$ pode ser representado 
+mediante uma \hyperref[def:taylor]{\textbf{série de Taylor}} ao redor de $x_{k-1}$, 
  pois indica que $\lim_{x\rightarrow x_{k-1}}  h(x)/h'(x)$ é finito.
 \end{itemize}
 \item Uma sugestão do procedimento para a busca de uma raiz pode ser vista no diagrama de fluxo
@@ -63,7 +63,7 @@ mostrado na Figura \ref{fig:fluxorhx1}.
 \begin{example}\label{ex:rootshx1}
 Conhecida uma função $h(x)=x(x^2-1)+1$, e um escalar $\delta=10^{-3}$;
 usando o Teorema \ref{theo:rootshx}, 
-achar o valor $x=\hat{x}$ que cumpra $||h(x)||<\delta$.
+achar um valor $x=\hat{x}$ que cumpra $||h(x)||<\delta$.
 Podemos ver as respostas a este exemplo na Solução \ref{sol:rootshx1} e \ref{sol:rootshx2}.
 \end{example}
 \begin{SolutionT}[Relativa ao Exemplo \ref{ex:rootshx1} (Diverge):]\label{sol:rootshx1}

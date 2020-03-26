@@ -16,7 +16,7 @@ estas são chamadas semelhantes \cite[pp. 67]{golub2013matrix} se existe uma mat
 \begin{theorem}[Autovalores em matrizes semelhantes:]\label{theo:similhante1}
 Conhecidas as matrizes $\MATRIX{A} \in \mathbb{C}^{N \times N}$ e $\MATRIX{B} \in \mathbb{R}^{N \times N}$,
 \begin{itemize}
-\item Se as matrizes $\MATRIX{A}$ e $\MATRIX{B}$ são semelhantes, estas têm os mesmos autovalores
+\item Se as matrizes $\MATRIX{A}$ e $\MATRIX{B}$ são semelhantes, então estas têm os mesmos autovalores
 \footnote{A demostração pode ser vista na Prova \ref{proof:theo:similhante1}.} \cite[pp. 67]{golub2013matrix}.
 \end{itemize}
 \end{theorem}
@@ -34,6 +34,7 @@ autovalores $\lambda_n$, $\forall n \in \{1, 2, ..., N\}$.
 \item Esta é definida como diagonalizável se é semelhante a uma matriz diagonal \cite[pp. 67]{golub2013matrix};
 é dizer, existe uma matriz $\MATRIX{P}$ que provoca
 \begin{equation}
+\lambda_\MATRIX{A}\equiv
 \begin{bmatrix}
 \lambda_1 & 0         & ...    & 0 \\
 0         & \lambda_2 & ...    & 0 \\
@@ -61,7 +62,7 @@ com
 \vdots    & \vdots    & \ddots & \vdots \\
 0         & 0         & ...    & \lambda_N
 \end{bmatrix}
-=\MATRIX{V}^{-1}\MATRIX{A}\MATRIX{V}.
+=\MATRIX{V}^{-1}\MATRIX{A}\MATRIX{V},
 \end{equation}
 onde $\MATRIX{V}=\left[\VECTOR{v}_1\quad \VECTOR{v}_2\quad \VECTOR{v}_3\quad ...\quad \VECTOR{v}_N\right]$.
 
@@ -75,7 +76,7 @@ com
 \vdots    & \vdots    & \ddots & \vdots \\
 0         & 0         & ...    & \lambda_N
 \end{bmatrix}
-=\MATRIX{Q}^{-1}\MATRIX{A}\MATRIX{Q}.
+=\MATRIX{Q}^{-1}\MATRIX{A}\MATRIX{Q},
 \end{equation}
 onde $\MATRIX{Q}=\left[\VECTOR{q}_1\quad \VECTOR{q}_2\quad \VECTOR{q}_3\quad ...\quad \VECTOR{q}_N\right]$,
 e $\VECTOR{q}_i^{\transpose}\VECTOR{q}_j$ é igual $1$ quando $i=j$ e zero em outros casos.

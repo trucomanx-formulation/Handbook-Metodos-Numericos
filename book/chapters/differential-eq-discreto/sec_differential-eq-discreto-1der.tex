@@ -18,7 +18,7 @@ demostração pode ser vista na Prova \ref{proof:theo:differential-eq-discreto:o
 \end{equation}
 onde $\MATRIX{I}$ é uma matriz identidade.
 \begin{itemize}
-\item \textbf{Desconhecidos:} Um valor inicial, por exemplo $\VECTOR{x}[0] \in \mathbb{R}^{N}$, e
+\item \textbf{Desconhecidos:} Um valor inicial, por exemplo $\VECTOR{x}[0] \in \mathbb{R}^{N}$.
 \item  \textbf{Conhecidos:} É escolhido por nós um valor $\ToS$, 
 que é a frequencia de amostragem da sinal discreta $\VECTOR{x}[n]$.
 \end{itemize}
@@ -51,7 +51,7 @@ conhecida a equação diferencial, $\DTVECTOR{x}(t) + \MATRIX{P} \VECTOR{x}(t)=0
 0\\
 0\\
 1
-\end{bmatrix}
+\end{bmatrix}.
 \end{equation}
 \end{example}
 
@@ -59,9 +59,9 @@ conhecida a equação diferencial, $\DTVECTOR{x}(t) + \MATRIX{P} \VECTOR{x}(t)=0
 \begin{SolutionT}[Relativa ao Exemplo \ref{ex:iterativo:dxPx:0}:]
 \label{ex:iterativo:dxPx:0:sol1}
 Escolhemos uma frequencia de amostragem $\ToS=0.1$, e
-tomando amostras $\VECTOR{x}(t_n)$, para $n \in \{0,~ 1,~ 2,~ ...,~ 150\}$, 
-de modo que usando o Teorema \ref{theo:differential-eq-discreto:order1:0}, obtemos a Eq. (\ref{eq:iterativo:dxPx:0:sol1}).
-Obtendo assim a função $\VECTOR{x}(t_n)$ mostrado na Figura \ref{fig:ex:iterativo:dxPx:0}.
+tomamos amostras $\VECTOR{x}(t_n)$, para $n \in \{0,~ 1,~ 2,~ ...,~ 150\}$, 
+de modo que usando o Teorema \ref{theo:differential-eq-discreto:order1:0} obtemos a Eq. (\ref{eq:iterativo:dxPx:0:sol1}),
+e podemos calcular a função $\VECTOR{x}(t_n)$ mostrada na Figura \ref{fig:ex:iterativo:dxPx:0}.
 \begin{equation}\label{eq:iterativo:dxPx:0:sol1}
 \MATRIX{A}=
 \left\{\MATRIX{I} + \ToS \MATRIX{P}\right\}^{-1}=

@@ -7,21 +7,22 @@
 
 \begin{theorem}[Solução iterativa]\label{theo:minfxbCfxbaxqaxq}
 Dados,
+o escalar $\alpha \in \mathbb{R}_{+}$,
 os vetores coluna $\VECTOR{x}\in \mathbb{R}^N$, $\VECTOR{b}\in \mathbb{R}^M$ e $\VECTOR{q}\in \mathbb{R}^N$,  
 uma função $\VECTOR{f}:\mathbb{R}^{N} \rightarrow \mathbb{R}^{M}$, 
-as matrizes diagonais $\MATRIX{C} \in \mathbb{R}^{M\times M}$ e $\MATRIX{D} \in \mathbb{R}^{N\times N}$, e 
+as matrizes diagonais $\MATRIX{C} \in \mathbb{R}^{M\times M}_{+}$ e $\MATRIX{D} \in \mathbb{R}^{N\times N}_{+}$, e 
 definida a Eq. (\ref{eq:minfxbCfxbaxqaxq1}),
 \begin{align}\label{eq:minfxbCfxbaxqaxq1}
 e(\VECTOR{x}) &=||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2+\alpha||\VECTOR{x}-\VECTOR{q}||_{\MATRIX{D}}^2\\
               & = (\VECTOR{f}(\VECTOR{x})-\VECTOR{b})^{\transpose}\MATRIX{C}(\VECTOR{f}(\VECTOR{x})-\VECTOR{b})+\alpha(\VECTOR{x}-\VECTOR{q})^{\transpose}\MATRIX{D}(\VECTOR{x}-\VECTOR{q}).
 \end{align}
-Se desejamos ter o ponto $\VECTOR{\hat{x}}$ que minimiza o escalar $e(\VECTOR{\hat{x}})$,
+Se desejamos ter o ponto $\VECTOR{x}=\VECTOR{\hat{x}}$ que minimiza o escalar $e(\VECTOR{x})$,
 podemos achar este ponto usando iterativamente a Eq. (\ref{eq:minfxbCfxbaxqaxq2}),
-onde  $\MATRIX{J}(\VECTOR{x})$ é a \hyperref[def:jacobian]{\textbf{matriz Jacobiana}}  de $\VECTOR{f}(\VECTOR{x})$.
+onde  $\MATRIX{J}(\VECTOR{x})$ é a \hyperref[def:jacobian]{\textbf{matriz Jacobiana}}  de $\VECTOR{f}(\VECTOR{x})$,
 \begin{equation}\label{eq:minfxbCfxbaxqaxq2}
 \VECTOR{x}_{k}\leftarrow \VECTOR{x}_{k-1}-
 \left[ \MATRIX{J}(\VECTOR{x}_{k-1})^{\transpose}\MATRIX{C} \MATRIX{J}(\VECTOR{x}_{k-1}) +\alpha\MATRIX{D} \right]^{-1}
- \left\{\MATRIX{J}(\VECTOR{x}_{k-1})^{\transpose}\MATRIX{C}\left[\VECTOR{f}(\VECTOR{x}_{k-1})-\VECTOR{b}\right]+\alpha\MATRIX{D}\left[\VECTOR{x}_{k-1}-\VECTOR{q}\right]\right\}
+ \left\{\MATRIX{J}(\VECTOR{x}_{k-1})^{\transpose}\MATRIX{C}\left[\VECTOR{f}(\VECTOR{x}_{k-1})-\VECTOR{b}\right]+\alpha\MATRIX{D}\left[\VECTOR{x}_{k-1}-\VECTOR{q}\right]\right\},
 \end{equation}
 
 Assim, $\VECTOR{\hat{x}}$ pode ser achado 
@@ -33,7 +34,7 @@ demostração pode ser vista na Prova \ref{proof:theo:minfxbCfxbaxqd}.} de $e(\V
 sem aclarar se é local ou global.
 
 
-\textbf{Considerções:}
+\textbf{Considerações:}
 
 \begin{itemize}
 \item É interessante verificar na Eq. (\ref{eq:minfxbCfxbaxqaxq2}) 
@@ -43,7 +44,7 @@ pois indica que existe\footref{ref:minfxxq} um ponto de inflexão
 consequentemente poderíamos ter achado um mínimo\footnote{\label{foot:labq}É 
 interessante verificar o ponto $\VECTOR{q}$, uma vez só, 
 antes de iniciar a busca iterativa.}.
-\item A busca iterativa da Eq. (\ref{eq:minfxbCfxbaxqaxq2}) é considerada falida quando 
+\item A busca iterativa da Eq. (\ref{eq:minfxbCfxbaxqaxq2}) falha quando 
 $\MATRIX{J}(\VECTOR{x}_{k-1})^{\transpose}\MATRIX{C} \MATRIX{J}(\VECTOR{x}_{k-1}) +\alpha\MATRIX{D}$
 não tem inversa.
 \end{itemize}
@@ -97,11 +98,11 @@ x_1+x_2
 \end{bmatrix}.
 \end{equation}
 Com esta informação podemos calcular o jacobiano $\MATRIX{J}(\VECTOR{x})$ de $\VECTOR{f}(\VECTOR{x})$,
- e escolher as matrizes $\MATRIX{C} \in \mathbb{R}^{3}$ e $\MATRIX{D} \in \mathbb{R}^{2}$, 
+ e escolher as matrizes $\MATRIX{C} \in \mathbb{R}^{3\times 3}_{+}$ e $\MATRIX{D} \in \mathbb{R}^{2\times 2}_{+}$, 
 com elementos iguais à  matriz identidade. 
 Assim, usando a Eq. (\ref{eq:minfxbCfxbaxqaxq1}),
 obtemos a superfície $e(\VECTOR{x})$ como mostra a Figura \ref{fig:ex:minfxbCfxbaxqaxq3:a}.
-Podemos ver as respostas a este exemplo na Solução \ref{ex:minfxbCfxbaxqaxq3:sol1} e \ref{ex:minfxbCfxbaxqaxq3:sol2}.
+Podemos ver duas respostas a este exemplo na Solução \ref{ex:minfxbCfxbaxqaxq3:sol1} e \ref{ex:minfxbCfxbaxqaxq3:sol2}.
 \end{example}
 
 \begin{SolutionT}[Relativa ao Exemplo \ref{ex:minfxbCfxbaxqaxq1}:]
@@ -111,13 +112,12 @@ com pendente\footnote{O cálculo da
 pendente de $e(\VECTOR{\hat{x}})$ pode ser visto no Teorema \ref{theo:derfxbCfxb0}.} 
 $\frac{\partial e(\VECTOR{x}_0)}{\partial \VECTOR{x} }=[20.108\quad 20.108]^{\transpose}$ e 
 usamos iterativamente a Eq. (\ref{eq:minfxbCfxbaxqaxq2}), obtemos os valores 
-de $\VECTOR{x}_k$ e $e(\VECTOR{x}_k)$, como mostra a Tabela \ref{table:ex:minfxbCfxbaxqaxq3},
+$\VECTOR{x}_k$ e $e(\VECTOR{x}_k)$, como mostra a Tabela \ref{table:ex:minfxbCfxbaxqaxq3},
 onde se assume o final do processo iterativo quando $\VECTOR{x}_k \approx \VECTOR{x}_{k-1}$.
 Assim, a aproximação iterativa conclui na resposta 
 $\VECTOR{\hat{x}}\approx \VECTOR{x}_{7} =[1.7013\quad 1.7013]^{\transpose}$
 com um erro $e(\VECTOR{\hat{x}})=2.7094$ e uma pendente
-$\frac{\partial e(\VECTOR{\hat{x}})}{\partial \VECTOR{x} }=[0.0016997\quad 0.0016997]^{\transpose}$
-pequena;
+$\frac{\partial e(\VECTOR{\hat{x}})}{\partial \VECTOR{x} }=[0.0016997\quad 0.0016997]^{\transpose}$;
 este processo pode ser visto de forma gráfica na Figura \ref{fig:ex:minfxbCfxbaxqaxq3:b}.
 \end{SolutionT}
 
@@ -160,13 +160,12 @@ com pendente\footnote{O cálculo da
 pendente de $e(\VECTOR{\hat{x}})$ pode ser visto no Teorema \ref{theo:derfxbCfxb0}.} 
 $\frac{\partial e(\VECTOR{x}_0)}{\partial \VECTOR{x} }=[0.44442\quad 0.44442]^{\transpose}$ e 
 usamos iterativamente a Eq. (\ref{eq:minfxbCfxbaxqaxq2}), obtemos os valores 
-de $\VECTOR{x}_k$ e $e(\VECTOR{x}_k)$, como mostra a Tabela \ref{table:ex:minfxbCfxbaxqaxq4},
+$\VECTOR{x}_k$ e $e(\VECTOR{x}_k)$, como mostra a Tabela \ref{table:ex:minfxbCfxbaxqaxq4},
 onde se assume o final do processo iterativo quando $\VECTOR{x}_k \approx \VECTOR{x}_{k-1}$.
 Assim, a aproximação iterativa conclui na resposta 
 $\VECTOR{\hat{x}}\approx \VECTOR{x}_{7} =[0.97172\quad 0.97172]^{\transpose}$
 com um erro $e(\VECTOR{\hat{x}})=0.19325$ e uma pendente
-$\frac{\partial e(\VECTOR{\hat{x}})}{\partial \VECTOR{x} }=[-0.0037461\quad -0.0037461]^{\transpose}$
-pequena;
+$\frac{\partial e(\VECTOR{\hat{x}})}{\partial \VECTOR{x} }=[-0.0037461\quad -0.0037461]^{\transpose}$;
 este processo pode ser visto de forma gráfica na Figura \ref{fig:ex:minfxbCfxbaxqaxq4:b}.
 \end{SolutionT}
 

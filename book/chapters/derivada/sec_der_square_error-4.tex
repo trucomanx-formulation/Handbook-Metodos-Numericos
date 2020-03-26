@@ -8,13 +8,13 @@
 Se 
 $\VECTOR{x}\in \mathbb{R}^N$ e, 
 $\VECTOR{b}\in \mathbb{R}^M$ são vetores coluna,  
-$\VECTOR{f}: \mathbb{R}^{N}\rightarrow \mathbb{R}^{M}$ é uma função de valor vectorial, e
+$\VECTOR{f}: \mathbb{R}^{N}\rightarrow \mathbb{R}^{M}$ é uma função vetorial de valor vectorial, e
 $\MATRIX{C} \in \mathbb{R}^{M\times M}$ é uma matriz diagonal, 
 então se cumpre\footnote{A demostração pode ser vista na Prova \ref{proof:theo:derfxbCfxb0}.} a Eq. (\ref{eq:theo:derfxbCfxb0}),
-onde $\MATRIX{J}(\VECTOR{x})$ é a \hyperref[def:jacobian]{\textbf{matriz Jacobiana}} de $\VECTOR{f}(\VECTOR{x})$.
+onde $\MATRIX{J}(\VECTOR{x})$ é a \hyperref[def:jacobian]{\textbf{matriz Jacobiana}} de $\VECTOR{f}(\VECTOR{x})$,
 \begin{equation}\label{eq:theo:derfxbCfxb0}
 \frac{\partial ||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2}{\partial \VECTOR{x}} =
-2 \MATRIX{J}(\VECTOR{x})^{\transpose}\MATRIX{C}\left[\VECTOR{f}(\VECTOR{x})-\VECTOR{b}\right],
+2 \MATRIX{J}(\VECTOR{x})^{\transpose}\MATRIX{C}\left[\VECTOR{f}(\VECTOR{x})-\VECTOR{b}\right].
 \end{equation}
 
 \end{theorem}
@@ -23,16 +23,17 @@ onde $\MATRIX{J}(\VECTOR{x})$ é a \hyperref[def:jacobian]{\textbf{matriz Jacobi
 Se 
 $\VECTOR{x}\in \mathbb{R}^N$ é um vetor coluna, 
 $\VECTOR{b}\in \mathbb{R}^M$ é um vetor coluna,  
-$\VECTOR{f}: \mathbb{R}^{N}\rightarrow \mathbb{R}^{M}$ é uma função de valor vectorial, e
+$\VECTOR{f}: \mathbb{R}^{N}\rightarrow \mathbb{R}^{M}$ é uma função vetorial de valor vectorial, e
 $\MATRIX{C} \in \mathbb{R}^{M\times M}$ é uma matriz diagonal, 
 então se cumpre\footnote{A demostração pode ser vista na Prova \ref{proof:theo:derfxbCfxb}.} que:
 \begin{equation}
 \frac{\partial ||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2}{\partial \VECTOR{x}} \approx
-2 \MATRIX{J}(\VECTOR{p})^{\transpose}\MATRIX{C}\left[\MATRIX{J}(\VECTOR{p})\left(\VECTOR{x} - \VECTOR{p}\right)-\left(\VECTOR{b}-\VECTOR{f}(\VECTOR{p})\right)\right]
+2 \MATRIX{J}(\VECTOR{p})^{\transpose}\MATRIX{C}\left[\MATRIX{J}(\VECTOR{p})\left(\VECTOR{x} - 
+\VECTOR{p}\right)-\left(\VECTOR{b}-\VECTOR{f}(\VECTOR{p})\right)\right].
 \end{equation}
 
 Sendo $\VECTOR{p}$ um ponto fixo no domínio de $\VECTOR{f}(\VECTOR{x})$,  ao redor do qual é feita  aproximação
-usando a \hyperref[def:taylor]{\textbf{serie de Taylor}}, 
+usando a \hyperref[def:taylor]{\textbf{série de Taylor}}, 
 $\VECTOR{f}(\VECTOR{x})\approx \VECTOR{f}(\VECTOR{p})+\MATRIX{J}(\VECTOR{p})\left(\VECTOR{x}-\VECTOR{p}\right)$,
 onde $\MATRIX{J}(\VECTOR{p})$ é a matriz \hyperref[def:jacobian]{Jacobiana} de $\VECTOR{f}(\VECTOR{x})$ avaliada em $\VECTOR{p}$.
 

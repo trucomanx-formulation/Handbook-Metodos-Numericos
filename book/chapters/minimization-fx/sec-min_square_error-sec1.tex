@@ -9,21 +9,19 @@ Dados,
 um vetor coluna $\VECTOR{x}\in \mathbb{R}^N$, 
 um vetor coluna $\VECTOR{b}\in \mathbb{R}^M$,  
 uma matriz $\MATRIX{A} \in \mathbb{R}^{M\times N}$, 
-uma matriz diagonal $\MATRIX{C} \in \mathbb{R}^{M\times M}$, e 
+uma matriz diagonal $\MATRIX{C} \in \mathbb{R}^{M\times M}_{+}$, e 
 definida a Eq. (\ref{eq:minAxbCAxb1}),
 \begin{equation}\label{eq:minAxbCAxb1}
 e(\VECTOR{x})  = ||\MATRIX{A}\VECTOR{x}-\VECTOR{b}||_{\MATRIX{C}}^2.
 \end{equation}
 Se desejamos ter o valor $\VECTOR{\hat{x}}$ que minimiza o escalar $e(\VECTOR{\hat{x}})$,
 devemos usar\footnote{A demostração pode ser vista na Prova \ref{proof:theo:minAxbCAxb}.} a Eq. (\ref{eq:minAxbCAxb2}),
-onde o mínimo só existe sim $\MATRIX{A}^{\transpose}\MATRIX{C} \MATRIX{A}$ tem inversa,
+onde este mínimo só existe sim $\MATRIX{A}^{\transpose}\MATRIX{C} \MATRIX{A}$ tem inversa,
 \begin{equation}\label{eq:minAxbCAxb2}
 \VECTOR{\hat{x}} =
 \left[ \MATRIX{A}^{\transpose}\MATRIX{C} \MATRIX{A} \right]^{-1}\MATRIX{A}^{\transpose}\MATRIX{C}\VECTOR{b}.
 \end{equation}
-
 \end{theorem}
-
 
 \begin{corollary}[Vetor perpendicular ao plano 
 $\MATRIX{A}\VECTOR{x}$ desde o ponto $\VECTOR{b}$:] 
@@ -32,7 +30,7 @@ $\MATRIX{A}\VECTOR{x}$ desde o ponto $\VECTOR{b}$:]
 \noindent
 \begin{minipage}{0.49\textwidth}
 \centering
-\begin{minipage}{0.93\textwidth}
+\begin{minipage}{0.90\textwidth}
      \begin{figure}[H]
          \centering
          \includegraphics[width=0.9\textwidth]{chapters/minimization-fx/minimo-linear1.eps}
@@ -70,7 +68,7 @@ $\VECTOR{\hat{x}}$ que minimize
 \label{ex:minAxbCAxb1}
 Conhecido 
 um vetor coluna $\VECTOR{x}\in \mathbb{R}^2$,
-as matrizes $\MATRIX{A} \in \mathbb{R}^{3\times 2}$ e $\MATRIX{C} \in \mathbb{R}^{3\times 3}$
+as matrizes $\MATRIX{A} \in \mathbb{R}^{3\times 2}$ e $\MATRIX{C} \in \mathbb{R}^{3\times 3}_{+}$
 e um ponto $\VECTOR{b} \in \mathbb{R}^{3}$,
 achar o vetor $\VECTOR{x}$ que minimize $||\MATRIX{A}\VECTOR{x}-\VECTOR{b}||_{\MATRIX{C}}^2$;
 sabendo que:

@@ -1,7 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Difrenças finitas}
+\section{Diferenças finitas}
 
 O método das diferenças finitas nos brinda uma ferramenta para a resolução de 
 equações diferenciais, com este fim são utilizadas aproximações das derivadas\footnote{As 
@@ -10,32 +10,32 @@ mediante diferenças finitas.
 
 \begin{definition}[Amostragem de uma função:]
 \label{def:diferenças-finitas:0}
-dado um conjunto de amostras da sinal $\VECTOR{f}(t): \mathbb{R} \rightarrow \mathbb{R}^N$, 
+Dado um conjunto de amostras da sinal representada pela função $\VECTOR{f}: \mathbb{R} \rightarrow \mathbb{R}^N$, 
 adquiridas nos  tempos $t_n$, $\forall n \in \mathbb{Z}$, 
 se estas amostras foram adquiridas de forma regular a cada $\ToS$ segundos,
-então podemos definir que,
+então podemos definir que
 \begin{equation}
-\VECTOR{f}(t_n)\equiv \VECTOR{f}(n\tau) \equiv \VECTOR{f}[n]
+\VECTOR{f}(t_n)\equiv \VECTOR{f}(n\tau) \equiv \VECTOR{f}[n].
 \end{equation}
 \end{definition}
 
 \begin{theorem}[Diferença finita para derivada segunda:]
 \label{teo:diferenças-finitas:2}
-Usando a \hyperref[def:taylor]{\textbf{serie de Taylor}} podemos aproximar 
+Usando a \hyperref[def:taylor]{\textbf{série de Taylor}} podemos aproximar 
 a segunda derivada de uma função $\VECTOR{f}(t)$, onde\footnote{A
-demostração da aproximação e o erro do cálculo pode ser visto na Prova \ref{proof:teo:diferenças-finitas:2}}
+demostração da aproximação e o erro do cálculo pode ser visto na Prova \ref{proof:teo:diferenças-finitas:2}.}
 \begin{equation}
 \left.\frac{d^2\VECTOR{f}(t)}{dt^2}\right|_{t=t_n}\equiv \DDTVECTOR{f}(t_n)
 \quad \approx \quad
 %\frac{\VECTOR{f}(t_n+\ToS)-2\VECTOR{f}(t_n)+\VECTOR{f}(t_n-\ToS)}{\ToS^2} \equiv 
-\frac{\VECTOR{f}[n+1]-2\VECTOR{f}[n]+\VECTOR{f}[n-1]}{\ToS^2}  
+\frac{\VECTOR{f}[n+1]-2\VECTOR{f}[n]+\VECTOR{f}[n-1]}{\ToS^2}.
 \end{equation}
 \end{theorem}
 
 \begin{tcbattention}
 \begin{itemize}
-\item Para um valor $\ToS$, tal que $0<|\ToS|<1$, a aproximação da primeira derivada, por diferença finita, 
-que produz menor erro é a que usa ``diferença central'' (Ver Teorema \ref{teo:diferenças-finitas:1}); porém, 
+\item Para um valor $\ToS$, tal que $0<|\ToS|<1$, a aproximação da primeira derivada por diferença finita, 
+que produz o menor erro, é a que usa ``diferença central'' (Ver Teorema \ref{teo:diferenças-finitas:1}); porém, 
 esta aproximação tem o problema de necessitar amostras futuras para dar um parecer da amostra atual.
 \item As aproximações por diferenças progressivas e regressivas têm erros comparáveis
  (Ver Prova \ref{proof:teo:diferenças-finitas:1});
@@ -46,9 +46,9 @@ porém as diferenças regressivas têm a vantagem que para dar um parecer da amo
 
 \begin{theorem}[Diferença finita para a primeira derivada:]
 \label{teo:diferenças-finitas:1}
-Usando a \hyperref[def:taylor]{\textbf{serie de Taylor}} podemos aproximar 
-a primeira derivada de uma função $\VECTOR{f}(t)$, onde\footnote{As
-demostrações das aproximações e o erro do cálculo podem ser visto na Prova \ref{proof:teo:diferenças-finitas:1}.}
+Usando a \hyperref[def:taylor]{\textbf{série de Taylor}} podemos aproximar\footnote{As
+demostrações das aproximações e o erro do cálculo podem ser visto na Prova \ref{proof:teo:diferenças-finitas:1}.} 
+a primeira derivada de uma função $\VECTOR{f}(t)$.
 \begin{itemize}
 \item \textbf{Diferença regressiva ou atrasada:}
 \begin{equation}

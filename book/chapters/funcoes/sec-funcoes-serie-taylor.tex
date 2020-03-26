@@ -2,15 +2,15 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Serie de Taylor de $f(x)$, $\VECTOR{f}(x)$, $e(\VECTOR{x})$ e $\VECTOR{f}(\VECTOR{x})$}
+\section{Série de Taylor de $f(x)$, $\VECTOR{f}(x)$, $e(\VECTOR{x})$ e $\VECTOR{f}(\VECTOR{x})$}
 \label{def:taylor}
 
 
-\index{Serie de Taylor!$f:\mathbb{R} \rightarrow \mathbb{R}$}
-\begin{proposition}[Serie de Taylor de $f(x)$:]\label{prop:taylord}
-Dada uma função $f:\mathbb{R}\rightarrow \mathbb{R}$ com variável $x \in \mathbb{R}$;
+\index{Série de Taylor!$f:\mathbb{R} \rightarrow \mathbb{R}$}
+\begin{proposition}[Série de Taylor de $f(x)$:]\label{prop:taylord}
+Dada uma função $f:\mathbb{R}\rightarrow \mathbb{R}$ com variável $x \in \mathbb{R}$,
 infinitamente diferenciável em $a \in \mathbb{R}$;
-esta pode ser expressada mediante uma somatória, em serie de Taylor 
+esta pode ser expressada mediante uma somatória, em série de Taylor 
 \cite[pp. 734]{stewart2008calculus} \cite[pp. 281]{telles2015matematica} \cite{Taylor} 
 ao redor de $a$, como
 mostra a Eq. (\ref{eq:taylord1}),% onde $\left.\frac{\partial^k f(x)}{\partial x^k}\right|_{x=a}\equiv f^{(k)}(a) $.
@@ -25,7 +25,7 @@ mostra a Eq. (\ref{eq:taylord1}),% onde $\left.\frac{\partial^k f(x)}{\partial x
       ~+\frac{f^{(k)}(a)}{k!} (x-a)^{k}
       ~+\cdots 
 \end{equation}
-A equação pode ser escrita de forma mais compacta mediante uma somatória  como mostra a Eq. (\ref{eq:taylord2}),
+A equação pode ser escrita de forma mais compacta mediante uma somatória, como mostra a Eq. (\ref{eq:taylord2}),
 \begin{equation}\label{eq:taylord2}
   f(x)=\sum\limits_{k=0}^{+\infty} \frac{f^{(k)}(a)}{k!} (x-a)^{k}.
 \end{equation}
@@ -54,7 +54,7 @@ Aproximar a função $f(x)=cos(x)$ usando o polinômio de Taylor ao redor do pon
 numa versão truncada ate a derivada de ordem $4$, $8$ e $10$,
 denominados aqui $f_4(x)$, $f_8(x)$ e $f_{10}(x)$, respetivamente.
 \end{example}
-\begin{SolutionT}[Serie de Taylor do $cos(x)$:]
+\begin{SolutionT}[Série de Taylor do $cos(x)$:]
 Usando a Proposição \ref{prop:taylord} é calculado $f^{(k)}(x)$ para os 10 primeiros termos,
 \begin{equation}
 f^{(k)}(x)=
@@ -106,18 +106,18 @@ As aproximações podem ser vistas graficamente na Fig. \ref{fig:taylore}.
 \begin{figure}[!h]
   \centering
     \includegraphics[width=0.90\textwidth]{chapters/funcoes/mcode/taylorR1R1/taylore.eps}
-  \caption{Aproximação da função $cos(x)$ usando a serie de Taylor truncada.}
+  \caption{Aproximação da função $cos(x)$ usando a série de Taylor truncada.}
     \label{fig:taylore}
 \end{figure}
  
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\index{Serie de Taylor!$\VECTOR{f}:\mathbb{R} \rightarrow \mathbb{R}^{N}$}
-\begin{proposition}[Serie de Taylor de $\VECTOR{f}(t)$:]\label{prop:taylorvecf}
+\index{Série de Taylor!$\VECTOR{f}:\mathbb{R} \rightarrow \mathbb{R}^{N}$}
+\begin{proposition}[Série de Taylor de $\VECTOR{f}(t)$:]\label{prop:taylorvecf}
 Dada uma função $\VECTOR{f}:\mathbb{R}\rightarrow \mathbb{R}^{N}$ com variável $t \in \mathbb{R}$;
 infinitamente diferenciável em $a \in \mathbb{R}$;
-esta pode ser expressada mediante uma somatória, em serie de Taylor 
+esta pode ser expressada mediante uma somatória, em série de Taylor 
 \cite[pp. 264]{joag2016introduction}
 ao redor de $a$, como
 mostra a Eq. (\ref{eq:taylorvecf1}),
@@ -252,11 +252,11 @@ pode ser visto na Figura \ref{fig:taylorvecf}.
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\index{Serie de Taylor!$f:\mathbb{R}^{N}\rightarrow \mathbb{R}$}
-\begin{proposition}[Serie de Taylor de $f(\VECTOR{x})$]\label{prop:taylore}
+\index{Série de Taylor!$f:\mathbb{R}^{N}\rightarrow \mathbb{R}$}
+\begin{proposition}[Série de Taylor de $f(\VECTOR{x})$]\label{prop:taylore}
 Dada uma função $f:\mathbb{R}^{N}\rightarrow \mathbb{R}$ com variável $\VECTOR{x} \in \mathbb{R}^{N}$, vetor coluna;
 infinitamente diferenciável em $\VECTOR{a} \in \mathbb{R}^{N}$;
-esta pode ser expressada mediante uma somatória, em serie de Taylor 
+esta pode ser expressada mediante uma somatória, em série de Taylor 
 \cite[pp. 187, 207]{zhang2017matrix} \cite{Taylor}  ao redor de $\VECTOR{a}$, como
 mostra a Eq. (\ref{eq:taylore1}),
 \begin{equation}\label{eq:taylore1}
@@ -277,13 +277,13 @@ e a matriz $\MATRIX{H}(\VECTOR{x})\equiv \frac{\partial }{\partial \VECTOR{x}} \
 (também chamada matriz \hyperref[def:hessian]{Hessiana}).
 \end{proposition}
 
-\begin{example}[Serie de Taylor do 
+\begin{example}[Série de Taylor do 
 $f(\VECTOR{x})$:]
-Aproximar a função $f(\VECTOR{x})=1-e^{-x_1^2-x_2^2}$ usando a serie de Taylor ao redor do ponto $\VECTOR{a}=[0~ 0]^{\transpose}$,
+Aproximar a função $f(\VECTOR{x})=1-e^{-x_1^2-x_2^2}$ usando a série de Taylor ao redor do ponto $\VECTOR{a}=[0~ 0]^{\transpose}$,
 numa versão truncada ate a derivada de ordem $2$,
 denominada aqui $f_2(\VECTOR{x})$.
 \end{example}
-\begin{SolutionT}[Serie de Taylor do 
+\begin{SolutionT}[Série de Taylor do 
 $f(\VECTOR{x})$:]
 Usando a Proposição \ref{prop:taylore} é calculado $f(\VECTOR{a})$, 
 $\triangledown f(\VECTOR{a})$ e $\triangledown^2 f(\VECTOR{a})$,
@@ -319,7 +319,7 @@ f(\VECTOR{a})=0,
 \end{bmatrix},
 \qquad 
 f_2(\VECTOR{x}) = 
-\VECTOR{x}^{\transpose}\VECTOR{x}
+\VECTOR{x}^{\transpose}\VECTOR{x}.
 \end{equation}
 As aproximações podem ser vistas graficamente na Fig. \ref{fig:taylorf}.
 \end{SolutionT}
@@ -333,12 +333,12 @@ As aproximações podem ser vistas graficamente na Fig. \ref{fig:taylorf}.
 \end{figure}
  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\index{Serie de Taylor!$\VECTOR{f}:\mathbb{R}^{N}\rightarrow \mathbb{R}^{M}$}
-\begin{proposition}[Serie de Taylor de $\VECTOR{f}(\VECTOR{x})$]\label{prop:taylorf}
+\index{Série de Taylor!$\VECTOR{f}:\mathbb{R}^{N}\rightarrow \mathbb{R}^{M}$}
+\begin{proposition}[Série de Taylor de $\VECTOR{f}(\VECTOR{x})$]\label{prop:taylorf}
 Dada uma função  $\VECTOR{f}:\mathbb{R}^{N}\rightarrow \mathbb{R}^{M}$, 
-sendo $\VECTOR{f}$ um vector coluna, com variável $\VECTOR{x} \in \mathbb{R}^{N}$, vetor coluna;
+sendo $\VECTOR{f}$ um vector coluna com variável $\VECTOR{x} \in \mathbb{R}^{N}$, vetor coluna;
 infinitamente diferenciável em $\VECTOR{a} \in \mathbb{R}^{N}$;
-esta pode ser expressada mediante uma somatória, em serie de Taylor 
+esta pode ser expressada mediante uma somatória, em série de Taylor 
 \cite[pp. 393]{levine1999control} \cite{Taylor} ao redor de $\VECTOR{a}$, como
 mostra a Eq. (\ref{eq:taylorf1}),
 \begin{equation}\label{eq:taylorf1}
@@ -358,6 +358,5 @@ Matemático inglês que foi um dos fundadores do cálculo das diferenças finita
 sendo ele o primeiro a reconhecer a existência de soluções singulares de equações diferenciais.
 A série Taylor, era conhecida por James Gregory quando Taylor tinha apenas alguns anos de idade. 
 Acredita-se que Taylor não conhecia o trabalho de Gregory quando publicou seu livro ``Methodus incrementorum directa et inversa'' (1715),
-que continha a série Taylor. 
-\cite[pp. 198]{agarwal2014creators}.
+que continha a série Taylor \cite[pp. 198]{agarwal2014creators}.
 \end{elaboracion}

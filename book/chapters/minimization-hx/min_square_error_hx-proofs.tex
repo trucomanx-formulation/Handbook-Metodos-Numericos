@@ -11,7 +11,7 @@ definida a Eq. (\ref{eq:proof:minhxhx0}),
 \begin{equation}\label{eq:proof:minhxhx0}
 e(x)=||h(x)-a||^2.
 \end{equation}
-Para achar o valor  $\hat{x}$ que gere o menor valor de $e(x)$, é aplicado
+Para achar o valor  $x=\hat{x}$ que gere o menor valor de $e(x)$, é aplicado
 o critério que um ponto de inflexão $x^+$ (máximo, mínimo ou ponto de sela) de $e(x)$ 
 pode ser achado quando 
 $\left. \frac{d e(x)}{d x }\right|_{x=x^+} \equiv e'(x^+) =0$.
@@ -19,7 +19,7 @@ Assim,
 usando o Teorema \ref{theo:derfxbCfxb0} podemos 
 rescrever esta igualdade como a Eq. (\ref{eq:proof:minhxhxe}),
 \begin{equation}\label{eq:proof:minhxhxe}
-2  h'(x) \left[h(x) -a\right] = e'(x)=0,
+2  h'(x) \left[h(x) -a\right] = e'(x)=0.
 \end{equation}
 Da Eq. (\ref{eq:proof:minhxhxe}), observamos 
 que existem duas formas de achar um ponto de inflexão $x^+$,
@@ -29,20 +29,20 @@ que representa um ponto de inflexão simultâneo em $e(x)$ e $h(x)$, e
  \item a segunda forma é achando um valor $x^+$ tal que $h(x^+)=a$;
 que representa um ponto de inflexão de $e(x)$, mas não
 necessariamente de $h(x)$; 
-sendo este ponto $x^+=\hat{x}$ também um mínimo absoluto, pois provocam $e(\hat{x})=0$.
+sendo este ponto $x^+=\hat{x}$ um mínimo absoluto, pois provoca $e(\hat{x})=0$.
 \end{itemize}
 
 
 
 
 Por outro lado, podemos realizar uma aproximação linear de $h(x)$ em $e(x)$
-ao redor do ponto $p$, usando a \hyperref[def:taylor]{\textbf{serie de Taylor}},
+ao redor do ponto $p$, usando a \hyperref[def:taylor]{\textbf{série de Taylor}},
 de modo que a Eq. (\ref{eq:proof:minhxhx0}) pode ficar expressada como
 \begin{equation}\label{eq:proof:minhxhxe:approx0}
 e(x) \approx  e_p(x) = ||h'(p)\{x-p\}-\{a-h(p)\}||^2.
 \end{equation}
 Assim, da Eq. (\ref{eq:proof:minhxhxe:approx0})
-podemos concluir que um ponto $x^*$ que é 
+podemos concluir que um ponto $x=x^*$ que é 
 um mínimo da aproximação linear $e_p(x)$ feita em $e(x)$ ao redor do ponto $p$,
 pode ser achado como
 \begin{equation}\label{eq:proof:minhxhx2}
@@ -64,29 +64,29 @@ ponto $p$ onde  $a \approx h(p)$;
 é dizer um mínimo global de $e(x)$ em $p$.%, como pode ser visto na Figura \ref{fig:ex0a}. 
 
 \item Dado que a Eq. (\ref{eq:proof:minhxhx2}) tem um termo $h'(p)$ no denominador,
-valores $p$ que cumpram $h'(p)\approx 0$ provocam uma correção distante (divergência) da posição $p$,
+valores $p$ que cumpram $h'(p)\approx 0$ provocam uma correção a um ponto distante (divergência) da posição $p$,
 nos casos onde $p$ se aproxime a máximos e pontos de sela,
 ou mínimos locais. 
 Mas se se trata de um mínimo global com $h(p)\approx a$, 
-o comportamento será inesperado e dependerá se é finito ou não, o
+o comportamento dependerá se é finito ou não, o
 \begin{equation}
 lim_{x\rightarrow p } \frac{h(p)-a}{h'(p)}.
 \end{equation}
 
 \item Se modificamos a Eq. (\ref{eq:proof:minhxhx2}), e escolhemos um ponto  
-$p_0$ que consideremos próximo ao ponto $\hat{x}$ que minimiza $e(\hat{x})$,
+$p_0$ que consideremos próximo ao ponto $x=\hat{x}$ que minimiza $e(x)$,
 podemos achar iterativamente aproximações lineares $x^*$ cada vez mais próximos a  $\hat{x}$,
 se usamos a seguinte equação iterativa,
 \begin{equation}\label{eq:proof:minhxhx3}
 p_{k} \leftarrow p_{k-1} - \frac{ h(p_{k-1})-a}{h'(p_{k-1})},
 \end{equation}
 iniciando desde um $p_{0}$ 
-ate que exista uma tendencia prolongada onde se observe que $p_{k}$ é muito próximo a $p_{k-1}$,
+ate que exista uma tendência prolongada onde se observe que $p_{k}$ é muito próximo a $p_{k-1}$,
 momento no qual declaramos que $\hat{x} \approx p_{k}$.
-\item Pode existir um mínimo global $\hat{x}$ de $e(\hat{x})>0$.
+\item Pode existir um mínimo global $x=\hat{x}$ de $e(x)>0$.
 Isto nos restringe a que no uso da Eq. (\ref{eq:proof:minhxhx3}),
 nosso critério principal para estabelecer o final do cáculo iterativo,
-deve ser a tendencia na  proximidade entre $p_{k}$ e $p_{k-1}$ 
+deve ser a tendência na  proximidade entre $p_{k}$ e $p_{k-1}$ 
 e não o valor de $e(x_k)$.
 \end{itemize}
 
@@ -110,7 +110,7 @@ Um diagrama completo resumindo todas estas conclusões pode ser visto na Figura 
 Dados,
 um escalar $x \in \mathbb{R}$, 
 um escalar $a \in \mathbb{R}$,
-um escalar $\alpha \in \mathbb{R}^{+}$,
+um escalar $\alpha \in \mathbb{R}_{+}$,
 um escalar $b \in \mathbb{R}$,
 uma função $h:\mathbb{R} \rightarrow \mathbb{R}$, e 
 definida a Eq. (\ref{eq:proof:minhxhxxbxb0}),
@@ -118,12 +118,12 @@ definida a Eq. (\ref{eq:proof:minhxhxxbxb0}),
 e(x)=||h(x)-a||^2+\alpha ||x-b||^2.
 \end{equation}
 
-Para achar o valor  $\hat{x}$ que gere o menor valor de $e(x)$, é aplicado
+Para achar o valor  $x=\hat{x}$ que gere o menor valor de $e(x)$, é aplicado
 o critério que um ponto de inflexão $x^+$ (máximo, mínimo ou ponto de sela) de $e(x)$ 
 pode ser achado quando 
 $\left. \frac{d e(x)}{d x }\right|_{x=x^+} \equiv e'(x^+) =0$.
 Assim, 
-usando o Teorema \ref{theo:derfxbCfxb0} e \ref{theo:derAxbAxb}  podemos 
+usando o Teorema \ref{theo:derAxbAxb} e \ref{theo:derfxbCfxb0} podemos 
 rescrever esta igualdade como a Eq. (\ref{eq:proof:minhxhxxbxbe}),
 \begin{equation}\label{eq:proof:minhxhxxbxbe}
 2  h'(x) \left[h(x) -a\right]+2\alpha (x-b)= e'(x)=0,
@@ -140,7 +140,7 @@ sendo este ponto $x^+=\hat{x}=b$ também um mínimo absoluto, pois provocam $e(\
 \end{itemize}
 
 Por outro lado, podemos realizar uma aproximação linear de $h(x)$ em $e(x)$
-ao redor do ponto $p$, usando a \hyperref[def:taylor]{\textbf{serie de Taylor}},
+ao redor do ponto $p$, usando a \hyperref[def:taylor]{\textbf{série de Taylor}},
 de modo que a Eq. (\ref{eq:proof:minhxhxxbxb0}) pode ficar expressada como
 \begin{equation}\label{eq:proof:minhxhxxbxbe:approx0}
 e(x) \approx  e_p(x) = ||h'(p)\{x-p\}-\{a-h(p)\}||^2+\alpha ||x-b||^2.
@@ -165,7 +165,7 @@ Desta equação podemos tirar a seguintes conclusões:
 \item Observamos que a posição $p$ é corregida para ficar próximo à posição $x^*$, 
 que é um mínimo absoluto de $e_p(x)$ na direção de um mínimo (qualquer) de $e(x)$;
 pelo que se deduz que a Eq. (\ref{eq:proof:minhxhxaxb2})
-pode ser usada para procurar aproximações $x^*$ de pontos mínimos $\hat{x}$ em $e(x)$ desde a posição $p$;
+pode ser usada para procurar aproximações $x^*$ de pontos mínimos $x=\hat{x}$ em $e(x)$ desde a posição $p$;
 ou pelo menos aproximações de novas posições em caminhos numa direção descendente de $e(x)$.
 
 \begin{comment}
@@ -193,25 +193,25 @@ $e'(p)\approx 0$;
 é dizer $p$ é um ponto de inflexão de $e(x)$, como já foi analisado na Eq. (\ref{eq:proof:minhxhxxbxbe}).
 %como pode ser visto na Figura \ref{fig:ex0b}.
 Porém, dado que a Eq. (\ref{eq:proof:minhxhxaxbea1}) avança desde $p$ na direção de um mínimo $x^*$, 
-mesmo que nos pontos de inflexão correspondentes a máximos ou pontos de sela,
+mesmo que perto dos pontos de inflexão correspondentes a máximos ou pontos de sela,
 encontremos valores de $p$ próximos a $x^*$,
  estes casos serão pouco estáveis pois
 a correção da posição $p$ será na direção de um mínimo e não do máximo.
 
 \item Se modificamos a Eq. (\ref{eq:proof:minhxhxaxb2}), e escolhemos um ponto  
-$p_0$ que consideremos próximo ao ponto $\hat{x}$ que minimiza $e(\hat{x})$,
+$p_0$ que consideremos próximo ao ponto $x=\hat{x}$ que minimiza $e(x)$,
 podemos achar iterativamente aproximações lineares $x^*$ cada vez mais próximos a  $\hat{x}$,
 se usamos a seguinte equação iterativa,
 \begin{equation}\label{eq:proof:minhxhxaxb3}
 p_{k} \leftarrow p_{k-1} - \frac{ h'(p_{k-1})\{h(p_{k-1})-a\}+\alpha\{p-b\}}{h'(p_{k-1})^2+\alpha},
 \end{equation}
 iniciando desde um $p_{0}$ 
-ate que exista uma tendencia prolongada onde se observe que $p_{k}$ é muito próximo a $p_{k-1}$,
+ate que exista uma tendência prolongada onde se observe que $p_{k}$ é muito próximo a $p_{k-1}$,
 momento no qual declaramos que $\hat{x} \approx p_{k}$.
-\item Pode existir um mínimo global $\hat{x}$ de $e(\hat{x})>0$.
+\item Pode existir um mínimo global $x=\hat{x}$ de $e(x)>0$.
 Isto nos restringe a que no uso da Eq. (\ref{eq:proof:minhxhxaxb3}),
 nosso critério principal para estabelecer o final do cáculo iterativo,
-deve ser a tendencia na  proximidade entre $p_{k}$ e $p_{k-1}$ 
+deve ser a tendência na  proximidade entre $p_{k}$ e $p_{k-1}$ 
 e não o valor de $e(x_k)$.
 \end{itemize}
 
@@ -235,12 +235,12 @@ Um diagrama completo resumindo todas estas conclusões pode ser visto na Figura 
 Dados,
 um escalar $x \in \mathbb{R}$, 
 um escalar $a \in \mathbb{R}$,
-um escalar $\alpha \in \mathbb{R}^{+}$,
+um escalar $\alpha \in \mathbb{R}_{+}$,
 um escalar $x_{last} \in \mathbb{R}$,
 uma função $h:\mathbb{R} \rightarrow \mathbb{R}$, e 
 definida a Eq. (\ref{eq:proof:minhxhxxoxo0}),
 \begin{equation}\label{eq:proof:minhxhxxoxo0}
-e(x)=||h(x)-a||^2+\alpha ||x-x_{last}||^2.
+e(x)=||h(x)-a||^2+\alpha ||x-x_{last}||^2,
 \end{equation}
 tendo em consideração que $x_{last}$ é uma constante equivalente a $x_{k-1}$
 numa busca iterativa ou equivalente a $p$, 
@@ -249,12 +249,12 @@ se decidimos usar uma aproximação linear ao redor de $p$ em $h(x)$;
 procura minimizar $||x_{k}-x_{k-1}||^2$.
 
 
-Para achar o valor  $\hat{x}$ que gere o menor valor de $e(x)$, é aplicado
+Para achar o valor  $x=\hat{x}$ que gere o menor valor de $e(x)$, é aplicado
 o critério que um ponto de inflexão $x^+$ (máximo, mínimo ou ponto de sela) de $e(x)$ 
 pode ser achado quando 
 $\left. \frac{d e(x)}{d x }\right|_{x=x^+} \equiv e'(x^+) =0$.
 Assim, 
-usando o Teorema \ref{theo:derfxbCfxb0} e \ref{theo:derAxbAxb}  podemos 
+usando o Teorema \ref{theo:derAxbAxb} e \ref{theo:derfxbCfxb0} podemos 
 rescrever esta igualdade como a Eq. (\ref{eq:proof:minhxhxxoxoe}),
 \begin{equation}\label{eq:proof:minhxhxxoxoe}
 2  h'(x) \left[h(x) -a\right]+2\alpha (x-x_{last})= e'(x)=0,
@@ -273,7 +273,7 @@ sendo este ponto $x^+=\hat{x}=x_{last}$ também um mínimo absoluto, pois provoc
 Por outro lado, procurando outros critérios para achar os pontos de inflexão,
 podemos igualar $x_{last}\equiv p$ e 
 realizar uma aproximação linear de $h(x)$ em $e(x)$
-ao redor do ponto $p$ usando a \hyperref[def:taylor]{\textbf{serie de Taylor}},
+ao redor do ponto $p$ usando a \hyperref[def:taylor]{\textbf{série de Taylor}},
 de modo que a Eq. (\ref{eq:proof:minhxhxxoxo0}) pode ficar expressada como
 \begin{equation}\label{eq:proof:minhxhxxoxo0approx}
 e(x) \approx e_{p}(x)  \equiv ||h'(p)[x-p]-[a-h(p)]||^2+\alpha||x-p||^2,
@@ -282,7 +282,7 @@ e(x) \approx e_{p}(x)  \equiv ||h'(p)[x-p]-[a-h(p)]||^2+\alpha||x-p||^2,
 
 %%%%%%%
 Assim, usando o resultado da Prova \ref{proof:theo:minAxbCAxbalphaxqD} na Eq. (\ref{eq:proof:minhxhxxoxo0approx}), 
-podemos concluir que um ponto $x^*$ que é 
+podemos concluir que um ponto $x=x^*$ que é 
 o mínimo da aproximação linear $e_p(x)$ feita em $e(x)$ ao redor do ponto $p$,
 pode ser achado aplicando $\left. \frac{d e_p(x)}{d x }\right|_{x=x^*} \equiv e_{p}'(x^*) =0$,
 de modo que obtemos
@@ -300,7 +300,7 @@ x^* = p - \frac{h'(p)\{h(p)-a\}}{ h'(p)^2+\alpha}.
 
 
 
-Desta equação podemos tirar a seguintes conclusões:
+Desta equação podemos tirar as seguintes conclusões:
 \begin{itemize}
 
 \item Observamos que a posição $p$ é corregida para ficar próximo à posição $x^*$, 
@@ -328,29 +328,29 @@ se acharmos um  ponto $p$ onde
 $e'(p)\approx 0$; 
 é dizer $p$ é um ponto de inflexão de $e(x)$, como pode ser visto na Eq. (\ref{eq:proof:minhxhxxoxoe}).
 Porém, dado que a Eq. (\ref{eq:proof:minhxhxaxoxo2ea1}) avança desde $p$ na direção de um mínimo $x^*$, 
-mesmo que nos pontos de inflexão correspondentes a máximos ou pontos de sela,
+mesmo que em lugares próximos a pontos de inflexão correspondentes a máximos ou pontos de sela,
 encontremos valores de $p$ próximos a $x^*$,
  estes casos serão pouco estáveis pois
 a correção da posição $p$ será na direção de um mínimo e não do máximo.
 
 \item Se modificamos a Eq. (\ref{eq:proof:minhxhxaxo2}), e escolhemos um ponto  
-$p_0$ que consideremos próximo ao ponto $\hat{x}$ que minimiza $e(\hat{x})$,
+$p_0$ que consideremos próximo ao ponto $x=\hat{x}$ que minimiza $e(x)$,
 podemos achar iterativamente aproximações lineares $x^*$ cada vez mais próximos a  $\hat{x}$,
 se usamos a seguinte equação iterativa,
 \begin{equation}\label{eq:proof:minhxhxaxoxo3b}
 p_{k} \leftarrow p_{k-1} - \frac{h'(p_{k-1})\{h(p_{k-1})-a\}}{h'(p_{k-1})^2 +\alpha},
 \end{equation}
 onde se inicia desde um $p_{0}$ 
-ate que exista uma tendencia prolongada onde se observe que $p_{k}$ é muito próximo a $p_{k-1}$,
+ate que exista uma tendência prolongada onde se observe que $p_{k}$ é muito próximo a $p_{k-1}$,
 momento no qual declaramos que $\hat{x} \approx p_{k}$.
 Disto também se deduz que o erro a minimizar em cada iteração será diferente e influenciado pelo valor do ponto $p_{k-1}$,
 \begin{equation}
 e_{k-1}(x)  \equiv ||h(x)-a||^2+\alpha||x-p_{k-1}||^2
 \end{equation}
-\item Pode existir um mínimo global $\hat{x}$ de $e(\hat{x}) > 0$.
+\item Pode existir um mínimo global $x=\hat{x}$ de $e(x) > 0$.
 Isto nos restringe a que no uso da Eq. (\ref{eq:proof:minhxhxaxoxo3b}),
-nosso critério principal para estabelecer o final do cáculo iterativo,
-deve ser a tendencia na  proximidade entre $p_{k}$ e $p_{k-1}$ 
+nosso critério principal para estabelecer o final do cálculo iterativo,
+deve ser a tendência na  proximidade entre $p_{k}$ e $p_{k-1}$ 
 e não o valor de $e(x_k)$.
 \end{itemize}~
 

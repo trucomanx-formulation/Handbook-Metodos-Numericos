@@ -22,7 +22,7 @@ definida a Eq. (\ref{eq:maphxr2r1:1}),
 \begin{equation}\label{eq:maphxr2r1:1}
 z= h_{\VECTOR{c}}(x,y) = \sum \limits_{m=0}^{M} \sum \limits_{l=0}^{m}c_{\left\{ \frac{m(m+1)}{2}+l+1\right\}}~x^{m-l}y^{l}; 
 \end{equation}
-podemos afirmar que o vetor coluna $\VECTOR{c} \in \mathbb{R}^{\frac{(M+1)(M+2)}{2}}$,
+podemos afirmar que o vetor coluna $\VECTOR{c}=\VECTOR{\hat{c}} \in \mathbb{R}^{\frac{(M+1)(M+2)}{2}}$,
 que minimiza o erro $e(\VECTOR{c})$,
 \end{minipage}
 \begin{equation}\label{eq:maphxr2r1:2}
@@ -38,7 +38,7 @@ ponderadas com os pesos $w_n$,
 representados pela matriz diagonal $\MATRIX{W}=\funcdiag([w_1~ w_2~ ...~ w_n~ ...~ w_N]^{\transpose})$;
 pode ser achado\footnote{A demostração pode ser vista na Prova \ref{proof:theo:maphxr2r1}.} usando:
 \begin{equation}\label{eq:maphxr2r1:3}
-\VECTOR{c}=[\MATRIX{A}^{\transpose}\MATRIX{W}\MATRIX{A}]^{-1}\MATRIX{A}^{\transpose}\MATRIX{W}\VECTOR{z},
+\VECTOR{\hat{c}}=[\MATRIX{A}^{\transpose}\MATRIX{W}\MATRIX{A}]^{-1}\MATRIX{A}^{\transpose}\MATRIX{W}\VECTOR{z},
 \end{equation}
 onde a matriz $\MATRIX{A}$ é definida como,
 \begin{equation}\label{eq:maphxr2r1:4}
@@ -100,7 +100,7 @@ a função $\getminparam$ como:
 $h_{\VECTOR{c}}(x,y):~\mathbb{R}^2 \rightarrow \mathbb{R}$ de gau $M$ }
 
 \begin{example}\label{ex:theo:maphxr2r1}
-Conhecida as $N=18$ amostras $\{x_n,y_n\}$ e $z_n$, 
+Conhecida as $N=16$ amostras $\{x_n,y_n\}$ e $z_n$, 
 mostradas nas  Tabelas \ref{table:theo:maphxr2r1:xnyn} e \ref{table:theo:maphxr2r1:zn},
 achar o polinômio $h_{\VECTOR{c}}(x,y)$ de grau $M=2$,
 \begin{equation}
@@ -148,7 +148,7 @@ $z_n$ & 3.2491 & 74.5464 & 74.2815 & 53.5591 & 24.0016 & 26.3172 & 77.1427 & 12.
 Para obter o polinômio $h_{\VECTOR{c}}(x,y)$ de grau $M=2$, 
 que gere o menor erro $e(\VECTOR{c}) =  \sum_{n=1}^{N} ||h_{\VECTOR{c}}(x_n,y_n)-z_n||^2$,
 usamos a Eq. (\ref{eq:maphxr2r1:1}) onde o vetor $\VECTOR{c}$ é calculado como a Eq. (\ref{eq:maphxr2r1:3}),
-onde obtemos que $\VECTOR{c}=[0.96676$~ $0.91808$~ $1.17077$~ $1.00515$~ $1.00873$~ $0.9698]^{\transpose}$, de modo que
+onde obtemos que $\VECTOR{c}=[0.96676$ $0.91808$ $1.17077$ $1.00515$ $1.00873$ $0.9698]^{\transpose}$, de modo que
 \begin{equation}
 h_{\VECTOR{c}}(x,y) =   0.96676 +0.91808 x +1.17077 y +1.00515 x^2 +1.00873 xy +0.96980 y^2.
 \end{equation}

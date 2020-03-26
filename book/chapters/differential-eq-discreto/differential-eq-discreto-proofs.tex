@@ -3,9 +3,9 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{myproofT}[Prova do Teorema \ref{teo:diferenças-finitas:1}:]\label{proof:teo:diferenças-finitas:1}
-Usando a \hyperref[def:taylor]{\textbf{serie de Taylor}} podemos aproximar 
-a primeira derivada de uma função $\VECTOR{f}(t)$, onde
+\begin{myproofT}[Relativa ao Teorema \ref{teo:diferenças-finitas:1}:]\label{proof:teo:diferenças-finitas:1}
+Usando a \hyperref[def:taylor]{\textbf{série de Taylor}} podemos aproximar 
+a primeira derivada de uma função $\VECTOR{f}(t)$.
 \begin{itemize}
 \item \textbf{Diferença regressiva ou atrasada:}
 \begin{equation}
@@ -50,9 +50,9 @@ com um erro $\VECTOR{R}_{1^{0}}(z_{2}^{-},z_{2}^{+},\ToS)$.
 \end{myproofT}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{myproofT}[Prova do Teorema \ref{teo:diferenças-finitas:2}:]\label{proof:teo:diferenças-finitas:2}
-Usando a \hyperref[def:taylor]{\textbf{serie de Taylor}} podemos aproximar 
-a segunda derivada de uma função $\VECTOR{f}(t)$.
+\begin{myproofT}[Relativa ao Teorema \ref{teo:diferenças-finitas:2}:]\label{proof:teo:diferenças-finitas:2}
+Usando a \hyperref[def:taylor]{\textbf{série de Taylor}} podemos aproximar 
+a segunda derivada de uma função $\VECTOR{f}(t)$,
 \begin{equation}\label{eq:proof:teo:diferencas-finitas:2:a}
 \VECTOR{f}(t_n-\ToS) = 
 \VECTOR{f}(t_n)-\DTVECTOR{f}(t_n)\ToS +\DDTVECTOR{f}(t_n) \frac{\ToS^2}{2}-\DDDTVECTOR{f}(t_n) \frac{\ToS^3}{3!} +\frac{\ToS^4}{4!}\DDDDTVECTOR{f}(z_{3}^{-}),
@@ -68,7 +68,7 @@ somando as Eqs. (\ref{eq:proof:teo:diferencas-finitas:2:a}) e (\ref{eq:proof:teo
 \begin{equation}
  \DDTVECTOR{f}(t_n) =
 \underbrace{\frac{\VECTOR{f}(t_n-\ToS) -2 \VECTOR{f}(t_n) + \VECTOR{f}(t_n+\ToS)}{\ToS^2}}_{\DTVECTOR{f}_{2^{0}}(t_n)}
--\underbrace{\frac{\ToS^2}{4!}\left[\DDDDTVECTOR{f}(z_{3}^{-}) +\DDDDTVECTOR{f}(z_{3}^{+})\right]}_{\VECTOR{R}_{2^{0}}(z_{3}^{-},z_{3}^{+},\ToS)} ,
+-\underbrace{\frac{\ToS^2}{4!}\left[\DDDDTVECTOR{f}(z_{3}^{-}) +\DDDDTVECTOR{f}(z_{3}^{+})\right]}_{\VECTOR{R}_{2^{0}}(z_{3}^{-},z_{3}^{+},\ToS)}.
 \end{equation}
 \end{myproofT}
 
@@ -76,18 +76,18 @@ somando as Eqs. (\ref{eq:proof:teo:diferencas-finitas:2:a}) e (\ref{eq:proof:teo
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{myproofT}[Prova do Teorema \ref{theo:differential-eq-discreto:order1:0}:]\label{proof:theo:differential-eq-discreto:order1:0}
-Dados, o vetor coluna $\VECTOR{x} \in \mathbb{R}^N$, matriz $\MATRIX{P} \in \mathbb{R}^{N\times N}$, 
+\begin{myproofT}[Relativa ao Teorema \ref{theo:differential-eq-discreto:order1:0}:]\label{proof:theo:differential-eq-discreto:order1:0}
+Dados, o vetor coluna $\VECTOR{x} \in \mathbb{R}^N$, a matriz $\MATRIX{P} \in \mathbb{R}^{N\times N}$, 
 e definida a equação diferencial matricial,
 \begin{equation}
-\DTVECTOR{x}(t) + \MATRIX{P} \VECTOR{x}(t)=0.
+\DTVECTOR{x}(t) + \MATRIX{P} \VECTOR{x}(t)=0,
 \end{equation}
-podemos usar as diferenças regressivas
+podemos usar as diferenças regressivas para obter
 \begin{equation}
-\frac{\VECTOR{x}[n]-\VECTOR{x}[n-1]}{\ToS} + \MATRIX{P} \VECTOR{x}[n]=0.
+\frac{\VECTOR{x}[n]-\VECTOR{x}[n-1]}{\ToS} + \MATRIX{P} \VECTOR{x}[n]=0,
 \end{equation}
 \begin{equation}
-\left\{\MATRIX{I}  + \ToS \MATRIX{P}\right\} \VECTOR{x}[n]=\VECTOR{x}[n-1].
+\left\{\MATRIX{I}  + \ToS \MATRIX{P}\right\} \VECTOR{x}[n]=\VECTOR{x}[n-1],
 \end{equation}
 \begin{equation}
 \VECTOR{x}[n]=\left\{\MATRIX{I}  + \ToS \MATRIX{P}\right\}^{-1}\VECTOR{x}[n-1].
@@ -96,18 +96,18 @@ podemos usar as diferenças regressivas
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{myproofT}[Prova do Teorema \ref{theo:differential-eq-discreto:order2:0}:]\label{proof:theo:differential-eq-discreto:order2:0}
-Dados, o vetor coluna $\VECTOR{x} \in \mathbb{R}^N$, matriz $\MATRIX{P} \in \mathbb{R}^{N\times N}$, 
+\begin{myproofT}[Relativa ao Teorema \ref{theo:differential-eq-discreto:order2:0}:]\label{proof:theo:differential-eq-discreto:order2:0}
+Dados, o vetor coluna $\VECTOR{x} \in \mathbb{R}^N$, a matriz $\MATRIX{P} \in \mathbb{R}^{N\times N}$, 
 e definida a equação diferencial matricial,
 \begin{equation}
-\DDTVECTOR{x}(t) + \MATRIX{P} \VECTOR{x}(t)=0.
+\DDTVECTOR{x}(t) + \MATRIX{P} \VECTOR{x}(t)=0,
 \end{equation}
 podemos usar as diferenças finitas
 \begin{equation}
-\frac{\VECTOR{x}[n+1]-2\VECTOR{x}[n]+ \VECTOR{x}[n-1]}{\ToS^2} + \MATRIX{P} \VECTOR{x}[n]=0.
+\frac{\VECTOR{x}[n+1]-2\VECTOR{x}[n]+ \VECTOR{x}[n-1]}{\ToS^2} + \MATRIX{P} \VECTOR{x}[n]=0,
 \end{equation}
 \begin{equation}
-\VECTOR{x}[n+1]-2\VECTOR{x}[n]+ \VECTOR{x}[n-1]  + \ToS^2 \MATRIX{P} \VECTOR{x}[n]=0.
+\VECTOR{x}[n+1]-2\VECTOR{x}[n]+ \VECTOR{x}[n-1]  + \ToS^2 \MATRIX{P} \VECTOR{x}[n]=0,
 \end{equation}
 \begin{equation}
 \VECTOR{x}[n+1]  =\left\{2\MATRIX{I}- \ToS^2 \MATRIX{P} \right\}\VECTOR{x}[n] - \VECTOR{x}[n-1].

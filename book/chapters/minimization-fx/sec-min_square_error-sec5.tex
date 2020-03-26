@@ -7,27 +7,28 @@
 
 \begin{theorem}[Solução iterativa]\label{theo:minfxbCfxbaxoaxo}
 Dados,
+o escalar $\alpha \in \mathbb{R}_{+}$,
 os vetores coluna $\VECTOR{x}\in \mathbb{R}^N$, $\VECTOR{b}\in \mathbb{R}^M$ e $\VECTOR{x}_{last}\in \mathbb{R}^N$,  
 uma função $\VECTOR{f}:\mathbb{R}^{N} \rightarrow \mathbb{R}^{M}$, 
-as matrizes diagonais $\MATRIX{C} \in \mathbb{R}^{M\times M}$ e $\MATRIX{D} \in \mathbb{R}^{N\times N}$, e 
+as matrizes diagonais $\MATRIX{C} \in \mathbb{R}^{M\times M}_{+}$ e $\MATRIX{D} \in \mathbb{R}^{N\times N}_{+}$, e 
 definida a Eq. (\ref{eq:minfxbCfxbaxoaxo1}),
 \begin{equation}\label{eq:minfxbCfxbaxoaxo1}
 e(\VECTOR{x})=||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2+\alpha||\VECTOR{x}-\VECTOR{x}_{last}||_{\MATRIX{D}}^2,
 \end{equation}
-tendo em consideração que $\VECTOR{x}_{last}$ é uma constante equivalente a $\VECTOR{x}_{k-1}$
+onde consideramos que $\VECTOR{x}_{last}$ é uma constante equivalente a $\VECTOR{x}_{k-1}$
 numa busca iterativa ou equivalente a $\VECTOR{p}$, 
 se decidimos usar uma aproximação linear ao redor de $\VECTOR{p}$ em $\VECTOR{f}(\VECTOR{x})$; 
 é dizer, o segundo somando na Eq. (\ref{eq:minfxbCfxbaxoaxo1}) 
 procura minimizar $||\VECTOR{x}_{k}-\VECTOR{x}_{k-1}||_{\MATRIX{D}}^2$.
 
 
-Se desejamos ter o ponto $\VECTOR{\hat{x}}$ que minimiza o escalar $e(\VECTOR{\hat{x}})$,
-podemos achar este ponto usando iterativamente a Eq. (\ref{eq:minfxbCfxbaxoaxo2}),
-onde  $\MATRIX{J}(\VECTOR{x})$ é a \hyperref[def:jacobian]{\textbf{matriz Jacobiana}}  de $\VECTOR{f}(\VECTOR{x})$.
+Se desejamos achar o ponto $\VECTOR{x}=\VECTOR{\hat{x}}$ que minimiza o escalar $e(\VECTOR{x})$,
+podemos obtê-lo usando iterativamente a Eq. (\ref{eq:minfxbCfxbaxoaxo2}),
+onde  $\MATRIX{J}(\VECTOR{x})$ é a \hyperref[def:jacobian]{\textbf{matriz Jacobiana}}  de $\VECTOR{f}(\VECTOR{x})$,
 \begin{equation}\label{eq:minfxbCfxbaxoaxo2}
 \VECTOR{x}_{k}\leftarrow \VECTOR{x}_{k-1}-
 \left[ \MATRIX{J}(\VECTOR{x}_{k-1})^{\transpose}\MATRIX{C} \MATRIX{J}(\VECTOR{x}_{k-1}) +\alpha\MATRIX{D} \right]^{-1}
- \left[\MATRIX{J}(\VECTOR{x}_{k-1})^{\transpose}\MATRIX{C}\left\{\VECTOR{f}(\VECTOR{x}_{k-1})-\VECTOR{b}\right\}\right],
+ \left[\MATRIX{J}(\VECTOR{x}_{k-1})^{\transpose}\MATRIX{C}\left\{\VECTOR{f}(\VECTOR{x}_{k-1})-\VECTOR{b}\right\}\right];
 \end{equation}
 onde em cada iteração se tenta minimizar
 \begin{equation}\label{eq:minfxbCfxbaxoaxo2:ex}
@@ -44,7 +45,7 @@ demostração pode ser vista na Prova \ref{proof:theo:minfxbCfxbaxod}.} de $e(\V
 sem aclarar se é local ou global.
 
 
-\textbf{Considerções:}
+\textbf{Considerações:}
 
 \begin{itemize}
 \item É interessante verificar sempre na Eq. (\ref{eq:minfxbCfxbaxoaxo2}) 

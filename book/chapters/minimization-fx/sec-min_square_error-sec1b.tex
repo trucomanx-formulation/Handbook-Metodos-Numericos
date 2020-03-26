@@ -11,8 +11,8 @@ os vetores coluna $\VECTOR{x}\in \mathbb{R}^N$,
 $\VECTOR{b}\in \mathbb{R}^M$ e
 $\VECTOR{q}\in \mathbb{R}^N$,  
 uma matriz $\MATRIX{A} \in \mathbb{R}^{M\times N}$, 
-as matrizes diagonais $\MATRIX{C} \in \mathbb{R}^{M\times M}$ e
-$\MATRIX{D} \in \mathbb{R}^{N\times N}$, e 
+as matrizes diagonais $\MATRIX{C} \in \mathbb{R}^{M\times M}_{+}$ e
+$\MATRIX{D} \in \mathbb{R}^{N\times N}_{+}$, e 
 definida a Eq. (\ref{eq:minAxbCAxb1alphaxqD}),
 \begin{equation}\label{eq:minAxbCAxb1alphaxqD}
 e(\VECTOR{x})  = ||\MATRIX{A}\VECTOR{x}-\VECTOR{b}||_{\MATRIX{C}}^2 +\alpha ||\VECTOR{x}-\VECTOR{q}||_{\MATRIX{D}}^2.
@@ -23,7 +23,7 @@ devemos usar\footnote{A demostração pode ser vista na Prova \ref{proof:theo:mi
 \VECTOR{\hat{x}}=\left[ \MATRIX{A}^{\transpose}\MATRIX{C}\MATRIX{A} +\alpha\MATRIX{D}\right]^{-1} 
 \left[ \MATRIX{A}^{\transpose}\MATRIX{C} \VECTOR{b}+\alpha\MATRIX{D}\VECTOR{q}\right].
 \end{equation}
-Assim, o mínimo existe só sim $\MATRIX{A}^{\transpose}\MATRIX{C}\MATRIX{A} +\alpha\MATRIX{D}$ tem inversa.
+Assim, o mínimo $\VECTOR{\hat{x}}$ existe e é único só sim $\MATRIX{A}^{\transpose}\MATRIX{C}\MATRIX{A} +\alpha\MATRIX{D}$ tem inversa.
 \end{theorem}
 
 
@@ -38,7 +38,8 @@ $\VECTOR{\hat{x}}$ que minimize
 \label{ex:minAxbCAxbplusalphaxqD1}
 Conhecido 
 um vetor coluna $\VECTOR{x}\in \mathbb{R}^2$,
-as matrizes $\MATRIX{A} \in \mathbb{R}^{3\times 2}$, $\MATRIX{C} \in \mathbb{R}^{3\times 3}$  e $\MATRIX{D} \in \mathbb{R}^{2\times 2}$,
+as matrizes $\MATRIX{A} \in \mathbb{R}^{3\times 2}$, $\MATRIX{C} \in \mathbb{R}^{3\times 3}_{+}$  
+e $\MATRIX{D} \in \mathbb{R}^{2\times 2}_{+}$,
 o escalar $\alpha \in \mathbb{R}$,
 e os pontos $\VECTOR{b} \in \mathbb{R}^{3}$ e $\VECTOR{q} \in \mathbb{R}^{2}$,
 achar o vetor $\VECTOR{x}$ que minimize 
@@ -82,9 +83,9 @@ Podemos ver a resposta a este exemplo na Solução \ref{ex:minAxbCAxbplusalphaxq
 \begin{SolutionT}[Relativa ao Exemplo \ref{ex:minAxbCAxbplusalphaxqD1}:]
 \label{ex:minAxbCAxbplusalphaxqD:sol1}
 Com todos estes dados e usando a Eq. (\ref{eq:minAxbCAxb1alphaxqD}),
-obtemos a superfície $e(\VECTOR{x})$ como mostra a Figura \ref{fig:ex:minAxbCAxb1alphaxqD:a}.
-Usando a Eq. (\ref{eq:minAxbCAxb2alphaxqD}) sabemos que o ponto $\VECTOR{\hat{x}}=[0.85714\quad 0.85714]^{\transpose}$
-minimiza a Eq. (\ref{eq:minAxbCAxb1alphaxqD}), com um $e(\VECTOR{\hat{x}})=0.97714$.
+obtemos a superfície $e(\VECTOR{x})$, como mostra a Figura \ref{fig:ex:minAxbCAxb1alphaxqD:a}.
+Usando a Eq. (\ref{eq:minAxbCAxb2alphaxqD}) calculamos o ponto $\VECTOR{\hat{x}}=[0.85714\quad 0.85714]^{\transpose}$
+que minimiza a Eq. (\ref{eq:minAxbCAxb1alphaxqD}), com um $e(\VECTOR{\hat{x}})=0.97714$.
 
 \begin{figure}[h!]
          \centering

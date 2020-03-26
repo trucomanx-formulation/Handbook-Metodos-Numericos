@@ -8,7 +8,7 @@
 
 \begin{theorem}[Solução iterativa]\label{theo:minhxhxxbxb}
 Dados,
-um escalar $\alpha \in \mathbb{R} | \alpha > 0$, 
+um escalar $\alpha \in \mathbb{R}_+$, 
 um escalar $x \in \mathbb{R}$, 
 um escalar $a \in \mathbb{R}$,  
 uma função $h:\mathbb{R} \rightarrow \mathbb{R}$, e 
@@ -16,7 +16,7 @@ definida a Eq. (\ref{eq:minhxhxxbxb1}),
 \begin{equation}\label{eq:minhxhxxbxb1}
 e(x)=||h(x)-a||^2+\alpha ||x-b||^2.
 \end{equation}
-Se desejamos ter o valor $\hat{x}$ que minimiza o escalar $e(\hat{x})$,
+Se desejamos ter o valor $x=\hat{x}$ que minimiza o escalar $e(x)$,
 este valor pode ser achado\footnote{A 
 demostração da Eq (\ref{eq:minhxhxxbxb2}) pode ser vista na Prova \ref{proof:theo:minhxhxxbxb}.} 
  usando iterativamente a Eq. (\ref{eq:minhxhxxbxb2}),
@@ -62,7 +62,7 @@ não necesariamente minimiza  $||h(x)-a||^2$.
 \begin{example}\label{ex:minhxhxxbxb1}
 Conhecida uma função $h(x)=x^2(x^2-1)$, o valor $a=1$ do contradominio de $h(x)$,
 o fator $\alpha=1.2$ e o ponto $b=0$,
-achar o valor $\hat{x}$ que minimize $e(x)=||h(x)-a||^2+\alpha||x-b||^2$.
+achar o valor $x=\hat{x}$ que minimize $e(x)=||h(x)-a||^2+\alpha||x-b||^2$.
 \end{example}
 \begin{SolutionT}[Relativa ao Exemplo \ref{ex:minhxhxxbxb1}:]\label{sol:minhxhxxbxb1}
 
@@ -119,7 +119,7 @@ $e(x_k)$ & 3.1292 & 1.9338 & 1.8631 & 1.8597 & 1.8595 & 1.8595 & 1.8595 & 1.8595
 \begin{example}\label{ex:minhxhxxbxb2}
 Conhecida uma função $h(x)=x^2(x^2-1)$, o valor $a=-1$ que não existe no contradominio de $h(x)$,
 o fator $\alpha=1.2$ e o ponto $b=0$,
-achar o valor $\hat{x}$ que minimize $e(x)=||h(x)-a||^2+\alpha||x-b||^2$.
+achar o valor $x=\hat{x}$ que minimize $e(x)=||h(x)-a||^2+\alpha||x-b||^2$.
 \end{example}
 \begin{SolutionT}[Relativa ao Exemplo \ref{ex:minhxhxxbxb2}:]\label{sol:minhxhxxbxb2}
  A Fig. \ref{fig:hxbcasesb} nos mostra o processo de busca de um mínimo
@@ -152,15 +152,15 @@ $e(x_k)$ & 10.65562 &  2.39969 &  0.94867 &  0.94130 &  0.94121 &  0.94120 &  0.
 \begin{example}\label{ex:minhx3hx3xbxb3}
 Conhecida uma função $h(x)=(x+0.5)^3$, o valor $a=1$ no contradominio de $h(x)$,
 o fator $\alpha=0.01$ e o ponto $b=0$,
-achar o valor $\hat{x}$ que minimize $e(x)=||h(x)-a||^2+\alpha||x-b||^2$.
+achar o valor $x=\hat{x}$ que minimize $e(x)=||h(x)-a||^2+\alpha||x-b||^2$.
 \end{example}
 \begin{SolutionT}[Relativa ao Exemplo \ref{ex:minhx3hx3xbxb3}:]\label{sol:minhx3hx3xbxb3}
  A Fig. \ref{fig:hx3bcasesa} nos mostra o processo de busca de um mínimo
  de $e(x)$. 
  A busca inicia em $x_0=-1.4$,
  todos os valores $x_{k}$ podem ser vistos na Tabela \ref{tab:hx3bcases3}. 
-Neste caso a busca iterativa indicada pela Eq. (\ref{eq:minhxhxxbxb2}) num princípio diverge
-em $x_2$, apos este evento as iterações continuam e estas convergem sem problemas 
+Neste caso, a busca iterativa indicada pela Eq. (\ref{eq:minhxhxxbxb2}) diverge
+em $x_2$; apos este evento as iterações continuam e estas convergem sem problemas 
 em $\hat{x}\approx x_7=+0.53255$ com $e(\hat{x})\approx 0.013$.
 \begin{comment}
 ; este valor de $x$ está perto do mínimo global de  $(h(x)-a)^2$, que está em  $x=+0.5$. 
@@ -203,7 +203,7 @@ $e(x_k)$ & 3.009 & 1.0179 & 1.8711e+4 & 1621.9 & 136.42 & 10.371 & 0.56538 & 0.0
 \begin{example}\label{ex:minhx3hx3xbxb4}
 Conhecida uma função $h(x)=(x+0.5)^3$, o valor $a=1$ no contradominio de $h(x)$,
 o fator $\alpha=1.2$ e o ponto $b=0$,
-achar o valor $\hat{x}$ que minimize $e(x)=||h(x)-a||^2+\alpha||x-b||^2$.
+achar o valor $x=\hat{x}$ que minimize $e(x)=||h(x)-a||^2+\alpha||x-b||^2$.
 \end{example}
 \begin{SolutionT}[Relativa ao Exemplo \ref{ex:minhx3hx3xbxb4}:]\label{sol:minhx3hx3xbxb4}
  A Fig. \ref{fig:hx3bcasesb} nos mostra o processo de busca de um mínimo

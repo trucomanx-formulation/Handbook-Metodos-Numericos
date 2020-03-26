@@ -5,10 +5,10 @@
 
 \begin{theorem}\label{theo:derAx}
 Se 
-$\VECTOR{x}\in \mathbb{R}^N$ é um vetor coluna com elementos $x_n$ de modo que
-$n\in \mathbb{N}$, $1 \leq n \leq N$, e 
-$\MATRIX{A} \in \mathbb{R}^{M\times N}$ é uma matriz com elementos $a_{mn}$ de modo que
-$m\in \mathbb{N}$, $1 \leq m \leq M$, 
+$\VECTOR{x}\in \mathbb{R}^N$ é um vetor coluna com elementos $x_n$,
+de modo que $n\in \mathbb{N}$, $1 \leq n \leq N$, e 
+$\MATRIX{A} \in \mathbb{R}^{M\times N}$ é uma matriz com elementos $a_{mn}$,
+de modo que $m\in \mathbb{N}$, $1 \leq m \leq M$, 
 então se cumpre\footnote{A demostração pode ser vista na Prova \ref{proof:theo:derAx}.} que:
 \begin{equation}
 \frac{\partial \MATRIX{A}\VECTOR{x}}{\partial x_n}=a_{:n}
@@ -16,7 +16,7 @@ então se cumpre\footnote{A demostração pode ser vista na Prova \ref{proof:the
 \end{theorem}
 ~
 
-\begin{corollary}[Derivada de $\MATRIX{A}\VECTOR{x}$ em relação ao vector $\VECTOR{x}^{\transpose}$]\label{coro:derAx1}
+\begin{corollary}[Derivada de $\MATRIX{A}\VECTOR{x}$ em relação ao vector $\VECTOR{x}^{\transpose}$:]\label{coro:derAx1}
 Aplicando a Definição \ref{def:deltahor2} junto ao Teorema \ref{theo:derAx}, é
 fácil deduzir que:
 \begin{equation}
@@ -31,7 +31,7 @@ fácil deduzir que:
 \end{corollary}
 ~
 
-\begin{corollary}[Derivada de $\MATRIX{A}\VECTOR{x}$ em relação ao vector $\VECTOR{x}$]\label{coro:derAx2}
+\begin{corollary}[Derivada de $\MATRIX{A}\VECTOR{x}$ em relação ao vector $\VECTOR{x}$:]\label{coro:derAx2}
 Aplicando a Definição \ref{def:deltaver} junto ao Teorema \ref{theo:derAx}, é
 fácil deduzir que:
 \begin{equation}
@@ -50,7 +50,7 @@ a_{:N}
 \end{corollary}
 
 \newpage
-\begin{corollary}[Derivada de $\VECTOR{a}^{\transpose}\VECTOR{x}$ em relação ao vector $\VECTOR{x}^{\transpose}$]\label{coro:derAx3}
+\begin{corollary}[Derivada de $\VECTOR{a}^{\transpose}\VECTOR{x}$ em relação ao vector $\VECTOR{x}^{\transpose}$:]\label{coro:derAx3}
 Aplicando a Definição \ref{def:deltahor} junto ao Teorema \ref{theo:derAx} e sabendo que $\VECTOR{a}^{\transpose}$
 é um vetor linha, é
 fácil deduzir que:
@@ -59,7 +59,7 @@ fácil deduzir que:
 \end{equation}
 \end{corollary}
 
-\begin{corollary}[Derivada de $\VECTOR{a}^{\transpose}\VECTOR{x}$ em relação ao vector $\VECTOR{x}$]\label{coro:derAx4}
+\begin{corollary}[Derivada de $\VECTOR{a}^{\transpose}\VECTOR{x}$ em relação ao vector $\VECTOR{x}$:]\label{coro:derAx4}
 Aplicando a Definição \ref{def:deltaver} junto ao Teorema \ref{theo:derAx} e sabendo que $\VECTOR{a}^{\transpose}$
 é um vetor linha, é
 fácil deduzir que:

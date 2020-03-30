@@ -237,11 +237,11 @@ z=h_{\VECTOR{c}}(\VECTOR{x})\equiv h(\VECTOR{c},\VECTOR{x}),
 onde $\VECTOR{c}=[c_1~ ...~ c_m~ ...~ c_M]^{\transpose}$ é um vetor coluna.
 Se definimos um erro $e(\VECTOR{c})$ como
 \begin{equation}\label{eq:proof:theo:maphcxrnr1:2}
-e(\VECTOR{c}) =  \sum_{n=1}^{N} w_n||h(\VECTOR{c},\VECTOR{x}_n)-z_n||^2 + \alpha \sum_{m=1}^{M} d_n||c_m-c_{m,last}||^2,
+e(\VECTOR{c}) =  \sum_{l=1}^{L} w_l||h(\VECTOR{c},\VECTOR{x}_l)-z_l||^2 + \alpha \sum_{m=1}^{M} d_l||c_m-c_{m,last}||^2,
 \end{equation}
 proveniente de:
 \begin{itemize}
-\item Avaliar $N$ pontos $\VECTOR{x}_n$ e $z_n$, que não cumprem necessariamente a Eq. (\ref{eq:proof:theo:maphcxrnr1:1}), 
+\item Avaliar $L$ pontos $\VECTOR{x}_l$ e $z_l$, que não cumprem necessariamente a Eq. (\ref{eq:proof:theo:maphcxrnr1:1}), 
 \item Avaliar os $M$ coeficientes $c_m$ do vetor $\VECTOR{c}$ 
 em contraposição de outros coeficientes $c_{m,last}$ do vetor $\VECTOR{c}_{last}$
 que pode ser entendido como um ponto ao redor do qual é feita uma aproximação
@@ -258,27 +258,27 @@ onde $\alpha \in \mathbb{R}_+$ é um multiplicador de Lagrange escolhido por nó
 h(\VECTOR{c},\VECTOR{x}_1)\\ 
 h(\VECTOR{c},\VECTOR{x}_2)\\ 
 %\vdots\\ 
-%h(\VECTOR{c},\VECTOR{x}_n)\\ 
+%h(\VECTOR{c},\VECTOR{x}_l)\\ 
 \vdots\\ 
-h(\VECTOR{c},\VECTOR{x}_N)
+h(\VECTOR{c},\VECTOR{x}_L)
 \end{bmatrix},
 ~
 \VECTOR{z}=\begin{bmatrix}
 z_1\\ 
 z_2\\ 
 %\vdots\\ 
-%z_n\\ 
+%z_l\\ 
 \vdots\\ 
-z_N
+z_L
 \end{bmatrix},
 ~
 \MATRIX{W}=\funcdiag\left(\begin{bmatrix}
 w_1\\ 
 w_2\\ 
 %\vdots\\ 
-%w_n\\ 
+%w_l\\ 
 \vdots\\ 
-w_N
+w_L
 \end{bmatrix}\right),
 ~
 \MATRIX{D}=\funcdiag\left(\begin{bmatrix}
@@ -305,9 +305,9 @@ $\equiv \frac{\partial \VECTOR{h}(\VECTOR{c})}{\partial \VECTOR{c}^{\transpose}}
 \VECTOR{j}(\VECTOR{c},\VECTOR{x}_1)\\ 
 \VECTOR{j}(\VECTOR{c},\VECTOR{x}_2)\\ 
 %\vdots\\ 
-%\VECTOR{j}(\VECTOR{c},\VECTOR{x}_n)\\ 
+%\VECTOR{j}(\VECTOR{c},\VECTOR{x}_l)\\ 
 \vdots\\ 
-\VECTOR{j}(\VECTOR{c},\VECTOR{x}_N)
+\VECTOR{j}(\VECTOR{c},\VECTOR{x}_L)
 \end{bmatrix},
 \quad
 \begin{array}{lll}
@@ -409,19 +409,22 @@ onde a matriz $\MATRIX{A}$ é definida como,
 \MATRIX{A}\equiv \MATRIX{A}(\VECTOR{x},\VECTOR{y})=\begin{bmatrix}
 \VECTOR{a}(x_1,y_1)\\
 \VECTOR{a}(x_2,y_2)\\
-\vdots\\
-\VECTOR{a}(x_n,y_n)\\
+%\vdots\\
+%\VECTOR{a}(x_n,y_n)\\
 \vdots\\
 \VECTOR{a}(x_N,y_N)
 \end{bmatrix}.
 \end{equation}
-
-
 Usando o Teorema \ref{theo:minAxbCAxb}, sabemos que os vetores $\VECTOR{c}=\VECTOR{\hat{c}}$ e $\VECTOR{d}=\VECTOR{\hat{d}}$,
 que minimizam a Eq. (\ref{eq:proof:theo:maphxr2r2:3}) podem ser achados usando 
+$\VECTOR{\hat{c}}=[\MATRIX{A}^{\transpose}\MATRIX{W}\MATRIX{A}]^{-1}\MATRIX{A}^{\transpose}\MATRIX{W}\VECTOR{u}$ e
+$\VECTOR{\hat{d}}=[\MATRIX{A}^{\transpose}\MATRIX{W}\MATRIX{A}]^{-1}\MATRIX{A}^{\transpose}\MATRIX{W}\VECTOR{v}$.
+\begin{comment}
 \begin{equation}\label{eq:proof:theo:maphxr2r2:5}
 \VECTOR{\hat{c}}=[\MATRIX{A}^{\transpose}\MATRIX{W}\MATRIX{A}]^{-1}\MATRIX{A}^{\transpose}\MATRIX{W}\VECTOR{u},
 \qquad
 \VECTOR{\hat{d}}=[\MATRIX{A}^{\transpose}\MATRIX{W}\MATRIX{A}]^{-1}\MATRIX{A}^{\transpose}\MATRIX{W}\VECTOR{v}.
 \end{equation}
+\end{comment}
 \end{myproofT}
+

@@ -219,7 +219,7 @@
 %----------------------------------------------------------------------------------------
 %	TABLE OF CONTENTS
 %----------------------------------------------------------------------------------------
-\chapterimage{chapter_head_1_HSV.pdf} % Table of contents heading image
+\chapterimage{chapter_letras.pdf} % Table of contents heading image
 \pagestyle{empty} % No headers
 %\pagestyle{fancy} % Print headers again
 \tableofcontents % Print the table of contents itself
@@ -231,7 +231,7 @@
 %----------------------------------------------------------------------------------------
 \part{Teoria geral}
 % CHAPTER  
-\input{chapters/teoria-basica/teoria-basica}
+\input{chapters/classificacao/classificacao}
 
 
 %----------------------------------------------------------------------------------------
@@ -256,10 +256,12 @@
 %\addcontentsline{toc}{chapter}{\textcolor{colorsystemdefault}{Bibliography}}
 %\printbibliography[heading=bibempty]
 
-\chapterimage{chapter_head_1.pdf}
+\chapterimage{chapter_livro.pdf}
 
 \chapter*{Bibliografia}
 \addcontentsline{toc}{chapter}{\textcolor{colorsystemdefault}{Bibliografia}} %% Sale en la pagina part
+
+\newrefcontext[sorting=nty]
 
 \section*{Livros}
 \addcontentsline{toc}{section}{Livros} %% Sale en la pagina part
@@ -278,10 +280,12 @@
 %	INDEX
 %----------------------------------------------------------------------------------------
 
+\chapterimage{chapter_letras.pdf}
+
 \cleardoublepage
 \phantomsection
 \setlength{\columnsep}{0.75cm}
-\addcontentsline{toc}{chapter}{\textcolor{colorsystemdefault}{Indice}} %% Sale en la pagina part
+\addcontentsline{toc}{chapter}{\textcolor{colorsystemdefault}{Índice}} %% Sale en la pagina part
 \printindex
 
 %----------------------------------------------------------------------------------------

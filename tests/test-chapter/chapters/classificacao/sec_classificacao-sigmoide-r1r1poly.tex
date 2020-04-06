@@ -3,7 +3,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Regressão logística polinomial com MSE de $f_{\VECTOR{c}}(x):~\mathbb{R} \rightarrow \mathbb{R}$}
+\section{Regressão logística-polinomial e SE com classificador $f_{\VECTOR{c}}(x):~\mathbb{R} \rightarrow \mathbb{R}$}
 
 \index{Regressão!Logística polinomial $f_{\VECTOR{c}}(x):~\mathbb{R} \rightarrow \mathbb{R}$}
 
@@ -36,12 +36,13 @@ ou seu equivalente: $logit(y)=h_{\VECTOR{c}}(x)$.
 Podemos atribuir a cada valor $x_l$ uma etiqueta $y_l\in \{A,1-A\}$, 
 onde $0<A\ll 0.5$ é escolhido por nós,
 e afirmar que o vetor $\VECTOR{c}= \VECTOR{\hat{c}}$,
-que minimiza o erro quadrático médio\footnote{Do inglês ``mean square error'' com siglas $MSE$.} $e(\VECTOR{c})$,
+que minimiza o erro quadrático médio $e(\VECTOR{c})$,
 \begin{equation}\label{eq:reglogr1r1poly:1e}
-e(\VECTOR{c}) =  \frac{1}{L}\sum_{l=1}^{L} w_l||h_{\VECTOR{c}}(x_l)-logit(y_l)||^2,
+e(\VECTOR{c}) =  \sum_{l=1}^{L} w_l||h_{\VECTOR{c}}(x_l)-logit(y_l)||^2,
 \end{equation}
-ponderado com os pesos $w_l \in \mathbb{R}_+$ 
-pode ser calculado com a Eq. (\ref{eq:reglogr1r1poly:2});
+ponderado com os pesos $w_l \in \mathbb{R}_+$,
+pode ser calculado\footnote{A demostração pode ser vista na Prova \ref{proof:theo:reglogr1r1poly}.}  
+com a Eq. (\ref{eq:reglogr1r1poly:2});
 onde a matriz  $\MATRIX{W}=\funcdiag \left( \left[w_1,~ w_2,~ ...,~ w_L \right]^{\transpose} \right) $;
 %e $\VECTOR{x}^m$ representa uma potencia $m$ de cada elemento;
 \begin{equation}\label{eq:reglogr1r1poly:2}
@@ -92,7 +93,7 @@ $f_{\VECTOR{c}}(x):~\mathbb{R} \rightarrow \mathbb{R}$ }
 Conhecidas as $L=12$ amostras $x_l$ e seus respetivos grupos indicados pelos símbolos $\bigtriangleup$ e $\bigcirc$, 
 mostrados na Tabela \ref{table:theo:reglogr1r1poly:xn},
 achar o classificador $f_{\VECTOR{c}}(x)$, 
-que gere o menor erro $e(\VECTOR{c}) =  \frac{1}{L} \sum_{l=1}^{L} ||h_{\VECTOR{c}}(x)-logit(y_l)||^2$.
+que gere o menor erro $e(\VECTOR{c}) =   \sum_{l=1}^{L} ||h_{\VECTOR{c}}(x)-logit(y_l)||^2$.
 \end{example}
 
 
@@ -112,15 +113,15 @@ $y_l$ & $\bigtriangleup$ & $\bigtriangleup$ & $\bigtriangleup$ & $\bigtriangleup
 
 \begin{SolutionT}[Relativa ao Exemplo \ref{ex:theo:reglogr1r1poly}:]\label{sol:theo:reglogr1r1poly:s1}
 Para obter o vetor de parâmetros $\VECTOR{c}=\VECTOR{\hat{c}}$ da função $f_{\VECTOR{c}}(x)$, 
-que gere o menor erro $e(\VECTOR{c}) =  \frac{1}{L} \sum_{l=1}^{L} ||h_{\VECTOR{c}}(x_l)-logit(y_l)||^2$
+que gere o menor erro $e(\VECTOR{c}) =   \sum_{l=1}^{L} ||h_{\VECTOR{c}}(x_l)-logit(y_l)||^2$
 com os $L=12$ dados $x_l$ da Tabela \ref{table:theo:reglogr1r1poly:xn},
 usamos a Eq. (\ref{eq:reglogr1r1poly:2}) onde escolhemos $w_l=1$ e valores $y_l \in \{0.1,~ 0.9\}$,
 $0.1$ para $\bigtriangleup$ e $0.9$ para $\bigcirc$,
 obtendo um vetor $\VECTOR{\hat{c}}=[-12.6667\quad 11.2848\quad -2.1263]^{\transpose}$.
-Assim, podemos representar a função $f_{\VECTOR{c}}(x)$ que classifica os dados $x_l$, 
+Assim, podemos representar a função $\left.f_{\VECTOR{c}}(x)\right|_{\VECTOR{c}=\VECTOR{\hat{c}}}$ que classifica os dados $x_l$, 
 como é mostrado na Figura \ref{fig:theo:reglogr1r1poly:xn:s1} e na Eq. (\ref{eq:theo:reglogr1r1poly:xn:s1}),
 \begin{equation}\label{eq:theo:reglogr1r1poly:xn:s1}
-f_{\VECTOR{c}}(x)= \frac{1}{1+e^{-(-12.6667  +11.2848 x  -2.1263 x^2)}}.
+f_{\VECTOR{\hat{c}}}(x)= \frac{1}{1+e^{-(-12.6667  +11.2848 x  -2.1263 x^2)}}.
 \end{equation}
 É interessante ressaltar que para um valor $A=0.1$ a pendente é pequena e a classificação é pouco definida,
 com limiares de classificação em $1.6122$ e $3.6951$.
@@ -147,15 +148,15 @@ com limiares de classificação em $1.6122$ e $3.6951$.
 
 \begin{SolutionT}[Relativa ao Exemplo \ref{ex:theo:reglogr1r1poly}:]\label{sol:theo:reglogr1r1poly:s2}
 Para obter o vetor de parâmetros $\VECTOR{c}=\VECTOR{\hat{c}}$ da função $f_{\VECTOR{c}}(x)$, 
-que gere o menor erro $e(\VECTOR{c}) =  \frac{1}{L} \sum_{l=1}^{L} ||h_{\VECTOR{c}}(x_l)-logit(y_l)||^2$
+que gere o menor erro $e(\VECTOR{c}) =   \sum_{l=1}^{L} ||h_{\VECTOR{c}}(x_l)-logit(y_l)||^2$
 com os $L=12$ dados $x_l$ da Tabela \ref{table:theo:reglogr1r1poly:xn},
 usamos a Eq. (\ref{eq:reglogr1r1poly:2}) onde escolhemos $w_l=1$ e valores $y_l \in \{0.001,~ 0.999\}$,
 $0.001$ para $\bigtriangleup$ e $0.999$ para $\bigcirc$,
 obtendo um vetor $\VECTOR{\hat{c}}=[-39.8164\quad 35.4727\quad -6.6838]^{\transpose}$. 
-Assim, podemos representar a função $f_{\VECTOR{c}}(x)$ que classifica os dados $x_l$, 
+Assim, podemos representar a função $\left.f_{\VECTOR{c}}(x)\right|_{\VECTOR{c}=\VECTOR{\hat{c}}}$ que classifica os dados $x_l$, 
 como é mostrado na Figura \ref{fig:theo:reglogr1r1poly:xn:s2} e na Eq. (\ref{eq:theo:reglogr1r1poly:xn:s2}),
 \begin{equation}\label{eq:theo:reglogr1r1poly:xn:s2}
-f_{\VECTOR{c}}(x)= \frac{1}{1+e^{-(-39.8164+35.4727 x -6.6838 x^2)}}.
+f_{\VECTOR{\hat{c}}}(x)= \frac{1}{1+e^{-(-39.8164+35.4727 x -6.6838 x^2)}}.
 \end{equation}
 É interessante ressaltar que para um valor $A=0.001$ a pendente é abrupta para cada grupo com uma classificação bem definida,
 e limiares de classificação em $1.6122$ e $3.6951$.

@@ -32,9 +32,9 @@ que minimiza o erro $e(\VECTOR{c})$,
 \begin{equation}\label{eq:maphcxrnr1:2}
 e(\VECTOR{c}) =  ||\VECTOR{h}(\VECTOR{c})-\VECTOR{z}||_{\MATRIX{W}}^2 + \alpha||\VECTOR{c}-\VECTOR{c}_{last}||_{\MATRIX{D}}^2,
 \end{equation}
-onde $\alpha \in \mathbb{R}_+$ é um multiplicador de Lagrange escolhido por nós,
+onde $w_l \in \mathbb{R}_+$, $d_l \in \mathbb{R}_+$, e $\alpha \in \mathbb{R}_+$ são valores escolhidos por nós,
 \begin{equation}
-\VECTOR{h}(\VECTOR{c})\equiv \VECTOR{h}_{\VECTOR{x}}(\VECTOR{c})=\begin{bmatrix}
+\VECTOR{h}(\VECTOR{c})=\begin{bmatrix}
 h(\VECTOR{c},\VECTOR{x}_1)\\ 
 h(\VECTOR{c},\VECTOR{x}_2)\\ 
 %\vdots\\ 
@@ -88,7 +88,7 @@ onde a matriz $\MATRIX{J}(\VECTOR{c})$
 $\equiv \frac{\partial \VECTOR{h}(\VECTOR{c})}{\partial \VECTOR{c}^{\transpose}}$ é a 
 \hyperref[def:jacobian]{\textbf{matriz Jacobiana}}  de $\VECTOR{h}(\VECTOR{c})$,
 \begin{equation}
-\MATRIX{J}(\VECTOR{c})\equiv \MATRIX{J}_{\VECTOR{c}}(\VECTOR{c})=\begin{bmatrix}
+\MATRIX{J}(\VECTOR{c})=\begin{bmatrix}
 \VECTOR{j}(\VECTOR{c},\VECTOR{x}_1)\\ 
 \VECTOR{j}(\VECTOR{c},\VECTOR{x}_2)\\ 
 %\vdots\\ 
@@ -164,6 +164,8 @@ $y_l$ & 9.6170 & 2.1098 & 1.9972 & 1.8631 & 2.3673 & 2.2807 & 2.0231 & 8.0547 \\
 \caption{Valores $y_l$.}
 \label{table:theo:maphcxrnr1:zn}
 \end{table}
+
+~
 
 \begin{SolutionT}[Relativa ao Exemplo \ref{ex:theo:maphcxrnr1}:]\label{sol:theo:maphcxrnr1}
 Para obter  o vetor $\VECTOR{c}=\VECTOR{\hat{c}}$

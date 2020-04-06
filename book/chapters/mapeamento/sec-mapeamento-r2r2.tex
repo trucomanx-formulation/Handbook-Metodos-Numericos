@@ -58,11 +58,11 @@ e_{\VECTOR{d}}(\VECTOR{d}) =  \sum_{n=1}^{N} w_n||h_{\VECTOR{d}}(x_n,y_n)-v_n||^
 proveniente de avaliar $N$ amostras $\{x_n,y_n\}$ e $\{u_n,v_n\}$ 
 que não cumprem necessariamente a Eq. (\ref{eq:maphxr2r2:1}), 
 representadas pelos vetores 
-$\VECTOR{x}=[x_1~ x_2~ ...~ x_n~ ...~ x_N]^{\transpose}$,
-$\VECTOR{y}=[y_1~ y_2~ ...~ y_n~ ...~ y_N]^{\transpose}$, 
-$\VECTOR{u}=[u_1~ u_2~ ...~ u_n~ ...~ u_N]^{\transpose}$, e
-$\VECTOR{v}=[v_1~ v_2~ ...~ v_n~ ...~ v_N]^{\transpose}$,
-ponderadas com os pesos $w_n$, 
+$\VECTOR{x}=[x_1~ ...~ x_n~ ...~ x_N]^{\transpose}$,
+$\VECTOR{y}=[y_1~ ...~ y_n~ ...~ y_N]^{\transpose}$, 
+$\VECTOR{u}=[u_1~ ...~ u_n~ ...~ u_N]^{\transpose}$, e
+$\VECTOR{v}=[v_1~ ...~ v_n~ ...~ v_N]^{\transpose}$,
+ponderadas com os pesos $w_n \in \mathbb{R}_+$, 
 representados pela matriz diagonal $\MATRIX{W}=\funcdiag([w_1~ w_2~ ...~ w_n~ ...~ w_N]^{\transpose})$;
 podem ser achados\footnote{A demostração pode ser vista na Prova \ref{proof:theo:maphxr2r2}.} usando:
 \begin{equation}\label{eq:maphxr2r2:3}

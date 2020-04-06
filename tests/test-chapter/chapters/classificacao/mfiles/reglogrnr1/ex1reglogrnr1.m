@@ -36,7 +36,7 @@ function C=func_getc(X1,X2,B,DATA)
 
     C=inv(A'*A)*A'*func_logit(Y);
 
-    L=16;
+    L=48;
     U=linspace(round(min(X(:,1)))-1,round(max(X(:,1)))+1,L);
     V=linspace(round(min(X(:,2)))-1,round(max(X(:,2)))+1,L);
     [UU VV]=meshgrid(U,V);

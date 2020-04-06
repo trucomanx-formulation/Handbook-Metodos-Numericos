@@ -4,11 +4,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \index{Função!Logística}
 \index{Função!Sigmoide}
-\begin{minipage}{0.5\textwidth}
+\begin{minipage}{0.55\textwidth}
 \begin{definition}[Função sigmoid ou Função logística  $f:~\mathbb{R} \rightarrow \mathbb{R}$:]\label{def:logisticfunc}
-Esta é uma função $f(u)$, definida como na Eq. (\ref{eq:logisticfunc}), 
-com domínio que atinge todos os números reais e 
-contradomínio entre 0 e 1. \cite[pp. 27]{kurkova2001artificial},
+Função $f(u)$, definida como na Eq. (\ref{eq:logisticfunc}), 
+com domínio real e 
+contradomínio real acotado entre 0 e 1. \cite[pp. 27]{kurkova2001artificial},
 \begin{equation}\label{eq:logisticfunc}
 f(u)=\frac{1}{1+e^{-u}}.
 \end{equation}
@@ -18,7 +18,7 @@ A derivada da função logística cumpre a seguinte propriedade,
 \end{equation}
 \end{definition}
 \end{minipage}
-\begin{minipage}{0.5\textwidth}
+\begin{minipage}{0.45\textwidth}
      \begin{figure}[H]
          \centering
          \includegraphics[width=0.9\textwidth]{chapters/classificacao/mfiles/logisticfunc/sigmoid.eps}
@@ -26,13 +26,10 @@ A derivada da função logística cumpre a seguinte propriedade,
          \label{fig:logisticfunc}
      \end{figure}
 \end{minipage}
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \index{Função!Logit}
-
 \noindent
-\begin{minipage}{0.5\textwidth}
+\begin{minipage}{0.55\textwidth}
 \begin{definition}[Função $logit:~\mathbb{R} \rightarrow \mathbb{R}$:]\label{def:logitfunc}
 A função $logit(f)$ é definida como na Eq. (\ref{eq:logitfunc}), 
 com domínio entre 0 e 1 e 
@@ -46,7 +43,7 @@ u & = & logit(f),\\
 A função logit, pode entende-se como a função inversa da função logística.
 \end{definition}
 \end{minipage}
-\begin{minipage}{0.5\textwidth}
+\begin{minipage}{0.45\textwidth}
      \begin{figure}[H]
          \centering
          \includegraphics[width=0.9\textwidth]{chapters/classificacao/mfiles/logisticfunc/logit.eps}
@@ -54,3 +51,10 @@ A função logit, pode entende-se como a função inversa da função logística
          \label{fig:logitfunc}
      \end{figure}
 \end{minipage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{tcbattention}
+\begin{itemize}
+\item $MSE$: Sigla da frase no inglês ``mean square error'' que significa ``erro quadrático médio''.
+\item $SE$: Sigla da frase no inglês ``square error'' que significa ``erro quadrático''.
+\end{itemize}
+\end{tcbattention}

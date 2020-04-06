@@ -2,7 +2,7 @@
  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{myproofT}[Prova do Teorema \ref{theo:maphxr1r1}]\label{proof:theo:maphxr1r1}
+\begin{myproofT}[Relativa ao Teorema \ref{theo:maphxr1r1}]\label{proof:theo:maphxr1r1}
 Dados,
 os escalares $x \in \mathbb{R}$, $y \in \mathbb{R}$ e $c_m \in \mathbb{R}$,
 uma função polinomial $h_{\VECTOR{c}}:\mathbb{R} \rightarrow \mathbb{R}$, de grau $M$, e 
@@ -22,7 +22,7 @@ e(\VECTOR{c}) =  \sum_{n=1}^{N} w_n||h_{\VECTOR{c}}(x_n)-y_n||^2,
 proveniente de avaliar $N$ amostras $x_n$ e $y_n$, 
 que não cumprem necessariamente a Eq. (\ref{eq:proof:theo:maphxr1r1:1}), 
 representadas pelos vetores $\VECTOR{x}=[x_1~ x_2~ ...~ x_n~ ...~ x_N]^{\transpose}$ e $\VECTOR{y}=[y_1~ y_2~ ...~ y_n~ ...~ y_N]^{\transpose}$,
-ponderadas com os pesos $w_n$, representados pela matriz diagonal $\MATRIX{W}=\funcdiag([w_1~ w_2~ ...~ w_n~ ...~ w_N]^{\transpose})$.
+ponderados com os pesos $w_n \in \mathbb{R}_+$, representados pela matriz diagonal $\MATRIX{W}=\funcdiag([w_1~ w_2~ ...~ w_n~ ...~ w_N]^{\transpose})$.
 Então, podemos rescrever a Eq. (\ref{eq:proof:theo:maphxr1r1:2}) como,
 \begin{equation}\label{eq:proof:theo:maphxr1r1:3}
 e(\VECTOR{c}) \equiv ||\MATRIX{A}\VECTOR{c}-\VECTOR{y}||_{\MATRIX{W}}^2 =  \sum_{n=1}^{N} w_n||\VECTOR{a}(x_n)\VECTOR{c}-y_n||^2,
@@ -49,7 +49,7 @@ que minimiza a Eq. (\ref{eq:proof:theo:maphxr1r1:3}) pode ser achado usando
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{myproofT}[Prova do Teorema \ref{theo:maphcxr1r1}]\label{proof:theo:maphcxr1r1}
+\begin{myproofT}[Relativa ao Teorema \ref{theo:maphcxr1r1}]\label{proof:theo:maphcxr1r1}
 Dados,
 os escalares $x \in \mathbb{R}$ e $y \in \mathbb{R}$, o vetor coluna $\VECTOR{c} \in \mathbb{R}^M$, e 
 definida a seguinte equação,
@@ -131,7 +131,7 @@ de forma iterativa a seguinte equação
 onde a matriz $\MATRIX{J}(\VECTOR{c})$ 
 $\equiv \frac{\partial \VECTOR{h}(\VECTOR{c})}{\partial \VECTOR{c}^{\transpose}}$ é a 
 \hyperref[def:jacobian]{\textbf{matriz Jacobiana}}  de $\VECTOR{h}(\VECTOR{c})$,
-e $\VECTOR{c}_{last}\equiv \VECTOR{c}_{i-1}$
+e $\VECTOR{c}_{last}\equiv \VECTOR{c}_{i-1}$,
 \begin{equation}
 \MATRIX{J}(\VECTOR{c})=\begin{bmatrix}
 \VECTOR{j}(\VECTOR{c},x_1)\\ 
@@ -145,14 +145,14 @@ e $\VECTOR{c}_{last}\equiv \VECTOR{c}_{i-1}$
 \begin{array}{lll}
 \VECTOR{j}(\VECTOR{c},x) & = & \frac{\partial h(\VECTOR{c},x)}{\partial \VECTOR{c}^{\transpose}} \\
                        ~ & ~ & ~\\
-                       ~ & = & \left[\frac{\partial h(\VECTOR{c},x)}{\partial c_1}\quad \frac{\partial h(\VECTOR{c},x)}{\partial c_2}\quad ...\quad \frac{\partial h(\VECTOR{c},x)}{\partial c_{m}} \quad ... \quad \frac{\partial h(\VECTOR{c},x)}{\partial c_{M}} \right]
+                       ~ & = & \left[\frac{\partial h(\VECTOR{c},x)}{\partial c_1}\quad \frac{\partial h(\VECTOR{c},x)}{\partial c_2}\quad ...\quad \frac{\partial h(\VECTOR{c},x)}{\partial c_{m}} \quad ... \quad \frac{\partial h(\VECTOR{c},x)}{\partial c_{M}} \right].
 \end{array}
 \end{equation}
 \end{myproofT}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{myproofT}[Prova do Teorema \ref{theo:maphxr2r1}]\label{proof:theo:maphxr2r1}
+\begin{myproofT}[Relativa ao Teorema \ref{theo:maphxr2r1}]\label{proof:theo:maphxr2r1}
 Dados,
 os escalares $x \in \mathbb{R}$, $y \in \mathbb{R}$, $z \in \mathbb{R}$ e $c_m \in \mathbb{R}$,
 uma função polinomial $h_{\VECTOR{c}}:\mathbb{R}^2 \rightarrow \mathbb{R}$, de grau $M$, e 
@@ -201,7 +201,7 @@ representadas pelos vetores
 $\VECTOR{x}=[x_1~ x_2~ ...~ x_n~ ...~ x_N]^{\transpose}$,
 $\VECTOR{y}=[y_1~ y_2~ ...~ y_n~ ...~ y_N]^{\transpose}$ e 
 $\VECTOR{z}=[z_1~ z_2~ ...~ z_n~ ...~ z_N]^{\transpose}$,
-ponderadas com os pesos $w_n$, representados pela matriz diagonal $\MATRIX{W}=\funcdiag([w_1~ w_2~ ...~ w_n~ ...~ w_N]^{\transpose})$.
+ponderados com os pesos $w_n$, representados pela matriz diagonal $\MATRIX{W}=\funcdiag([w_1~ w_2~ ...~ w_n~ ...~ w_N]^{\transpose})$.
 Então, podemos rescrever a Eq. (\ref{eq:proof:theo:maphxr2r1:2}) como,
 \begin{equation}\label{eq:proof:theo:maphxr2r1:3}
 e(\VECTOR{c}) \equiv ||\MATRIX{A}\VECTOR{c}-\VECTOR{z}||_{\MATRIX{W}}^2 =  \sum_{n=1}^{N} w_n||\VECTOR{a}(x_n,y_n)\VECTOR{c}-z_n||^2,
@@ -227,7 +227,7 @@ que minimiza a Eq. (\ref{eq:proof:theo:maphxr2r1:3}) pode ser achado usando
 \end{myproofT}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{myproofT}[Prova do Teorema \ref{theo:maphcxrnr1}]\label{proof:theo:maphcxrnr1}
+\begin{myproofT}[Relativa ao Teorema \ref{theo:maphcxrnr1}]\label{proof:theo:maphcxrnr1}
 Dados,
 o escalar $z \in \mathbb{R}$, os vetores coluna $\VECTOR{x} \in \mathbb{R}^N$ e $\VECTOR{c} \in \mathbb{R}^M$, e 
 definida a seguinte equação,
@@ -321,7 +321,7 @@ $\equiv \frac{\partial \VECTOR{h}(\VECTOR{c})}{\partial \VECTOR{c}^{\transpose}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{myproofT}[Prova do Teorema \ref{theo:maphxr2r2}]\label{proof:theo:maphxr2r2}
+\begin{myproofT}[Relativa ao Teorema \ref{theo:maphxr2r2}]\label{proof:theo:maphxr2r2}
 Dados,
 os escalares $x \in \mathbb{R}$, $y \in \mathbb{R}$, $u \in \mathbb{R}$, $v \in \mathbb{R}$ e 
 os vetores $\VECTOR{c} \in \mathbb{R}^{\frac{(M+1)(M+2)}{2}}$ e $\VECTOR{d} \in \mathbb{R}^{\frac{(M+1)(M+2)}{2}}$,
@@ -397,7 +397,7 @@ $\VECTOR{x}=[x_1~ x_2~ ...~ x_n~ ...~ x_N]^{\transpose}$,
 $\VECTOR{y}=[y_1~ y_2~ ...~ y_n~ ...~ y_N]^{\transpose}$, 
 $\VECTOR{u}=[u_1~ u_2~ ...~ u_n~ ...~ u_N]^{\transpose}$ e
 $\VECTOR{v}=[v_1~ v_2~ ...~ v_n~ ...~ v_N]^{\transpose}$,
-ponderadas com os pesos $w_n$, representados pela matriz diagonal $\MATRIX{W}=\funcdiag([w_1~ w_2~ ...~ w_n~ ...~ w_N]^{\transpose})$.
+ponderados com os pesos $w_n$, representados pela matriz diagonal $\MATRIX{W}=\funcdiag([w_1~ w_2~ ...~ w_n~ ...~ w_N]^{\transpose})$.
 Assim, podemos rescrever a Eq. (\ref{eq:proof:theo:maphxr2r2:2}) como,
 \begin{equation}\label{eq:proof:theo:maphxr2r2:3}
 e_{\VECTOR{c}}(\VECTOR{c}) = ||\MATRIX{A}\VECTOR{c}-\VECTOR{u}||_{\MATRIX{W}}^2 

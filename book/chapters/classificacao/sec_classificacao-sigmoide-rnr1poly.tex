@@ -1,0 +1,383 @@
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Regressão logística-polinomial e SE com classificador $f_{\VECTOR{c}}(\VECTOR{x}):~\mathbb{R}^{N} \rightarrow \mathbb{R}$}
+\label{sec:theo:reglogrnr1poly:1}
+
+\index{Regressão!Logística-polinomial $f_{\VECTOR{c}}(\VECTOR{x}):~\mathbb{R}^{N} \rightarrow \mathbb{R}$}
+\index{Polinômio multivariante}
+
+\begin{theorem}[Classificação de dados em $\mathbb{R}^{N}$:]\label{theo:reglogrnr1poly:1}
+~\\
+\noindent
+\begin{minipage}{0.45\textwidth}
+\centering
+\includegraphics[width=0.95\linewidth]{chapters/classificacao/mfiles/reglogrnr1poly/reglogrnr1poly.eps} 
+\end{minipage}
+\begin{minipage}{0.55\textwidth}
+Dados, um conjunto de $L$ pontos
+$\VECTOR{x}_l$ $\in \mathbb{R}^{N}$, $1\leq l \leq L$,
+repartidos em dois grupos etiquetados com os símbolos $\bigtriangleup$ e $\bigcirc$,
+não separáveis por um hiperplano  em $\mathbb{R}^{N}$.
+Se desejamos criar um classificador mediante 
+a função  $f_{\VECTOR{c}}:\mathbb{R}^{N} \rightarrow \mathbb{R}$,
+com domínio $\VECTOR{x} \in \mathbb{R}^{N}$, contradomínio $y \in \mathbb{R}$ e 
+parâmetros agrupados no vetor $\VECTOR{c}$,
+como definido na Eq. (\ref{eq:reglogrnr1poly:1}),
+\begin{equation}\label{eq:reglogrnr1poly:1}
+y\equiv f_{\VECTOR{c}}(\VECTOR{x})= \frac{1}{1+e^{-h_{\VECTOR{c}}(\VECTOR{x})}},
+\quad h_{\VECTOR{c}}(\VECTOR{x})=\VECTOR{a}_M(\VECTOR{x})\VECTOR{c},
+\end{equation}
+\end{minipage}
+ou seu equivalente: $logit(y)=h_{\VECTOR{c}}(\VECTOR{x})$,
+sendo $h_{\VECTOR{c}}(\VECTOR{x})$ um polinômio multivariante de grau total $M$ 
+\cite[pp. 47]{geddes2007algorithms} \cite[pp. 108]{zippel2012effective}
+com coeficientes agrupados no vetor $\VECTOR{c}$.
+Podemos atribuir a cada ponto $\VECTOR{x}_l$ uma etiqueta $y_l\in \{A,1-A\}$, 
+$A$ para $\bigtriangleup$ e  $1-A$ para $\bigcirc$,
+onde $0<A\ll 0.5$ é escolhido por nós,
+e afirmar que o vetor $\VECTOR{c}= \VECTOR{\hat{c}}$,
+que minimiza o erro quadrático $e(\VECTOR{c})$,
+\begin{equation}\label{eq:reglogrnr1poly:1e}
+e(\VECTOR{c}) =  \sum_{l=1}^{L} w_l||h_{\VECTOR{c}}(\VECTOR{x}_l)-logit(y_l)||^2,
+\end{equation}
+pode ser achado\footnote{A demostração pode ser vista na Prova \ref{proof:theo:reglogrnr1poly}.} 
+mediante a Eq. (\ref{eq:reglogrnr1poly:2}),
+onde os erros de cada amostra $\VECTOR{x}_l$ em $e(\VECTOR{c})$ são ponderados com os pesos $w_l \in \mathbb{R}_+$ e
+estão agrupados na matriz  $\MATRIX{W}$;
+\begin{equation}\label{eq:reglogrnr1poly:2}
+\VECTOR{\hat{c}} =  \left[ \MATRIX{A}^{\transpose} \MATRIX{W}\MATRIX{A}\right]^{-1} \MATRIX{A}^{\transpose} \MATRIX{W}\VECTOR{z},
+\quad
+\MATRIX{A}=
+\begin{bmatrix}
+\VECTOR{a}_M(\VECTOR{x}_1)\\
+\VECTOR{a}_M(\VECTOR{x}_2)\\
+%\vdots\\
+%\VECTOR{a}_M(\VECTOR{x}_l)\\
+\vdots\\
+\VECTOR{a}_M(\VECTOR{x}_L)\\ 
+\end{bmatrix},
+\quad
+\VECTOR{z}=
+\begin{bmatrix}
+logit(y_1)  \\
+logit(y_2)  \\
+%\vdots  \\
+%logit(y_l)  \\
+\vdots \\
+logit(y_L) \\
+\end{bmatrix},
+\quad
+\MATRIX{W}=\funcdiag \left(
+\begin{bmatrix}
+w_1  \\
+w_2  \\
+%\vdots  \\
+%w_l  \\
+\vdots \\
+w_L \\
+\end{bmatrix} \right),
+\end{equation}
+\begin{equation}\label{eq:reglogrnr1poly:3}
+\VECTOR{a}_M(\VECTOR{x})=
+\begin{bmatrix}
+\VECTOR{b}_0(\VECTOR{x}) &
+\VECTOR{b}_1(\VECTOR{x}) &
+\hdots &
+\VECTOR{b}_m(\VECTOR{x}) &
+\hdots &
+\VECTOR{b}_M(\VECTOR{x}) 
+\end{bmatrix},
+\end{equation}
+\begin{equation}\label{eq:reglogrnr1poly:4}
+\VECTOR{b}_0(\VECTOR{x})=
+\begin{bmatrix}
+1 
+\end{bmatrix},
+\quad 
+\VECTOR{b}_1(\VECTOR{x})=
+\begin{bmatrix}
+x_1 & x_2 & ... &  x_N
+\end{bmatrix},
+\quad 
+\VECTOR{b}_m(\VECTOR{x})=
+{\bigcup\limits_{\alpha_1+\alpha_2+...+\alpha_N=m}^{\rightarrow}}{x_1^{\alpha_1} x_2^{\alpha_2} ... x_N^{\alpha_N}} .
+\end{equation}
+$\VECTOR{b}_m(\VECTOR{x})$ representa um vetor linha com monômios $x_1^{\alpha_1} x_2^{\alpha_2} ... x_N^{\alpha_N}$
+como elementos, de modo que em cada elemento se cumpre que $\alpha_1+\alpha_2+...+\alpha_N=m$,
+sendo que $\alpha_n \in \mathbb{N}$.
+\end{theorem}
+
+\begin{tcbattention}
+\begin{itemize}
+\item Dado que a função de classificação $f_{\VECTOR{c}}(\VECTOR{x})$ vai entre $0$ e $1$,
+podemos reinterpretar este valor como se fosse uma probabilidade;
+neste caso, $f_{\VECTOR{c}}(\VECTOR{x})$ representa a probabilidade de que um ponto $\VECTOR{x}$
+pertença ao grupo $\bigcirc$.
+\item O limiar de classificação na função $f_{\VECTOR{c}}(\VECTOR{x})$ está na superfície $h_{\VECTOR{c}}(\VECTOR{x})=0$.
+%provocando nestos pontos um $f_{\VECTOR{c}}(\VECTOR{x})=0.5$.
+\item A ordem dos elementos do vetor $\VECTOR{a}_M(\VECTOR{x})$ podem ser alterados,
+isto só modificará a posição dos elementos no vetor $\VECTOR{c}$.
+\end{itemize}
+\end{tcbattention}
+
+
+\begin{example}[Polinômios multivariante:]\label{ex:theo:reglogrnr1poly:multinomio}~\\
+\begin{itemize}
+\item Polinômio univariado de grau total 2: 
+$P_{\VECTOR{c}}(x)=c_1 + c_2 x + c_3 x^2$.
+\begin{equation}
+\VECTOR{b}_0(x)=[1],
+\quad 
+\VECTOR{b}_1(x)=[x],
+\quad 
+\VECTOR{b}_2(x)=[x^2].
+\end{equation}
+\item Polinômio bivariado de grau total 2: 
+$P_{\VECTOR{c}}(\VECTOR{x})=c_1 + c_2 x_1 + c_3 x_2 + c_4 x_1^2 + c_5 x_1 x_2+ c_6 x_2^2$.
+\begin{equation}
+\VECTOR{b}_0(\VECTOR{x})=
+\begin{bmatrix}
+1
+\end{bmatrix},
+\quad 
+\VECTOR{b}_1(\VECTOR{x})=
+\begin{bmatrix}
+x_1 & x_2
+\end{bmatrix},
+\quad 
+\VECTOR{b}_2(\VECTOR{x})=
+\begin{bmatrix}
+x_1^2 & x_2^2 & x_1x_2
+\end{bmatrix}.
+\end{equation}
+\item Polinômio trivariado de grau total 2: 
+$P_{\VECTOR{c}}(\VECTOR{x})=c_1 + 
+c_2 x_1 + c_3 x_2 + c_4 x_3 + 
+c_5 x_1^2 + c_6 x_2^2 + c_7 x_3^2 + c_8 x_1 x_2+ c_9 x_1 x_3 + c_{10} x_2 x_3$.
+\begin{equation}\label{eq:b0b1b2}
+\VECTOR{b}_0(\VECTOR{x})=
+\begin{bmatrix}
+1
+\end{bmatrix},
+\quad 
+\VECTOR{b}_1(\VECTOR{x})=
+\begin{bmatrix}
+x_1 & x_2 & x_3
+\end{bmatrix},
+\quad 
+\VECTOR{b}_2(\VECTOR{x})=
+\begin{bmatrix}
+x_1^2 & x_2^2 & x_3^2 & x_1x_2 & x_1x_3 & x_2x_3
+\end{bmatrix}.
+\end{equation}
+\end{itemize}
+\end{example}
+
+\index{Multiset}
+\index{Multiconjunto}
+\begin{lema}[Número de elementos de $\VECTOR{b}_m(\VECTOR{x})$:]\label{theo:reglogrnr1poly:bm}
+Dada uma função vetorial $\VECTOR{b}_m(\VECTOR{x})$ de parâmetro $\VECTOR{x}\in \mathbb{R}^{N}$,
+a quantidade de elementos $\phi(N,m)$ do vetor $\VECTOR{b}_m(\VECTOR{x})$ pode ser calculado com 
+\begin{equation}
+\phi(N,m)=\left(\!\!{\binom{N}{m}}\!\!\right)=\binom{N+m-1}{m}=\frac{N(N+1)(N+2)...(N+m-1)}{m!}.
+\end{equation}
+\textbf{Prova:} $\phi(N,m)$ representa o número de combinações 
+(grupos ou multiconjuntos) com repetição,
+onde  cada grupo tem $m$ elementos,
+escolhidos desde um universo de $N$ diferentes elementos, quando a ordem de escolha não importa, 
+e cada elemento pode ser escolhido mais de uma vez em cada grupo \cite[pp. 101,107]{scheinerman2012mathematics}.
+$\phi(N,m)$ pode ser entendido como o número de monômios no polinômio multivariado $\left(x_1+x_2+...+x_N\right)^m$.
+\end{lema}
+
+\begin{comment}
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c||c|c|c|c|} 
+ \hline
+~        & $\VECTOR{b}_0(\VECTOR{x})$ & $\VECTOR{b}_1(\VECTOR{x})$ & $\VECTOR{b}_2(\VECTOR{x})$ & $\VECTOR{b}_3(\VECTOR{x})$  \\ \hline
+$L_{\VECTOR{b}}(N,m)$ & $1$ & $N$ & $\frac{N(N+1)}{2}$ & $\frac{N(N+1)(N+2)}{3!}$\\ \hline
+\end{tabular}
+\caption{Número de elementos de $\VECTOR{b}_m(\VECTOR{x})$.}
+\label{table:theo:reglogrnr1poly:bm}
+\end{table}
+\end{comment}
+
+\begin{lema}[Número de elementos de $\VECTOR{a}_M(\VECTOR{x})$:]\label{theo:reglogrnr1poly:aM}
+Dada uma função vetorial $\VECTOR{a}_M(\VECTOR{x})$ de parâmetro $\VECTOR{x}\in \mathbb{R}^{N}$,
+a quantidade de elementos $L_M(N)$ do vetor $\VECTOR{a}_M(\VECTOR{x})$ pode ser calculado com \cite[pp. 231]{bortolussi2019computational}
+\begin{equation}\label{eq:lema2:reglogrnr1poly:1}
+L_M(N)=\sum \limits_{m=0}^{M}\phi(N,m)=\binom{N+M}{M}.
+\end{equation}
+\textbf{Prova:} Usando a identidade Hockey-stick \cite{detemple2014combinatorial},
+onde $\sum_{k=0}^{r}\binom{n+k}{k}=\binom{n+r+1}{r}$ e o Lema \ref{theo:reglogrnr1poly:bm},
+podemos facilmente obter a Eq. (\ref{eq:lema2:reglogrnr1poly:1}).
+$L_M(N)$ também pode ser entendido como o número de monômios no polinômio multivariado 
+$\left(1+x_1+x_2+...+x_N\right)^M$ \cite[pp. 121]{zippel2012effective}.
+\end{lema}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Exemplos de classificação com uma função
+$f_{\VECTOR{c}}(\VECTOR{x}):~\mathbb{R}^N \rightarrow \mathbb{R}$ }
+
+\begin{example}\label{ex:theo:reglogrnr1poly}
+Conhecidas as $L=10$ amostras $\VECTOR{x}_l$ e seus respetivos grupos indicados pelos símbolos $\bigtriangleup$ e $\bigcirc$, 
+mostrados na Tabela \ref{table:theo:reglogrnr1poly:xn},
+achar o classificador $f_{\VECTOR{c}}(\VECTOR{x})$ que usa um polinômio multivariante $h_{\VECTOR{c}}(x)$
+de grau total $M=2$, 
+que gere o menor erro $e(\VECTOR{c}) =  \sum_{l=1}^{L} ||h_{\VECTOR{c}}(\VECTOR{x}_l)-logit(y_l)||^2$.
+\end{example}
+
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c||c|c|c|c|c||c|c|c|c|c||} 
+ \hline
+$l$            & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\ \hline \hline
+$\VECTOR{x}_l$ & 1 & 1 & 2 & 4 & 5 & 2 & 2 & 3 & 5 & 6 \\ 
+~              & 5 & 4 & 2 & 1 & 1 & 6 & 5 & 3 & 2 & 2 \\ \hline
+$\VECTOR{y}_l$ & $\bigtriangleup$ & $\bigtriangleup$ & $\bigtriangleup$ & $\bigtriangleup$ & $\bigtriangleup$ 
+      & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$\\ \hline
+\end{tabular}
+\caption{Pontos $\VECTOR{x}_l$.}
+\label{table:theo:reglogrnr1poly:xn}
+\end{table}
+
+
+\begin{SolutionT}[Relativa ao Exemplo \ref{ex:theo:reglogrnr1poly}:]\label{sol:theo:reglogrnr1poly:s1}
+Para obter o vetor de parâmetros $\VECTOR{c}=\VECTOR{\hat{c}}$ da função $f_{\VECTOR{c}}(\VECTOR{x})$, 
+com polinômio multivariante $h_{\VECTOR{c}}(x)$ de grau total $M=2$,
+que gera o menor erro $e(\VECTOR{c}) =  \sum_{l=1}^{L} ||h_{\VECTOR{c}}(\VECTOR{x}_l)-logit(y_l)||^2$
+com os $L=10$ dados $\VECTOR{x}_l$ da Tabela \ref{table:theo:reglogrnr1poly:xn},
+usamos as Eqs. (\ref{eq:b0b1b2}) e  (\ref{eq:reglogrnr1poly:2}) onde escolhemos $w_l=1$ e valores $y_l \in \{0.1,~ 0.9\}$,
+$0.1$ para $\bigtriangleup$ e $0.9$ para $\bigcirc$, 
+obtendo um vetor 
+\begin{equation}
+\VECTOR{\hat{c}}=[-11.71919\quad 2.49938\quad 2.49938\quad -0.30282\quad -0.30282\quad 0.50579]^{\transpose}.
+\end{equation}
+Assim, podemos representar a função $\left.f_{\VECTOR{c}}(x)\right|_{\VECTOR{c}=\VECTOR{\hat{c}}}$ 
+que classifica os dados $\VECTOR{x}_l$, 
+como é mostrado na Eq. (\ref{eq:sol:theo:reglogrnr1poly:s1:2}) e na Figura \ref{fig:theo:reglogrnr1poly:xn:s1},
+\begin{equation}\label{eq:sol:theo:reglogrnr1poly:s1:2}
+f_{\VECTOR{\hat{c}}}(\VECTOR{x})= \frac{1}{1+e^{-h_{\VECTOR{\hat{c}}}(\VECTOR{x})}},
+\quad
+\begin{array}{lll}
+h_{\VECTOR{\hat{c}}}(\VECTOR{x}) & = & -11.71919\\
+                         ~ & ~ & +2.49938 x_1 +2.49938 x_2 \\
+                         ~ & ~ & -0.30282 x_1^2 -0.30282  x_2^2 + 0.50579 x_1 x_2.\\
+\end{array}
+\end{equation}
+É interessante ressaltar que para um valor $A=0.1$ a pendente na mudança de classificação é pouco definida,
+com limiares de classificação na superfície $h_{\VECTOR{\hat{c}}}(\VECTOR{x})=0$.
+\end{SolutionT}
+
+\begin{figure}[!h]
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{chapters/classificacao/mfiles/reglogrnr1poly/ex1s1-reglogrnr1poly.eps}
+        \caption{Gráfico da classificação usando $y_l \in \{0.1,~ 0.9\}$.}
+        \label{fig:theo:reglogrnr1poly:xn:s1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{chapters/classificacao/mfiles/reglogrnr1poly/ex1s2-reglogrnr1poly.eps}
+        \caption{Gráfico da classificação usando $y_l \in \{0.001,~ 0.999\}$.}
+        \label{fig:theo:reglogrnr1poly:xn:s2}
+    \end{subfigure}
+    \caption{Classificação usando a função $f_{\VECTOR{c}}(\VECTOR{x})$.}
+    \label{fig:theo:reglogrnr1poly:xn}
+\end{figure}
+
+
+\begin{SolutionT}[Relativa ao Exemplo \ref{ex:theo:reglogrnr1poly}:]\label{sol:theo:reglogrnr1poly:s2}
+Para obter o vetor de parâmetros $\VECTOR{c}=\VECTOR{\hat{c}}$ da função $f_{\VECTOR{c}}(\VECTOR{x})$, 
+com polinômio multivariante $h_{\VECTOR{c}}(x)$ de grau total $M=2$,
+que gera o menor erro $e(\VECTOR{c}) =  \sum_{l=1}^{L} ||h_{\VECTOR{c}}(\VECTOR{x}_l)-logit(y_l)||^2$
+com os $L=10$ dados $\VECTOR{x}_l$ da Tabela \ref{table:theo:reglogrnr1poly:xn},
+usamos as Eqs. (\ref{eq:b0b1b2}) e  (\ref{eq:reglogrnr1poly:2}) 
+onde escolhemos $w_l=1$ e valores $y_l \in \{0.001,~ 0.999\}$,
+$0.001$ para $\bigtriangleup$ e $0.999$ para $\bigcirc$, 
+obtendo um vetor 
+\begin{equation}
+\VECTOR{\hat{c}}=[-36.83809\quad 7.85656\quad 7.85656\quad -0.95187\quad -0.95187\quad 1.58990]^{\transpose}.                  
+\end{equation}
+Assim, podemos representar a função $\left.f_{\VECTOR{c}}(x)\right|_{\VECTOR{c}=\VECTOR{\hat{c}}}$ 
+que classifica os dados $\VECTOR{x}_l$, 
+como é mostrado na Eq. (\ref{eq:sol:theo:reglogrnr1poly:s2:2}) e na Figura \ref{fig:theo:reglogrnr1poly:xn:s2},
+\begin{equation}\label{eq:sol:theo:reglogrnr1poly:s2:2}
+f_{\VECTOR{\hat{c}}}(\VECTOR{x})= \frac{1}{1+e^{-h_{\VECTOR{\hat{c}}}(\VECTOR{x})}},
+\quad
+\begin{array}{lll}
+h_{\VECTOR{\hat{c}}}(\VECTOR{x}) & = & -36.83809\\
+                         ~ & ~ & +7.85656 x_1 +7.85656 x_2 \\
+                         ~ & ~ & -0.95187 x_1^2 -0.95187  x_2^2 + 1.58990 x_1 x_2.\\
+\end{array}
+\end{equation}
+É interessante ressaltar que para um valor $A=0.001$ a pendente na mudança de classificação está bem definida,
+com limiares de classificação na superfície $h_{\VECTOR{\hat{c}}}(\VECTOR{x})=0$.
+\end{SolutionT}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}\label{ex2:theo:reglogrnr1poly}
+Conhecidas as $L=10$ amostras $\VECTOR{x}_l$ e seus respetivos grupos indicados pelos símbolos $\bigtriangleup$ e $\bigcirc$, 
+mostrados na Tabela \ref{table:theo:reglogrnr1poly:ex2:xn},
+achar o classificador $f_{\VECTOR{c}}(\VECTOR{x})$ que usa um polinômio multivariante $h_{\VECTOR{c}}(x)$
+de grau total $M=2$, 
+que gere o menor erro $e(\VECTOR{c}) =  \sum_{l=1}^{L} ||h_{\VECTOR{c}}(\VECTOR{x}_l)-logit(y_l)||^2$.
+\end{example}
+
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c||c|c|c|c|c||c|c|c|c|c||} 
+ \hline
+$l$            & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\ \hline \hline
+$\VECTOR{x}_l$ & 5 & 3 & 2 & 4 & 5 & 4 & 3 & 3 & 4 & 4 \\ 
+~              & 5 & 5 & 2 & 1 & 3 & 4 & 4 & 3 & 2 & 3 \\ \hline
+$\VECTOR{y}_l$ & $\bigtriangleup$ & $\bigtriangleup$ & $\bigtriangleup$ & $\bigtriangleup$ & $\bigtriangleup$ 
+      & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$ & $\bigcirc$\\ \hline
+\end{tabular}
+\caption{Pontos $\VECTOR{x}_l$.}
+\label{table:theo:reglogrnr1poly:ex2:xn}
+\end{table}
+
+
+\begin{SolutionT}[Relativa ao Exemplo \ref{ex2:theo:reglogrnr1poly}:]\label{sol:theo:reglogrnr1poly:s3}
+Para obter o vetor de parâmetros $\VECTOR{c}=\VECTOR{\hat{c}}$ da função $f_{\VECTOR{c}}(\VECTOR{x})$, 
+com polinômio multivariante $h_{\VECTOR{c}}(x)$ de grau total $M=2$,
+que gera o menor erro $e(\VECTOR{c}) =  \sum_{l=1}^{L} ||h_{\VECTOR{c}}(\VECTOR{x}_l)-logit(y_l)||^2$
+com os $L=10$ dados $\VECTOR{x}_l$ da Tabela \ref{table:theo:reglogrnr1poly:ex2:xn},
+usamos as Eqs. (\ref{eq:b0b1b2}) e  (\ref{eq:reglogrnr1poly:2}) onde escolhemos $w_l=1$ e valores $y_l \in \{0.001,~ 0.999\}$,
+$0.001$ para $\bigtriangleup$ e $0.999$ para $\bigcirc$, 
+obtendo um vetor 
+\begin{equation}
+\VECTOR{\hat{c}}=[-81.5028\quad 46.6937\quad 5.7968\quad -7.9601\quad -2.8062\quad 3.2267]^{\transpose}.
+%                     
+\end{equation}
+Assim, podemos representar a função $\left.f_{\VECTOR{c}}(x)\right|_{\VECTOR{c}=\VECTOR{\hat{c}}}$
+ que classifica os dados $\VECTOR{x}_l$, 
+como é mostrado na Eq. (\ref{eq:sol:theo:reglogrnr1poly:s3:2}) e na Figura \ref{fig:theo:reglogrnr1poly:xn:s3},
+\begin{equation}\label{eq:sol:theo:reglogrnr1poly:s3:2}
+f_{\VECTOR{\hat{c}}}(\VECTOR{x})= \frac{1}{1+e^{-h_{\VECTOR{\hat{c}}}(\VECTOR{x})}},
+\quad
+\begin{array}{lll}
+h_{\VECTOR{\hat{c}}}(\VECTOR{x}) & = & -81.5028\\
+                         ~ & ~ & +46.6937 x_1 +5.7968 x_2 \\
+                         ~ & ~ & -7.9601 x_1^2 -2.8062  x_2^2 + 3.2267 x_1 x_2.\\
+\end{array}
+\end{equation}
+É interessante ressaltar que $h_{\VECTOR{\hat{c}}}(\VECTOR{x})=0$ ao ser um polinômio multivariante de grau 2,
+pode tomar varias formas como uma elipse, uma parábola ou uma hipérbole;
+neste caso a seção cônica que classifica bem os dados é uma elipse.
+\end{SolutionT}
+
+\begin{figure}[!h]
+        \centering
+        \includegraphics[width=0.5\textwidth]{chapters/classificacao/mfiles/reglogrnr1poly2/ex1s2-reglogrnr1poly.eps}
+    %\caption{Classificação usando a função $f_{\VECTOR{c}}(\VECTOR{x})$.}
+        \caption{Gráfico da classificação usando $y_l \in \{0.001,~ 0.999\}$.}
+        \label{fig:theo:reglogrnr1poly:xn:s3}
+\end{figure}

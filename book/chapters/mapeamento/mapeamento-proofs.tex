@@ -8,10 +8,10 @@ os escalares $x \in \mathbb{R}$, $y \in \mathbb{R}$ e $c_m \in \mathbb{R}$,
 uma função polinomial $h_{\VECTOR{c}}:\mathbb{R} \rightarrow \mathbb{R}$, de grau $M$, e 
 definida a seguinte equação,
 \begin{equation}\label{eq:proof:theo:maphxr1r1:1}
-y=h_{\VECTOR{c}}(x)\equiv \sum_{m=0}^{M}c_{m+1} x^m\equiv \VECTOR{a}(x)\VECTOR{c},
+y=h_{\VECTOR{c}}(x)\equiv \sum_{m=0}^{M}c_{m+1} x^m\equiv \VECTOR{a}_M(x)\VECTOR{c},
 \end{equation}
 onde $\VECTOR{c}=[c_1~ c_2~ ...~ c_m~ ...~ c_{M+1}]^{\transpose} \in \mathbb{R}^{M+1}$ é um vetor coluna e
-$\VECTOR{a}(x)=\begin{bmatrix} 
+$\VECTOR{a}_M(x)=\begin{bmatrix} 
 1& x& x^2& \hdots & x^m& \hdots& x^M
 \end{bmatrix}$ um vetor linha.
 Se definimos um erro $e(\VECTOR{c})$ como
@@ -25,17 +25,17 @@ representadas pelos vetores $\VECTOR{x}=[x_1~ x_2~ ...~ x_n~ ...~ x_N]^{\transpo
 ponderados com os pesos $w_n \in \mathbb{R}_+$, representados pela matriz diagonal $\MATRIX{W}=\funcdiag([w_1~ w_2~ ...~ w_n~ ...~ w_N]^{\transpose})$.
 Então, podemos rescrever a Eq. (\ref{eq:proof:theo:maphxr1r1:2}) como,
 \begin{equation}\label{eq:proof:theo:maphxr1r1:3}
-e(\VECTOR{c}) \equiv ||\MATRIX{A}\VECTOR{c}-\VECTOR{y}||_{\MATRIX{W}}^2 =  \sum_{n=1}^{N} w_n||\VECTOR{a}(x_n)\VECTOR{c}-y_n||^2,
+e(\VECTOR{c}) \equiv ||\MATRIX{A}\VECTOR{c}-\VECTOR{y}||_{\MATRIX{W}}^2 =  \sum_{n=1}^{N} w_n||\VECTOR{a}_M(x_n)\VECTOR{c}-y_n||^2,
 \end{equation}
 onde a matriz $\MATRIX{A}$ é definida como,
 \begin{equation}\label{eq:proof:maphxr1r1:4}
 \MATRIX{A}=\begin{bmatrix}
-\VECTOR{a}(x_1)\\
-\VECTOR{a}(x_2)\\
+\VECTOR{a}_M(x_1)\\
+\VECTOR{a}_M(x_2)\\
 \vdots\\
-\VECTOR{a}(x_n)\\
+\VECTOR{a}_M(x_n)\\
 \vdots\\
-\VECTOR{a}(x_N)\\
+\VECTOR{a}_M(x_N)\\
 \end{bmatrix}.
 \end{equation}
 

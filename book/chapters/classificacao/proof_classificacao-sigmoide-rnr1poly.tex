@@ -1,0 +1,113 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{myproofT}[Relativa ao Teorema \ref{theo:reglogrnr1poly:1}]\label{proof:theo:reglogrnr1poly}
+Dados,
+o vetor coluna $\VECTOR{x} \in \mathbb{R}^{N}$, os escalares $y \in \mathbb{R}$ e $c_m \in \mathbb{R}$,
+uma função $f_{\VECTOR{c}}:\mathbb{R}^{N} \rightarrow \mathbb{R}$, 
+uma função $h_{\VECTOR{c}}:\mathbb{R}^{N} \rightarrow \mathbb{R}$,  e 
+definidas as seguintes equações,
+\begin{equation}\label{eq:proof:theo:reglogrnr1poly:1}
+y\equiv f_{\VECTOR{c}}(\VECTOR{x})= \frac{1}{1+e^{-h_{\VECTOR{c}}(\VECTOR{x}) }},
+\quad h_{\VECTOR{c}}(\VECTOR{x}) =  \VECTOR{a}_M(\VECTOR{x})\VECTOR{c},
+\end{equation}
+ou seu equivalente: $logit(y)=h_{\VECTOR{c}}(\VECTOR{x})$,
+onde $\VECTOR{c}=[c_1~ c_2~ c_3~  ...~ c_{L_M(N)}]^{\transpose} \in \mathbb{R}^{L_M(N)}$ é um vetor coluna
+com $L_M(N)=\binom{N+M}{M}$ coeficientes\footnote{Para ver como calcular $L_M(N)$ ver o Lema \ref{theo:reglogrnr1poly:aM}.} 
+para cada elemento em
+$\VECTOR{a}_M(\VECTOR{x})$, que  é um vetor com todos os monômios multivariados de grau total menor ou igual a $M$,
+\begin{equation}\label{eq:proof:theo:reglogrnr1poly:2}
+\VECTOR{a}_M(\VECTOR{x})=
+\begin{bmatrix}
+\VECTOR{b}_0(\VECTOR{x}) &
+\VECTOR{b}_1(\VECTOR{x}) &
+\hdots &
+\VECTOR{b}_m(\VECTOR{x}) &
+\hdots &
+\VECTOR{b}_M(\VECTOR{x}) 
+\end{bmatrix},
+\end{equation}
+onde $\VECTOR{b}_m(\VECTOR{x}) \in \mathbb{R}^{\phi(N,m)}$ é um vetor linha 
+de $\phi(N,m)=\binom{N+m-1}{m}$ elementos\footnote{Para ver como calcular $\phi(N,m)$ ver o Lema \ref{theo:reglogrnr1poly:bm}.},
+com todos os monômios multivariados de grau total igual a $m$
+formados a partir dos elementos do vetor $\VECTOR{x}$,
+\begin{equation}\label{eq:proof:theo:reglogrnr1poly:3}
+\VECTOR{b}_0(\VECTOR{x})=
+\begin{bmatrix}
+1 
+\end{bmatrix},
+\quad 
+\VECTOR{b}_1(\VECTOR{x})=
+\begin{bmatrix}
+x_1 & x_2 & ... &  x_N
+\end{bmatrix},
+\quad 
+\VECTOR{b}_2(\VECTOR{x})=
+\begin{bmatrix}
+x_1^2 & x_2^2 & ... &  x_N^2 & x_1 x_2 &  ... & x_{N-1} x_N
+\end{bmatrix},
+\end{equation}
+\begin{equation}\label{eq:proof:theo:reglogrnr1poly:4}
+\VECTOR{b}_m(\VECTOR{x})=
+{\bigcup\limits_{\alpha_1+\alpha_2+...+\alpha_N=m}^{\rightarrow}}{x_1^{\alpha_1} x_2^{\alpha_2} ... x_N^{\alpha_N}};
+\end{equation}
+em geral a ordem dos elementos (monômios) no vetor $\VECTOR{a}_M(\VECTOR{x})$ 
+é arbitrário\footnote{Inclusive poderia se escolher só um número reduzido de monômios;
+por exemplo, poderíamos escolher $\VECTOR{a}_3(\VECTOR{x})=[1\quad x_1\quad x_1 x_2^2\quad x_1^2]$,
+consequentemente $\VECTOR{c}=[c_1\quad c_2\quad c_3\quad c_4]$,
+de modo que $h_{\VECTOR{c}}(\VECTOR{x})=c_1 +c_2 x_1+c_3 x_1 x_2^2+c_4 x_1^2$.}, 
+pois uma modificação na ordem só leva a uma modificação na ordem dos elementos no vetor $\VECTOR{c}$.
+Assim, podemos definir o erro quadrático $e(\VECTOR{c})$ como
+\begin{equation}\label{eq:proof:theo:reglogrnr1poly:5}
+%e(\VECTOR{c}) = ||h(\VECTOR{x})-\VECTOR{y}||_{\MATRIX{W}}^2 \equiv \sum_{n=1}^{L} w_l||h(x_l)-y_l||^2,
+e(\VECTOR{c}) =  \sum_{n=1}^{L} w_l||h_{\VECTOR{c}}(\VECTOR{x}_l)-logit(y_l)||^2,
+\end{equation}
+proveniente de avaliar o erro quadrático de $L$ amostras $\VECTOR{x}_l \in \mathbb{R}^{N}$ que pertencem a dois grupos, 
+onde cada amostra $\VECTOR{x}_l$ tem uma etiqueta de grupo $y_l\in \{A,1-A\}$, 
+ $0<A\ll 0.5$ é escolhido por nós, 
+e os erros quadráticos são ponderados com os pesos $w_l \in \mathbb{R}_+$.
+Assim, podemos rescrever a Eq. (\ref{eq:proof:theo:reglogrnr1poly:5}) como,
+\begin{equation}\label{eq:proof:theo:reglogrnr1poly:6}
+e(\VECTOR{c}) \equiv ||\MATRIX{A}\VECTOR{c}-\VECTOR{z}||_{\MATRIX{W}}^2 
+\end{equation}
+onde
+\begin{equation}\label{eq:proof:reglogrnr1poly:7}
+\MATRIX{A}=\begin{bmatrix}
+\VECTOR{a}_M(\VECTOR{x}_1)\\
+\VECTOR{a}_M(\VECTOR{x}_2)\\
+\vdots\\
+\VECTOR{a}_M(\VECTOR{x}_l)\\
+\vdots\\
+\VECTOR{a}_M(\VECTOR{x}_L)\\
+\end{bmatrix},
+\quad
+\VECTOR{z}=
+\begin{bmatrix}
+logit(y_1)  \\
+logit(y_2)  \\
+\vdots  \\
+logit(y_l)  \\
+\vdots \\
+logit(y_L) \\
+\end{bmatrix},
+\quad
+\MATRIX{W}=
+\funcdiag \left(
+\begin{bmatrix}
+w_1  \\
+w_2  \\
+\vdots  \\
+w_l  \\
+\vdots \\
+w_L \\
+\end{bmatrix} \right).
+\end{equation}
+
+
+Usando o Teorema \ref{theo:minAxbCAxb}, sabemos que o vetor $\VECTOR{c}=\VECTOR{\hat{c}}$,
+que minimiza as Eqs. (\ref{eq:proof:theo:reglogrnr1poly:5}) e (\ref{eq:proof:theo:reglogrnr1poly:6}) pode ser achado usando 
+\begin{equation}\label{eq:proof:theo:reglogrnr1poly:8}
+\VECTOR{\hat{c}}=[\MATRIX{A}^{\transpose}\MATRIX{W}\MATRIX{A}]^{-1}\MATRIX{A}^{\transpose}\MATRIX{W}\VECTOR{z}.
+\end{equation}
+\end{myproofT}
+

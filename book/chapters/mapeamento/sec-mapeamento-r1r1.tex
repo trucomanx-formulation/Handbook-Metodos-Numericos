@@ -1,14 +1,16 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{ Mapeamento com um polinômio
+\section{Regressão polinomial com
 $h_{\VECTOR{c}}(x):~\mathbb{R} \rightarrow \mathbb{R}$}
+\label{sec:theo:maphxr1r1}
+
 \index{Problema inverso: Aplicado!Linear}
 \index{Regressão não linear!Simples!Polinômio $h_{\VECTOR{c}}(x):~\mathbb{R} \rightarrow \mathbb{R}$}
-\index{Mapeamento!Polinômio $h_{\VECTOR{c}}(x):~\mathbb{R} \rightarrow \mathbb{R}$}
+\index{Regressão!Polinômio $h_{\VECTOR{c}}(x):~\mathbb{R} \rightarrow \mathbb{R}$}
 
 
-\begin{theorem}[Mapeamento usando um polinômio 
+\begin{theorem}[Regressão usando um polinômio 
 $h_{\VECTOR{c}}(x)$ de grau $M$:]
 \label{theo:maphxr1r1}
 ~\\
@@ -42,12 +44,12 @@ pode ser achado\footnote{A demostração pode ser vista na Prova \ref{proof:theo
 onde a matriz $\MATRIX{A}$ é definida como,
 \begin{equation}\label{eq:maphxr1r1:4}
 \MATRIX{A}\equiv \MATRIX{A}(\VECTOR{x})=\begin{bmatrix}
-\VECTOR{a}(x_1)\\
-\VECTOR{a}(x_2)\\
+\VECTOR{a}_M(x_1)\\
+\VECTOR{a}_M(x_2)\\
 \vdots\\
-\VECTOR{a}(x_N)\\
+\VECTOR{a}_M(x_N)\\
 \end{bmatrix}, \qquad
-\VECTOR{a}(x)=\begin{bmatrix}
+\VECTOR{a}_M(x)=\begin{bmatrix}
 1& x& x^2& \hdots & x^m& \hdots& x^M
 \end{bmatrix}
 \end{equation}
@@ -69,7 +71,7 @@ deve existir inversa para a matriz $\MATRIX{A}^{\transpose}\MATRIX{W}\MATRIX{A}$
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Exemplos de mapeamento com um polinômio
+\subsection{Exemplos de regressão com um polinômio
 $h_{\VECTOR{c}}(x):~\mathbb{R} \rightarrow \mathbb{R}$ de gau $M$ }
 
 \begin{example}\label{ex:theo:maphxr1r1}

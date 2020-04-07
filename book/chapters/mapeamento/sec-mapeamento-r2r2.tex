@@ -1,19 +1,20 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{ Mapeamento com um polinômio $\VECTOR{h}(x,y):~\mathbb{R}^2 \rightarrow \mathbb{R}^2$}
+\section{Regressão polinomial múltipla com $\VECTOR{h}(x,y):~\mathbb{R}^2 \rightarrow \mathbb{R}^2$}
+\label{sec:theo:maphxr2r2}
 
 \index{Problema inverso: Aplicado!Linear}
 \index{Regressão não linear!Múltipla!Polinômio $\VECTOR{h}(x,y):~\mathbb{R}^2 \rightarrow \mathbb{R}^2$}
-\index{Mapeamento!Polinômio $\VECTOR{h}(x,y):~\mathbb{R}^2 \rightarrow \mathbb{R}^2$}
+\index{Regressão!Polinômio $\VECTOR{h}(x,y):~\mathbb{R}^2 \rightarrow \mathbb{R}^2$}
 
-\begin{theorem}[Mapeamento usando um polinômio 
+\begin{theorem}[Regressão usando um polinômio 
 $\VECTOR{f}(x,y):$ $\mathbb{R}^2 \rightarrow \mathbb{R}^2$, de grau $M$:]
 \label{theo:maphxr2r2}
 ~\\
 \begin{minipage}{0.45\textwidth}
 \centering
-\includegraphics[width=0.95\linewidth]{chapters/mapeamento/mapeamento.eps} 
+\includegraphics[width=0.85\linewidth]{chapters/mapeamento/mapeamento.eps} 
 \end{minipage}
 \begin{minipage}{0.55\textwidth}
 Dados,
@@ -39,9 +40,10 @@ h_{\VECTOR{d}}(x,y)
 \end{bmatrix}
 \end{equation}
 \end{minipage}
+\noindent
 \begin{equation}\label{eq:maphxr2r2:1a}
 h_{\VECTOR{c}}(x,y) = \sum \limits_{m=0}^{M} \sum \limits_{l=0}^{m}c_{\left\{ \frac{m(m+1)}{2}+l+1\right\}}~x^{m-l}y^{l}, 
-\qquad
+~~~
 h_{\VECTOR{d}}(x,y) = \sum \limits_{m=0}^{M} \sum \limits_{l=0}^{m}d_{\left\{ \frac{m(m+1)}{2}+l+1\right\}}~x^{m-l}y^{l}; 
 \end{equation}
 %\begin{equation}\label{eq:maphxr2r2:1b}
@@ -118,10 +120,10 @@ deve existir inversa para a matriz $\MATRIX{A}^{\transpose}\MATRIX{W}\MATRIX{A}$
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Exemplos de mapeamento com um polinômio
+\subsection{Exemplos de regressão com um polinômio
 $\VECTOR{h}(x,y):~\mathbb{R}^2 \rightarrow \mathbb{R}^2$ de gau $M$}
 
-\begin{example}[ Mapeamento do polinômio 
+\begin{example}[ Regressão do polinômio 
 $\VECTOR{h}(x,y)$ de grau $M=3$, para $N=15$ amostras:]\label{ex:theo:mapeamentor2r2}
 Dadas $N=15$ amostras que representam pontos no plano $XY$ e seus correspondentes 
 no plano $UV$, como pode ser visto na Tabela \ref{table:ex:mapeamentor2r2},
@@ -187,7 +189,7 @@ e o vetor $\VECTOR{\hat{d}}=$
    0.55825 &   0.39762 & ~ & ~ \\ \hline
 \end{tabular}
 \end{center}
-Estes provocam um erro no mapeamento 
+Estes provocam um erro na regressão 
 de $e_{\VECTOR{c}}(\VECTOR{c})=5.6808e-05$ e $e_{\VECTOR{d}}(\VECTOR{d})=1.4242e-05$, respetivamente.
 Podem ser vistos gráficos das superfícies $h_{\VECTOR{c}}(x,y)$ e $h_{\VECTOR{d}}(x,y)$ 
 do Exemplo \ref{ex:theo:mapeamentor2r2} na Figura \ref{fig:theo:maphxr2r1:xnynunvn}.

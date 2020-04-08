@@ -46,6 +46,8 @@
 
 %----------------------------------------------------------------------------------------
 %	GRAYSCALE EM TODAS AS FIGURAS
+% Habilita o modo impressão em tons de cinza, não todo logicmente
+% Mas a maioria das coisas, as figuras não, isto é para mandar à editora em GRAY SCALE
 %----------------------------------------------------------------------------------------
 %\def\EnableGrayScale{1}
 
@@ -70,10 +72,11 @@
 %----------------------------------------------------------------------------------------
 %	DATOS PATROCINIO
 %----------------------------------------------------------------------------------------
-\newcommand{\ImprimirLinkHomePageLivro}[0]{\url{https://trucomanx.github.io/metodos.numericos}}
-\newcommand{\ImprimirLinkVerificarLivro}[0]{\url{https://trucomanx.github.io/metodos.numericos/verificar.html}}
-\newcommand{\ImprimirLinkCompraLivroImpresso}[0]{\url{https://trucomanx.github.io/metodos.numericos/comprar-impresso.html}}
-\newcommand{\ImprimirLinkCompraLivroDigital}[0]{\url{https://trucomanx.github.io/metodos.numericos/comprar-digital.html}}
+\newcommand{\ImprimirLinkGitHub}[0]{https://localhost}%{https://trucomanx.github.io}
+\newcommand{\ImprimirLinkHomePageLivro}[0]{\url{\ImprimirLinkGitHub/metodos.numericos}}
+\newcommand{\ImprimirLinkVerificarLivro}[0]{\url{\ImprimirLinkGitHub/metodos.numericos/verificar.html}}
+\newcommand{\ImprimirLinkCompraLivroImpresso}[0]{\url{\ImprimirLinkGitHub/metodos.numericos/comprar-impresso.html}}
+\newcommand{\ImprimirLinkCompraLivroDigital}[0]{\url{\ImprimirLinkGitHub/metodos.numericos/comprar-digital.html}}
 \newcommand{\ImprimirLinkMetodoPagoA}[0]{\url{https://apoia.se/metodosnumericos}}
 %----------------------------------------------------------------------------------------
 \newcommand{\ImprimirEmail}[0]{\href{mailto:fernando.pujaico.rivera@gmail.com}{fernando.pujaico.rivera@gmail.com}}
@@ -142,8 +145,7 @@
 
 
 %----------------------------------------------------------------------------------------
-% Habilita o modo impressão em tons de cinza, não todo logicmente
-% Mas a maioria das coisas, as figuras não, isto é para mandar à editora em GRAY SCALE
+% Força grayscale no livro
 %----------------------------------------------------------------------------------------
 %\ifx\EnableGrayScale\undefined
 %    ~
@@ -181,8 +183,15 @@
 \renewcommand*{\bibfont}{\footnotesize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+%----------------------------------------------------------------------------------------
+% Agrega marca de agua a cada pagina do livro
+%----------------------------------------------------------------------------------------
+\usepackage{draftwatermark}
+\SetWatermarkText{Preview-Preview}
+\SetWatermarkColor[gray]{0.8}
+\SetWatermarkScale{1}
 
 \begin{document}
 
@@ -252,9 +261,6 @@
 %----------------------------------------------------------------------------------------
 \part{Referências}
 
-%\chapter*{Bibliografia}
-%\addcontentsline{toc}{chapter}{\textcolor{colorsystemdefault}{Bibliography}}
-%\printbibliography[heading=bibempty]
 
 \chapterimage{chapter_livro.pdf}
 

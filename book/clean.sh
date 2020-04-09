@@ -16,6 +16,7 @@ rm -f */*/*.aux
 rm -f */*.backup
 rm -f */*.aux 
 
+rm -f *.xwm
 rm -f *.mx1
 rm -f *.idx
 rm -f *.ind

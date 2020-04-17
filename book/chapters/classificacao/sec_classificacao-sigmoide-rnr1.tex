@@ -86,8 +86,8 @@ w_L \\
 \begin{itemize}
 \item Dado que a função de classificação $f_{\VECTOR{c}}(\VECTOR{x})$ vai entre $0$ e $1$,
 podemos reinterpretar este valor como se fosse uma probabilidade;
-neste caso, $f_{\VECTOR{c}}(\VECTOR{x})$ representa a probabilidade de que um ponto $\VECTOR{x}$
-pertença ao grupo $\bigcirc$.
+neste caso, $f_{\VECTOR{c}}(\VECTOR{x}_l)$ representa, $P(y_l=\bigcirc|\VECTOR{x}_l)$, 
+a probabilidade de que $y_l=\bigcirc$ dado que tivemos como entrada o ponto $\VECTOR{x}_l$.
 \item O limiar de classificação na função $f_{\VECTOR{c}}(\VECTOR{x})$ está no hiperplano $h_{\VECTOR{c}}(\VECTOR{x})=0$,
 provocando nestos pontos um $f_{\VECTOR{c}}(\VECTOR{x})=0.5$.
 \end{itemize}
@@ -153,7 +153,7 @@ com limiares de classificação no hiperplano $-5.21014  +0.95532 x_1+ 0.84509 x
         \caption{Gráfico da classificação usando $y_l \in \{0.001,~ 0.999\}$.}
         \label{fig:theo:reglogrnr1:xn:s2}
     \end{subfigure}
-    \caption{Classificação usando a função $f_{\VECTOR{c}}(\VECTOR{x})$.}
+    \caption{Classificação usando a função $f_{\VECTOR{\hat{c}}}(\VECTOR{x})$.}
     \label{fig:theo:reglogrnr1:xn}
 \end{figure}
 

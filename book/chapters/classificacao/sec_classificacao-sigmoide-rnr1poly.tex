@@ -114,8 +114,8 @@ sendo que $\alpha_n \in \mathbb{N}$.
 \begin{itemize}
 \item Dado que a função de classificação $f_{\VECTOR{c}}(\VECTOR{x})$ vai entre $0$ e $1$,
 podemos reinterpretar este valor como se fosse uma probabilidade;
-neste caso, $f_{\VECTOR{c}}(\VECTOR{x})$ representa a probabilidade de que um ponto $\VECTOR{x}$
-pertença ao grupo $\bigcirc$.
+neste caso, $f_{\VECTOR{c}}(\VECTOR{x}_l)$ representa, $P(y_l=\bigcirc|\VECTOR{x}_l)$, 
+a probabilidade de que $y_l=\bigcirc$ dado que tivemos como entrada o ponto $\VECTOR{x}_l$.
 \item O limiar de classificação na função $f_{\VECTOR{c}}(\VECTOR{x})$ está na superfície $h_{\VECTOR{c}}(\VECTOR{x})=0$.
 %provocando nestos pontos um $f_{\VECTOR{c}}(\VECTOR{x})=0.5$.
 \item A ordem dos elementos do vetor $\VECTOR{a}_M(\VECTOR{x})$ podem ser alterados,
@@ -265,7 +265,7 @@ f_{\VECTOR{\hat{c}}}(\VECTOR{x})= \frac{1}{1+e^{-h_{\VECTOR{\hat{c}}}(\VECTOR{x}
 \begin{array}{lll}
 h_{\VECTOR{\hat{c}}}(\VECTOR{x}) & = & -11.71919\\
                          ~ & ~ & +2.49938 x_1 +2.49938 x_2 \\
-                         ~ & ~ & -0.30282 x_1^2 -0.30282  x_2^2 + 0.50579 x_1 x_2.\\
+                         ~ & ~ & -0.30282 x_1^2 -0.30282  x_2^2 + 0.50579 x_1 x_2.
 \end{array}
 \end{equation}
 É interessante ressaltar que para um valor $A=0.1$ a pendente na mudança de classificação é pouco definida,
@@ -286,7 +286,7 @@ com limiares de classificação na superfície $h_{\VECTOR{\hat{c}}}(\VECTOR{x})
         \caption{Gráfico da classificação usando $y_l \in \{0.001,~ 0.999\}$.}
         \label{fig:theo:reglogrnr1poly:xn:s2}
     \end{subfigure}
-    \caption{Classificação usando a função $f_{\VECTOR{c}}(\VECTOR{x})$.}
+    \caption{Classificação usando a função $f_{\VECTOR{\hat{c}}}(\VECTOR{x})$.}
     \label{fig:theo:reglogrnr1poly:xn}
 \end{figure}
 
@@ -354,8 +354,7 @@ usamos as Eqs. (\ref{eq:b0b1b2}) e  (\ref{eq:reglogrnr1poly:2}) onde escolhemos 
 $0.001$ para $\bigtriangleup$ e $0.999$ para $\bigcirc$, 
 obtendo um vetor 
 \begin{equation}
-\VECTOR{\hat{c}}=[-81.5028\quad 46.6937\quad 5.7968\quad -7.9601\quad -2.8062\quad 3.2267]^{\transpose}.
-%                     
+\VECTOR{\hat{c}}=[-81.5028\quad 46.6937\quad 5.7968\quad -7.9601\quad -2.8062\quad 3.2267]^{\transpose}.             
 \end{equation}
 Assim, podemos representar a função $\left.f_{\VECTOR{c}}(x)\right|_{\VECTOR{c}=\VECTOR{\hat{c}}}$
  que classifica os dados $\VECTOR{x}_l$, 
@@ -366,18 +365,27 @@ f_{\VECTOR{\hat{c}}}(\VECTOR{x})= \frac{1}{1+e^{-h_{\VECTOR{\hat{c}}}(\VECTOR{x}
 \begin{array}{lll}
 h_{\VECTOR{\hat{c}}}(\VECTOR{x}) & = & -81.5028\\
                          ~ & ~ & +46.6937 x_1 +5.7968 x_2 \\
-                         ~ & ~ & -7.9601 x_1^2 -2.8062  x_2^2 + 3.2267 x_1 x_2.\\
+                         ~ & ~ & -7.9601 x_1^2 -2.8062  x_2^2 + 3.2267 x_1 x_2.
 \end{array}
 \end{equation}
 É interessante ressaltar que $h_{\VECTOR{\hat{c}}}(\VECTOR{x})=0$ ao ser um polinômio multivariante de grau 2,
 pode tomar varias formas como uma elipse, uma parábola ou uma hipérbole;
 neste caso a seção cônica que classifica bem os dados é uma elipse.
 \end{SolutionT}
-
 \begin{figure}[!h]
+    \begin{subfigure}[t]{0.45\textwidth}
         \centering
-        \includegraphics[width=0.5\textwidth]{chapters/classificacao/mfiles/reglogrnr1poly2/ex1s2-reglogrnr1poly.eps}
-    %\caption{Classificação usando a função $f_{\VECTOR{c}}(\VECTOR{x})$.}
+        \includegraphics[width=0.95\textwidth]{chapters/classificacao/mfiles/reglogrnr1poly2/ex2s2-reglogrnr1poly.eps}
         \caption{Gráfico da classificação usando $y_l \in \{0.001,~ 0.999\}$.}
-        \label{fig:theo:reglogrnr1poly:xn:s3}
+        \label{fig:theo:reglogrnr1poly:xn:s3a}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.96\textwidth]{chapters/classificacao/mfiles/reglogrnr1poly2/ex2s2-reglogrnr1polyhx.eps}
+        \caption{Gráfico da superfície $h_{\VECTOR{\hat{c}}}(\VECTOR{x})$.}
+        \label{fig:theo:reglogrnr1poly:xn:s3b}
+    \end{subfigure}
+    \caption{Classificação usando a função $f_{\VECTOR{\hat{c}}}(\VECTOR{x})$.}
+    \label{fig:theo:reglogrnr1poly:xn:s3}
 \end{figure}

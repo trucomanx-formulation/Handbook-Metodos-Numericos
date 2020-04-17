@@ -82,8 +82,8 @@ logit(y_L) \\
 \begin{itemize}
 \item Dado que a função de classificação $f_{\VECTOR{c}}(x)$ vai entre $0$ e $1$,
 podemos reinterpretar este valor como se fosse uma probabilidade;
-neste caso, $f_{\VECTOR{c}}(x)$ representa a probabilidade de que um valor $x$
-pertença ao grupo $\bigcirc$.
+neste caso, $f_{\VECTOR{c}}(x_l)$ representa, $P(y_l=\bigcirc|x_l)$, 
+a probabilidade de que $y_l=\bigcirc$ dado que tivemos como entrada o valor $x_l$.
 \item O limiar da classificação de $f_{\VECTOR{c}}(x)$ está no hiperplano $c_1  +c_2x=0$,
 provocando neste ponto um $f_{\VECTOR{c}}(x)=0.5$.
 \end{itemize}
@@ -147,7 +147,7 @@ com limiar de classificação em $2.27$.
         \caption{Gráfico da classificação usando $y_l \in \{0.001,~ 0.999\}$.}
         \label{fig:theo:reglogr1r1:xn:s2}
     \end{subfigure}
-    \caption{Classificação usando a função $f_{\VECTOR{c}}(x)$.}
+    \caption{Classificação usando a função $f_{\VECTOR{\hat{c}}}(x)$.}
     \label{fig:theo:reglogr1r1:xn}
 \end{figure}
 

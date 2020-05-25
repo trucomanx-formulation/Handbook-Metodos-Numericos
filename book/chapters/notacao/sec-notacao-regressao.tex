@@ -122,3 +122,111 @@ como na função logística, podemos ver exemplos de regressão não linear múl
 \end{itemize}
 \end{example}
 \end{itemize}
+
+\subsection{Linearização de curvas de ajuste não lineares}
+
+Os problemas de \textbf{regressão não linear}
+em alguns casos podem ser modificados para ter a forma de um 
+problema de \textbf{regressão linear} (simples ou múltipla);
+esta caraterística é interessante, pois geralmente
+os problemas não lineares são resolvidos com métodos iterativos,
+que podem ou não convergir na solução.
+Em contrapartida, em problemas de regressão linear,
+os métodos disponíveis nos brindam uma resposta mediante um procedimento 
+predeterminado, 
+o que facilita o planejamento de um procedimento de solução e favorece o tempo de computo.
+
+Assim, a continuação mostramos 
+como problemas não lineares podem ser 
+adaptadas a um de regressão lineal (simples):
+\begin{example}%[Curva de ajuste $y=c_1x^{c_2}$:] 
+Usando 
+$\hat{y}=ln(y)$,  
+$\hat{x}=ln(x)$, 
+$\hat{c}_1=ln(c_1)$, e
+$\hat{c}_2=c_2$, obtemos %$\hat{y}=\hat{c}_1+\hat{c}_2 \hat{x}$.
+\begin{equation}
+y=c_1x^{c_2}
+\quad \rightarrow \quad 
+\hat{y}=\hat{c}_1+\hat{c}_2 \hat{x}.
+\end{equation}
+\vspace{-2pt}
+\end{example}
+
+\begin{example}%[Curva de ajuste $y=c_1 {c_2}^x$:]
+Usando 
+$\hat{y}=ln(y)$,  
+$\hat{x}=x$, 
+$\hat{c}_1=ln(c_1)$, e
+$\hat{c}_2=ln(c_2)$, obtemos %$\hat{y}=\hat{c}_1+\hat{c}_2 \hat{x}$.
+\begin{equation}
+y=c_1 {c_2}^x
+\quad \rightarrow \quad 
+\hat{y}=\hat{c}_1+\hat{c}_2 \hat{x}.
+\end{equation}
+\vspace{-2pt}
+\end{example}
+
+\begin{example}%[Curva de ajuste $y=\left(c_1 + {c_2} x \right)^{-1}$:]
+Usando 
+$\hat{y}=\frac{1}{y}$,  
+$\hat{x}=x$, 
+$\hat{c}_1=c_1$, e 
+$\hat{c}_2=c_2$, obtemos %$\hat{y}=\hat{c}_1+\hat{c}_2 \hat{x}$.
+\begin{equation}
+y=\left(c_1 + {c_2} x \right)^{-1}
+\quad \rightarrow \quad 
+\hat{y}=\hat{c}_1+\hat{c}_2 \hat{x}.
+\end{equation}
+\vspace{-2pt}
+\end{example}
+
+\begin{example}%[Curva de ajuste $y=c_1 x \left(c_2 + x\right)^{-1}$:] 
+Usando 
+$\hat{y}=\frac{1}{y}$,  
+$\hat{x}=\frac{1}{x}$, 
+$\hat{c}_1=\frac{1}{c_1}$, e 
+$\hat{c}_2=\frac{c_2}{c_1}$, obtemos %$\hat{y}=\hat{c}_1+\hat{c}_2 \hat{x}$.
+\begin{equation}
+y=c_1 x \left(c_2 + x\right)^{-1}
+\quad \rightarrow \quad 
+\hat{y}=\hat{c}_1+\hat{c}_2 \hat{x}.
+\end{equation}
+\vspace{-2pt}
+\end{example}
+
+Da forma similar ao caso de regressão linear simples,
+curvas de ajuste não lineares podem ser adaptadas a um problema de regressão lineal múltipla:
+\begin{example}%[Curva de ajuste $y=c_1 +c_2 x + c_3 x^2 + c_4 x^3$:]
+Usando 
+$\hat{y}=y$,  
+$\hat{x}_1=x$,
+$\hat{x}_2=x^2$,
+$\hat{x}_3=x^3$, 
+$\hat{c}_1=c_1$, 
+$\hat{c}_2=c_2$, 
+$\hat{c}_3=c_3$, e 
+$\hat{c}_4=c_4$, obtemos %$\hat{y}=\hat{c}_1+\hat{c}_2 \hat{x}_1+\hat{c}_2 \hat{x}_2+\hat{c}_3 \hat{x}_3$.
+\begin{equation}
+y=c_1 +c_2 x + c_3 x^2 + c_4 x^3
+\quad \rightarrow \quad 
+\hat{y}=\hat{c}_1+\hat{c}_2 \hat{x}_1+\hat{c}_2 \hat{x}_2+\hat{c}_3 \hat{x}_3.
+\end{equation}
+\vspace{-2pt}
+\end{example}
+
+\begin{example}%[Curva de ajuste $y=c_1 +c_2 \sqrt{x} + c_3 sin(x)$:]
+Usando 
+$\hat{y}=y$,  
+$\hat{x}_1=\sqrt{x}$,
+$\hat{x}_2=sin(x)$, 
+$\hat{c}_1=c_1$, 
+$\hat{c}_2=c_2$, e 
+$\hat{c}_3=c_3$, obtemos %$\hat{y}=\hat{c}_1+\hat{c}_2 \hat{x}_1+\hat{c}_2 \hat{x}_2$.
+\begin{equation}
+y=c_1 +c_2 \sqrt{x} + c_3 sin(x)
+\quad \rightarrow \quad 
+\hat{y}=\hat{c}_1+\hat{c}_2 \hat{x}_1+\hat{c}_2 \hat{x}_2.
+\end{equation}
+\vspace{-2pt}
+\end{example}

@@ -1,0 +1,237 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{ Matrizes hermitianas}
+
+\index{Matriz!Hermitiana}
+
+\begin{definition}[Matriz hermitiana (matriz autoadjunta):]\label{def:hermitianamatrix0}
+Dada, $\MATRIX{A} \in \mathbb{C}^{N \times N}$ uma matriz quadrada. 
+\begin{itemize}
+\item $\MATRIX{A}$ é definida como uma matriz hermitiana quando se cumpre que 
+\cite[pp. 12]{pillai2008space} \cite[pp. 411]{korn2013mathematical}, 
+\begin{equation}
+\MATRIX{A} = \MATRIX{A}^{\ast} \equiv \overline{\MATRIX{A}}^{\transpose}.
+\end{equation}
+\item Outras notações para descrever as matrizes hermitianas são 
+\begin{equation}
+\MATRIX{A}^{\ast} \equiv \MATRIX{A}^{\mathsf{H}}\equiv \MATRIX{A}^{\dagger} 
+\end{equation}
+\end{itemize}
+\end{definition}
+
+\begin{tcbattention}
+\begin{itemize}
+%\item As matrizes hermitianas podem ser entendidas como uma extensão complexa das 
+%\hyperref[def:symmetricmatrix0]{\textbf{matrizes simétricas}} reais.
+\item $\MATRIX{A}^{\ast}$ é chamado ``conjugado transposto'' ou ``transposto hermitiano'' de $\MATRIX{A}$.
+\end{itemize}
+\end{tcbattention}
+
+\index{Forma hermitiana}
+\begin{definition}[Forma hermitiana:]\label{def:formhermitiana0}
+Conhecida uma matriz hermitiana $\MATRIX{A}\in \mathbb{C}^{N \times N}$ e 
+o vetor $\VECTOR{x}=[x_1,~x_2,~...,~x_N]^{\transpose}\in \mathbb{C}^{N}$,
+a \textbf{forma hermitiana} $\phi\left(\VECTOR{x}\right)$ é definida como
+\cite[pp. 386]{mirsky2012introduction} \cite[pp. 339]{datta2016matrix}, 
+\begin{equation}
+\phi\left(\VECTOR{x}\right) = 
+\VECTOR{x}^{\ast}\MATRIX{A}\VECTOR{x} \equiv 
+\sum_{i=1}^{N} \sum_{j=1}^{N} a_{ij}\overline{x}_i x_j.
+\end{equation}
+\end{definition}
+
+\index{Forma hermitiana real}
+\begin{definition}[Forma hermitiana real:]\label{def:formhermitianareal0}
+Se $\MATRIX{W} \in \mathbb{R}^{N \times N}$ é uma \hyperref[def:symmetricmatrix0]{\textbf{matriz real e simétrica}}
+e $\VECTOR{x}=[x_1,~x_2,~...,~x_N]^{\transpose}\in \mathbb{C}^{N}$,
+então a \textbf{forma hermitiana real} 
+$\phi\left(\VECTOR{x}\right) = \VECTOR{x}^{\ast}\MATRIX{W}\VECTOR{x}$ \cite[pp. 386]{mirsky2012introduction}.
+\end{definition}
+
+\index{Forma quadrática}
+\begin{definition}[Forma hermitiana e forma quadrática:]\label{def:formhermitianareal1}
+Se $\MATRIX{W} \in \mathbb{R}^{N \times N}$ é uma \hyperref[def:symmetricmatrix0]{\textbf{matriz real e simétrica}},
+e  $\VECTOR{x}=[x_1,~x_2,~...,~x_N]^{\transpose}\in \mathbb{R}^{N}$,
+então a forma hermitiana se transforma na \textbf{forma quadrática} 
+$\phi\left(\VECTOR{x}\right) = \VECTOR{x}^{\transpose}\MATRIX{W}\VECTOR{x}$ \cite[pp. 386]{mirsky2012introduction}.
+\end{definition}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{theorem}[Autovalores nas matrizes hermitianas:]\label{theo:autovalorhermitianmatrix0}
+Dada uma matriz $\MATRIX{A} \in \mathbb{C}^{N \times N}$.
+\begin{itemize}
+\item Se $\MATRIX{A}$ é uma matriz hermitiana, então\footnote{A
+demostração pode ser visto na Prova \ref{proof:theo:autovalorhermitianmatrix0}.} 
+os seus autovalores são reais \cite[pp. 309]{robbin2018matrix}.
+\end{itemize}
+\end{theorem}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{theorem}[Autovetores ortogonais nas matrizes hermitianas:]\label{theo:autovetorortogonalhermitian0}
+Dada uma matriz hermitiana $\MATRIX{A} \in \mathbb{C}^{N \times N}$.
+\begin{itemize}
+\item Se dois eigenvetores de $\MATRIX{A}$ correspondem a dois autovalores distintos, então\footnote{A
+demostração pode ser visto na Prova \ref{proof:theo:autovetorortogonalhermitian0}.} 
+os autovetores são ortogonais \cite[pp. 309]{robbin2018matrix}.
+\end{itemize}
+\end{theorem}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{ Diagonalização de matrizes hermitianas}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\index{Matriz!Unitária }
+\begin{definition}[Matriz unitária:]\label{def:unitarymatrix0}
+Conhecida uma matriz $\MATRIX{A} \in \mathbb{C}^{N \times N}$
+esta é definida unitária quando \cite[pp. 80]{golub2013matrix} 
+\begin{equation}
+\MATRIX{A}^{\ast} = \MATRIX{A}^{-1}.
+\end{equation}
+\end{definition}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\index{Matriz!Normal}
+\begin{definition}[Matriz normal:]\label{def:normalmatrix0}
+Conhecida uma matriz $\MATRIX{A} \in \mathbb{C}^{N \times N}$
+esta é definida normal quando \cite[pp. 226]{hartfiel2000matrix} 
+\begin{equation}
+\MATRIX{A}^{\ast} \MATRIX{A}= \MATRIX{A} \MATRIX{A}^{\ast}.
+\end{equation}
+\end{definition}
+
+\begin{tcbattention}
+\begin{itemize}
+\item As matrizes simétricas e as matrizes hermitianas são matrizes normais.
+\end{itemize}
+\end{tcbattention}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{theorem}[Matriz unitária e matrize hermitiana:]\label{theo:unitariahermitian0}
+Dada uma matriz hermitiana $\MATRIX{A} \in \mathbb{C}^{N \times N}$.
+\begin{itemize}
+\item Se $\MATRIX{U}$ é uma \hyperref[def:unitarymatrix0]{\textbf{matriz unitária}} 
+então $\MATRIX{U}^{\ast} \MATRIX{A} \MATRIX{U}$ 
+é também uma matriz hermitiana \cite[pp. 59]{axelsson1996iterative}.
+\end{itemize}
+\end{theorem}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{theorem}[Decomposição de Schur:]\label{theo:ShurDecomposition0}
+Dada uma matriz $\MATRIX{A} \in \mathbb{C}^{N \times N}$.
+\begin{itemize}
+\item Esta é sempre  unitariamente similar a uma matriz triangular superior 
+\cite[pp. 59]{axelsson1996iterative} \cite[pp. 351]{golub2013matrix},
+\begin{equation}
+\MATRIX{U}^{-1} \MATRIX{A} \MATRIX{U} \equiv
+\MATRIX{U}^{\ast} \MATRIX{A} \MATRIX{U} =
+\begin{bmatrix}
+\lambda_1 & b_{12}    & ...    & b_{1N} \\
+0         & \lambda_2 & ...    & b_{2N} \\
+\vdots    & \vdots    & \ddots & \vdots \\
+0         & 0         & ...    & \lambda_N
+\end{bmatrix},
+\end{equation}
+sendo $\MATRIX{U}$ uma \hyperref[def:unitarymatrix0]{\textbf{matriz unitária}},
+$\lambda_n$ os autovalores de $\MATRIX{A}$, e $b_{ij}\in \mathbb{C}$.
+\end{itemize}
+\end{theorem}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{theorem}[Matriz hermitiana similar a uma matriz diagonal:]\label{theo:HermitianDDecomposition0}
+Dada uma matriz hermitiana $\MATRIX{A} \in \mathbb{C}^{N \times N}$.
+\begin{itemize}
+\item Esta é sempre\footnote{A
+demostração pode ser vista na Prova \ref{proof:theo:HermitianDDecomposition0}.}  
+unitariamente similar a uma matriz diagonal
+\cite[pp. 60]{axelsson1996iterative},
+\begin{equation}
+\MATRIX{U}^{-1} \MATRIX{A} \MATRIX{U} \equiv
+\MATRIX{U}^{\ast} \MATRIX{A} \MATRIX{U} =
+\funcdiag\left(
+\begin{bmatrix}
+\lambda_1 & \lambda_2 & ...    & \lambda_N \\
+\end{bmatrix}^{\transpose}\right),
+\end{equation}
+sendo $\MATRIX{U}$ uma \hyperref[def:unitarymatrix0]{\textbf{matriz unitária}}, e
+$\lambda_n$ os autovalores de $\MATRIX{A}$.
+\end{itemize}
+\end{theorem}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{ Matrizes hermitianas definidas positivas}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\index{Matriz!Hermitiana definida positiva}
+\begin{definition}[Matriz hermitiana definida positiva:]\label{def:hermitianapositivematrix0}
+Conhecida uma matriz hermitiana $\MATRIX{A} \in \mathbb{C}^{N \times N}$. 
+\begin{itemize}
+\item Esta é definida positiva, se para todo vetor não nulo $\VECTOR{x} \in \mathbb{C}^N$
+se cumpre que \cite[pp. 63]{ipsen2009numerical} 
+\begin{equation}
+\VECTOR{x}^{\ast} \MATRIX{A} \VECTOR{x} > 0.
+\end{equation}
+\end{itemize}
+\end{definition}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{theorem}[Matriz hermitiana definida positiva é não singular:]\label{theo:prophermitianpositivematrix2}
+Dada uma matriz hermitiana $\MATRIX{A} \in \mathbb{C}^{N \times N}$.
+\begin{itemize}
+%%%%%
+\item Se $\MATRIX{A}$ é definida positiva então\footnote{A
+demostração pode ser vista na Prova \ref{proof:theo:prophermitianpositivematrix1:c}.}  
+esta é não singular \cite[pp. 63]{ipsen2009numerical}.
+\end{itemize}
+\end{theorem}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{theorem}[Propiedades das matrizes hermitianas definidas positivas:]\label{theo:prophermitianpositivematrix0}
+Dada uma matriz hermitiana $\MATRIX{A} \in \mathbb{C}^{N \times N}$.
+\begin{itemize}
+%%%%%
+\item $\MATRIX{A}$ é definida positiva se e só se $\MATRIX{A}=\MATRIX{R}\MATRIX{R}^{\ast}$,
+de modo que\footnote{A
+demostração pode ser vista na Prova \ref{proof:theo:prophermitianpositivematrix1:a}.}  
+\begin{equation}
+\VECTOR{x}^{\ast} \MATRIX{A} \VECTOR{x} > 0 \quad \iff \quad \MATRIX{A}=\MATRIX{R}\MATRIX{R}^{\ast},
+\end{equation}
+onde $\VECTOR{x} \in \mathbb{C}^{N}$ é não nulo e
+$\MATRIX{R}$ é uma matriz não singular (invertível) \cite[pp. 309]{hartfiel2000matrix}. %\cite[pp. 420]{korn2013mathematical}.
+\end{itemize}
+\end{theorem}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{theorem}[Matriz hermitiana 
+$\MATRIX{B}^{\ast}\MATRIX{A}\MATRIX{B}$ definida positiva:]\label{theo:prophermitianpositivematrix1}
+Dada uma matriz hermitiana $\MATRIX{A} \in \mathbb{C}^{N \times N}$.
+\begin{itemize}
+%%%%%
+\item Se $\MATRIX{A}$ é definida positiva e 
+$\MATRIX{B} \in \mathbb{C}^{N \times N}$ é não singular, então\footnote{A
+demostração pode ser vista na Prova \ref{proof:theo:prophermitianpositivematrix1:b}.} 
+$\MATRIX{B}^{\ast}\MATRIX{A}\MATRIX{B}$ é também uma matriz definida positiva \cite[pp. 64]{ipsen2009numerical}.
+\end{itemize}
+\end{theorem}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{theorem}[Autovalores positivos e matrizes hermitianas definidas positivas:]\label{theo:hermitianpositivematrix1}
+Conhecida uma matriz hermitiana $\MATRIX{A} \in \mathbb{C}^{N \times N}$, com  autovalores $\lambda_n$,
+%e autovetores $\VECTOR{e}_n$, 
+$\forall n \in \{1, 2, ..., N\}$.
+\begin{itemize}
+\item $\MATRIX{A}$ é uma matriz definida positiva se e só se\footnote{A
+demostração pode ser vista na Prova \ref{proof:theo:hermitianpositivematrix1}.}  
+todos os autovalores são positivos \cite[pp. 309]{hartfiel2000matrix},
+\begin{equation}
+\VECTOR{x}^{\ast} \MATRIX{A} \VECTOR{x} > 0 \quad \iff \quad \lambda_n > 0,
+\end{equation}
+onde $\VECTOR{x} \in \mathbb{C}^{N}$ é não nulo.
+\end{itemize}
+\end{theorem}

@@ -23,46 +23,27 @@ e separáveis por um hiperplano.
 Se desejamos criar um classificador mediante 
 a função  $f_{\VECTOR{c}}:\mathbb{R}^{N} \rightarrow \mathbb{R}$,
 com domínio $\VECTOR{x} \in \mathbb{R}^{N}$, contradomínio $y \in \mathbb{R}$ e 
-parâmetros agrupados no vetor $\VECTOR{c}=[c_1~ c_2~ ...~ c_{{(2 K+1)}^N}]^{\transpose}\in \mathbb{R}^{2 K+1}$,
+parâmetros agrupados no vetor $\VECTOR{c}=[c_1~ c_2~ ...~ c_{2M}]^{\transpose}\in \mathbb{R}^{2 M}$, 
+$M={(2 K+1)}^N$,
 como definido na Eq. (\ref{eq:reglogrnr1fourier:1}),
 \begin{equation}\label{eq:reglogrnr1fourier:1}
 y\equiv f_{\VECTOR{c}}(\VECTOR{x})= \frac{1}{1+e^{-h_{\VECTOR{c}}(\VECTOR{x}) }},
 \end{equation}
 \end{minipage}
-\begin{comment}
-\begin{equation}
-\begin{array}{lll}
- h_{\VECTOR{c}}(x) & = & 
-        +\sum_{\VECTOR{k}=\VECTOR{0}}^{K} c_{2k} sin\left(k_1 \frac{2 \pi x_1}{L_1}\right)sin\left(k_2 \frac{2 \pi x_2}{L_2}\right) \\
-~ & ~ & +\sum_{\VECTOR{k}=\VECTOR{0}}^{K} c_{2k} sin\left(k_1 \frac{2 \pi x_1}{L_1}\right)cos\left(k_2 \frac{2 \pi x_2}{L_2}\right) \\
-~ & ~ & +\sum_{\VECTOR{k}=\VECTOR{0}}^{K} c_{2k} cos\left(k_1 \frac{2 \pi x_1}{L_1}\right)sin\left(k_2 \frac{2 \pi x_2}{L_2}\right) \\
-~ & ~ & +\sum_{\VECTOR{k}=\VECTOR{0}}^{K} c_{2k} cos\left(k_1 \frac{2 \pi x_1}{L_1}\right)cos\left(k_2 \frac{2 \pi x_2}{L_2}\right).
-\end{array}
-\end{equation}
-\end{comment}
 \begin{equation}
  h_{\VECTOR{c}}(\VECTOR{x}) = 
-\sum_{\VECTOR{k}=[-K,~ ...,-K]}^{[K,~ ...,K]}
-c_{\VECTOR{k}}  e^{\mathbf{i}\VECTOR{k}^{\transpose}\MATRIX{W}_{\VECTOR{l}}\VECTOR{x}},
-\quad
-\MATRIX{W}_{\VECTOR{L}}=
-\funcdiag\left(
-\begin{bmatrix}
-\frac{2 \pi}{l_1} &
-\frac{2 \pi}{l_2} &
-\dots &
-\frac{2 \pi}{l_n} &
-\dots &
-\frac{2 \pi}{l_N}
-\end{bmatrix}^{\transpose}
-\right) 
+\sum_{\VECTOR{k}=\VECTOR{k}_1}^{\VECTOR{k}_M}
+a_{\VECTOR{k}} cos\left(\VECTOR{k}^{\transpose}\MATRIX{W}_{L}\VECTOR{x}\right)+
+b_{\VECTOR{k}} sin\left(\VECTOR{k}^{\transpose}\MATRIX{W}_{L}\VECTOR{x}\right),
 \end{equation}
 
-\textcolor{red}{Fingerprint a detectar surcos}\\
-ou seu equivalente: $logit(y)=h_{\VECTOR{c}}(\VECTOR{x})$, onde\footnote{Tem 
+
+ou seu equivalente: $logit(y)=h_{\VECTOR{c}}(\VECTOR{x})$, onde a matriz
+$\MATRIX{W}_{L}=\funcdiag\left(\left[\frac{2 \pi}{L_1},~\frac{2 \pi}{L_2},~\dots,~\frac{2 \pi}{L_N}\right]^{\transpose}\right)$
+e\footnote{Tem 
 que ser maior para evitar erros de $f_{\VECTOR{c}}(\VECTOR{x})$ nos extremos. 
-Ex.: $L_x =1.1 || max(x_i)-min(x_i)||$.}
- $L_x > || max(x_i)-min(x_i)||$.
+Ex.: $L_n =1.1 || max(x_n)-min(x_n)||$.}
+ $L_n > || max(x_n)-min(x_n)||$.
 
 Podemos atribuir a cada valor $\VECTOR{x}_l$ uma etiqueta $y_l\in \{A,1-A\}$, 
 onde $0<A\ll 0.5$ é escolhido por nós,
@@ -79,20 +60,20 @@ com
 \quad
 \MATRIX{A}=
 \begin{bmatrix}
-\VECTOR{a}_{K}(\VECTOR{x}_1) \\
-\VECTOR{a}_{K}(\VECTOR{x}_2) \\
+\VECTOR{a}_{K}(\VECTOR{x}_1) & \VECTOR{b}_{K}(\VECTOR{x}_1) \\
+\VECTOR{a}_{K}(\VECTOR{x}_2) & \VECTOR{b}_{K}(\VECTOR{x}_2) \\
 \vdots \\
-\VECTOR{a}_{K}(\VECTOR{x}_l) \\
+\VECTOR{a}_{K}(\VECTOR{x}_l) & \VECTOR{b}_{K}(\VECTOR{x}_l) \\
 \vdots \\
-\VECTOR{a}_{K}(\VECTOR{x}_L) \\
+\VECTOR{a}_{K}(\VECTOR{x}_L) & \VECTOR{b}_{K}(\VECTOR{x}_L) \\
 \end{bmatrix},
 \quad
 \MATRIX{Q}=\funcdiag \left(
 \begin{bmatrix}
 q_1  \\
 q_2  \\
-\vdots  \\
-q_l  \\
+%\vdots  \\
+%q_l  \\
 \vdots \\
 q_L \\
 \end{bmatrix}
@@ -102,8 +83,8 @@ q_L \\
 \begin{bmatrix}
 logit(y_1)  \\
 logit(y_2)  \\
-\vdots  \\
-logit(y_l)  \\
+%\vdots  \\
+%logit(y_l)  \\
 \vdots \\
 logit(y_L) \\
 \end{bmatrix},
@@ -111,12 +92,19 @@ logit(y_L) \\
 \begin{equation}
 \VECTOR{a}_{K}(\VECTOR{x})=
 \begin{bmatrix}
-\frac{1}{2} & %\VECTOR{b}_{0}(\VECTOR{x}) &
-\VECTOR{b}_{1}(\VECTOR{x}) &
+cos\left(\VECTOR{k}_{1}^{\transpose}\MATRIX{W}_{L}\VECTOR{x}\right) &
+cos\left(\VECTOR{k}_{2}^{\transpose}\MATRIX{W}_{L}\VECTOR{x}\right) &
 \dots  &
-\VECTOR{b}_{k}(\VECTOR{x}) &
+cos\left(\VECTOR{k}_{M}^{\transpose}\MATRIX{W}_{L}\VECTOR{x}\right)
+\end{bmatrix},
+\end{equation}
+\begin{equation}
+\VECTOR{b}_{K}(\VECTOR{x})=
+\begin{bmatrix}
+sin\left(\VECTOR{k}_{1}^{\transpose}\MATRIX{W}_{L}\VECTOR{x}\right) &
+sin\left(\VECTOR{k}_{2}^{\transpose}\MATRIX{W}_{L}\VECTOR{x}\right) &
 \dots  &
-\VECTOR{b}_{K}(\VECTOR{x})
+sin\left(\VECTOR{k}_{M}^{\transpose}\MATRIX{W}_{L}\VECTOR{x}\right)
 \end{bmatrix}.
 \end{equation}
 \end{theorem}
@@ -133,4 +121,31 @@ provocando neste ponto um $f_{\VECTOR{c}}(\VECTOR{x})=0.5$.
 por este motivo o classificador é interessante quando o domínio dos dados ($\VECTOR{x}_l$) está restrito.
 \end{itemize}
 \end{tcbattention}
+
+
+\begin{proof}[Relativa ao Teorema \ref{sec:theo:reglogrnr1fourier:1}:]
+
+\textcolor{red}{Fingerprint a detectar surcos}\\
+
+\begin{equation}
+ h_{\VECTOR{c}}(\VECTOR{x}) = 
+\sum_{\VECTOR{k}=[-K,~ ...,-K]}^{[K,~ ...,~K]}
+c_{\VECTOR{k}}  e^{\mathbf{i}\VECTOR{k}^{\transpose}\MATRIX{W}_{L}\VECTOR{x}},
+\quad 
+\MATRIX{W}_{L}=\funcdiag\left(\left[\frac{2 \pi}{L_1},~\frac{2 \pi}{L_2},~\dots,~\frac{2 \pi}{L_N}\right]^{\transpose}\right)
+\end{equation}
+\begin{equation}
+ h_{\VECTOR{c}}(\VECTOR{x}) = 
+\sum_{\VECTOR{k}=[-K,~ ...,-K]}^{[K,~ ...,~K]}
+Re\left\{c_{\VECTOR{k}}\right\}cos\left(\VECTOR{k}^{\transpose}\MATRIX{W}_{L}\VECTOR{x}\right)
+-Im\left\{c_{\VECTOR{k}}\right\}sin\left(\VECTOR{k}^{\transpose}\MATRIX{W}_{L}\VECTOR{x}\right),
+\end{equation}
+\begin{equation}
+ h_{\VECTOR{c}}(\VECTOR{x}) = 
+\sum_{\VECTOR{k}=[-K,~ ...,-K]}^{[K,~ ...,~K]}
+a_{\VECTOR{k}} cos\left(\VECTOR{k}^{\transpose}\MATRIX{W}_{L}\VECTOR{x}\right)+
+b_{\VECTOR{k}} sin\left(\VECTOR{k}^{\transpose}\MATRIX{W}_{L}\VECTOR{x}\right),
+\end{equation}
+
+\end{proof}
 

@@ -36,9 +36,8 @@ p(\lambda)=det(\MATRIX{A}-\lambda \MATRIX{I}),
 \end{equation}
 onde $\MATRIX{I}$ é uma matriz identidade,
 \begin{equation}
-p(\lambda)^{\transpose}=det(\MATRIX{A}-\lambda \MATRIX{I})^{\transpose},
-\end{equation}
-\begin{equation}
+p(\lambda)^{\transpose}=det(\MATRIX{A}-\lambda \MATRIX{I})^{\transpose}
+\quad \rightarrow \quad
 p(\lambda)=det(\MATRIX{A}^{\transpose}-\lambda \MATRIX{I}^{\transpose}),
 \end{equation}
 \begin{equation}
@@ -51,18 +50,15 @@ p(\lambda)=det(\MATRIX{A}^{\transpose}-\lambda \MATRIX{I}).
 \begin{myproofT}[Relativa ao Teorema \ref{theo:simetricmatrix4}:]\label{proof:theo:simetricmatrix4}
 Conhecida uma matriz quadrada $\MATRIX{A} \in \mathbb{R}^{N \times N}$ simétrica e não singular, 
 \begin{equation}
-\MATRIX{I}=\MATRIX{A}\MATRIX{A}^{-1},
+\MATRIX{I}=\MATRIX{A}\MATRIX{A}^{-1}
+\quad \rightarrow \quad
+\MATRIX{I}^{\transpose}=\left\{\MATRIX{A}\MATRIX{A}^{-1}\right\}^{\transpose}
+\quad \rightarrow \quad
+\MATRIX{I}=\left\{\MATRIX{A}^{-1}\right\}^{\transpose} \MATRIX{A}^{\transpose}
 \end{equation}
 \begin{equation}
-\MATRIX{I}^{\transpose}=\left\{\MATRIX{A}\MATRIX{A}^{-1}\right\}^{\transpose},
-\end{equation}
-\begin{equation}
-\MATRIX{I}=\left\{\MATRIX{A}^{-1}\right\}^{\transpose} \MATRIX{A}^{\transpose},
-\end{equation}
-\begin{equation}
-\MATRIX{I}=\left\{\MATRIX{A}^{-1}\right\}^{\transpose} \MATRIX{A},
-\end{equation}
-\begin{equation}
+\MATRIX{I}=\left\{\MATRIX{A}^{-1}\right\}^{\transpose} \MATRIX{A}
+\quad \rightarrow \quad
 \MATRIX{A}^{-1}=\left\{\MATRIX{A}^{-1}\right\}^{\transpose}.
 \end{equation}
 \end{myproofT}
@@ -74,9 +70,8 @@ Conhecida uma matriz quadrada $\MATRIX{A} \in \mathbb{R}^{N \times N}$ simétric
 Conhecida uma matriz $\MATRIX{A} \in \mathbb{R}^{N \times M}$,
 e um vetor $\VECTOR{x} \in \mathbb{R}^{N}$ não nulo,
 \begin{equation}
-\VECTOR{x}^{\transpose}\MATRIX{A}\MATRIX{A}^{\transpose}\VECTOR{x},
-\end{equation}
-\begin{equation}
+\VECTOR{x}^{\transpose}\MATRIX{A}\MATRIX{A}^{\transpose}\VECTOR{x}
+\quad \rightarrow \quad
 \left\{\MATRIX{A}^{\transpose}\VECTOR{x}\right\}\left\{\MATRIX{A}^{\transpose}\VECTOR{x}\right\},
 \end{equation}
 se $\VECTOR{y}=\MATRIX{A}^{\transpose}\VECTOR{x}$, 
@@ -84,8 +79,7 @@ podemos perceber que existe a possibilidade de que $\VECTOR{y}=\VECTOR{0}$,
 pelo que podemos afirmar que 
 \begin{equation}
 \VECTOR{y}^{\transpose}\VECTOR{y}\geq 0,
-\end{equation}
-\begin{equation}
+\quad \rightarrow \quad
 \VECTOR{x}^{\transpose}\MATRIX{A}\MATRIX{A}^{\transpose}\VECTOR{x}\geq 0.
 \end{equation}
 \end{myproofT}
@@ -117,7 +111,7 @@ dado que sempre $\VECTOR{v}_n^{\transpose}\VECTOR{v}_n> 0$, concluímos
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{myproofT}[Relativa ao Teorema \ref{theo:positivematrix1}:]\label{proof:theo:positivematrix1}
-Conhecida uma matriz quadrada $\MATRIX{A} \in \mathbb{R}^{N \times N}$ e definida positiva, com  autovalores $\lambda_n$,
+Conhecida uma matriz quadrada $\MATRIX{A} \in \mathbb{R}^{N \times N}$ definida positiva, com  autovalores $\lambda_n$,
 e autovetores $\VECTOR{e}_n$, $\forall n \in \{1, 2, ..., N\}$, de modo que,
 \begin{equation}\label{eq:proof:theo:positivematrix1:0}
 \MATRIX{A}\VECTOR{e}_n=\lambda_n \VECTOR{e}_n.
@@ -213,3 +207,254 @@ p_{\MATRIX{A}}(\lambda)=det\left( \MATRIX{P}^{-1}\right)det\left( \MATRIX{B} -\l
 p_{\MATRIX{A}}(\lambda)=det\left( \MATRIX{B} -\lambda \MATRIX{I} \right) = p_{\MATRIX{B}}(\lambda).
 \end{equation}
 \end{myproofT}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{myproofT}[Relativa ao Teorema \ref{theo:diagonalization1}:]\label{proof:theo:diagonalization1:a}
+Conhecida uma matriz quadrada $\MATRIX{A} \in \mathbb{C}^{N \times N}$ com
+autovalores $\lambda_n$, $\forall n \in \{1, 2, ..., N\}$.
+Se $\MATRIX{A}$ tem $N$  autovetores (coluna) $\VECTOR{v}_n \in \mathbb{C}^{N}$  linearmente independentes,
+podemos afirmar que
+\begin{equation}
+\begin{bmatrix}
+\MATRIX{A} \VECTOR{v}_1 & \MATRIX{A} \VECTOR{v}_2 & ... & \MATRIX{A} \VECTOR{v}_N
+\end{bmatrix}=
+\begin{bmatrix}
+\lambda_1 \VECTOR{v}_1 & \lambda_2 \VECTOR{v}_2 & ... & \lambda_N \VECTOR{v}_N
+\end{bmatrix}
+\end{equation}
+\begin{equation}
+\MATRIX{A}
+\begin{bmatrix}
+ \VECTOR{v}_1 &  \VECTOR{v}_2 & ... &  \VECTOR{v}_N
+\end{bmatrix}=
+\begin{bmatrix}
+ \VECTOR{v}_1 & \VECTOR{v}_2 & ... &  \VECTOR{v}_N
+\end{bmatrix}
+\funcdiag\left(
+\begin{bmatrix}
+\lambda_1 & \lambda_2 & \dots & \lambda_N
+\end{bmatrix}^{\transpose}\right).
+\end{equation}
+Se definimos $\MATRIX{V}=\left[\VECTOR{v}_1\quad \VECTOR{v}_2\quad \VECTOR{v}_3\quad ...\quad \VECTOR{v}_N\right]$,
+e $\lambda_{\MATRIX{A}}=\funcdiag\left(\left[\lambda_1\quad \lambda_2\quad \lambda_3\quad ...\quad \lambda_N\right]^{\transpose}\right)$
+então
+\begin{equation}
+\MATRIX{A} \MATRIX{V} = \MATRIX{V} \lambda_{\MATRIX{A}},
+\quad \rightarrow \quad
+\MATRIX{V}^{-1} \MATRIX{A} \MATRIX{V} =  \lambda_{\MATRIX{A}}.
+\end{equation}
+\end{myproofT}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{myproofT}[Relativa ao Teorema \ref{theo:autovalorhermitianmatrix0}:]\label{proof:theo:autovalorhermitianmatrix0}
+Dada uma matriz hermitiana $\MATRIX{A} \in \mathbb{C}^{N \times N}$, com  autovalores $\lambda_n$,
+e autovetores $\VECTOR{v}_n$, $\forall n \in \{1, 2, ..., N\}$, podemos afirmar que,
+\begin{equation}
+\MATRIX{A}\VECTOR{v}_n=\lambda_n \VECTOR{v}_n
+\end{equation}
+\begin{equation}
+\VECTOR{v}_n^{\ast}\MATRIX{A}\VECTOR{v}_n=\lambda_n \VECTOR{v}_n^{\ast} \VECTOR{v}_n=\lambda_n \NORM{\VECTOR{v}_n}^2,
+\end{equation}
+aplicando o operador transposto conjugado obtemos
+\begin{equation}
+\VECTOR{v}_n^{\ast}\MATRIX{A}^{\ast}\VECTOR{v}_n=\overline{\lambda}_n \NORM{\VECTOR{v}_n}^2,
+\end{equation}
+\begin{equation}
+\VECTOR{v}_n^{\ast}\MATRIX{A}\VECTOR{v}_n=\overline{\lambda}_n \NORM{\VECTOR{v}_n}^2,
+\end{equation}
+o que indica que $\overline{\lambda}_n=\lambda_n$ e consequentemente $\lambda_n$ é real.
+\end{myproofT}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{myproofT}[Relativa ao Teorema \ref{theo:autovetorortogonalhermitian0}:]\label{proof:theo:autovetorortogonalhermitian0}
+Dada uma matriz hermitiana $\MATRIX{A} \in \mathbb{C}^{N \times N}$, com  autovalores $\lambda_n$,
+e autovetores $\VECTOR{v}_n$, $\forall n \in \{1, 2, ..., N\}$, podemos afirmar que,
+\begin{equation}
+\MATRIX{A} \VECTOR{v}_a= \lambda_a \VECTOR{v}_a 
+\quad \wedge \quad 
+\MATRIX{A} \VECTOR{v}_b= \lambda_b \VECTOR{v}_b
+\quad \wedge \quad 
+\lambda_a \neq \lambda_b, 
+\end{equation}
+\begin{equation}
+\begin{matrix}
+\lambda_a \innerprod{\VECTOR{v}_a}{\VECTOR{v}_b} & = & \lambda_a \VECTOR{v}_a^{\transpose} \overline{\VECTOR{v}}_b\\
+~ & = & \left( \MATRIX{A}\VECTOR{v}_a\right)^{\transpose} \overline{\VECTOR{v}}_b \\
+~ & = & \VECTOR{v}_a^{\transpose} \MATRIX{A}^{\transpose} \overline{\VECTOR{v}}_b \\
+~ & = & \VECTOR{v}_a^{\transpose} \overline{\MATRIX{A}} \overline{\VECTOR{v}}_b \\
+~ & = & \VECTOR{v}_a^{\transpose} \overline{\lambda_b} \overline{\VECTOR{v}}_b,
+\end{matrix}
+\end{equation}
+lembrando que pelo Teorema \ref{theo:autovalorhermitianmatrix0} todos os autovalores são reais 
+numa matriz hermitiana,
+\begin{equation}
+\lambda_a \innerprod{\VECTOR{v}_a}{\VECTOR{v}_b} = \lambda_b \innerprod{\VECTOR{v}_a}{\VECTOR{v}_b}.
+\end{equation}
+Dado que se partiu de assumir que $\lambda_a \neq \lambda_b$, 
+então se conclui que $\innerprod{\VECTOR{v}_a}{\VECTOR{v}_b}=0$.
+\end{myproofT}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{myproofT}[Relativa ao Teorema \ref{theo:HermitianDDecomposition0}:]\label{proof:theo:HermitianDDecomposition0}
+Dada uma matriz $\MATRIX{A} \in \mathbb{C}^{N \times N}$,
+sabemos pelo Teorema \ref{theo:ShurDecomposition0} (decomposição de Schur)
+\begin{equation}
+\MATRIX{U}^{-1} \MATRIX{A} \MATRIX{U} \equiv
+\MATRIX{U}^{\ast} \MATRIX{A} \MATRIX{U} =
+\begin{bmatrix}
+\lambda_1 & b_{12}    & ...    & b_{1N} \\
+0         & \lambda_2 & ...    & b_{2N} \\
+\vdots    & \vdots    & \ddots & \vdots \\
+0         & 0         & ...    & \lambda_N
+\end{bmatrix}.
+\end{equation}
+Se ademais conhecemos que a matriz $\MATRIX{A}$ é hermitiana  
+e calculamos $\left(\MATRIX{U}^{\ast} \MATRIX{A} \MATRIX{U}\right)^{\ast}$,
+\begin{equation}
+\left(\MATRIX{U}^{\ast} \MATRIX{A} \MATRIX{U}\right)^{\ast} =
+\MATRIX{U}^{\ast} \MATRIX{A}^{\ast} \MATRIX{U}  =
+\MATRIX{U}^{\ast} \MATRIX{A} \MATRIX{U} =
+\begin{bmatrix}
+\overline{\lambda}_1 & 0                    & ...    & 0 \\
+\overline{b}_{12}    & \overline{\lambda}_2 & ...    & 0 \\
+\vdots               & \vdots               & \ddots & \vdots \\
+\overline{b}_{1N}    & \overline{b}_{2N}    & ...    & \overline{\lambda}_N
+\end{bmatrix}.
+\end{equation}
+Disto se deduz que $\overline{\lambda}_n=\lambda_n$; é dizer $\lambda_n$ é real,
+e que  $b_{ij}=0, \forall j>i$; é dizer $\MATRIX{U}^{\ast} \MATRIX{A} \MATRIX{U}$
+é uma matriz diagonal.
+\end{myproofT}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{myproofT}[Relativa ao Teorema \ref{theo:prophermitianpositivematrix2}:]\label{proof:theo:prophermitianpositivematrix1:c}
+Dada uma matriz hermitiana $\MATRIX{A} \in \mathbb{C}^{N \times N}$ definida positiva;
+se imaginamos a hipótese que $\MATRIX{A}$ é singular; é dizer não invertível,
+podemos afirmar que para algum vetor $\VECTOR{x}$ não nulo
+é possível obter
+\begin{equation}\label{eq:proof:theo:prophermitianpositivematrix1:c:1}
+\MATRIX{A}\VECTOR{x}= 0 
+\quad \rightarrow \quad
+\VECTOR{x}^{\ast} \MATRIX{A} \VECTOR{x}= 0.
+\end{equation}
+Dado que $\MATRIX{A}$ é hermitiana definida positiva, 
+o que implica obrigatoriamente que $\VECTOR{x}^{\ast} \MATRIX{A} \VECTOR{x}>0$,
+podemos afirmar que a hipótese da Eq. (\ref{eq:proof:theo:prophermitianpositivematrix1:c:1}) é falsa, 
+de modo que a matriz $\MATRIX{A}$ é não singular (invertível).
+\end{myproofT}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{myproofT}[Relativa ao Teorema \ref{theo:prophermitianpositivematrix0}:]\label{proof:theo:prophermitianpositivematrix1:a}
+Dado um vetor $\VECTOR{x} \in \mathbb{C}^{N}$ não nulo
+e uma matriz $\MATRIX{A} \in \mathbb{C}^{N \times N}$. 
+\begin{itemize}
+\item Se
+ $\MATRIX{A}=\MATRIX{R}\MATRIX{R}^{\ast}$, 
+onde $\MATRIX{R}$ é uma matriz invertível (não singular), então
+\begin{equation}
+\VECTOR{x}^{\ast} \MATRIX{A} \VECTOR{x} =
+\VECTOR{x}^{\ast} \MATRIX{R}\MATRIX{R}^{\ast} \VECTOR{x} =
+\left(\MATRIX{R}^{\ast} \VECTOR{x}\right)^{\ast} \MATRIX{R}^{\ast} \VECTOR{x}=
+\NORM{\MATRIX{R}^{\ast} \VECTOR{x}}^2.
+\end{equation}
+Dado que $\MATRIX{R}^{\ast} \VECTOR{x}\neq 0$ e $\VECTOR{x}^{\ast}\MATRIX{R} \neq 0$ 
+para todo vetor $\VECTOR{x}$ não nulo e $\MATRIX{R}$ não singular,
+podemos afirmar que 
+\begin{equation}
+\left(\MATRIX{R}^{\ast} \VECTOR{x}\right)^{\ast} \MATRIX{R}^{\ast} \VECTOR{x}>0
+\quad \rightarrow \quad
+\VECTOR{x}^{\ast} \MATRIX{A} \VECTOR{x}>0.
+\end{equation}
+\item Se usamos o Teorema \ref{theo:HermitianDDecomposition0} e \ref{theo:hermitianpositivematrix1}, 
+podemos afirmar que 
+$\MATRIX{A}=\MATRIX{U}\lambda_{\MATRIX{A}} \MATRIX{U}^{\ast}$ e que seus autovalores $\lambda_n>0$, consequentemente
+\begin{equation}
+\MATRIX{A}=
+\MATRIX{U}\lambda_{\MATRIX{A}} \MATRIX{U}^{\ast}=
+\MATRIX{U}\sqrt{\lambda_{\MATRIX{A}}} \sqrt{\lambda_{\MATRIX{A}}} \MATRIX{U}^{\ast}=
+\left(\sqrt{\lambda_{\MATRIX{A}}} \MATRIX{U}^{\ast}\right)^{\ast} \left(\sqrt{\lambda_{\MATRIX{A}}} \MATRIX{U}^{\ast}\right).
+\end{equation}
+Se adicionalmente definimos $\MATRIX{R}^{\ast}\equiv \sqrt{\lambda_{\MATRIX{A}}} \MATRIX{U}^{\ast}$,
+podemos afirmar que $\MATRIX{A}=\MATRIX{R}\MATRIX{R}^{\ast}$.
+\end{itemize}
+\end{myproofT}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{myproofT}[Relativa ao Teorema \ref{theo:prophermitianpositivematrix1}:]\label{proof:theo:prophermitianpositivematrix1:b}
+Se $\MATRIX{A} \in \mathbb{C}^{N \times N}$ é uma matriz hermitiana definida positiva, 
+$\MATRIX{B} \in \mathbb{C}^{N \times N}$ é não singular e
+$\VECTOR{x} \in \mathbb{C}^{N}$ é não nulo, então
+\begin{equation}
+\VECTOR{y}=\MATRIX{B}\VECTOR{x}\neq 0 \iff \VECTOR{x}\neq 0
+\end{equation}
+\begin{equation}
+\VECTOR{x}^{\ast} \MATRIX{B}^{\ast} \MATRIX{A} \MATRIX{B} \VECTOR{x} =
+\left(\MATRIX{B}\VECTOR{x}\right)^{\ast} \MATRIX{A} \MATRIX{B} \VECTOR{x} =
+\VECTOR{y}^{\ast} \MATRIX{A} \VECTOR{y}>0,
+\end{equation}
+se $\VECTOR{y}\neq 0$ então $\MATRIX{B}^{\ast} \MATRIX{A} \MATRIX{B}$
+é uma matriz hermitiana definida positiva.
+\end{myproofT}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{myproofT}[Relativa ao Teorema \ref{theo:hermitianpositivematrix1}:]\label{proof:theo:hermitianpositivematrix1}
+Conhecida uma matriz hermitiana $\MATRIX{A} \in \mathbb{R}^{N \times N}$ com  autovalores $\lambda_n$,
+e autovetores $\VECTOR{v}_n$, $\forall n \in \{1, 2, ..., N\}$, podemos afirmar que,
+\begin{equation}\label{eq:proof:theo:hermitianpositivematrix1:0}
+\MATRIX{A}\VECTOR{v}_n=\lambda_n \VECTOR{v}_n,
+\end{equation}
+\begin{equation}\label{eq:proof:theo:hermitianpositivematrix1:1}
+\VECTOR{v}_n^{\ast}\MATRIX{A}\VECTOR{v}_n=
+\lambda_n \VECTOR{v}_n^{\ast}\VECTOR{v}_n=
+\lambda_n \NORM{\VECTOR{v}_n}^2.
+\end{equation}
+
+\begin{itemize}
+\item Usando a Eq. (\ref{eq:proof:theo:hermitianpositivematrix1:1}), a 
+Definição \ref{def:hermitianapositivematrix0} e o fato que a matriz $\MATRIX{A}$ é definida positiva,
+podemos afirmar que
+\begin{equation}
+\VECTOR{v}_n^{\ast}\MATRIX{A}\VECTOR{v}_n >0
+\quad \rightarrow \quad
+\lambda_n \NORM{\VECTOR{v}_n}^2 > 0
+\quad \rightarrow \quad
+\lambda_n  > 0
+\end{equation} 
+\item Sabendo do Teorema \ref{theo:HermitianDDecomposition0} que 
+$\MATRIX{A}=\MATRIX{U}\lambda_{\MATRIX{A}} \MATRIX{U}^{\ast}$,
+onde 
+$\lambda_{\MATRIX{A}}=\funcdiag\left(\left[\lambda_1\quad \lambda_2 \quad ... \quad \lambda_N \right]^{\transpose}\right)$
+e $\MATRIX{U}$ é uma matriz unitária,
+podemos afirmar que
+\begin{equation}
+\VECTOR{x}^{\ast}\MATRIX{A}\VECTOR{x}=
+\VECTOR{x}^{\ast}\MATRIX{U}\lambda_{\MATRIX{A}} \MATRIX{U}^{\ast}\VECTOR{x}=
+\left(\MATRIX{U}^{\ast}\VECTOR{x}\right)^{\ast}\lambda_{\MATRIX{A}}\left(\MATRIX{U}^{\ast}\VECTOR{x}\right).
+\end{equation}
+Se definimos $\MATRIX{U}^{\ast}\VECTOR{x}=\VECTOR{y}$, considerando
+$\VECTOR{x}$ não nulo e $\MATRIX{U}^{\ast}=\MATRIX{U}^{-1}$ invertível,
+podemos afirmar que 
+$\VECTOR{y}=\left[y_1\quad y_2 \quad ... \quad y_N \right]^{\transpose}$ é não nulo e que 
+\begin{equation}
+\VECTOR{x}^{\ast}\MATRIX{A}\VECTOR{x}=
+\VECTOR{y}^{\ast}\lambda_{\MATRIX{A}}\VECTOR{y}=\sum_{n=1}^{N}\lambda_n |y_n|^2.
+\end{equation}
+Se ademais assumimos que $\lambda_n  > 0$, podemos afirmar que 
+\begin{equation}
+\VECTOR{x}^{\ast}\MATRIX{A}\VECTOR{x}=\sum_{n=1}^{N}\lambda_n |y_n|^2>0.
+\end{equation}
+Consequentemente podemos afirmar que a matriz hermitiana $\MATRIX{A}$
+é definida positiva se seus autovalores $\lambda_n  > 0$.
+\end{itemize}
+\end{myproofT}
+

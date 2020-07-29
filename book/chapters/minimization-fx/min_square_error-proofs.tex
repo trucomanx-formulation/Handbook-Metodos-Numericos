@@ -64,7 +64,7 @@ podemos concluir que  $\VECTOR{\hat{x}}=\VECTOR{x}^+$ é o mínimo global da Eq.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{myproofT}[Relativa ao Teorema \ref{theo:minfxbCfxb}]\label{proof:theo:minfxbCfxb}
+\begin{myproofT}[Relativa ao Teorema \ref{theo:minfxbCfxb}:]\label{proof:theo:minfxbCfxb}
 Dados,
 os vetores coluna $\VECTOR{x}\in \mathbb{R}^N$ e $\VECTOR{b}\in \mathbb{R}^M$,  
 uma função $\VECTOR{f}:\mathbb{R}^{N} \rightarrow \mathbb{R}^{M}$, 
@@ -192,7 +192,7 @@ Um diagrama completo resumindo todas estas conclusões pode ser visto na Figura 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{myproofT}[Relativa ao Teorema \ref{theo:minfxbCfxbaxqaxq}]\label{proof:theo:minfxbCfxbaxqd}
+\begin{myproofT}[Relativa ao Teorema \ref{theo:minfxbCfxbaxqaxq}:]\label{proof:theo:minfxbCfxbaxqd}
 Dados,
 um escalar $\alpha\in \mathbb{R}_+$,
 os vetores coluna $\VECTOR{x}\in \mathbb{R}^N$, 
@@ -277,7 +277,10 @@ Porém, dado que a equação avança desde $\VECTOR{p}$ na direção de um míni
 mesmo que nos pontos de inflexão correspondentes a máximos ou pontos de sela,
 encontremos valores de $\VECTOR{p}$ próximos a $\VECTOR{x}^*$,
  estes casos serão pouco estáveis pois
-a correção da posição $\VECTOR{p}$ será na direção de um mínimo e não do máximo.
+a correção da posição $\VECTOR{p}$ será na direção de um mínimo e não do máximo,
+pois seguindo o Teorema \ref{theo:semipositivematrix1}, se $\MATRIX{C}$ e $\MATRIX{D}$ são simétricas, 
+então as matrizes $\MATRIX{J}(\VECTOR{p})^{\transpose}\MATRIX{C} \MATRIX{J}(\VECTOR{p})$ e $\MATRIX{D}$
+são semidefinidas positivas.
 
 \item Se modificamos a Eq. (\ref{eq:proof:minfxbCfxbaxqd2}), e escolhemos um ponto  
 $\VECTOR{p}_0$ que consideremos próximo ao ponto $\VECTOR{x}=\VECTOR{\hat{x}}$ que minimiza $e(\VECTOR{x})$,
@@ -311,7 +314,7 @@ Um diagrama completo resumindo todas estas conclusões pode ser visto na Figura 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{myproofT}[Relativa ao Teorema \ref{theo:minfxbCfxbaxoaxo}]\label{proof:theo:minfxbCfxbaxod}
+\begin{myproofT}[Relativa ao Teorema \ref{theo:minfxbCfxbaxoaxo}:]\label{proof:theo:minfxbCfxbaxod}
 Dados,
 um escalar $\alpha\in \mathbb{R}_+$,
 os vetores coluna $\VECTOR{x}\in \mathbb{R}^N$, 
@@ -403,8 +406,8 @@ encontremos valores de $\VECTOR{p}$ próximos a $\VECTOR{x}^*$,
  estes casos serão pouco estáveis pois
 a correção da posição $\VECTOR{p}$ será na direção de um mínimo e não do máximo.
 \item Seguindo o Teorema \ref{theo:semipositivematrix1}, se $\MATRIX{C}$ e $\MATRIX{D}$ são simétricas, 
-então a matriz $\MATRIX{J}(\VECTOR{p})^{\transpose}\MATRIX{C} \MATRIX{J}(\VECTOR{p})+\alpha \MATRIX{D}$
-é semidefinida positiva.
+então as matrizes $\MATRIX{J}(\VECTOR{p})^{\transpose}\MATRIX{C} \MATRIX{J}(\VECTOR{p})$ e $\MATRIX{D}$
+são semidefinidas positivas.
 
 \item Se modificamos a Eq. (\ref{eq:proof:minfxbCfxbaxod2}), e escolhemos um ponto  
 $\VECTOR{p}_0$ que consideremos próximo ao ponto $\VECTOR{x}=\VECTOR{\hat{x}}$ que minimiza $e(\VECTOR{x})$,

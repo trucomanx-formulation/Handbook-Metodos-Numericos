@@ -2,7 +2,7 @@
  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{myproofT}[Relativa ao Teorema \ref{theo:maphxr1r1}]\label{proof:theo:maphxr1r1}
+\begin{myproofT}[Relativa ao Teorema \ref{theo:maphxr1r1}:]\label{proof:theo:maphxr1r1}
 Dados,
 os escalares $x \in \mathbb{R}$, $y \in \mathbb{R}$ e $c_m \in \mathbb{R}$,
 uma função polinomial $h_{\VECTOR{c}}:\mathbb{R} \rightarrow \mathbb{R}$, de grau $M$, e 
@@ -43,13 +43,13 @@ onde a matriz $\MATRIX{A}$ é definida como,
 Usando o Teorema \ref{theo:minAxbCAxb}, sabemos que o vetor $\VECTOR{c}=\VECTOR{\hat{c}}$,
 que minimiza a Eq. (\ref{eq:proof:theo:maphxr1r1:3}) pode ser achado usando 
 \begin{equation}\label{eq:proof:theo:maphxr1r1:5}
-\VECTOR{\hat{c}}=[\MATRIX{A}^{\transpose}\MATRIX{W}\MATRIX{A}]^{-1}\MATRIX{A}^{\transpose}\MATRIX{W}\VECTOR{y},
+\VECTOR{\hat{c}}=[\MATRIX{A}^{\transpose}\MATRIX{W}\MATRIX{A}]^{-1}\MATRIX{A}^{\transpose}\MATRIX{W}\VECTOR{y}.
 \end{equation}
 \end{myproofT}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{myproofT}[Relativa ao Teorema \ref{theo:maphcxr1r1}]\label{proof:theo:maphcxr1r1}
+\begin{myproofT}[Relativa ao Teorema \ref{theo:maphcxr1r1}:]\label{proof:theo:maphcxr1r1}
 Dados,
 os escalares $x \in \mathbb{R}$ e $y \in \mathbb{R}$, o vetor coluna $\VECTOR{c} \in \mathbb{R}^M$, e 
 definida a seguinte equação,
@@ -152,7 +152,7 @@ e $\VECTOR{c}_{last}\equiv \VECTOR{c}_{i-1}$,
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{myproofT}[Relativa ao Teorema \ref{theo:maphxr2r1}]\label{proof:theo:maphxr2r1}
+\begin{myproofT}[Relativa ao Teorema \ref{theo:maphxr2r1}:]\label{proof:theo:maphxr2r1}
 Dados,
 os escalares $x \in \mathbb{R}$, $y \in \mathbb{R}$, $z \in \mathbb{R}$ e $c_m \in \mathbb{R}$,
 uma função polinomial $h_{\VECTOR{c}}:\mathbb{R}^2 \rightarrow \mathbb{R}$, de grau $M$, e 
@@ -222,12 +222,12 @@ onde a matriz $\MATRIX{A}$ é definida como,
 Usando o Teorema \ref{theo:minAxbCAxb}, sabemos que o vetor $\VECTOR{c}=\VECTOR{\hat{c}}$,
 que minimiza a Eq. (\ref{eq:proof:theo:maphxr2r1:3}) pode ser achado usando 
 \begin{equation}\label{eq:proof:theo:maphxr2r1:5}
-\VECTOR{\hat{c}}=[\MATRIX{A}^{\transpose}\MATRIX{W}\MATRIX{A}]^{-1}\MATRIX{A}^{\transpose}\MATRIX{W}\VECTOR{z},
+\VECTOR{\hat{c}}=[\MATRIX{A}^{\transpose}\MATRIX{W}\MATRIX{A}]^{-1}\MATRIX{A}^{\transpose}\MATRIX{W}\VECTOR{z}.
 \end{equation}
 \end{myproofT}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{myproofT}[Relativa ao Teorema \ref{theo:maphcxrnr1}]\label{proof:theo:maphcxrnr1}
+\begin{myproofT}[Relativa ao Teorema \ref{theo:maphcxrnr1}:]\label{proof:theo:maphcxrnr1}
 Dados,
 o escalar $z \in \mathbb{R}$, os vetores coluna $\VECTOR{x} \in \mathbb{R}^N$ e $\VECTOR{c} \in \mathbb{R}^M$, e 
 definida a seguinte equação,
@@ -241,7 +241,7 @@ e(\VECTOR{c}) =  \sum_{l=1}^{L} w_l||h(\VECTOR{c},\VECTOR{x}_l)-z_l||^2 + \alpha
 \end{equation}
 proveniente de:
 \begin{itemize}
-\item Avaliar $L$ pontos $\VECTOR{x}_l$ e $z_l$, que não cumprem necessariamente a Eq. (\ref{eq:proof:theo:maphcxrnr1:1}), 
+\item Avaliar $L$ pontos $\VECTOR{x}_l$ e $z_l$, que não cumprem necessariamente a Eq. (\ref{eq:proof:theo:maphcxrnr1:1}). 
 \item Avaliar os $M$ coeficientes $c_m$ do vetor $\VECTOR{c}$ 
 em contraposição de outros coeficientes $c_{m,last}$ do vetor $\VECTOR{c}_{last}$
 que pode ser entendido como um ponto ao redor do qual é feita uma aproximação
@@ -313,7 +313,7 @@ $\equiv \frac{\partial \VECTOR{h}(\VECTOR{c})}{\partial \VECTOR{c}^{\transpose}}
 \begin{array}{lll}
 \VECTOR{j}(\VECTOR{c},\VECTOR{x}) & = & \frac{\partial h(\VECTOR{c},\VECTOR{x})}{\partial \VECTOR{c}^{\transpose}} \\
                        ~ & ~ & ~\\
-                       ~ & = & \left[\frac{\partial h(\VECTOR{c},\VECTOR{x})}{\partial c_1}\quad \frac{\partial h(\VECTOR{c},\VECTOR{x})}{\partial c_2}\quad ...\quad \frac{\partial h(\VECTOR{c},\VECTOR{x})}{\partial c_{m}} \quad ... \quad \frac{\partial h(\VECTOR{c},\VECTOR{x})}{\partial c_{M}} \right]
+                       ~ & = & \left[\frac{\partial h(\VECTOR{c},\VECTOR{x})}{\partial c_1}\quad \frac{\partial h(\VECTOR{c},\VECTOR{x})}{\partial c_2}\quad ...\quad \frac{\partial h(\VECTOR{c},\VECTOR{x})}{\partial c_{m}} \quad ... \quad \frac{\partial h(\VECTOR{c},\VECTOR{x})}{\partial c_{M}} \right].
 \end{array}
 \end{equation}
 \end{myproofT}
@@ -321,7 +321,7 @@ $\equiv \frac{\partial \VECTOR{h}(\VECTOR{c})}{\partial \VECTOR{c}^{\transpose}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{myproofT}[Relativa ao Teorema \ref{theo:maphxr2r2}]\label{proof:theo:maphxr2r2}
+\begin{myproofT}[Relativa ao Teorema \ref{theo:maphxr2r2}:]\label{proof:theo:maphxr2r2}
 Dados,
 os escalares $x \in \mathbb{R}$, $y \in \mathbb{R}$, $u \in \mathbb{R}$, $v \in \mathbb{R}$ e 
 os vetores $\VECTOR{c} \in \mathbb{R}^{\frac{(M+1)(M+2)}{2}}$ e $\VECTOR{d} \in \mathbb{R}^{\frac{(M+1)(M+2)}{2}}$,
@@ -336,7 +336,7 @@ v
 \begin{bmatrix}
 h_{\VECTOR{c}}(x,y)\\
 h_{\VECTOR{d}}(x,y)
-\end{bmatrix}
+\end{bmatrix},
 \end{equation}
 \begin{equation}\label{eq:proof:theo:maphxr2r2:1}
 \begin{matrix}

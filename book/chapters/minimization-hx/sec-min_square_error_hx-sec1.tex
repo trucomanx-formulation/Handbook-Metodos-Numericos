@@ -9,7 +9,7 @@
 %\index{Problema inverso!Não linear}
 \index{Minimização do erro quadrático!Não linear}%!Função $||h(x)-a||^2$}
 
-\begin{theorem}[Solução iterativa]\label{theo:minhxhx}
+\begin{theorem}[Solução iterativa:]\label{theo:minhxhx}
 Dados,
 um escalar $x \in \mathbb{R}$, 
 um escalar $a \in \mathbb{R}$,  
@@ -41,8 +41,8 @@ onde pode ser declarado que $\hat{x} \approx x_{k}$.
  e consequentemente esta possa ser usada, devemos verificar que  $h'(x_{k-1})\neq 0$,
 pois se $h'(x_{k-1})= 0$ indica que existe um ponto de inflexão 
 (máximo, mínimo ou ponto de sela) em $e(x_{k-1})$.
-\item A busca iterativa da Eq. (\ref{eq:minhxhx2}) pode falhar se coincide que o mínimo $\hat{x}$ procurado
-tem um $h'(x_{k-1})= 0$.
+\item A busca iterativa da Eq. (\ref{eq:minhxhx2}) pode falhar se coincide que o mínimo $e(\hat{x})>0$ procurado
+tem um $h'(\hat{x})= 0$.
 Este erro só acontece quando $x_{k-1}$ atinge de forma exata $\hat{x}$,
 para valores próximos a $\hat{x}$ a busca iterativa de $x_{k}$ avança eficazmente.
 \end{itemize}
@@ -141,7 +141,7 @@ achar o valor $x=\hat{x}$ que minimize $e(x)=(h(x)-a)^2$.
 \begin{SolutionT}[Relativa ao Exemplo \ref{ex:minhxhx3}:]\label{sol:minhxhx3}
  A Fig. \ref{fig:hxacases3a} nos mostra o processo de busca de um mínimo
  de $e(x)$, a busca inicia em $x_0=-1.5$,
- todos os valores $x_{k}$ podem ser vistos na segunda coluna da
+ todos os valores $x_{k}$ podem ser vistos na segunda linha da
 Tabela \ref{tab:hxacases3}. Neste caso a Eq. (\ref{eq:minhxhx2}) diverge em 
 valores de $x_{k}$ próximos a $0$, pois provocam valores  $h'(x_{k})\approx 0$.
 É fácil observar, como neste caso a busca ia na direção correta,

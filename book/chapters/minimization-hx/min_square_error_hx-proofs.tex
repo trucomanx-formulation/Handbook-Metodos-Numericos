@@ -2,7 +2,7 @@
  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{myproofT}[Relativa ao Teorema \ref{theo:minhxhx}]\label{proof:theo:minhxhx}
+\begin{myproofT}[Relativa ao Teorema \ref{theo:minhxhx}:]\label{proof:theo:minhxhx}
 Dados,
 um escalar $x \in \mathbb{R}$, 
 um escalar $a \in \mathbb{R}$,  
@@ -67,7 +67,7 @@ ponto $p$ onde  $a \approx h(p)$;
 valores $p$ que cumpram $h'(p)\approx 0$ provocam uma correção a um ponto distante (divergência) da posição $p$,
 nos casos onde $p$ se aproxime a máximos e pontos de sela,
 ou mínimos locais. 
-Mas se se trata de um mínimo global com $h(p)\approx a$, 
+Mas quando se trata de um mínimo global com $h(p)\approx a$, 
 o comportamento dependerá se é finito ou não, o
 \begin{equation}
 lim_{x\rightarrow p } \frac{h(p)-a}{h'(p)}.
@@ -83,7 +83,7 @@ p_{k} \leftarrow p_{k-1} - \frac{ h(p_{k-1})-a}{h'(p_{k-1})},
 iniciando desde um $p_{0}$ 
 ate que exista uma tendência prolongada onde se observe que $p_{k}$ é muito próximo a $p_{k-1}$,
 momento no qual declaramos que $\hat{x} \approx p_{k}$.
-\item Pode existir um mínimo global $x=\hat{x}$ de $e(x)>0$.
+\item Pode existir um mínimo global $x=\hat{x}$ com $e(x)>0$.
 Isto nos restringe a que no uso da Eq. (\ref{eq:proof:minhxhx3}),
 nosso critério principal para estabelecer o final do cáculo iterativo,
 deve ser a tendência na  proximidade entre $p_{k}$ e $p_{k-1}$ 
@@ -105,7 +105,7 @@ Um diagrama completo resumindo todas estas conclusões pode ser visto na Figura 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{myproofT}[Relativa ao Teorema \ref{theo:minhxhxxbxb}]\label{proof:theo:minhxhxxbxb}
+\begin{myproofT}[Relativa ao Teorema \ref{theo:minhxhxxbxb}:]\label{proof:theo:minhxhxxbxb}
 
 Dados,
 um escalar $x \in \mathbb{R}$, 
@@ -208,7 +208,7 @@ p_{k} \leftarrow p_{k-1} - \frac{ h'(p_{k-1})\{h(p_{k-1})-a\}+\alpha\{p-b\}}{h'(
 iniciando desde um $p_{0}$ 
 ate que exista uma tendência prolongada onde se observe que $p_{k}$ é muito próximo a $p_{k-1}$,
 momento no qual declaramos que $\hat{x} \approx p_{k}$.
-\item Pode existir um mínimo global $x=\hat{x}$ de $e(x)>0$.
+\item Pode existir um mínimo global $x=\hat{x}$ com $e(x)>0$.
 Isto nos restringe a que no uso da Eq. (\ref{eq:proof:minhxhxaxb3}),
 nosso critério principal para estabelecer o final do cáculo iterativo,
 deve ser a tendência na  proximidade entre $p_{k}$ e $p_{k-1}$ 
@@ -230,7 +230,7 @@ Um diagrama completo resumindo todas estas conclusões pode ser visto na Figura 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{myproofT}[Relativa ao Teorema \ref{theo:minhxhxxoxo}]\label{proof:theo:minhxhxaxoxo}
+\begin{myproofT}[Relativa ao Teorema \ref{theo:minhxhxxoxo}:]\label{proof:theo:minhxhxaxoxo}
 
 Dados,
 um escalar $x \in \mathbb{R}$, 
@@ -345,9 +345,9 @@ ate que exista uma tendência prolongada onde se observe que $p_{k}$ é muito pr
 momento no qual declaramos que $\hat{x} \approx p_{k}$.
 Disto também se deduz que o erro a minimizar em cada iteração será diferente e influenciado pelo valor do ponto $p_{k-1}$,
 \begin{equation}
-e_{k-1}(x)  \equiv ||h(x)-a||^2+\alpha||x-p_{k-1}||^2
+e_{k-1}(x)  \equiv ||h(x)-a||^2+\alpha||x-p_{k-1}||^2.
 \end{equation}
-\item Pode existir um mínimo global $x=\hat{x}$ de $e(x) > 0$.
+\item Pode existir um mínimo global $x=\hat{x}$ com $e(x) > 0$.
 Isto nos restringe a que no uso da Eq. (\ref{eq:proof:minhxhxaxoxo3b}),
 nosso critério principal para estabelecer o final do cálculo iterativo,
 deve ser a tendência na  proximidade entre $p_{k}$ e $p_{k-1}$ 

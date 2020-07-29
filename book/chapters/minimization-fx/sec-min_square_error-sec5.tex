@@ -5,7 +5,7 @@
 %\index{Problema inverso!Não linear}
 \index{Minimização do erro quadrático!Não linear}%!Função $||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2+\alpha||\VECTOR{x}-\VECTOR{x}_{last}||_{\MATRIX{D}}^2$}
 
-\begin{theorem}[Solução iterativa]\label{theo:minfxbCfxbaxoaxo}
+\begin{theorem}[Solução iterativa:]\label{theo:minfxbCfxbaxoaxo}
 Dados,
 o escalar $\alpha \in \mathbb{R}_{+}$,
 os vetores coluna $\VECTOR{x}\in \mathbb{R}^N$, $\VECTOR{b}\in \mathbb{R}^M$ e $\VECTOR{x}_{last}\in \mathbb{R}^N$,  
@@ -30,7 +30,7 @@ onde  $\MATRIX{J}(\VECTOR{x})$ é a \hyperref[def:jacobian]{\textbf{matriz Jacob
 \left[ \MATRIX{J}(\VECTOR{x}_{k-1})^{\transpose}\MATRIX{C} \MATRIX{J}(\VECTOR{x}_{k-1}) +\alpha\MATRIX{D} \right]^{-1}
  \left[\MATRIX{J}(\VECTOR{x}_{k-1})^{\transpose}\MATRIX{C}\left\{\VECTOR{f}(\VECTOR{x}_{k-1})-\VECTOR{b}\right\}\right];
 \end{equation}
-onde em cada iteração se tenta minimizar
+de modo que em cada iteração se tenta minimizar
 \begin{equation}\label{eq:minfxbCfxbaxoaxo2:ex}
 e_{k-1}(\VECTOR{x})  \equiv 
 ||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2+

@@ -24,8 +24,8 @@ sendo $\MATRIX{A}:\mathbb{R}^N \rightarrow \mathbb{R}^M$ uma matriz operador lin
 
 \item[Problema inverso:] O problema inverso para o sistema da Eq. (\ref{eq:regularization:1}), é
 achar o vetor de entrada $\VECTOR{x}$, que cumpra  a Eq. (\ref{eq:regularization:2})
-onde $\VECTOR{y}_{\delta}$ é um vetor com amostras ruidosas de $\VECTOR{y}$,
-e $0\leq||\VECTOR{y}-\VECTOR{y}_{\delta}||^2\leq \delta^2$,
+onde $\VECTOR{y}_{\delta}$ é um vetor próximo a $\VECTOR{y}$ ou com amostras ruidosas em relação a $\VECTOR{y}$,
+ $0\leq||\VECTOR{y}-\VECTOR{y}_{\delta}||^2\leq \delta^2$,
 \begin{equation}\label{eq:regularization:2}
 \MATRIX{A}\VECTOR{x}=\VECTOR{y}_{\delta}.
 \end{equation}
@@ -179,7 +179,7 @@ de modo que o vetor $\VECTOR{x}=\VECTOR{\hat{x}}$ que minimiza $e(\VECTOR{x})$
 \end{bmatrix}.
 \end{equation}
 É importante lembrar que $\VECTOR{x}=\VECTOR{\hat{x}}$ minimiza a função $e(\VECTOR{x})$ e não
-a função $||\MATRIX{A}\VECTOR{x}-\VECTOR{y}_{\delta}||^2$,
+à função $||\MATRIX{A}\VECTOR{x}-\VECTOR{y}_{\delta}||^2$,
 pelo que como podemos ver na Figura \ref{fig:ex:IllPosedMultiplaSolutions:a},
 o ponto $\VECTOR{\hat{x}}$ não está no vale da superfície $||\MATRIX{A}\VECTOR{x}-\VECTOR{y}_{\delta}||^2$;
 porém, sim está no ponto mais baixo da superfície $e(\VECTOR{x})$, como mostra a Figura \ref{fig:ex:IllPosedMultiplaSolutions:b}.

@@ -5,7 +5,7 @@
 %\index{Problema inverso!Não linear}
 \index{Minimização do erro quadrático!Não linear}%!Função $||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2+\alpha||\VECTOR{x}-\VECTOR{q}||_{\MATRIX{D}}^2$}
 
-\begin{theorem}[Solução iterativa]\label{theo:minfxbCfxbaxqaxq}
+\begin{theorem}[Solução iterativa:]\label{theo:minfxbCfxbaxqaxq}
 Dados,
 o escalar $\alpha \in \mathbb{R}_{+}$,
 os vetores coluna $\VECTOR{x}\in \mathbb{R}^N$, $\VECTOR{b}\in \mathbb{R}^M$ e $\VECTOR{q}\in \mathbb{R}^N$,  
@@ -56,7 +56,7 @@ não tem inversa.
 \item O Teorema \ref{theo:minfxbCfxbaxqaxq} pode ser usado para achar o vetor $\VECTOR{x}$
 que minimize $e(\VECTOR{x})=||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2+\alpha||\VECTOR{x}-\VECTOR{q}||_{\MATRIX{D}}^2$,
 quando sabemos que o vetor $\VECTOR{x}$ que minimiza $||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2$ 
-esta perto do ponto $\VECTOR{q}$.
+está perto do ponto $\VECTOR{q}$.
 \item No Teorema \ref{theo:minfxbCfxbaxqaxq} o vetor $\VECTOR{x}$ que minimiza $e(\VECTOR{x})$, 
 não necessariamente minimiza  $||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2$.
 \end{itemize}
@@ -72,7 +72,7 @@ $\VECTOR{\hat{x}}$ que cumpre que $\VECTOR{f}(\VECTOR{\hat{x}}) \approx \VECTOR{
 \label{ex:minfxbCfxbaxqaxq1}
 Conhecida um escalar $\alpha$, uma função $\VECTOR{f}(\VECTOR{x}) : \mathbb{R}^{2} \rightarrow \mathbb{R}^{3}$,
 um ponto $\VECTOR{q}$
-é outro ponto $\VECTOR{b}$, no domínio e no contradomínio de $\VECTOR{f}(\VECTOR{x})$, respetivamente;
+e outro ponto $\VECTOR{b}$, no domínio e no contradomínio de $\VECTOR{f}(\VECTOR{x})$, respetivamente;
 achar o valor $\VECTOR{\hat{x}}$ que minimize 
 $||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2+\alpha||\VECTOR{x}-\VECTOR{q}||_{\MATRIX{D}}^2$;
 sabendo que:

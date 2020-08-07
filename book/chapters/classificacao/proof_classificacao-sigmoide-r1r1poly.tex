@@ -2,10 +2,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{myproofT}[Relativa ao Teorema \ref{theo:reglogr1r1poly:1}:]\label{proof:theo:reglogr1r1poly}
-Dados,
+Dados 
 os escalares $x \in \mathbb{R}$, $y \in \mathbb{R}$ e $c_m \in \mathbb{R}$,
 uma função $f_{\VECTOR{c}}:\mathbb{R} \rightarrow \mathbb{R}$, 
-uma função polinomial $h_{\VECTOR{c}}:\mathbb{R} \rightarrow \mathbb{R}$, de grau $M$, e 
+uma função polinomial $h_{\VECTOR{c}}:\mathbb{R} \rightarrow \mathbb{R}$, de grau $M$ e 
 definidas as seguintes equações,
 \begin{equation}\label{eq:proof:theo:reglogr1r1poly:1}
 y\equiv f_{\VECTOR{c}}(x)= \frac{1}{1+e^{-h_{\VECTOR{c}}(x) }},
@@ -24,7 +24,7 @@ e(\VECTOR{c}) =  \sum_{n=1}^{L} w_l||h_{\VECTOR{c}}(x_l)-logit(y_l)||^2,
 proveniente de avaliar $L$ amostras $x_l$ que pertencem a dois grupos, 
 sendo que cada valor $x_l$ tem uma etiqueta de grupo $y_l\in \{A,1-A\}$, 
 onde $0<A\ll 0.5$ é escolhido por nós.
-Todos estes dados podem ser representados pelos vetores 
+Todos esses dados podem ser representados pelos vetores 
 $\VECTOR{x}=[x_1~ x_2~$ $...~$ $x_l~$ $...~ x_L]^{\transpose}$ 
 e $\VECTOR{z}=[logit(y_1)~$ $logit(y_2)~$ $...~$ $logit(y_l)~$ $...~ logit(y_L)]^{\transpose}$,
 ponderados com os pesos $w_l \in \mathbb{R}_+$, 
@@ -57,7 +57,7 @@ onde a matriz $\MATRIX{A}$ é definida como,
 
 
 Usando o Teorema \ref{theo:minAxbCAxb}, sabemos que o vetor $\VECTOR{c}=\VECTOR{\hat{c}}$,
-que minimiza a Eq. (\ref{eq:proof:theo:reglogr1r1poly:3}) pode ser achado usando 
+que minimiza a Eq. (\ref{eq:proof:theo:reglogr1r1poly:3}), pode ser obtido usando 
 \begin{equation}\label{eq:proof:theo:reglogr1r1poly:5}
 \VECTOR{\hat{c}}=[\MATRIX{A}^{\transpose}\MATRIX{W}\MATRIX{A}]^{-1}\MATRIX{A}^{\transpose}\MATRIX{W}\VECTOR{z}.
 \end{equation}

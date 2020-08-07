@@ -6,21 +6,23 @@
 \begin{theorem}[Equação 
 $\DDTVECTOR{x}(t) + \MATRIX{P} \VECTOR{x}(t)=0$ com diferenças finitas:]
 \label{theo:differential-eq-discreto:order2:0}
-Dados, o vetor coluna $\VECTOR{x} \in \mathbb{R}^N$, a matriz $\MATRIX{P} \in \mathbb{R}^{N\times N}$, 
+Dados o vetor coluna $\VECTOR{x} \in \mathbb{R}^N$, a matriz $\MATRIX{P} \in \mathbb{R}^{N\times N}$, 
 e definida a equação diferencial matricial,
 \begin{equation}\label{eq:theo:secondorder:1}
 \DDTVECTOR{x}(t) + \MATRIX{P} \VECTOR{x}(t)=0.
 \end{equation}
 A solução\footnote{A
-demostração pode ser vista na Prova \ref{proof:theo:differential-eq-discreto:order2:0}.} desta equação diferencial tem  a forma,
+demonstração pode ser vista na Prova \ref{proof:theo:differential-eq-discreto:order2:0}.} dessa 
+equação diferencial tem  a forma,
 \begin{equation}\label{eq:theo:secondorder:2}
   \VECTOR{x}[n]=\left\{2\MATRIX{I} - \ToS^2 \MATRIX{P}\right\}\VECTOR{x}[n-1]-\VECTOR{x}[n-2],
 \end{equation}
-onde $\MATRIX{I}$ é uma matriz identidade.
+em que $\MATRIX{I}$ é uma matriz identidade.
 \begin{itemize}
-\item \textbf{Desconhecidos:} Dois valores iniciais consecutivos, por exemplo $\VECTOR{x}[0],\VECTOR{x}[1] \in \mathbb{R}^{N}$, e
+\item \textbf{Desconhecidos:} Dois valores iniciais consecutivos, 
+por exemplo $\VECTOR{x}[0],\VECTOR{x}[1] \in \mathbb{R}^{N}$, e
 \item  \textbf{Conhecidos:} É escolhido por nós um valor $\ToS$, 
-que é a frequencia de amostragem da sinal discreta $\VECTOR{x}[n]$.
+que é a frequência de amostragem do sinal discreta $\VECTOR{x}[n]$.
 \end{itemize}
 \end{theorem}
 
@@ -65,9 +67,10 @@ conhecida a equação diferencial, $\DDTVECTOR{x}(t) + \MATRIX{P} \VECTOR{x}(t)=
 
 \begin{SolutionT}[Relativa ao Exemplo \ref{ex:iterativo:ddxPx:0}:]
 \label{ex:iterativo:ddxPx:0:sol1}
-Escolhemos uma frequencia de amostragem $\ToS=0.1$, e
+Escolhemos uma frequência de amostragem $\ToS=0.1$, e
 tomamos amostras $\VECTOR{x}(t_n)$, para $n \in \{0,~ 1,~ 2,~ ...,~ 150\}$, 
-de modo que usando o Teorema \ref{theo:differential-eq-discreto:order2:0} obtemos a Eq. (\ref{eq:iterativo:ddxPx:0:sol1})
+de modo que usando o Teorema \ref{theo:differential-eq-discreto:order2:0}, 
+obtemos a Eq. (\ref{eq:iterativo:ddxPx:0:sol1})
 e podemos calcular a função $\VECTOR{x}(t_n)$ mostrada na Figura \ref{fig:ex:iterativo:ddxPx:0}.
 \begin{equation}\label{eq:iterativo:ddxPx:0:sol1}
 \MATRIX{A}=

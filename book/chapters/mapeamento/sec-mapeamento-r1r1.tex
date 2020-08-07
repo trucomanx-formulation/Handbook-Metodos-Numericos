@@ -19,7 +19,7 @@ $h_{\VECTOR{c}}(x)$ de grau $M$:]
 \includegraphics[width=0.95\linewidth]{chapters/mapeamento/mapeamento-hx.eps} 
 \end{minipage}
 \begin{minipage}{0.6\textwidth}
-Dados,
+Dados
 os escalares $x \in \mathbb{R}$, $y \in \mathbb{R}$ e $c_m \in \mathbb{R}$,
 uma função polinomial $h_{\VECTOR{c}}:\mathbb{R} \rightarrow \mathbb{R}$, de grau $M$, e 
 definida a Eq. (\ref{eq:maphxr1r1:1}),
@@ -35,13 +35,15 @@ que minimiza o erro $e(\VECTOR{c})$,
 e(\VECTOR{c}) =  \sum_{n=1}^{N} w_n||h_{\VECTOR{c}}(x_n)-y_n||^2,
 \end{equation}
 proveniente de avaliar $N$ amostras $x_n$ e $y_n$ que não cumprem necessariamente a Eq. (\ref{eq:maphxr1r1:1}), 
-representadas pelos vetores $\VECTOR{x}=[x_1~ x_2~ ...~ x_n~ ...~ x_N]^{\transpose}$ e $\VECTOR{y}=[y_1~ y_2~ ...~ y_n~ ...~ y_N]^{\transpose}$,
-ponderados com os pesos $w_n \in \mathbb{R}_+$, representados pela matriz diagonal $\MATRIX{W}=\funcdiag([w_1~ w_2~ ...~ w_n~ ...~ w_N]^{\transpose})$;
-pode ser achado\footnote{A demostração pode ser vista na Prova \ref{proof:theo:maphxr1r1}.} usando:
+representadas pelos vetores $\VECTOR{x}=[x_1~ x_2~ ...~ x_n~ ...~ x_N]^{\transpose}$ e 
+$\VECTOR{y}=[y_1~ y_2~ ...~ y_n~ ...~ y_N]^{\transpose}$,
+ponderados com os pesos $w_n \in \mathbb{R}_+$, 
+representados pela matriz diagonal $\MATRIX{W}=\funcdiag([w_1~ w_2~ ...~ w_n~ ...~ w_N]^{\transpose})$;
+pode ser achado\footnote{A demonstração pode ser vista na Prova \ref{proof:theo:maphxr1r1}.}, usando:
 \begin{equation}\label{eq:maphxr1r1:3}
 \VECTOR{c}=[\MATRIX{A}^{\transpose}\MATRIX{W}\MATRIX{A}]^{-1}\MATRIX{A}^{\transpose}\MATRIX{W}\VECTOR{y},
 \end{equation}
-onde a matriz $\MATRIX{A}$ é definida como,
+sendo a matriz $\MATRIX{A}$ é definida como,
 \begin{equation}\label{eq:maphxr1r1:4}
 \MATRIX{A}\equiv \MATRIX{A}(\VECTOR{x})=\begin{bmatrix}
 \VECTOR{a}_M(x_1)\\
@@ -60,10 +62,10 @@ onde a matriz $\MATRIX{A}$ é definida como,
 \begin{tcbattention}
 \begin{itemize}
 \item É importante lembrar que para que o vetor $\VECTOR{c}$
-que minimiza $e(\VECTOR{c})$, tenha resposta única,
+que minimiza $e(\VECTOR{c})$ tenha resposta única,
 é necessário (porém não suficiente) que o número de amostras $N$ seja maior que a ordem $M$ do polinômio $h_{\VECTOR{c}}(x)$.
 
-\item De forma exata podemos afirmar que para que $\VECTOR{c}$ tenha resposta única,
+\item De forma exata, podemos afirmar que para que $\VECTOR{c}$ tenha resposta única,
 deve existir inversa para a matriz $\MATRIX{A}^{\transpose}\MATRIX{W}\MATRIX{A}$.
 
 \end{itemize}
@@ -72,10 +74,11 @@ deve existir inversa para a matriz $\MATRIX{A}^{\transpose}\MATRIX{W}\MATRIX{A}$
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Exemplos de regressão com um polinômio
-$h_{\VECTOR{c}}(x):~\mathbb{R} \rightarrow \mathbb{R}$ de gau $M$ }
+$h_{\VECTOR{c}}(x):~\mathbb{R} \rightarrow \mathbb{R}$ de grau $M$ }
 
 \begin{example}\label{ex:theo:maphxr1r1}
-Conhecida as $N=16$ amostras $x_n$ e $y_n$, mostradas nas  Tabelas \ref{table:theo:maphxr1r1:xn} e \ref{table:theo:maphxr1r1:yn},
+Conhecida as $N=16$ amostras $x_n$ e $y_n$, 
+mostradas nas  Tabelas \ref{table:theo:maphxr1r1:xn} e \ref{table:theo:maphxr1r1:yn},
 achar o polinômio $h_{\VECTOR{c}}(x)$ de grau $M=2$, 
 que gere o menor erro $e(\VECTOR{c}) =  \sum_{n=1}^{N} ||h_{\VECTOR{c}}(x_n)-y_n||^2$.
 \end{example}
@@ -112,8 +115,9 @@ $y_n$ & 34.2272 & 39.0406 & 46.3776 & 67.6390 & 79.6249 & 76.2655 & 84.2627 & 89
 \begin{SolutionT}[Relativa ao Exemplo \ref{ex:theo:maphxr1r1}:]\label{sol:theo:maphxr1r1}
 Para obter o polinômio $h_{\VECTOR{c}}(x)$ de grau $M=2$, 
 que gere o menor erro $e(\VECTOR{c}) =  \sum_{n=1}^{N} ||h_{\VECTOR{c}}(x_n)-y_n||^2$,
-usamos a Eq. (\ref{eq:maphxr1r1:1}) onde o vetor $\VECTOR{c}$ é calculado como a Eq. (\ref{eq:maphxr1r1:3}),
-onde obtemos que $\VECTOR{c}=[0.35232\quad -0.24794\quad 1.03077]^{\transpose}$, de modo que
+usamos a Eq. (\ref{eq:maphxr1r1:1}), 
+onde o vetor $\VECTOR{c}$ é calculado usando a Eq. (\ref{eq:maphxr1r1:3}),
+na qual obtemos que $\VECTOR{c}=[0.35232\quad -0.24794\quad 1.03077]^{\transpose}$, de modo que
 \begin{equation}
 \begin{matrix}
 h_{\VECTOR{c}}(x) & = & c_1+c_2 x+c_3 x^2 \\

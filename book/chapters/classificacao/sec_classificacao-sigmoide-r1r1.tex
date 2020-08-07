@@ -18,7 +18,7 @@
 \includegraphics[width=0.95\linewidth]{chapters/classificacao/mfiles/reglogr1r1/reglogr1r1.eps} 
 \end{minipage}
 \begin{minipage}{0.55\textwidth}
-Dados, um conjunto de $L$ dados $x_l \in \mathbb{R}, 1 \leq l \leq L$,
+Dados um conjunto de $L$ dados $x_l \in \mathbb{R}, 1 \leq l \leq L$,
 repartidos em dois grupos etiquetados com os símbolos $\bigtriangleup$ e $\bigcirc$, 
 e separáveis por um hiperplano.
 Se desejamos criar um classificador mediante 
@@ -34,13 +34,12 @@ ou seu equivalente: $logit(y)=h_{\VECTOR{c}}(x)$.
 \end{minipage}
 Podemos atribuir a cada valor $x_l$ uma etiqueta $y_l\in \{A,1-A\}$, 
 onde $0<A\ll 0.5$ é escolhido por nós,
-e afirmar que o vetor $\VECTOR{c}= \VECTOR{\hat{c}}$,
-que minimiza o erro quadrático $e(\VECTOR{c})$,
+e afirmar que o vetor $\VECTOR{c}= \VECTOR{\hat{c}}$ que minimiza o erro quadrático $e(\VECTOR{c})$,
 \begin{equation}\label{eq:reglogr1r1:1e}
 e(\VECTOR{c}) =  \sum_{l=1}^{L} w_l||h_{\VECTOR{c}}(x_l) -logit(y_l)||^2,
 \end{equation}
 ponderado usando os pesos $w_l \in \mathbb{R}_+$, 
-pode ser achado\footnote{A demostração pode ser vista na Prova \ref{proof:theo:reglogr1r1}.}  
+pode ser achado\footnote{A demonstração pode ser vista na Prova \ref{proof:theo:reglogr1r1}.}  
 com
 \begin{equation}\label{eq:reglogr1r1:2}
 \VECTOR{\hat{c}} =  \left[ \MATRIX{A}^{\transpose} \MATRIX{W}\MATRIX{A}\right]^{-1} \MATRIX{A}^{\transpose} \MATRIX{W}\VECTOR{z},
@@ -82,7 +81,7 @@ logit(y_L) \\
 \begin{itemize}
 \item Dado que a função de classificação $f_{\VECTOR{c}}(x)$ vai entre $0$ e $1$,
 podemos reinterpretar este valor como se fosse uma probabilidade;
-neste caso, $f_{\VECTOR{c}}(x_l)$ representa, $P(y_l=\bigcirc|x_l)$, 
+nesse caso, $f_{\VECTOR{c}}(x_l)$ representa, $P(y_l=\bigcirc|x_l)$, 
 a probabilidade de que $y_l=\bigcirc$ dado que tivemos como entrada o valor $x_l$.
 \item O limiar da classificação de $f_{\VECTOR{c}}(x)$ está no hiperplano $c_1  +c_2x=0$,
 provocando neste ponto um $f_{\VECTOR{c}}(x)=0.5$.
@@ -124,12 +123,13 @@ com os $L=10$ dados $x_l$ da Tabela \ref{table:theo:reglogr1r1:xn},
 usamos a Eq. (\ref{eq:reglogr1r1:2}) onde escolhemos $w_l=1$ e valores $y_l \in \{0.1,~ 0.9\}$,
 $0.1$ para $\bigtriangleup$ e $0.9$ para $\bigcirc$,
 obtendo um vetor $\VECTOR{\hat{c}}=[-5.5043\quad 2.4248 ]^{\transpose}$.
-Assim, podemos representar a função $\left.f_{\VECTOR{c}}(x)\right|_{\VECTOR{c}=\VECTOR{\hat{c}}}$ que classifica os dados $x_l$, 
+Assim, podemos representar a função $\left.f_{\VECTOR{c}}(x)\right|_{\VECTOR{c}=\VECTOR{\hat{c}}}$, 
+que classifica os dados $x_l$, 
 como é mostrado na Figura \ref{fig:theo:reglogr1r1:xn:s1} e na Eq. (\ref{eq:theo:reglogr1r1:xn:s1}),
 \begin{equation}\label{eq:theo:reglogr1r1:xn:s1}
 f_{\VECTOR{\hat{c}}}(x)= \frac{1}{1+e^{ 5.5043-2.4248 x}}.
 \end{equation}
-É interessante ressaltar que para um valor $A=0.1$ a pendente é pequena e a classificação é pouco definida,
+É interessante ressaltar que para um valor $A=0.1$, a pendente é pequena e a classificação é pouco definida,
 com limiar de classificação em $2.27$.
 \end{SolutionT}
 
@@ -154,17 +154,19 @@ com limiar de classificação em $2.27$.
 
 \begin{SolutionT}[Relativa ao Exemplo \ref{ex:theo:reglogr1r1}:]\label{sol:theo:reglogr1r1:s2}
 Para obter o vetor de parâmetros $\VECTOR{c}=\VECTOR{\hat{c}}$ da função $f_{\VECTOR{c}}(x)$, 
-que gere o menor erro $e(\VECTOR{c}) =  \sum_{l=1}^{L} ||c_1 +c_2 x_l-logit(y_l)||^2$
+que gere o menor erro $e(\VECTOR{c}) =  \sum_{l=1}^{L} ||c_1 +c_2 x_l-logit(y_l)||^2$,
 com os $L=10$ dados $x_l$ da Tabela \ref{table:theo:reglogr1r1:xn},
-usamos a Eq. (\ref{eq:reglogr1r1:2}) onde escolhemos $w_l=1$ e valores $y_l \in \{0.001,~ 0.999\}$,
+usamos a Eq. (\ref{eq:reglogr1r1:2}), onde escolhemos $w_l=1$ e valores $y_l \in \{0.001,~ 0.999\}$,
 $0.001$ para $\bigtriangleup$ e $0.999$ para $\bigcirc$,
 obtendo um vetor $\VECTOR{\hat{c}}=[-17.3022\quad 7.6221]^{\transpose}$. 
-Assim, podemos representar a função $\left.f_{\VECTOR{c}}(x)\right|_{\VECTOR{c}=\VECTOR{\hat{c}}}$ que classifica os dados $x_l$, 
+Assim, podemos representar a função $\left.f_{\VECTOR{c}}(x)\right|_{\VECTOR{c}=\VECTOR{\hat{c}}}$ 
+que classifica os dados $x_l$, 
 como é mostrado na Figura \ref{fig:theo:reglogr1r1:xn:s2}  e na Eq. (\ref{eq:theo:reglogr1r1:xn:s2}),
 \begin{equation}\label{eq:theo:reglogr1r1:xn:s2}
 f_{\VECTOR{\hat{c}}}(x)= \frac{1}{1+e^{ 17.3022-7.6221 x}}.
 \end{equation}
-É interessante ressaltar que para um valor $A=0.001$ a pendente é abrupta para cada grupo e a classificação é bem definida,
+É interessante ressaltar que para um valor $A=0.001$, 
+a pendente é abrupta para cada grupo e a classificação é bem definida,
 com limiar de classificação em $2.27$.
 \end{SolutionT}
 
@@ -172,11 +174,11 @@ com limiar de classificação em $2.27$.
 \begin{elaboracion}[title=Karl Friedrich Gauss (1777-1855), width= 0.99\linewidth]
 \label{elab:Gauss}
 \noindent
-Notável matemático, astrônomo e físico alemão;
+Notável matemático, astrônomo e físico alemão,
 o jovem Gauss achou a formula $\sum_{n=1}^{N}n=\frac{N(N+1)}{2}$.
-Na sua etapa adulta estudou no ``Caroline College'' em Brunswick (1792-1795)
+Na sua etapa adulta, estudou no ``Caroline College'' em Brunswick (1792-1795)
 e posteriormente na ``University of G\"ottingen'' (1795-1798).
-Entre suas contribuições à matemática podemos mencionar 
+Entre suas contribuições à matemática, podemos mencionar 
 a minimização do erro nos dados observados
  mediante o método de mínimos quadrados \cite[pp. 225]{agarwal2014creators}.
 \end{elaboracion}

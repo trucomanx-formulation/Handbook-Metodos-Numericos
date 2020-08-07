@@ -1,10 +1,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Propriedades varias com matrizes}
+\section{Propriedades várias com matrizes}
 
 
-\begin{theorem}[Propiedades das matrices inversas:]\label{theo:matrixgeneric2}
+\begin{theorem}[Propriedades das matrices inversas:]\label{theo:matrixgeneric2}
 Conhecidas as matrizes quadradas $\MATRIX{A} \in \mathbb{R}^{N \times N}$ e $\MATRIX{B} \in \mathbb{R}^{N \times N}$,
 podemos afirmar \cite[pp. 65]{golub2013matrix}:
 \begin{itemize}
@@ -19,7 +19,7 @@ podemos afirmar \cite[pp. 65]{golub2013matrix}:
 \end{itemize}
 \end{theorem}
 
-\begin{theorem}[Propiedades com determinantes:]\label{theo:matrixgeneric1}
+\begin{theorem}[Propriedades com determinantes:]\label{theo:matrixgeneric1}
 Conhecidas as matrizes quadradas $\MATRIX{A} \in \mathbb{R}^{N \times N}$ e $\MATRIX{B} \in \mathbb{R}^{N \times N}$,
 e o escalar $\alpha \in \mathbb{R}$, podemos afirmar \cite[pp. 66]{golub2013matrix}:
 \begin{itemize}
@@ -41,7 +41,8 @@ det(\MATRIX{A}\MATRIX{B})=det(\MATRIX{A})det(\MATRIX{B}).
 
 \begin{definition}[Autovalor e autovetores de uma matriz:]\label{def:matrixgeneric0}
 Seja a matriz $\MATRIX{A}$ um operador linear $\MATRIX{A}: \mathbb{C}^{N} \rightarrow \mathbb{C}^{N}$,  
-e $\VECTOR{v} \in \mathbb{C}^{N} \neq\VECTOR{0}$ um vetor coluna. Se existe um escalar $\lambda \in \mathbb{C}$ onde, 
+e $\VECTOR{v} \in \mathbb{C}^{N} \neq\VECTOR{0}$ um vetor coluna. 
+Se existe um escalar $\lambda \in \mathbb{C}$ em que, 
 %\begin{equation}
 $\MATRIX{A}\VECTOR{v}=\lambda\VECTOR{v}$,
 %\end{equation} 
@@ -49,14 +50,14 @@ então $\VECTOR{v}$ é um autovetor de $\MATRIX{A}$, e $\lambda$ é seu autovalo
 \end{definition}
 
 
-\begin{theorem}[Autovalor  na matriz transposta:]\label{theo:matrixgeneric3}
+\begin{theorem}[Autovalor na matriz transposta:]\label{theo:matrixgeneric3}
 Conhecida uma matriz quadrada $\MATRIX{A} \in \mathbb{R}^{N \times N}$, 
 com  autovalores $\lambda_n$, $\forall n \in \{1, 2, ..., N\}$.
 %e autovetores $\VECTOR{e}_n$, $\forall n \in \{1, 2, ..., N\}$.
 \begin{itemize}
 \item A matriz $\MATRIX{A}^{\transpose}$ tem
-\footnote{A demostração pode ser vista na Prova \ref{proof:theo:matrixgeneric3}.} 
-os mesmos autovalores que $\MATRIX{A}$, é dizer tem o mesmo polinômio caraterístico $p(\lambda)$,
+\footnote{A demonstração pode ser vista na Prova \ref{proof:theo:matrixgeneric3}.} 
+os mesmos autovalores que $\MATRIX{A}$, quer dizer, tem o mesmo polinômio caraterístico $p(\lambda)$,
 \begin{equation}
 p(\lambda)=det(\MATRIX{A}-\lambda \MATRIX{I})=det(\MATRIX{A}^{\transpose}-\lambda \MATRIX{I}).
 \end{equation}

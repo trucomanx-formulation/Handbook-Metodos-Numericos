@@ -3,7 +3,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{myproofT}[Relativa ao Teorema \ref{theo:minAxbCAxb}:]\label{proof:theo:minAxbCAxb}
-Dados,
+Dados
 os vetores coluna $\VECTOR{x}\in \mathbb{R}^N$ e $\VECTOR{b}\in \mathbb{R}^M$,  
 uma matriz $\MATRIX{A} \in \mathbb{R}^{M\times N}$, 
 uma matriz diagonal $\MATRIX{C} \in \mathbb{R}^{M\times M}_+$, e 
@@ -15,7 +15,7 @@ Para achar o ponto $\VECTOR{x}=\VECTOR{\hat{x}}$ que gere o menor valor $e(\VECT
 o critério que um ponto de inflexão $\VECTOR{x}^+$ pode ser achado quando 
 $\frac{\partial e(\VECTOR{x}^+)}{\partial \VECTOR{x} }=[0~ 0~ \hdots~ 0 ]^{\transpose}$.
 Assim, usando o Corolário \ref{coro:derAxbAxb2} podemos 
-rescrever esta igualdade como a Eq. (\ref{eq:proof:minAxbCAxb1}),
+reescrever esta igualdade como a Eq. (\ref{eq:proof:minAxbCAxb1}),
 \begin{equation}\label{eq:proof:minAxbCAxb1}
 2 \MATRIX{A}^{\transpose}\MATRIX{C}\left(\MATRIX{A}\VECTOR{x}^+-\VECTOR{b}\right)=[0~ 0~ \hdots~ 0 ]^{\transpose},
 \end{equation}
@@ -33,7 +33,7 @@ podemos concluir que  $\VECTOR{\hat{x}}=\VECTOR{x}^+$ é o mínimo global da Eq.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{myproofT}[Relativa ao Teorema \ref{theo:minAxbCAxbplusalphaxqD}:]
 \label{proof:theo:minAxbCAxbalphaxqD}
-Dados,
+Dados
 o escalar $\alpha \in \mathbb{R}_{+}$,
 os vetores coluna $\VECTOR{x}\in \mathbb{R}^N$, $\VECTOR{b}\in \mathbb{R}^M$ e $\VECTOR{q}\in \mathbb{R}^N$,  
 uma matriz $\MATRIX{A} \in \mathbb{R}^{M\times N}$, 
@@ -45,7 +45,7 @@ e(\VECTOR{x})=||\MATRIX{A}\VECTOR{x}-\VECTOR{b}||_{\MATRIX{C}}^2+\alpha||\VECTOR
 Para achar o ponto $\VECTOR{x}=\VECTOR{\hat{x}}$ que gere o menor valor de $e(\VECTOR{x})$, é aplicado
 o critério que um ponto de inflexão $\VECTOR{x}^+$ pode ser achado quando 
 $\frac{\partial e(\VECTOR{x}^+)}{\partial \VECTOR{x} }=[0~ 0~ \hdots~ 0 ]^{\transpose}$.
-Assim, usando o Corolário \ref{coro:derAxbAxb2} podemos 
+Assim, usando o Corolário \ref{coro:derAxbAxb2}, podemos 
 rescrever esta igualdade como a Eq. (\ref{eq:proof:minAxbCAxb1alphaxqD}),
 \begin{equation}\label{eq:proof:minAxbCAxb1alphaxqD}
 2 \MATRIX{A}^{\transpose}\MATRIX{C}\left(\MATRIX{A}\VECTOR{x}^+-\VECTOR{b}\right)
@@ -56,7 +56,7 @@ de modo que pode ser obtido:
 \VECTOR{x}^+=\left[ \MATRIX{A}^{\transpose}\MATRIX{C}\MATRIX{A} +\alpha\MATRIX{D}\right]^{-1} 
 \left[ \MATRIX{A}^{\transpose}\MATRIX{C} \VECTOR{b}+\alpha\MATRIX{D}\VECTOR{q}\right].
 \end{equation}
-Dado que  a função $e(\VECTOR{x})$ é sempre positiva, o que implica a existencia de um mínimo,
+Dado que  a função $e(\VECTOR{x})$ é sempre positiva, o que implica a existência de um mínimo,
 e que o ponto de inflexão $\VECTOR{x}^+$ encontrado na Eq. (\ref{eq:proof:minAxbCAxb2alphaxqD}) 
 é único se $\MATRIX{A}^{\transpose}\MATRIX{C}\MATRIX{A}$ tem inversa, 
 podemos concluir que  $\VECTOR{\hat{x}}=\VECTOR{x}^+$ é o mínimo global da Eq. (\ref{eq:proof:minAxbCAxb0alphaxqD}).
@@ -65,7 +65,7 @@ podemos concluir que  $\VECTOR{\hat{x}}=\VECTOR{x}^+$ é o mínimo global da Eq.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{myproofT}[Relativa ao Teorema \ref{theo:minfxbCfxb}:]\label{proof:theo:minfxbCfxb}
-Dados,
+Dados
 os vetores coluna $\VECTOR{x}\in \mathbb{R}^N$ e $\VECTOR{b}\in \mathbb{R}^M$,  
 uma função $\VECTOR{f}:\mathbb{R}^{N} \rightarrow \mathbb{R}^{M}$, 
 uma matriz diagonal $\MATRIX{C} \in \mathbb{R}^{M\times M}_+$, e 
@@ -74,14 +74,16 @@ definida a Eq. (\ref{eq:proof:minfxbCfxb0}),
 e(\VECTOR{x})=||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2;
 \end{equation}
 sabemos que para achar o ponto $\VECTOR{x}=\VECTOR{\hat{x}}$ que gere o menor valor de $e(\VECTOR{x})$, é aplicado
-o critério que um ponto de inflexão $\VECTOR{x}^+$; é dizer, um máximo, um mínimo ou um ponto de sela, pode ser achado quando 
-$\frac{\partial e(\VECTOR{x}^+)}{\partial \VECTOR{x} }=[0~ 0~ \hdots~ 0 ]^{\transpose}$, como pode ser visto na Figura \ref{fig:ex0b};
+o critério que um ponto de inflexão $\VECTOR{x}^+$; 
+quer dizer, um máximo, um mínimo ou um ponto de sela podem ser achados quando 
+$\frac{\partial e(\VECTOR{x}^+)}{\partial \VECTOR{x} }=[0~ 0~ \hdots~ 0 ]^{\transpose}$, 
+como é visto na Figura \ref{fig:ex0b};
 assim, usando o Teorema \ref{theo:derfxbCfxb0} obtemos que
 \begin{equation}\label{eq:proof:minfxbCfxb1exact}
 2 \MATRIX{J}(\VECTOR{x}^+)^{\transpose}\MATRIX{C}\left[ \VECTOR{f}(\VECTOR{x}^+)-\VECTOR{b} \right] =
 \frac{\partial e(\VECTOR{x}^+)}{\partial \VECTOR{x} }=[0~ 0~ \hdots~ 0 ]^{\transpose},
 \end{equation}
-Da Eq. (\ref{eq:proof:minfxbCfxb1exact}) observamos, que podemos achar pontos de inflexão $\VECTOR{x}^+$
+Da Eq. (\ref{eq:proof:minfxbCfxb1exact}), observamos que podemos achar pontos de inflexão $\VECTOR{x}^+$
 em $e(\VECTOR{x}^+)$ quando 
 $\MATRIX{J}(\VECTOR{x}^+) \equiv \frac{\partial \VECTOR{f}(\VECTOR{x}^+)}{\partial \VECTOR{x}^{\transpose} } = \MATRIX{0}$, 
 sem importar o nível de proximidade entre os vetores $\VECTOR{b}$ e $\VECTOR{f}(\VECTOR{x}^+)$;
@@ -110,11 +112,11 @@ sem importar o nível de proximidade entre os vetores $\VECTOR{b}$ e $\VECTOR{f}
 
 Por outro lado, podemos realizar uma aproximação linear de $\VECTOR{f}(\VECTOR{x})$ em $e(\VECTOR{x})$
 ao redor do ponto $\VECTOR{p}$ usando a \hyperref[def:taylor]{\textbf{série de Taylor}},
-de modo que a Eq. (\ref{eq:proof:minfxbCfxb0}) pode ficar expresada como
+de modo que a Eq. (\ref{eq:proof:minfxbCfxb0}) pode ficar expressa como
 \begin{equation}\label{eq:proof:minfxbCfxb0approx}
 e(\VECTOR{x}) \approx ||\MATRIX{J}(\VECTOR{p})(\VECTOR{x}-\VECTOR{p})-(\VECTOR{b}-\VECTOR{f}(\VECTOR{p}))||_{\MATRIX{C}}^2,
 \end{equation}
-onde $\MATRIX{J}(\VECTOR{p})$ representa a \hyperref[def:jacobian]{\textbf{matriz Jacobiana}} 
+em que $\MATRIX{J}(\VECTOR{p})$ representa a \hyperref[def:jacobian]{\textbf{matriz Jacobiana}} 
 de $\VECTOR{f}(\VECTOR{x})$ avaliada no ponto $\VECTOR{p}$.
 Assim, usando o resultado da Prova \ref{proof:theo:minAxbCAxb} na Eq. (\ref{eq:proof:minfxbCfxb0approx}), 
 podemos concluir que um ponto $\VECTOR{x}^*$ que é 
@@ -124,43 +126,43 @@ pode ser achado como
 \VECTOR{x}^* \approx \VECTOR{p}+ \left[ \MATRIX{J}(\VECTOR{p})^{\transpose}\MATRIX{C}\MATRIX{J}(\VECTOR{p}) \right]^{-1} \MATRIX{J}(\VECTOR{p})^{\transpose}\MATRIX{C} \left[\VECTOR{b}-\VECTOR{f}(\VECTOR{p})\right].
 \end{equation}
 
-
-Desta equação podemos tirar a seguintes conclusões:
+Dessa equação, podemos tirar as seguintes conclusões:
 \begin{itemize}
 
-\item Observamos que a posição $\VECTOR{p}$ é corregida para ficar próximo à posição $\VECTOR{x}^*$, 
+\item Observamos que a posição $\VECTOR{p}$ é corrigida para ficar próximo à posição $\VECTOR{x}^*$, 
 que é o valor mínimo na aproximação linear ao redor de $\VECTOR{p}$;
 pelo que se deduz que a Eq. (\ref{eq:proof:minAxbCAxb2approx})
-pode ser usada para procurar aproximações de pontos mínimos $\VECTOR{\hat{x}}$ em $e(\VECTOR{x})$ desde a posição $\VECTOR{p}$,
+pode ser usada para procurar aproximações de pontos mínimos 
+$\VECTOR{\hat{x}}$ em $e(\VECTOR{x})$, desde a posição $\VECTOR{p}$,
 ou pelo menos aproximações de novas posições em caminhos numa direção descendente de $e(\VECTOR{x})$.
 
 \item A Eq. (\ref{eq:proof:minAxbCAxb2approx}) é satisfeita 
 com $\VECTOR{x}^* \approx \VECTOR{p}$ se acharmos um  
 ponto $\VECTOR{p}$ onde  $\VECTOR{b} \approx \VECTOR{f}(\VECTOR{p})$; 
-é dizer um mínimo global de $e(\VECTOR{x})$ em $\VECTOR{p}$, como pode ser visto na Figura \ref{fig:ex0a}. 
+quer dizer um mínimo global de $e(\VECTOR{x})$ em $\VECTOR{p}$, como pode ser visto na Figura \ref{fig:ex0a}. 
 
-\item Se reescrevemos a Eq. (\ref{eq:proof:minAxbCAxb2approx}) usando o Teorema \ref{theo:derfxbCfxb0},
+\item Se reescrevermos a Eq. (\ref{eq:proof:minAxbCAxb2approx}) usando o Teorema \ref{theo:derfxbCfxb0},
 obtemos
 \begin{equation}\label{eq:proof:minfxbCfxb2ea}
 \VECTOR{x}^* \approx \VECTOR{p} -
 0.5 \left[ \MATRIX{J}(\VECTOR{p})^{\transpose}\MATRIX{C} \MATRIX{J}(\VECTOR{p}) \right]^{-1}
 \frac{\partial e(\VECTOR{p})}{\partial \VECTOR{x} },
 \end{equation}
-onde a Eq. (\ref{eq:proof:minfxbCfxb2ea}) é satisfeita 
+em que a Eq. (\ref{eq:proof:minfxbCfxb2ea}) é satisfeita 
 com $\VECTOR{x}^* \approx \VECTOR{p}$
 se acharmos um  ponto $\VECTOR{p}$ onde  
 $\frac{\partial e(\VECTOR{p})}{\partial \VECTOR{x} }\approx \VECTOR{0}$; 
 é dizer $\VECTOR{p}$ é um ponto de inflexão de $e(\VECTOR{x})$, como pode ser visto na Figura \ref{fig:ex0b}.
 Porém, dado que a equação avança desde $\VECTOR{p}$ na direção de um mínimo $\VECTOR{x}^*$, 
 mesmo que nos pontos de inflexão correspondentes a máximos ou pontos de sela,
-encontremos valores de $\VECTOR{p}$ próximos a $\VECTOR{x}^*$,
- estes casos serão pouco estáveis pois
+encontremos valores de $\VECTOR{p}$ próximos a $\VECTOR{x}^*$;
+ esses casos serão pouco estáveis, pois
 a correção da posição $\VECTOR{p}$ será na direção de um mínimo e não do máximo,
-pois seguindo o Teorema \ref{theo:semipositivematrix1} a 
+pois seguindo o Teorema \ref{theo:semipositivematrix1}, a 
 matriz $\MATRIX{J}(\VECTOR{p})^{\transpose}\MATRIX{C} \MATRIX{J}(\VECTOR{p})$ é 
-semidefinida positiva se $\MATRIX{C}$ é simétrica.
+semidefinida positiva, se $\MATRIX{C}$ é simétrica.
 
-\item Se modificamos a Eq. (\ref{eq:proof:minAxbCAxb2approx}), e escolhemos um ponto  
+\item Se modificamos a Eq. (\ref{eq:proof:minAxbCAxb2approx}), e escolhermos um ponto  
 $\VECTOR{p}_0$ que consideremos próximo ao ponto $\VECTOR{\hat{x}}$ que minimiza $e(\VECTOR{\hat{x}})$,
 podemos achar iterativamente aproximações lineares $\VECTOR{x}^*$ cada vez mais próximos a  $\VECTOR{\hat{x}}$,
 se usamos a seguinte equação iterativa,
@@ -170,17 +172,17 @@ se usamos a seguinte equação iterativa,
 \MATRIX{J}(\VECTOR{p}_{k-1})^{\transpose}\MATRIX{C} \left(\VECTOR{f}(\VECTOR{p}_{k-1})-\VECTOR{b}\right),
 \end{equation}
 iniciando desde um $\VECTOR{p}_{0}$, 
-ate que exista uma tendência prolongada onde se observe que $\VECTOR{p}_{k}$ é muito próximo a $\VECTOR{p}_{k-1}$,
+até que exista uma tendência prolongada onde se observa que $\VECTOR{p}_{k}$ é muito próximo a $\VECTOR{p}_{k-1}$,
 momento no qual declaramos que $\VECTOR{\hat{x}} \approx \VECTOR{p}_{k}$.
 \item Como foi visto na Figura  \ref{fig:ex0b},
 pode existir um mínimo global $\VECTOR{\hat{x}}$ de $e(\VECTOR{\hat{x}})>0$.
-Isto nos restringe a que no uso da Eq. (\ref{eq:proof:minfxbCfxb3}),
-nosso critério principal para estabelecer o final do cáculo iterativo,
+Isso nos restringe a que no uso da Eq. (\ref{eq:proof:minfxbCfxb3}),
+nosso critério principal para estabelecer o final do cálculo iterativo
 deve ser a tendência na  proximidade entre $\VECTOR{p}_{k}$ e $\VECTOR{p}_{k-1}$ 
 e não o valor de $e(\VECTOR{x}_k)$.
 \end{itemize}~
 
-Um diagrama completo resumindo todas estas conclusões pode ser visto na Figura \ref{fig:fluxo1}.
+Um diagrama completo resumindo todas essas conclusões pode ser visto na Figura \ref{fig:fluxo1}.
 \end{myproofT}
 \begin{figure}[!h]
      \centering
@@ -193,7 +195,7 @@ Um diagrama completo resumindo todas estas conclusões pode ser visto na Figura 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{myproofT}[Relativa ao Teorema \ref{theo:minfxbCfxbaxqaxq}:]\label{proof:theo:minfxbCfxbaxqd}
-Dados,
+Dados
 um escalar $\alpha\in \mathbb{R}_+$,
 os vetores coluna $\VECTOR{x}\in \mathbb{R}^N$, 
 $\VECTOR{q}\in \mathbb{R}^N$ e
@@ -205,7 +207,8 @@ definida a Eq. (\ref{eq:proof:minfxbCfxbaxqd0}),
 e(\VECTOR{x})=||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2+\alpha||\VECTOR{x}-\VECTOR{q}||_{\MATRIX{D}}^2;
 \end{equation}
 sabemos que para achar o ponto $\VECTOR{x}=\VECTOR{\hat{x}}$ que gere o menor valor de $e(\VECTOR{x})$, é aplicado
-o critério que um ponto de inflexão $\VECTOR{x}^+$; é dizer, um máximo, um mínimo ou um ponto de sela, pode ser achado quando 
+o critério que um ponto de inflexão $\VECTOR{x}^+$; 
+quer dizer, um máximo, um mínimo ou um ponto de sela, pode ser achado quando 
 $\frac{\partial e(\VECTOR{x}^+)}{\partial \VECTOR{x} }=[0~ 0~ \hdots~ 0 ]^{\transpose}$ (ver Figura \ref{fig:ex0b});
 assim, usando o Teorema \ref{theo:derfxbCfxb0} e o Corolário \ref{coro:derAxbAxb2} obtemos que
 \begin{equation}\label{eq:proof:minfxbCfxb1exact2}
@@ -214,12 +217,12 @@ assim, usando o Teorema \ref{theo:derfxbCfxb0} e o Corolário \ref{coro:derAxbAx
 =
 \frac{\partial e(\VECTOR{x}^+)}{\partial \VECTOR{x} }=[0~ 0~ \hdots~ 0 ]^{\transpose},
 \end{equation}
-Da Eq. (\ref{eq:proof:minfxbCfxb1exact2}) observamos, 
+Da Eq. (\ref{eq:proof:minfxbCfxb1exact2}), observamos 
 que podemos achar um ponto de inflexão $\VECTOR{q}$
 em $e(\VECTOR{q})$ se 
-$\MATRIX{J}(\VECTOR{q})  = \MATRIX{0}$ ou um mínimo geral se $\VECTOR{f}(\VECTOR{q})=\VECTOR{b}$,
+$\MATRIX{J}(\VECTOR{q})  = \MATRIX{0}$ ou um mínimo geral se $\VECTOR{f}(\VECTOR{q})=\VECTOR{b}$;
 caso contrario, 
-se nenhuma destas possibilidades são cumpridas devemos aplicar outros critérios para achar os pontos de inflexão.
+se nenhuma dessas possibilidades são cumpridas devemos aplicar outros critérios para achar os pontos de inflexão.
 
 Assim, procurando outros critérios, podemos realizar uma aproximação linear de $\VECTOR{f}(\VECTOR{x})$ em $e(\VECTOR{x})$
 ao redor do ponto $\VECTOR{p}$ usando a \hyperref[def:taylor]{\textbf{série de Taylor}},
@@ -229,10 +232,10 @@ e(\VECTOR{x}) \approx
 ||\MATRIX{J}(\VECTOR{p})[\VECTOR{x}-\VECTOR{p}]-[\VECTOR{b}-\VECTOR{f}(\VECTOR{p})]||_{\MATRIX{C}}^2+
 \alpha||[\VECTOR{x}-\VECTOR{p}]-[\VECTOR{q}-\VECTOR{p}]||_{\MATRIX{D}}^2,
 \end{equation}
-onde $\MATRIX{J}(\VECTOR{p})$ representa a \hyperref[def:jacobian]{\textbf{matriz Jacobiana}} 
+em que $\MATRIX{J}(\VECTOR{p})$ representa a \hyperref[def:jacobian]{\textbf{matriz Jacobiana}} 
 de $\VECTOR{f}(\VECTOR{x})$ avaliada no ponto $\VECTOR{p}$.
 Assim, usando o resultado da Prova \ref{proof:theo:minAxbCAxbalphaxqD} na Eq. (\ref{eq:proof:minfxbCfxb0alphaxqDapprox}), 
-podemos concluir que um ponto $\VECTOR{x}^*$ que é 
+podemos concluir que um ponto $\VECTOR{x}^*$, que é 
 um mínimo da aproximação linear feita em $e(\VECTOR{x})$ ao redor do ponto $\VECTOR{p}$,
 pode ser achado como
 \begin{equation}\label{eq:proof:minfxbCfxbaxqd2}
@@ -241,11 +244,10 @@ pode ser achado como
 \left\{ \MATRIX{J}(\VECTOR{p})^{\transpose}\MATRIX{C} \left[\VECTOR{b}-\VECTOR{f}(\VECTOR{p})\right]-\alpha\MATRIX{D}[\VECTOR{p}-\VECTOR{q}]\right\}.
 \end{equation}
 
-
-Desta equação podemos tirar a seguintes conclusões:
+Dessa equação, podemos tirar as seguintes conclusões:
 \begin{itemize}
 
-\item Observamos que a posição $\VECTOR{p}$ é corregida para ficar próximo à posição $\VECTOR{x}^*$, 
+\item Observamos que a posição $\VECTOR{p}$ é corrigida para ficar próxima à posição $\VECTOR{x}^*$, 
 que é o valor mínimo na aproximação linear ao redor de $\VECTOR{p}$;
 pelo que se deduz que a Eq. (\ref{eq:proof:minfxbCfxbaxqd2})
 pode ser usada para procurar aproximações de pontos mínimos $\VECTOR{\hat{x}}$ em $e(\VECTOR{x})$ desde a posição $\VECTOR{p}$,
@@ -267,16 +269,16 @@ obtemos
 0.5 \left[ \MATRIX{J}(\VECTOR{p})^{\transpose}\MATRIX{C} \MATRIX{J}(\VECTOR{p})+\alpha \MATRIX{D} \right]^{-1}
 \frac{\partial e(\VECTOR{p})}{\partial \VECTOR{x} },
 \end{equation}
-onde a Eq. (\ref{eq:proof:minfxbCfxb2ea1}) é satisfeita 
+em que a Eq. (\ref{eq:proof:minfxbCfxb2ea1}) é satisfeita 
 com $\VECTOR{x}^* \approx \VECTOR{p}$
 se acharmos um  ponto $\VECTOR{p}$ onde  
 $\frac{\partial e(\VECTOR{p})}{\partial \VECTOR{x} }\approx \VECTOR{0}$,
  como descrito na Eq. (\ref{eq:proof:minfxbCfxb1exact2}); 
-é dizer $\VECTOR{p}$ é um ponto de inflexão de $e(\VECTOR{x})$, ver Figura \ref{fig:ex0b}.
+quer dizer $\VECTOR{p}$ é um ponto de inflexão de $e(\VECTOR{x})$, ver Figura \ref{fig:ex0b}.
 Porém, dado que a equação avança desde $\VECTOR{p}$ na direção de um mínimo $\VECTOR{x}^*$, 
 mesmo que nos pontos de inflexão correspondentes a máximos ou pontos de sela,
-encontremos valores de $\VECTOR{p}$ próximos a $\VECTOR{x}^*$,
- estes casos serão pouco estáveis pois
+encontremos valores de $\VECTOR{p}$ próximos a $\VECTOR{x}^*$;
+ esses casos serão pouco estáveis, pois
 a correção da posição $\VECTOR{p}$ será na direção de um mínimo e não do máximo,
 pois seguindo o Teorema \ref{theo:semipositivematrix1}, se $\MATRIX{C}$ e $\MATRIX{D}$ são simétricas, 
 então as matrizes $\MATRIX{J}(\VECTOR{p})^{\transpose}\MATRIX{C} \MATRIX{J}(\VECTOR{p})$ e $\MATRIX{D}$
@@ -293,17 +295,17 @@ se usamos a seguinte equação iterativa,
 \alpha\MATRIX{D}[\VECTOR{p}_{k-1}-\VECTOR{q}]\right\},
 \end{equation}
 iniciando desde um $\VECTOR{p}_{0}$ 
-ate que exista uma tendência prolongada onde se observe que $\VECTOR{p}_{k}$ é muito próximo a $\VECTOR{p}_{k-1}$,
+até que exista uma tendência prolongada onde se observa que $\VECTOR{p}_{k}$ é muito próximo a $\VECTOR{p}_{k-1}$,
 momento no qual declaramos que $\VECTOR{\hat{x}} \approx \VECTOR{p}_{k}$.
 \item Como foi visto na Figura  \ref{fig:ex0b},
 pode existir um mínimo global $\VECTOR{x}=\VECTOR{\hat{x}}$ de $e(\VECTOR{x}) > 0$.
-Isto nos restringe a que no uso da Eq. (\ref{eq:proof:minfxbCfxb3a}),
-nosso critério principal para estabelecer o final do cáculo iterativo,
+Isso nos restringe a que, no uso da Eq. (\ref{eq:proof:minfxbCfxb3a}),
+nosso critério principal para estabelecer o final do cálculo iterativo,
 deve ser a tendência na  proximidade entre $\VECTOR{p}_{k}$ e $\VECTOR{p}_{k-1}$ 
 e não o valor de $e(\VECTOR{x}_k)$.
 \end{itemize}
 
-Um diagrama completo resumindo todas estas conclusões pode ser visto na Figura \ref{fig:fluxo2}.
+Um diagrama completo resumindo todas essas conclusões pode ser visto na Figura \ref{fig:fluxo2}.
 \end{myproofT}
 \begin{figure}[!h]
      \centering
@@ -315,7 +317,7 @@ Um diagrama completo resumindo todas estas conclusões pode ser visto na Figura 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{myproofT}[Relativa ao Teorema \ref{theo:minfxbCfxbaxoaxo}:]\label{proof:theo:minfxbCfxbaxod}
-Dados,
+Dados
 um escalar $\alpha\in \mathbb{R}_+$,
 os vetores coluna $\VECTOR{x}\in \mathbb{R}^N$, 
 $\VECTOR{x}_{last}\in \mathbb{R}^N$ e
@@ -328,43 +330,44 @@ e(\VECTOR{x})=||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2+\alpha||\VECT
 \end{equation}
 tendo em consideração que $\VECTOR{x}_{last}$ é uma constante equivalente a $\VECTOR{x}_{k-1}$
 numa busca iterativa ou equivalente a $\VECTOR{p}$, 
-se decidimos usar uma aproximação linear ao redor de $\VECTOR{p}$ em $\VECTOR{f}(\VECTOR{x})$; 
-é dizer, o segundo somando na Eq. (\ref{eq:proof:minfxbCfxbaxod0}) 
+se decidirmos usar uma aproximação linear ao redor de $\VECTOR{p}$ em $\VECTOR{f}(\VECTOR{x})$; 
+quer dizer, o segundo somando na Eq. (\ref{eq:proof:minfxbCfxbaxod0}) 
 procura minimizar $||\VECTOR{x}_{k}-\VECTOR{x}_{k-1}||_{\MATRIX{D}}^2$.
 
 Sabemos que para achar o ponto $\VECTOR{x}=\VECTOR{\hat{x}}$ que gere o menor valor de $e(\VECTOR{x})$, é aplicado
-o critério que um ponto de inflexão $\VECTOR{x}^+$; é dizer, um máximo, um mínimo ou um ponto de sela, pode ser achado quando 
+o critério que um ponto de inflexão $\VECTOR{x}^+$; isto é, um máximo, 
+um mínimo ou um ponto de sela podem ser achados quando 
 $\frac{\partial e(\VECTOR{x}^+)}{\partial \VECTOR{x} }=[0~ 0~ \hdots~ 0 ]^{\transpose}$ (ver Figura \ref{fig:ex0b});
-assim, usando o Teorema \ref{theo:derfxbCfxb0} e o Corolário \ref{coro:derAxbAxb2} obtemos que
+assim, usando o Teorema \ref{theo:derfxbCfxb0} e o Corolário \ref{coro:derAxbAxb2}, obtemos que
 \begin{equation}\label{eq:proof:minfxbCfxbaxod1exact2}
 2 \MATRIX{J}(\VECTOR{x}^+)^{\transpose}\MATRIX{C}\left[ \VECTOR{f}(\VECTOR{x}^+)-\VECTOR{b} \right] +
 2 \alpha\MATRIX{D}\left[\VECTOR{x}^+-\VECTOR{x}_{last}\right]
 =
 \frac{\partial e(\VECTOR{x}^+)}{\partial \VECTOR{x} }=[0~ 0~ \hdots~ 0 ]^{\transpose}.
 \end{equation}
-Da Eq. (\ref{eq:proof:minfxbCfxbaxod1exact2}) observamos, 
+Da Eq. (\ref{eq:proof:minfxbCfxbaxod1exact2}) observamos 
 que podemos achar um ponto de inflexão $\VECTOR{x}^+=\VECTOR{x}_{last}$
 em $e(\VECTOR{x}_{last})$ se 
-$\MATRIX{J}(\VECTOR{x}_{last})  = \MATRIX{0}$ ou um mínimo geral se $\VECTOR{f}(\VECTOR{x}_{last})=\VECTOR{b}$,
+$\MATRIX{J}(\VECTOR{x}_{last})  = \MATRIX{0}$ ou um mínimo geral se $\VECTOR{f}(\VECTOR{x}_{last})=\VECTOR{b}$;
 caso contrario, 
-se nenhuma destas possibilidades são cumpridas devemos aplicar outros critérios para achar os pontos de inflexão.
+se nenhuma dessas possibilidades são cumpridas, devemos aplicar outros critérios para achar os pontos de inflexão.
 
 
 
 Assim, procurando outros critérios, podemos igualar $\VECTOR{x}_{last}\equiv \VECTOR{p}$ e 
 realizar uma aproximação linear de $\VECTOR{f}(\VECTOR{x})$ em $e(\VECTOR{x})$
 ao redor do ponto $\VECTOR{p}$ usando a \hyperref[def:taylor]{\textbf{série de Taylor}} truncada,
-de modo que a Eq. (\ref{eq:proof:minfxbCfxbaxod0}) pode ficar expressada como
+de modo que a Eq. (\ref{eq:proof:minfxbCfxbaxod0}) pode ficar expressa como
 \begin{equation}\label{eq:proof:minfxbCfxbaxod0alphaxqDapprox}
 e(\VECTOR{x}) \approx e_{\VECTOR{p}}(\VECTOR{x})  \equiv 
 ||\MATRIX{J}(\VECTOR{p})[\VECTOR{x}-\VECTOR{p}]-[\VECTOR{b}-\VECTOR{f}(\VECTOR{p})]||_{\MATRIX{C}}^2+
 \alpha||\VECTOR{x}-\VECTOR{p}||_{\MATRIX{D}}^2,
 \end{equation}
-onde $\MATRIX{J}(\VECTOR{p})$ representa a \hyperref[def:jacobian]{\textbf{matriz Jacobiana}} 
+em que $\MATRIX{J}(\VECTOR{p})$ representa a \hyperref[def:jacobian]{\textbf{matriz Jacobiana}} 
 de $\VECTOR{f}(\VECTOR{x})$ avaliada no ponto $\VECTOR{p}$.
 Assim, usando o resultado da Prova \ref{proof:theo:minAxbCAxbalphaxqD} na Eq. (\ref{eq:proof:minfxbCfxbaxod0alphaxqDapprox}), 
 onde se aplica que $\frac{\partial e_{\VECTOR{p}}(\VECTOR{x}^*)}{\partial \VECTOR{x} }=\VECTOR{0}$,
-podemos concluir que um ponto $\VECTOR{x}^*$ que é 
+podemos concluir que um ponto $\VECTOR{x}^*$; que é 
 um mínimo da aproximação linear feita em $e(\VECTOR{x})$ ao redor do ponto $\VECTOR{p}$,
 pode ser achado como,
 \begin{equation}\label{eq:proof:minfxbCfxbaxod2}
@@ -373,19 +376,19 @@ pode ser achado como,
 \MATRIX{J}(\VECTOR{p})^{\transpose}\MATRIX{C} \left[\VECTOR{b}-\VECTOR{f}(\VECTOR{p})\right].
 \end{equation}
 
-Desta equação podemos tirar a seguintes conclusões:
+Dessa equação, podemos tirar as seguintes conclusões:
 \begin{itemize}
 
-\item Observamos que a posição $\VECTOR{p}$ é corregida para ficar próximo à posição $\VECTOR{x}^*$, 
+\item Observamos que a posição $\VECTOR{p}$ é corrigida para ficar próximo à posição $\VECTOR{x}^*$, 
 que é o valor mínimo na aproximação linear ao redor de $\VECTOR{p}$;
 pelo que se deduz que a Eq. (\ref{eq:proof:minfxbCfxbaxod2})
 pode ser usada para procurar aproximações de pontos mínimos $\VECTOR{\hat{x}}$ em $e(\VECTOR{x})$ desde a posição $\VECTOR{p}$,
 ou pelo menos aproximações de novas posições em caminhos numa direção descendente de $e(\VECTOR{x})$.
 
 \item A Eq. (\ref{eq:proof:minfxbCfxbaxod2}) é satisfeita 
-com $\VECTOR{x}^* \approx \VECTOR{p}$ se acharmos um  
+com $\VECTOR{x}^* \approx \VECTOR{p}$, se acharmos um  
 ponto $\VECTOR{p}$ onde  $\VECTOR{b} \approx \VECTOR{f}(\VECTOR{p}\approx \VECTOR{x}_{last})$; 
-é dizer um mínimo global de $e(\VECTOR{x})$ em $\VECTOR{p}$, como pode ser visto na Figura \ref{fig:ex0a}. 
+quer dizer um mínimo global de $e(\VECTOR{x})$ em $\VECTOR{p}$, como pode ser visto na Figura \ref{fig:ex0a}. 
 
 \item Se reescrevemos a Eq. (\ref{eq:proof:minfxbCfxbaxod2}) usando o Teorema \ref{theo:derfxbCfxb0}
 e o Corolário \ref{coro:derAxbAxb2},
@@ -395,22 +398,23 @@ obtemos
 0.5 \left[ \MATRIX{J}(\VECTOR{p})^{\transpose}\MATRIX{C} \MATRIX{J}(\VECTOR{p})+\alpha \MATRIX{D} \right]^{-1}
 \frac{\partial e(\VECTOR{p})}{\partial \VECTOR{x} },
 \end{equation}
-onde a Eq. (\ref{eq:proof:minfxbCfxbaxod2ea1}) é satisfeita 
-com $\VECTOR{x}^* \approx \VECTOR{p}$
+em que a Eq. (\ref{eq:proof:minfxbCfxbaxod2ea1}) é satisfeita 
+com $\VECTOR{x}^* \approx \VECTOR{p}$, 
 se acharmos um  ponto $\VECTOR{p}$ onde  
 $\frac{\partial e(\VECTOR{p})}{\partial \VECTOR{x} }\approx \VECTOR{0}$; 
-é dizer $\VECTOR{p}$ é um ponto de inflexão de $e(\VECTOR{x})$, como pode ser visto na Figura \ref{fig:ex0b}.
+isto é, $\VECTOR{p}$ é um ponto de inflexão de $e(\VECTOR{x})$, 
+como pode ser visto na Figura \ref{fig:ex0b}.
 Porém, dado que a equação avança desde $\VECTOR{p}$ na direção de um mínimo $\VECTOR{x}^*$, 
 mesmo que nos pontos de inflexão correspondentes a máximos ou pontos de sela,
-encontremos valores de $\VECTOR{p}$ próximos a $\VECTOR{x}^*$,
- estes casos serão pouco estáveis pois
+encontremos valores de $\VECTOR{p}$ próximos a $\VECTOR{x}^*$;
+ esses casos serão pouco estáveis, pois
 a correção da posição $\VECTOR{p}$ será na direção de um mínimo e não do máximo.
 \item Seguindo o Teorema \ref{theo:semipositivematrix1}, se $\MATRIX{C}$ e $\MATRIX{D}$ são simétricas, 
 então as matrizes $\MATRIX{J}(\VECTOR{p})^{\transpose}\MATRIX{C} \MATRIX{J}(\VECTOR{p})$ e $\MATRIX{D}$
 são semidefinidas positivas.
 
 \item Se modificamos a Eq. (\ref{eq:proof:minfxbCfxbaxod2}), e escolhemos um ponto  
-$\VECTOR{p}_0$ que consideremos próximo ao ponto $\VECTOR{x}=\VECTOR{\hat{x}}$ que minimiza $e(\VECTOR{x})$,
+$\VECTOR{p}_0$ que consideremos próximo ao ponto $\VECTOR{x}=\VECTOR{\hat{x}}$, que minimiza $e(\VECTOR{x})$,
 podemos achar iterativamente aproximações lineares $\VECTOR{x}^*$ cada vez mais próximos a  $\VECTOR{\hat{x}}$,
 se usamos a seguinte equação iterativa,
 \begin{equation}\label{eq:proof:minfxbCfxbaxod3b}
@@ -419,9 +423,9 @@ se usamos a seguinte equação iterativa,
 \MATRIX{J}(\VECTOR{p}_{k-1})^{\transpose}\MATRIX{C} \left[\VECTOR{f}(\VECTOR{p}_{k-1})-\VECTOR{b}\right],
 \end{equation}
 onde se inicia desde um $\VECTOR{p}_{0}$ 
-ate que exista uma tendência prolongada onde se observe que $\VECTOR{p}_{k}$ é muito próximo a $\VECTOR{p}_{k-1}$,
+até que exista uma tendência prolongada onde se observa que $\VECTOR{p}_{k}$ é muito próximo a $\VECTOR{p}_{k-1}$,
 momento no qual declaramos que $\VECTOR{\hat{x}} \approx \VECTOR{p}_{k}$.
-Disto também se deduz que o erro a minimizar em cada iteração será diferente e influenciado pelo valor do ponto $\VECTOR{p}_{k-1}$,
+Disso também se deduz que o erro a minimizar em cada iteração será diferente e influenciado pelo valor do ponto $\VECTOR{p}_{k-1}$,
 \begin{equation}
 e_{k-1}(\VECTOR{x})  \equiv 
 ||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2+
@@ -429,13 +433,13 @@ e_{k-1}(\VECTOR{x})  \equiv
 \end{equation}
 \item Como foi visto na Figura  \ref{fig:ex0b},
 pode existir um mínimo global $\VECTOR{x}=\VECTOR{\hat{x}}$ de $e(\VECTOR{x}) > 0$.
-Isto nos restringe a que no uso da Eq. (\ref{eq:proof:minfxbCfxb3a}),
-nosso critério principal para estabelecer o final do cálculo iterativo,
+Isso nos restringe a que no uso da Eq. (\ref{eq:proof:minfxbCfxb3a}),
+nosso critério principal para estabelecer o final do cálculo iterativo
 deve ser a tendência na  proximidade entre $\VECTOR{p}_{k}$ e $\VECTOR{p}_{k-1}$ 
 e não o valor de $e(\VECTOR{x}_k)$.
 \end{itemize}~
 
-Um diagrama completo resumindo todas estas conclusões pode ser visto na Figura \ref{fig:fluxo3}.
+Um diagrama completo resumindo todas essas conclusões pode ser visto na Figura \ref{fig:fluxo3}.
 \end{myproofT}
 \begin{figure}[!h]
      \centering

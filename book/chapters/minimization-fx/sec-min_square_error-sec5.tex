@@ -6,7 +6,7 @@
 \index{Minimização do erro quadrático!Não linear}%!Função $||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2+\alpha||\VECTOR{x}-\VECTOR{x}_{last}||_{\MATRIX{D}}^2$}
 
 \begin{theorem}[Solução iterativa:]\label{theo:minfxbCfxbaxoaxo}
-Dados,
+Dados
 o escalar $\alpha \in \mathbb{R}_{+}$,
 os vetores coluna $\VECTOR{x}\in \mathbb{R}^N$, $\VECTOR{b}\in \mathbb{R}^M$ e $\VECTOR{x}_{last}\in \mathbb{R}^N$,  
 uma função $\VECTOR{f}:\mathbb{R}^{N} \rightarrow \mathbb{R}^{M}$, 
@@ -15,16 +15,16 @@ definida a Eq. (\ref{eq:minfxbCfxbaxoaxo1}),
 \begin{equation}\label{eq:minfxbCfxbaxoaxo1}
 e(\VECTOR{x})=||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2+\alpha||\VECTOR{x}-\VECTOR{x}_{last}||_{\MATRIX{D}}^2,
 \end{equation}
-onde consideramos que $\VECTOR{x}_{last}$ é uma constante equivalente a $\VECTOR{x}_{k-1}$
+em que consideramos que $\VECTOR{x}_{last}$ é uma constante equivalente a $\VECTOR{x}_{k-1}$
 numa busca iterativa ou equivalente a $\VECTOR{p}$, 
-se decidimos usar uma aproximação linear ao redor de $\VECTOR{p}$ em $\VECTOR{f}(\VECTOR{x})$; 
-é dizer, o segundo somando na Eq. (\ref{eq:minfxbCfxbaxoaxo1}) 
+se decidirmos usar uma aproximação linear ao redor de $\VECTOR{p}$ em $\VECTOR{f}(\VECTOR{x})$; 
+quer dizer, o segundo somando na Eq. (\ref{eq:minfxbCfxbaxoaxo1}) 
 procura minimizar $||\VECTOR{x}_{k}-\VECTOR{x}_{k-1}||_{\MATRIX{D}}^2$.
 
 
 Se desejamos achar o ponto $\VECTOR{x}=\VECTOR{\hat{x}}$ que minimiza o escalar $e(\VECTOR{x})$,
 podemos obtê-lo usando iterativamente a Eq. (\ref{eq:minfxbCfxbaxoaxo2}),
-onde  $\MATRIX{J}(\VECTOR{x})$ é a \hyperref[def:jacobian]{\textbf{matriz Jacobiana}}  de $\VECTOR{f}(\VECTOR{x})$,
+em que $\MATRIX{J}(\VECTOR{x})$ é a \hyperref[def:jacobian]{\textbf{matriz Jacobiana}}  de $\VECTOR{f}(\VECTOR{x})$,
 \begin{equation}\label{eq:minfxbCfxbaxoaxo2}
 \VECTOR{x}_{k}\leftarrow \VECTOR{x}_{k-1}-
 \left[ \MATRIX{J}(\VECTOR{x}_{k-1})^{\transpose}\MATRIX{C} \MATRIX{J}(\VECTOR{x}_{k-1}) +\alpha\MATRIX{D} \right]^{-1}
@@ -38,11 +38,11 @@ e_{k-1}(\VECTOR{x})  \equiv
 \end{equation}
 Assim, $\VECTOR{\hat{x}}$ pode ser achado 
 iniciando a Eq. (\ref{eq:minfxbCfxbaxoaxo2}) desde um $\VECTOR{x}_{0}$ qualquer, 
-ate que $\VECTOR{x}_{k}$ seja muito próximo a $\VECTOR{x}_{k-1}$,
+até que $\VECTOR{x}_{k}$ seja muito próximo a $\VECTOR{x}_{k-1}$,
 onde se declara que $\VECTOR{\hat{x}} \approx \VECTOR{x}_{k}$,
 que corresponde a um mínimo\footnote{\label{ref:minfxxp}A
-demostração pode ser vista na Prova \ref{proof:theo:minfxbCfxbaxod}.} de $e(\VECTOR{x})$,
-sem aclarar se é local ou global.
+demonstração pode ser vista na Prova \ref{proof:theo:minfxbCfxbaxod}.} de $e(\VECTOR{x})$,
+sem esclarecer se é local ou global.
 
 
 \textbf{Considerações:}
@@ -78,7 +78,7 @@ $||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2+\alpha||\VECTOR{x}-\VECTOR
 \begin{example}[Quando existem muitos mínimos locais e um
 $\VECTOR{\hat{x}}$ que cumpre que $\VECTOR{f}(\VECTOR{\hat{x}}) \approx \VECTOR{b}$:]
 \label{ex:minfxbCfxbaxqaxp1}
-Conhecida um escalar $\alpha$, uma função $\VECTOR{f}(\VECTOR{x}) : \mathbb{R}^{2} \rightarrow \mathbb{R}^{3}$,
+Conhecidos um escalar $\alpha$, uma função $\VECTOR{f}(\VECTOR{x}) : \mathbb{R}^{2} \rightarrow \mathbb{R}^{3}$,
 um ponto $\VECTOR{b}$ no contradomínio de $\VECTOR{f}(\VECTOR{x})$;
 achar o valor $\VECTOR{\hat{x}}$ que minimize 
 $||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2+\alpha||\VECTOR{x}-\VECTOR{x}_{last}||_{\MATRIX{D}}^2$;
@@ -98,11 +98,12 @@ x_1+x_2
 \qquad
 \alpha=0.5.
 \end{equation}
-Com esta informação podemos calcular o jacobiano $\MATRIX{J}(\VECTOR{x})$ de $\VECTOR{f}(\VECTOR{x})$,
+Com essa informação, podemos calcular o jacobiano $\MATRIX{J}(\VECTOR{x})$ de $\VECTOR{f}(\VECTOR{x})$,
  e também escolher as matrizes $\MATRIX{C} \in \mathbb{R}^{3}$ e $\MATRIX{D} \in \mathbb{R}^{2}$, 
 com elementos iguais à  matriz identidade. 
 Assim, usando a Eq. (\ref{eq:minfxbCfxbaxoaxo2:ex}),
-obtemos a superfície $e_{0}(\VECTOR{x})$ para um ponto inicial $\VECTOR{x}_0$ como mostra a Figura \ref{fig:ex:minfxbCfxbaxqaxp3:a}.
+obtemos a superfície $e_{0}(\VECTOR{x})$ para um ponto inicial $\VECTOR{x}_0$, 
+como mostra a Figura \ref{fig:ex:minfxbCfxbaxqaxp3:a}.
 Podemos ver a resposta a este exemplo na Solução \ref{ex:minfxbCfxbaxqaxp3:sol1}.
 \end{example}
 
@@ -111,7 +112,7 @@ Podemos ver a resposta a este exemplo na Solução \ref{ex:minfxbCfxbaxqaxp3:sol
 Se escolhemos o ponto inicial $\VECTOR{x}_0=[2.2183$ $2.2183]^{\transpose}$ e 
 usamos iterativamente a Eq. (\ref{eq:minfxbCfxbaxoaxo2}), obtemos os valores 
 de $\VECTOR{x}_k$ e $e_{k}(\VECTOR{x}_k)$, como mostra a Tabela \ref{table:ex:minfxbCfxbaxqaxp3},
-onde se assume o final do processo iterativo quando $\VECTOR{x}_k \approx \VECTOR{x}_{k-1}$.
+na qual se assume o final do processo iterativo quando $\VECTOR{x}_k \approx \VECTOR{x}_{k-1}$.
 Assim, a aproximação iterativa conclui na resposta 
 $\VECTOR{\hat{x}}\approx \VECTOR{x}_{4} =[1.0304\quad 1.0304]^{\transpose}$
 com um erro $e_{4}(\VECTOR{\hat{x}})=6.6750~10^{-3}$;

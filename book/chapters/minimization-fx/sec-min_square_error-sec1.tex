@@ -5,7 +5,7 @@
 \index{Minimização do erro quadrático!Linear}%!Função $||\MATRIX{A}\VECTOR{x}-\VECTOR{b}||_{\MATRIX{C}}^2$}
 
 \begin{theorem}\label{theo:minAxbCAxb}
-Dados,
+Dados
 um vetor coluna $\VECTOR{x}\in \mathbb{R}^N$, 
 um vetor coluna $\VECTOR{b}\in \mathbb{R}^M$,  
 uma matriz $\MATRIX{A} \in \mathbb{R}^{M\times N}$, 
@@ -15,8 +15,8 @@ definida a Eq. (\ref{eq:minAxbCAxb1}),
 e(\VECTOR{x})  = ||\MATRIX{A}\VECTOR{x}-\VECTOR{b}||_{\MATRIX{C}}^2.
 \end{equation}
 Se desejamos ter o valor $\VECTOR{\hat{x}}$ que minimiza o escalar $e(\VECTOR{\hat{x}})$,
-devemos usar\footnote{A demostração pode ser vista na Prova \ref{proof:theo:minAxbCAxb}.} a Eq. (\ref{eq:minAxbCAxb2}),
-onde este mínimo só existe sim $\MATRIX{A}^{\transpose}\MATRIX{C} \MATRIX{A}$ tem inversa,
+devemos usar\footnote{A demonstração pode ser vista na Prova \ref{proof:theo:minAxbCAxb}.} a Eq. (\ref{eq:minAxbCAxb2}),
+na qual este mínimo só existe se a matriz $\MATRIX{A}^{\transpose}\MATRIX{C} \MATRIX{A}$ tem inversa,
 \begin{equation}\label{eq:minAxbCAxb2}
 \VECTOR{\hat{x}} =
 \left[ \MATRIX{A}^{\transpose}\MATRIX{C} \MATRIX{A} \right]^{-1}\MATRIX{A}^{\transpose}\MATRIX{C}\VECTOR{b}.
@@ -47,14 +47,14 @@ partindo desde o ponto $\VECTOR{b}$, usando a seguinte equação,
 \begin{equation}
 \VECTOR{d}_p = \left\{\MATRIX{A}\left[ \MATRIX{A}^{\transpose}\MATRIX{A} \right]^{-1}\MATRIX{A}^{\transpose}- \MATRIX{I}\right\}\VECTOR{b},
 \end{equation}
-onde $I$ é uma matriz identidade.
+em que $I$ é uma matriz identidade.
 Podemos ver graficamente o vetor $\VECTOR{d}_p$ na Figura \ref{fig:coro:minAxbCAxb1:a}.
 %%
 \index{Moore-Penrose!Pseudo-inversa}
 \index{Pseudo-inversa!Moore-Penrose}
 \begin{tcbattention}
 A matriz $\left[ \MATRIX{A}^{\transpose}\MATRIX{A} \right]^{-1}\MATRIX{A}^{\transpose}$
-também é chamada de pseudo inversa de Moore-Penrose da matriz $\MATRIX{A}$ \cite[pp. 290]{golub2013matrix}.
+também é chamada de pseudo-inversa de Moore-Penrose da matriz $\MATRIX{A}$ \cite[pp. 290]{golub2013matrix}.
 \end{tcbattention}
 \end{minipage}
 \end{corollary}
@@ -92,15 +92,15 @@ sabendo que:
 \end{bmatrix}.
 \end{equation}
 
-Podemos ver a resposta a este exemplo na Solução \ref{ex:minAxbCAxb:sol1}.
+Podemos ver a resposta a esse exemplo na Solução \ref{ex:minAxbCAxb:sol1}.
 \end{example}
 
 
 \begin{SolutionT}[Relativa ao Exemplo \ref{ex:minAxbCAxb1}:]
 \label{ex:minAxbCAxb:sol1}
-Com todos estes dados e usando a Eq. (\ref{eq:minAxbCAxb1}),
+Com todos esses dados e usando a Eq. (\ref{eq:minAxbCAxb1}),
 obtemos a superfície $e(\VECTOR{x})$ como mostra a Figura \ref{fig:ex:minAxbCAxb:a}.
-Usando a Eq. (\ref{eq:minAxbCAxb2}) sabemos que o ponto $\VECTOR{\hat{x}}=[1\quad 1]^{\transpose}$
+Usando a Eq. (\ref{eq:minAxbCAxb2}), sabemos que o ponto $\VECTOR{\hat{x}}=[1\quad 1]^{\transpose}$
 minimiza a Eq. (\ref{eq:minAxbCAxb1}), com um $e(\VECTOR{\hat{x}})=0.12$.
 
 Usando o Corolário \ref{coro:minAxbCAxb1}, podemos calcular o vetor $\VECTOR{d}_p=[0.2 \quad 0.2 \quad -0.2]^{\transpose}$,
@@ -142,7 +142,7 @@ e sua aplicação a problemas em física matemática e matemática computacional
 \begin{tcbinformation} 
 \textbf{Regularização de Tikhonov de ordem zero:} Este método foi trabalhado de forma independente
 por Phillips em 1962 e por Andrei Nikolaevich Tikhonov em 1963 \cite[pp. 86]{kress2012numerical}, 
-obtendo eles uma solução ótima para $\VECTOR{x}$  que minimiza $e(\VECTOR{x})$, 
+obtendo uma solução ótima para $\VECTOR{x}$  que minimiza $e(\VECTOR{x})$, 
 \begin{equation}
 e(\VECTOR{x})=||\MATRIX{A}\VECTOR{x}-\VECTOR{b}||^2+\alpha ||\VECTOR{x}||^2.
 \end{equation}

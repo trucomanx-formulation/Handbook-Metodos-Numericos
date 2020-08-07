@@ -6,17 +6,18 @@
 \begin{theorem}[Equação 
 $\DTVECTOR{x}(t) + \MATRIX{P} \VECTOR{x}(t)=0$ com diferenças regressivas:]
 \label{theo:differential-eq-discreto:order1:0}
-Dados, o vetor coluna $\VECTOR{x} \in \mathbb{R}^N$, matriz $\MATRIX{P} \in \mathbb{R}^{N\times N}$, 
+Dados o vetor coluna $\VECTOR{x} \in \mathbb{R}^N$, matriz $\MATRIX{P} \in \mathbb{R}^{N\times N}$, 
 e definida a equação diferencial matricial,
 \begin{equation}
 \DTVECTOR{x}(t) + \MATRIX{P} \VECTOR{x}(t)=0.
 \end{equation}
 A solução\footnote{A
-demostração pode ser vista na Prova \ref{proof:theo:differential-eq-discreto:order1:0}.} desta equação diferencial tem  a forma,
+demonstração pode ser vista na Prova \ref{proof:theo:differential-eq-discreto:order1:0}.} dessa 
+equação diferencial tem a forma,
 \begin{equation}
   \VECTOR{x}[n]=\left\{\MATRIX{I} + \ToS \MATRIX{P}\right\}^{-1}\VECTOR{x}[n-1],
 \end{equation}
-onde $\MATRIX{I}$ é uma matriz identidade.
+em que $\MATRIX{I}$ é uma matriz identidade.
 \begin{itemize}
 \item \textbf{Desconhecidos:} Um valor inicial, por exemplo $\VECTOR{x}[0] \in \mathbb{R}^{N}$.
 \item  \textbf{Conhecidos:} É escolhido por nós um valor $\ToS$, 
@@ -58,9 +59,10 @@ conhecida a equação diferencial, $\DTVECTOR{x}(t) + \MATRIX{P} \VECTOR{x}(t)=0
 
 \begin{SolutionT}[Relativa ao Exemplo \ref{ex:iterativo:dxPx:0}:]
 \label{ex:iterativo:dxPx:0:sol1}
-Escolhemos uma frequencia de amostragem $\ToS=0.1$, e
+Escolhemos uma frequência de amostragem $\ToS=0.1$, e
 tomamos amostras $\VECTOR{x}(t_n)$, para $n \in \{0,~ 1,~ 2,~ ...,~ 150\}$, 
-de modo que usando o Teorema \ref{theo:differential-eq-discreto:order1:0} obtemos a Eq. (\ref{eq:iterativo:dxPx:0:sol1}),
+de modo que usando o Teorema \ref{theo:differential-eq-discreto:order1:0}, 
+obtemos a Eq. (\ref{eq:iterativo:dxPx:0:sol1}),
 e podemos calcular a função $\VECTOR{x}(t_n)$ mostrada na Figura \ref{fig:ex:iterativo:dxPx:0}.
 \begin{equation}\label{eq:iterativo:dxPx:0:sol1}
 \MATRIX{A}=

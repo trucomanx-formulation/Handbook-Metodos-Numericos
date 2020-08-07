@@ -7,7 +7,7 @@
 \index{Minimização do erro quadrático!Não linear}%!Função $||h(x)-a||^2+\alpha ||x-b||^2$}
 
 \begin{theorem}[Solução iterativa:]\label{theo:minhxhxxbxb}
-Dados,
+Dados
 um escalar $\alpha \in \mathbb{R}_+$, 
 um escalar $x \in \mathbb{R}$, 
 um escalar $a \in \mathbb{R}$,  
@@ -16,19 +16,19 @@ definida a Eq. (\ref{eq:minhxhxxbxb1}),
 \begin{equation}\label{eq:minhxhxxbxb1}
 e(x)=||h(x)-a||^2+\alpha ||x-b||^2.
 \end{equation}
-Se desejamos ter o valor $x=\hat{x}$ que minimiza o escalar $e(x)$,
-este valor pode ser achado\footnote{A 
-demostração da Eq (\ref{eq:minhxhxxbxb2}) pode ser vista na Prova \ref{proof:theo:minhxhxxbxb}.} 
+Se desejarmos ter o valor $x=\hat{x}$ que minimiza o escalar $e(x)$,
+esse valor pode ser achado\footnote{A 
+demonstração da Eq (\ref{eq:minhxhxxbxb2}) pode ser vista na Prova \ref{proof:theo:minhxhxxbxb}.} 
  usando iterativamente a Eq. (\ref{eq:minhxhxxbxb2}),
-onde  $h'(x)\equiv \frac{d h(x)}{d x}$,
+em que $h'(x)\equiv \frac{d h(x)}{d x}$,
 \begin{equation}\label{eq:minhxhxxbxb2}
 x_{k} \leftarrow x_{k-1}-
 \frac{ h'(x_{k-1}) \left[h(x_{k-1})-a\right]+\alpha\left[ x_{k-1}-b\right]}{\left[h'(x_{k-1})\right]^2+\alpha}.
 \end{equation}
 Assim, $\hat{x}$ pode ser achado iniciando a Eq. (\ref{eq:minhxhxxbxb2}) desde um 
 $x_{0}$ qualquer, realizando cálculos $x_{k}$ iterativamente, 
-ate que $x_{k}$ seja muito próximo a $x_{k-1}$ (convergência de $x_{k}$),
-onde pode ser declarado que $\hat{x} \approx x_{k}$.
+até que $x_{k}$ seja muito próximo a $x_{k-1}$ (convergência de $x_{k}$); assim,
+baixo essas condições declaramos que $\hat{x} \approx x_{k}$.
 
 \textbf{Considerações:}
 \begin{itemize}
@@ -49,7 +49,7 @@ antes de iniciar a busca iterativa.}.
 que minimize $e(x)=||h(x)-a||^2+\alpha||x-b||^2$,
 quando sabemos que o vetor $x$ que minimiza $||h(x)-a||^2$ 
 está perto do ponto $b$.
-\item No Teorema \ref{theo:minhxhxxbxb} o ponto $x$ que minimiza $e(x)$, 
+\item No Teorema \ref{theo:minhxhxxbxb}, o ponto $x$ que minimiza $e(x)$ 
 não necesariamente minimiza  $||h(x)-a||^2$.
 \end{itemize}
 \end{tcbattention}
@@ -70,7 +70,7 @@ achar o valor $x=\hat{x}$ que minimize $e(x)=||h(x)-a||^2+\alpha||x-b||^2$.
  A Fig. \ref{fig:hxbcasesa} nos mostra o processo de busca de um mínimo
  de $e(x)$. A busca inicia em $x_0=-1.4$,
  todos os valores $x_{k}$ podem ser vistos na Tabela \ref{tab:hxbcases1}. 
-Neste caso a busca iterativa indicada pela Eq. (\ref{eq:minhxhxxbxb2}) converge sem problemas 
+Neste caso, a busca iterativa indicada pela Eq. (\ref{eq:minhxhxxbxb2}) converge sem problemas 
 em $\hat{x}\approx x_7 =-1.21239$ com $e(x_7)=1.85954$; porém, 
  este valor de $x$ é um mínimo local e está longe do mínimo
  global de  $e(x)$ que está em $x=0$ com um $e(0)=1.0$.
@@ -125,8 +125,8 @@ achar o valor $x=\hat{x}$ que minimize $e(x)=||h(x)-a||^2+\alpha||x-b||^2$.
  A Fig. \ref{fig:hxbcasesb} nos mostra o processo de busca de um mínimo
  de $e(x)$. A busca inicia em $x_0=-1.4$,
  todos os valores $x_{k}$ podem ser vistos na 
-Tabela \ref{tab:hxbcases2}. Neste caso a busca iterativa indicada pela Eq. (\ref{eq:minhxhxxbxb2}) converge
-em $\hat{x}\approx x_7=-0.39349$ com $e(\hat{x})=0.94120$ que é um mínimo global de $e(x)$.
+Tabela \ref{tab:hxbcases2}. Neste caso, a busca iterativa indicada pela Eq. (\ref{eq:minhxhxxbxb2}) converge
+em $\hat{x}\approx x_7=-0.39349$ com $e(\hat{x})=0.94120$, que é um mínimo global de $e(x)$.
 \begin{comment}
 ; porém, este valor de $x_k$ está
 um pouco distante do mínimo de $(h(x)-a)^2$, localizado em $x=\pm\frac{\sqrt{2}}{2}\approxeq \pm0.70711$.
@@ -160,7 +160,7 @@ achar o valor $x=\hat{x}$ que minimize $e(x)=||h(x)-a||^2+\alpha||x-b||^2$.
  A busca inicia em $x_0=-1.4$,
  todos os valores $x_{k}$ podem ser vistos na Tabela \ref{tab:hx3bcases3}. 
 Neste caso, a busca iterativa indicada pela Eq. (\ref{eq:minhxhxxbxb2}) diverge
-em $x_2$; apos este evento as iterações continuam e estas convergem sem problemas 
+em $x_2$; após este evento as iterações continuam e convergem sem problemas 
 em $\hat{x}\approx x_7=+0.53255$ com $e(\hat{x})\approx 0.013$.
 \begin{comment}
 ; este valor de $x$ está perto do mínimo global de  $(h(x)-a)^2$, que está em  $x=+0.5$. 
@@ -209,7 +209,7 @@ achar o valor $x=\hat{x}$ que minimize $e(x)=||h(x)-a||^2+\alpha||x-b||^2$.
  A Fig. \ref{fig:hx3bcasesb} nos mostra o processo de busca de um mínimo
  de $e(x)$. A busca inicia em $x_0=-1.4$,
  todos os valores $x_{k}$ podem ser vistos na Tabela \ref{tab:hx3bcases4}. 
-Neste caso a busca iterativa indicada pela Eq. (\ref{eq:minhxhxxbxb2}) converge 
+Neste caso, a busca iterativa indicada pela Eq. (\ref{eq:minhxhxxbxb2}) converge 
 em $\hat{x}\approx x_7=+0.428757$ com $e(\hat{x})\approx 0.26$,
 que é o mínimo global de $e(x)$.
 \begin{comment}

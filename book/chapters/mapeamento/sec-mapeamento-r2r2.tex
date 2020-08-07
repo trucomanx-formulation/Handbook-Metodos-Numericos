@@ -17,7 +17,7 @@ $\VECTOR{f}(x,y):$ $\mathbb{R}^2 \rightarrow \mathbb{R}^2$, de grau $M$:]
 \includegraphics[width=0.85\linewidth]{chapters/mapeamento/mapeamento.eps} 
 \end{minipage}
 \begin{minipage}{0.55\textwidth}
-Dados,
+Dados
 os escalares 
 $x \in \mathbb{R}$, 
 $y \in \mathbb{R}$, 
@@ -66,7 +66,7 @@ $\VECTOR{u}=[u_1~ ...~ u_n~ ...~ u_N]^{\transpose}$, e
 $\VECTOR{v}=[v_1~ ...~ v_n~ ...~ v_N]^{\transpose}$,
 ponderadas com os pesos $w_n \in \mathbb{R}_+$, 
 representados pela matriz diagonal $\MATRIX{W}=\funcdiag([w_1~ w_2~ ...~ w_n~ ...~ w_N]^{\transpose})$;
-podem ser achados\footnote{A demostração pode ser vista na Prova \ref{proof:theo:maphxr2r2}.} usando:
+podem ser achados\footnote{A demonstração pode ser vista na Prova \ref{proof:theo:maphxr2r2}.} usando:
 \begin{equation}\label{eq:maphxr2r2:3}
 \VECTOR{\hat{c}}=
 \left[ \MATRIX{A}^{\transpose} \MATRIX{W} \MATRIX{A} \right]^{-1}\MATRIX{A}^{\transpose} \MATRIX{W} \VECTOR{u},
@@ -100,7 +100,7 @@ x^m  & x^{m-1} y  & x^{m-2} y^2    & \dots  & x y^{m-1} &  y^m
 
 \begin{tcbattention}
 \begin{itemize}
-\item Uma forma de rescrever a Eq. (\ref{eq:maphxr2r2:1a}) usando a Eq. (\ref{eq:maphxr2r2:4}) é:
+\item Uma forma de reescrever a Eq. (\ref{eq:maphxr2r2:1a}) usando a Eq. (\ref{eq:maphxr2r2:4}) é:
 \begin{equation}\label{eq:maphxr2r2:5}
 h_{\VECTOR{c}}(x,y) = \VECTOR{a}(x,y)\VECTOR{c}, 
 \qquad
@@ -108,11 +108,11 @@ h_{\VECTOR{d}}(x,y) = \VECTOR{a}(x,y)\VECTOR{d};
 \end{equation}
 
 \item É importante lembrar que para que os vetores $\VECTOR{c}$ e $\VECTOR{d}$
-que minimizam $e(\VECTOR{c})$ e $e(\VECTOR{d})$, tenham resposta única,
+que minimizam $e(\VECTOR{c})$ e $e(\VECTOR{d})$ tenham resposta única,
 é necessário (porém não suficiente) que o número de amostras $N$ seja maior ao número de colunas de $A$;
-é dizer $N\geq \frac{(M+1)(M+2)}{2}$.
+quer dizer $N\geq \frac{(M+1)(M+2)}{2}$.
 
-\item De forma exata podemos afirmar que para que os $\VECTOR{c}$ e  $\VECTOR{d}$ tenham resposta única,
+\item De forma exata, podemos afirmar que para que os $\VECTOR{c}$ e  $\VECTOR{d}$ tenham resposta única,
 deve existir inversa para a matriz $\MATRIX{A}^{\transpose}\MATRIX{W}\MATRIX{A}$.
 
 \end{itemize}
@@ -121,14 +121,15 @@ deve existir inversa para a matriz $\MATRIX{A}^{\transpose}\MATRIX{W}\MATRIX{A}$
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Exemplos de regressão com um polinômio
-$\VECTOR{h}(x,y):~\mathbb{R}^2 \rightarrow \mathbb{R}^2$ de gau $M$}
+$\VECTOR{h}(x,y):~\mathbb{R}^2 \rightarrow \mathbb{R}^2$ de grau $M$}
 
 \begin{example}[ Regressão do polinômio 
 $\VECTOR{h}(x,y)$ de grau $M=3$, para $N=15$ amostras:]\label{ex:theo:mapeamentor2r2}
 Dadas $N=15$ amostras que representam pontos no plano $XY$ e seus correspondentes 
 no plano $UV$, como pode ser visto na Tabela \ref{table:ex:mapeamentor2r2},
 obter a função polinomial $\VECTOR{h}(x,y)=[h_{\VECTOR{c}}(x,y)\quad h_{\VECTOR{d}}(x,y)]^{\transpose}$ de grau $M=3$,
-que mapea com o menor erro $e_{\VECTOR{c}}(\VECTOR{c})$ e $e_{\VECTOR{d}}(\VECTOR{d})$ ambos conjuntos de pontos.
+que mapeia com o menor erro $e_{\VECTOR{c}}(\VECTOR{c})$ e $e_{\VECTOR{d}}(\VECTOR{d})$, 
+ambos conjuntos de pontos.
 \end{example}
 
 \noindent
@@ -164,13 +165,13 @@ que mapea com o menor erro $e_{\VECTOR{c}}(\VECTOR{c})$ e $e_{\VECTOR{d}}(\VECTO
 \begin{minipage}{0.6\textwidth}
 \begin{SolutionT}[Relativa ao Exemplo \ref{ex:theo:mapeamentor2r2}:]\label{sol:theo:mapeamentor2r2}
 Se desejamos obter a função polinomial $\VECTOR{f}(x,y)$ de grau $M=3$,
-que mapea os conjuntos de pontos $\{x_n,y_n\}$ e $\{u_n,v_n\}$ da Tabela \ref{table:ex:mapeamentor2r2}; 
+que mapeia os conjuntos de pontos $\{x_n,y_n\}$ e $\{u_n,v_n\}$ da Tabela \ref{table:ex:mapeamentor2r2}; 
 podemos usar a Eq. (\ref{eq:maphxr2r2:3}) 
 para obter os vetores $\VECTOR{c}=\VECTOR{\hat{c}}$ e $\VECTOR{d}=\VECTOR{\hat{d}}$,
 que minimizam $e_{\VECTOR{c}}(\VECTOR{c})$ e $e_{\VECTOR{d}}(\VECTOR{d})$.
 
 
-Assim, usando a Eq. (\ref{eq:maphxr2r2:3}) obtemos o vetor $\VECTOR{\hat{c}}=$ 
+Assim, usando a Eq. (\ref{eq:maphxr2r2:3}), obtemos o vetor $\VECTOR{\hat{c}}=$ 
 \begin{center}
 \begin{tabular}{ r r r r }
   \hline
@@ -189,7 +190,7 @@ e o vetor $\VECTOR{\hat{d}}=$
    0.55825 &   0.39762 & ~ & ~ \\ \hline
 \end{tabular}
 \end{center}
-Estes provocam um erro na regressão 
+Esses vetores provocam um erro 
 de $e_{\VECTOR{c}}(\VECTOR{c})=5.6808e-05$ e $e_{\VECTOR{d}}(\VECTOR{d})=1.4242e-05$, respetivamente.
 Podem ser vistos gráficos das superfícies $h_{\VECTOR{c}}(x,y)$ e $h_{\VECTOR{d}}(x,y)$ 
 do Exemplo \ref{ex:theo:mapeamentor2r2} na Figura \ref{fig:theo:maphxr2r1:xnynunvn}.

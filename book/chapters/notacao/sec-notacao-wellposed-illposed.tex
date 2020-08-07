@@ -10,15 +10,16 @@
 \begin{definition}[Problema \wellposed:]
 \label{def:bem-posto:1}
 Conhecido um modelo matemático ou sistema que desejamos manipular para obter uma solução;
-indicamos que este é um problema \wellposed~ (do inglês ``well-posed'') 
-quando se cumprem 3 condições\footnote{A primeira definição de um problema \wellposed~ foi realizada pelo matemático J. S. Hadamard, 
-para mais detalhes sobre Hadamard ver a Pag. \pageref{elab:Hadamard}.} \cite[pp. 16]{gockenbach2016linear}
+indicamos que esse é um problema \wellposed~ (do inglês ``well-posed'') 
+quando se cumprem 3 condições\footnote{A primeira definição de um problema \wellposed~ 
+foi realizada pelo matemático J. S. Hadamard; 
+para mais detalhes sobre Hadamard, ver a Pag. \pageref{elab:Hadamard}.} \cite[pp. 16]{gockenbach2016linear}
 \cite[pp. 6]{p2011well}.
 \begin{itemize}
 \item \textbf{Existência:} Existe uma solução que verifica o sistema.
 \item \textbf{Unicidade:} A solução é única.
 \item \textbf{Estabilidade:} A solução depende continuamente da saída;
-é dizer, pequenas variações na resposta provem de pequenas variações nos dados usados para calcular a resposta.
+quer dizer, pequenas variações na resposta provêm de pequenas variações nos dados usados para calcular a resposta.
 \end{itemize}
 \end{definition}
 
@@ -27,7 +28,8 @@ Conhecido o problema de obter o vetor $\VECTOR{x} \in \mathbb{R}^{N}$,
 que cumpre o sistema, $\MATRIX{A}\VECTOR{x}=\VECTOR{y}$,
  tendo como dados o vetor $\VECTOR{y} \in \mathbb{R}^{N}$ e 
 a matriz $\MATRIX{A}: \mathbb{R}^{N} \rightarrow \mathbb{R}^{N}$ que carateriza ao sistema.
-Falamos que o problema está \wellposed~ se a matriz $\MATRIX{A}$ tem inversa e esta é limitada \cite[pp. 18]{gockenbach2016linear}. 
+Falamos que o problema está \wellposed~ se a matriz $\MATRIX{A}$ 
+tem inversa e é limitada \cite[pp. 18]{gockenbach2016linear}. 
 \end{example}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -36,7 +38,8 @@ Falamos que o problema está \wellposed~ se a matriz $\MATRIX{A}$ tem inversa e 
 \index{Problema!\Illposed}
 \begin{definition}[Problema \illposed:]
 \label{def:mal-posto:1}
-Um problema é chamado \illposed~ (do inglês ``ill-posed'') se não cumpre um o mais das condições que definem a um problema 
+Um problema é chamado \illposed~ (do inglês ``ill-posed'') se não cumpre um o 
+mais das condições que definem a um problema 
 \wellposed~ \cite[pp. 18]{gockenbach2016linear}.
 Os problemas inversos geralmente são relacionados a um problema \illposed,
 pois pelo geral não cumprem uma ou mais das condições para ser catalogados como \wellposed. 
@@ -44,7 +47,7 @@ pois pelo geral não cumprem uma ou mais das condições para ser catalogados co
 
 \begin{example}[Problema \illposed~ sem solução:]
 \label{ex:IllPosedNoSolutions}
-Conhecido o problema de obter o vetor $\VECTOR{x}\in \mathbb{R}^N$,
+Conhecido o problema de obter o vetor $\VECTOR{x}\in \mathbb{R}^2$,
 que cumpre o sistema,
 \begin{equation}
 \MATRIX{A}\VECTOR{x}=\VECTOR{y},
@@ -70,7 +73,7 @@ que verifique o sistema $\MATRIX{A}\VECTOR{x}=\VECTOR{y}$.
 
 \begin{example}[Problema \illposed~com múltiplas soluções:]
 \label{ex:IllPosedMultiplaSolutions}
-Conhecido o problema de obter o vetor $\VECTOR{x}\in \mathbb{R}^N$,
+Conhecido o problema de obter o vetor $\VECTOR{x}\in \mathbb{R}^2$,
 que cumpre o sistema,
 \begin{equation}
 \MATRIX{A}\VECTOR{x}=\VECTOR{y},
@@ -78,15 +81,13 @@ que cumpre o sistema,
 \MATRIX{A}=
 \begin{bmatrix}
 1 & 1\\
-1 & 1\\
-1 & 1
+1 & 1%\\1 & 1
 \end{bmatrix}
 \qquad
 \VECTOR{y}=
 \begin{bmatrix}
 2\\
-2\\
-2
+2%\\2
 \end{bmatrix};
 \end{equation}
 catalogamos este problema como \illposed~  pois existem múltiplas soluções $\VECTOR{x}$
@@ -112,14 +113,14 @@ $ \forall \alpha \in \mathbb{R}$.
 \includegraphics[width=0.98\textwidth]{chapters/notacao/Hadamard2.jpg}
 \end{minipage}
 \begin{minipage}{0.8\linewidth}
-Notável matemático francês  e um membro da Royal Society;
+Notável matemático francês  e membro da Royal Society;
 durante seus primeiros anos de vida, 
 Jacques se destacou em todas as disciplinas, exceto na matemática;
-sua habilidade nesta área melhorou notavelmente após sua admissão no Lycée Louis-le-Grand em 1876;
-logo de vários anos, cheios de  grandes realizações acadêmicas, ele completou seu Ph.D. em 1892 
+sua habilidade nessa área melhorou notavelmente após sua admissão no Lycée Louis-le-Grand em 1876;
+após vários anos, cheios de  grandes realizações acadêmicas, ele completou seu Ph.D. em 1892 
 e recebeu o prêmio Grand Prix de Ciências Matemáticas por seu ensaio inovador sobre a função zeta de Riemann
 \cite[pp. 326]{agarwal2014creators}.
-Entre suas muitas contribuições à matemática está a definição inicial de um problema \wellposed,
+Entre suas muitas contribuições à matemática, está a definição inicial de um problema \wellposed,
 e consequentemente a de um problema \illposed~\cite[pp. 9, 132]{p2011well}.
 \end{minipage}
 \end{elaboracion}

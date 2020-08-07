@@ -10,7 +10,7 @@
 \begin{proposition}[Série de Taylor de $f(x)$:]\label{prop:taylord}
 Dada uma função $f:\mathbb{R}\rightarrow \mathbb{R}$ com variável $x \in \mathbb{R}$,
 infinitamente diferenciável em $a \in \mathbb{R}$;
-esta pode ser expressada mediante uma somatória, em série de Taylor 
+esta pode ser expressa mediante uma somatória, em série de Taylor 
 \cite[pp. 734]{stewart2008calculus} \cite[pp. 281]{telles2015matematica} \cite{Taylor} 
 ao redor de $a$, como
 mostra a Eq. (\ref{eq:taylord1}),% onde $\left.\frac{\partial^k f(x)}{\partial x^k}\right|_{x=a}\equiv f^{(k)}(a) $.
@@ -33,7 +33,7 @@ A equação pode ser escrita de forma mais compacta mediante uma somatória, com
 
 \begin{proposition}[Polinômio de Taylor com resto $R_n(x)$ de Lagrange:]\label{prop:polytaylor}
 Dada uma função $f:\mathbb{R}\rightarrow \mathbb{R}$ com variável $x \in \mathbb{R}$;
-esta pode ser expressada mediante uma somatória finita, $f_n(x)$, 
+esta pode ser expressa mediante uma somatória finita, $f_n(x)$, 
 em polinômio de Taylor de grau $n$ ao redor de $a$
 \cite[pp. 737]{stewart2008calculus} \cite[pp. 285]{telles2015matematica}, 
  como mostra a Eq. (\ref{eq:polytaylord1}),
@@ -45,17 +45,17 @@ R_n(x)=\frac{f^{(n+1)}(z)}{(n+1)!} (x-a)^{n+1},
 \begin{equation}\label{eq:polytaylord2}
 f(x)= f_n(x) + R_n(x);
 \end{equation}
-onde $z \in ]a,x[$, quando $x>a$, e $z \in ]x,a[$, quando $x<a$.
+em que $z \in ]a,x[$, quando $x>a$, e $z \in ]x,a[$, quando $x<a$.
 \end{proposition}
 
 
 \begin{example}[Polinômio de Taylor do $cos(x)$:]
 Aproximar a função $f(x)=cos(x)$ usando o polinômio de Taylor ao redor do ponto $a=0$,
-numa versão truncada ate a derivada de ordem $4$, $8$ e $10$,
+numa versão truncada até a derivada de ordem $4$, $8$ e $10$,
 denominados aqui $f_4(x)$, $f_8(x)$ e $f_{10}(x)$, respetivamente.
 \end{example}
 \begin{SolutionT}[Série de Taylor do $cos(x)$:]
-Usando a Proposição \ref{prop:taylord} é calculado $f^{(k)}(x)$ para os 10 primeiros termos,
+Usando a Proposição \ref{prop:taylord}, é calculado $f^{(k)}(x)$ para os 10 primeiros termos,
 \begin{equation}
 f^{(k)}(x)=
 \left\{
@@ -117,7 +117,7 @@ As aproximações podem ser vistas graficamente na Fig. \ref{fig:taylore}.
 \begin{proposition}[Série de Taylor de $\VECTOR{f}(t)$:]\label{prop:taylorvecf}
 Dada uma função $\VECTOR{f}:\mathbb{R}\rightarrow \mathbb{R}^{N}$ com variável $t \in \mathbb{R}$;
 infinitamente diferenciável em $a \in \mathbb{R}$;
-esta pode ser expressada mediante uma somatória, em série de Taylor 
+esta pode ser expressa mediante uma somatória, em série de Taylor 
 \cite[pp. 264]{joag2016introduction}
 ao redor de $a$, como
 mostra a Eq. (\ref{eq:taylorvecf1}),
@@ -132,7 +132,7 @@ mostra a Eq. (\ref{eq:taylorvecf1}),
       ~+\frac{\VECTOR{f}^{(k)}(a)}{k!} (t-a)^{k}
       ~+\cdots 
 \end{equation}
-A equação pode ser escrita de forma mais compacta mediante uma somatória  como mostra a Eq. (\ref{eq:taylorvecf2}),
+A equação pode ser escrita de forma mais compacta mediante uma somatória, como mostra a Eq. (\ref{eq:taylorvecf2}),
 \begin{equation}\label{eq:taylorvecf2}
   \VECTOR{f}(t)=\sum\limits_{k=0}^{+\infty} \frac{\VECTOR{f}^{(k)}(a)}{k!} (t-a)^{k}.
 \end{equation}
@@ -152,7 +152,7 @@ numa versão truncada ate a derivada de ordem $4$,
 denominado aqui $\VECTOR{f}_4(x)$.
 \end{example}
 \begin{SolutionT}[Relativo ao Exemplo \ref{ex:prop:taylorvecf}:]
-Usando a Proposição \ref{prop:taylorvecf} são calculados os vetores $\VECTOR{f}^{(k)}(x)$, para $k\in\{1,~ 2,~ 3,~ 4\}$,
+Usando a Proposição \ref{prop:taylorvecf}, são calculados os vetores $\VECTOR{f}^{(k)}(x)$, para $k\in\{1,~ 2,~ 3,~ 4\}$,
 de modo que obtemos
 \begin{equation}
 \DTVECTOR{f}(t)=
@@ -207,7 +207,7 @@ e^{-t}
 1
 \end{bmatrix}.
 \end{equation}
-Podemos agrupar estas informações na Eq. (\ref{eq:taylorvecf1}) truncada, 
+Podemos agrupar essas informações na Eq. (\ref{eq:taylorvecf1}) truncada, 
 para obter o polinômio $\VECTOR{f}_{4}(t)$,
 \begin{equation}
 \VECTOR{f}_{4}(t)=
@@ -241,7 +241,7 @@ t
 \frac{t^{4}}{4!}.
 \end{equation}
 Uma representação gráfica do comportamento do polinômio $\VECTOR{f}_{4}(t)$ e a função $\VECTOR{f}(t)$
-pode ser visto na Figura \ref{fig:taylorvecf}.
+pode ser vista na Figura \ref{fig:taylorvecf}.
 \end{SolutionT}
 
 \begin{figure}[!h]
@@ -256,7 +256,7 @@ pode ser visto na Figura \ref{fig:taylorvecf}.
 \begin{proposition}[Série de Taylor de $f(\VECTOR{x})$:]\label{prop:taylore}
 Dada uma função $f:\mathbb{R}^{N}\rightarrow \mathbb{R}$ com variável $\VECTOR{x} \in \mathbb{R}^{N}$, vetor coluna;
 infinitamente diferenciável em $\VECTOR{a} \in \mathbb{R}^{N}$;
-esta pode ser expressada mediante uma somatória, em série de Taylor 
+esta pode ser expressa mediante uma somatória, em série de Taylor 
 \cite[pp. 187, 207]{zhang2017matrix} \cite{Taylor}  ao redor de $\VECTOR{a}$, como
 mostra a Eq. (\ref{eq:taylore1}),
 \begin{equation}\label{eq:taylore1}
@@ -271,7 +271,7 @@ como na Eq. (\ref{eq:taylore2}).
       ~+\frac{1}{2!}(\VECTOR{x}-\VECTOR{a})^{\transpose} \MATRIX{H(\VECTOR{a})}  (\VECTOR{x}-\VECTOR{a})
       ~+\cdots 
 \end{equation}
-Onde o vector $\triangledown f(\VECTOR{x})\equiv \frac{\partial f(\VECTOR{x})}{\partial \VECTOR{x} }$ 
+Em que o vector $\triangledown f(\VECTOR{x})\equiv \frac{\partial f(\VECTOR{x})}{\partial \VECTOR{x} }$ 
 (também chamado \hyperref[def:gradient]{gradiente}),
 e a matriz $\MATRIX{H}(\VECTOR{x})\equiv \frac{\partial }{\partial \VECTOR{x}} \left( \frac{\partial f(\VECTOR{x})}{ \partial \VECTOR{x}^{\transpose} }\right)$
 (também chamada matriz \hyperref[def:hessian]{Hessiana}).
@@ -279,13 +279,14 @@ e a matriz $\MATRIX{H}(\VECTOR{x})\equiv \frac{\partial }{\partial \VECTOR{x}} \
 
 \begin{example}[Série de Taylor do 
 $f(\VECTOR{x})$:]
-Aproximar a função $f(\VECTOR{x})=1-e^{-x_1^2-x_2^2}$ usando a série de Taylor ao redor do ponto $\VECTOR{a}=[0~ 0]^{\transpose}$,
-numa versão truncada ate a derivada de ordem $2$,
+Aproximar a função $f(\VECTOR{x})=1-e^{-x_1^2-x_2^2}$ usando a 
+série de Taylor ao redor do ponto $\VECTOR{a}=[0~ 0]^{\transpose}$,
+numa versão truncada até a derivada de ordem $2$,
 denominada aqui $f_2(\VECTOR{x})$.
 \end{example}
 \begin{SolutionT}[Série de Taylor do 
 $f(\VECTOR{x})$:]
-Usando a Proposição \ref{prop:taylore} é calculado $f(\VECTOR{a})$, 
+Usando a Proposição \ref{prop:taylore}, é calculado $f(\VECTOR{a})$, 
 $\triangledown f(\VECTOR{a})$ e $\triangledown^2 f(\VECTOR{a})$,
 \begin{equation}
 \triangledown f(\VECTOR{x}) = 
@@ -336,9 +337,9 @@ As aproximações podem ser vistas graficamente na Fig. \ref{fig:taylorf}.
 \index{Série de Taylor!$\VECTOR{f}:\mathbb{R}^{N}\rightarrow \mathbb{R}^{M}$}
 \begin{proposition}[Série de Taylor de $\VECTOR{f}(\VECTOR{x})$:]\label{prop:taylorf}
 Dada uma função  $\VECTOR{f}:\mathbb{R}^{N}\rightarrow \mathbb{R}^{M}$, 
-sendo $\VECTOR{f}$ um vector coluna com variável $\VECTOR{x} \in \mathbb{R}^{N}$, vetor coluna;
+sendo $\VECTOR{f}$ um vetor coluna com variável $\VECTOR{x} \in \mathbb{R}^{N}$, vetor coluna;
 infinitamente diferenciável em $\VECTOR{a} \in \mathbb{R}^{N}$;
-esta pode ser expressada mediante uma somatória, em série de Taylor 
+esta pode ser expressa mediante uma somatória, em série de Taylor 
 \cite[pp. 393]{levine1999control} \cite{Taylor} ao redor de $\VECTOR{a}$, como
 mostra a Eq. (\ref{eq:taylorf1}),
 \begin{equation}\label{eq:taylorf1}
@@ -347,8 +348,8 @@ mostra a Eq. (\ref{eq:taylorf1}),
       ~+\cdots 
 \end{equation}
 
-Onde a matriz $\MATRIX{J}(\VECTOR{x})\equiv \frac{\partial \VECTOR{f}(\VECTOR{x})}{\partial \VECTOR{x}^{\transpose} }$,
-também conhecido como matriz \hyperref[def:jacobian]{Jacobiana} de $\VECTOR{f}(\VECTOR{x})$.
+Em que a matriz $\MATRIX{J}(\VECTOR{x})\equiv \frac{\partial \VECTOR{f}(\VECTOR{x})}{\partial \VECTOR{x}^{\transpose} }$,
+também conhecida como matriz \hyperref[def:jacobian]{Jacobiana} de $\VECTOR{f}(\VECTOR{x})$.
 \end{proposition}
 
 
@@ -356,7 +357,7 @@ também conhecido como matriz \hyperref[def:jacobian]{Jacobiana} de $\VECTOR{f}(
 \begin{elaboracion}[title=Brook Taylor (1685-1731), width= 0.99\linewidth]
 Matemático inglês que foi um dos fundadores do cálculo das diferenças finitas,
 sendo ele o primeiro a reconhecer a existência de soluções singulares de equações diferenciais.
-A série Taylor, era conhecida por James Gregory quando Taylor tinha apenas alguns anos de idade. 
+A série Taylor era conhecida por James Gregory quando Taylor tinha apenas alguns anos de idade. 
 Acredita-se que Taylor não conhecia o trabalho de Gregory quando publicou seu livro ``Methodus incrementorum directa et inversa'' (1715),
 que continha a série Taylor \cite[pp. 198]{agarwal2014creators}.
 \end{elaboracion}

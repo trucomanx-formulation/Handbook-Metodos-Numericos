@@ -15,7 +15,7 @@ a primeira derivada de uma função $\VECTOR{f}(t)$.
 \DTVECTOR{f}(t_n)=\underbrace{\frac{\VECTOR{f}(t_n)-\VECTOR{f}(t_n-\ToS)}{\ToS}}_{\DTVECTOR{f}_{1^{-}}(t_n)}+
 \underbrace{\frac{\ToS}{2}\DDTVECTOR{f}(z_{1}^{-})}_{\VECTOR{R}_{1^{-}}(z_{1}^{-},\ToS)},
 \end{equation}
-onde podemos afirmar que $\DTVECTOR{f}(t_n)\approx \DTVECTOR{f}_{1^{-}}(t_n)$ com um erro $\VECTOR{R}_{1^{-}}(z_{1}^{-},\ToS)$,
+em que podemos afirmar que $\DTVECTOR{f}(t_n)\approx \DTVECTOR{f}_{1^{-}}(t_n)$ com um erro $\VECTOR{R}_{1^{-}}(z_{1}^{-},\ToS)$,
 $z_{1}^{-} \in ]t_n-\ToS,t_n[$ quando $\ToS>0$, e $z_{1}^{+} \in ]t_n,t_n-\ToS[$ quando $\ToS<0$.
 
 \item \textbf{Diferença progressiva:}
@@ -26,7 +26,7 @@ $z_{1}^{-} \in ]t_n-\ToS,t_n[$ quando $\ToS>0$, e $z_{1}^{+} \in ]t_n,t_n-\ToS[$
 \DTVECTOR{f}(t_n)=\underbrace{\frac{\VECTOR{f}(t_n+\ToS) - \VECTOR{f}(t_n)}{\ToS}}_{\DTVECTOR{f}_{1^{+}}(t_n)}-
 \underbrace{\frac{\ToS}{2}\DDTVECTOR{f}(z_{1}^{+})}_{\VECTOR{R}_{1^{+}}(z_{1}^{+},\ToS)},
 \end{equation}
-onde podemos afirmar que $\DTVECTOR{f}(t_n)\approx \DTVECTOR{f}_{1^{+}}(t_n)$ com um erro $\VECTOR{R}_{1^{+}}(z_{1}^{+},\ToS)$,
+em que podemos afirmar que $\DTVECTOR{f}(t_n)\approx \DTVECTOR{f}_{1^{+}}(t_n)$ com um erro $\VECTOR{R}_{1^{+}}(z_{1}^{+},\ToS)$,
 $z_{1}^{+} \in ]t_n,t_n+\ToS[$ quando $\ToS>0$, e $z_{1}^{+} \in ]t_n+\ToS,t_n[$ quando $\ToS<0$.
 
 \item \textbf{Diferença central:} 
@@ -44,7 +44,7 @@ restando as Eqs. (\ref{eq:proof:teo:diferencas-finitas:1:a}) e (\ref{eq:proof:te
 \DTVECTOR{f}(t_n) = \underbrace{\frac{\VECTOR{f}(t_n+\ToS) - \VECTOR{f}(t_n-\ToS)}{2\ToS}}_{\DTVECTOR{f}_{1^{0}}(t_n)} - 
 \underbrace{\frac{\ToS^2}{12} \left[\DDDTVECTOR{f}(z_{2}^{+}) + \DDDTVECTOR{f}(z_{2}^{-})\right]}_{\VECTOR{R}_{1^{0}}(z_{2}^{-},z_{2}^{+},\ToS)},
 \end{equation}
-onde podemos afirmar que $\DTVECTOR{f}(t_n)\approx \DTVECTOR{f}_{1^{0}}(t_n)$ 
+em que podemos afirmar que $\DTVECTOR{f}(t_n)\approx \DTVECTOR{f}_{1^{0}}(t_n)$ 
 com um erro $\VECTOR{R}_{1^{0}}(z_{2}^{-},z_{2}^{+},\ToS)$.
 \end{itemize}
 \end{myproofT}
@@ -77,7 +77,7 @@ somando as Eqs. (\ref{eq:proof:teo:diferencas-finitas:2:a}) e (\ref{eq:proof:teo
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{myproofT}[Relativa ao Teorema \ref{theo:differential-eq-discreto:order1:0}:]\label{proof:theo:differential-eq-discreto:order1:0}
-Dados, o vetor coluna $\VECTOR{x} \in \mathbb{R}^N$, a matriz $\MATRIX{P} \in \mathbb{R}^{N\times N}$, 
+Dados o vetor coluna $\VECTOR{x} \in \mathbb{R}^N$, a matriz $\MATRIX{P} \in \mathbb{R}^{N\times N}$, 
 e definida a equação diferencial matricial,
 \begin{equation}
 \DTVECTOR{x}(t) + \MATRIX{P} \VECTOR{x}(t)=0,
@@ -97,7 +97,7 @@ podemos usar as diferenças regressivas para obter
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{myproofT}[Relativa ao Teorema \ref{theo:differential-eq-discreto:order2:0}:]\label{proof:theo:differential-eq-discreto:order2:0}
-Dados, o vetor coluna $\VECTOR{x} \in \mathbb{R}^N$, a matriz $\MATRIX{P} \in \mathbb{R}^{N\times N}$, 
+Dados o vetor coluna $\VECTOR{x} \in \mathbb{R}^N$, a matriz $\MATRIX{P} \in \mathbb{R}^{N\times N}$, 
 e definida a equação diferencial matricial,
 \begin{equation}
 \DDTVECTOR{x}(t) + \MATRIX{P} \VECTOR{x}(t)=0,

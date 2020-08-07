@@ -9,7 +9,7 @@
 \includegraphics[width=0.9\linewidth]{chapters/roots/roots1.eps} 
 \end{minipage}
 \begin{minipage}{0.8\textwidth}
-Dados,
+Dados
 um escalar $\delta \in \mathbb{R}_+$, 
 um escalar $x \in \mathbb{R}$, 
 uma função $h:\mathbb{R} \rightarrow \mathbb{R}$, e 
@@ -17,7 +17,7 @@ conhecida a validade da Eq. (\ref{eq:rootshx1}),
 \begin{equation}\label{eq:rootshx1}
 0=h(x);
 \end{equation}
-se desejamos ter o valor $x=\hat{x}$ que cumpra a Eq. (\ref{eq:rootshx1}),
+se desejarmos ter o valor $x=\hat{x}$ que cumpra a Eq. (\ref{eq:rootshx1}),
 podemos usar iterativamente a Eq. (\ref{eq:rootshx2}),
 onde  $h'(x)\equiv \frac{d h(x)}{d x}$,
 \end{minipage}
@@ -26,19 +26,19 @@ onde  $h'(x)\equiv \frac{d h(x)}{d x}$,
 x_{k} \leftarrow x_{k-1}-\frac{ h(x_{k-1})}{h'(x_{k-1})}.
 \end{equation}
 Assim, $\hat{x}$ pode ser achado\footnote{A 
-demostração pode ser vista na Prova \ref{proof:theo:rootshx}.} 
+demonstração pode ser vista na Prova \ref{proof:theo:rootshx}.} 
 iniciando a Eq. (\ref{eq:rootshx2}) desde um 
 $x_{0}$ qualquer, realizando cálculos $x_{k}$ iterativamente  
-ate\footnote{Sendo $\delta$ um valor pequeno próximo a zero.} que $||h(x_k)||<\delta$
+ate\footnote{Sendo $\delta$ um valor pequeno próximo a zero.} que $||h(x_k)||<\delta$,
 onde se declara que $\hat{x}=x_k$.
 
 \textbf{Considerações:}
 \begin{itemize} 
 \item Se $h'(x_{k-1})\approx 0$, então estamos perto de um ponto de inflexão 
-(máximo, mínimo ou ponto de sela) em $x_{k-1}$. Nestos pontos a Eq. (\ref{eq:rootshx2}): 
+(máximo, mínimo ou ponto de sela) em $x_{k-1}$. Nesses pontos a Eq. (\ref{eq:rootshx2}): 
 \begin{itemize}
 \item Diverge quando se cumpre que $h(x_{k-1})\neq 0$, ou
-\item Converge\footnote{A demostração pode ser vista na Prova \ref{proof:theo:cont:rootshx}.} 
+\item Converge\footnote{A demonstração pode ser vista na Prova \ref{proof:theo:cont:rootshx}.} 
 se $h(x_{k-1}) = 0$ e se verifica que $h(x)$ pode ser representado 
 mediante uma \hyperref[def:taylor]{\textbf{série de Taylor}} ao redor de $x_{k-1}$, 
  pois indica que $\lim_{x\rightarrow x_{k-1}}  h(x)/h'(x)$ é finito.
@@ -64,19 +64,19 @@ mostrado na Figura \ref{fig:fluxorhx1}.
 Conhecida uma função $h(x)=x(x^2-1)+1$, e um escalar $\delta=10^{-3}$;
 usando o Teorema \ref{theo:rootshx}, 
 achar um valor $x=\hat{x}$ que cumpra $||h(x)||<\delta$.
-Podemos ver as respostas a este exemplo na Solução \ref{sol:rootshx1} e \ref{sol:rootshx2}.
+Podemos ver as respostas a esse exemplo na Solução \ref{sol:rootshx1} e \ref{sol:rootshx2}.
 \end{example}
 \begin{SolutionT}[Relativa ao Exemplo \ref{ex:rootshx1} (Diverge):]\label{sol:rootshx1}
  A Fig. \ref{fig:rootsNcasesa} nos mostra o processo de busca das raízes de $h(x)$. 
 A busca inicia em $x_0=-0.3$, 
 todos os valores $x_{k}$ podem ser vistos na
 Tabela \ref{tab:rootsNcases1}. 
-Neste caso a busca iterativa indicada pela Eq. (\ref{eq:rootshx2}) 
+Neste caso, a busca iterativa indicada pela Eq. (\ref{eq:rootshx2}) 
 diverge para valores próximos a $x_m=\frac{\sqrt{3}}{3}\approx 0.57735$,
-que é um mínimo local de $h(x)$; é dizer $h'(x_m)\approx 0$ e $h(x_m)\neq 0$.
-É fácil de observar, que neste caso se produz 
-uma especie de efeito sanfona, onde $x_{k}$ se aproxima ao mínimo local em $h(x)$, e quando 
-está próximo deste valor a busca volta divergir a um ponto medianamente distante.
+que é um mínimo local de $h(x)$; quer dizer, $h'(x_m)\approx 0$ e $h(x_m)\neq 0$.
+É fácil de observar que neste caso se produz 
+uma espécie de efeito sanfona, onde $x_{k}$ se aproxima ao mínimo local em $h(x)$, e quando 
+está próximo desse valor, a busca volta a divergir a um ponto medianamente distante.
 \end{SolutionT}
 
 \begin{figure}[!h]
@@ -113,7 +113,7 @@ $||h(x_k)||$ & 1.27300 & 2.56607 & 0.91673 & 0.65034 & 5.69758 & 1.79676 & 0.722
 A Fig. \ref{fig:rootsNcasesb} nos mostra o processo de busca de uma raiz de $h(x)$. 
 A busca inicia em $x_0=-2.0$,
  todos os valores $x_{k}$ podem ser vistos na Tabela \ref{tab:rootsNcases2}. 
-Neste caso a busca iterativa indicada pela Eq. (\ref{eq:rootshx2}) converge 
+Neste caso, a busca iterativa indicada pela Eq. (\ref{eq:rootshx2}) converge 
 em $x_4\approx 0$ com $||h(x_4)||<\delta$ que corresponde a uma raiz de $h(x)$.
 \end{SolutionT}
 
@@ -130,7 +130,7 @@ $||h(x_k)||$ & 5.0000 &  1.1458 & 1.5370e-01 & 4.6249e-03 & 4.6577e-06 \\ \hline
 \end{table}
 
 \begin{example}\label{ex:rootshx2}
-Conhecida uma função $h(x)=x(x^2-1)+2\frac{\sqrt{3}}{9}$, e um escalar $\delta=2~10^{-5}$;
+Conhecida uma função $h(x)=x(x^2-1)+2\frac{\sqrt{3}}{9}$ e um escalar $\delta=2~10^{-5}$;
 usando o Teorema \ref{theo:rootshx},
 achar o valor $x=\hat{x}$ que cumpra $||h(x)||<\delta$.
 Podemos ver a resposta a este exemplo na Solução \ref{sol:rootshx3}.
@@ -140,7 +140,7 @@ Podemos ver a resposta a este exemplo na Solução \ref{sol:rootshx3}.
 A Fig. \ref{fig:rootsNcasesc} nos mostra o processo de busca de uma raiz de $h(x)$. 
 A busca inicia em $x_0=-0.3$,
  todos os valores $x_{k}$ podem ser vistos na Tabela \ref{tab:rootsNcases3}. 
-Neste caso a busca iterativa indicada pela Eq. (\ref{eq:rootshx2}) converge 
+Neste caso, a busca iterativa indicada pela Eq. (\ref{eq:rootshx2}) converge 
 em $x_4\approx 0$ com $||h(x_4)||<\delta$ que corresponde a uma raiz de $h(x)$.
 Analiticamente podemos verificar que uma raiz pode ser achada em $x_m=\frac{\sqrt{3}}{3}\approx 0.57735$.
 \end{SolutionT}

@@ -2,7 +2,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{myproofT}[Relativa ao Teorema \ref{theo:reglogrnr1nolinear:1}:]\label{proof:theo:reglogrnr1nolinear}
-Dados,
+Dados
 o vetor coluna $\VECTOR{x} \in \mathbb{R}^{N}$, os escalares $y \in \mathbb{R}$ e $c_m \in \mathbb{R}$,
 as funções $f_{\VECTOR{c}}:\mathbb{R}^{N} \rightarrow \mathbb{R}$, 
 e $h_{\VECTOR{c}}:\mathbb{R}^{N} \rightarrow \mathbb{R}$,  e 
@@ -21,16 +21,16 @@ e(\VECTOR{c}) =
 +\alpha \sum_{n=1}^{M} d_m||c_m-c_{m,last}||^2;
 \end{equation}
 onde a função de custo $e(\VECTOR{c})$ toma em conta dois tipos de erro, separados em duas somatórias,
-ponderadas mediante a variável $\alpha \in \mathbb{R}_+$,
+ponderadas mediante a variável $\alpha \in \mathbb{R}_+$;
 a primeira somatória avalia o erro quadrático de $L$ amostras $\VECTOR{x}_l \in \mathbb{R}^{N}$ que pertencem a 
 dois grupos etiquetados com a variável $y_l\in \{A,1-A\}$, 
-onde $0<A\ll 0.5$ é escolhido por nós,
-todos estes erros ponderados com os pesos $w_l \in \mathbb{R}_+$;
+onde $0<A\ll 0.5$ é escolhido por nós.
+Todos estes erros ponderados com os pesos $w_l \in \mathbb{R}_+$;
 a segunda somatória de $e(\VECTOR{c})$ 
 avalia as distancias dos valores $c_m$ ao redor de um valor $c_{m,last}$
 previamente conhecido,
 ponderadas com os pesos $d_m \in \mathbb{R}_+$.
-Todos estes cálculos podem ser rescritos de forma matricial
+Todos esses cálculos podem ser reescritos de forma matricial
 na seguinte equação
 \begin{equation}\label{eq:proof:theo:reglogrnr1nolinear:3}
 e(\VECTOR{c}) \equiv ||\VECTOR{h}(\VECTOR{c})-\VECTOR{z}||_{\MATRIX{W}}^2
@@ -75,7 +75,7 @@ d_M
 \end{bmatrix}\right).
 \end{equation}
 Usando o Teorema \ref{theo:minfxbCfxbaxoaxo}, sabemos que o vetor $\VECTOR{c}=\VECTOR{\hat{c}}$,
-que minimiza a Eq. (\ref{eq:proof:theo:reglogrnr1nolinear:3}) pode ser achado usando iterativamente
+que minimiza a Eq. (\ref{eq:proof:theo:reglogrnr1nolinear:3}), pode ser obtido usando iterativamente
 \begin{equation}\label{eq:proof:theo:reglogrnr1nolinear:5}
 \VECTOR{c}_{i}=\VECTOR{c}_{i-1}-[\MATRIX{J}(\VECTOR{c}_{i-1})^{\transpose}\MATRIX{W}\MATRIX{J}(\VECTOR{c}_{i-1})+\alpha \MATRIX{D}]^{-1}\MATRIX{J}(\VECTOR{c}_{i-1})^{\transpose}\MATRIX{W}[\VECTOR{h}(\VECTOR{c}_{i-1})-\VECTOR{z}],
 \end{equation}

@@ -18,16 +18,17 @@ $h_{\VECTOR{c}}(\VECTOR{x})$:]
 \includegraphics[width=0.95\linewidth]{chapters/mapeamento/mapeamento-hxn-nonlinear.eps} 
 \end{minipage}
 \begin{minipage}{0.6\textwidth}
-Dados, um conjunto de $L$ amostras
+Dados 
+um conjunto de $L$ amostras
 do escalar $z_l \in \mathbb{R}$ e do vetor $\VECTOR{x}_l \in \mathbb{R}^N$, $1\leq l\leq L$, e 
 definida a Eq. (\ref{eq:maphcxrnr1:1}), 
 \begin{equation}\label{eq:maphcxrnr1:1}
 z=h_{\VECTOR{c}}(\VECTOR{x})\equiv h(\VECTOR{c},\VECTOR{x}),
 \end{equation}
-onde $h_{\VECTOR{c}}:\mathbb{R}^N \rightarrow \mathbb{R}$, 
+onde $h_{\VECTOR{c}}:\mathbb{R}^N \rightarrow \mathbb{R}$ 
 é uma função com domínio em  $\VECTOR{x} \in \mathbb{R}^N$, contradomínio em $z\in \mathbb{R}$
 e com coeficientes $c_m$ que formam o vetor $\VECTOR{c}\in \mathbb{R}^{M}$;
-podemos afirmar que o vetor $\VECTOR{c}=\VECTOR{\hat{c}}$,
+podemos afirmar que o vetor $\VECTOR{c}=\VECTOR{\hat{c}}$
 que minimiza o erro $e(\VECTOR{c})$,
 \end{minipage}
 
@@ -81,7 +82,7 @@ d_2\\
 d_L
 \end{bmatrix}\right);
 \end{equation}
-pode ser achado\footnote{A demostração pode ser vista na Prova \ref{proof:theo:maphcxrnr1}.} 
+pode ser achado\footnote{A demonstração pode ser vista na Prova \ref{proof:theo:maphcxrnr1}.} 
 usando de forma iterativa a Eq. (\ref{eq:maphcxrnr1:3})
 \begin{equation}\label{eq:maphcxrnr1:3}
 \VECTOR{c}_{i}=\VECTOR{c}_{i-1}-[\MATRIX{J}(\VECTOR{c}_{i-1})^{\transpose}\MATRIX{W}\MATRIX{J}(\VECTOR{c}_{i-1})+\alpha \MATRIX{D}]^{-1}\MATRIX{J}(\VECTOR{c}_{i-1})^{\transpose}\MATRIX{W}[\VECTOR{h}(\VECTOR{c}_{i-1})-\VECTOR{z}],
@@ -110,8 +111,9 @@ $\equiv \frac{\partial \VECTOR{h}(\VECTOR{c})}{\partial \VECTOR{c}^{\transpose}}
 \begin{itemize}
 \item A busca iterativa da Eq. (\ref{eq:maphcxrnr1:3}) 
 é declarada finalizada com sucesso 
-quando iterações consecutivas do vetor $\VECTOR{c}_i$ convergem a valores próximos, onde declaramos $\VECTOR{\hat{c}}=\VECTOR{c}_i$.
-\item O erro mínimo, $e(\VECTOR{\hat{c}}) \geq 0$, não necessariamente ter valor zero. 
+quando iterações consecutivas do vetor $\VECTOR{c}_i$ convergem a valores próximos, 
+momento no qual declaramos que $\VECTOR{\hat{c}}=\VECTOR{c}_i$.
+\item O erro mínimo $e(\VECTOR{\hat{c}}) \geq 0$, não necessariamente obtem o valor zero. 
 \end{itemize}
 \end{theorem}
 
@@ -167,7 +169,6 @@ $y_l$ & 9.6170 & 2.1098 & 1.9972 & 1.8631 & 2.3673 & 2.2807 & 2.0231 & 8.0547 \\
 \label{table:theo:maphcxrnr1:zn}
 \end{table}
 
-~
 
 \begin{SolutionT}[Relativa ao Exemplo \ref{ex:theo:maphcxrnr1}:]\label{sol:theo:maphcxrnr1}
 Para obter  o vetor $\VECTOR{c}=\VECTOR{\hat{c}}$
@@ -184,8 +185,6 @@ iniciando em $\VECTOR{c}_{0}=[3\quad 2\quad 1]^{\transpose}$ escolhido arbitrari
 Obtendo assim a Tabela \ref{table:theo:maphcxrnr1:ei}, que conclui em
 $\VECTOR{\hat{c}}=\VECTOR{c}_{5}=[7.8170\quad 3.0761\quad 1.9981]^{\transpose}$,
 com  um erro $e(\VECTOR{c}_{5})=0.27067$.
-
-
 \begin{table}[h!]
 \centering
 \begin{tabular}{|c|c|c|c|c|c|c|} 
@@ -204,7 +203,7 @@ $e(\VECTOR{c}_{i})$ & 125.55885 & 45.42202 & 25.33905 & 0.47703 & 0.27315 & 0.27
 
     \begin{figure}[!h]
         \centering
-        \includegraphics[width=0.49\textwidth]{chapters/mapeamento/mfiles/mapeamentornr1-nonlinear/minimizando_hx.eps}
+        \includegraphics[width=0.48\textwidth]{chapters/mapeamento/mfiles/mapeamentornr1-nonlinear/minimizando_hx.eps}
         \caption{Gráfico das amostras $\{\VECTOR{x}_l,z_l\}$ e da superfície $z=h(\VECTOR{c}_5,\VECTOR{x})$.}
         \label{fig:theo:maphcxrnr1:xnyn}
     \end{figure}

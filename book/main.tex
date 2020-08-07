@@ -49,10 +49,11 @@
 % Habilita o modo impressão em tons de cinza, não todo logicmente
 % Mas a maioria das coisas, as figuras não, isto é para mandar à editora em GRAY SCALE
 %----------------------------------------------------------------------------------------
-%\def\EnableGrayScale{1}
+
+%%% \def\EnableGrayScale{1}
 
 %----------------------------------------------------------------------------------------
-%	GRAYSCALE EM TODAS AS FIGURAS
+%	Muda La direccion raiz
 %----------------------------------------------------------------------------------------
 \def \SourceRootPath{.}
 %----------------------------------------------------------------------------------------
@@ -89,7 +90,7 @@
 \def \myauthorborn{1982}
 \def \imprimirlocal{Lavras}%cidade obrigatorio
 \def \imprimiryear{2020}
-\newcommand{\imprimirdata}[0]{\textcolor{red}{XXXXXXXXXXX} \imprimiryear}
+\newcommand{\imprimirdata}[0]{agosto de \imprimiryear}
 \def \imprimirtipotrabalho{Inclui Bibliografia}
 \def \imprimircuttersanborn{P979m} %% https://www.cuttersonline.com/app/generator/?q=Pujaico&ref=sanborn&add=
 \newcommand{\imprimirpapersize}[0]{21x30cm}%{\textcolor{red}{XXXxXXXcm}} %{21x30cm}
@@ -99,7 +100,7 @@
                          %% http://www.isbn.bn.br/website/tabela-de-assuntos
 \def \imprimirCDU{519.6} %% Matemática computacional %% https://www.ipleiria.pt/sdoc/wp-content/uploads/sites/10/2016/05/cdu-atualizada.pdf 
 \newcommand{\imprimirisbn}[0]{\textcolor{red}{XXXXXXXXXXX}}
-\def \imprimireditora{Edi\c{c}\~{a}o Independente}
+\def \imprimireditora{Edi\c{c}\~{a}o Independente}%%{Autopublica\c{c}\~{a}o}%%{Edi\c{c}\~{a}o Independente}
 \def \palavraschavea{M\'etodos num\'ericos}
 \def \palavraschaveb{Problemas inversos}
 \def \palavraschavec{C\'aculo num\'erico}
@@ -188,10 +189,12 @@
 %----------------------------------------------------------------------------------------
 % Agrega marca de agua a cada pagina do livro
 %----------------------------------------------------------------------------------------
-%%%  \usepackage{draftwatermark}
-%%%  \SetWatermarkText{Preview-Preview}
-%%%  \SetWatermarkColor[gray]{0.9}
-%%%  \SetWatermarkScale{1}
+\begin{comment}
+\usepackage{draftwatermark}
+\SetWatermarkText{Preview-Preview}
+\SetWatermarkColor[gray]{0.9}
+\SetWatermarkScale{1}
+\end{comment}
 
 \begin{document}
 
@@ -219,6 +222,11 @@
 %	PATROCINIO PAGE
 %----------------------------------------------------------------------------------------
 \input{\SourceRootPath/preliminares/patrocinio}
+
+%----------------------------------------------------------------------------------------
+%	PREFACIO
+%----------------------------------------------------------------------------------------
+\input{\SourceRootPath/preliminares/prefacio}
 
 %----------------------------------------------------------------------------------------
 %	My macros

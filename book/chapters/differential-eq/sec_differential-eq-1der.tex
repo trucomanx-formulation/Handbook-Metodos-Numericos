@@ -6,7 +6,7 @@
 \begin{theorem}[Equação 
 $\DTVECTOR{x}(t) + \MATRIX{P} \VECTOR{x}(t)=0$ com matriz $\MATRIX{P}$ diagonalizável:]
 \label{theo:differential-eq:order1:0}
-Dados, o vetor coluna $\VECTOR{x} \in \mathbb{R}^N$, 
+Dados o vetor coluna $\VECTOR{x} \in \mathbb{R}^N$, 
 a \hyperref[def:diagonalization0]{\textbf{matriz diagonalizável}} $\MATRIX{P} \in \mathbb{R}^{N\times N}$,
 com $N$ autovalores $\lambda_n$ e seus correspondentes autovetores $\VECTOR{v}_n$,
 $\forall n \in \{1, 2, ..., N\}$, 
@@ -15,7 +15,7 @@ e definida a equação diferencial matricial,
 \DTVECTOR{x}(t) + \MATRIX{P} \VECTOR{x}(t)=0.
 \end{equation}
 A solução\footnote{A
-demostração pode ser vista na Prova \ref{proof:theo:differential-eq:order1:0}.} desta equação diferencial tem  a forma,
+demonstração pode ser vista na Prova \ref{proof:theo:differential-eq:order1:0}.} dessa equação diferencial tem  a forma,
 \begin{equation}\label{eq:theo:firstorder:2}
  \VECTOR{x}(t)= \MATRIX{V}\MATRIX{D} e^{-\VECTOR{a}t}
 \end{equation}
@@ -42,7 +42,7 @@ Outra forma de escrever a Eq. (\ref{eq:theo:firstorder:2}) é usando $\MATRIX{D}
 
 \begin{corollary}[Calculando $\MATRIX{D}$ desde $\VECTOR{x}(t_1)$ na solução do Teorema \ref{theo:differential-eq:order1:0}:]
 \label{coro:differential-eq:order1:1}
-Conhecida a Eq. (\ref{eq:theo:firstorder:2}) e o Corolário \ref{coro:differential-eq:order1:0},
+Conhecidos a Eq. (\ref{eq:theo:firstorder:2}) e o Corolário \ref{coro:differential-eq:order1:0},
 podemos calcular
 $\MATRIX{D}=\funcdiag(\VECTOR{d})$ 
 usando os dados $\VECTOR{x}(t_1)$, de modo que
@@ -55,7 +55,7 @@ usando os dados $\VECTOR{x}(t_1)$, de modo que
 
 \begin{corollary}[Calculando $\MATRIX{D}$ desde $\DTVECTOR{x}(t_1)$ na solução do Teorema \ref{theo:differential-eq:order1:0}:]
 \label{coro:differential-eq:order1:2}
-Conhecida a Eq. (\ref{eq:theo:firstorder:2}) e o Corolário \ref{coro:differential-eq:order1:0},
+Conhecidos a Eq. (\ref{eq:theo:firstorder:2}) e o Corolário \ref{coro:differential-eq:order1:0},
 podemos calcular
 $\MATRIX{D}=\funcdiag(\VECTOR{d})$ 
 usando os dados em $\DTVECTOR{x}(t_1)$, de modo que
@@ -125,7 +125,8 @@ obtemos
   -0.17385
 \end{bmatrix}
 \end{equation}
-de modo que se identificamos $\VECTOR{a}=[0.23844~ 1.63667~ 5.12489]^{\transpose}$ como a diagonal de $\lambda_{\MATRIX{P}}$,
+de modo que se identificarmos $\VECTOR{a}=[0.23844~ 1.63667~ 5.12489]^{\transpose}$ 
+como a diagonal de $\lambda_{\MATRIX{P}}$,
 obtemos
 \begin{equation}
  \VECTOR{x}(t)= 

@@ -31,7 +31,7 @@ $\innerprod{\VECTOR{x}_1}{\VECTOR{x}_2}$ dos vetores $\VECTOR{x}_1$ e $\VECTOR{x
 \label{def:innergeral}
 Dado um espaço vetorial complexo $V$, 
 o produto interno hermitiano $\innerprod{\VECTOR{x}_1}{\VECTOR{x}_2} $ dos vetores $\VECTOR{x}_1,\VECTOR{x}_2 \in V$ 
-é uma função $V\times V \rightarrow \mathbb{C}$ 
+é uma função $V\times V \rightarrow \mathbb{C}$, 
 que cumpre as seguintes quatro propriedades para todo 
 $\VECTOR{x}_1,\VECTOR{x}_2,\VECTOR{x}_3 \in V$ e $\alpha \in \mathbb{C}$
  \cite[pp. 44]{d2019hermitian} \cite[pp. 242]{damiano2011course}:
@@ -75,14 +75,14 @@ a norma euclidiana quadrada $\|\VECTOR{x}\|$
 \begin{tcbattention}
 \begin{itemize}
 \item Um produto interno hermitiano pode ser usado para representar uma norma,
-porem não todas as normas podem ser representas por um produto interno 
+porém não todas as normas podem ser representas por um produto interno 
 (ver Seção \ref{subsec:pnorm}) \cite[pp. 45]{d2019hermitian}.
 \end{itemize}
 \end{tcbattention}
 
-Destas descrições gerias podem ser definidos diversos casos para as funções
+Dessas descrições gerais podem ser definidos diversos casos para as funções
 norma e o produto interno hermitiano; assim, 
-nas seguintes subseções serão mostrados alguns destes casos.
+nas seguintes subseções, serão mostrados alguns desses casos.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Produto interno hermitiano em $\mathbb{C}^N$}
@@ -96,7 +96,7 @@ o produto interno hermitiano $\innerprod{\VECTOR{u}}{\VECTOR{v}}$ dos vetores $\
 \begin{equation}
 \innerprod{\VECTOR{u}}{\VECTOR{v}}=\VECTOR{u}^{\transpose} \overline{\VECTOR{v}}=\sum_{n=1}^N u_n \overline{v_n},
 \end{equation} 
-onde $\VECTOR{u}=[u_1,~u_2,~...,~u_n,~...,~u_N]^{\transpose}$ e $\VECTOR{v}=[v_1,~v_2,~...,~v_n,~...,~v_N]^{\transpose}$.
+em que $\VECTOR{u}=[u_1,~u_2,~...,~u_n,~...,~u_N]^{\transpose}$ e $\VECTOR{v}=[v_1,~v_2,~...,~v_n,~...,~v_N]^{\transpose}$.
 \end{definition}
 
 \index{Produto interno hermitiano!Genérico $\innerprod{\VECTOR{x}_1}{\VECTOR{x}_2}_{\MATRIX{A}}$}
@@ -105,7 +105,7 @@ em $\mathbb{C}^N$:]
 Dado, $\mathbb{C}^N$, um espaço euclideano complexo de dimensão $N$ e
 $\MATRIX{A}$ uma \hyperref[def:hermitianapositivamatrix0]{\textbf{matriz hermitiana definida positiva}};
 o produto interno hermitiano genérico $\innerprod{\VECTOR{u}}{\VECTOR{v}}_{\MATRIX{A}}$ 
-dos vetores $\VECTOR{u},\VECTOR{v} \in \mathbb{C}^N$,
+dos vetores $\VECTOR{u},\VECTOR{v} \in \mathbb{C}^N$ 
 %com $\VECTOR{u}=[u_1,~u_2,~...,~u_n,~...,~u_N]$ e $\VECTOR{v}=[v_1,~v_2,~...,~v_n,~...,~v_N]$,
 é definido como \cite[pp. 1358]{weisstein2002crc}:
 \begin{equation}
@@ -120,9 +120,9 @@ dos vetores $\VECTOR{u},\VECTOR{v} \in \mathbb{C}^N$,
 \begin{definition}[Norma (canônica)
 em $\mathbb{C}^N$:]
 Dado, $\mathbb{C}^N$, um espaço euclideano complexo de dimensão $N$;
-a norma  $\|\VECTOR{x}\|$ do vetor $\VECTOR{x}\in \mathbb{C}^N$,
+a norma  $\|\VECTOR{x}\|$ do vetor $\VECTOR{x}\in \mathbb{C}^N$
 %com $\VECTOR{x}=[x_1,~x_2,~...,~x_n,~...,~x_N]^{\transpose}$,
-é definido como:
+é definida como:
 \begin{equation}
 \|\VECTOR{x}\|=\sqrt{\innerprod{\VECTOR{x}}{\VECTOR{x}}}
 =\sqrt{\VECTOR{x}^{\transpose} \overline{\VECTOR{x}}}
@@ -140,7 +140,7 @@ a norma  $\|\VECTOR{x}\|$ do vetor $\VECTOR{x}\in \mathbb{C}^N$,
 \index{Norma em $\mathbb{C}^N$!$\NORM{\VECTOR{x}}_{\MATRIX{A}}$}
 \begin{definition}[Norma genérica
 em $\mathbb{C}^N$:]
-Dado, $\mathbb{C}^N$, um espaço euclideano complexo de dimensão $N$;
+Dado $\mathbb{C}^N$, um espaço euclideano complexo de dimensão $N$;
 a norma  $\|\VECTOR{x}\|_{\MATRIX{A}}$ do vetor $\VECTOR{x}\in \mathbb{C}^N$
 ponderada com a matriz $\MATRIX{A}$ \hyperref[def:hermitianapositivematrix0]{\textbf{hermitiana definida positiva}},
 %com $\VECTOR{x}=[x_1,~x_2,~...,~x_n,~...,~x_N]^{\transpose}$,
@@ -187,23 +187,23 @@ a norma quadrada genérica $\|\VECTOR{x}\|_{\MATRIX{A}}^2$ é igual a
      \vspace{-30pt}
 \end{wrapfigure}
 Dado um vetor $\VECTOR{x} \in \mathbb{C}^{N}$,
-é definido a norma $p$ de $\VECTOR{x}$  como $\|\VECTOR{x}\|_p$ \cite[pp. 33]{vetterli2014foundations}, 
+é definida a norma $p$ de $\VECTOR{x}$  como $\|\VECTOR{x}\|_p$ \cite[pp. 33]{vetterli2014foundations}, 
 \begin{equation}
 \|\VECTOR{x}\|_p=\left(\sum_{n=1}^N |x_n|^p\right)^{\frac{1}{p}},
 \end{equation}
-onde $1 \leq p < \infty$; a norma $p$
+em que $1 \leq p < \infty$; a norma $p$
 também é denotada como norma $L_p$ ou ``$p$-norm'' em inglês.
 Assim, dependendo do valor de $p$, entraremos em vários casos ou tipos de norma,
-a Fig. \ref{fig:curvaunit} e os seguintes exemplos mostram alguns destes tipos.
+a Fig. \ref{fig:curvaunit} e os seguintes exemplos mostram alguns desses tipos.
 
-\begin{example}[Norma taxicab - $p=1$:] Também chamado norma Manhattan
+\begin{example}[Norma taxicab - $p=1$:] Também chamada norma Manhattan
 \begin{equation}
 \|\VECTOR{x}\|_1=\sum_{n=1}^N |x_n|.
 \end{equation}
 \end{example}
 
 \begin{example}[Norma euclidiana - $p=2$:] Também chamada norma euclidiana quadrada, 
-esta norma também pode ser representada como $\|\VECTOR{x}\|$ 
+a qual também pode ser representada como $\|\VECTOR{x}\|$, 
 de modo que se entende que é a $2$-norm,
 \begin{equation}
 \|\VECTOR{x}\|_2\equiv \|\VECTOR{x}\| =\sqrt{\sum_{n=1}^N |x_n|^2}.
@@ -212,7 +212,7 @@ Uma representação relativa à norma quadrada euclidiana é
 \begin{equation}
 \|\VECTOR{x}\|_2^2\equiv \|\VECTOR{x}\|^2=\sum_{n=1}^N |x_n|^2\equiv \VECTOR{x}^{*} \VECTOR{x},
 \end{equation}
-onde $\VECTOR{x}^{*}\equiv \VECTOR{\bar{x}}^{\transpose}$ 
+em que $\VECTOR{x}^{*}\equiv \VECTOR{\bar{x}}^{\transpose}$ 
 representa a transposta do conjugado do vetor  $\VECTOR{x}$. 
 \end{example}
 

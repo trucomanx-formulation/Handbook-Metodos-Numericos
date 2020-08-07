@@ -3,7 +3,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Regressão logística-não linear e SE com classificador $f_{\VECTOR{c}}(\VECTOR{x}):~\mathbb{R}^{N} \rightarrow \mathbb{R}$}
+\section{Regressão logística não linear e SE com classificador $f_{\VECTOR{c}}(\VECTOR{x}):~\mathbb{R}^{N} \rightarrow \mathbb{R}$}
 \label{sec:theo:reglogrnr1nolinear:1}
 
 \index{Regressão!Logística polinomial $f_{\VECTOR{c}}(\VECTOR{x}):~\mathbb{R}^{N} \rightarrow \mathbb{R}$}
@@ -17,7 +17,7 @@
 \includegraphics[width=0.95\linewidth]{chapters/classificacao/mfiles/reglogrnr1nolinear/reglogrnr1nolinear.eps} 
 \end{minipage}
 \begin{minipage}{0.55\textwidth}
-Dados, um conjunto de $L$ pontos
+Dados um conjunto de $L$ pontos
 $\VECTOR{x}_l$ $\in \mathbb{R}^{N}$, $1\leq l \leq L$,
 repartidos em dois grupos etiquetados com os símbolos $\bigtriangleup$ e $\bigcirc$,
 não separáveis por um hiperplano  em $\mathbb{R}^{N}$.
@@ -37,7 +37,7 @@ com coeficientes $\VECTOR{c}=[c_1,~c_2,~...,~c_M]^{\transpose}$.
 Podemos atribuir a cada ponto $\VECTOR{x}_l$ uma etiqueta $y_l\in \{A,1-A\}$, 
 $A$ para $\bigtriangleup$ e  $1-A$ para $\bigcirc$,
 onde $0<A\ll 0.5$ é escolhido por nós,
-e afirmar que o vetor $\VECTOR{c}= \VECTOR{\hat{c}}$,
+e afirmar que o vetor $\VECTOR{c}= \VECTOR{\hat{c}}$
 que minimiza o erro quadrático $e(\VECTOR{c})$,
 \begin{equation}\label{eq:reglogrnr1nolinear:1e}
 e(\VECTOR{c}) =  ||\VECTOR{h}(\VECTOR{c})-\VECTOR{z}||_{\MATRIX{W}}^2 + \alpha||\VECTOR{c}-\VECTOR{c}_{last}||_{\MATRIX{D}}^2,
@@ -89,7 +89,7 @@ d_2\\
 d_M
 \end{bmatrix}\right),
 \end{equation}
-pode ser achado\footnote{A demostração pode ser vista na Prova \ref{proof:theo:reglogrnr1nolinear}.} 
+pode ser achado\footnote{A demonstração pode ser vista na Prova \ref{proof:theo:reglogrnr1nolinear}.} 
 usando de forma iterativa a Eq. (\ref{eq:reglogrnr1nolinear:2}),
 sendo que $w_l \in \mathbb{R}_+$, $d_l \in \mathbb{R}_+$, e $\alpha \in \mathbb{R}_+$ são valores escolhido por nós;
 \begin{equation}\label{eq:reglogrnr1nolinear:2}
@@ -120,7 +120,7 @@ $\equiv \frac{\partial \VECTOR{h}(\VECTOR{c})}{\partial \VECTOR{c}^{\transpose}}
 \item A busca iterativa da Eq. (\ref{eq:reglogrnr1nolinear:2}) 
 é declarada finalizada com sucesso 
 quando iterações consecutivas do vetor $\VECTOR{c}_i$ convergem a valores próximos, onde declaramos $\VECTOR{\hat{c}}=\VECTOR{c}_i$.
-\item O erro mínimo, $e(\VECTOR{\hat{c}}) \geq 0$, não necessariamente ter valor zero. 
+\item O erro mínimo $e(\VECTOR{\hat{c}}) \geq 0$, não necessariamente obtém o valor zero. 
 \end{itemize}
 \end{theorem}
 ~
@@ -132,7 +132,7 @@ podemos reinterpretar este valor como se fosse uma probabilidade;
 neste caso, $f_{\VECTOR{c}}(\VECTOR{x}_l)$ representa, $P(y_l=\bigcirc|\VECTOR{x}_l)$, 
 a probabilidade de que $y_l=\bigcirc$ dado que tivemos como entrada o ponto $\VECTOR{x}_l$.
 \item O limiar de classificação na função $f_{\VECTOR{c}}(\VECTOR{x})$ está na superfície $h_{\VECTOR{c}}(\VECTOR{x})=0$,
-provocando nestos pontos um $f_{\VECTOR{c}}(\VECTOR{x})=0.5$.
+provocando nestes pontos um $f_{\VECTOR{c}}(\VECTOR{x})=0.5$.
 \end{itemize}
 \end{tcbattention}
 
@@ -141,7 +141,8 @@ provocando nestos pontos um $f_{\VECTOR{c}}(\VECTOR{x})=0.5$.
 $f_{\VECTOR{c}}(\VECTOR{x}):~\mathbb{R}^N \rightarrow \mathbb{R}$ }
 
 \begin{example}\label{ex:theo:reglogrnr1nolinear}
-Conhecidas as $L=10$ amostras $\VECTOR{x}_l$ e seus respetivos grupos indicados pelos símbolos $\bigtriangleup$ e $\bigcirc$, 
+Conhecidas as $L=10$ amostras $\VECTOR{x}_l$ e seus respectivos 
+grupos indicados pelos símbolos $\bigtriangleup$ e $\bigcirc$, 
 mostrados na Tabela \ref{table:theo:reglogrnr1nolinear:xn},
 achar o classificador $f_{\VECTOR{c}}(\VECTOR{x})$ que usa a função 
 $h_{\VECTOR{c}}(\VECTOR{x})=c_1\left( \left(x_1-c_2\right)^2 + \left(x_2-c_3\right)^2 -c_4^2\right)$, 
@@ -169,8 +170,8 @@ Para obter o vetor de parâmetros $\VECTOR{c}=\VECTOR{\hat{c}}$ da função $f_{
 que gere o menor erro $e(\VECTOR{c})$
 com os $L=10$ dados $\VECTOR{x}_l$ da Tabela \ref{table:theo:reglogrnr1nolinear:xn},
 usamos a Eq. (\ref{eq:reglogrnr1nolinear:2}) onde escolhemos $\alpha=0.001$, $d_l=w_l=1$ e valores $y_l \in \{0.001,~ 0.999\}$,
-$0.001$ para $\bigtriangleup$ e $0.999$ para $\bigcirc$;
-além disso calculamos 
+$0.001$ para $\bigtriangleup$ e $0.999$ para $\bigcirc$,
+além disso, calculamos 
 \begin{equation}
 \VECTOR{j}(\VECTOR{c},\VECTOR{x}) = 
 \left[ 

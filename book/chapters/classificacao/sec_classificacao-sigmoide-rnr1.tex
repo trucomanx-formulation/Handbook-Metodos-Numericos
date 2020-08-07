@@ -18,7 +18,7 @@
 \includegraphics[width=0.95\linewidth]{chapters/classificacao/mfiles/reglogrnr1/reglogrnr1.eps} 
 \end{minipage}
 \begin{minipage}{0.55\textwidth}
-Dados, um conjunto de $L$ pontos
+Dados um conjunto de $L$ pontos
 $\VECTOR{x}_l$ $\in \mathbb{R}^{N}$, $1\leq l \leq L$,
 repartidos em dois grupos etiquetados com os símbolos $\bigtriangleup$ e $\bigcirc$,
 separáveis por um hiperplano  em $\mathbb{R}^{N}$.
@@ -36,15 +36,14 @@ ou seu equivalente: $logit(y)=h_{\VECTOR{c}}(\VECTOR{x})$.
 
 Podemos atribuir a cada ponto $\VECTOR{x}_l$ uma etiqueta $y_l\in \{A,1-A\}$, 
 $A$ para $\bigtriangleup$ e  $1-A$ para $\bigcirc$,
-onde $0<A\ll 0.5$ é escolhido por nós,
-e afirmar que o vetor $\VECTOR{c}= \VECTOR{\hat{c}}$,
-que minimiza o erro quadrático $e(\VECTOR{c})$,
+em que $0<A\ll 0.5$ é escolhido por nós,
+e afirmar que o vetor $\VECTOR{c}= \VECTOR{\hat{c}}$ que minimiza o erro quadrático $e(\VECTOR{c})$,
 \begin{equation}\label{eq:reglogrnr1:1e}
 e(\VECTOR{c}) =  \sum_{l=1}^{L} w_l||h_{\VECTOR{c}}(\VECTOR{x}_l)-logit(y_l)||^2,
 \end{equation}
-pode ser achado\footnote{A demostração pode ser vista na Prova \ref{proof:theo:reglogrnr1}.}  
+pode ser achado\footnote{A demonstração pode ser vista na Prova \ref{proof:theo:reglogrnr1}.}  
 mediante a Eq. (\ref{eq:reglogrnr1:2}), 
-sendo que é considerado que os erros de cada amostra $\VECTOR{x}_l$ em $e(\VECTOR{c})$ são ponderados 
+sendo considerado que os erros gerados por cada amostra $\VECTOR{x}_l$ em $e(\VECTOR{c})$ são ponderados 
 mediante os pesos $w_l \in \mathbb{R}_+$,
 \begin{equation}\label{eq:reglogrnr1:2}
 \VECTOR{\hat{c}} =  \left[ \MATRIX{A}^{\transpose} \MATRIX{W}\MATRIX{A}\right]^{-1} \MATRIX{A}^{\transpose} \MATRIX{W}\VECTOR{z},
@@ -89,7 +88,7 @@ podemos reinterpretar este valor como se fosse uma probabilidade;
 neste caso, $f_{\VECTOR{c}}(\VECTOR{x}_l)$ representa, $P(y_l=\bigcirc|\VECTOR{x}_l)$, 
 a probabilidade de que $y_l=\bigcirc$ dado que tivemos como entrada o ponto $\VECTOR{x}_l$.
 \item O limiar de classificação na função $f_{\VECTOR{c}}(\VECTOR{x})$ está no hiperplano $h_{\VECTOR{c}}(\VECTOR{x})=0$,
-provocando nestos pontos um $f_{\VECTOR{c}}(\VECTOR{x})=0.5$.
+provocando nesses pontos um $f_{\VECTOR{c}}(\VECTOR{x})=0.5$.
 \end{itemize}
 \end{tcbattention}
 
@@ -102,7 +101,7 @@ $f_{\VECTOR{c}}(\VECTOR{x}):~\mathbb{R}^N \rightarrow \mathbb{R}$ }
 \begin{example}\label{ex:theo:reglogrnr1}
 Conhecidas as $L=10$ amostras $\VECTOR{x}_l$ e seus respetivos grupos indicados pelos símbolos $\bigtriangleup$ e $\bigcirc$, 
 mostrados na Tabela \ref{table:theo:reglogrnr1:xn},
-achar o classificador $f_{\VECTOR{c}}(\VECTOR{x})$, 
+achar o classificador $f_{\VECTOR{c}}(\VECTOR{x})$ 
 que gere o menor erro $e(\VECTOR{c}) =  \sum_{l=1}^{L} ||h_{\VECTOR{c}}(\VECTOR{x}_l)-logit(y_l)||^2$.
 \end{example}
 
@@ -165,7 +164,7 @@ com os $L=10$ dados $\VECTOR{x}_l$ da Tabela \ref{table:theo:reglogrnr1:xn},
 usamos a Eq. (\ref{eq:reglogrnr1:2}) onde escolhemos $w_l=1$ e valores $y_l \in \{0.001,~ 0.999\}$,
 $0.001$ para $\bigtriangleup$ e $0.999$ para $\bigcirc$,
 obtendo um vetor $\VECTOR{\hat{c}}=[-16.3776\quad 3.0029\quad 2.6564]^{\transpose}$. 
-Assim, podemos representar a função $\left.f_{\VECTOR{c}}(\VECTOR{x})\right|_{\VECTOR{c}=\VECTOR{\hat{c}}}$ 
+Assim, podemos representar a função $\left.f_{\VECTOR{c}}(\VECTOR{x})\right|_{\VECTOR{c}=\VECTOR{\hat{c}}}$, 
 que classifica os dados $\VECTOR{x}_l$, 
 como é mostrado na Figura \ref{fig:theo:reglogrnr1:xn:s2} e na Eq. (\ref{eq:theo:reglogrnr1:xn:s2}),
 \begin{equation}\label{eq:theo:reglogrnr1:xn:s2}

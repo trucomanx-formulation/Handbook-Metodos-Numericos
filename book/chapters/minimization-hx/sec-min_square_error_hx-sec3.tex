@@ -7,7 +7,7 @@
 \index{Minimização do erro quadrático!Não linear}%!Função $||h(x)-a||^2+\alpha ||x-x_{last}||^2$}
 
 \begin{theorem}[Solução iterativa:]\label{theo:minhxhxxoxo}
-Dados,
+Dados
 um escalar $\alpha \in \mathbb{R}_+$, 
 um escalar $x \in \mathbb{R}$, 
 um escalar $a \in \mathbb{R}$,  
@@ -19,14 +19,14 @@ e(x)=||h(x)-a||^2+\alpha ||x-x_{last}||^2,
 considerando que $x_{last}$ é uma constante equivalente a $x_{k-1}$
 numa busca iterativa ou equivalente a $p$, 
 se decidimos usar uma aproximação linear ao redor de $p$ em $h(x)$; 
-é dizer, o segundo somando na Eq. (\ref{eq:minhxhxxoxo1}) 
+quer dizer, o segundo somando na Eq. (\ref{eq:minhxhxxoxo1}) 
 procura minimizar $||x_{k}-x_{k-1}||^2$.
 
 Se desejamos ter o valor $x=\hat{x}$ que minimiza o escalar $e(x)$,
 este valor pode ser achado\footnote{A 
-demostração da Eq (\ref{eq:minhxhxxoxo2}) pode ser vista na Prova \ref{proof:theo:minhxhxaxoxo}.} 
+demonstração da Eq (\ref{eq:minhxhxxoxo2}) pode ser vista na Prova \ref{proof:theo:minhxhxaxoxo}.} 
  usando iterativamente a Eq. (\ref{eq:minhxhxxoxo2}),
-onde  $h'(x)\equiv \frac{d h(x)}{d x}$,
+em que $h'(x)\equiv \frac{d h(x)}{d x}$,
 \begin{equation}\label{eq:minhxhxxoxo2}
 x_{k+1} \leftarrow x_k+
 \frac{ h'(x_k) \left[a-h(x_k)\right] }{\left[h'(x_k)\right]^2+\alpha},
@@ -37,8 +37,8 @@ e_{k-1}(x)  \equiv ||h(x)-a||^2 + \alpha||x-x_{k-1}||^2.
 \end{equation}
 Assim, $\hat{x}$ pode ser achado iniciando a Eq. (\ref{eq:minhxhxxoxo2}) desde um 
 $x_{0}$ qualquer, realizando cálculos $x_{k}$ iterativamente, 
-ate que $x_{k}$ seja muito próximo a $x_{k-1}$ (convergência de $x_{k}$),
-onde pode ser declarado que $\hat{x} \approx x_{k}$.
+até que $x_{k}$ seja muito próximo a $x_{k-1}$ (convergência de $x_{k}$);assim,
+baixo essas condições declaramos que $\hat{x} \approx x_{k}$.
 
 \textbf{Considerações:}
 \begin{itemize}
@@ -55,8 +55,8 @@ consequentemente poderíamos ter achado um mínimo.
 \begin{itemize}
 \item O Teorema \ref{theo:minhxhxxoxo} pode ser usado para achar um ponto $x$
 que minimize as funções de custo $||h(x)-a||^2$ e
- $||x_{k}-x_{k-1}||^2$ de forma simultânea, ponderando estas seguindo o fator $\alpha$.
-\item No Teorema \ref{theo:minhxhxxoxo} o valor $x=\hat{x}$ 
+ $||x_{k}-x_{k-1}||^2$ de forma simultânea, ponderando elas seguindo o fator $\alpha$.
+\item No Teorema \ref{theo:minhxhxxoxo}, o valor $x=\hat{x}$ 
 que minimiza $e(x)$ não necessariamente minimiza $||h(x)-a||^2$.
 \end{itemize}
 \end{tcbattention}
@@ -73,8 +73,8 @@ achar o valor $\hat{x}$ que minimize $e(x)=||h(x)-a||^2+\alpha||x-x_{last}||^2$.
  A Fig. \ref{fig:hxccasesa} nos mostra o processo de busca de um mínimo
  de $e(x)$. A busca inicia em $x_0=-1.4$,
  todos os valores $x_{k}$ podem ser vistos na Tabela \ref{tab:hxccases1}. 
-Neste caso a busca iterativa indicada pela Eq. (\ref{eq:minhxhxxoxo2}) converge sem problemas 
-em $\hat{x}\approx x_3 =-1.2721$ com $e(x_3)=8.7404e-08$.
+Neste caso, a busca iterativa indicada pela Eq. (\ref{eq:minhxhxxoxo2}) converge sem problemas 
+em $\hat{x}\approx x_3 =-1.2721$, com $e(x_3)=8.7404e-08$.
 
 É interesante lembrar que os valores $x_{min}=\pm \sqrt{\frac{1+\sqrt{5}}{2}}$ 
 $\approx \pm 1.27202$ provocam $h(x_{min})=a$.
@@ -119,7 +119,7 @@ achar o valor $\hat{x}$ que minimize $e(x)=||h(x)-a||^2+\alpha||x-x_{last}||^2$.
  A Fig. \ref{fig:hxccasesb} nos mostra o processo de busca de um mínimo
  de $e(x)$. A busca inicia em $x_0=-1.4$,
  todos os valores $x_{k}$ podem ser vistos na Tabela \ref{tab:hxccases2}. 
-Neste caso a busca iterativa indicada pela Eq. (\ref{eq:minhxhxxoxo2}) converge sem problemas 
+Neste caso, a busca iterativa indicada pela Eq. (\ref{eq:minhxhxxoxo2}) converge sem problemas 
 em $\hat{x}\approx x_3 =-0.73819$ com $e(x_3)=0.56553$.
 \end{SolutionT}
 

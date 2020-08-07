@@ -3,7 +3,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{myproofT}[Relativa ao Teorema \ref{theo:derAx}:]\label{proof:theo:derAx}
-Dados,
+Dados
 uma matriz $\MATRIX{A}=\left[a_{:1}~ a_{:2}~ \hdots~ a_{:n}~ \hdots~ a_{:N}\right]$ e 
 um vetor coluna $\VECTOR{x}=\left[x_{1}~ x_{2}~ \hdots~ x_{n}~ \hdots~ x_{N}\right]^{\transpose}$, 
 podemos expressar que:
@@ -32,7 +32,7 @@ com um $1$ na posição $n$ e $0$ em qualquer outra posição, obtemos que
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{myproofT}[Relativa ao Teorema \ref{theo:derxAtAx}:]\label{proof:theo:derxAtAx}
-Dados,
+Dados
 uma matriz $\MATRIX{A}=\left[a_{:1}~ a_{:2}~ \hdots~ a_{:n}~ \hdots~ a_{:N}\right]$ e 
 um vetor coluna $\VECTOR{x}=\left[x_{1}~ x_{2}~ \hdots~ x_{n}~ \hdots~ x_{N}\right]^{\transpose}$, 
 podemos expressar que:
@@ -42,7 +42,7 @@ podemos expressar que:
 \left(\frac{\partial \MATRIX{A}\VECTOR{x}}{\partial x_n}\right)^{\transpose}\left(\MATRIX{A}\VECTOR{x}\right)+
 \left(\MATRIX{A}\VECTOR{x}\right)^{\transpose} \frac{\partial \MATRIX{A}\VECTOR{x}}{\partial x_n}.
 \end{equation}
-Pelo visto no Teorema \ref{theo:derAx} podemos substituir valores na Eq. (\ref{eq:proof:derxAtAx1})
+Pelo visto no Teorema \ref{theo:derAx}, podemos substituir valores na Eq. (\ref{eq:proof:derxAtAx1})
 e obter:
 \begin{equation}\label{eq:proof:derxAtAx2}
 \frac{\partial ||\MATRIX{A}\VECTOR{x}||^{2}}{\partial x_n}=
@@ -50,8 +50,9 @@ e obter:
 \left(\MATRIX{A}\VECTOR{x}\right)^{\transpose} a_{:n}.
 \end{equation}
 Como cada um dos somandos da equação anterior é um escalar, podemos aplicar o operador
-transposta ($\transpose$) sobre qualquer somando sem alterar o resultado; de modo que temos duas possíveis
-forma de expressar a solução:
+transposta ($\transpose$) sobre qualquer somando sem alterar o resultado; 
+de modo que temos duas possíveis
+formas de expressar a solução:
 \begin{equation}
 \begin{matrix}
 \frac{\partial ||\MATRIX{A}\VECTOR{x}||^2 }{\partial x_n}&=&
@@ -64,7 +65,7 @@ forma de expressar a solução:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{myproofT}[Relativa ao Teorema \ref{theo:derAxbAxb}:]\label{proof:theo:derAxbAxb}
-Dados,
+Dados
 uma matriz $\MATRIX{A}=\left[a_{:1}~ a_{:2}~ \hdots~ a_{:n}~ \hdots~ a_{:N}\right]$, 
 uma matriz diagonal $\MATRIX{C}\in \mathbb{R}^{M\times M}$, 
 um vetor coluna $\VECTOR{x}=\left[x_{1}~ x_{2}~ \hdots~ x_{n}~ \hdots~ x_{N}\right]^{\transpose}$, e 
@@ -98,7 +99,7 @@ forma de expressar a solução:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{myproofT}[Relativa ao Teorema \ref{theo:derfxbCfxb0}:]\label{proof:theo:derfxbCfxb0}
-Dados,
+Dados
 uma função $\VECTOR{f}:\mathbb{R}^{N} \rightarrow \mathbb{R}^{M}$, 
 uma matriz diagonal $\MATRIX{C}\in \mathbb{R}^{M\times M}$, 
 um vetor coluna $\VECTOR{x}=\left[x_{1}~ x_{2}~ \hdots~ x_{n}~ \hdots~ x_{N}\right]^{\transpose}$, e
@@ -115,8 +116,8 @@ podemos expressar que:
  2 \left(  \frac{\partial\VECTOR{f}(\VECTOR{x})  }{\partial x_{n}} \right)^{\transpose} \MATRIX{C} \left( \VECTOR{f}(\VECTOR{x})-\VECTOR{b}\right).
 \end{matrix}
 \end{equation}
-Assim, usando a Definição \ref{def:deltaver} junto com a Eq. (\ref{eq:proof:derfxbCfxb01})
-nos obtemos:
+Assim, usando a Definição \ref{def:deltaver} junto com a Eq. (\ref{eq:proof:derfxbCfxb01}),
+obtemos:
 \begin{equation}\label{eq:proof:derfxbCfxb02}
 \frac{\partial ||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2}{\partial \VECTOR{x}}  = 
 2 \MATRIX{J}(\VECTOR{x})^{\transpose} \MATRIX{C} \left( \VECTOR{f}(\VECTOR{x})-\VECTOR{b}\right).
@@ -125,7 +126,7 @@ nos obtemos:
 
 
 \begin{myproofT}[Relativa ao Teorema \ref{theo:derfxbCfxb}:]\label{proof:theo:derfxbCfxb}
-Dados,
+Dados
 uma função $\VECTOR{f}:\mathbb{R}^{N} \rightarrow \mathbb{R}^{M}$, 
 uma matriz diagonal $\MATRIX{C}\in \mathbb{R}^{M\times M}$, 
 um vetor coluna $\VECTOR{x}\in \mathbb{R}^{N}$, 
@@ -153,7 +154,7 @@ do Corolário \ref{coro:derAxbAxb2}, respectivamente. Assim obtemos:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{myproofT}[Relativa ao Teorema \ref{theo:der2fxbCfxb0}:]\label{proof:theo:der2fxbCfxb0}
-Dados,
+Dados
 uma função $\VECTOR{f}:\mathbb{R}^{N} \rightarrow \mathbb{R}^{M}$, 
 uma matriz diagonal $\MATRIX{C}\in \mathbb{R}^{M\times M}$, 
 um vetor coluna $\VECTOR{x}=\left[x_{1}~ x_{2}~ \hdots~ x_{n}~ \hdots~ x_{N}\right]^{\transpose}$, e
@@ -169,8 +170,8 @@ podemos expressar que:
 2  \MATRIX{J}(\VECTOR{x})^{\transpose}  \MATRIX{C} \frac{\partial \VECTOR{f}(\VECTOR{x}) }{\partial x_{n}}.\\
 \end{matrix}
 \end{equation}
-Assim, usando a Definição \ref{def:deltahor} junto com a Eq. (\ref{eq:proof:der2fxbCfxb01})
-nos obtemos:
+Assim, usando a Definição \ref{def:deltahor} junto com a Eq. (\ref{eq:proof:der2fxbCfxb01}),
+obtemos:
 \begin{equation}\label{eq:proof:der2fxbCfxb02}
 \frac{\partial }{\partial \VECTOR{x}^{\transpose}}\left( \frac{\partial ||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2}{\partial \VECTOR{x}} \right) =
 2 {\bigcup\limits_{n=1}^{ \rightarrow }}^{N}\left\{ \frac{\partial \MATRIX{J}(\VECTOR{x})^{\transpose} }{\partial x_{n}} \MATRIX{C} \left( \VECTOR{f}(\VECTOR{x})-\VECTOR{b}\right) \right\} +
@@ -179,7 +180,7 @@ nos obtemos:
 \end{myproofT}
 
 \begin{myproofT}[Relativa ao Teorema \ref{theo:der2fxbCfxb0aprox}:]\label{proof:theo:der2fxbCfxb0aprox}
-Dados,
+Dados
 uma função $\VECTOR{f}:\mathbb{R}^{N} \rightarrow \mathbb{R}^{M}$, 
 uma matriz diagonal $\MATRIX{C}\in \mathbb{R}^{M\times M}$, 
 os vetores coluna $\VECTOR{x}\in \mathbb{R}^{N}$ e 
@@ -194,10 +195,12 @@ podemos expressar que:
 ~ & \approx & \frac{\partial 2 \MATRIX{J}(\VECTOR{p})^{\transpose}\MATRIX{C} \MATRIX{J}(\VECTOR{p})\VECTOR{x}  }{\partial \VECTOR{x}^{\transpose}}
 \end{matrix},
 \end{equation}
-onde $\VECTOR{p}$ é um ponto fixo no domínio de $\VECTOR{f}(\VECTOR{x})$,  ao redor do qual é feita  aproximação
+em que $\VECTOR{p}$ é um ponto fixo no domínio de $\VECTOR{f}(\VECTOR{x})$, 
+ao redor do qual é feita  aproximação
 da função $\VECTOR{f}(\VECTOR{x})$,
-e $\MATRIX{J}(\VECTOR{p})$ é a \hyperref[def:jacobian]{\textbf{matriz Jacobiana}} de $\VECTOR{f}(\VECTOR{x})$ avaliado no ponto $\VECTOR{p}$.
-Assim, usando o Teorema \ref{theo:derAx} na Eq. (\ref{eq:proof:der2fxbCfxb01aprox})
+e $\MATRIX{J}(\VECTOR{p})$ é a \hyperref[def:jacobian]{\textbf{matriz Jacobiana}} 
+de $\VECTOR{f}(\VECTOR{x})$ avaliado no ponto $\VECTOR{p}$.
+Assim, usando o Teorema \ref{theo:derAx} na Eq. (\ref{eq:proof:der2fxbCfxb01aprox}),
 obtemos,
 \begin{equation}\label{eq:proof:der2fxbCfxb01aprox2}
 \frac{\partial }{\partial \VECTOR{x}^{\transpose}}\left( \frac{\partial ||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2}{\partial \VECTOR{x}} \right) \approx 
@@ -208,7 +211,7 @@ obtemos,
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{myproofT}[Relativa ao Teorema \ref{theo:derfxbCfxbxqDxq}:]\label{proof:theo:derfxbCfxbxqDxq}
-Dados,
+Dados
 uma função $\VECTOR{f}:\mathbb{R}^{N} \rightarrow \mathbb{R}^{M}$, 
 uma matriz diagonal $\MATRIX{C}\in \mathbb{R}^{M\times M}$, 
 uma matriz diagonal $\MATRIX{D}\in \mathbb{R}^{N\times N}$, 
@@ -221,14 +224,14 @@ podemos expressar que:
 \frac{\partial ||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2}{\partial \VECTOR{x}}+
 \alpha \frac{\partial ||\VECTOR{x}-\VECTOR{q}||_{\MATRIX{D}}^2}{\partial \VECTOR{x}}.
 \end{equation}
-Usando o Corolário \ref{coro:derAxbAxb2} na Eq. (\ref{eq:proof:derfxbCfxbxqDxq1})
+Usando o Corolário \ref{coro:derAxbAxb2} na Eq. (\ref{eq:proof:derfxbCfxbxqDxq1}),
 obtemos:
 \begin{equation}\label{eq:proof:derfxbCfxbxqDxq2}
 \frac{\partial ||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2 +\alpha||\VECTOR{x}-\VECTOR{q}||_{\MATRIX{D}}^2}{\partial \VECTOR{x}} =
 \frac{\partial ||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2}{\partial \VECTOR{x}}+
 \alpha 2 \MATRIX{D}\left(\VECTOR{x}-\VECTOR{q}\right).
 \end{equation}
-Usando o Teorema \ref{theo:derfxbCfxb} na Eq. (\ref{eq:proof:derfxbCfxbxqDxq2})
+Usando o Teorema \ref{theo:derfxbCfxb} na Eq. (\ref{eq:proof:derfxbCfxbxqDxq2}),
 obtemos:
 \begin{equation}\label{eq:proof:derfxbCfxbxqDxq3}
 \frac{\partial ||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2 +\alpha||\VECTOR{x}-\VECTOR{q}||_{\MATRIX{D}}^2}{\partial \VECTOR{x}} \approx

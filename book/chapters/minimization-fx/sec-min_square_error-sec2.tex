@@ -5,7 +5,7 @@
 \index{Minimização do erro quadrático!Não linear}%!Função $||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2$}
 
 \begin{theorem}[Solução iterativa:]\label{theo:minfxbCfxb}
-Dados,
+Dados
 os vetores coluna $\VECTOR{x}\in \mathbb{R}^N$ e $\VECTOR{b}\in \mathbb{R}^M$,  
 uma função $\VECTOR{f}:\mathbb{R}^{N} \rightarrow \mathbb{R}^{M}$, 
 uma matriz diagonal $\MATRIX{C} \in \mathbb{R}^{M\times M}_{+}$, e 
@@ -17,8 +17,8 @@ e(\VECTOR{x}) & = & ||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2 \\
 \end{matrix}
 \end{equation}
 Se desejamos ter o ponto $\VECTOR{x}=\VECTOR{\hat{x}}$ que minimiza o escalar $e(\VECTOR{x})$,
-podemos achar este ponto usando iterativamente a Eq. (\ref{eq:minfxbCfxb2}),
-onde  $\MATRIX{J}(\VECTOR{x})$ é a \hyperref[def:jacobian]{\textbf{matriz Jacobiana}}  de $\VECTOR{f}(\VECTOR{x})$.
+podemos achar esse ponto usando iterativamente a Eq. (\ref{eq:minfxbCfxb2}),
+em que $\MATRIX{J}(\VECTOR{x})$ é a \hyperref[def:jacobian]{\textbf{matriz Jacobiana}}  de $\VECTOR{f}(\VECTOR{x})$.
 \begin{equation}\label{eq:minfxbCfxb2}
 \VECTOR{x}_{k} \leftarrow \VECTOR{x}_{k-1}-
 \left[ \MATRIX{J}(\VECTOR{x}_{k-1})^{\transpose}\MATRIX{C} \MATRIX{J}(\VECTOR{x}_{k-1}) \right]^{-1}
@@ -29,25 +29,26 @@ onde  $\MATRIX{J}(\VECTOR{x})$ é a \hyperref[def:jacobian]{\textbf{matriz Jacob
 
 Assim, $\VECTOR{\hat{x}}$ pode ser achado 
 iniciando a Eq. (\ref{eq:minfxbCfxb2}) desde um $\VECTOR{x}_{0}$ qualquer, 
-ate que $\VECTOR{x}_{k}$ seja muito próximo a $\VECTOR{x}_{k-1}$,
-onde se declara que $\VECTOR{\hat{x}} \approx \VECTOR{x}_{k}$,
+até que $\VECTOR{x}_{k}$ seja muito próximo a $\VECTOR{x}_{k-1}$,
+em que se declara que $\VECTOR{\hat{x}} \approx \VECTOR{x}_{k}$,
 que corresponde a um mínimo\footnote{\label{ref:minfx}A
-demostração pode ser vista na Prova \ref{proof:theo:minfxbCfxb}.} de $e(\VECTOR{x})$,
+demonstração pode ser vista na Prova \ref{proof:theo:minfxbCfxb}.} de $e(\VECTOR{x})$,
 sem aclarar se é local ou global.
 
 \textbf{Considerações:}
 
 \begin{itemize}
 \item Para que tenha sentido a Eq. (\ref{eq:minfxbCfxb2}),
- e consequentemente esta possa ser usada, devemos verificar que  $\MATRIX{J}(\VECTOR{x}_{k-1})\neq \MATRIX{0}$,
+ e consequentemente ela possa ser usada, devemos verificar que  $\MATRIX{J}(\VECTOR{x}_{k-1})\neq \MATRIX{0}$,
 pois se $\MATRIX{J}(\VECTOR{x}_{k-1})= \MATRIX{0}$ indica que existe\footref{ref:minfx} um ponto de inflexão 
 (máximo, mínimo ou ponto de sela) em $e(\VECTOR{x}_{k-1})$.
 \item A busca iterativa da Eq. (\ref{eq:minfxbCfxb2}) é considerada falida quando 
 $\MATRIX{J}(\VECTOR{x}_{k-1})^{\transpose}$ $\MATRIX{C}$ $\MATRIX{J}(\VECTOR{x}_{k-1})$
 não tem inversa.
-\item A busca iterativa da Eq. (\ref{eq:minfxbCfxb2}) pode diverger quando coincide que o mínimo $\VECTOR{\hat{x}}$ procurado
+\item A busca iterativa da Eq. (\ref{eq:minfxbCfxb2}) pode divergir quando coincide que o mínimo $\VECTOR{\hat{x}}$ procurado
 tem um $\MATRIX{J}(\VECTOR{\hat{x}})\approx \MATRIX{0}$.
-O erro só acontece quando $\VECTOR{x}_{k-1}$ atinge de forma ``exata'' um mínimo com $\VECTOR{f}(\VECTOR{x}_{k-1})\neq \VECTOR{b}$,
+O erro só acontece quando $\VECTOR{x}_{k-1}$ atinge de forma ``exata'' 
+um mínimo com $\VECTOR{f}(\VECTOR{x}_{k-1})\neq \VECTOR{b}$;
 para outros valores a busca iterativa de $\VECTOR{x}_{k-1}$ avança eficazmente.
 \end{itemize}
 
@@ -75,7 +76,7 @@ x_2^2\\
 x_1+x_2
 \end{bmatrix}.
 \end{equation}
-Consequentemente podemos deduzir e escolher que, 
+Consequentemente, podemos deduzir e escolher que, 
 \begin{equation}\label{eq:lab:ex2fx}
 \MATRIX{J}(\VECTOR{x})=\begin{bmatrix}
 2 x_1 & 0\\
@@ -89,9 +90,9 @@ Consequentemente podemos deduzir e escolher que,
 0 & 0 & 1
 \end{bmatrix}.
 \end{equation}
-Com todos estes dados e usando a Eq. (\ref{eq:minfxbCfxb1}),
+Com todos esses dados e usando a Eq. (\ref{eq:minfxbCfxb1}),
 obtemos a superfície $e(\VECTOR{x})$ como mostra a Figura \ref{fig:ex:minfxbCfxb:a}.
-Podemos ver as respostas a este exemplo na Solução \ref{ex:minfxbCfxb:sol1} e \ref{ex:minfxbCfxb:sol2}.
+Podemos ver as respostas a esse exemplo na Solução \ref{ex:minfxbCfxb:sol1} e \ref{ex:minfxbCfxb:sol2}.
 \end{example}
 
 \begin{SolutionT}[Relativa ao Exemplo \ref{ex:minfxbCfxb}:]
@@ -99,13 +100,13 @@ Podemos ver as respostas a este exemplo na Solução \ref{ex:minfxbCfxb:sol1} e 
 Se escolhemos o ponto inicial $\VECTOR{x}_0=[0.1~0.1]^{\transpose}$ e 
 usamos iterativamente a Eq. (\ref{eq:minfxbCfxb2}), obtemos os valores 
 de $\VECTOR{x}_k$ e $e(\VECTOR{x}_k)$, como mostra a Tabela \ref{table:ex:minfxbCfxb},
-onde se asume o final do processo iterativo quando $\VECTOR{x}_k \approx \VECTOR{x}_{k-1}$.
+em que se asume o final do processo iterativo quando $\VECTOR{x}_k \approx \VECTOR{x}_{k-1}$.
 Assim, a aproximação iterativa conclui na resposta $\VECTOR{\hat{x}}\approx \VECTOR{x}_{4} =[1~1]^{\transpose}$,
 com um erro $e(\VECTOR{\hat{x}})=5.0032~10^{-24}\approx 0$ e uma pendente\footnote{\label{ref:pendenteex} O
-cálculo da pendente de $e(\VECTOR{\hat{x}})$ pode ser vista no Teorema \ref{theo:derfxbCfxb0}.}
+cálculo da pendente de $e(\VECTOR{\hat{x}})$ pode ser visto no Teorema \ref{theo:derfxbCfxb0}.}
 $\frac{\partial e(\VECTOR{\hat{x}})}{\partial \VECTOR{x} }=[7.7485~10^{-12}\quad 7.7485~10^{-12}]^{\transpose}$
 próxima a zero;
-este processo pode ser visto de forma gráfica na Figura \ref{fig:ex:minfxbCfxb:b}.
+esse processo pode ser visto de forma gráfica na Figura \ref{fig:ex:minfxbCfxb:b}.
 \end{SolutionT}
 
 
@@ -156,7 +157,7 @@ não tem inversa.
 $\VECTOR{\hat{x}}$ que cumpre que $\VECTOR{f}(\VECTOR{\hat{x}}) \neq \VECTOR{b}$:]
 \label{ex:minfxbCfxb2}
 Conhecida uma função $\VECTOR{f}(\VECTOR{x}) : \mathbb{R}^{2} \rightarrow \mathbb{R}^{3}$
-e um ponto $\VECTOR{b}$ que presumimos que existe no contradomínio $\VECTOR{f}(\VECTOR{x})$,
+e um ponto $\VECTOR{b}$ que presumimos que existem no contradomínio $\VECTOR{f}(\VECTOR{x})$,
 achar o valor $\VECTOR{\hat{x}}$ que minimize $||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2$;
 sabendo que:
 \begin{equation}
@@ -172,7 +173,7 @@ x_2^2\\
 x_1+x_2
 \end{bmatrix}.
 \end{equation}
-Com todos estes dados e usando a Eq. (\ref{eq:minfxbCfxb1}),
+Com todos esses dados e usando a Eq. (\ref{eq:minfxbCfxb1}),
 obtemos a superfície $e(\VECTOR{x})$ como mostra a Figura \ref{fig:ex:minfxbCfxb2:a},
 na qual observamos que esta nunca atinge o valor zero.
 Podemos ver uma resposta para este exemplo na Solução \ref{ex:minfxbCfxb2:sol1}.
@@ -183,11 +184,11 @@ Podemos ver uma resposta para este exemplo na Solução \ref{ex:minfxbCfxb2:sol1
 Este problema pode ser resolvido de forma similar ao Exemplo \ref{ex:minfxbCfxb},
 usando os dados da Eq. (\ref{eq:lab:ex2fx}).
 Assim, se escolhemos o ponto inicial $\VECTOR{x}_0=[0.1~0.1]^{\transpose}$ 
-e usamos iterativamente a Eq. (\ref{eq:minfxbCfxb2}) obtemos os valores 
+e usamos iterativamente a Eq. (\ref{eq:minfxbCfxb2}), obtemos os valores 
 de $\VECTOR{x}_k$ e $e(\VECTOR{x}_k)$, como mostra a Tabela \ref{table:ex:minfxbCfxb2}.
-A aproximação iterativa é feita ate atingir $\VECTOR{x}_k \approx \VECTOR{x}_{k-1}$,
+A aproximação iterativa é feita até atingir $\VECTOR{x}_k \approx \VECTOR{x}_{k-1}$,
 onde concluimos que a resposta é $\VECTOR{\hat{x}}\approx \VECTOR{x}_5 =[0.90856\quad 0.90856]^{\transpose}$
-com um erro $e(\VECTOR{\hat{x}})=0.16148$; é dizer, não existe $\VECTOR{f}(\VECTOR{\hat{x}})$
+com um erro $e(\VECTOR{\hat{x}})=0.16148$; quer dizer, não existe $\VECTOR{f}(\VECTOR{\hat{x}})$
 que seja igual a $\VECTOR{b}$, só podemos achar um vetor $\VECTOR{\hat{x}}$ 
 que provoque um valor com mínimo erro, com pendente 
 $\frac{\partial e(\VECTOR{\hat{x}})}{\partial \VECTOR{x} }=[-9.7332~10^{-6}\quad -9.7332~{10}^{-6}]^{\transpose}$
@@ -200,7 +201,7 @@ e um
 1       & 1
 \end{bmatrix}.
 \end{equation}
-Todo este processo pode ser visto de forma gráfica na Figura \ref{fig:ex:minfxbCfxb2:b}.
+Todo esse processo pode ser visto de forma gráfica na Figura \ref{fig:ex:minfxbCfxb2:b}.
 \end{SolutionT}
 
 \begin{table}[h!]
@@ -239,7 +240,7 @@ $e(\VECTOR{x}_k)$ & 3.65020  & 0.21317  & 0.16160  & 0.16148  & 0.16148  & 0.161
 \begin{example}[Quando existem muitos mínimos locais e um
 $\VECTOR{\hat{x}}$ que cumpre que $\VECTOR{f}(\VECTOR{\hat{x}}) \approx \VECTOR{b}$:]
 \label{ex:minfxbCfxb3}
-Conhecida uma função $\VECTOR{f}(\VECTOR{x}) : \mathbb{R}^{2} \rightarrow \mathbb{R}^{3}$
+Conhecidos uma função $\VECTOR{f}(\VECTOR{x}) : \mathbb{R}^{2} \rightarrow \mathbb{R}^{3}$
 e um ponto $\VECTOR{b}$ do contradomínio de $\VECTOR{f}(\VECTOR{x})$,
 achar o valor $\VECTOR{\hat{x}}$ que minimize $||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2$;
 sabendo que:
@@ -256,7 +257,7 @@ sin(\frac{x_2 5 \pi}{2})\\
 x_1+x_2
 \end{bmatrix}.
 \end{equation}
-Consequentemente podemos deduzir e escolher que, 
+Consequentemente, podemos deduzir e escolher que, 
 \begin{equation}\label{eq:lab:ex2fx3}
 \MATRIX{J}(\VECTOR{x})=\begin{bmatrix}
 \frac{5 \pi}{2}cos(\frac{x_1 5 \pi}{2}) & 0\\
@@ -270,7 +271,7 @@ Consequentemente podemos deduzir e escolher que,
 0 & 0 & 1
 \end{bmatrix}.
 \end{equation}
-Com todos estes dados e usando a Eq. (\ref{eq:minfxbCfxb1}),
+Com todos esses dados e usando a Eq. (\ref{eq:minfxbCfxb1}),
 obtemos a superfície $e(\VECTOR{x})$ como mostra a Figura \ref{fig:ex:minfxbCfxb3:a}.
 Podemos ver as respostas a este exemplo na Solução \ref{ex:minfxbCfxb3:sol1} e \ref{ex:minfxbCfxb3:sol2}.
 \end{example}
@@ -296,11 +297,11 @@ e um
 1       & 1
 \end{bmatrix};
 \end{equation}
-este processo pode ser visto de forma gráfica na Figura \ref{fig:ex:minfxbCfxb3:b}.
+esse processo pode ser visto de forma gráfica na Figura \ref{fig:ex:minfxbCfxb3:b}.
 
 É interesante resaltar que o ponto $\VECTOR{x}_0$ é muito próximo a um máximo local de 
 $e(\VECTOR{x})$, e o uso iterativo da Eq. (\ref{eq:minfxbCfxb2}) 
-provoca o afastamento deste ponto, mesmo que a princípio os passos sejam pequenos;
+provoca o afastamento desse ponto, mesmo que a princípio os passos sejam pequenos;
 por outro lado, a busca iterativa converge e finaliza em $\VECTOR{x}_7$ um mínimo local 
 de $e(\VECTOR{x})$.
 
@@ -346,7 +347,7 @@ pendente de $e(\VECTOR{\hat{x}})$ pode ser visto no Teorema \ref{theo:derfxbCfxb
 $\frac{\partial e(\VECTOR{x}_0)}{\partial \VECTOR{x} }=[7.6342~10^{-5}\quad 7.6342~10^{-5}]^{\transpose}$ e 
 usamos iterativamente a Eq. (\ref{eq:minfxbCfxb2}), obtemos os valores 
 de $\VECTOR{x}_k$ e $e(\VECTOR{x}_k)$, como mostra a Tabela \ref{table:ex:minfxbCfxb4},
-onde se asume o final do processo iterativo quando $\VECTOR{x}_k \approx \VECTOR{x}_{k-1}$.
+em que se asume o final do processo iterativo quando $\VECTOR{x}_k \approx \VECTOR{x}_{k-1}$.
 Assim, a aproximação iterativa conclui na resposta $\VECTOR{\hat{x}}\approx \VECTOR{x}_{7} =[0.99056\quad 0.99056]^{\transpose}$,
 com um erro $e(\VECTOR{\hat{x}})=3.7152~10^{-4}$, uma pendente
 $\frac{\partial e(\VECTOR{\hat{x}})}{\partial \VECTOR{x} }=[-0.040955\quad -0.040955]^{\transpose}$
@@ -359,12 +360,12 @@ e um
 1       & 1
 \end{bmatrix};
 \end{equation}
-este processo pode ser visto de forma gráfica na Figura \ref{fig:ex:minfxbCfxb4:b}.
+esse processo pode ser visto de forma gráfica na Figura \ref{fig:ex:minfxbCfxb4:b}.
 
 De forma similar ao Exemplo \ref{ex:minfxbCfxb3:sol1}, observamos 
 que o ponto $\VECTOR{x}_0$ é muito próximo a um máximo local de 
 $e(\VECTOR{x})$, e o uso iterativo da Eq. (\ref{eq:minfxbCfxb2}) 
-provoca o afastamento deste ponto, mesmo que a princípio os passos sejam pequenos;
+provoca o afastamento desse ponto, mesmo que a princípio os passos sejam pequenos;
 por outro lado, a busca iterativa converge e finaliza em $\VECTOR{x}_7$ um mínimo global
 de $e(\VECTOR{x})$.
 \end{SolutionT}

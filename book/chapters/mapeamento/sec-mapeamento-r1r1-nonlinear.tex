@@ -18,13 +18,13 @@ $h_{\VECTOR{c}}(x)$:]
 \includegraphics[width=0.95\linewidth]{chapters/mapeamento/mapeamento-hx-nonlinear.eps} 
 \end{minipage}
 \begin{minipage}{0.6\textwidth}
-Dados,
+Dados
 os escalares $x \in \mathbb{R}$ e $y \in \mathbb{R}$, o vetor coluna $\VECTOR{c} \in \mathbb{R}^M$, e 
 definida a Eq. (\ref{eq:maphcxr1r1:1}), 
 \begin{equation}\label{eq:maphcxr1r1:1}
 y=h_{\VECTOR{c}}(x)\equiv h(\VECTOR{c},x),
 \end{equation}
-onde $h_{\VECTOR{c}}:\mathbb{R} \rightarrow \mathbb{R}$, é uma função com domínio em $X$, contradomínio em $Y$
+onde $h_{\VECTOR{c}}:\mathbb{R} \rightarrow \mathbb{R}$ é uma função com domínio em $X$, contradomínio em $Y$
 e com coeficientes $c_m$, $1 \leq m \leq M$, que formam o vetor $\VECTOR{c} \in \mathbb{R}^{M}$;
 podemos afirmar que o vetor $\VECTOR{c}=\VECTOR{\hat{c}}$,
 que minimiza o erro $e(\VECTOR{c})$,
@@ -80,7 +80,7 @@ d_2\\
 d_M
 \end{bmatrix}\right);
 \end{equation}
-pode ser achado\footnote{A demostração pode ser vista na Prova \ref{proof:theo:maphcxr1r1}.} 
+pode ser achado\footnote{A demonstração pode ser vista na Prova \ref{proof:theo:maphcxr1r1}.} 
 usando de forma iterativa a Eq. (\ref{eq:maphcxr1r1:3})
 \begin{equation}\label{eq:maphcxr1r1:3}
 \VECTOR{c}_{i}=\VECTOR{c}_{i-1}-[\MATRIX{J}(\VECTOR{c}_{i-1})^{\transpose}\MATRIX{W}\MATRIX{J}(\VECTOR{c}_{i-1})+\alpha \MATRIX{D}]^{-1}\MATRIX{J}(\VECTOR{c}_{i-1})^{\transpose}\MATRIX{W}[\VECTOR{h}(\VECTOR{c}_{i-1})-\VECTOR{y}],
@@ -109,8 +109,9 @@ $\equiv \frac{\partial \VECTOR{h}(\VECTOR{c})}{\partial \VECTOR{c}^{\transpose}}
 \begin{itemize}
 \item A busca iterativa da Eq. (\ref{eq:maphcxr1r1:3}) 
 é finalizada com sucesso 
-quando iterações consecutivas do vetor $\VECTOR{c}_i$ convergem a valores próximos entre sim, onde declaramos $\VECTOR{\hat{c}}=\VECTOR{c}_i$.
-\item O erro mínimo, $e(\VECTOR{\hat{c}}) \geq 0$, não necessariamente ter valor zero. 
+quando iterações consecutivas do vetor $\VECTOR{c}_i$ convergem a valores próximos entre si, 
+onde declaramos $\VECTOR{\hat{c}}=\VECTOR{c}_i$.
+\item O erro mínimo $e(\VECTOR{\hat{c}}) \geq 0$, não necessariamente obtem o valor zero. 
 \end{itemize}
 \end{theorem}
 
@@ -125,7 +126,8 @@ quando iterações consecutivas do vetor $\VECTOR{c}_i$ convergem a valores pró
 $h(\VECTOR{c},x):~\mathbb{R} \rightarrow \mathbb{R}$}
 
 \begin{example}\label{ex:theo:maphcxr1r1}
-Conhecida as $N=16$ amostras $x_n$ e $y_n$, mostradas nas  Tabelas \ref{table:theo:maphcxr1r1:xn} e \ref{table:theo:maphcxr1r1:yn},
+Conhecida as $N=16$ amostras $x_n$ e $y_n$, mostradas nas  
+Tabelas \ref{table:theo:maphcxr1r1:xn} e \ref{table:theo:maphcxr1r1:yn},
 achar os parametros $c_m$ do vetor $\VECTOR{c}=[c_1\quad c_2\quad c_3]^{\transpose}$ da função $h(\VECTOR{c},x)$, 
 \begin{equation}
 h(\VECTOR{c},x)=c_1 e^{-\left(\frac{x}{c_2}\right)^{-4}}+c_3,
@@ -179,7 +181,7 @@ podemos usar iterativamente a Eq. (\ref{eq:maphcxr1r1:3}), com
 =1
 \end{equation} 
 iniciando desde um vetor $\VECTOR{c}_{0}=[1\quad 1\quad 1]^{\transpose}$ escolhido arbitrariamente.
-Obtendo assim a Tabela \ref{table:theo:maphcxr1r1:ei}, que conclui em
+Obtendo, assim, a Tabela \ref{table:theo:maphcxr1r1:ei}, que conclui em
 $\VECTOR{\hat{c}}=\VECTOR{c}_{5}=[7.9767\quad 3.0212\quad 2.0039]^{\transpose}$,
 com  um erro $e(\VECTOR{c}_{5})=0.31848$.
 

@@ -6,7 +6,7 @@
 \begin{theorem}[Equação 
 $\DDTVECTOR{x}(t) + \MATRIX{P} \VECTOR{x}(t)=0$ com matriz $\MATRIX{P}$ definida positiva:]
 \label{theo:differential-eq:0}
-Dados, o vetor coluna $\VECTOR{x} \in \mathbb{R}^N$, 
+Dados o vetor coluna $\VECTOR{x} \in \mathbb{R}^N$, 
 a \hyperref[def:positivematrix0]{\textbf{matriz definida positiva}} $\MATRIX{P} \in \mathbb{R}^{N\times N}$,
 com $N$ autovalores $\lambda_n$ ``diferentes'', seus correspondentes autovetores $\VECTOR{v}_n$,
 $\forall n \in \{1, 2, ..., N\}$, 
@@ -15,7 +15,8 @@ e definida a equação diferencial matricial,
 \DDTVECTOR{x}(t) + \MATRIX{P} \VECTOR{x}(t)=0.
 \end{equation}
 Podemos afirmar que a solução\footnote{A
-demostração pode ser vista na Prova \ref{proof:theo:differential-eq:0}.} desta equação diferencial tem  a forma,
+demonstração pode ser vista na Prova \ref{proof:theo:differential-eq:0}.} dessa 
+equação diferencial tem a forma,
 \begin{equation}\label{eq:theo:segundoorder:2}
  \VECTOR{x}(t)= \MATRIX{V}\left[\MATRIX{D}_1 cos(\VECTOR{w}t) + \MATRIX{D}_2 sin(\VECTOR{w}t) \right].
 \end{equation}
@@ -42,7 +43,7 @@ Outra forma de escrever a Eq. (\ref{eq:theo:segundoorder:2}) é usando $\MATRIX{
 
 \begin{corollary}[Calculando $\MATRIX{D}_1$ e $\MATRIX{D}_2$ desde $\VECTOR{x}(t_1)$ e $\VECTOR{x}(t_2)$ na solução do Teorema \ref{theo:differential-eq:0}:]
 \label{coro:differential-eq:1}
-Conhecida a Eq. (\ref{eq:theo:segundoorder:2}) e o Corolário \ref{coro:differential-eq:0},
+Conhecidos a Eq. (\ref{eq:theo:segundoorder:2}) e o Corolário \ref{coro:differential-eq:0},
 podemos calcular
 $\MATRIX{D}_1=\funcdiag(\VECTOR{d}_1)$ e $\MATRIX{D}_2=\funcdiag(\VECTOR{d}_2)$ 
 usando os dados $\VECTOR{x}(t_1)$ e $\VECTOR{x}(t_2)$, de modo que
@@ -66,7 +67,7 @@ usando os dados $\VECTOR{x}(t_1)$ e $\VECTOR{x}(t_2)$, de modo que
 \begin{corollary}[Calculando 
 $\MATRIX{D}_1$ e $\MATRIX{D}_2$ desde $\VECTOR{x}(t_1)$ e $\VECTOR{\dot{x}}(t_1)$ na solução do Teorema \ref{theo:differential-eq:0}:]
 \label{coro:differential-eq:2}
-Conhecida a Eq. (\ref{eq:theo:segundoorder:2}) e o Corolário \ref{coro:differential-eq:0},
+Conhecidos a Eq. (\ref{eq:theo:segundoorder:2}) e o Corolário \ref{coro:differential-eq:0},
 podemos calcular
 $\MATRIX{D}_1=\funcdiag(\VECTOR{d}_1)$ e $\MATRIX{D}_2=\funcdiag(\VECTOR{d}_2)$ 
 usando os dados $\VECTOR{x}(t_1)$ e $\VECTOR{\dot{x}}(t_1))$, de modo que
@@ -91,7 +92,7 @@ usando os dados $\VECTOR{x}(t_1)$ e $\VECTOR{\dot{x}}(t_1))$, de modo que
 \subsection{Exemplos da solução da equação $\DDTVECTOR{x}(t) + \MATRIX{P} \VECTOR{x}(t)=0$}
 
 \begin{example}[Procurando a resposta 
-$\VECTOR{x}(t)$ usando o Teorema \ref{theo:differential-eq:0}:]
+$\VECTOR{x}(t)$, usando o Teorema \ref{theo:differential-eq:0}:]
 \label{ex:ddxPx:0}
 Calcular o vetor $\VECTOR{x}(t)$,
 conhecida a equação diferencial, $\DDTVECTOR{x}(t) + \MATRIX{P} \VECTOR{x}(t)=0$, com 
@@ -123,7 +124,8 @@ um vetor $\VECTOR{x} \in \mathbb{R}^{N}$, uma matriz $\MATRIX{P}$ e as amostras 
 \newpage
 \begin{SolutionT}[Relativa ao Exemplo \ref{ex:ddxPx:0}:]
 \label{ex:ddxPx:0:sol1}
-Sabendo que $\lambda_{\MATRIX{P}}$ e $\MATRIX{V}$ são matrizes correspondentes aos autovalores e os autovetores de $\MATRIX{P}$,
+Sabendo que $\lambda_{\MATRIX{P}}$ e $\MATRIX{V}$ são matrizes correspondentes 
+aos autovalores e os autovetores de $\MATRIX{P}$,
 respetivamente; 
 \begin{equation}
 \lambda_{\MATRIX{P}}=
@@ -141,8 +143,8 @@ respetivamente;
 \end{bmatrix},
 \end{equation}
 e dado que a matriz $\MATRIX{P}$ é simétrica, podemos usar o Teorema \ref{theo:positivematrix1}
-para declarar que esta é definida positiva. 
-onde $\MATRIX{W}=\sqrt{\lambda_{\MATRIX{P}}}$.
+para declarar que ela é definida positiva, 
+sendo que $\MATRIX{W}=\sqrt{\lambda_{\MATRIX{P}}}$.
 Assim, usando a Eq. (\ref{eq:coro:differential-eq:2:1}) do Corolário \ref{coro:differential-eq:2},
 obtemos
 \begin{equation}

@@ -4,7 +4,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{myproofT}[Relativa ao Teorema \ref{theo:differential-eq:order1:0}:]\label{proof:theo:differential-eq:order1:0}
-Dados, o vetor coluna $\VECTOR{X} \in \mathbb{R}^N$, 
+Dados o vetor coluna $\VECTOR{X} \in \mathbb{R}^N$, 
 a \hyperref[def:diagonalization0]{\textbf{matriz diagonalizável}} $\MATRIX{P} \in \mathbb{R}^{N\times N}$,
 com $N$ autovalores $\lambda_n$ e seus correspondentes autovetores $\VECTOR{v}_n$,
 $\forall n \in \{1, 2, ..., N\}$, 
@@ -13,11 +13,11 @@ e definida a equação diferencial matricial,
 \DTVECTOR{X}(t) + \MATRIX{P} \VECTOR{X}(t)=0.
 \end{equation}
 
-Esta pode ser resolvida se definimos uma resposta $\VECTOR{X}(t)$ da forma, 
+Ela pode ser resolvida se definirmos uma resposta $\VECTOR{X}(t)$ da forma, 
 \begin{equation}\label{eq:firstorder:1}
 \VECTOR{X}(t)=\MATRIX{C}e^{\VECTOR{b}t},
 \end{equation}
-onde $\MATRIX{C} \in \mathbb{R}^{N\times N}$ é uma matriz quadrada e $\VECTOR{b} \in \mathbb{R}^{N}$ é um vetor coluna.
+em que $\MATRIX{C} \in \mathbb{R}^{N\times N}$ é uma matriz quadrada e $\VECTOR{b} \in \mathbb{R}^{N}$ é um vetor coluna.
 De modo que se introduzimos a Eq. (\ref{eq:firstorder:1}) na Eq. (\ref{eq:firstorder1}),
 obtemos 
 \begin{equation}\label{eq:firstorder:2}
@@ -25,7 +25,7 @@ obtemos
 \qquad \leftrightarrow \qquad
 \MATRIX{B}=-\MATRIX{C}^{-1}\MATRIX{P}\MATRIX{C};
 \end{equation}
-onde $\MATRIX{B}=\funcdiag(\VECTOR{b})$. 
+em que $\MATRIX{B}=\funcdiag(\VECTOR{b})$. 
 Assim, dado que $\MATRIX{B}$ é uma matriz diagonal criada pela diagonalização da  
 matriz $-\MATRIX{P}$, nós sabemos que
 a diagonal da matriz $\MATRIX{B}$ corresponde com os autovalores da matriz $-\MATRIX{P}$,
@@ -43,24 +43,24 @@ autovetores de $\MATRIX{P}$ \cite[pp. 67]{golub2013matrix}; de modo que
 \qquad \wedge \qquad 
 \MATRIX{C}=\MATRIX{V}\MATRIX{D}, 
 \end{equation}
-onde $\MATRIX{V}=\left[ \VECTOR{v}_1~  \VECTOR{v}_2~  \dots~ \VECTOR{v}_N\right]$ 
+em que $\MATRIX{V}=\left[ \VECTOR{v}_1~  \VECTOR{v}_2~  \dots~ \VECTOR{v}_N\right]$ 
 é uma matriz formada pela agrupação dos autovetores $\VECTOR{v}_n$ da matriz $\MATRIX{P}$,
 e $\MATRIX{D}=\funcdiag\left(\left[ d_1~  d_2~  \dots~ d_N\right]\right)$ 
 é uma matriz diagonal, de modo que podemos formar outra matriz  
 $\MATRIX{V}\MATRIX{D}=\left[ d_1\VECTOR{v}_1~  d_2\VECTOR{v}_2~  \dots~ d_N\VECTOR{v}_N\right]$
 com autovetores nas colunas.
 Assim, a Eq. (\ref{eq:firstorder:4}) gera uma solução para a Eq. (\ref{eq:firstorder1}),
-onde é possível afirmar que
+em que é possível afirmar que
 \begin{equation}\label{eq:firstorder:5}
 \VECTOR{X}(t)=\MATRIX{V}\MATRIX{D} e^{-\VECTOR{a} t},
 \end{equation}
-onde $\VECTOR{a}=\left[ \lambda_1~ \lambda_2~ \dots~ \lambda_M\right]^{T}$.
+sendo $\VECTOR{a}=\left[ \lambda_1~ \lambda_2~ \dots~ \lambda_M\right]^{T}$.
 \end{myproofT}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{myproofT}[Relativa ao Teorema \ref{theo:differential-eq:0}:]\label{proof:theo:differential-eq:0}
-Dados, o vetor coluna $\VECTOR{X} \in \mathbb{R}^N$, 
+Dados o vetor coluna $\VECTOR{X} \in \mathbb{R}^N$, 
 a \hyperref[def:positivematrix0]{\textbf{matriz definida positiva}} $\MATRIX{P} \in \mathbb{R}^{N\times N}$,
 com $N$ autovalores $\lambda_n$ ``diferentes'' e seus correspondentes autovetores $\VECTOR{v}_n$,
 $\forall n \in \{1, 2, ..., N\}$, 
@@ -69,11 +69,11 @@ e definida a equação diferencial matricial,
 \DDTVECTOR{X}(t) + \MATRIX{P} \VECTOR{X}(t)=0.
 \end{equation}
 
-Esta pode ser resolvida se definimos uma resposta $\VECTOR{X}(t)$ da forma, 
+Ela pode ser resolvida se definirmos uma resposta $\VECTOR{X}(t)$ da forma, 
 \begin{equation}\label{eq:segundoorder:1}
 \VECTOR{X}(t)=\MATRIX{C}e^{\VECTOR{b}t},
 \end{equation}
-onde $\MATRIX{C} \in \mathbb{C}^{N\times N}$ é uma matriz quadrada e $\VECTOR{b} \in \mathbb{C}^{N}$ é um vetor coluna.
+em que $\MATRIX{C} \in \mathbb{C}^{N\times N}$ é uma matriz quadrada e $\VECTOR{b} \in \mathbb{C}^{N}$ é um vetor coluna.
 De modo que se introduzimos a Eq. (\ref{eq:segundoorder:1}) na Eq. (\ref{eq:segundoorder1}),
 obtemos 
 \begin{equation}\label{eq:segundoorder:2}
@@ -82,7 +82,7 @@ obtemos
 \MATRIX{B}^2=-\MATRIX{C}^{-1}\MATRIX{P}\MATRIX{C};
 \end{equation}
 
-onde $\MATRIX{B}=\funcdiag(\VECTOR{b})$. 
+em que $\MATRIX{B}=\funcdiag(\VECTOR{b})$. 
 Assim, dado que $\MATRIX{B}^2$ é uma matriz diagonal criada pela diagonalização da  
 matriz $-\MATRIX{P}$, nós sabemos que
 a diagonal da matriz $\MATRIX{B}^2$ corresponde com os autovalores da matriz $-\MATRIX{P}$,

@@ -9,7 +9,7 @@
 \includegraphics[width=0.90\linewidth]{chapters/roots/roots1.eps} 
 \end{minipage}
 \begin{minipage}{0.8\textwidth}
-Dados,
+Dados
 os escalares $\delta \in \mathbb{R}_+$, 
 $\alpha \in \mathbb{R}_+$, 
 $x \in \mathbb{R}$, 
@@ -27,7 +27,7 @@ onde  $h'(x)\equiv \frac{d h(x)}{d x}$,
 x_{k} \leftarrow x_{k-1}-\frac{ h'(x_{k-1})h(x_{k-1})}{h'(x_{k-1})^2+\alpha}.
 \end{equation}
 Assim, $\hat{x}$ pode ser achado\footnote{A 
-demostração pode ser vista na Prova \ref{proof:theo:rootshxreg}.} 
+demonstração pode ser vista na Prova \ref{proof:theo:rootshxreg}.} 
 iniciando a Eq. (\ref{eq:rootshxreg2}) desde um 
 $x_{0}$ qualquer, realizando cálculos $x_{k}$ iterativamente  
 ate\footnote{Sendo delta um valor pequeno próximo a zero.} que $||h(x_k)||<\delta$
@@ -38,7 +38,7 @@ onde se declara que $\hat{x}=x_k$.
 \item Se $h'(x_{k-1})\approx 0$ indica que estamos perto de um ponto de inflexão 
 (máximo, mínimo ou ponto de sela) em $x_{k-1}$. Se neste ponto a Eq. (\ref{eq:rootshxreg2})
 converge com valores $x_k\approx x_{k-1}\approx x_{k-2}\approx ...$ e verificamos que $||h(x_{k-1})||>\delta$,
-devemos pular aleatoriamente a um novo ponto $x_k$ pois estamos atrapados num mínimo local de $h(x)$.  
+devemos pular aleatoriamente a um novo ponto $x_k$, pois estamos atrapados num mínimo local de $h(x)$.  
 \item Uma sugestão do procedimento para a busca de uma raiz pode ser vista no diagrama de fluxo
 mostrado na Figura \ref{fig:fluxorhxreg3}. 
 \end{itemize}
@@ -49,7 +49,7 @@ mostrado na Figura \ref{fig:fluxorhxreg3}.
 \item Uma vantagem do método mediante multiplicador de Lagrange (MML) em relação ao método de Newton,
 é que em lugares onde $h'(x_{k-1})\approx 0$, MML converge a um mínimo local 
 que facilmente podemos detectar. Em contrapartida,
-no método de Newton podemos ficar atrapados num ciclo de divergência e convergência num mínimo local, 
+no método de Newton, podemos ficar atrapados num ciclo de divergência e convergência num mínimo local, 
 sendo este estado mais difícil de detectar.
 Esta caraterística pode ser comparada nas Soluções \ref{sol:rootshx1} e \ref{sol:rootshxreg1}.
 \end{itemize}
@@ -67,7 +67,7 @@ Esta caraterística pode ser comparada nas Soluções \ref{sol:rootshx1} e \ref{
 
 
 \begin{example}\label{ex:rootshxreg1}
-Conhecida uma função $h(x)=x(x^2-1)+1$, e um escalar $\delta=10^{-3}$; usando o Teorema \ref{theo:rootshxreg},
+Conhecida uma função $h(x)=x(x^2-1)+1$ e um escalar $\delta=10^{-3}$; usando o Teorema \ref{theo:rootshxreg},
 achar um valor $x=\hat{x}$ que cumpra $||h(x)||<\delta$.
 Podemos ver as respostas a este exemplo na Solução \ref{sol:rootshxreg1} e \ref{sol:rootshxreg2}.
 \end{example}
@@ -76,10 +76,10 @@ Podemos ver as respostas a este exemplo na Solução \ref{sol:rootshxreg1} e \re
 A busca inicia em $x_0=-0.3$, 
 todos os valores $x_{k}$ podem ser vistos na
 Tabela \ref{tab:rootsRcases1}. 
-Neste caso a busca iterativa indicada pela Eq. (\ref{eq:rootshxreg2}) 
+Neste caso, a busca iterativa indicada pela Eq. (\ref{eq:rootshxreg2}) 
 converge em $x_7=0.57812$, que é um valor próximo a $x_m=\frac{\sqrt{3}}{3}\approx 0.57735$,
 que é um mínimo local de $h(x)$.
-Porém dado que $||h(x_7)||=0.61510 >\delta$, observamos que estamos atrapados num mínimo local,
+Porém, dado que $||h(x_7)||=0.61510 >\delta$, observamos que estamos atrapados num mínimo local,
 pelo que devemos fazer um pulo aleatório a um novo valor $x_8$
 para tentar fugir deste mínimo local; por exemplo $x_8=-2.0$.
 \end{SolutionT}
@@ -118,8 +118,8 @@ $||h(x_k)||$ & 1.27300  & 0.84675 & 0.62773 & 0.61610 & 0.61530 & 0.61513 & 0.61
 A Fig. \ref{fig:rootsRcasesb} nos mostra o processo de busca de uma raiz de $h(x)$. 
 A busca inicia em $x_0=-2.0$,
  todos os valores $x_{k}$ podem ser vistos na Tabela \ref{tab:rootsRcases2}. 
-Neste caso a busca iterativa indicada pela Eq. (\ref{eq:rootshxreg2}) converge 
-em $\hat{x}\approx x_4 = -1.3248$ com $||h(x_4)||<\delta$ que corresponde a uma raiz de $h(x)$.
+Neste caso, a busca iterativa indicada pela Eq. (\ref{eq:rootshxreg2}) converge 
+em $\hat{x}\approx x_4 = -1.3248$ com $||h(x_4)||<\delta$, que corresponde a uma raiz de $h(x)$.
 \end{SolutionT}
 
 \begin{table}[!h]

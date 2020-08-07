@@ -8,7 +8,7 @@
 \begin{proposition}[$\triangledown e(\VECTOR{x})$ - Gradiente de $e(\VECTOR{x})$:]\label{def:gradient}
  Dada uma função $e:\mathbb{R}^{N}\rightarrow \mathbb{R}$, com variável $\VECTOR{x} \in \mathbb{R}^{N}$
  vetor coluna com elementos $x_n\in \mathbb{R}$, $n\in \mathbb{N}$, $1 \leq n \leq N$,
- diferenciável em $\VECTOR{x}$. 
+ diferenciável em $\VECTOR{x}$, 
  $\triangledown e(\VECTOR{x})$ é chamado gradiente 
 \cite[pp. 913]{stewart2008calculus} \cite[pp. 80]{telles2015matematica} \cite{Gradient}  de $e(\VECTOR{x})$, de modo que: 
 \begin{equation}
@@ -62,7 +62,7 @@ Um gráfico de $\frac{\partial e(\VECTOR{x}) }{\partial \VECTOR{x}}$ pode ser vi
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \index{Matriz Jacobiana}
 \begin{proposition}[Matriz Jacobiana de $\VECTOR{f}(\VECTOR{x})$:]\label{def:jacobian}
- Dado uma função vetor coluna $\VECTOR{f}:\mathbb{R}^{N}\rightarrow \mathbb{R}^{M}$ 
+ Dada uma função vetor coluna $\VECTOR{f}:\mathbb{R}^{N}\rightarrow \mathbb{R}^{M}$ 
 diferenciável com variável $\VECTOR{x} \in \mathbb{R}^{N}$, vetor coluna,
 com elementos $x_n\in \mathbb{R}$, $n\in \mathbb{N}$, $1 \leq n \leq N$.
  Se $\MATRIX{J}(\VECTOR{x})$ é definida como a matriz Jacobiana \cite[pp. 130]{zhang2017matrix} \cite{Jacobian}  de 
@@ -134,10 +134,9 @@ então podemos afirmar que:
  \end{equation}
 \end{proposition}
 
-
 \begin{example}[Uso da Proposição \ref{def:jacobian}:]
 Conhecida a função $\VECTOR{f}: \mathbb{R}^2 \rightarrow \mathbb{R}^2$,
-onde $\VECTOR{u}=\VECTOR{f}(\VECTOR{x})$, 
+em que $\VECTOR{u}=\VECTOR{f}(\VECTOR{x})$, 
 \begin{equation}
 \VECTOR{f}(\VECTOR{x})\equiv 
 \begin{bmatrix}
@@ -163,21 +162,21 @@ u_2
 \end{equation}
 Se $\VECTOR{\hat{x}}=[1~ 1]^{\transpose}$, podemos usar a função $\VECTOR{\hat{u}}=\VECTOR{f}(\VECTOR{\hat{x}})$ 
 para calcular que $\VECTOR{\hat{u}}=[0.4~ 0.4]^{\transpose}$;
-assim, da função $\MATRIX{J}(\VECTOR{\hat{x}})$ obtemos que 
+assim, da função $\MATRIX{J}(\VECTOR{\hat{x}})$, obtemos que 
 $\VECTOR{j}_{1}(\VECTOR{\hat{x}})=[0.6~ 0.2]$ e $\VECTOR{j}_{2}(\VECTOR{\hat{x}})=[0.2~ 0.6]$.
-Um gráfico do uso da matriz jacobiana avaliada em $\MATRIX{J}([1~ 1]^{\transpose})$ pode ser visto na Figura \ref{fig:ex:jacobiano}.
+Um gráfico do uso da matriz jacobiana avaliada em $\MATRIX{J}([1~ 1]^{\transpose})$ 
+pode ser visto na Figura \ref{fig:ex:jacobiano}.
 \end{example}
-
 \begin{figure}[!h]
     \centering
-    \begin{subfigure}[b]{0.49\textwidth}
+    \begin{subfigure}[b]{0.46\textwidth}
         \includegraphics[width=\textwidth]{chapters/derivada/mfiles/jacobian/jacobian1.eps}
         \caption{Gráfico do ponto $\VECTOR{\hat{x}}$ e linhas auxiliares. ~~~~~~~~~ ~~~~~~~~~ ~~~~~~~~~}
         \label{fig:ex:jacobiano:x}
     \end{subfigure}
     ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
       %(or a blank line to force the subfigure onto a new line)
-    \begin{subfigure}[b]{0.49\textwidth}
+    \begin{subfigure}[b]{0.46\textwidth}
         \includegraphics[width=\textwidth]{chapters/derivada/mfiles/jacobian/jacobian2.eps}
         \caption{Gráfico do ponto $\VECTOR{\hat{u}}$, dos vetores $\VECTOR{j}_{1}(\VECTOR{\hat{x}})$ e
     $\VECTOR{j}_{2}(\VECTOR{\hat{x}})$, e da avaliação das linhas auxiliares na função $\VECTOR{f}$.}
@@ -186,8 +185,6 @@ Um gráfico do uso da matriz jacobiana avaliada em $\MATRIX{J}([1~ 1]^{\transpos
     \caption{Gráfico do uso da matriz jacobiana.}
     \label{fig:ex:jacobiano}
 \end{figure}
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \index{Matriz Hessiana}
 \begin{proposition}[$\triangledown^2 e(\VECTOR{x})$ - Matriz Hessiana de $e(\VECTOR{x})$:]\label{def:hessian}
@@ -243,8 +240,6 @@ Um gráfico do uso da matriz jacobiana avaliada em $\MATRIX{J}([1~ 1]^{\transpos
 \right]
  \end{equation}
 \end{proposition}
-
-
 
 \index{Hesse, Ludwig Otto}
 \begin{elaboracion}[title=Ludwig Otto Hesse (1811-1874), width= 0.99\linewidth]

@@ -11,7 +11,7 @@ o vetor $\VECTOR{x} \in \mathbb{R}^{N}$, então
 \frac{\VECTOR{x}^{\transpose}\MATRIX{A}\VECTOR{x}}{2} +
 \frac{\VECTOR{x}^{\transpose}\MATRIX{A}^{\transpose}\VECTOR{x}}{2},
 \end{equation}
-dado que cada somando da equação anterior é um escalar podemos afirmar que 
+dado que cada um dos elementos da soma da equação anterior é um escalar, podemos afirmar que 
 \begin{equation}
 \VECTOR{x}^{\transpose}\MATRIX{S}\VECTOR{x} = 
 \frac{\VECTOR{x}^{\transpose}\MATRIX{A}\VECTOR{x}}{2} +
@@ -34,7 +34,7 @@ seu polinômio caraterístico,
 \begin{equation}
 p(\lambda)=det(\MATRIX{A}-\lambda \MATRIX{I}),
 \end{equation}
-onde $\MATRIX{I}$ é uma matriz identidade,
+em que $\MATRIX{I}$ é uma matriz identidade,
 \begin{equation}
 p(\lambda)^{\transpose}=det(\MATRIX{A}-\lambda \MATRIX{I})^{\transpose}
 \quad \rightarrow \quad
@@ -121,11 +121,12 @@ e autovetores $\VECTOR{e}_n$, $\forall n \in \{1, 2, ..., N\}$, de modo que,
 \end{equation}
 
 \begin{itemize}
-\item Usando a Eq. (\ref{eq:proof:theo:positivematrix1:1}) e a Definição \ref{def:positivematrix0} podemos afirmar que
+\item Usando a Eq. (\ref{eq:proof:theo:positivematrix1:1}) e a 
+Definição \ref{def:positivematrix0}, podemos afirmar que
 \begin{equation}
 \VECTOR{e}_n^{\transpose}\MATRIX{A}\VECTOR{e}_n >0
 \end{equation} 
-o que implica que
+o que implica
 \begin{equation}
 \lambda_n \VECTOR{e}_n^{\transpose}\VECTOR{e}_n > 0
 \quad \rightarrow \quad
@@ -151,7 +152,7 @@ que existe uma \hyperref[def:ortogonalmatrix0]{\textbf{matriz ortogonal}} $\MATR
 0         & 0         & ...    & \lambda_N
 \end{bmatrix}.
 \end{equation}
-Se multiplicamos esta igualdade por um vector $\VECTOR{x} \in \mathbb{R}^N$ (não nulo), obtemos,
+Se multiplicamos essa igualdade por um vector $\VECTOR{x} \in \mathbb{R}^N$ (não nulo), obtemos,
 \begin{equation}
 \VECTOR{x}^{\transpose} \MATRIX{Q}^{\transpose}\MATRIX{A}\MATRIX{Q} \VECTOR{x} = 
 \VECTOR{x}^{\transpose} \MATRIX{\lambda}_{\MATRIX{A}} \VECTOR{x},
@@ -169,7 +170,7 @@ Dado que a soma de todos os $\lambda_n x_n^2$ é positiva, podemos afirmar que
 \begin{equation}
 \VECTOR{y}^{\transpose} \MATRIX{A} \VECTOR{y} > 0;
 \end{equation}
-é dizer $\MATRIX{A}$ é definida positiva.
+que é equivalente a dizer que $\MATRIX{A}$ é definida positiva.
 \end{myproofT}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -177,7 +178,7 @@ Dado que a soma de todos os $\lambda_n x_n^2$ é positiva, podemos afirmar que
 \begin{myproofT}[Relativa ao Teorema \ref{theo:positivematrix:2}:]\label{proof:theo:positivematrix:2}
 Conhecida uma matriz definida positiva e simétrica $\MATRIX{A} \in \mathbb{R}^{N \times N}$,
 com  autovalores $\lambda_n>0$, $\forall n \in \{1, 2, ..., N\}$;
-se $\MATRIX{A}$  é invertível então os autovalores de $\MATRIX{A}^{-1}$ são  $\frac{1}{\lambda_n}>0$.
+se $\MATRIX{A}$  é invertível, então os autovalores de $\MATRIX{A}^{-1}$ são  $\frac{1}{\lambda_n}>0$.
 Assim, se $\MATRIX{A}$ é simétrica, $\MATRIX{A}^{-1}$ é simétrica também;
 então, se $\MATRIX{A}^{-1}$ é simétrica com autovalores positivos, esta é definida positiva.
 \end{myproofT}
@@ -186,7 +187,7 @@ então, se $\MATRIX{A}^{-1}$ é simétrica com autovalores positivos, esta é de
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{myproofT}[Relativa ao Teorema \ref{theo:similhante1}:]\label{proof:theo:similhante1}
 Conhecidas as matrizes semelhantes $\MATRIX{A} \in \mathbb{C}^{N \times N}$ e $\MATRIX{B} \in \mathbb{R}^{N \times N}$,
-de modo que estas cumprem 
+de modo que essas cumprem 
 \begin{equation}
 \MATRIX{A} = \MATRIX{P}^{-1} \MATRIX{B} \MATRIX{P},
 \end{equation}
@@ -263,7 +264,7 @@ aplicando o operador transposto conjugado obtemos
 \begin{equation}
 \VECTOR{v}_n^{\ast}\MATRIX{A}\VECTOR{v}_n=\overline{\lambda}_n \NORM{\VECTOR{v}_n}^2,
 \end{equation}
-o que indica que $\overline{\lambda}_n=\lambda_n$ e consequentemente $\lambda_n$ é real.
+o que indica que $\overline{\lambda}_n=\lambda_n$, e consequentemente $\lambda_n$ é real.
 \end{myproofT}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -287,7 +288,7 @@ e autovetores $\VECTOR{v}_n$, $\forall n \in \{1, 2, ..., N\}$, podemos afirmar 
 ~ & = & \VECTOR{v}_a^{\transpose} \overline{\lambda_b} \overline{\VECTOR{v}}_b,
 \end{matrix}
 \end{equation}
-lembrando que pelo Teorema \ref{theo:autovalorhermitianmatrix0} todos os autovalores são reais 
+lembrando que pelo Teorema \ref{theo:autovalorhermitianmatrix0}, todos os autovalores são reais 
 numa matriz hermitiana,
 \begin{equation}
 \lambda_a \innerprod{\VECTOR{v}_a}{\VECTOR{v}_b} = \lambda_b \innerprod{\VECTOR{v}_a}{\VECTOR{v}_b}.
@@ -324,8 +325,8 @@ e calculamos $\left(\MATRIX{U}^{\ast} \MATRIX{A} \MATRIX{U}\right)^{\ast}$,
 \overline{b}_{1N}    & \overline{b}_{2N}    & ...    & \overline{\lambda}_N
 \end{bmatrix}.
 \end{equation}
-Disto se deduz que $\overline{\lambda}_n=\lambda_n$; é dizer $\lambda_n$ é real,
-e que  $b_{ij}=0, \forall j>i$; é dizer $\MATRIX{U}^{\ast} \MATRIX{A} \MATRIX{U}$
+Disso se deduz que $\overline{\lambda}_n=\lambda_n$; isto é, $\lambda_n$ é real,
+e que  $b_{ij}=0, \forall j>i$; quer dizer $\MATRIX{U}^{\ast} \MATRIX{A} \MATRIX{U}$
 é uma matriz diagonal.
 \end{myproofT}
 
@@ -334,7 +335,7 @@ e que  $b_{ij}=0, \forall j>i$; é dizer $\MATRIX{U}^{\ast} \MATRIX{A} \MATRIX{U
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{myproofT}[Relativa ao Teorema \ref{theo:prophermitianpositivematrix2}:]\label{proof:theo:prophermitianpositivematrix1:c}
 Dada uma matriz hermitiana $\MATRIX{A} \in \mathbb{C}^{N \times N}$ definida positiva;
-se imaginamos a hipótese que $\MATRIX{A}$ é singular; é dizer não invertível,
+se imaginarmos a hipótese que $\MATRIX{A}$ é singular; quer dizer, não invertível,
 podemos afirmar que para algum vetor $\VECTOR{x}$ não nulo
 é possível obter
 \begin{equation}\label{eq:proof:theo:prophermitianpositivematrix1:c:1}
@@ -356,7 +357,7 @@ e uma matriz $\MATRIX{A} \in \mathbb{C}^{N \times N}$.
 \begin{itemize}
 \item Se
  $\MATRIX{A}=\MATRIX{R}\MATRIX{R}^{\ast}$, 
-onde $\MATRIX{R}$ é uma matriz invertível (não singular), então
+em que $\MATRIX{R}$ é uma matriz invertível (não singular), então
 \begin{equation}
 \VECTOR{x}^{\ast} \MATRIX{A} \VECTOR{x} =
 \VECTOR{x}^{\ast} \MATRIX{R}\MATRIX{R}^{\ast} \VECTOR{x} =
@@ -400,7 +401,7 @@ $\VECTOR{x} \in \mathbb{C}^{N}$ é não nulo, então
 \left(\MATRIX{B}\VECTOR{x}\right)^{\ast} \MATRIX{A} \MATRIX{B} \VECTOR{x} =
 \VECTOR{y}^{\ast} \MATRIX{A} \VECTOR{y}>0,
 \end{equation}
-se $\VECTOR{y}\neq 0$ então $\MATRIX{B}^{\ast} \MATRIX{A} \MATRIX{B}$
+se $\VECTOR{y}\neq 0$, então $\MATRIX{B}^{\ast} \MATRIX{A} \MATRIX{B}$
 é uma matriz hermitiana definida positiva.
 \end{myproofT}
 
@@ -421,7 +422,7 @@ e autovetores $\VECTOR{v}_n$, $\forall n \in \{1, 2, ..., N\}$, podemos afirmar 
 
 \begin{itemize}
 \item Usando a Eq. (\ref{eq:proof:theo:hermitianpositivematrix1:1}), a 
-Definição \ref{def:hermitianapositivematrix0} e o fato que a matriz $\MATRIX{A}$ é definida positiva,
+Definição \ref{def:hermitianapositivematrix0} e o fato de que a matriz $\MATRIX{A}$ é definida positiva,
 podemos afirmar que
 \begin{equation}
 \VECTOR{v}_n^{\ast}\MATRIX{A}\VECTOR{v}_n >0
@@ -432,7 +433,7 @@ podemos afirmar que
 \end{equation} 
 \item Sabendo do Teorema \ref{theo:HermitianDDecomposition0} que 
 $\MATRIX{A}=\MATRIX{U}\lambda_{\MATRIX{A}} \MATRIX{U}^{\ast}$,
-onde 
+em que
 $\lambda_{\MATRIX{A}}=\funcdiag\left(\left[\lambda_1\quad \lambda_2 \quad ... \quad \lambda_N \right]^{\transpose}\right)$
 e $\MATRIX{U}$ é uma matriz unitária,
 podemos afirmar que
@@ -449,11 +450,11 @@ $\VECTOR{y}=\left[y_1\quad y_2 \quad ... \quad y_N \right]^{\transpose}$ é não
 \VECTOR{x}^{\ast}\MATRIX{A}\VECTOR{x}=
 \VECTOR{y}^{\ast}\lambda_{\MATRIX{A}}\VECTOR{y}=\sum_{n=1}^{N}\lambda_n |y_n|^2.
 \end{equation}
-Se ademais assumimos que $\lambda_n  > 0$, podemos afirmar que 
+Se ademais, assumimos que $\lambda_n  > 0$, podemos afirmar que 
 \begin{equation}
 \VECTOR{x}^{\ast}\MATRIX{A}\VECTOR{x}=\sum_{n=1}^{N}\lambda_n |y_n|^2>0.
 \end{equation}
-Consequentemente podemos afirmar que a matriz hermitiana $\MATRIX{A}$
+Consequentemente, podemos afirmar que a matriz hermitiana $\MATRIX{A}$
 é definida positiva se seus autovalores $\lambda_n  > 0$.
 \end{itemize}
 \end{myproofT}

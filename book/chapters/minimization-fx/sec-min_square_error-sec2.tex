@@ -30,7 +30,7 @@ em que $\MATRIX{J}(\VECTOR{x})$ é a \hyperref[def:jacobian]{\textbf{matriz Jaco
 Assim, $\VECTOR{\hat{x}}$ pode ser achado 
 iniciando a Eq. (\ref{eq:minfxbCfxb2}) desde um $\VECTOR{x}_{0}$ qualquer, 
 até que $\VECTOR{x}_{k}$ seja muito próximo a $\VECTOR{x}_{k-1}$,
-em que se declara que $\VECTOR{\hat{x}} \approx \VECTOR{x}_{k}$,
+nesse caso se declara que $\VECTOR{\hat{x}} \approx \VECTOR{x}_{k}$,
 que corresponde a um mínimo\footnote{\label{ref:minfx}A
 demonstração pode ser vista na Prova \ref{proof:theo:minfxbCfxb}.} de $e(\VECTOR{x})$,
 sem aclarar se é local ou global.
@@ -187,7 +187,7 @@ Assim, se escolhemos o ponto inicial $\VECTOR{x}_0=[0.1~0.1]^{\transpose}$
 e usamos iterativamente a Eq. (\ref{eq:minfxbCfxb2}), obtemos os valores 
 de $\VECTOR{x}_k$ e $e(\VECTOR{x}_k)$, como mostra a Tabela \ref{table:ex:minfxbCfxb2}.
 A aproximação iterativa é feita até atingir $\VECTOR{x}_k \approx \VECTOR{x}_{k-1}$,
-onde concluimos que a resposta é $\VECTOR{\hat{x}}\approx \VECTOR{x}_5 =[0.90856\quad 0.90856]^{\transpose}$
+logo concluimos que a resposta é $\VECTOR{\hat{x}}\approx \VECTOR{x}_5 =[0.90856\quad 0.90856]^{\transpose}$
 com um erro $e(\VECTOR{\hat{x}})=0.16148$; quer dizer, não existe $\VECTOR{f}(\VECTOR{\hat{x}})$
 que seja igual a $\VECTOR{b}$, só podemos achar um vetor $\VECTOR{\hat{x}}$ 
 que provoque um valor com mínimo erro, com pendente 
@@ -284,7 +284,7 @@ pendente de $e(\VECTOR{\hat{x}})$ pode ser visto no Teorema \ref{theo:derfxbCfxb
 $\frac{\partial e(\VECTOR{x}_0)}{\partial \VECTOR{x} }=[4.2318~10^{-4}\quad 4.2318~10^{-4}]^{\transpose}$ e 
 usamos iterativamente a Eq. (\ref{eq:minfxbCfxb2}), obtemos os valores 
 de $\VECTOR{x}_k$ e $e(\VECTOR{x}_k)$, como mostra a Tabela \ref{table:ex:minfxbCfxb3},
-onde se asume o final do processo iterativo quando $\VECTOR{x}_k \approx \VECTOR{x}_{k-1}$.
+na qual assumimos o final do processo iterativo quando $\VECTOR{x}_k \approx \VECTOR{x}_{k-1}$.
 Assim, a aproximação iterativa conclui na resposta $\VECTOR{\hat{x}}\approx \VECTOR{x}_{7} =[1.7076\quad 1.7076]^{\transpose}$
 com um erro $e(\VECTOR{\hat{x}})=2.1298$, uma pendente
 $\frac{\partial e(\VECTOR{\hat{x}})}{\partial \VECTOR{x} }=[0.20251\quad 0.20251]^{\transpose}$

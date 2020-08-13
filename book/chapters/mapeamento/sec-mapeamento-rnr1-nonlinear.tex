@@ -25,7 +25,7 @@ definida a Eq. (\ref{eq:maphcxrnr1:1}),
 \begin{equation}\label{eq:maphcxrnr1:1}
 z=h_{\VECTOR{c}}(\VECTOR{x})\equiv h(\VECTOR{c},\VECTOR{x}),
 \end{equation}
-onde $h_{\VECTOR{c}}:\mathbb{R}^N \rightarrow \mathbb{R}$ 
+na qual $h_{\VECTOR{c}}:\mathbb{R}^N \rightarrow \mathbb{R}$ 
 é uma função com domínio em  $\VECTOR{x} \in \mathbb{R}^N$, contradomínio em $z\in \mathbb{R}$
 e com coeficientes $c_m$ que formam o vetor $\VECTOR{c}\in \mathbb{R}^{M}$;
 podemos afirmar que o vetor $\VECTOR{c}=\VECTOR{\hat{c}}$
@@ -35,7 +35,7 @@ que minimiza o erro $e(\VECTOR{c})$,
 \begin{equation}\label{eq:maphcxrnr1:2}
 e(\VECTOR{c}) =  ||\VECTOR{h}(\VECTOR{c})-\VECTOR{z}||_{\MATRIX{W}}^2 + \alpha||\VECTOR{c}-\VECTOR{c}_{last}||_{\MATRIX{D}}^2,
 \end{equation}
-onde $w_l \in \mathbb{R}_+$, $d_l \in \mathbb{R}_+$, e $\alpha \in \mathbb{R}_+$ são valores escolhidos por nós,
+em que $w_l \in \mathbb{R}_+$, $d_l \in \mathbb{R}_+$, e $\alpha \in \mathbb{R}_+$ são valores escolhidos por nós,
 \begin{equation}
 \VECTOR{h}(\VECTOR{c})=\begin{bmatrix}
 h(\VECTOR{c},\VECTOR{x}_1)\\ 
@@ -87,7 +87,7 @@ usando de forma iterativa a Eq. (\ref{eq:maphcxrnr1:3})
 \begin{equation}\label{eq:maphcxrnr1:3}
 \VECTOR{c}_{i}=\VECTOR{c}_{i-1}-[\MATRIX{J}(\VECTOR{c}_{i-1})^{\transpose}\MATRIX{W}\MATRIX{J}(\VECTOR{c}_{i-1})+\alpha \MATRIX{D}]^{-1}\MATRIX{J}(\VECTOR{c}_{i-1})^{\transpose}\MATRIX{W}[\VECTOR{h}(\VECTOR{c}_{i-1})-\VECTOR{z}],
 \end{equation}
-onde a matriz $\MATRIX{J}(\VECTOR{c})$ 
+na qual a matriz $\MATRIX{J}(\VECTOR{c})$ 
 $\equiv \frac{\partial \VECTOR{h}(\VECTOR{c})}{\partial \VECTOR{c}^{\transpose}}$ é a 
 \hyperref[def:jacobian]{\textbf{matriz Jacobiana}}  de $\VECTOR{h}(\VECTOR{c})$,
 \begin{equation}
@@ -103,7 +103,7 @@ $\equiv \frac{\partial \VECTOR{h}(\VECTOR{c})}{\partial \VECTOR{c}^{\transpose}}
 \begin{array}{lll}
 \VECTOR{j}(\VECTOR{c},\VECTOR{x}) & = & \frac{\partial h(\VECTOR{c},\VECTOR{x})}{\partial \VECTOR{c}^{\transpose}} \\
                        ~ & ~ & ~\\
-                       ~ & = & \left[\frac{\partial h(\VECTOR{c},\VECTOR{x})}{\partial c_1}\quad \frac{\partial h(\VECTOR{c},\VECTOR{x})}{\partial c_2}\quad ...\quad \frac{\partial h(\VECTOR{c},\VECTOR{x})}{\partial c_{m}} \quad ... \quad \frac{\partial h(\VECTOR{c},\VECTOR{x})}{\partial c_{M}} \right]
+                       ~ & = & \left[\frac{\partial h(\VECTOR{c},\VECTOR{x})}{\partial c_1}\quad \frac{\partial h(\VECTOR{c},\VECTOR{x})}{\partial c_2}\quad ...\quad \frac{\partial h(\VECTOR{c},\VECTOR{x})}{\partial c_{m}} \quad ... \quad \frac{\partial h(\VECTOR{c},\VECTOR{x})}{\partial c_{M}} \right].
 \end{array}
 \end{equation}
 

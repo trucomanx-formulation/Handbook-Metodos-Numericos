@@ -15,7 +15,7 @@ esta pode ser expressa mediante uma somatória, em série de Taylor
 ao redor de $a$, como
 mostra a Eq. (\ref{eq:taylord1}),% onde $\left.\frac{\partial^k f(x)}{\partial x^k}\right|_{x=a}\equiv f^{(k)}(a) $.
 \begin{equation}\label{eq:taylord0a}
-\left.\frac{\partial^k f(x)}{\partial x^k}\right|_{x=a}\equiv f^{(k)}(a) 
+\left.\frac{\partial^k f(x)}{\partial x^k}\right|_{x=a}\equiv f^{(k)}(a), 
 \end{equation}
 \begin{equation}\label{eq:taylord1}
   f(x)=f(a)
@@ -98,7 +98,7 @@ f_{10}(x)=
 +\frac{x^{4}}{4!} 
 -\frac{x^{6}}{6!} 
 +\frac{x^{8}}{8!} 
--\frac{x^{10}}{10!} 
+-\frac{x^{10}}{10!}. 
 \end{equation}
 As aproximações podem ser vistas graficamente na Fig. \ref{fig:taylore}.
 \end{SolutionT}
@@ -122,7 +122,7 @@ esta pode ser expressa mediante uma somatória, em série de Taylor
 ao redor de $a$, como
 mostra a Eq. (\ref{eq:taylorvecf1}),
 \begin{equation}\label{eq:taylorvecf0a}
-\left.\frac{\partial^k \VECTOR{f}(t)}{\partial t^k}\right|_{t=a}\equiv \VECTOR{f}^{(k)}(a) 
+\left.\frac{\partial^k \VECTOR{f}(t)}{\partial t^k}\right|_{t=a}\equiv \VECTOR{f}^{(k)}(a), 
 \end{equation}
 \begin{equation}\label{eq:taylorvecf1}
   \VECTOR{f}(t)=\VECTOR{f}(a)
@@ -148,7 +148,7 @@ e^{-t}
 \end{bmatrix},
 \end{equation}
 usando o polinômio de Taylor ao redor do ponto $a=0$,
-numa versão truncada ate a derivada de ordem $4$,
+numa versão truncada até a derivada de ordem $4$,
 denominado aqui $\VECTOR{f}_4(x)$.
 \end{example}
 \begin{SolutionT}[Relativo ao Exemplo \ref{ex:prop:taylorvecf}:]
@@ -260,7 +260,7 @@ esta pode ser expressa mediante uma somatória, em série de Taylor
 \cite[pp. 187, 207]{zhang2017matrix} \cite{Taylor}  ao redor de $\VECTOR{a}$, como
 mostra a Eq. (\ref{eq:taylore1}),
 \begin{equation}\label{eq:taylore1}
-f(\VECTOR{x}) =\sum _{k_{1}=0}^{\infty }\cdots \sum _{k_{N}=0}^{\infty }\left.\left({\frac {\partial ^{k_{1}+\cdots +k_{N}}f(\VECTOR{x})}{\partial x_{1}^{k_{1}}\cdots \partial x_{N}^{k_{N}}}}\right)\right|_{\VECTOR{x}=\VECTOR{a}} {\frac {(x_{1}-a_{1})^{k_{1}}\cdots (x_{N}-a_{N})^{k_{N}}}{k_{1}!\cdots k_{N}!}}
+f(\VECTOR{x}) =\sum _{k_{1}=0}^{\infty }\cdots \sum _{k_{N}=0}^{\infty }\left.\left({\frac {\partial ^{k_{1}+\cdots +k_{N}}f(\VECTOR{x})}{\partial x_{1}^{k_{1}}\cdots \partial x_{N}^{k_{N}}}}\right)\right|_{\VECTOR{x}=\VECTOR{a}} {\frac {(x_{1}-a_{1})^{k_{1}}\cdots (x_{N}-a_{N})^{k_{N}}}{k_{1}!\cdots k_{N}!}}.
 \end{equation}
 
 Outra forma alternativa de expressar a função anterior é usando vetores e matrizes,
@@ -271,7 +271,7 @@ como na Eq. (\ref{eq:taylore2}).
       ~+\frac{1}{2!}(\VECTOR{x}-\VECTOR{a})^{\transpose} \MATRIX{H(\VECTOR{a})}  (\VECTOR{x}-\VECTOR{a})
       ~+\cdots 
 \end{equation}
-Em que o vector $\triangledown f(\VECTOR{x})\equiv \frac{\partial f(\VECTOR{x})}{\partial \VECTOR{x} }$ 
+Em que o vetor $\triangledown f(\VECTOR{x})\equiv \frac{\partial f(\VECTOR{x})}{\partial \VECTOR{x} }$ 
 (também chamado \hyperref[def:gradient]{gradiente}),
 e a matriz $\MATRIX{H}(\VECTOR{x})\equiv \frac{\partial }{\partial \VECTOR{x}} \left( \frac{\partial f(\VECTOR{x})}{ \partial \VECTOR{x}^{\transpose} }\right)$
 (também chamada matriz \hyperref[def:hessian]{Hessiana}).

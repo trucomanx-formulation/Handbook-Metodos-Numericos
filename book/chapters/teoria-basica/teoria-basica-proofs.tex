@@ -54,7 +54,7 @@ Conhecida uma matriz quadrada $\MATRIX{A} \in \mathbb{R}^{N \times N}$ simétric
 \quad \rightarrow \quad
 \MATRIX{I}^{\transpose}=\left\{\MATRIX{A}\MATRIX{A}^{-1}\right\}^{\transpose}
 \quad \rightarrow \quad
-\MATRIX{I}=\left\{\MATRIX{A}^{-1}\right\}^{\transpose} \MATRIX{A}^{\transpose}
+\MATRIX{I}=\left\{\MATRIX{A}^{-1}\right\}^{\transpose} \MATRIX{A}^{\transpose},
 \end{equation}
 \begin{equation}
 \MATRIX{I}=\left\{\MATRIX{A}^{-1}\right\}^{\transpose} \MATRIX{A}
@@ -114,7 +114,7 @@ dado que sempre $\VECTOR{v}_n^{\transpose}\VECTOR{v}_n> 0$, concluímos
 Conhecida uma matriz quadrada $\MATRIX{A} \in \mathbb{R}^{N \times N}$ definida positiva, com  autovalores $\lambda_n$,
 e autovetores $\VECTOR{e}_n$, $\forall n \in \{1, 2, ..., N\}$, de modo que,
 \begin{equation}\label{eq:proof:theo:positivematrix1:0}
-\MATRIX{A}\VECTOR{e}_n=\lambda_n \VECTOR{e}_n.
+\MATRIX{A}\VECTOR{e}_n=\lambda_n \VECTOR{e}_n,
 \end{equation}
 \begin{equation}\label{eq:proof:theo:positivematrix1:1}
 \VECTOR{e}_n^{\transpose}\MATRIX{A}\VECTOR{e}_n=\lambda_n \VECTOR{e}_n^{\transpose}\VECTOR{e}_n.
@@ -130,7 +130,7 @@ o que implica
 \begin{equation}
 \lambda_n \VECTOR{e}_n^{\transpose}\VECTOR{e}_n > 0
 \quad \rightarrow \quad
-\lambda_n  \geq 0
+\lambda_n  \geq 0.
 \end{equation} 
 \end{itemize}
 \end{myproofT}
@@ -152,7 +152,7 @@ que existe uma \hyperref[def:ortogonalmatrix0]{\textbf{matriz ortogonal}} $\MATR
 0         & 0         & ...    & \lambda_N
 \end{bmatrix}.
 \end{equation}
-Se multiplicamos essa igualdade por um vector $\VECTOR{x} \in \mathbb{R}^N$ (não nulo), obtemos,
+Se multiplicamos essa igualdade por um vetor $\VECTOR{x} \in \mathbb{R}^N$ (não nulo), obtemos,
 \begin{equation}
 \VECTOR{x}^{\transpose} \MATRIX{Q}^{\transpose}\MATRIX{A}\MATRIX{Q} \VECTOR{x} = 
 \VECTOR{x}^{\transpose} \MATRIX{\lambda}_{\MATRIX{A}} \VECTOR{x},
@@ -197,7 +197,7 @@ Se calculamos o polinômio caraterístico $p_{\MATRIX{A}}(\lambda)$ de $\MATRIX{
 \begin{equation}
 p_{\MATRIX{A}}(\lambda)=det\left(A-\lambda \MATRIX{I}\right),
 \end{equation}
-podemos rescrever esta equação
+podemos reescrever esta equação como
 \begin{equation}
 p_{\MATRIX{A}}(\lambda)=det\left(\MATRIX{P}^{-1} \MATRIX{B} \MATRIX{P}-\lambda \MATRIX{P}^{-1} \MATRIX{I} \MATRIX{P} \right),
 \end{equation}
@@ -222,7 +222,7 @@ podemos afirmar que
 \end{bmatrix}=
 \begin{bmatrix}
 \lambda_1 \VECTOR{v}_1 & \lambda_2 \VECTOR{v}_2 & ... & \lambda_N \VECTOR{v}_N
-\end{bmatrix}
+\end{bmatrix},
 \end{equation}
 \begin{equation}
 \MATRIX{A}
@@ -252,7 +252,7 @@ então
 Dada uma matriz hermitiana $\MATRIX{A} \in \mathbb{C}^{N \times N}$, com  autovalores $\lambda_n$,
 e autovetores $\VECTOR{v}_n$, $\forall n \in \{1, 2, ..., N\}$, podemos afirmar que,
 \begin{equation}
-\MATRIX{A}\VECTOR{v}_n=\lambda_n \VECTOR{v}_n
+\MATRIX{A}\VECTOR{v}_n=\lambda_n \VECTOR{v}_n,
 \end{equation}
 \begin{equation}
 \VECTOR{v}_n^{\ast}\MATRIX{A}\VECTOR{v}_n=\lambda_n \VECTOR{v}_n^{\ast} \VECTOR{v}_n=\lambda_n \NORM{\VECTOR{v}_n}^2,
@@ -394,7 +394,7 @@ Se $\MATRIX{A} \in \mathbb{C}^{N \times N}$ é uma matriz hermitiana definida po
 $\MATRIX{B} \in \mathbb{C}^{N \times N}$ é não singular e
 $\VECTOR{x} \in \mathbb{C}^{N}$ é não nulo, então
 \begin{equation}
-\VECTOR{y}=\MATRIX{B}\VECTOR{x}\neq 0 \iff \VECTOR{x}\neq 0
+\VECTOR{y}=\MATRIX{B}\VECTOR{x}\neq 0 \iff \VECTOR{x}\neq 0,
 \end{equation}
 \begin{equation}
 \VECTOR{x}^{\ast} \MATRIX{B}^{\ast} \MATRIX{A} \MATRIX{B} \VECTOR{x} =
@@ -429,7 +429,7 @@ podemos afirmar que
 \quad \rightarrow \quad
 \lambda_n \NORM{\VECTOR{v}_n}^2 > 0
 \quad \rightarrow \quad
-\lambda_n  > 0
+\lambda_n  > 0.
 \end{equation} 
 \item Sabendo do Teorema \ref{theo:HermitianDDecomposition0} que 
 $\MATRIX{A}=\MATRIX{U}\lambda_{\MATRIX{A}} \MATRIX{U}^{\ast}$,

@@ -55,7 +55,7 @@ seja definida positiva. Para mais detalhes, ver o Exemplo \ref{ex:positivematrix
 \begin{minipage}{0.5\textwidth}
 \begin{example}[Autovalores positivos não garantem matrizes definidas positivas:]
 \label{ex:positivematrix1}
-Conhecida uma matriz quadrada $\MATRIX{A}$ com autovalores positivos agrupados no vetor $\VECTOR{\lambda}_{\MATRIX{A}}$, 
+Conhecida uma matriz quadrada $\MATRIX{A}$ com autovalores positivos agrupados no vetor $\VECTOR{\lambda}_{\VECTOR{a}}$, 
 \begin{equation}
 \MATRIX{A}=
 \begin{bmatrix}
@@ -63,13 +63,13 @@ Conhecida uma matriz quadrada $\MATRIX{A}$ com autovalores positivos agrupados n
 0 & 2
 \end{bmatrix}
 \quad \rightarrow \quad 
-\VECTOR{\lambda}_{\MATRIX{A}}=
+\VECTOR{\lambda}_{\VECTOR{a}}=
 \begin{bmatrix}
 1 \\
 2
 \end{bmatrix}.
 \end{equation}
-Podemos verificar que a matriz $\MATRIX{A}$ não é definida positiva.
+Podemos verificar que a matriz $\MATRIX{A}$ não é definida positiva,
 \begin{equation}
 \VECTOR{x}=
 \begin{bmatrix}
@@ -77,7 +77,7 @@ Podemos verificar que a matriz $\MATRIX{A}$ não é definida positiva.
 1
 \end{bmatrix}
 \quad \rightarrow \quad 
--5 = \VECTOR{x}^{\transpose}\MATRIX{A}\VECTOR{x}<0
+-5 = \VECTOR{x}^{\transpose}\MATRIX{A}\VECTOR{x}<0.
 \end{equation}
 A superfície $\VECTOR{x}^{\transpose}\MATRIX{A}\VECTOR{x}$ 
 pode ser vista na Figura \ref{fig:ex:positivematrix1}.

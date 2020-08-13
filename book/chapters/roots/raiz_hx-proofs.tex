@@ -12,10 +12,10 @@ conhecida a validade da Eq. (\ref{eq:prrof:rootshx1}),
 0=h(x);
 \end{equation}
 se desejarmos ter o valor $x=\hat{x}$ que cumpra que $||h(\hat{x})||<\delta$, 
-é aplicado o critério mostrado no Teorema \ref{theo:minhxhx} onde se indica que uma forma de achar o 
+é aplicado o critério mostrado no Teorema \ref{theo:minhxhx}, no qual se indica que uma forma de achar o 
 $x=\hat{x}$ que minimize $e(x)=||h(x)||^2$ é mediante a seguinte equação iterativa.  
 \begin{equation}\label{eq:prrof:rootshx1:2}
-x_{k}=x_{k-1}-\frac{h(x_{k-1})}{h'(x_{k-1})};
+x_{k}=x_{k-1}-\frac{h(x_{k-1})}{h'(x_{k-1})}.
 \end{equation}
 
 \end{myproofT}
@@ -23,7 +23,7 @@ x_{k}=x_{k-1}-\frac{h(x_{k-1})}{h'(x_{k-1})};
 \begin{myproofT}[Prova da continuidade de 
 $h(x)/h'(x)$:]\label{proof:theo:cont:rootshx}
 Conhecida uma função $h(x)$  diferenciável em $x=a$, 
-ao menos até a $n$-ésima derivada onde $h^{(n)}(a)\neq 0$.
+ao menos até a $n$-ésima derivada na qual $h^{(n)}(a)\neq 0$.
 Se $h(a)=0$ e $h'(a)=0$ o fator
 \begin{equation}\label{eq:prrof:cont1}
 F(x)=\frac{h(x)}{h'(x)}
@@ -32,13 +32,13 @@ causa uma indeterminação de zero dividido por zero para $x=a$.
 Para resolver esse problema, é aplicada de forma consecutiva a regra de l'Hôpital
 sobre a Eq. (\ref{eq:prrof:cont1}); assim podemos afirmar
 \begin{equation}\label{eq:prrof:cont2}
-F(a)=\lim_{x\rightarrow a}\frac{h(x)}{h'(x)}=\frac{h^{(n-1)}(a)}{h^{(n)}(a)}
+F(a)=\lim_{x\rightarrow a}\frac{h(x)}{h'(x)}=\frac{h^{(n-1)}(a)}{h^{(n)}(a)},
 \end{equation}
-em que $n$ é escolhido como o primeiro valor avaliado em $a$, 
-onde se cumpra que $h^{(n)}(a)\neq 0$. 
+sendo que $n$ é escolhido como o primeiro valor avaliado em $a$, 
+no qual se cumpra que $h^{(n)}(a)\neq 0$. 
 Assim, podemos definir que os lugares onde $h(a)=0$ e $h'(a)=0$,
- tem um valor $F(a)\neq 0$,
-se $h(x)$ tem ao menos uma derivada $n$-ésima em $x=a$ onde $h^{(n)}(a)\neq 0$.
+ também tem um valor $F(a)\neq 0$,
+se $h(x)$ tem ao menos uma derivada $n$-ésima em $x=a$ que provoque $h^{(n)}(a)\neq 0$.
 
 Uma forma simples de expressar isso é indicar que $F(a)\neq 0$, se é possível
 expressar $h(x)$ em \hyperref[def:taylor]{\textbf{série de Taylor}} ao redor de $x=a$. 
@@ -60,11 +60,11 @@ se desejarmos ter o valor $x=\hat{x}$ que cumpra que $||h(\hat{x})||<\delta$,
 é aplicado o critério mostrado no Teorema \ref{theo:minhxhxxoxo},
 em que se indica que uma forma de achar o valor 
 $x=\hat{x}$ que minimiza $e(x)=||h(x)||^2+\alpha||x-x_{last}||^2$, 
-é mediante a seguinte equação iterativa.  
+é mediante a seguinte equação iterativa,  
 \begin{equation}\label{eq:prrof:rootshxreg1:2}
 x_{k}=x_{k-1}-\frac{h'(x_{k-1}) h(x_{k-1})}{h'(x_{k-1})^2+\alpha};
 \end{equation}
-onde $\alpha$ é um multiplicador de Lagrange escolhido por nós.
+na qual $\alpha$ é um multiplicador de Lagrange escolhido por nós.
 
 A Eq. (\ref{eq:prrof:rootshxreg1:2}) tenta minimizar simultaneamente 
 as funções de custo $||h(x)||^2$ 

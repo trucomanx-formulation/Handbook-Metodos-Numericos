@@ -19,7 +19,7 @@ conhecida a validade da Eq. (\ref{eq:rootshx1}),
 \end{equation}
 se desejarmos ter o valor $x=\hat{x}$ que cumpra a Eq. (\ref{eq:rootshx1}),
 podemos usar iterativamente a Eq. (\ref{eq:rootshx2}),
-onde  $h'(x)\equiv \frac{d h(x)}{d x}$,
+na qual $h'(x)\equiv \frac{d h(x)}{d x}$,
 \end{minipage}
 
 \begin{equation}\label{eq:rootshx2}
@@ -29,8 +29,8 @@ Assim, $\hat{x}$ pode ser achado\footnote{A
 demonstração pode ser vista na Prova \ref{proof:theo:rootshx}.} 
 iniciando a Eq. (\ref{eq:rootshx2}) desde um 
 $x_{0}$ qualquer, realizando cálculos $x_{k}$ iterativamente  
-ate\footnote{Sendo $\delta$ um valor pequeno próximo a zero.} que $||h(x_k)||<\delta$,
-onde se declara que $\hat{x}=x_k$.
+até\footnote{Sendo $\delta$ um valor pequeno próximo a zero.} que $||h(x_k)||<\delta$,
+nesse caso se declara que $\hat{x}=x_k$.
 
 \textbf{Considerações:}
 \begin{itemize} 
@@ -75,7 +75,7 @@ Neste caso, a busca iterativa indicada pela Eq. (\ref{eq:rootshx2})
 diverge para valores próximos a $x_m=\frac{\sqrt{3}}{3}\approx 0.57735$,
 que é um mínimo local de $h(x)$; quer dizer, $h'(x_m)\approx 0$ e $h(x_m)\neq 0$.
 É fácil de observar que neste caso se produz 
-uma espécie de efeito sanfona, onde $x_{k}$ se aproxima ao mínimo local em $h(x)$, e quando 
+uma espécie de efeito sanfona, no qual $x_{k}$ se aproxima ao mínimo local em $h(x)$, e quando 
 está próximo desse valor, a busca volta a divergir a um ponto medianamente distante.
 \end{SolutionT}
 
@@ -83,14 +83,14 @@ está próximo desse valor, a busca volta a divergir a um ponto medianamente dis
     \centering
     \begin{subfigure}[b]{0.49\textwidth}
         \includegraphics[width=\textwidth]{chapters/roots/mfiles/hx/minimizando_hx_1.eps}
-        \caption{As iterações divergem ao redor de $x_m$, onde $h'(x_m)\approx 0$ e $h(x_m)\neq 0$.}
+        \caption{As iterações divergem ao redor da amostra $x_m$ em que $h'(x_m)\approx 0$ e $h(x_m)\neq 0$.}
         \label{fig:rootsNcasesa}
     \end{subfigure}
     ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
       %(or a blank line to force the subfigure onto a new line)
     \begin{subfigure}[b]{0.49\textwidth}
         \includegraphics[width=\textwidth]{chapters/roots/mfiles/hx/minimizando_hx_2.eps}
-        \caption{As iterações convergem em $\hat{x}$, onde $h(\hat{x})\approx 0$ e $h'(x_m)\neq 0$}
+        \caption{As iterações convergem em $\hat{x}$, no qual $h(\hat{x})\approx 0$ e $h'(x_m)\neq 0$.}
         \label{fig:rootsNcasesb}
     \end{subfigure}
     \caption{Comportamento da busca iterativa do Exemplo \ref{ex:rootshx1}}
@@ -160,7 +160,7 @@ $||h(x_k)||$ & 6.5790e-01 & 1.0016e-03 & 2.5207e-04 & 6.3234e-05 & 1.5836e-05 \\
     \begin{figure}[!h]
         \centering
         \includegraphics[width=0.49\textwidth]{chapters/roots/mfiles/hx2/minimizando_hx_1.eps}
-        \caption{Resposta iterativa do Exemplo \ref{ex:rootshx2}, onde $h'(x_m)\approx 0$ e $h(x_m)\approx 0$.}
+        \caption{Resposta iterativa do Exemplo \ref{ex:rootshx2}, no qual $h'(x_m)\approx 0$ e $h(x_m)\approx 0$.}
         \label{fig:rootsNcasesc}
     \end{figure}
 

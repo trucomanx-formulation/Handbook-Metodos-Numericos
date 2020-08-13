@@ -11,7 +11,7 @@ definida a seguinte equação,
 y\equiv f_{\VECTOR{c}}(\VECTOR{x})= \frac{1}{1+e^{-h_{\VECTOR{c}}(\VECTOR{x}) }},
 \end{equation}
 ou seu equivalente: $logit(y)=h_{\VECTOR{c}}(\VECTOR{x})$,
-onde $\VECTOR{c}=[c_1~ c_2~ ...~ c_m~ ...~ c_{M}]^{\transpose}$ e
+em que $\VECTOR{c}=[c_1~ c_2~ ...~ c_m~ ...~ c_{M}]^{\transpose}$ e
 $h_{\VECTOR{c}}(\VECTOR{x})\equiv h(\VECTOR{c},\VECTOR{x})$ é uma função de variável vetorial escolhida por nós.
 Podemos definir um erro quadrático $e(\VECTOR{c})$ como
 \begin{equation}\label{eq:proof:theo:reglogrnr1nolinear:2}
@@ -20,14 +20,14 @@ e(\VECTOR{c}) =
 \sum_{n=1}^{L} w_l||h_{\VECTOR{c}}(\VECTOR{x}_l)-logit(y_l)||^2
 +\alpha \sum_{n=1}^{M} d_m||c_m-c_{m,last}||^2;
 \end{equation}
-onde a função de custo $e(\VECTOR{c})$ toma em conta dois tipos de erro, separados em duas somatórias,
+na qual a função de custo $e(\VECTOR{c})$ toma em conta dois tipos de erro, separados em duas somatórias,
 ponderadas mediante a variável $\alpha \in \mathbb{R}_+$;
 a primeira somatória avalia o erro quadrático de $L$ amostras $\VECTOR{x}_l \in \mathbb{R}^{N}$ que pertencem a 
 dois grupos etiquetados com a variável $y_l\in \{A,1-A\}$, 
-onde $0<A\ll 0.5$ é escolhido por nós.
+em que $0<A\ll 0.5$ é escolhido por nós.
 Todos estes erros ponderados com os pesos $w_l \in \mathbb{R}_+$;
 a segunda somatória de $e(\VECTOR{c})$ 
-avalia as distancias dos valores $c_m$ ao redor de um valor $c_{m,last}$
+avalia as distâncias dos valores $c_m$ ao redor de um valor $c_{m,last}$
 previamente conhecido,
 ponderadas com os pesos $d_m \in \mathbb{R}_+$.
 Todos esses cálculos podem ser reescritos de forma matricial
@@ -36,7 +36,7 @@ na seguinte equação
 e(\VECTOR{c}) \equiv ||\VECTOR{h}(\VECTOR{c})-\VECTOR{z}||_{\MATRIX{W}}^2
 + \alpha ||\VECTOR{c}-\VECTOR{c}_{last}||_{\MATRIX{D}}^2 ,
 \end{equation}
-onde
+na qual
 \begin{equation}\label{eq:proof:reglogrnr1nolinear:4}
 \VECTOR{h}(\VECTOR{c})=\begin{bmatrix}
 h(\VECTOR{c},\VECTOR{x}_1)\\ 
@@ -79,7 +79,7 @@ que minimiza a Eq. (\ref{eq:proof:theo:reglogrnr1nolinear:3}), pode ser obtido u
 \begin{equation}\label{eq:proof:theo:reglogrnr1nolinear:5}
 \VECTOR{c}_{i}=\VECTOR{c}_{i-1}-[\MATRIX{J}(\VECTOR{c}_{i-1})^{\transpose}\MATRIX{W}\MATRIX{J}(\VECTOR{c}_{i-1})+\alpha \MATRIX{D}]^{-1}\MATRIX{J}(\VECTOR{c}_{i-1})^{\transpose}\MATRIX{W}[\VECTOR{h}(\VECTOR{c}_{i-1})-\VECTOR{z}],
 \end{equation}
-onde a matriz $\MATRIX{J}(\VECTOR{c})$ 
+na qual a matriz $\MATRIX{J}(\VECTOR{c})$ 
 $\equiv \frac{\partial \VECTOR{h}(\VECTOR{c})}{\partial \VECTOR{c}^{\transpose}}$ é a 
 \hyperref[def:jacobian]{\textbf{matriz Jacobiana}}  de $\VECTOR{h}(\VECTOR{c})$,
 e $\VECTOR{c}_{last}\equiv \VECTOR{c}_{i-1}$,

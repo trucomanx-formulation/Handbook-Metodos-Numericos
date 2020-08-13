@@ -31,12 +31,12 @@ y\equiv f_{\VECTOR{c}}(\VECTOR{x})= \frac{1}{1+e^{-h_{\VECTOR{c}}(\VECTOR{x})}},
 \end{equation}
 \end{minipage}
 ou seu equivalente, $logit(y)=h_{\VECTOR{c}}(\VECTOR{x})\equiv h(\VECTOR{c},\VECTOR{x})$,
-onde $h_{\VECTOR{c}}: \mathbb{R}^{N} \rightarrow \mathbb{R}$ é uma função não linear
+em que $h_{\VECTOR{c}}: \mathbb{R}^{N} \rightarrow \mathbb{R}$ é uma função não linear
 com domínio $\VECTOR{x}$ e
 com coeficientes $\VECTOR{c}=[c_1,~c_2,~...,~c_M]^{\transpose}$.
 Podemos atribuir a cada ponto $\VECTOR{x}_l$ uma etiqueta $y_l\in \{A,1-A\}$, 
 $A$ para $\bigtriangleup$ e  $1-A$ para $\bigcirc$,
-onde $0<A\ll 0.5$ é escolhido por nós,
+em que $0<A\ll 0.5$ é escolhido por nós,
 e afirmar que o vetor $\VECTOR{c}= \VECTOR{\hat{c}}$
 que minimiza o erro quadrático $e(\VECTOR{c})$,
 \begin{equation}\label{eq:reglogrnr1nolinear:1e}
@@ -95,7 +95,7 @@ sendo que $w_l \in \mathbb{R}_+$, $d_l \in \mathbb{R}_+$, e $\alpha \in \mathbb{
 \begin{equation}\label{eq:reglogrnr1nolinear:2}
 \VECTOR{c}_{i}=\VECTOR{c}_{i-1}-[\MATRIX{J}(\VECTOR{c}_{i-1})^{\transpose}\MATRIX{W}\MATRIX{J}(\VECTOR{c}_{i-1})+\alpha \MATRIX{D}]^{-1}\MATRIX{J}(\VECTOR{c}_{i-1})^{\transpose}\MATRIX{W}[\VECTOR{h}(\VECTOR{c}_{i-1})-\VECTOR{z}],
 \end{equation}
-onde a matriz $\MATRIX{J}(\VECTOR{c})$ 
+na qual a matriz $\MATRIX{J}(\VECTOR{c})$ 
 $\equiv \frac{\partial \VECTOR{h}(\VECTOR{c})}{\partial \VECTOR{c}^{\transpose}}$ é a 
 \hyperref[def:jacobian]{\textbf{matriz Jacobiana}}  de $\VECTOR{h}(\VECTOR{c})$,
 \begin{equation}\label{eq:reglogrnr1nolinear:3}
@@ -119,7 +119,8 @@ $\equiv \frac{\partial \VECTOR{h}(\VECTOR{c})}{\partial \VECTOR{c}^{\transpose}}
 \begin{itemize}
 \item A busca iterativa da Eq. (\ref{eq:reglogrnr1nolinear:2}) 
 é declarada finalizada com sucesso 
-quando iterações consecutivas do vetor $\VECTOR{c}_i$ convergem a valores próximos, onde declaramos $\VECTOR{\hat{c}}=\VECTOR{c}_i$.
+quando iterações consecutivas do vetor $\VECTOR{c}_i$ convergem a valores próximos, 
+nesse caso declaramos que $\VECTOR{\hat{c}}=\VECTOR{c}_i$.
 \item O erro mínimo $e(\VECTOR{\hat{c}}) \geq 0$, não necessariamente obtém o valor zero. 
 \end{itemize}
 \end{theorem}
@@ -169,7 +170,7 @@ $\VECTOR{y}_l$ & $\bigtriangleup$ & $\bigtriangleup$ & $\bigtriangleup$ & $\bigt
 Para obter o vetor de parâmetros $\VECTOR{c}=\VECTOR{\hat{c}}$ da função $f_{\VECTOR{c}}(\VECTOR{x})$, 
 que gere o menor erro $e(\VECTOR{c})$
 com os $L=10$ dados $\VECTOR{x}_l$ da Tabela \ref{table:theo:reglogrnr1nolinear:xn},
-usamos a Eq. (\ref{eq:reglogrnr1nolinear:2}) onde escolhemos $\alpha=0.001$, $d_l=w_l=1$ e valores $y_l \in \{0.001,~ 0.999\}$,
+usamos a Eq. (\ref{eq:reglogrnr1nolinear:2}) na qual escolhemos $\alpha=0.001$, $d_l=w_l=1$ e valores $y_l \in \{0.001,~ 0.999\}$,
 $0.001$ para $\bigtriangleup$ e $0.999$ para $\bigcirc$,
 além disso, calculamos 
 \begin{equation}

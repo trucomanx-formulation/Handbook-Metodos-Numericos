@@ -12,7 +12,7 @@ y\equiv f_{\VECTOR{c}}(x)= \frac{1}{1+e^{-h_{\VECTOR{c}}(x) }},
 \quad h_{\VECTOR{c}}(x)\equiv \sum_{m=0}^{M}c_{m+1} x^m\equiv \VECTOR{a}_M(x)\VECTOR{c},
 \end{equation}
 ou seu equivalente: $logit(y)=h_{\VECTOR{c}}(x)$,
-onde $\VECTOR{c}=[c_1~ c_2~ ...~ c_m~ ...~ c_{M+1}]^{\transpose} \in \mathbb{R}^{M+1}$ é um vetor coluna e
+em que $\VECTOR{c}=[c_1~ c_2~ ...~ c_m~ ...~ c_{M+1}]^{\transpose} \in \mathbb{R}^{M+1}$ é um vetor coluna e
 $\VECTOR{a}_M(x)=\begin{bmatrix} 
 1& x& x^2& \hdots & x^m& \hdots& x^M
 \end{bmatrix}$ um vetor linha.
@@ -23,17 +23,17 @@ e(\VECTOR{c}) =  \sum_{n=1}^{L} w_l||h_{\VECTOR{c}}(x_l)-logit(y_l)||^2,
 \end{equation}
 proveniente de avaliar $L$ amostras $x_l$ que pertencem a dois grupos, 
 sendo que cada valor $x_l$ tem uma etiqueta de grupo $y_l\in \{A,1-A\}$, 
-onde $0<A\ll 0.5$ é escolhido por nós.
+em que $0<A\ll 0.5$ é escolhido por nós.
 Todos esses dados podem ser representados pelos vetores 
 $\VECTOR{x}=[x_1~ x_2~$ $...~$ $x_l~$ $...~ x_L]^{\transpose}$ 
 e $\VECTOR{z}=[logit(y_1)~$ $logit(y_2)~$ $...~$ $logit(y_l)~$ $...~ logit(y_L)]^{\transpose}$,
 ponderados com os pesos $w_l \in \mathbb{R}_+$, 
 representados pela matriz diagonal $\MATRIX{W}=\funcdiag([w_1~ w_2~ ...~ w_l~ ...~ w_L]^{\transpose})$.
-De modo que podemos rescrever a Eq. (\ref{eq:proof:theo:reglogr1r1poly:2}) como,
+De modo que podemos reescrever a Eq. (\ref{eq:proof:theo:reglogr1r1poly:2}) como,
 \begin{equation}\label{eq:proof:theo:reglogr1r1poly:3}
 e(\VECTOR{c}) \equiv ||\MATRIX{A}\VECTOR{c}-\VECTOR{z}||_{\MATRIX{W}}^2 
 \end{equation}
-onde a matriz $\MATRIX{A}$ é definida como,
+na qual a matriz $\MATRIX{A}$ é definida como,
 \begin{equation}\label{eq:proof:reglogr1r1poly:4}
 \MATRIX{A}=\begin{bmatrix}
 \VECTOR{a}_M(x_1)\\

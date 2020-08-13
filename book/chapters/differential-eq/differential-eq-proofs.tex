@@ -99,19 +99,20 @@ autovetores de $\MATRIX{P}$ \cite[pp. 67]{golub2013matrix}; de modo que
 %\equiv -\MATRIX{C}^{-1}\MATRIX{P}\MATRIX{C}, 
 \qquad \wedge \qquad \MATRIX{C}=\MATRIX{V}\MATRIX{A}, 
 \end{equation}
-onde $\MATRIX{V}=\left[ \VECTOR{v}_1~  \VECTOR{v}_2~  \dots~ \VECTOR{v}_N\right]$ 
+na qual $\MATRIX{V}=\left[ \VECTOR{v}_1~  \VECTOR{v}_2~  \dots~ \VECTOR{v}_N\right]$ 
 é uma matriz formada pela agrupação dos autovetores $\VECTOR{v}_n$ da matriz $\MATRIX{P}$,
 e $\MATRIX{A}=\funcdiag\left(\left[ a_1~  a_2~  \dots~ a_N\right]\right)$ 
 é uma matriz diagonal para formar outra matriz  
 $\MATRIX{V}\MATRIX{A}=\left[ a_1\VECTOR{v}_1~  a_2\VECTOR{v}_2~  \dots~ a_N\VECTOR{v}_N\right]$
 com autovetores nas colunas.
 Assim, a Eq. (\ref{eq:segundoorder:4}) gera um par de soluções para a Eq. (\ref{eq:segundoorder1}),
-onde é possível afirmar que
+em que é possível afirmar que
 \begin{equation}\label{eq:segundoorder:5}
 \VECTOR{X}(t)=\MATRIX{V}\MATRIX{A}_1 e^{\VECTOR{w} \mathbf{i} t}+ \MATRIX{V}\MATRIX{A}_2 e^{-\VECTOR{w} \mathbf{i} t},
 \end{equation}
-onde $\VECTOR{w}=\left[ \sqrt{\lambda_1}~ \sqrt{\lambda_2}~ \dots~ \sqrt{\lambda_M}\right]^{T}$, 
-e $\MATRIX{A}_1$ e $\MATRIX{A}_2$ são duas matrizes diagonais qualquer.
+na qual $\VECTOR{w}=\left[ \sqrt{\lambda_1}~ \sqrt{\lambda_2}~ \dots~ \sqrt{\lambda_M}\right]^{T}$, 
+e as matrizes
+$\MATRIX{A}_1$ e $\MATRIX{A}_2$ são diagonais.
 Se reordenamo a Eq. (\ref{eq:segundoorder:5}) obtemos
 \begin{equation}\label{eq:segundoorder:6}
 \VECTOR{X}(t)=
@@ -120,10 +121,10 @@ Se reordenamo a Eq. (\ref{eq:segundoorder:5}) obtemos
 \end{equation}
 dado que soubemos que a resposta $\VECTOR{X}(t)$ é real, 
 podemos afirmar que $\MATRIX{A}_1$ é uma matriz complexa conjugada da matriz $\MATRIX{A}_2$,
-de modo que podemos rescrever a Eq. (\ref{eq:segundoorder:6}) como
+de modo que podemos reescrever a Eq. (\ref{eq:segundoorder:6}) como
 \begin{equation}\label{eq:segundoorder:7}
  \VECTOR{X}(t)= \MATRIX{V}\left[\MATRIX{D}_1 cos(\VECTOR{w}t) + \MATRIX{D}_2 sin(\VECTOR{w}t) \right],
 \end{equation}
-onde $\MATRIX{D}_1 \in \mathbb{R}^{N\times N}$ e $\MATRIX{D}_2 \in \mathbb{R}^{N\times N}$ 
+em que $\MATRIX{D}_1 \in \mathbb{R}^{N\times N}$ e $\MATRIX{D}_2 \in \mathbb{R}^{N\times N}$ 
 são matrizes diagonais reais. 
 \end{myproofT}

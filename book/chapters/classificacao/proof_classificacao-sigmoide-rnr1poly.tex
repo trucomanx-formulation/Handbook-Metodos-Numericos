@@ -12,7 +12,7 @@ y\equiv f_{\VECTOR{c}}(\VECTOR{x})= \frac{1}{1+e^{-h_{\VECTOR{c}}(\VECTOR{x}) }}
 \quad h_{\VECTOR{c}}(\VECTOR{x}) =  \VECTOR{a}_M(\VECTOR{x})\VECTOR{c},
 \end{equation}
 ou seu equivalente: $logit(y)=h_{\VECTOR{c}}(\VECTOR{x})$,
-onde $\VECTOR{c}=[c_1~ c_2~ c_3~  ...~ c_{L_M(N)}]^{\transpose} \in \mathbb{R}^{L_M(N)}$ é um vetor coluna
+em que $\VECTOR{c}=[c_1~ c_2~ c_3~  ...~ c_{L_M(N)}]^{\transpose} \in \mathbb{R}^{L_M(N)}$ é um vetor coluna
 com $L_M(N)=\binom{N+M}{M}$ coeficientes\footnote{Para calcular $L_M(N)$, ver o Lema \ref{theo:reglogrnr1poly:aM}.} 
 vinculados a cada elemento em
 $\VECTOR{a}_M(\VECTOR{x})$, que  é um vetor com todos os monômios multivariados de grau total menor ou igual a $M$,
@@ -27,7 +27,7 @@ $\VECTOR{a}_M(\VECTOR{x})$, que  é um vetor com todos os monômios multivariado
 \VECTOR{b}_M(\VECTOR{x}) 
 \end{bmatrix},
 \end{equation}
-onde $\VECTOR{b}_m(\VECTOR{x}) \in \mathbb{R}^{\phi(N,m)}$ é um vetor linha 
+na qual $\VECTOR{b}_m(\VECTOR{x}) \in \mathbb{R}^{\phi(N,m)}$ é um vetor linha 
 de $\phi(N,m)=\binom{N+m-1}{m}$ elementos\footnote{Para calcular $\phi(N,m)$, ver o Lema \ref{theo:reglogrnr1poly:bm}.},
 com todos os monômios multivariados de grau total igual a $m$
 formados a partir dos elementos do vetor $\VECTOR{x}$,
@@ -63,14 +63,14 @@ Assim, podemos definir o erro quadrático $e(\VECTOR{c})$ como
 e(\VECTOR{c}) =  \sum_{n=1}^{L} w_l||h_{\VECTOR{c}}(\VECTOR{x}_l)-logit(y_l)||^2,
 \end{equation}
 proveniente de avaliar o erro quadrático de $L$ amostras $\VECTOR{x}_l \in \mathbb{R}^{N}$ que pertencem a dois grupos, 
-onde cada amostra $\VECTOR{x}_l$ tem uma etiqueta de grupo $y_l\in \{A,1-A\}$, 
+em que cada amostra $\VECTOR{x}_l$ tem uma etiqueta de grupo $y_l\in \{A,1-A\}$, 
  $0<A\ll 0.5$ é escolhido por nós, 
 e os erros quadráticos são ponderados com os pesos $w_l \in \mathbb{R}_+$.
 Assim, podemos reescrever a Eq. (\ref{eq:proof:theo:reglogrnr1poly:5}) como,
 \begin{equation}\label{eq:proof:theo:reglogrnr1poly:6}
 e(\VECTOR{c}) \equiv ||\MATRIX{A}\VECTOR{c}-\VECTOR{z}||_{\MATRIX{W}}^2 
 \end{equation}
-onde
+na qual
 \begin{equation}\label{eq:proof:reglogrnr1poly:7}
 \MATRIX{A}=\begin{bmatrix}
 \VECTOR{a}_M(\VECTOR{x}_1)\\

@@ -35,7 +35,7 @@ y\equiv f_{\VECTOR{c}}(x)= \frac{1}{1+e^{-h_{\VECTOR{c}}(x)}},
 ou seu equivalente: $logit(y)=h_{\VECTOR{c}}(x)$.
 \end{minipage}
 Podemos atribuir a cada valor $x_l$ uma etiqueta $y_l\in \{A,1-A\}$, 
-onde $0<A\ll 0.5$ é escolhido por nós,
+em que $0<A\ll 0.5$ é escolhido por nós,
 e afirmar que o vetor $\VECTOR{c}= \VECTOR{\hat{c}}$ que
 minimiza o erro quadrático médio $e(\VECTOR{c})$,
 \begin{equation}\label{eq:reglogr1r1poly:1e}
@@ -116,7 +116,7 @@ $y_l$ & $\bigtriangleup$ & $\bigtriangleup$ & $\bigtriangleup$ & $\bigtriangleup
 Para obter o vetor de parâmetros $\VECTOR{c}=\VECTOR{\hat{c}}$ da função $f_{\VECTOR{c}}(x)$, 
 que gere o menor erro $e(\VECTOR{c}) =   \sum_{l=1}^{L} ||h_{\VECTOR{c}}(x_l)-logit(y_l)||^2$
 com os $L=12$ dados $x_l$ da Tabela \ref{table:theo:reglogr1r1poly:xn},
-usamos a Eq. (\ref{eq:reglogr1r1poly:2}), onde escolhemos $w_l=1$ e valores $y_l \in \{0.1,~ 0.9\}$,
+usamos a Eq. (\ref{eq:reglogr1r1poly:2}), na qual escolhemos $w_l=1$ e valores $y_l \in \{0.1,~ 0.9\}$,
 $0.1$ para $\bigtriangleup$ e $0.9$ para $\bigcirc$,
 obtendo um vetor $\VECTOR{\hat{c}}=[-12.6667\quad 11.2848\quad -2.1263]^{\transpose}$.
 Assim, podemos representar a função 
@@ -152,7 +152,7 @@ com limiares de classificação em $1.6122$ e $3.6951$.
 Para obter o vetor de parâmetros $\VECTOR{c}=\VECTOR{\hat{c}}$ da função $f_{\VECTOR{c}}(x)$, 
 que gere o menor erro $e(\VECTOR{c}) =   \sum_{l=1}^{L} ||h_{\VECTOR{c}}(x_l)-logit(y_l)||^2$,
 com os $L=12$ dados $x_l$ da Tabela \ref{table:theo:reglogr1r1poly:xn},
-usamos a Eq. (\ref{eq:reglogr1r1poly:2}), onde escolhemos $w_l=1$ e valores $y_l \in \{0.001,~ 0.999\}$,
+usamos a Eq. (\ref{eq:reglogr1r1poly:2}), na qual escolhemos $w_l=1$ e valores $y_l \in \{0.001,~ 0.999\}$,
 $0.001$ para $\bigtriangleup$ e $0.999$ para $\bigcirc$,
 obtendo um vetor $\VECTOR{\hat{c}}=[-39.8164\quad 35.4727\quad -6.6838]^{\transpose}$. 
 Assim, podemos representar a função $\left.f_{\VECTOR{c}}(x)\right|_{\VECTOR{c}=\VECTOR{\hat{c}}}$ 

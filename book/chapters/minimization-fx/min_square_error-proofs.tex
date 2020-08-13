@@ -46,7 +46,7 @@ Para achar o ponto $\VECTOR{x}=\VECTOR{\hat{x}}$ que gere o menor valor de $e(\V
 o critério que um ponto de inflexão $\VECTOR{x}^+$ pode ser achado quando 
 $\frac{\partial e(\VECTOR{x}^+)}{\partial \VECTOR{x} }=[0~ 0~ \hdots~ 0 ]^{\transpose}$.
 Assim, usando o Corolário \ref{coro:derAxbAxb2}, podemos 
-rescrever esta igualdade como a Eq. (\ref{eq:proof:minAxbCAxb1alphaxqD}),
+reescrever esta igualdade como a Eq. (\ref{eq:proof:minAxbCAxb1alphaxqD}),
 \begin{equation}\label{eq:proof:minAxbCAxb1alphaxqD}
 2 \MATRIX{A}^{\transpose}\MATRIX{C}\left(\MATRIX{A}\VECTOR{x}^+-\VECTOR{b}\right)
 +2 \alpha\MATRIX{D}\left(\VECTOR{x}^+-\VECTOR{q}\right)=[0~ 0~ \hdots~ 0 ]^{\transpose},
@@ -138,7 +138,7 @@ ou pelo menos aproximações de novas posições em caminhos numa direção desc
 
 \item A Eq. (\ref{eq:proof:minAxbCAxb2approx}) é satisfeita 
 com $\VECTOR{x}^* \approx \VECTOR{p}$ se acharmos um  
-ponto $\VECTOR{p}$ onde  $\VECTOR{b} \approx \VECTOR{f}(\VECTOR{p})$; 
+ponto $\VECTOR{p}$ em que  $\VECTOR{b} \approx \VECTOR{f}(\VECTOR{p})$; 
 quer dizer um mínimo global de $e(\VECTOR{x})$ em $\VECTOR{p}$, como pode ser visto na Figura \ref{fig:ex0a}. 
 
 \item Se reescrevermos a Eq. (\ref{eq:proof:minAxbCAxb2approx}) usando o Teorema \ref{theo:derfxbCfxb0},
@@ -150,7 +150,7 @@ obtemos
 \end{equation}
 em que a Eq. (\ref{eq:proof:minfxbCfxb2ea}) é satisfeita 
 com $\VECTOR{x}^* \approx \VECTOR{p}$
-se acharmos um  ponto $\VECTOR{p}$ onde  
+se acharmos um  ponto $\VECTOR{p}$ em que  
 $\frac{\partial e(\VECTOR{p})}{\partial \VECTOR{x} }\approx \VECTOR{0}$; 
 é dizer $\VECTOR{p}$ é um ponto de inflexão de $e(\VECTOR{x})$, como pode ser visto na Figura \ref{fig:ex0b}.
 Porém, dado que a equação avança desde $\VECTOR{p}$ na direção de um mínimo $\VECTOR{x}^*$, 
@@ -172,7 +172,7 @@ se usamos a seguinte equação iterativa,
 \MATRIX{J}(\VECTOR{p}_{k-1})^{\transpose}\MATRIX{C} \left(\VECTOR{f}(\VECTOR{p}_{k-1})-\VECTOR{b}\right),
 \end{equation}
 iniciando desde um $\VECTOR{p}_{0}$, 
-até que exista uma tendência prolongada onde se observa que $\VECTOR{p}_{k}$ é muito próximo a $\VECTOR{p}_{k-1}$,
+até que exista uma tendência prolongada na qual se observa que $\VECTOR{p}_{k}$ é muito próximo a $\VECTOR{p}_{k-1}$,
 momento no qual declaramos que $\VECTOR{\hat{x}} \approx \VECTOR{p}_{k}$.
 \item Como foi visto na Figura  \ref{fig:ex0b},
 pode existir um mínimo global $\VECTOR{\hat{x}}$ de $e(\VECTOR{\hat{x}})>0$.
@@ -257,7 +257,7 @@ de $e(\VECTOR{x})$ desde a posição $\VECTOR{p}$.
 \begin{comment}
 \item A Eq. (\ref{eq:proof:minfxbCfxbaxqd2}) é satisfeita 
 com $\VECTOR{x}^* \approx \VECTOR{p}$ se acharmos um  
-ponto $\VECTOR{p}$ onde  $\VECTOR{b} \approx \VECTOR{f}(\VECTOR{p}\approx \VECTOR{q})$; 
+ponto $\VECTOR{p}$ em que $\VECTOR{b} \approx \VECTOR{f}(\VECTOR{p}\approx \VECTOR{q})$; 
 é dizer um mínimo global de $e(\VECTOR{x})$ em $\VECTOR{p}$, como pode ser visto na Figura \ref{fig:ex0a}. 
 \end{comment}
 
@@ -271,7 +271,7 @@ obtemos
 \end{equation}
 em que a Eq. (\ref{eq:proof:minfxbCfxb2ea1}) é satisfeita 
 com $\VECTOR{x}^* \approx \VECTOR{p}$
-se acharmos um  ponto $\VECTOR{p}$ onde  
+se acharmos um  ponto $\VECTOR{p}$ em que  
 $\frac{\partial e(\VECTOR{p})}{\partial \VECTOR{x} }\approx \VECTOR{0}$,
  como descrito na Eq. (\ref{eq:proof:minfxbCfxb1exact2}); 
 quer dizer $\VECTOR{p}$ é um ponto de inflexão de $e(\VECTOR{x})$, ver Figura \ref{fig:ex0b}.
@@ -295,7 +295,7 @@ se usamos a seguinte equação iterativa,
 \alpha\MATRIX{D}[\VECTOR{p}_{k-1}-\VECTOR{q}]\right\},
 \end{equation}
 iniciando desde um $\VECTOR{p}_{0}$ 
-até que exista uma tendência prolongada onde se observa que $\VECTOR{p}_{k}$ é muito próximo a $\VECTOR{p}_{k-1}$,
+até que exista uma tendência prolongada na qual se observa que $\VECTOR{p}_{k}$ é muito próximo a $\VECTOR{p}_{k-1}$,
 momento no qual declaramos que $\VECTOR{\hat{x}} \approx \VECTOR{p}_{k}$.
 \item Como foi visto na Figura  \ref{fig:ex0b},
 pode existir um mínimo global $\VECTOR{x}=\VECTOR{\hat{x}}$ de $e(\VECTOR{x}) > 0$.
@@ -366,7 +366,7 @@ e(\VECTOR{x}) \approx e_{\VECTOR{p}}(\VECTOR{x})  \equiv
 em que $\MATRIX{J}(\VECTOR{p})$ representa a \hyperref[def:jacobian]{\textbf{matriz Jacobiana}} 
 de $\VECTOR{f}(\VECTOR{x})$ avaliada no ponto $\VECTOR{p}$.
 Assim, usando o resultado da Prova \ref{proof:theo:minAxbCAxbalphaxqD} na Eq. (\ref{eq:proof:minfxbCfxbaxod0alphaxqDapprox}), 
-onde se aplica que $\frac{\partial e_{\VECTOR{p}}(\VECTOR{x}^*)}{\partial \VECTOR{x} }=\VECTOR{0}$,
+na qual se aplica que $\frac{\partial e_{\VECTOR{p}}(\VECTOR{x}^*)}{\partial \VECTOR{x} }=\VECTOR{0}$,
 podemos concluir que um ponto $\VECTOR{x}^*$; que é 
 um mínimo da aproximação linear feita em $e(\VECTOR{x})$ ao redor do ponto $\VECTOR{p}$,
 pode ser achado como,
@@ -387,7 +387,7 @@ ou pelo menos aproximações de novas posições em caminhos numa direção desc
 
 \item A Eq. (\ref{eq:proof:minfxbCfxbaxod2}) é satisfeita 
 com $\VECTOR{x}^* \approx \VECTOR{p}$, se acharmos um  
-ponto $\VECTOR{p}$ onde  $\VECTOR{b} \approx \VECTOR{f}(\VECTOR{p}\approx \VECTOR{x}_{last})$; 
+ponto $\VECTOR{p}$ em que $\VECTOR{b} \approx \VECTOR{f}(\VECTOR{p}\approx \VECTOR{x}_{last})$; 
 quer dizer um mínimo global de $e(\VECTOR{x})$ em $\VECTOR{p}$, como pode ser visto na Figura \ref{fig:ex0a}. 
 
 \item Se reescrevemos a Eq. (\ref{eq:proof:minfxbCfxbaxod2}) usando o Teorema \ref{theo:derfxbCfxb0}
@@ -400,7 +400,7 @@ obtemos
 \end{equation}
 em que a Eq. (\ref{eq:proof:minfxbCfxbaxod2ea1}) é satisfeita 
 com $\VECTOR{x}^* \approx \VECTOR{p}$, 
-se acharmos um  ponto $\VECTOR{p}$ onde  
+se acharmos um ponto $\VECTOR{p}$ em que  
 $\frac{\partial e(\VECTOR{p})}{\partial \VECTOR{x} }\approx \VECTOR{0}$; 
 isto é, $\VECTOR{p}$ é um ponto de inflexão de $e(\VECTOR{x})$, 
 como pode ser visto na Figura \ref{fig:ex0b}.
@@ -420,16 +420,16 @@ se usamos a seguinte equação iterativa,
 \begin{equation}\label{eq:proof:minfxbCfxbaxod3b}
 \VECTOR{p}_{k} \leftarrow \VECTOR{p}_{k-1} -
 \left[ \MATRIX{J}(\VECTOR{p}_{k-1})^{\transpose}\MATRIX{C} \MATRIX{J}(\VECTOR{p}_{k-1}) +\alpha \MATRIX{D}\right]^{-1}
-\MATRIX{J}(\VECTOR{p}_{k-1})^{\transpose}\MATRIX{C} \left[\VECTOR{f}(\VECTOR{p}_{k-1})-\VECTOR{b}\right],
+\MATRIX{J}(\VECTOR{p}_{k-1})^{\transpose}\MATRIX{C} \left[\VECTOR{f}(\VECTOR{p}_{k-1})-\VECTOR{b}\right];
 \end{equation}
-onde se inicia desde um $\VECTOR{p}_{0}$ 
-até que exista uma tendência prolongada onde se observa que $\VECTOR{p}_{k}$ é muito próximo a $\VECTOR{p}_{k-1}$,
+assim, iniciamos desde um $\VECTOR{p}_{0}$ 
+até que exista uma tendência prolongada na qual observamos que $\VECTOR{p}_{k}$ é muito próximo a $\VECTOR{p}_{k-1}$,
 momento no qual declaramos que $\VECTOR{\hat{x}} \approx \VECTOR{p}_{k}$.
 Disso também se deduz que o erro a minimizar em cada iteração será diferente e influenciado pelo valor do ponto $\VECTOR{p}_{k-1}$,
 \begin{equation}
 e_{k-1}(\VECTOR{x})  \equiv 
 ||\VECTOR{f}(\VECTOR{x})-\VECTOR{b}||_{\MATRIX{C}}^2+
-\alpha||\VECTOR{x}-\VECTOR{p}_{k-1}||_{\MATRIX{D}}^2
+\alpha||\VECTOR{x}-\VECTOR{p}_{k-1}||_{\MATRIX{D}}^2.
 \end{equation}
 \item Como foi visto na Figura  \ref{fig:ex0b},
 pode existir um mínimo global $\VECTOR{x}=\VECTOR{\hat{x}}$ de $e(\VECTOR{x}) > 0$.

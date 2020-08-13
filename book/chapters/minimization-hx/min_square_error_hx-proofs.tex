@@ -81,7 +81,7 @@ se usamos a seguinte equação iterativa,
 p_{k} \leftarrow p_{k-1} - \frac{ h(p_{k-1})-a}{h'(p_{k-1})},
 \end{equation}
 iniciando desde um $p_{0}$ 
-ate que exista uma tendência prolongada onde se observa que $p_{k}$ é muito próximo a $p_{k-1}$,
+até que exista uma tendência prolongada na qual se observa que $p_{k}$ é muito próximo a $p_{k-1}$,
 momento no qual declaramos que $\hat{x} \approx p_{k}$.
 \item Pode existir um mínimo global $x=\hat{x}$ com $e(x)>0$.
 Isso nos restringe a que no uso da Eq. (\ref{eq:proof:minhxhx3}),
@@ -126,7 +126,7 @@ Assim,
 usando o Teorema \ref{theo:derAxbAxb} e \ref{theo:derfxbCfxb0}, podemos 
 reescrever essa igualdade como a Eq. (\ref{eq:proof:minhxhxxbxbe}),
 \begin{equation}\label{eq:proof:minhxhxxbxbe}
-2  h'(x) \left[h(x) -a\right]+2\alpha (x-b)= e'(x)=0,
+2  h'(x) \left[h(x) -a\right]+2\alpha (x-b)= e'(x)=0.
 \end{equation}
 Da Eq. (\ref{eq:proof:minhxhxxbxbe}), observamos 
 que existem duas formas de achar um ponto de inflexão $x^+$,
@@ -171,11 +171,11 @@ ou pelo menos aproximações de novas posições em caminhos numa direção desc
 \begin{comment}
 \item A Eq. (\ref{eq:proof:minhxhxaxb2}) é satisfeita 
 com $x^* \approx p$ se acharmos um  
-ponto $p=b$ onde  $a \approx h(b)$; 
+ponto $p=b$ no qual $a \approx h(b)$; 
 é dizer um mínimo global de $e(x)$ em $b$.%, como pode ser visto na Figura \ref{fig:ex0a}. 
 \item A Eq. (\ref{eq:proof:minhxhxaxb2}) é satisfeita 
 com $x^* \approx p$ se acharmos um  
-ponto $p=b$ onde  $0 \approx h'(b)$; 
+ponto $p=b$ no qual $0 \approx h'(b)$; 
 é dizer um ponto de inflexão de $e(x)$ em $b$.
 \end{comment}
 
@@ -186,9 +186,9 @@ obtemos
 x^* \approx p -
 \frac{ e'(p)}{2 \{h'(p)^2+\alpha\} },
 \end{equation}
-em que a Eq. (\ref{eq:proof:minhxhxaxbea1}) é satisfeita 
+a Eq. (\ref{eq:proof:minhxhxaxbea1}) é satisfeita 
 com $x^* \approx p$
-se acharmos um  ponto $p$ onde  
+se acharmos um  ponto $p$ no qual  
 $e'(p)\approx 0$; 
 quer dizer $p$ é um ponto de inflexão de $e(x)$, como já foi analisado na Eq. (\ref{eq:proof:minhxhxxbxbe}).
 %como pode ser visto na Figura \ref{fig:ex0b}.
@@ -206,7 +206,7 @@ se usamos a seguinte equação iterativa,
 p_{k} \leftarrow p_{k-1} - \frac{ h'(p_{k-1})\{h(p_{k-1})-a\}+\alpha\{p-b\}}{h'(p_{k-1})^2+\alpha},
 \end{equation}
 iniciando desde um $p_{0}$ 
-até que exista uma tendência prolongada onde se observe que $p_{k}$ é muito próximo a $p_{k-1}$,
+até que exista uma tendência prolongada na qual se observe que $p_{k}$ é muito próximo a $p_{k-1}$,
 momento no qual declaramos que $\hat{x} \approx p_{k}$.
 \item Pode existir um mínimo global $x=\hat{x}$ com $e(x)>0$.
 Isto nos restringe a que no uso da Eq. (\ref{eq:proof:minhxhxaxb3}),
@@ -257,7 +257,7 @@ Assim,
 usando o Teorema \ref{theo:derAxbAxb} e \ref{theo:derfxbCfxb0}, podemos 
 reescrever esta igualdade como a Eq. (\ref{eq:proof:minhxhxxoxoe}),
 \begin{equation}\label{eq:proof:minhxhxxoxoe}
-2  h'(x) \left[h(x) -a\right]+2\alpha (x-x_{last})= e'(x)=0,
+2  h'(x) \left[h(x) -a\right]+2\alpha (x-x_{last})= e'(x)=0.
 \end{equation}
 Da Eq. (\ref{eq:proof:minhxhxxoxoe}), observamos 
 que existem duas formas de achar um ponto de inflexão $x^+$,
@@ -306,7 +306,7 @@ ou pelo menos aproximações de novas posições em caminhos numa direção desc
 \begin{comment}
 \item A Eq. (\ref{eq:proof:minhxhxaxo2}) é satisfeita 
 com $x^* \approx p$ se acharmos um  
-ponto $p$ onde  $a \approx h(p\approx x_{last})$; 
+ponto $p$ no qual $a \approx h(p\approx x_{last})$; 
 quer dizer um mínimo global de $e(x)$ em $p$. 
 \end{comment}
 
@@ -316,9 +316,9 @@ obtemos
 \begin{equation}\label{eq:proof:minhxhxaxoxo2ea1}
 x^* \approx p - \frac{ e'(p)}{2(h'(p)^2+\alpha)},
 \end{equation}
-onde a Eq. (\ref{eq:proof:minhxhxaxoxo2ea1}) é satisfeita 
+em que a Eq. (\ref{eq:proof:minhxhxaxoxo2ea1}) é satisfeita 
 com $x^* \approx p$
-se acharmos um  ponto $p$ onde  
+se acharmos um  ponto $p$ no qual  
 $e'(p)\approx 0$; 
 quer dizer, $p$ é um ponto de inflexão de $e(x)$, como pode ser visto na Eq. (\ref{eq:proof:minhxhxxoxoe}).
 Porém, dado que a Eq. (\ref{eq:proof:minhxhxaxoxo2ea1}) avança desde $p$ na direção de um mínimo $x^*$, 
@@ -334,8 +334,8 @@ se usamos a seguinte equação iterativa,
 \begin{equation}\label{eq:proof:minhxhxaxoxo3b}
 p_{k} \leftarrow p_{k-1} - \frac{h'(p_{k-1})\{h(p_{k-1})-a\}}{h'(p_{k-1})^2 +\alpha},
 \end{equation}
-onde se inicia desde um $p_{0}$ 
-até que exista uma tendência prolongada onde se observa que $p_{k}$ é muito próximo a $p_{k-1}$,
+iniciando desde um $p_{0}$ 
+até que exista uma tendência prolongada na qual observamos que $p_{k}$ é muito próximo a $p_{k-1}$,
 momento no qual declaramos que $\hat{x} \approx p_{k}$.
 Disto também se deduz que o erro a minimizar em cada iteração será diferente e influenciado pelo valor do ponto $p_{k-1}$,
 \begin{equation}

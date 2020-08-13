@@ -20,7 +20,7 @@ conhecida a validade da Eq. (\ref{eq:rootshxreg1}),
 \end{equation}
 se desejamos obter um valor $x=\hat{x}$ que cumpra a Eq. (\ref{eq:rootshxreg1})
 podemos usar iterativamente a Eq. (\ref{eq:rootshxreg2}),
-onde  $h'(x)\equiv \frac{d h(x)}{d x}$,
+na qual $h'(x)\equiv \frac{d h(x)}{d x}$,
 \end{minipage}
 
 \begin{equation}\label{eq:rootshxreg2}
@@ -30,8 +30,8 @@ Assim, $\hat{x}$ pode ser achado\footnote{A
 demonstração pode ser vista na Prova \ref{proof:theo:rootshxreg}.} 
 iniciando a Eq. (\ref{eq:rootshxreg2}) desde um 
 $x_{0}$ qualquer, realizando cálculos $x_{k}$ iterativamente  
-ate\footnote{Sendo delta um valor pequeno próximo a zero.} que $||h(x_k)||<\delta$
-onde se declara que $\hat{x}=x_k$.
+até\footnote{Sendo delta um valor pequeno próximo a zero.} que $||h(x_k)||<\delta$
+nesse caso se declara que $\hat{x}=x_k$.
 
 \textbf{Considerações:}
 \begin{itemize} 
@@ -88,14 +88,14 @@ para tentar fugir deste mínimo local; por exemplo $x_8=-2.0$.
     \centering
     \begin{subfigure}[b]{0.49\textwidth}
         \includegraphics[width=\textwidth]{chapters/roots/mfiles/hx_a/minimizando_hx_a_1.eps}
-        \caption{As iterações divergem ao redor de $x_m$, onde $h'(x_m)\approx 0$ e $h(x_m)\neq 0$.}
+        \caption{As iterações comvergem ao redor da amostra $x_m$ em que $h'(x_m)\approx 0$ e $h(x_m)\neq 0$.}
         \label{fig:rootsRcasesa}
     \end{subfigure}
     ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
       %(or a blank line to force the subfigure onto a new line)
     \begin{subfigure}[b]{0.49\textwidth}
         \includegraphics[width=\textwidth]{chapters/roots/mfiles/hx_a/minimizando_hx_a_2.eps}
-        \caption{As iterações convergem em $\hat{x}$, onde $h(\hat{x})\approx 0$ e $h'(x_m)\neq 0$.}
+        \caption{As iterações convergem em $\hat{x}$, no qual $h(\hat{x})\approx 0$ e $h'(x_m)\neq 0$.}
         \label{fig:rootsRcasesb}
     \end{subfigure}
     \caption{Comportamento da busca iterativa do Exemplo \ref{ex:rootshxreg1}}

@@ -12,7 +12,7 @@ y\equiv f_{\VECTOR{c}}(\VECTOR{x})= \frac{1}{1+e^{-h_{\VECTOR{c}}(\VECTOR{x}) }}
 \quad h_{\VECTOR{c}}(\VECTOR{x}) =  \VECTOR{a}(\VECTOR{x})\VECTOR{c},
 \end{equation}
 ou seu equivalente: $logit(y)=h_{\VECTOR{c}}(\VECTOR{x})$,
-onde $\VECTOR{c}=[c_1~ c_2~ ...~ c_m~ ...~ c_{N+1}]^{\transpose} \in \mathbb{R}^{N+1}$ é um vetor coluna e
+em que $\VECTOR{c}=[c_1~ c_2~ ...~ c_m~ ...~ c_{N+1}]^{\transpose} \in \mathbb{R}^{N+1}$ é um vetor coluna e
 $\VECTOR{a}(\VECTOR{x})=\begin{bmatrix} 
 1& x_1& x_2& \hdots & x_m& \hdots& x_N
 \end{bmatrix}$ é um vetor linha.
@@ -23,12 +23,12 @@ e(\VECTOR{c}) =  \sum_{n=1}^{L} w_l||h_{\VECTOR{c}}(\VECTOR{x}_l)-logit(y_l)||^2
 \end{equation}
 proveniente de avaliar $L$ amostras $\VECTOR{x}_l \in \mathbb{R}^{N}$ que pertencem a dois grupos, 
 sendo que cada amostra $\VECTOR{x}_l$ tem uma etiqueta de grupo $y_l\in \{A,1-A\}$, 
-onde $0<A\ll 0.5$ é escolhido por nós;
-então, podemos rescrever a Eq. (\ref{eq:proof:theo:reglogrnr1:2}) como a Eq. (\ref{eq:proof:theo:reglogrnr1:3}),
+em que $0<A\ll 0.5$ é escolhido por nós;
+então, podemos reescrever a Eq. (\ref{eq:proof:theo:reglogrnr1:2}) como a Eq. (\ref{eq:proof:theo:reglogrnr1:3}),
 \begin{equation}\label{eq:proof:theo:reglogrnr1:3}
 e(\VECTOR{c}) \equiv ||\MATRIX{A}\VECTOR{c}-\VECTOR{z}||_{\MATRIX{W}}^2 
 \end{equation}
-onde os pesos $w_l \in \mathbb{R}_+$ são escolhidos por nós, e 
+na qual os pesos $w_l \in \mathbb{R}_+$ são escolhidos por nós, e 
 \begin{equation}\label{eq:proof:reglogrnr1:4}
 \MATRIX{A}=\begin{bmatrix}
 \VECTOR{a}(x_1)\\

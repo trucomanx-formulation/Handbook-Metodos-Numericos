@@ -11,15 +11,15 @@
 A regularização é o processo pelo qual um problema \illposed~é 
 aproximado por uma família vizinha de problemas catalogados como \wellposed~\cite[pp. 49]{engl2000regularization},
 para realizar essa aproximação, nova informação  é adicionada ao problema.
-Por exemplo, podemos aplicar a regularização agregando uma função objetivo para criar um problema de otimização
-a partir do problema \illposed.
+Por exemplo, podemos aplicar a regularização agregando uma função objetivo (função de custo) 
+para criar um problema de otimização a partir do problema \illposed.
 
 \begin{description}
 \item[Problema direto:] Considere um sistema representado pelo seguinte problema direto,
 \begin{equation}\label{eq:regularization:1}
 \MATRIX{A}\VECTOR{x}=\VECTOR{y},
 \end{equation}
-em que a resposta vector $\VECTOR{y}\in \mathbb{R}^M$ é obtida
+em que a resposta vetor $\VECTOR{y}\in \mathbb{R}^M$ é obtida
  após introduzir o estimulo $\VECTOR{x}\in \mathbb{R}^N$,
 sendo $\MATRIX{A}:\mathbb{R}^N \rightarrow \mathbb{R}^M$ uma matriz operador linear.
 
@@ -49,8 +49,8 @@ e transformar essa em uma função de custo $e(\VECTOR{x})$, usando o critério 
 \begin{equation}\label{eq:regularization:3}
 e(\VECTOR{x})=||\MATRIX{A}\VECTOR{x}-\VECTOR{y}_{\delta}||^2,
 \end{equation}
-de modo que no melhor dos casos o mínimo $e(\VECTOR{x})$ tomará o valor zero, 
-porém também aceitaremos uma solução $\VECTOR{x}$ que produza um mínimo $e(\VECTOR{x})$  maior a zero.
+de modo que no melhor dos casos o valor mínimo de $e(\VECTOR{x})$ será zero, 
+porém também aceitaremos uma solução $\VECTOR{x}$ que produza um mínimo $e(\VECTOR{x})$ maior a zero.
 %Na Seção \ref{sec:minAxbCAxb} veremos mais a detalhe como resolver o problema de minimização proposto na Eq. (\ref{eq:regularization:3}).
 \begin{SolutionT}[Relativa ao Exemplo \ref{ex:IllPosedNoSolutions}:]
 Como é descrito na Seção \ref{sec:minAxbCAxb}, para resolver um problema de minimização como o proposto na Eq. (\ref{eq:regularization:3}),
@@ -122,7 +122,7 @@ que é o ponto no plano  $\MATRIX{A}\VECTOR{x}$ mais próximo a $\VECTOR{y}_{\de
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Quando um problema \illposed~ tem muitas soluções}
+\subsection{Quando um problema \illposed~tem muitas soluções}
 Quando a Eq. (\ref{eq:regularization:2}) tem múltiplas soluções, 
 não é possível regularizar o problema com uma função de custo da forma 
 $||\MATRIX{A}\VECTOR{x}-\VECTOR{y}_{\delta}||^2$,

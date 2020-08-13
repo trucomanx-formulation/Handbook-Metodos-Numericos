@@ -24,7 +24,7 @@ definida a Eq. (\ref{eq:maphcxr1r1:1}),
 \begin{equation}\label{eq:maphcxr1r1:1}
 y=h_{\VECTOR{c}}(x)\equiv h(\VECTOR{c},x),
 \end{equation}
-onde $h_{\VECTOR{c}}:\mathbb{R} \rightarrow \mathbb{R}$ é uma função com domínio em $X$, contradomínio em $Y$
+na qual $h_{\VECTOR{c}}:\mathbb{R} \rightarrow \mathbb{R}$ é uma função com domínio em $X$, contradomínio em $Y$
 e com coeficientes $c_m$, $1 \leq m \leq M$, que formam o vetor $\VECTOR{c} \in \mathbb{R}^{M}$;
 podemos afirmar que o vetor $\VECTOR{c}=\VECTOR{\hat{c}}$,
 que minimiza o erro $e(\VECTOR{c})$,
@@ -33,7 +33,7 @@ que minimiza o erro $e(\VECTOR{c})$,
 \begin{equation}\label{eq:maphcxr1r1:2}
 e(\VECTOR{c}) =  ||\VECTOR{h}(\VECTOR{c})-\VECTOR{y}||_{\MATRIX{W}}^2 + \alpha||\VECTOR{c}-\VECTOR{c}_{last}||_{\MATRIX{D}}^2,
 \end{equation}
-onde $w_n \in \mathbb{R}_+$, $d_n \in \mathbb{R}_+$, e $\alpha \in \mathbb{R}_+$ são valores escolhidos por nós,
+em que $w_n \in \mathbb{R}_+$, $d_n \in \mathbb{R}_+$, e $\alpha \in \mathbb{R}_+$ são valores escolhidos por nós,
 \begin{equation}
 \VECTOR{h}(\VECTOR{c})\equiv \VECTOR{h}_{\VECTOR{x}}(\VECTOR{c})=\begin{bmatrix}
 h(\VECTOR{c},x_1)\\ 
@@ -81,11 +81,11 @@ d_M
 \end{bmatrix}\right);
 \end{equation}
 pode ser achado\footnote{A demonstração pode ser vista na Prova \ref{proof:theo:maphcxr1r1}.} 
-usando de forma iterativa a Eq. (\ref{eq:maphcxr1r1:3})
+usando de forma iterativa a Eq. (\ref{eq:maphcxr1r1:3}),
 \begin{equation}\label{eq:maphcxr1r1:3}
 \VECTOR{c}_{i}=\VECTOR{c}_{i-1}-[\MATRIX{J}(\VECTOR{c}_{i-1})^{\transpose}\MATRIX{W}\MATRIX{J}(\VECTOR{c}_{i-1})+\alpha \MATRIX{D}]^{-1}\MATRIX{J}(\VECTOR{c}_{i-1})^{\transpose}\MATRIX{W}[\VECTOR{h}(\VECTOR{c}_{i-1})-\VECTOR{y}],
 \end{equation}
-onde a matriz $\MATRIX{J}(\VECTOR{c})$ 
+na qual a matriz $\MATRIX{J}(\VECTOR{c})$ 
 $\equiv \frac{\partial \VECTOR{h}(\VECTOR{c})}{\partial \VECTOR{c}^{\transpose}}$ é a 
 \hyperref[def:jacobian]{\textbf{matriz Jacobiana}}  de $\VECTOR{h}(\VECTOR{c})$,
 \begin{equation}
@@ -101,7 +101,7 @@ $\equiv \frac{\partial \VECTOR{h}(\VECTOR{c})}{\partial \VECTOR{c}^{\transpose}}
 \begin{array}{lll}
 \VECTOR{j}(\VECTOR{c},x) & = & \frac{\partial h(\VECTOR{c},x)}{\partial \VECTOR{c}^{\transpose}} \\
                        ~ & ~ & ~\\
-                       ~ & = & \left[\frac{\partial h(\VECTOR{c},x)}{\partial c_1}\quad \frac{\partial h(\VECTOR{c},x)}{\partial c_2}\quad ...\quad \frac{\partial h(\VECTOR{c},x)}{\partial c_{m}} \quad ... \quad \frac{\partial h(\VECTOR{c},x)}{\partial c_{M}} \right]
+                       ~ & = & \left[\frac{\partial h(\VECTOR{c},x)}{\partial c_1}\quad \frac{\partial h(\VECTOR{c},x)}{\partial c_2}\quad ...\quad \frac{\partial h(\VECTOR{c},x)}{\partial c_{m}} \quad ... \quad \frac{\partial h(\VECTOR{c},x)}{\partial c_{M}} \right].
 \end{array}
 \end{equation}
 
@@ -110,7 +110,7 @@ $\equiv \frac{\partial \VECTOR{h}(\VECTOR{c})}{\partial \VECTOR{c}^{\transpose}}
 \item A busca iterativa da Eq. (\ref{eq:maphcxr1r1:3}) 
 é finalizada com sucesso 
 quando iterações consecutivas do vetor $\VECTOR{c}_i$ convergem a valores próximos entre si, 
-onde declaramos $\VECTOR{\hat{c}}=\VECTOR{c}_i$.
+nesse caso declaramos $\VECTOR{\hat{c}}=\VECTOR{c}_i$.
 \item O erro mínimo $e(\VECTOR{\hat{c}}) \geq 0$, não necessariamente obtem o valor zero. 
 \end{itemize}
 \end{theorem}
@@ -178,7 +178,7 @@ podemos usar iterativamente a Eq. (\ref{eq:maphcxr1r1:3}), com
 \frac{\partial h(\VECTOR{c},x)}{\partial c_2} 
 = 4\frac{c_1}{c_2}\left(\frac{x}{c_2}\right)^{-4}e^{-\left(\frac{x}{c_2}\right)^{-4}}, \qquad 
 \frac{\partial h(\VECTOR{c},x)}{\partial c_3} 
-=1
+=1,
 \end{equation} 
 iniciando desde um vetor $\VECTOR{c}_{0}=[1\quad 1\quad 1]^{\transpose}$ escolhido arbitrariamente.
 Obtendo, assim, a Tabela \ref{table:theo:maphcxr1r1:ei}, que conclui em

@@ -21,14 +21,14 @@ os dados, sem que a curva necessariamente coincida de forma exata com todos eles
 pelo que devemos definir algum critério de medida do erro de ajuste 
 e procurar uma curva que minimize esse erro \cite[pp. 7]{chapra2016metodos}.
 
-Assim, a regressão pode ser classificada mediante o tipo de curva de ajuste que é proposta;
+Assim, a regressão pode ser classificada mediante o tipo de curva de ajuste que é usado;
 nesse sentido, podemos verificar na literatura:
 
 \begin{itemize}
 \item \textbf{Regressão linear}: 
 Este caso ocorre quando usamos uma linha reta;
-quer dizer uma função $h_{\VECTOR{c}}:\mathbb{R} \rightarrow \mathbb{R}$ de parâmetros $\VECTOR{c}$, 
-para aproximar um conjunto de dados \cite[pp. 398, 402]{chapra2016metodos} \cite[pp. 25]{aster2013parameter}.
+sendo esta uma função $h_{\VECTOR{c}}:\mathbb{R} \rightarrow \mathbb{R}$ de parâmetros $\VECTOR{c}$, 
+utilizada para aproximar um conjunto de dados \cite[pp. 398, 402]{chapra2016metodos} \cite[pp. 25]{aster2013parameter}.
 A regressão linear é um caso particular da regressão polinomial quando $M=1$.
 \begin{example}~
 \begin{itemize}
@@ -43,11 +43,11 @@ como na função logística, podemos ver exemplos de regressão linear.
 
 \item \textbf{Regressão polinomial}: 
 Indica que usamos um polinômio de grau $M$,
-representado com uma função $h_{\VECTOR{c}}:\mathbb{R} \rightarrow \mathbb{R}$ com parâmetros $\VECTOR{c}$, 
- para aproximar um conjunto de dados \cite[pp. 399, 415]{chapra2016metodos}.
+sendo esta uma função $h_{\VECTOR{c}}:\mathbb{R} \rightarrow \mathbb{R}$ com parâmetros $\VECTOR{c}$, 
+utilizada para aproximar um conjunto de dados \cite[pp. 399, 415]{chapra2016metodos}.
 \begin{example}~
 \begin{itemize}
-\item Um caso de curva de ajuste na regressão polinomial com grau $M=2$,
+\item Curva de ajuste na regressão polinomial com grau $M=2$,
 \begin{equation}
 h_{\VECTOR{c}}(x)=c_1+c_2 x+c_3 x^2.
 \end{equation}
@@ -66,7 +66,7 @@ que representa uma relação não linear entre o domínio e o contradomínio de 
 \begin{itemize}
 \item Um caso de curva de ajuste na regressão não linear, 
 \begin{equation}
-h_{\VECTOR{c}}(x)=c_1 e^{-c_2 x}
+h_{\VECTOR{c}}(x)=c_1 e^{-c_2 x}.
 \end{equation}
 \item Na Seção \ref{sec:theo:maphcxr1r1}, podemos ver exemplos de regressão não linear.
 \end{itemize}
@@ -74,8 +74,8 @@ h_{\VECTOR{c}}(x)=c_1 e^{-c_2 x}
 
 \item \textbf{Regressão linear múltipla}:
 Temos este caso quando ajustamos um hiperplano;
-quer dizer usamos uma função $h_{\VECTOR{c}}:\mathbb{R}^{N} \rightarrow \mathbb{R}$ com parâmetros $\VECTOR{c}$, 
-para aproximar um conjunto de dados \cite[pp. 399, 418]{chapra2016metodos}.
+sendo esta uma função $h_{\VECTOR{c}}:\mathbb{R}^{N} \rightarrow \mathbb{R}$ com parâmetros $\VECTOR{c}$, 
+utilizada para aproximar um conjunto de dados \cite[pp. 399, 418]{chapra2016metodos}.
 A regressão linear é um caso particular da regressão linear múltipla quando $N=1$.
 \begin{example}~
 \begin{itemize}
@@ -90,8 +90,8 @@ como na função logística, podemos ver exemplos de regressão linear múltipla
 
 \item \textbf{Regressão polinomial múltipla}:
 Acontece quando ajustamos um polinômio multivariado de grau total $M$,
-isto é, usamos uma função $h_{\VECTOR{c}}:\mathbb{R}^{N} \rightarrow \mathbb{R}$ com parâmetros $\VECTOR{c}$, 
-para aproximar um conjunto de dados.
+sendo esta uma função $h_{\VECTOR{c}}:\mathbb{R}^{N} \rightarrow \mathbb{R}$ com parâmetros $\VECTOR{c}$, 
+utilizada para aproximar um conjunto de dados.
 A regressão polinomial é um caso particular da regressão polinomial múltipla quando $N=1$.
 \begin{example}~
 \begin{itemize}
@@ -116,7 +116,7 @@ A regressão não linear é um caso particular da regressão não linear múltip
 \begin{itemize}
 \item Um caso de curva de ajuste na regressão não linear múltipla, 
 \begin{equation}
-h_{\VECTOR{c}}(\VECTOR{x})=c_1 e^{- c_2^2(x_1 -c_3)^2- c_4^2(x_2 -c_5)^2}
+h_{\VECTOR{c}}(\VECTOR{x})=c_1 e^{- c_2^2(x_1 -c_3)^2- c_4^2(x_2 -c_5)^2}.
 \end{equation}
 \item Na Seção \ref{sec:theo:maphcxrnr1}, podemos ver exemplos de regressão não linear múltipla.
 \item Na Seção \ref{sec:theo:reglogrnr1nolinear:1}, após uma linearização de uma relação não linear,

@@ -41,7 +41,7 @@
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
-\documentclass[12pt]{extbook} % Default font size and left-justified equations
+\documentclass[a4paper,12pt]{extbook} % Default font size and left-justified equations
 
 
 %----------------------------------------------------------------------------------------
@@ -75,6 +75,7 @@
 %----------------------------------------------------------------------------------------
 \newcommand{\ImprimirLinkGitHub}[0]{https://trucomanx.github.io}%{https://localhost}%{https://trucomanx.github.io}
 \newcommand{\ImprimirLinkHomePageLivro}[0]{\url{\ImprimirLinkGitHub/metodos.numericos}}
+\newcommand{\ImprimirLinkErroresLivro}[0]{\url{\ImprimirLinkGitHub/metodos.numericos/erros.html}}
 \newcommand{\ImprimirLinkVerificarLivro}[0]{\url{\ImprimirLinkGitHub/metodos.numericos/verificar.html}}
 \newcommand{\ImprimirLinkCompraLivroImpresso}[0]{\url{\ImprimirLinkGitHub/metodos.numericos/comprar-impresso.html}}
 \newcommand{\ImprimirLinkCompraLivroDigital}[0]{\url{\ImprimirLinkGitHub/metodos.numericos/comprar-digital.html}}
@@ -99,7 +100,7 @@
                          %% 515.6 – Outros métodos analíticos %% http://magisterandre.blogspot.com/2013/02/classificacao-decimal-de-dewey.html
                          %% http://www.isbn.bn.br/website/tabela-de-assuntos
 \def \imprimirCDU{519.6} %% Matemática computacional %% https://www.ipleiria.pt/sdoc/wp-content/uploads/sites/10/2016/05/cdu-atualizada.pdf 
-\newcommand{\imprimirisbn}[0]{\textcolor{red}{XXXXXXXXXXX}}
+\newcommand{\imprimirisbn}[0]{978-65-00-07314-0}
 \def \imprimireditora{Edi\c{c}\~{a}o Independente}%%{Autopublica\c{c}\~{a}o}%%{Edi\c{c}\~{a}o Independente}
 \def \palavraschavea{M\'etodos num\'ericos}
 \def \palavraschaveb{Problemas inversos}
@@ -270,7 +271,7 @@
 %----------------------------------------------------------------------------------------
 %	PART
 %----------------------------------------------------------------------------------------
-\part{Minimização do erro em funções de custo}
+\part{Minimização do erro e funções de custo}
 % CHAPTER  
 \input{\SourceRootPath/chapters/minimization-fx/min_square_error}
 \input{\SourceRootPath/chapters/minimization-hx/min_square_error_hx}

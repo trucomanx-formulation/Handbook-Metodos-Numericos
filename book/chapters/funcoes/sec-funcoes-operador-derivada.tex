@@ -25,7 +25,7 @@ definimos que:
 \hdots&
 \frac{\partial e(\VECTOR{x}) }{\partial x_{N}}
 \end{matrix}
-\right]= {\bigcup\limits_{n=1}^{\rightarrow}}^{N}{\frac{\partial e(\VECTOR{x}) }{\partial x_{n}}} 
+\right]= {\bigcup\limits_{n=1}^{\rightarrow}}^{N}{\frac{\partial e(\VECTOR{x}) }{\partial x_{n}}}. 
 \end{equation}
 \end{definition}
 
@@ -47,7 +47,7 @@ definimos que:
 \hdots&
 \frac{\partial \VECTOR{f}(\VECTOR{x}) }{\partial x_{N}}
 \end{matrix}
-\right]= {\bigcup\limits_{n=1}^{\rightarrow}}^{N}{\frac{\partial \VECTOR{f}(\VECTOR{x}) }{\partial x_{n}}} 
+\right]= {\bigcup\limits_{n=1}^{\rightarrow}}^{N}{\frac{\partial \VECTOR{f}(\VECTOR{x}) }{\partial x_{n}}}. 
 \end{equation}
 \end{definition}
 
@@ -72,21 +72,14 @@ definimos que:
 \end{equation}
 \end{definition}
 
-\begin{comment}
-Assim, obtemos o vetor linha
-$\frac{\partial e(\VECTOR{x}) }{\partial \VECTOR{x}^{\transpose}} \in \mathbb{R}^{1\times N}$,
-as matrizes
-$\frac{\partial \VECTOR{f}(\VECTOR{x}) }{\partial \VECTOR{x}^{\transpose}} \in \mathbb{R}^{M \times N}$ e
-$\frac{\partial \VECTOR{g}(\VECTOR{x}) }{\partial \VECTOR{x}^{\transpose}} \in \mathbb{R}^{M \times (LN)}$.
-\end{comment}
-
 \begin{example}[Uso da Definição \ref{def:deltahor}:]
 Conhecida a função $e(\VECTOR{x}): \mathbb{R}^2 \rightarrow \mathbb{R}$, podemos calcular,
+\vspace{-1em}
 \begin{equation}
 e(\VECTOR{x})=x_1^2+x_1 x_2+x_2^2
 \qquad \rightarrow \qquad
 \frac{\partial e(\VECTOR{x}) }{\partial \VECTOR{x}^{\transpose}}=
-\left[ 2 x_1+x_2 \quad x_1 + 2 x_2\right]
+\left[ 2 x_1+x_2 \quad x_1 + 2 x_2\right].
 \end{equation}
 \end{example}
 
@@ -108,7 +101,7 @@ x_1^2+x_2^2
 1     & 2 x_2\\
 x_2   & x_1\\
 2 x_1 & 2 x_2
-\end{bmatrix}
+\end{bmatrix}.
 \end{equation}
 \end{example}
 
@@ -129,7 +122,7 @@ x_1 + x_2   & x_1 + x_2
   x_2 & 0   & x_1 & 2 x_2\\
 2 x_1 & 1   & 1   & 2 x_2\\
     1 & 1   & 1   & 1
-\end{bmatrix}
+\end{bmatrix}.
 \end{equation}
 \end{example}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -155,7 +148,7 @@ definimos que:
 \frac{\partial e(\VECTOR{x}) }{\partial x_{N}} 
 \end{matrix}
 \right] = 
-{\bigcup\limits_{n=1}^{\downarrow}}^{N}{\frac{\partial e(\VECTOR{x}) }{\partial x_{n}}} 
+{\bigcup\limits_{n=1}^{\downarrow}}^{N}{\frac{\partial e(\VECTOR{x}) }{\partial x_{n}}}. 
 \end{equation}
 \end{definition}
 
@@ -178,7 +171,7 @@ definimos que:
 \frac{\partial \VECTOR{f}(\VECTOR{x}) }{\partial x_{N}}
 \end{matrix}
 \right] =  
-{\bigcup\limits_{n=1}^{\downarrow}}^{N}{\frac{\partial \VECTOR{f}(\VECTOR{x}) }{\partial x_{n}}}
+{\bigcup\limits_{n=1}^{\downarrow}}^{N}{\frac{\partial \VECTOR{f}(\VECTOR{x}) }{\partial x_{n}}}.
 \end{equation}
 \end{definition}
 
@@ -200,17 +193,9 @@ definimos que:
 %\frac{\partial \MATRIX{G}(\VECTOR{x}) }{\partial x_{N-1}} \\
 \frac{\partial \MATRIX{G}(\VECTOR{x}) }{\partial x_{N}}
 \end{matrix}
-\right] = {\bigcup\limits_{n=1}^{\downarrow}}^{N}{\frac{\partial \MATRIX{G}(\VECTOR{x}) }{\partial x_{n}}}
+\right] = {\bigcup\limits_{n=1}^{\downarrow}}^{N}{\frac{\partial \MATRIX{G}(\VECTOR{x}) }{\partial x_{n}}}.
 \end{equation}
 \end{definition}
-
-\begin{comment}
-Assim, 
-$\frac{\partial e(\VECTOR{x}) }{\partial \VECTOR{x}} \in \mathbb{R}^{N \times 1}$,
-$\frac{\partial \VECTOR{f}(\VECTOR{x}) }{\partial \VECTOR{x}} \in \mathbb{R}^{(MN) \times 1}$ e
-$\frac{\partial \VECTOR{g}(\VECTOR{x}) }{\partial \VECTOR{x}} \in \mathbb{R}^{(MN) \times L}$.
-\end{comment}
-
 
 \begin{corollary}[Igualdade das derivadas cruzadas]\label{cor:derder}
 Dado,
@@ -223,7 +208,7 @@ teorema da igualdade das derivadas cruzadas\footnote{Tambem conhecido como
 podemos deduzir que:
 \begin{equation}
  \frac{\partial }{\partial \VECTOR{x}} \left( \frac{\partial e(\VECTOR{x} )}{\partial \VECTOR{x}^{\transpose}} \right) = 
-\frac{\partial }{\partial \VECTOR{x}^{\transpose}} \left( \frac{\partial e(\VECTOR{x} )}{\partial \VECTOR{x}} \right)
+\frac{\partial }{\partial \VECTOR{x}^{\transpose}} \left( \frac{\partial e(\VECTOR{x} )}{\partial \VECTOR{x}} \right).
 \end{equation}
 \end{corollary}
 
@@ -238,7 +223,7 @@ e(\VECTOR{x})=x_1^2+x_1 x_2+x_2^2
 \begin{bmatrix}
  2 x_1 + x_2 \\
  x_1 + 2 x_2
-\end{bmatrix}
+\end{bmatrix}.
 \end{equation}
 \end{example}
 
@@ -264,7 +249,7 @@ x_2   \\
 2 x_2 \\
 x_1   \\
 2 x_2
-\end{bmatrix}
+\end{bmatrix}.
 \end{equation}
 \end{example}
 
@@ -290,7 +275,7 @@ x_1 + x_2   & x_1 + x_2
 x_1 & 2 x_2\\
 1   & 2 x_2\\
 1   & 1
-\end{bmatrix}
+\end{bmatrix}.
 \end{equation}
 \end{example}
 
@@ -304,7 +289,7 @@ e(\VECTOR{x})=x_1^2+x_1 x_2+x_2^2
 \begin{bmatrix}
  2 & 1 \\
  1 & 2
-\end{bmatrix}
+\end{bmatrix}.
 \end{equation}
 \end{example}
 
